@@ -2,7 +2,7 @@
 
 ========
 
-[I. Introduction 2](#i.-introduction)
+[I. Introduction](#i.-introduction)
 
 [II. Detailed content recommendations For Elements and Attributes](#ii.-detailed-content-recommendations-for-elements-and-attributes)
 
@@ -13,12 +13,11 @@
 
 [@packageId (XML attribute)](#packageid-xml-attribute)
 
-[id, system and scope (XML attribute group)
-8](#id-system-and-scope-xml-attribute-group)
+[id, system and scope (XML attribute group)](#id-system-and-scope-xml-attribute-group)
 
 [access](#access)
 
-[dataset](#_Toc297021932)
+[dataset](#dataset)
 
 [alternateIdentifier](#alternateidentifier)
 
@@ -233,7 +232,7 @@ element (&lt;**eml:eml**&gt;):
 
 &lt;**additionalMetadata**&gt;
 
-### ***@packageId (XML attribute) ***
+### ***@packageId (XML attribute)***
 
 This attribute is required in all EML2.1 documents, and is found at this
 location (XPath):
