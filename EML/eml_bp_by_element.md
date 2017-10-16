@@ -1,5 +1,7 @@
 > **EML Best Practice Recommendations by Element**
+
 ========
+[I. Introduction 2](#i.-introduction)
 
 [II. Detailed content recommendations For Elements and Attributes
 7](#ii.-detailed-content-recommendations-for-elements-and-attributes)
@@ -358,32 +360,24 @@ Currently, a reasonable general practice should be to define a
 Example: attributes packageId, id, system, and scope
 
 TO DO: code block
-
-
-> &lt;?xml version="1.0" encoding="UTF-8"?&gt;
->
-> &lt;eml:eml xmlns:ds="eml://ecoinformatics.org/dataset-2.1.0"
->
-> xmlns:xs="http://www.w3.org/2001/XMLSchema"
->
-> xmlns:eml="eml://ecoinformatics.org/eml-2.1.0"
->
-> xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
->
-> xmlns:stmml="http://www.xml-cml.org/schema/stmml"
->
-> xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.0
-> https://nis.lternet.edu/eml-2.1.0/eml.xsd"
->
-> packageId="knb-lter-fls.21.3"
->
-> system="FLS"
->
-> scope="system"&gt;
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:ds="eml://ecoinformatics.org/dataset-2.1.0" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:eml="eml://ecoinformatics.org/eml-2.1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:stmml="http://www.xml-cml.org/schema/stmml" 
+    xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.0 https://nis.lternet.edu/eml-2.1.0/eml.xsd" 
+    packageId="knb-lter-fls.21.3" 
+    system="FLS" 
+    scope="system">
+    
+```
 
 ### ***access***
 
 The dataset title element is found at this location (XPath):
+
 
 **/eml:eml/access**
 
