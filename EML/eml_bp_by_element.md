@@ -81,26 +81,6 @@ view, otherEntity
 
 [additionalMetadata 45](#additionalmetadata)
 
-[III. Recommendations for Compatibility with External Applications
-46](#iii.-recommendations-for-compatibility-with-external-applications)
-
-[III.1 Metacat 46](#iii.1-metacat)
-
-[III.2 LTERMapS 47](#iii.2-ltermaps)
-
-[III.3 Provenance Tracking in EML 47](#iii.3-provenance-tracking-in-eml)
-
-[III.4 EML Congruency Checker 48](#iii.4-eml-congruency-checker)
-
-[IV. Descriptions of EML sample files provided with this document
-50](#iv.-descriptions-of-eml-sample-files-provided-with-this-document)
-
-[V. Other resources 50](#v.-other-resources)
-
-[VI. Contributors to this Document
-51](#vi.-contributors-to-this-document)
-
-[INDEX 52](#index)
 
 I. Introduction
 ===============
@@ -132,7 +112,7 @@ Please cite this document as:
 
 Environmental Data Initiative. 2017. EML Best Practices.
 
-I.1. Timeline 
+I.1. Timeline - maybe this goes into background instead. see issue #2
 -----------------------------------------------------
 
 I.1.1 2004 LTER EML BP v1 - include a link to the PDF in /files/
@@ -171,6 +151,12 @@ when the element first appears (often at the dataset level). This does
 not imply that these trees belong only at that level; in fact, locating
 trees at the most granular level is still advantageous and recommended.
 
+
+
+Examples
+================================================================
+
+Example 1: Complete EML with all these examples
 
 
 
@@ -356,10 +342,9 @@ Currently, a reasonable general practice should be to define a
 **system** on the &lt;**eml:eml**&gt; element and set it to the site
 (but not set the system attribute at any other level), and to set
 **scope**=“document” on elements other than &lt;**eml:eml**&gt;.
-
+------
 Example: attributes packageId, id, system, and scope
 
-TO DO: code block
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <eml:eml xmlns:ds="eml://ecoinformatics.org/dataset-2.1.0" 
@@ -371,9 +356,9 @@ TO DO: code block
     packageId="knb-lter-fls.21.3" 
     system="FLS" 
     scope="system">
-    
-```
 
+```
+------
 ### ***access***
 
 The dataset title element is found at this location (XPath):
@@ -398,34 +383,22 @@ Metacat should be formed according to Example below. With the exception
 of certain sensitive information, metadata should be publicly
 accessible. The &lt;**access**&gt; element is optional, and if omitted,
 presumably only the dataset submitter will be allowed access.
-
+------
 Example: access
-
-TO DO: code block
-
-
-> &lt;access authSystem="knb" order="allowFirst" scope="document"&gt;
->
-> &lt;allow&gt;
->
-> &lt;principal&gt;uid=FLS,o=lter,dc=ecoinformatics,dc=org&lt;/principal&gt;
->
-> &lt;permission&gt;all&lt;/permission&gt;
->
-> &lt;/allow&gt;
->
-> &lt;allow&gt;
->
-> &lt;principal&gt;public&lt;/principal&gt;
->
-> &lt;permission&gt;read&lt;/permission&gt;
->
-> &lt;/allow&gt;
->
-> &lt;/access&gt;
-
-[[[]{#_Toc297021932 .anchor}]{#_Toc297021695 .anchor}]{#_Toc271621592
-.anchor}***dataset***
+```
+<access authSystem="knb" order="allowFirst" scope="document">
+         <allow>
+            <principal>uid=FLS,o=lter,dc=ecoinformatics,dc=org</principal>
+            <permission>all</permission>
+        </allow>
+        <allow>
+            <principal>public</principal>
+            <permission>read</permission>
+        </allow>
+    </access>
+```
+------
+***dataset***
 
 This element is found at these locations (XPath):
 
@@ -519,20 +492,14 @@ The dataset title element is found at this location (XPath):
 The dataset &lt;**title**&gt; should be descriptive and should mention
 the data collected, geographic context, research site, and time frame
 (what, where, and when).
-
+------
 Example: dataset, alternateIdentifier, shortName, title
 
-TO DO: code block
-
-
-> &lt;dataset id="FLS-1" system="FLS" scope = "system"&gt;
->
-> &lt;alternateIdentifier&gt;FLS-1&lt;/alternateIdentifier&gt;
->
-> &lt;shortName&gt;Arthropods&lt;/shortName&gt;
->
-> &lt;title&gt;Long-term Ground Arthropod Monitoring Dataset at Ficity,
-> USA from 1998 to 2003&lt;/title&gt;
+<dataset id="FLS-1" system="FLS" scope = "system">
+    <alternateIdentifier>FLS-1</alternateIdentifier>
+    <shortName>Arthropods</shortName>
+    <title>Long-term Ground Arthropod Monitoring Dataset at Ficity, USA from 1998 to 2003</title>
+------
 
 ### ***People and Organizations (Parties)***
 
@@ -585,107 +552,59 @@ to best search for long term datasets, and searchers frequently default
 to searches using PI’s last name. Therefore it is a reasonable practice
 to include more creators rather than fewer, even if it blurs the credit
 for long term datasets.
-
+------
 Example: creator
-
-TO DO: code block
-
-> &lt;creator id="org-1" system="FLS" scope="system"&gt;
->
-> &lt;organizationName&gt;Fictitious LTER Site&lt;/organizationName&gt;
->
-> &lt;address&gt;
->
-> &lt;deliveryPoint&gt;Department for Ecology&lt;/deliveryPoint&gt;
->
-> &lt;deliveryPoint&gt;Fictitious State University&lt;/deliveryPoint&gt;
->
-> &lt;deliveryPoint&gt;PO Box 111111&lt;/deliveryPoint&gt;
->
-> &lt;city&gt;Ficity&lt;/city&gt;
->
-> &lt;administrativeArea&gt;FI&lt;/administrativeArea&gt;
->
-> &lt;postalCode&gt;11111-1111&lt;/postalCode&gt;
->
-> &lt;/address&gt;
->
-> &lt;phone phonetype="voice"&gt;(999) 999-9999&lt;/phone&gt;
->
-> &lt;electronicMailAddress&gt;fsu.contact@fi.univ.edu&lt;/electronicMailAddress&gt;
->
-> &lt;onlineUrl&gt;http://www.fsu.edu/&lt;/onlineUrl&gt;
->
-> &lt;/creator&gt;
->
-> &lt;creator id="pos-1" system="FLS" scope="system"&gt;
->
-> &lt;positionName&gt;FLS Lead PI&lt;/positionName&gt;
->
-> &lt;address&gt;
->
-> &lt;deliveryPoint&gt;Department for Ecology&lt;/deliveryPoint&gt;
->
-> &lt;deliveryPoint&gt;Fictitious State University&lt;/deliveryPoint&gt;
->
-> &lt;deliveryPoint&gt;PO Box 111111&lt;/deliveryPoint&gt;
->
-> &lt;city&gt;Ficity&lt;/city&gt;
->
-> &lt;administrativeArea&gt;FI&lt;/administrativeArea&gt;
->
-> &lt;postalCode&gt;11111-1111&lt;/postalCode&gt;
->
-> &lt;/address&gt;
->
-> &lt;phone phonetype="voice"&gt;(999) 999-9999&lt;/phone&gt;
->
-> &lt;electronicMailAddress&gt;fsu.leadPI@fi.univ.edu&lt;/electronicMailAddress&gt;
->
-> &lt;onlineUrl&gt;http://www.fsu.edu/&lt;/onlineUrl&gt;
->
-> &lt;/creator&gt;
->
-> &lt;creator id="pers-1" system="FLS" scope="system"&gt;
->
-> &lt;individualName&gt;
->
-> &lt;salutation&gt;Dr.&lt;/salutation&gt;
->
-> &lt;givenName&gt;Joe&lt;/givenName&gt;
->
-> &lt;givenName&gt;T.&lt;/givenName&gt;
->
-> &lt;surName&gt;Ecologist Jr.&lt;/surName&gt;
->
-> &lt;/individualName&gt;
->
-> &lt;organizationName&gt;FSL LTER&lt;/organizationName&gt;
->
-> &lt;address&gt;
->
-> &lt;deliveryPoint&gt;Department for Ecology&lt;/deliveryPoint&gt;
->
-> &lt;deliveryPoint&gt;Fictitious State University&lt;/deliveryPoint&gt;
->
-> &lt;deliveryPoint&gt;PO Box 111111&lt;/deliveryPoint&gt;
->
-> &lt;city&gt;Ficity&lt;/city&gt;
->
-> &lt;administrativeArea&gt;FI&lt;/administrativeArea&gt;
->
-> &lt;postalCode&gt;11111-1111&lt;/postalCode&gt;
->
-> &lt;/address&gt;
->
-> &lt;phone phonetype="voice"&gt;(999) 999-9999&lt;/phone&gt;
->
-> &lt;electronicMailAddress&gt;jecologist@fi.univ.edu&lt;/electronicMailAddress&gt;
->
-> &lt;onlineUrl&gt;http://www.fsu.edu/\~jecologist&lt;/onlineUrl&gt;
->
-> &lt;/creator&gt;
-
+```
+<creator id="org-1" system="FLS" scope="system">
+    <organizationName>Fictitious LTER Site</organizationName>
+    <address>
+        <deliveryPoint>Department for Ecology</deliveryPoint>
+        <deliveryPoint>Fictitious State University</deliveryPoint>
+        <deliveryPoint>PO Box 111111</deliveryPoint>
+        <city>Ficity</city>
+        <administrativeArea>FI</administrativeArea>
+        <postalCode>11111-1111</postalCode>
+    </address>
+    <phone phonetype="voice">(999) 999-9999</phone>
+    <electronicMailAddress>fsu.contact@fi.univ.edu</electronicMailAddress>
+    <onlineUrl>http://www.fsu.edu/</onlineUrl>
+</creator>
+<creator id="pos-1" system="FLS" scope="system">
+    <positionName>FLS Lead PI</positionName>
+    <address>
+        <deliveryPoint>Department for Ecology</deliveryPoint>
+        <deliveryPoint>Fictitious State University</deliveryPoint>
+        <deliveryPoint>PO Box 111111</deliveryPoint>
+        <city>Ficity</city>
+        <administrativeArea>FI</administrativeArea>
+        <postalCode>11111-1111</postalCode>
+    </address>
+    <phone phonetype="voice">(999) 999-9999</phone>
+    <electronicMailAddress>fsu.leadPI@fi.univ.edu</electronicMailAddress>
+    <onlineUrl>http://www.fsu.edu/</onlineUrl>
+</creator>
+<creator id="pers-1" system="FLS" scope="system">
+    <individualName>
+        <salutation>Dr.</salutation>
+        <givenName>Joe</givenName>
+        <givenName>T.</givenName>
+        <surName>Ecologist Jr.</surName>
+    </individualName>
+    <organizationName>FSL LTER</organizationName>
+    <address>
+        <deliveryPoint>Department for Ecology</deliveryPoint>
+        <deliveryPoint>Fictitious State University</deliveryPoint>
+        <deliveryPoint>PO Box 111111</deliveryPoint>
+        <city>Ficity</city>
+        <administrativeArea>FI</administrativeArea>
+        <postalCode>11111-1111</postalCode>
+    </address>
+    <phone phonetype="voice">(999) 999-9999</phone>
+    <electronicMailAddress>jecologist@fi.univ.edu</electronicMailAddress>
+    <onlineUrl>http://www.fsu.edu/~jecologist</onlineUrl>
+</creator>
+```
+------
 #### ***metadataProvider***
 
 This element is found at this location (XPath):
@@ -703,37 +622,25 @@ provider should be listed instead (see Example below). Complete the
 &lt;**address**&gt;, &lt;**phone**&gt;,
 &lt;**electronicMailAddress**&gt;, and &lt;**onlineURL**&gt; elements
 for each &lt;**metadataProvider**&gt; element.
-
+------
 Example: metadataProvider
-
-> &lt;metadataProvider&gt;
->
-> &lt;organizationName&gt;Fictitious LTER Site&lt;/organizationName&gt;
->
-> &lt;address&gt;
->
-> &lt;deliveryPoint&gt;Department of Ecology&lt;/deliveryPoint&gt;
->
-> &lt;deliveryPoint&gt;Fictitious State University&lt;/deliveryPoint&gt;
->
-> &lt;deliveryPoint&gt;PO Box 111111&lt;/deliveryPoint&gt;
->
-> &lt;city&gt;Ficity&lt;/city&gt;
->
-> &lt;administrativeArea&gt;FI&lt;/administrativeArea&gt;
->
-> &lt;postalCode&gt;11111-1111&lt;/postalCode&gt;
->
-> &lt;/address&gt;
->
-> &lt;phone phonetype="voice"&gt;(999) 999-9999&lt;/phone&gt;
->
-> &lt;electronicMailAddress&gt;fsu@fi.univ.edu&lt;/electronicMailAddress&gt;
->
-> &lt;onlineUrl&gt;http://www.fsu.edu/&lt;/onlineUrl&gt;
->
-> &lt;/metadataProvider&gt;
-
+```
+<metadataProvider>
+    <organizationName>Fictitious LTER Site</organizationName>
+    <address>
+        <deliveryPoint>Department of Ecology</deliveryPoint>
+        <deliveryPoint>Fictitious State University</deliveryPoint>
+        <deliveryPoint>PO Box 111111</deliveryPoint>
+        <city>Ficity</city>
+        <administrativeArea>FI</administrativeArea>
+        <postalCode>11111-1111</postalCode>
+    </address>
+    <phone phonetype="voice">(999) 999-9999</phone>
+    <electronicMailAddress>fsu@fi.univ.edu</electronicMailAddress>
+    <onlineUrl>http://www.fsu.edu/</onlineUrl>
+</metadataProvider>
+```
+------
 #### ***associatedParty***
 
 This element is found at this location (XPath):
@@ -746,46 +653,30 @@ All **&lt;associatedParty&gt;** trees require a &lt;**role**&gt;
 element. The parent university, institution, or agency could also be
 listed as an &lt;**associatedParty**&gt; using &lt;**role**&gt; of
 “owner” when appropriate.
-
+------
 Example: associatedParty
-
-> &lt;associatedParty id="12010" system="FLS" scope="system"&gt;
->
-> &lt;individualName&gt;
->
-> &lt;givenName&gt;Ima&lt;/givenName&gt;
->
-> &lt;surName&gt;Testuser&lt;/surName&gt;
->
-> &lt;/individualName&gt;
->
-> &lt;organizationName&gt;FSL LTER&lt;/organizationName&gt;
->
-> &lt;address&gt;
->
-> &lt;deliveryPoint&gt;Department for Ecology&lt;/deliveryPoint&gt;
->
-> &lt;deliveryPoint&gt;Fictitious State University&lt;/deliveryPoint&gt;
->
-> &lt;deliveryPoint&gt;PO Box 111111&lt;/deliveryPoint&gt;
->
-> &lt;city&gt;Ficity&lt;/city&gt;
->
-> &lt;administrativeArea&gt;FI&lt;/administrativeArea&gt;
->
-> &lt;postalCode&gt;11111-1111&lt;/postalCode&gt;
->
-> &lt;/address&gt;
->
-> &lt;phone phonetype="voice"&gt;(999) 999-9999&lt;/phone&gt;
->
-> &lt;electronicMailAddress&gt;itestuser@lternet.edu&lt;/electronicMailAddress&gt;
->
-> &lt;onlineUrl&gt;http://search.lternet.edu/directory\_view.php?personid=12010&amp;query=itestuser&lt;/onlineUrl&gt;
->
-> &lt;role&gt;Technician&lt;/role&gt;
->
-> &lt;/associatedParty&gt;
+```
+<associatedParty id="12010" system="FLS" scope="system">
+    <individualName>
+        <givenName>Ima</givenName>
+        <surName>Testuser</surName>
+    </individualName>
+    <organizationName>FSL LTER</organizationName>
+    <address>
+        <deliveryPoint>Department for Ecology</deliveryPoint>
+        <deliveryPoint>Fictitious State University</deliveryPoint>
+        <deliveryPoint>PO Box 111111</deliveryPoint>
+        <city>Ficity</city>
+        <administrativeArea>FI</administrativeArea>
+        <postalCode>11111-1111</postalCode>
+    </address>
+    <phone phonetype="voice">(999) 999-9999</phone>
+    <electronicMailAddress>itestuser@lternet.edu</electronicMailAddress>
+<onlineUrl>http://search.lternet.edu/directory_view.php?personid=12010&amp;query=itestuser</onlineUrl>
+    <role>Technician</role>
+</associatedParty>
+```
+------
 
 #### ***contact***
 
@@ -802,38 +693,25 @@ who performed the work belong under &lt;**associatedParty**&gt; rather
 than &lt;**contact**&gt;. Complete the &lt;**address**&gt;,
 &lt;**phone**&gt;, &lt;**electronicMailAddress**&gt;, and
 &lt;**onlineURL**&gt; elements for the &lt;**contact**&gt; element.
-
+------
 Example: contact
-
-> &lt;contact&gt;
->
-> &lt;positionName id=”pos-4”&gt;Information
-> Manager&lt;/positionName&gt;
->
-> &lt;address&gt;
->
-> &lt;deliveryPoint&gt;Department for Ecology&lt;/deliveryPoint&gt;
->
-> &lt;deliveryPoint&gt;Fictitious State University&lt;/deliveryPoint&gt;
->
-> &lt;deliveryPoint&gt;PO Box 111111&lt;/deliveryPoint&gt;
->
-> &lt;city&gt;Ficity&lt;/city&gt;
->
-> &lt;administrativeArea&gt;FI&lt;/administrativeArea&gt;
->
-> &lt;postalCode&gt;11111-1111&lt;/postalCode&gt;
->
-> &lt;/address&gt;
->
-> &lt;phone phonetype="voice"&gt;(999) 999-9999&lt;/phone&gt;
->
-> &lt;electronicMailAddress&gt;fsu.data@fi.univ.edu&lt;/electronicMailAddress&gt;
->
-> &lt;onlineUrl&gt;http://www.fsu.edu/&lt;/onlineUrl&gt;
->
-> &lt;/contact&gt;
-
+```
+<contact>
+    <positionName id=”pos-4”>Information Manager</positionName>
+    <address>
+        <deliveryPoint>Department for Ecology</deliveryPoint>
+        <deliveryPoint>Fictitious State University</deliveryPoint>
+        <deliveryPoint>PO Box 111111</deliveryPoint>
+        <city>Ficity</city>
+        <administrativeArea>FI</administrativeArea>
+        <postalCode>11111-1111</postalCode>
+    </address>
+    <phone phonetype="voice">(999) 999-9999</phone>
+    <electronicMailAddress>fsu.data@fi.univ.edu</electronicMailAddress>
+    <onlineUrl>http://www.fsu.edu/</onlineUrl>
+</contact>
+```
+------
 #### ***publisher***
 
 This element is found at this location (XPath):
@@ -848,14 +726,14 @@ set. List the LTER site name, fully spelled out, in the
 
 *Recommendation for web display of LTER-EML: use &lt;**publisher**&gt;
 for the organization information *
-
+------
 Example: publisher using a reference to a creator from above
-
-> &lt;publisher&gt;
->
-> &lt;references system=”FLS”&gt;org-1&lt;/references&gt;
->
-> &lt;/publisher&gt;
+```
+<publisher>
+    <references system=”FLS”>org-1</references>
+</publisher>
+```
+------
 
 ### ***pubDate***
 
@@ -907,76 +785,43 @@ acronym (LTER, ILTER, etc.), organizational affiliation, funding source
 (i.e. co-funded with other sources, non-LTER funding etc.). In addition
 to specific keywords, relevant conceptual keywords should also be
 included.
-
+------
 Example: pubDate, abstract,keywordSet, keyword
+```
+<pubDate>2000</pubDate>
+<abstract>
+    <para>Ground arthropods communities are monitored in different habitats in a rapidly changing environment. The arthropods are collected in traps four times a year in ten locations and determined as far as possible to family, genus or species.</para>
+</abstract>
+<keywordSet> 
+    <keyword keywordType="place">City</keyword> 
+    <keyword keywordType="place">State</keyword> 
+    <keyword keywordType="place">Region</keyword> 
+    <keyword keywordType="place">County</keyword> 
+    <keyword keywordType="theme">FLS</keyword> 
+    <keyword keywordType="theme">Fictitious LTER Site</keyword> 
+    <keyword keywordType="theme">LTER</keyword> 
+    <keyword keywordType="theme">Arthropods</keyword> 
+    <keyword keywordType="theme">Richness</keyword> 
+    <keywordThesaurus>FLS site thesaurus</keywordThesaurus> 
+</keywordSet> 
+<keywordSet> 
+    <keyword keywordType="theme">ecology</keyword> 
+    <keyword keywordType="theme">biodiversity</keyword> 
+    <keyword keywordType="theme">population dynamics</keyword> 
+    <keyword keywordType="theme">terrestrial</keyword> 
+    <keyword keywordType="theme">arthropods</keyword> 
+    <keyword keywordType="theme">pitfall trap</keyword> 
+    <keyword keywordType="theme">monitoring</keyword> 
+    <keyword keywordType="theme">abundance</keyword> 
+    <keywordThesaurus>LTER controlled vocabulary</keywordThesaurus> 
+</keywordSet> 
+<keywordSet> 
+    <keyword keywordType="theme">populations</keyword> 
+    <keywordThesaurus>LTER core research areas</keywordThesaurus> 
+</keywordSet>
+```
+------
 
-> &lt;pubDate&gt;2000&lt;/pubDate&gt;
->
-> &lt;abstract&gt;
->
-> &lt;para&gt;Ground arthropods communities are monitored in different
-> habitats in a rapidly changing environment. The arthropods are
-> collected in traps four times a year in ten locations and determined
-> as far as possible to family, genus or species.&lt;/para&gt;
->
-> &lt;/abstract&gt;
->
-> &lt;keywordSet&gt;
->
-> &lt;keyword keywordType="place"&gt;City&lt;/keyword&gt;
->
-> &lt;keyword keywordType="place"&gt;State&lt;/keyword&gt;
->
-> &lt;keyword keywordType="place"&gt;Region&lt;/keyword&gt;
->
-> &lt;keyword keywordType="place"&gt;County&lt;/keyword&gt;
->
-> &lt;keyword keywordType="theme"&gt;FLS&lt;/keyword&gt;
->
-> &lt;keyword keywordType="theme"&gt;Fictitious LTER
-> Site&lt;/keyword&gt;
->
-> &lt;keyword keywordType="theme"&gt;LTER&lt;/keyword&gt;
->
-> &lt;keyword keywordType="theme"&gt;Arthropods&lt;/keyword&gt;
->
-> &lt;keyword keywordType="theme"&gt;Richness&lt;/keyword&gt;
->
-> &lt;keywordThesaurus&gt;FLS site thesaurus&lt;/keywordThesaurus&gt;
->
-> &lt;/keywordSet&gt;
->
-> &lt;keywordSet&gt;
->
-> &lt;keyword keywordType="theme"&gt;ecology&lt;/keyword&gt;
->
-> &lt;keyword keywordType="theme"&gt;biodiversity&lt;/keyword&gt;
->
-> &lt;keyword keywordType="theme"&gt;population dynamics&lt;/keyword&gt;
->
-> &lt;keyword keywordType="theme"&gt;terrestrial&lt;/keyword&gt;
->
-> &lt;keyword keywordType="theme"&gt;arthropods&lt;/keyword&gt;
->
-> &lt;keyword keywordType="theme"&gt;pitfall trap&lt;/keyword&gt;
->
-> &lt;keyword keywordType="theme"&gt;monitoring&lt;/keyword&gt;
->
-> &lt;keyword keywordType="theme"&gt;abundance&lt;/keyword&gt;
->
-> &lt;keywordThesaurus&gt;LTER controlled
-> vocabulary&lt;/keywordThesaurus&gt;
->
-> &lt;/keywordSet&gt;
->
-> &lt;keywordSet&gt;
->
-> &lt;keyword keywordType="theme"&gt;populations&lt;/keyword&gt;
->
-> &lt;keywordThesaurus&gt;LTER core research
-> areas&lt;/keywordThesaurus&gt;
->
-> &lt;/keywordSet&gt;
 
 ### ***intellectualRights***
 
@@ -992,90 +837,42 @@ Network-wide data should be released on-line within 2-3 years, and if
 not, the reason needs to be documented in the metadata. (See also LTER
 Network Data Access Policy:
 <http://www.lternet.edu/data/netpolicy.html>)
-
+------
 Example: intellectualRights
-
-> &lt;intellectualRights&gt;
->
-> &lt;section&gt;
->
-> &lt;title&gt;Copyright Notice&lt;/title&gt;
->
-> &lt;para&gt; Copyright Board of Regents, Fictitious State University.
-> This dataset is released to the public and may be used for academic,
-> educational, or commercial purposes subject to the following
-> restrictions:&lt;/para&gt;
->
-> &lt;para&gt;
->
-> &lt;itemizedlist&gt;
->
-> &lt;listitem&gt;
->
-> &lt;para&gt;While FLS LTER will make every effort possible to control
-> and document the quality of the data it publishes, the data are made
-> available "as is".&lt;/para&gt;
->
-> &lt;/listitem&gt;
->
-> &lt;listitem&gt;
->
-> &lt;para&gt;FLS LTER cannot assume responsibility for damages
-> resulting from mis-use or mis-interpretation of datasets or from
-> errors or omissions that may exist in the data.&lt;/para&gt;
->
-> &lt;/listitem&gt;
->
-> &lt;listitem&gt;
->
-> &lt;para&gt;It is considered a matter of professional ethics to
-> acknowledge the work of other scientists that has resulted in data
-> used in subsequent research.&lt;/para&gt;
->
-> &lt;/listitem&gt;
->
-> &lt;listitem&gt;
->
-> &lt;para&gt;FLS LTER expects that any use of data from this server
-> will be accompanied with the appropriate citations and
-> acknowledgments. &lt;/para&gt;
->
-> &lt;/listitem&gt;
->
-> &lt;listitem&gt;
->
-> &lt;para&gt;FLS LTER encourages users to contact the original
-> investigator responsible for the data that they are accessing. Where
-> appropriate, researchers whose projects are integrally dependent on
-> FLS LTER data are encouraged to consider collaboration and/or
-> co-authorship with original investigators. &lt;/para&gt;
->
-> &lt;/listitem&gt;
->
-> &lt;listitem&gt;
->
-> &lt;para&gt;FLS LTER requests that users submit to FLS LTER one copy
-> of any publication resulting from the use of data obtained from this
-> site. &lt;/para&gt;
->
-> &lt;/listitem&gt;
->
-> &lt;listitem&gt;
->
-> &lt;para&gt;FLS LTER requests that users not redistribute data
-> obtained from this site. However, links or references to this site may
-> be freely posted.&lt;/para&gt;
->
-> &lt;/listitem&gt;
->
-> &lt;/itemizedlist&gt;
->
-> &lt;/para&gt;
->
-> &lt;/section&gt;
->
-> &lt;/intellectualRights&gt;
-
+```
+<intellectualRights>
+    <section>
+        <title>Copyright Notice</title>
+        <para> Copyright Board of Regents, Fictitious State University. This dataset is released to the public and may be used for academic, educational, or commercial purposes subject to the following restrictions:</para>
+        <para>
+            <itemizedlist>
+                <listitem>
+                    <para>While FLS LTER will make every effort possible to control and document the quality of the data it publishes, the data are made available "as is".</para>
+                </listitem>
+                <listitem>
+                    <para>FLS LTER cannot assume responsibility for damages resulting from mis-use or mis-interpretation of datasets or from errors or omissions that may exist in the data.</para>
+                </listitem>
+                <listitem>
+                    <para>It is considered a matter of professional ethics to acknowledge the work of other scientists that has resulted in data used in subsequent research.</para>
+                </listitem>
+                <listitem>
+                    <para>FLS LTER expects that any use of data from this server will be accompanied with the appropriate citations and acknowledgments. </para>
+                </listitem>
+                <listitem>
+                    <para>FLS LTER encourages users to contact the original investigator responsible for the data that they are accessing. Where appropriate, researchers whose projects are integrally dependent on FLS LTER data are encouraged to consider collaboration and/or co-authorship with original investigators. </para>
+                </listitem>
+                <listitem>
+                    <para>FLS LTER requests that users submit to FLS LTER one copy of any publication resulting from the use of data obtained from this site. </para>
+                </listitem>
+                <listitem>
+                    <para>FLS LTER requests that users not redistribute data obtained from this site. However, links or references to this site may be freely posted.</para>
+                </listitem>
+            </itemizedlist>
+        </para>
+    </section>
+</intellectualRights>
+```
+------
 ### ***distribution***
 
 This element is found at these locations (XPath):
@@ -1138,44 +935,29 @@ Data access logging can be implemented by using the Data Access Server
 (DAS) and its URL-proxy system. For more information about the DAS and
 how to use it, read the online documentation:
 <http://im.lternet.edu/im_practices/metadata/das>
-
+-------
 Example: distribution
+```
+<distribution>
+    <online>
+        <onlineDescription>f1s-1 Data Web Page</onlineDescription>
+        <url function=”information”>http://www.fsu.edu/lter/data/fls-1.htm</url>
+    </online>
+</distribution>
 
-> &lt;distribution&gt;
->
-> &lt;online&gt;
->
-> &lt;onlineDescription&gt;f1s-1 Data Web Page&lt;/onlineDescription&gt;
->
-> &lt;url
-> function=”information”&gt;http://www.fsu.edu/lter/data/fls-1.htm&lt;/url&gt;
->
-> &lt;/online&gt;
->
-> &lt;/distribution&gt;
->
-> &lt;dataTable&gt;
->
-> &lt;physical&gt;
->
-> …
->
-> &lt;distribution&gt;
->
-> &lt;online&gt;
->
-> &lt;onlineDescription&gt;f1s-1 Data Web Page&lt;/onlineDescription&gt;
->
-> &lt;url
-> function=”download”&gt;http://www.fsu.edu/lter/data/fls-1.csv&lt;/url&gt;
->
-> &lt;/online&gt;
->
-> &lt;/distribution&gt;
->
-> &lt;/physical&gt;
->
-> &lt;/dataTable&gt;
+<dataTable>
+    <physical>
+…
+        <distribution>
+            <online>
+                <onlineDescription>f1s-1 Data Web Page</onlineDescription>
+                <url function=”download”>http://www.fsu.edu/lter/data/fls-1.csv</url>
+            </online>
+        </distribution>
+    </physical>
+</dataTable>
+```
+---------
 
 ### ***coverage***
 
@@ -1230,41 +1012,27 @@ level if there are significant distances between study sites and it
 would be confusing if they were grouped into one bounding box, For
 example, cross site studies where a bounding box would represent North
 American or more should have two bounding boxes, one for each site.
-
+-------
 Example: geographicCoverage at the dataset level
-
-> &lt;coverage&gt;
->
-> &lt;geographicCoverage&gt;
->
-> &lt;geographicDescription&gt;Ficity, FI metropolitan area,
-> USA&lt;/geographicDescription&gt;
->
-> &lt;boundingCoordinates&gt;
->
-> &lt;westBoundingCoordinate&gt;-112.373614&lt;/westBoundingCoordinate&gt;
->
-> &lt;eastBoundingCoordinate&gt;-111.612936&lt;/eastBoundingCoordinate&gt;
->
-> &lt;northBoundingCoordinate&gt;33.708829&lt;/northBoundingCoordinate&gt;
->
-> &lt;southBoundingCoordinate&gt;33.298975&lt;/southBoundingCoordinate&gt;
->
-> &lt;boundingAltitudes&gt;
->
-> &lt;altitudeMinimum&gt;300&lt;/altitudeMinimum&gt;
->
-> &lt;altitudeMaximum&gt;600&lt;/altitudeMaximum&gt;
->
-> &lt;altitudeUnits&gt;meter&lt;/altitudeUnits&gt;
->
-> &lt;/boundingAltitudes&gt;
->
-> &lt;/boundingCoordinates&gt;
->
-> &lt;/geographicCoverage&gt;
->
-> &lt;/coverage&gt;
+```
+<coverage>
+    <geographicCoverage>
+        <geographicDescription>Ficity, FI metropolitan area, USA</geographicDescription>
+        <boundingCoordinates>
+            <westBoundingCoordinate>-112.373614</westBoundingCoordinate>
+            <eastBoundingCoordinate>-111.612936</eastBoundingCoordinate>
+            <northBoundingCoordinate>33.708829</northBoundingCoordinate>
+            <southBoundingCoordinate>33.298975</southBoundingCoordinate>
+            <boundingAltitudes>
+                <altitudeMinimum>300</altitudeMinimum>
+                <altitudeMaximum>600</altitudeMaximum>
+                <altitudeUnits>meter</altitudeUnits>
+            </boundingAltitudes>
+        </boundingCoordinates>
+    </geographicCoverage>
+</coverage>
+```
+----------
 
 If sampling took place in discrete point location, those sites should
 appear at
@@ -1273,69 +1041,40 @@ of individual sampling sites should be entered under
 &lt;**spatialSamplingUnits**&gt;, each site in a separate coverage
 element. More information about sampling sites can be found under
 &lt;**methods**&gt;,
-
+---------
 Example: geographicCoverage for single sampling point locations
-
-> &lt;spatialSamplingUnits&gt;
->
-> &lt;coverage&gt;
->
-> &lt;geographicDescription&gt;sitenumber
-> 1&lt;/geographicDescription&gt;
->
-> &lt;boundingCoordinates&gt;
->
-> &lt;westBoundingCoordinate&gt;-112.2&lt;/westBoundingCoordinate&gt;
->
-> &lt;eastBoundingCoordinate&gt;-112.2&lt;/eastBoundingCoordinate&gt;
->
-> &lt;northBoundingCoordinate&gt;33.5&lt;/northBoundingCoordinate&gt;
->
-> &lt;southBoundingCoordinate&gt;33.5&lt;/southBoundingCoordinate&gt;
->
-> &lt;/boundingCoordinates&gt;
->
-> &lt;/coverage&gt;
->
-> &lt;coverage&gt;
->
-> &lt;geographicDescription&gt;sitenumber
-> 2&lt;/geographicDescription&gt;
->
-> &lt;boundingCoordinates&gt;
->
-> &lt;westBoundingCoordinate&gt;-111.7&lt;/westBoundingCoordinate&gt;
->
-> &lt;eastBoundingCoordinate&gt;-111.7&lt;/eastBoundingCoordinate&gt;
->
-> &lt;northBoundingCoordinate&gt;33.6&lt;/northBoundingCoordinate&gt;
->
-> &lt;southBoundingCoordinate&gt;33.6&lt;/southBoundingCoordinate&gt;
->
-> &lt;/boundingCoordinates&gt;
->
-> &lt;/coverage&gt;
->
-> &lt;coverage&gt;
->
-> &lt;geographicDescription&gt;sitenumber
-> 3&lt;/geographicDescription&gt;
->
-> &lt;boundingCoordinates&gt;
->
-> &lt;westBoundingCoordinate&gt;-112.1&lt;/westBoundingCoordinate&gt;
->
-> &lt;eastBoundingCoordinate&gt;-112.1&lt;/eastBoundingCoordinate&gt;
->
-> &lt;northBoundingCoordinate&gt;33.7&lt;/northBoundingCoordinate&gt;
->
-> &lt;southBoundingCoordinate&gt;33.7&lt;/southBoundingCoordinate&gt;
->
-> &lt;/boundingCoordinates&gt;
->
-> &lt;/coverage&gt;
->
-> &lt;/spatialSamplingUnits&gt;
+```
+<spatialSamplingUnits>
+    <coverage>
+        <geographicDescription>sitenumber 1</geographicDescription>
+        <boundingCoordinates>
+            <westBoundingCoordinate>-112.2</westBoundingCoordinate>
+            <eastBoundingCoordinate>-112.2</eastBoundingCoordinate>
+            <northBoundingCoordinate>33.5</northBoundingCoordinate>
+            <southBoundingCoordinate>33.5</southBoundingCoordinate>
+        </boundingCoordinates>
+    </coverage>
+    <coverage>
+        <geographicDescription>sitenumber 2</geographicDescription>
+        <boundingCoordinates>
+            <westBoundingCoordinate>-111.7</westBoundingCoordinate>
+            <eastBoundingCoordinate>-111.7</eastBoundingCoordinate>
+            <northBoundingCoordinate>33.6</northBoundingCoordinate>
+            <southBoundingCoordinate>33.6</southBoundingCoordinate>
+        </boundingCoordinates>
+    </coverage>
+    <coverage>
+        <geographicDescription>sitenumber 3</geographicDescription>
+        <boundingCoordinates>
+            <westBoundingCoordinate>-112.1</westBoundingCoordinate>
+            <eastBoundingCoordinate>-112.1</eastBoundingCoordinate>
+            <northBoundingCoordinate>33.7</northBoundingCoordinate>
+            <southBoundingCoordinate>33.7</southBoundingCoordinate>
+        </boundingCoordinates>
+    </coverage>
+</spatialSamplingUnits>
+```
+---------
 
 Latitudes and longitudes should be in the same commonly used datum
 (i.e., all values in WGS84 or NAD83) and expressed to at least six
@@ -1406,28 +1145,21 @@ available, than an end date in the future that includes a period of time
 for which no data are yet available. Use the &lt;**maintanence**&gt; tag
 (below) to describe the update frequency. The methods/sampling tree
 should be used to describe the ongoing nature of the data collection.
-
+-------
 Example: temporalCoverage
-
-> &lt;temporalCoverage&gt;
->
-> &lt;rangeOfDates&gt;
->
-> &lt;beginDate&gt;
->
-> &lt;calendarDate&gt;1998-11-12&lt;/calendarDate&gt;
->
-> &lt;/beginDate&gt;
->
-> &lt;endDate&gt;
->
-> &lt;calendarDate&gt;2003-12-31&lt;/calendarDate&gt;
->
-> &lt;/endDate&gt;
->
-> &lt;/rangeOfDates&gt;
->
-> &lt;/temporalCoverage&gt;
+```
+<temporalCoverage>
+    <rangeOfDates>
+        <beginDate>
+            <calendarDate>1998-11-12</calendarDate>
+        </beginDate>
+        <endDate>
+            <calendarDate>2003-12-31</calendarDate>
+        </endDate>
+    </rangeOfDates>
+</temporalCoverage>
+```
+--------
 
 #### **taxonomicCoverage**
 
@@ -1470,164 +1202,86 @@ be listed in &lt;**taxonomicProcedures**&gt; are details of specimen
 processing, keys, and chemical or genetic analyses.
 &lt;**taxonomicCompleteness**&gt; may be used to document the status,
 estimated importance, and reason for incomplete identifications.
-
+--------
 Example: taxonomicCoverage
-
-> &lt;taxonomicCoverage&gt;
->
-> &lt;taxonomicSystem&gt;
->
-> &lt;classificationSystem&gt;
->
-> &lt;classificationSystemCitation&gt;
->
-> &lt;title&gt;Integrated Taxonomic Information System
-> (ITIS)&lt;/title&gt;
->
-> &lt;creator&gt;
->
-> &lt;organizationName&gt;Integrated Taxonomic Information
-> System&lt;/organizationName&gt;
->
-> &lt;onlineUrl&gt;http://www.itis.gov/&lt;/onlineUrl&gt;
->
-> &lt;/creator&gt;
->
-> &lt;generic&gt;
->
-> &lt;publisher&gt;
->
-> &lt;organizationName&gt;Integrated Taxonomic Information
-> System&lt;/organizationName&gt;
->
-> &lt;onlineUrl&gt;http://www.itis.gov/&lt;/onlineUrl&gt;
->
-> &lt;/publisher&gt;
->
-> &lt;/generic&gt;
->
-> &lt;/classificationSystemCitation&gt;
->
-> &lt;/classificationSystem&gt;
->
-> &lt;identifierName&gt;
->
-> &lt;references&gt;pers-1&lt;/references&gt;
->
-> &lt;/idnetifierName&gt;
->
-> &lt;taxonomicProcedures&gt;All individuals where identified and stored
-> in alcohol, except for one voucher specimen for each species which was
-> tagged and pinned.&lt;/taxonomicProcedures&gt;
->
-> &lt;/taxonomicSystem&gt;
->
-> &lt;generalTaxonomicCoverage&gt;Orthopteran insects (grasshoppers)
-> were
->
-> identified to species&lt;/generalTaxonomicCoverage&gt;
->
-> &lt;taxonomicClassification&gt;
->
-> &lt;taxonRankName&gt;Kingdom&lt;/taxonRankName&gt;
->
-> &lt;taxonRankValue&gt;Animalia&lt;/taxonRankValue&gt;
->
-> &lt;taxonomicClassification&gt;
->
-> &lt;taxonRankName&gt;Phylum&lt;/taxonRankName&gt;
->
-> &lt;taxonRankValue&gt;Mollusca&lt;/taxonRankValue&gt;
->
-> &lt;taxonomicClassification&gt;
->
-> &lt;taxonRankName&gt;Class&lt;/taxonRankName&gt;
->
-> &lt;taxonRankValue&gt;Gastropoda&lt;/taxonRankValue&gt;
->
-> &lt;taxonomicClassification&gt;
->
-> &lt;taxonRankName&gt;Order&lt;/taxonRankName&gt;
->
-> &lt;taxonRankValue&gt;Basommatophora&lt;/taxonRankValue&gt;
->
-> &lt;taxonomicClassification&gt;
->
-> &lt;taxonRankName&gt;Genus&lt;/taxonRankName&gt;
->
-> &lt;taxonRankValue&gt;Detracia&lt;/taxonRankValue&gt;
->
-> &lt;taxonomicClassification&gt;
->
-> &lt;taxonRankName&gt;Species&lt;/taxonRankName&gt;
->
-> &lt;taxonRankValue&gt;Detracia floridana&lt;/taxonRankValue&gt;
->
-> &lt;commonName&gt;Florida Melampus&lt;/commonName&gt;
->
-> &lt;/taxonomicClassification&gt;
->
-> &lt;/taxonomicClassification&gt;
->
-> &lt;/taxonomicClassification&gt;
->
-> &lt;/taxonomicClassification&gt;
->
-> &lt;/taxonomicClassification&gt;
->
-> &lt;/taxonomicClassification&gt;
->
-> &lt;taxonomicClassification&gt;
->
-> &lt;taxonRankName&gt;Kingdom&lt;/taxonRankName&gt;
->
-> &lt;taxonRankValue&gt;Animalia&lt;/taxonRankValue&gt;
->
-> &lt;taxonomicClassification&gt;
->
-> &lt;taxonRankName&gt;Phylum&lt;/taxonRankName&gt;
->
-> &lt;taxonRankValue&gt;Mollusca&lt;/taxonRankValue&gt;
->
-> &lt;taxonomicClassification&gt;
->
-> &lt;taxonRankName&gt;Class&lt;/taxonRankName&gt;
->
-> &lt;taxonRankValue&gt;Bivalvia&lt;/taxonRankValue&gt;
->
-> &lt;taxonomicClassification&gt;
->
-> &lt;taxonRankName&gt;Order&lt;/taxonRankName&gt;
->
-> &lt;taxonRankValue&gt;Filibranchia&lt;/taxonRankValue&gt;
->
-> &lt;taxonomicClassification&gt;
->
-> &lt;taxonRankName&gt;Genus&lt;/taxonRankName&gt;
->
-> &lt;taxonRankValue&gt;Geukensia&lt;/taxonRankValue&gt;
->
-> &lt;taxonomicClassification&gt;
->
-> &lt;taxonRankName&gt;Species&lt;/taxonRankName&gt;
->
-> &lt;taxonRankValue&gt;Geukensia demissa&lt;/taxonRankValue&gt;
->
-> &lt;commonName&gt;Ribbed Mussel&lt;/commonName&gt;
->
-> &lt;/taxonomicClassification&gt;
->
-> &lt;/taxonomicClassification&gt;
->
-> &lt;/taxonomicClassification&gt;
->
-> &lt;/taxonomicClassification&gt;
->
-> &lt;/taxonomicClassification&gt;
->
-> &lt;/taxonomicClassification&gt;
->
-> &lt;/taxonomicCoverage&gt;
+```
+<taxonomicCoverage>
+    <taxonomicSystem>
+        <classificationSystem>
+            <classificationSystemCitation>
+                <title>Integrated Taxonomic Information System (ITIS)</title>
+                <creator>
+                    <organizationName>Integrated Taxonomic Information System</organizationName>
+                    <onlineUrl>http://www.itis.gov/</onlineUrl>
+                </creator>
+                <generic>
+                    <publisher>
+                        <organizationName>Integrated Taxonomic Information System</organizationName>
+                        <onlineUrl>http://www.itis.gov/</onlineUrl>
+                    </publisher>
+                </generic>
+            </classificationSystemCitation>
+        </classificationSystem>
+    <identifierName>
+        <references>pers-1</references>
+    </idnetifierName>
+    <taxonomicProcedures>All individuals where identified and stored in alcohol, except for one voucher specimen for each species which was tagged and pinned.</taxonomicProcedures>
+    </taxonomicSystem>
+    <generalTaxonomicCoverage>Orthopteran insects (grasshoppers) were
+ identified to species</generalTaxonomicCoverage>
+    <taxonomicClassification>
+        <taxonRankName>Kingdom</taxonRankName>
+        <taxonRankValue>Animalia</taxonRankValue>
+        <taxonomicClassification>
+            <taxonRankName>Phylum</taxonRankName>
+            <taxonRankValue>Mollusca</taxonRankValue>
+            <taxonomicClassification>
+                <taxonRankName>Class</taxonRankName>
+                <taxonRankValue>Gastropoda</taxonRankValue>
+                <taxonomicClassification>
+                    <taxonRankName>Order</taxonRankName>
+                    <taxonRankValue>Basommatophora</taxonRankValue>
+                    <taxonomicClassification>
+                        <taxonRankName>Genus</taxonRankName>
+                        <taxonRankValue>Detracia</taxonRankValue>
+                        <taxonomicClassification>
+                            <taxonRankName>Species</taxonRankName>
+                            <taxonRankValue>Detracia floridana</taxonRankValue>
+                            <commonName>Florida Melampus</commonName>
+                        </taxonomicClassification>
+                    </taxonomicClassification>
+                </taxonomicClassification>
+            </taxonomicClassification>
+        </taxonomicClassification>
+    </taxonomicClassification>
+    <taxonomicClassification>
+        <taxonRankName>Kingdom</taxonRankName>
+        <taxonRankValue>Animalia</taxonRankValue>
+        <taxonomicClassification>
+            <taxonRankName>Phylum</taxonRankName>
+            <taxonRankValue>Mollusca</taxonRankValue>
+            <taxonomicClassification>
+                <taxonRankName>Class</taxonRankName>
+                <taxonRankValue>Bivalvia</taxonRankValue>
+                <taxonomicClassification>
+                    <taxonRankName>Order</taxonRankName>
+                    <taxonRankValue>Filibranchia</taxonRankValue>
+                    <taxonomicClassification>
+                        <taxonRankName>Genus</taxonRankName>
+                        <taxonRankValue>Geukensia</taxonRankValue>
+                        <taxonomicClassification>
+                            <taxonRankName>Species</taxonRankName>
+                            <taxonRankValue>Geukensia demissa</taxonRankValue>
+                            <commonName>Ribbed Mussel</commonName>
+                        </taxonomicClassification>
+                    </taxonomicClassification>
+                </taxonomicClassification>
+            </taxonomicClassification>
+        </taxonomicClassification>
+    </taxonomicClassification>
+</taxonomicCoverage>
+```
+--------
 
 ### ***maintenance***
 
@@ -1640,19 +1294,16 @@ changes to the data tables or metadata, including update frequency. The
 change history can also be used to describe alterations in static
 documents. The description element (TextType) can contain both formatted
 and unformatted text blocks.
-
+-------
 Example: maintenance
-
-> &lt;maintenance&gt;
->
-> &lt;description&gt;
->
-> &lt;para&gt;Data are updated annually at the end of the calendar
-> year.&lt;/para&gt;
->
-> &lt;/description&gt;
->
-> &lt;/maintenance&gt;
+```
+<maintenance>
+    <description>
+        <para>Data are updated annually at the end of the calendar year.</para>
+    </description>
+</maintenance>
+```
+----------
 
 ### ***methods***
 
@@ -1762,151 +1413,69 @@ can be used at the dataset, entity or attribute level, whichever is
 appropriate. At its most basic, use the &lt;**description**&gt; element.
 Tags are also available for a &lt;**citation**&gt; or
 &lt;**protocol**&gt;.
-
+------
 Example: methods
-
-> &lt;methods&gt;
->
-> &lt;methodStep&gt;
->
-> &lt;description&gt;
->
-> &lt;section&gt;
->
-> &lt;title&gt;Pitfall trap sampling for ground arthropod biodiversity
-> monitoring&lt;/title&gt;
->
-> &lt;para&gt;Supplies used: pitfall traps (P-16 plastic Solo cups with
-> lids) metal spades and large bulb planters (to dig holes in which to
-> put traps) 70% ethanol (to preserve specimens) Qorpak glass jars with
-> lids from the VWR Corporation, 120ml (4oz), cap size 58-400 (comes
-> included), Qorpak no. 7743C, VWR catalog no. 16195-703.&lt;/para&gt;
->
-> &lt;para&gt;Between 10 and 21 traps are placed at each site in
-> siutable location. &lt;/para&gt;
->
-> &lt;para&gt;All trapped taxa counted and measured (body length), most
-> taxa identified to Family, ants to Genus&lt;/para&gt;
->
-> &lt;/section&gt;
->
-> &lt;/description&gt;
->
-> &lt;instrumentation&gt;SBE MicroCAT 37-SM (S/N 1790); manufacturer:
-> Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Conductivity
-> (accuracy: 0.0003 S/m, readability: 0.00001 S/m, range: 0 to 7 S/m);
-> last calibration: Feb 28, 2001&lt;/instrumentation&gt;
->
-> &lt;instrumentation&gt;SBE MicroCAT 37-SM (S/N 1790); manufacturer:
-> Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Pressure
-> (water) (accuracy: 0.2m, readability: 0.0004m, range: 0 to 20m); last
-> calibration: Feb 28, 2001&lt;/instrumentation&gt;
->
-> &lt;instrumentation&gt;SBE MicroCAT 37-SM (S/N 1790); manufacturer:
-> Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Temperature
-> (water) (accuracy: 0.002°C, readability: 0.0001°C, range: -5 to 35°C);
-> last calibration: Feb 28, 2001&lt;/instrumentation&gt;
->
-> &lt;/methodStep&gt;
->
-> &lt;sampling&gt;
->
-> &lt;studyExtent&gt;
->
-> &lt;description&gt;
->
-> &lt;para&gt; Arthropod pit fall traps are placed in three different
-> locations four times a year&lt;/para&gt;
->
-> &lt;/description&gt;
->
-> &lt;/studyExtent&gt;
->
-> &lt;samplingDescription&gt;
->
-> &lt;para&gt;Six traps were set in a transect at each
-> location.&lt;/para&gt;
->
-> &lt;/samplingDescription&gt;
->
-> &lt;spatialSamplingUnits&gt;
->
-> &lt;coverage&gt;
->
-> &lt;geographicDescription&gt;site number
-> 1&lt;/geographicDescription&gt;
->
-> &lt;boundingCoordinates&gt;
->
-> &lt;westBoundingCoordinate&gt;-112.234566&lt;/westBoundingCoordinate&gt;
->
-> &lt;eastBoundingCoordinate&gt;-112.234566&lt;/eastBoundingCoordinate&gt;
->
-> &lt;northBoundingCoordinate&gt;33.534566&lt;/northBoundingCoordinate&gt;
->
-> &lt;southBoundingCoordinate&gt;33.534566&lt;/southBoundingCoordinate&gt;
->
-> &lt;/boundingCoordinates&gt;
->
-> &lt;/coverage&gt;
->
-> &lt;coverage&gt;
->
-> &lt;geographicDescription&gt;site number
-> 2&lt;/geographicDescription&gt;
->
-> &lt;boundingCoordinates&gt;
->
-> &lt;westBoundingCoordinate&gt;-111.745677&lt;/westBoundingCoordinate&gt;
->
-> &lt;eastBoundingCoordinate&gt;-111.745677&lt;/eastBoundingCoordinate&gt;
->
-> &lt;northBoundingCoordinate&gt;33.64577&lt;/northBoundingCoordinate&gt;
->
-> &lt;southBoundingCoordinate&gt;33.64577&lt;/southBoundingCoordinate&gt;
->
-> &lt;/boundingCoordinates&gt;
->
-> &lt;/coverage&gt;
->
-> &lt;coverage&gt;
->
-> &lt;geographicDescription&gt;site number
-> 3&lt;/geographicDescription&gt;
->
-> &lt;boundingCoordinates&gt;
->
-> &lt;westBoundingCoordinate&gt;-112.167899&lt;/westBoundingCoordinate&gt;
->
-> &lt;eastBoundingCoordinate&gt;-112.16799&lt;/eastBoundingCoordinate&gt;
->
-> &lt;northBoundingCoordinate&gt;33.76799&lt;/northBoundingCoordinate&gt;
->
-> &lt;southBoundingCoordinate&gt;33.76799&lt;/southBoundingCoordinate&gt;
->
-> &lt;/boundingCoordinates&gt;
->
-> &lt;/coverage&gt;
->
-> &lt;/spatialSamplingUnits&gt;
->
-> &lt;/sampling&gt;
->
-> &lt;qualityControl&gt;
->
-> &lt;description&gt;
->
-> &lt;para&gt;All specimens are archived for future reference. Quality
-> control during data entry is achieved with standard database
-> techniques of pulldowns that prevent typos and constraints. Scientists
-> inspect standard data summary statistics after data
-> entry.&lt;/para&gt;
->
-> &lt;/description&gt;
->
-> &lt;/qualityControl&gt;
->
-> &lt;/methods&gt;
+```
+<methodStep>
+        <description>
+            <section>
+                <title>Pitfall trap sampling for ground arthropod biodiversity monitoring</title>
+                <para>Supplies used: pitfall traps (P-16 plastic Solo cups with lids) metal spades and large bulb planters (to dig holes in which to put traps) 70% ethanol (to preserve specimens) Qorpak glass jars with lids from the VWR Corporation, 120ml (4oz), cap size 58-400 (comes included), Qorpak no. 7743C, VWR catalog no. 16195-703.</para>
+                <para>Between 10 and 21 traps are placed at each site in siutable location. </para>
+                <para>All trapped taxa counted and measured (body length), most taxa identified to Family, ants to Genus</para>
+            </section>
+        </description>
+        <instrumentation>SBE MicroCAT 37-SM (S/N 1790); manufacturer: Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Conductivity (accuracy: 0.0003 S/m, readability: 0.00001 S/m, range: 0 to 7 S/m); last calibration: Feb 28, 2001</instrumentation> 
+        <instrumentation>SBE MicroCAT 37-SM (S/N 1790); manufacturer: Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Pressure (water) (accuracy: 0.2m, readability: 0.0004m, range: 0 to 20m); last calibration: Feb 28, 2001</instrumentation>
+        <instrumentation>SBE MicroCAT 37-SM (S/N 1790); manufacturer: Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Temperature (water) (accuracy: 0.002°C, readability: 0.0001°C, range: -5 to 35°C); last calibration: Feb 28, 2001</instrumentation>
+    </methodStep>
+    <sampling>
+        <studyExtent>
+            <description>
+                <para> Arthropod pit fall traps are placed in three different locations four times a year</para>
+            </description>
+        </studyExtent>
+        <samplingDescription>
+            <para>Six traps were set in a transect at each location.</para>
+        </samplingDescription>
+        <spatialSamplingUnits>
+            <coverage>
+                <geographicDescription>site number 1</geographicDescription>
+                <boundingCoordinates>
+                    <westBoundingCoordinate>-112.234566</westBoundingCoordinate>
+                    <eastBoundingCoordinate>-112.234566</eastBoundingCoordinate>
+                    <northBoundingCoordinate>33.534566</northBoundingCoordinate>
+                    <southBoundingCoordinate>33.534566</southBoundingCoordinate>
+                </boundingCoordinates>
+            </coverage>
+            <coverage>
+                <geographicDescription>site number 2</geographicDescription>
+                <boundingCoordinates>
+                    <westBoundingCoordinate>-111.745677</westBoundingCoordinate>
+                    <eastBoundingCoordinate>-111.745677</eastBoundingCoordinate>
+                    <northBoundingCoordinate>33.64577</northBoundingCoordinate>
+                    <southBoundingCoordinate>33.64577</southBoundingCoordinate>
+                </boundingCoordinates>
+            </coverage>
+            <coverage>
+                <geographicDescription>site number 3</geographicDescription>
+                <boundingCoordinates>
+                    <westBoundingCoordinate>-112.167899</westBoundingCoordinate>
+                    <eastBoundingCoordinate>-112.16799</eastBoundingCoordinate>
+                    <northBoundingCoordinate>33.76799</northBoundingCoordinate>
+                    <southBoundingCoordinate>33.76799</southBoundingCoordinate>
+                </boundingCoordinates>
+            </coverage>
+        </spatialSamplingUnits>
+    </sampling>
+    <qualityControl>
+        <description>
+            <para>All specimens are archived for future reference. Quality control during data entry is achieved with standard database techniques of pulldowns that prevent typos and constraints. Scientists inspect standard data summary statistics after data entry.</para>
+        </description>
+    </qualityControl>
+</methods>
+```
+------
 
 ### ***project ***
 
@@ -1953,90 +1522,50 @@ These can be referenced by the
 studyExtent/spatialSamplingUnits/referencedEntityId. The sibling
 &lt;**descriptor**&gt; tag can be used for text descriptions of the
 site.
-
+------
 Example: project
-
-> &lt;projec&gt;
->
-> &lt;title&gt;FSL basic monitoring program&lt;/title&gt;
->
-> &lt;personnel id="pers-30" system="FLS"&gt;
->
-> &lt;individualName&gt;
->
-> &lt;salutation&gt;Dr.&lt;/salutation&gt;
->
-> &lt;givenName&gt;Eva&lt;/givenName&gt;
->
-> &lt;givenName&gt;M.&lt;/givenName&gt;
->
-> &lt;surName&gt;Scientist&lt;/surName&gt;
->
-> &lt;/individualName&gt;
->
-> &lt;address&gt;
->
-> &lt;deliveryPoint&gt;Department of Ecology&lt;/deliveryPoint&gt;
->
-> &lt;deliveryPoint&gt;Fictitious State University&lt;/deliveryPoint&gt;
->
-> &lt;deliveryPoint&gt;PO Box 111111&lt;/deliveryPoint&gt;
->
-> &lt;city&gt;Ficity&lt;/city&gt;
->
-> &lt;administrativeArea&gt;FI&lt;/administrativeArea&gt;
->
-> &lt;postalCode&gt;11111-1111&lt;/postalCode&gt;
->
-> &lt;/address&gt;
->
-> &lt;role&gt;principalInvestigator&lt;/role&gt;
->
-> &lt;/personnel&gt;
->
-> &lt;personnel id="pers-130" system="FLS"&gt;
->
-> &lt;individualName&gt;
->
-> &lt;givenName&gt;Monica&lt;/givenName&gt;
->
-> &lt;givenName&gt;D.&lt;/givenName&gt;
->
-> &lt;surName&gt;Techy&lt;/surName&gt;
->
-> &lt;/individualName&gt;
->
-> &lt;address&gt;
->
-> &lt;deliveryPoint&gt;Department for Ecology&lt;/deliveryPoint&gt;
->
-> &lt;deliveryPoint&gt;Fictitious State University&lt;/deliveryPoint&gt;
->
-> &lt;deliveryPoint&gt;PO Box 111111&lt;/deliveryPoint&gt;
->
-> &lt;city&gt;Ficity&lt;/city&gt;
->
-> &lt;administrativeArea&gt;FI&lt;/administrativeArea&gt;
->
-> &lt;postalCode&gt;11111-1111&lt;/postalCode&gt;
->
-> &lt;/address&gt;
->
-> &lt;role&gt; principalInvestigator&lt;/role&gt;
->
-> &lt;/personnel&gt;
->
-> &lt;abstract&gt;
->
-> &lt;para&gt;The FLS basic monitoring program consists of monitoring of
-> arthropod populations, plant net primary productivity, and bird
-> populations. Monitoring takes place at 3 locations, 4 times a year.
-> Climate parameters a continuously measured at all
-> stations.&lt;/para&gt;
->
-> &lt;/abstract&gt;
->
-> &lt;/project&gt;
+```
+<projec>
+    <title>FSL basic monitoring program</title>
+    <personnel id="pers-30" system="FLS">
+        <individualName>
+            <salutation>Dr.</salutation>
+            <givenName>Eva</givenName>
+            <givenName>M.</givenName>
+            <surName>Scientist</surName>
+        </individualName>
+        <address>
+            <deliveryPoint>Department of Ecology</deliveryPoint>
+            <deliveryPoint>Fictitious State University</deliveryPoint>
+            <deliveryPoint>PO Box 111111</deliveryPoint>
+            <city>Ficity</city>
+            <administrativeArea>FI</administrativeArea>
+            <postalCode>11111-1111</postalCode>
+        </address>
+        <role>principalInvestigator</role>
+    </personnel>
+    <personnel id="pers-130" system="FLS">
+        <individualName>
+            <givenName>Monica</givenName>
+            <givenName>D.</givenName>
+            <surName>Techy</surName>
+        </individualName>
+        <address>
+            <deliveryPoint>Department for Ecology</deliveryPoint>
+            <deliveryPoint>Fictitious State University</deliveryPoint>
+            <deliveryPoint>PO Box 111111</deliveryPoint>
+            <city>Ficity</city>
+            <administrativeArea>FI</administrativeArea>
+            <postalCode>11111-1111</postalCode>
+        </address>
+        <role> principalInvestigator</role>
+    </personnel>
+    <abstract>
+        <para>The FLS basic monitoring program consists of monitoring of arthropod populations, plant net primary productivity, and bird populations. Monitoring takes place at 3 locations, 4 times a year. Climate parameters a continuously measured at all stations.</para>
+    </abstract>
+</project>
+```
+------
 
 ###  ***\[entity\] = dataTable, spatialRaster, spatialVector, storedProcedure, view, otherEntity***
 
@@ -2171,63 +1700,38 @@ the dataset level for more information.
 
 &lt;**additionalInfo**&gt; is a text field for any material that cannot
 be characterized by the other elements for the data type.
-
+------
 Example: The elements in the EntityGroup, showing the
 &lt;**dataTable**&gt; entity.
-
-> &lt;dataTable&gt;
->
-> &lt;entityName&gt;arthro\_hab&lt;/entityName&gt;
->
-> &lt;entityDescription&gt; habitat description for the sampling
->
-> locations&lt;/entityDescription&gt;
->
-> &lt;physical&gt;
->
-> &lt;objectName&gt;fls-1.csv&lt;/objectName&gt;
->
-> &lt;dataFormat&gt;
->
-> &lt;textFormat&gt;
->
-> &lt;numHeaderLines&gt;1&lt;/numHeaderLines&gt;
->
-> &lt;numFooterLines&gt;0&lt;/numFooterLines&gt;
->
-> &lt;recordDelimiter&gt;\\r&lt;/recordDelimiter&gt;
->
-> &lt;numPhysicalLinesPerRecord&gt;1&lt;/numPhysicalLinesPerRecord&gt;
->
-> &lt;recordDelimiter&gt;\#x0A&lt;/recordDelimiter&gt;
->
-> &lt;attributeOrientation&gt;column&lt;/attributeOrientation&gt;
->
-> &lt;simpleDelimited&gt;
->
-> &lt;fieldDelimiter&gt;,&lt;/fieldDelimiter&gt;
->
-> &lt;/simpleDelimited&gt;
->
-> &lt;/textFormat&gt;
->
-> &lt;/dataFormat&gt;
->
-> &lt;distribution&gt;
->
-> &lt;online&gt;
->
-> &lt;onlineDescription&gt;f1s-1 Data File&lt;/onlineDescription&gt;
->
-> &lt;url
-> function=”download”&gt;http://www.fsu.edu/lter/data/fls-1.csv&lt;/url&gt;
->
-> &lt;/online&gt;
->
-> &lt;/distribution&gt;
->
-> &lt;/physical&gt;
-
+```
+<dataTable>
+    <entityName>arthro_hab</entityName>
+    <entityDescription> habitat description for the sampling 
+        locations</entityDescription>
+    <physical>
+        <objectName>fls-1.csv</objectName>
+        <dataFormat>
+            <textFormat>
+                <numHeaderLines>1</numHeaderLines>
+                <numFooterLines>0</numFooterLines>
+                <recordDelimiter>\r</recordDelimiter>
+                <numPhysicalLinesPerRecord>1</numPhysicalLinesPerRecord>
+                <recordDelimiter>#x0A</recordDelimiter>
+                <attributeOrientation>column</attributeOrientation>
+                <simpleDelimited>
+                    <fieldDelimiter>,</fieldDelimiter>
+                </simpleDelimited>
+            </textFormat>
+        </dataFormat>
+        <distribution>
+            <online>
+                <onlineDescription>f1s-1 Data File</onlineDescription>
+                <url function=”download”>http://www.fsu.edu/lter/data/fls-1.csv</url>
+            </online>
+        </distribution>
+    </physical>
+```
+------
 Each data type has a specific set of elements which follow the common
 elements. Table 1 is a summary of the Entity types, with examples of
 typical uses and the elements used for that type.
@@ -2405,619 +1909,312 @@ The examples show two attribute trees. The first was generated from an
 SQL system with a defined storage type. The second
 &lt;**attributeList**&gt; includes tags for &lt;**customUnits&gt;**,
 with the Unit defined in the &lt;**additionalMetadata**&gt; tree.
-
+------
 Example: attributeList/attribute dataTable
-
-> &lt;attributeList&gt;
->
-> &lt;attribute id="soil\_chemistry.site\_id"&gt;
->
-> &lt;attributeName&gt;site\_id&lt;/attributeName&gt;
->
-> &lt;attributeDefinition&gt;Site id as used in sites
-> table&lt;/attributeDefinition&gt;
->
-> &lt;storageType
-> typeSystem="http://www.w3.org/2001/XMLSchema-datatypes"&gt;string&lt;/storageType&gt;
->
-> &lt;measurementScale&gt;
->
-> &lt;nominal&gt;
->
-> &lt;nonNumericDomain&gt;
->
-> &lt;textDomain&gt;
->
-> &lt;definition&gt;Site id as used in sites table&lt;/definition&gt;
->
-> &lt;/textDomain&gt;
->
-> &lt;/nonNumericDomain&gt;
->
-> &lt;/nominal&gt;
->
-> &lt;/measurementScale&gt;
->
-> &lt;/attribute&gt;
->
-> &lt;attribute id="soil\_chemistry.pH"&gt;
->
-> &lt;attributeName&gt;pH&lt;/attributeName&gt;
->
-> &lt;attributeDefinition&gt;ph of soil
-> solution&lt;/attributeDefinition&gt;
->
-> &lt;storageType
-> typeSystem="http://www.w3.org/2001/XMLSchema-datatypes"&gt;float&lt;/storageType&gt;
->
-> &lt;measurementScale&gt;
->
-> &lt;ratio&gt;
->
-> &lt;unit&gt;
->
-> &lt;standardUnit&gt;dimensionless&lt;/standardUnit&gt;
->
-> &lt;/unit&gt;
->
-> &lt;precision&gt;0.01&lt;/precision&gt;
->
-> &lt;numericDomain&gt;
->
-> &lt;numberType&gt;real&lt;/numberType&gt;
->
-> &lt;/numericDomain&gt;
->
-> &lt;/ratio&gt;
->
-> &lt;/measurementScale&gt;
->
-> &lt;/attribute&gt;
->
-> &lt;attribute id="pass2001.q110"&gt;
->
-> &lt;attributeName&gt;q110&lt;/attributeName&gt;
->
-> &lt;attributeDefinition&gt;Q110-Preference for front yard
-> landscape&lt;/attributeDefinition&gt;
->
-> &lt;storageType
-> typeSystem="http://www.w3.org/2001/XMLSchema-datatypes"&gt;float&lt;/storageType&gt;
->
-> &lt;measurementScale&gt;
->
-> &lt;ordinal&gt;
->
-> &lt;nonNumericDomain&gt;
->
-> &lt;enumeratedDomain&gt;
->
-> &lt;codeDefinition&gt;
->
-> &lt;code&gt;1.00&lt;/code&gt;
->
-> &lt;definition&gt;1-A desert landscape&lt;/definition&gt;
->
-> &lt;/codeDefinition&gt;
->
-> &lt;codeDefinition&gt;
->
-> &lt;code&gt;2.00&lt;/code&gt;
->
-> &lt;definition&gt;2-Mostly lawn&lt;/definition&gt;
->
-> &lt;/codeDefinition&gt;
->
-> &lt;codeDefinition&gt;
->
-> &lt;code&gt;3.00&lt;/code&gt;
->
-> &lt;definition&gt;3-Some lawn&lt;/definition&gt;
->
-> &lt;/codeDefinition&gt;
->
-> &lt;/enumeratedDomain&gt;
->
-> &lt;/nonNumericDomain&gt;
->
-> &lt;/ordinal&gt;
->
-> &lt;/measurementScale&gt;
->
-> &lt;/attribute&gt;
->
-> &lt;attribute id="att.2"&gt;
->
-> &lt;attributeName&gt;Year&lt;/attributeName&gt;
->
-> &lt;attributeDefinition&gt;Calendar year of the observation from years
-> 1990 - 2010&lt;/attributeDefinition&gt;
->
-> &lt;storageType&gt;integer&lt;/storageType&gt;
->
-> &lt;measurementScale&gt;
->
-> &lt;dateTime&gt;
->
-> &lt;formatString&gt;YYYY&lt;/formatString&gt;
->
-> &lt;dateTimePrecision&gt;1&lt;/dateTimePrecision&gt;
->
-> &lt;dateTimeDomain&gt;
->
-> &lt;bounds&gt;
->
-> &lt;minimum exclusive="false"&gt;1993&lt;/minimum&gt;
->
-> &lt;maximum exclusive="false"&gt;2003&lt;/maximum&gt;
->
-> &lt;/bounds&gt;
->
-> &lt;/dateTimeDomain&gt;
->
-> &lt;/dateTime&gt;
->
-> &lt;/measurementScale&gt;
->
-> &lt;/attribute&gt;
->
-> &lt;attribute id="att.7"&gt;
->
-> &lt;attributeName&gt;Count&lt;/attributeName&gt;
->
-> &lt;attributeDefinition&gt;Number of individuals
-> observed&lt;/attributeDefinition&gt;
->
-> &lt;storageType&gt;integer&lt;/storageType&gt;
->
-> &lt;measurementScale&gt;
->
-> &lt;interval&gt;
->
-> &lt;unit&gt;
->
-> &lt;standardUnit&gt;number&lt;/standardUnit&gt;
->
-> &lt;/unit&gt;
->
-> &lt;precision&gt;1&lt;/precision&gt;
->
-> &lt;numericDomain&gt;
->
-> &lt;numberType&gt;whole&lt;/numberType&gt;
->
-> &lt;bounds&gt;
->
-> &lt;minimum exclusive="false"&gt;0&lt;/minimum&gt;
->
-> &lt;/bounds&gt;
->
-> &lt;/numericDomain&gt;
->
-> &lt;/interval&gt;
->
-> &lt;/measurementScale&gt;
->
-> &lt;missingValueCode&gt;
->
-> &lt;code&gt;NaN&lt;/code&gt;
->
-> &lt;codeExplanation&gt;value not recorded or
-> invalid&lt;/codeExplanation&gt;
->
-> &lt;/missingValueCode&gt;
->
-> &lt;/attribute&gt;
->
-> &lt;attribute id="att.7"&gt;
->
-> &lt;attributeName&gt;cond&lt;/attributeName&gt;
->
-> &lt;attributeLabel&gt;Conductivity&lt;/attributeLabel&gt;
->
-> &lt;attributeDefinition&gt;measured with SeaBird Elecronics
->
-> CTD-911&lt;/attributeDefinition&gt;
->
-> &lt;storageType&gt;float&lt;/storageType&gt;
->
-> &lt;measurementScale&gt;
->
-> &lt;ratio&gt;
->
-> &lt;unit&gt;
->
-> &lt;customUnit&gt;siemensPerMeter&lt;/customUnit&gt;
->
-> &lt;/unit&gt;
->
-> &lt;precision&gt;0.0001&lt;/precision&gt;
->
-> &lt;numericDomain&gt;
->
-> &lt;numberType&gt;real&lt;/numberType&gt;
->
-> &lt;bounds&gt;
->
-> &lt;minimum exclusive="false"&gt;0&lt;/minimum&gt;
->
-> &lt;maximum exclusive="false"&gt;40&lt;/maximum&gt;
->
-> &lt;/bounds&gt;
->
-> &lt;/numericDomain&gt;
->
-> &lt;/ratio&gt;
->
-> &lt;/measurementScale&gt;
->
-> &lt;/attribute&gt;
->
-> &lt;/attributeList&gt;
+```
+<attributeList>
+    <attribute id="soil_chemistry.site_id">
+        <attributeName>site_id</attributeName>
+        <attributeDefinition>Site id as used in sites table</attributeDefinition>
+        <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">string</storageType>
+        <measurementScale>
+            <nominal>
+                <nonNumericDomain>
+                    <textDomain>
+                        <definition>Site id as used in sites table</definition>
+                    </textDomain>
+                </nonNumericDomain>
+            </nominal>
+        </measurementScale>
+    </attribute>
+    <attribute id="soil_chemistry.pH">
+        <attributeName>pH</attributeName>
+        <attributeDefinition>ph of soil solution</attributeDefinition>
+        <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">float</storageType>
+        <measurementScale>
+            <ratio>
+                <unit>
+                    <standardUnit>dimensionless</standardUnit>
+                </unit>
+                <precision>0.01</precision>
+                <numericDomain>
+                    <numberType>real</numberType>
+                </numericDomain>
+            </ratio>
+        </measurementScale>
+    </attribute>
+    <attribute id="pass2001.q110">
+        <attributeName>q110</attributeName>
+        <attributeDefinition>Q110-Preference for front yard landscape</attributeDefinition>
+        <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">float</storageType>
+        <measurementScale>
+            <ordinal>
+                <nonNumericDomain>
+                    <enumeratedDomain>
+                        <codeDefinition>
+                            <code>1.00</code>
+                            <definition>1-A desert landscape</definition>
+                        </codeDefinition>
+                        <codeDefinition>
+                            <code>2.00</code>
+                            <definition>2-Mostly lawn</definition>
+                        </codeDefinition>
+                        <codeDefinition>
+                            <code>3.00</code>
+                            <definition>3-Some lawn</definition>
+                        </codeDefinition>
+                    </enumeratedDomain>
+                </nonNumericDomain>
+            </ordinal>
+        </measurementScale>
+    </attribute>
+    <attribute id="att.2">
+        <attributeName>Year</attributeName>
+        <attributeDefinition>Calendar year of the observation from years 1990 - 2010</attributeDefinition>
+        <storageType>integer</storageType>
+        <measurementScale>
+            <dateTime>
+                <formatString>YYYY</formatString>
+                <dateTimePrecision>1</dateTimePrecision>
+                <dateTimeDomain>
+                    <bounds>
+                        <minimum exclusive="false">1993</minimum>
+                        <maximum exclusive="false">2003</maximum>
+                    </bounds>
+                </dateTimeDomain>
+            </dateTime>
+        </measurementScale>
+    </attribute>
+    <attribute id="att.7">
+        <attributeName>Count</attributeName>
+        <attributeDefinition>Number of individuals observed</attributeDefinition>
+        <storageType>integer</storageType>
+        <measurementScale>
+            <interval>
+                <unit>
+                    <standardUnit>number</standardUnit>
+                </unit>
+                <precision>1</precision>
+                <numericDomain>
+                    <numberType>whole</numberType>
+                    <bounds>
+                        <minimum exclusive="false">0</minimum>
+                    </bounds>
+                </numericDomain>
+            </interval>
+        </measurementScale>
+        <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>value not recorded or invalid</codeExplanation>
+        </missingValueCode>
+    </attribute>
+    <attribute id="att.7">
+        <attributeName>cond</attributeName>
+        <attributeLabel>Conductivity</attributeLabel>
+        <attributeDefinition>measured with SeaBird Elecronics
+            CTD-911</attributeDefinition>
+        <storageType>float</storageType>
+        <measurementScale>
+            <ratio>
+                <unit>
+                    <customUnit>siemensPerMeter</customUnit>
+                </unit>
+                <precision>0.0001</precision>
+                <numericDomain>
+                    <numberType>real</numberType>
+                    <bounds>
+                        <minimum exclusive="false">0</minimum>
+                        <maximum exclusive="false">40</maximum>
+                    </bounds>
+                </numericDomain>
+            </ratio>
+        </measurementScale>
+    </attribute>
+</attributeList>
+```
+------
 
 The examples below show complete entity trees for
 &lt;**spatialVector**&gt; and &lt;**spatialRaster**&gt; converted via
 XSLT (stylesheet) from ESRI metadata format. For details see section
 I.2.3.
-
+------
 Example: Entity and attribute information for spatialVector
-
-> &lt;spatialVector id="Landuse for Ficity in 1955"&gt;
->
-> &lt;entityName&gt;Landuse for Ficity in 1955&lt;/entityName&gt;
->
-> &lt;entityDescription&gt;This GIS layer represents a reconstructed
-> generalized landuse map for the area of current Ficity around the time
-> period of 1955.&lt;/entityDescription&gt;
->
-> &lt;physical&gt;
->
-> &lt;objectName&gt;fls-20.zip&lt;/objectName&gt;
->
-> &lt;dataFormat&gt;
->
-> &lt;externallyDefinedFormat&gt;
->
-> &lt;formatName&gt;Shapefile&lt;/formatName&gt;
->
-> &lt;/externallyDefinedFormat&gt;
->
-> &lt;/dataFormat&gt;
->
-> &lt;distribution&gt;
->
-> &lt;online&gt;
->
-> &lt;onlineDescription&gt;f1s-20 Zipped Shapefile
-> File&lt;/onlineDescription&gt;
->
-> &lt;url function=”download”&gt;
-> http://www.fsu.edu/lter/data/fls-20.zip&lt;/url&gt;
->
-> &lt;/online&gt;
->
-> &lt;/distribution&gt;
->
-> &lt;/physical&gt;
->
-> &lt;attributeList id="Landuse for Ficity in 1955.attributeList"&gt;
->
-> &lt;attribute id="Landuse for Ficity in 1955.FID"&gt;
->
-> &lt;attributeName&gt;FID&lt;/attributeName&gt;
->
-> &lt;attributeDefinition&gt;Internal feature
-> number.&lt;/attributeDefinition&gt;
->
-> &lt;storageType
-> typeSystem="http://www.esri.com/metadata/esriprof80.html"&gt;OID&lt;/storageType&gt;
->
-> &lt;measurementScale&gt;
->
-> &lt;nominal&gt;
->
-> &lt;nonNumericDomain&gt;
->
-> &lt;textDomain&gt;
->
-> &lt;definition&gt;Sequential unique whole numbers that are
-> automatically generated.&lt;/definition&gt;
->
-> &lt;/textDomain&gt;
->
-> &lt;/nonNumericDomain&gt;
->
-> &lt;/nominal&gt;
->
-> &lt;/measurementScale&gt;
->
-> &lt;/attribute&gt;
->
-> &lt;attribute id="Landuse for Ficity in 1955.Shape"&gt;
->
-> &lt;attributeName&gt;Shape&lt;/attributeName&gt;
->
-> &lt;attributeDefinition&gt;Feature
-> geometry.&lt;/attributeDefinition&gt;
->
-> &lt;storageType
-> typeSystem=http://www.esri.com/metadata/esriprof80.html&gt;Geometry&lt;/storageType&gt;
->
-> &lt;measurementScale&gt;
->
-> &lt;nominal&gt;
->
-> &lt;nonNumericDomain&gt;
->
-> &lt;textDomain&gt;
->
-> &lt;definition&gt;Coordinates defining the
-> features.&lt;/definition&gt;
->
-> &lt;/textDomain&gt;
->
-> &lt;/nonNumericDomain&gt;
->
-> &lt;/nominal&gt;
->
-> &lt;/measurementScale&gt;
->
-> &lt;/attribute&gt;
->
-> &lt;attribute id="Landuse for Ficity in 1955.Z955"&gt;
->
-> &lt;attributeName&gt;Z955&lt;/attributeName&gt;
->
-> &lt;attributeDefinition&gt;This field signifies the landuse value for
-> each polygon.&lt;/attributeDefinition&gt;
->
-> &lt;storageType
-> typeSystem="http://www.w3.org/2001/XMLSchema-datatypes"&gt;string&lt;/storageType&gt;
->
-> &lt;measurementScale&gt;
->
-> &lt;nominal&gt;
->
-> &lt;nonNumericDomain&gt;
->
-> &lt;enumeratedDomain&gt;
->
-> &lt;codeDefinition&gt;
->
-> &lt;code&gt;Agriculture&lt;/code&gt;
->
-> &lt;definition&gt;Agricultural land use&lt;/definition&gt;
->
-> &lt;/codeDefinition&gt;
->
-> &lt;codeDefinition&gt;
->
-> &lt;code&gt;Urban&lt;/code&gt;
->
-> &lt;definition&gt;Urbanized area&lt;/definition&gt;
->
-> &lt;/codeDefinition&gt;
->
-> &lt;codeDefinition&gt;
->
-> &lt;code&gt;Desert&lt;/code&gt;
->
-> &lt;definition&gt;Unmodified area&lt;/definition&gt;
->
-> &lt;/codeDefinition&gt;
->
-> &lt;codeDefinition&gt;
->
-> &lt;code&gt;Recreation&lt;/code&gt;
->
-> &lt;definition&gt;Recreational land use&lt;/definition&gt;
->
-> &lt;/codeDefinition&gt;
->
-> &lt;/enumeratedDomain&gt;
->
-> &lt;/nonNumericDomain&gt;
->
-> &lt;/nominal&gt;
->
-> &lt;/measurementScale&gt;
->
-> &lt;/attribute&gt;
->
-> &lt;/attributeList&gt;
->
-> &lt;geometry&gt;Polygon&lt;/geometry&gt;
->
-> &lt;geometricObjectCount&gt;78&lt;/geometricObjectCount&gt;
->
-> &lt;spatialReference&gt;
->
-> &lt;horizCoordSysName&gt;NAD\_1927\_UTM\_Zone\_12N&lt;/horizCoordSysName&gt;
->
-> &lt;/spatialReference&gt;
->
-> &lt;/spatialVector&gt;
-
+```
+<spatialVector id="Landuse for Ficity in 1955">
+    <entityName>Landuse for Ficity in 1955</entityName>
+    <entityDescription>This GIS layer represents a reconstructed generalized landuse map for the area of current Ficity around the time period of 1955.</entityDescription>
+    <physical>
+        <objectName>fls-20.zip</objectName>
+        <dataFormat>
+            <externallyDefinedFormat>
+                <formatName>Shapefile</formatName>
+            </externallyDefinedFormat>
+        </dataFormat>
+        <distribution>
+            <online>
+                <onlineDescription>f1s-20 Zipped Shapefile File</onlineDescription>
+                <url function=”download”> http://www.fsu.edu/lter/data/fls-20.zip</url>
+            </online>
+        </distribution>
+    </physical>
+    <attributeList id="Landuse for Ficity in 1955.attributeList">
+        <attribute id="Landuse for Ficity in 1955.FID">
+            <attributeName>FID</attributeName>
+            <attributeDefinition>Internal feature number.</attributeDefinition>
+            <storageType typeSystem="http://www.esri.com/metadata/esriprof80.html">OID</storageType>
+            <measurementScale>
+                <nominal>
+                    <nonNumericDomain>
+                        <textDomain>
+                            <definition>Sequential unique whole numbers that are automatically generated.</definition>
+                        </textDomain>
+                    </nonNumericDomain>
+                </nominal>
+            </measurementScale>
+        </attribute>
+        <attribute id="Landuse for Ficity in 1955.Shape">
+            <attributeName>Shape</attributeName>
+            <attributeDefinition>Feature geometry.</attributeDefinition>
+            <storageType typeSystem=http://www.esri.com/metadata/esriprof80.html>Geometry</storageType>
+            <measurementScale>
+                <nominal>
+                    <nonNumericDomain>
+                        <textDomain>
+                            <definition>Coordinates defining the features.</definition>
+                        </textDomain>
+                    </nonNumericDomain>
+                </nominal>
+            </measurementScale>
+        </attribute>
+        <attribute id="Landuse for Ficity in 1955.Z955">
+            <attributeName>Z955</attributeName>
+            <attributeDefinition>This field signifies the landuse value for each polygon.</attributeDefinition>
+            <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">string</storageType>
+            <measurementScale>
+                <nominal>
+                    <nonNumericDomain>
+                        <enumeratedDomain>
+                            <codeDefinition>
+                                <code>Agriculture</code>
+                                <definition>Agricultural land use</definition>
+                            </codeDefinition>
+                            <codeDefinition>
+                                <code>Urban</code>
+                                        <definition>Urbanized area</definition>
+                            </codeDefinition>
+                            <codeDefinition>
+                                <code>Desert</code>
+                                <definition>Unmodified area</definition>
+                            </codeDefinition>
+                            <codeDefinition>
+                                <code>Recreation</code>
+                                <definition>Recreational land use</definition>
+                            </codeDefinition>
+                        </enumeratedDomain>
+                    </nonNumericDomain>
+                </nominal>
+            </measurementScale>
+        </attribute>
+    </attributeList>
+    <geometry>Polygon</geometry>
+    <geometricObjectCount>78</geometricObjectCount>
+    <spatialReference>
+        <horizCoordSysName>NAD_1927_UTM_Zone_12N</horizCoordSysName>
+    </spatialReference>
+</spatialVector>
+```
+------
+------
 Example: Entity and attribute information for spatialRaster
-
-> &lt;spatialRaster id="fi\_24k"&gt;
->
-> &lt;entityName&gt;fi\_24k&lt;/entityName&gt;
->
-> &lt;entityDefinition&gt;Ficiticiou State 7.5 Minute Digital Elevation
-> Model&lt;/entityDefinition&gt;
->
-> &lt;physical&gt;
->
-> &lt;objectName&gt; fls-30.zip &lt;/objectName&gt;
->
-> &lt;dataFormat&gt;
->
-> &lt;externallyDefinedFormat&gt;
->
-> &lt;formatName&gt;Esri Grid&lt;/formatName&gt;
->
-> &lt;/externallyDefinedFormat&gt;
->
-> &lt;/dataFormat&gt;
->
-> &lt;distribution&gt;
->
-> &lt;online&gt;
->
-> &lt;onlineDescription&gt;f1s-30 zipped raster data
-> File&lt;/onlineDescription&gt;
->
-> &lt;url function=”download”&gt;
-> http://www.fsu.edu/lter/data/fls-30.zip&lt;/url&gt;
->
-> &lt;/online&gt;
->
-> &lt;/distribution&gt;
->
-> &lt;/physical&gt;
->
-> &lt;attributeList id="fi\_24k.attributeList"&gt;
->
-> &lt;attribute id="fi\_24k.ObjectID"&gt;
->
-> &lt;attributeName&gt;ObjectID&lt;/attributeName&gt;
->
-> &lt;attributeDefinition&gt;Internal feature
-> number.&lt;/attributeDefinition&gt;
->
-> &lt;storageType
-> typeSystem="http://www.esri.com/metadata/esriprof80.html"&gt;OID&lt;/storageType&gt;
->
-> &lt;measurementScale&gt;
->
-> &lt;nominal&gt;
->
-> &lt;nonNumericDomain&gt;
->
-> &lt;textDomain&gt;
->
-> &lt;definition&gt;Sequential unique whole numbers that are
-> automatically generated.&lt;/definition&gt;
->
-> &lt;/textDomain&gt;
->
-> &lt;/nonNumericDomain&gt;
->
-> &lt;/nominal&gt;
->
-> &lt;/measurementScale&gt;
->
-> &lt;/attribute&gt;
->
-> &lt;attribute id="fi\_24k.Cell Value"&gt;
->
-> &lt;attributeName&gt;Cell Value&lt;/attributeName&gt;
->
-> &lt;attributeDefinition&gt;Elevation Value&lt;/attributeDefinition&gt;
->
-> &lt;storageType
-> typeSystem="http://www.esri.com/metadata/esriprof80.html"
->
-> &gt;Integer&lt;/storageType&gt;
->
-> &lt;measurementScale&gt;
->
-> &lt;ratio&gt;
->
-> &lt;unit&gt;
->
-> &lt;standardUnit&gt;meter&lt;/standardUnit&gt;
->
-> &lt;/unit&gt;
->
-> &lt;precision/&gt;
->
-> &lt;numericDomain&gt;
->
-> &lt;numberType&gt;integer&lt;/numberType&gt;
->
-> &lt;bounds&gt;
->
-> &lt;minimum exclusive="true"&gt;-5193.000000&lt;/minimum&gt;
->
-> &lt;maximum exclusive="true"&gt;14785.000000&lt;/maximum&gt;
->
-> &lt;/bounds&gt;
->
-> &lt;/numericDomain&gt;
->
-> &lt;/ratio&gt;
->
-> &lt;/measurementScale&gt;
->
-> &lt;/attribute&gt;
->
-> &lt;attribute id="fi\_24k.Count"&gt;
->
-> &lt;attributeName&gt;Count&lt;/attributeName&gt;
->
-> &lt;attributeDefinition&gt;Count&lt;/attributeDefinition&gt;
->
-> &lt;storageType
-> typeSystem="http://www.esri.com/metadata/esriprof80.html"
->
-> &gt;Integer&lt;/storageType&gt;
->
-> &lt;measurementScale&gt;
->
-> &lt;ratio&gt;
->
-> &lt;unit&gt;
->
-> &lt;standardUnit&gt;number&lt;/standardUnit&gt;
->
-> &lt;/unit&gt;
->
-> &lt;precision/&gt;
->
-> &lt;numericDomain&gt;
->
-> &lt;numberType&gt;whole&lt;/numberType&gt;
->
-> &lt;/numericDomain&gt;
->
-> &lt;/ratio&gt;
->
-> &lt;/measurementScale&gt;
->
-> &lt;/attribute&gt;
->
-> &lt;/attributeList&gt;
->
-> &lt;spatialReference&gt;
->
-> &lt;horizCoordSysName&gt;NAD\_1927\_UTM\_Zone\_12N&lt;/horizCoordSysName&gt;
->
-> &lt;/spatialReference&gt;
->
-> &lt;horizontalAccuracy&gt;not available&lt;/horizontalAccuracy&gt;
->
-> &lt;verticalAccuracy&gt;not available&lt;/verticalAccuracy&gt;
->
-> &lt;cellSizeXDirection&gt;30.0&lt;/cellSizeXDirection&gt;
->
-> &lt;cellSizeYDirection&gt;30.0&lt;/cellSizeYDirection&gt;
->
-> &lt;numberOfBands&gt;1&lt;/numberOfBands&gt;
->
-> &lt;rasterOrigin&gt;Upper Left&lt;/rasterOrigin&gt;
->
-> &lt;rows&gt;21092&lt;/rows&gt;
->
-> &lt;columns&gt;18136&lt;/columns&gt;
->
-> &lt;verticals&gt;1&lt;/verticals&gt;
->
-> &lt;cellGeometry&gt;matrix&lt;/cellGeometry&gt;
->
-> &lt;/spatialRaster&gt;
-
+```
+<spatialRaster id="fi_24k">
+    <entityName>fi_24k</entityName>
+    <entityDefinition>Ficiticiou State 7.5 Minute Digital Elevation Model</entityDefinition>
+    <physical>
+        <objectName> fls-30.zip </objectName>
+        <dataFormat>
+            <externallyDefinedFormat>
+                <formatName>Esri Grid</formatName>
+            </externallyDefinedFormat>
+        </dataFormat>
+        <distribution>
+            <online>
+                <onlineDescription>f1s-30 zipped raster data File</onlineDescription>
+                <url function=”download”> http://www.fsu.edu/lter/data/fls-30.zip</url>
+            </online>
+        </distribution>
+    </physical>
+    <attributeList id="fi_24k.attributeList">
+        <attribute id="fi_24k.ObjectID">
+            <attributeName>ObjectID</attributeName>
+            <attributeDefinition>Internal feature number.</attributeDefinition>
+            <storageType typeSystem="http://www.esri.com/metadata/esriprof80.html">OID</storageType>
+            <measurementScale>
+                <nominal>
+                    <nonNumericDomain>
+                        <textDomain>
+                            <definition>Sequential unique whole numbers that are automatically generated.</definition>
+                        </textDomain>
+                    </nonNumericDomain>
+                </nominal>
+            </measurementScale>
+        </attribute>
+        <attribute id="fi_24k.Cell Value">
+            <attributeName>Cell Value</attributeName>
+            <attributeDefinition>Elevation Value</attributeDefinition>
+            <storageType typeSystem="http://www.esri.com/metadata/esriprof80.html"
+                        >Integer</storageType>
+            <measurementScale>
+                <ratio>
+                    <unit>
+                        <standardUnit>meter</standardUnit>
+                    </unit>
+                    <precision/>
+                    <numericDomain>
+                        <numberType>integer</numberType>
+                        <bounds>
+                            <minimum exclusive="true">-5193.000000</minimum>
+                            <maximum exclusive="true">14785.000000</maximum>
+                        </bounds>
+                    </numericDomain>
+                </ratio>
+            </measurementScale>
+        </attribute>
+        <attribute id="fi_24k.Count">
+            <attributeName>Count</attributeName>
+            <attributeDefinition>Count</attributeDefinition>
+            <storageType typeSystem="http://www.esri.com/metadata/esriprof80.html"
+                        >Integer</storageType>
+            <measurementScale>
+                <ratio>
+                    <unit>
+                        <standardUnit>number</standardUnit>
+                    </unit>
+                    <precision/>
+                    <numericDomain>
+                        <numberType>whole</numberType>
+                    </numericDomain>
+                </ratio>
+            </measurementScale>
+        </attribute>
+    </attributeList>
+    <spatialReference>
+        <horizCoordSysName>NAD_1927_UTM_Zone_12N</horizCoordSysName>
+    </spatialReference>
+    <horizontalAccuracy>not available</horizontalAccuracy>
+    <verticalAccuracy>not available</verticalAccuracy>
+    <cellSizeXDirection>30.0</cellSizeXDirection>
+    <cellSizeYDirection>30.0</cellSizeYDirection>
+    <numberOfBands>1</numberOfBands>
+    <rasterOrigin>Upper Left</rasterOrigin>
+    <rows>21092</rows>
+    <columns>18136</columns>
+    <verticals>1</verticals>
+    <cellGeometry>matrix</cellGeometry>
+</spatialRaster>
+```
+------
 ### ***constraint***
 
 This element tree is found at (XPath):
@@ -3082,42 +2279,28 @@ no null values should be present for an attribute in this entity.
 
 *Note: All &lt;**ConstraintType**&gt; entities require additional
 &lt;**constraintName**&gt; and &lt;**attributeReference**&gt; tags. *
-
+------
 Example: constraint
-
-> &lt;constraint id="soil\_chemistry.PRIMARY"&gt;
->
-> &lt;primaryKey&gt;
->
-> &lt;constraintName&gt;PRIMARY&lt;/constraintName&gt;
->
-> &lt;key&gt;
->
-> &lt;attributeReference&gt;soil\_chemistry.ID&lt;/attributeReference&gt;
->
-> &lt;/key&gt;
->
-> &lt;/primaryKey&gt;
->
-> &lt;/constraint&gt;
->
-> &lt;constraint id="soil\_chemistry.FK\_soil\_chemistry\_sites"&gt;
->
-> &lt;foreignKey&gt;
->
-> &lt;constraintName&gt;FK\_soil\_chemistry\_sites&lt;/constraintName&gt;
->
-> &lt;key&gt;
->
-> &lt;attributeReference&gt;soil\_chemistry.site\_id&lt;/attributeReference&gt;
->
-> &lt;/key&gt;
->
-> &lt;entityReference&gt;sites&lt;/entityReference&gt;
->
-> &lt;/foreignKey&gt;
->
-> &lt;/constraint&gt;
+```
+<constraint id="soil_chemistry.PRIMARY">
+    <primaryKey>
+        <constraintName>PRIMARY</constraintName>
+        <key>
+            <attributeReference>soil_chemistry.ID</attributeReference>
+        </key>
+                </primaryKey>
+</constraint>
+<constraint id="soil_chemistry.FK_soil_chemistry_sites">
+    <foreignKey>
+        <constraintName>FK_soil_chemistry_sites</constraintName>
+        <key>
+            <attributeReference>soil_chemistry.site_id</attributeReference>
+        </key>
+        <entityReference>sites</entityReference>
+    </foreignKey>
+</constraint>
+```
+------
 
 ### ***additionalMetadata***
 
@@ -3162,33 +2345,25 @@ elements. The EML Parser expects to find the description of a
 &lt;**customUnit**&gt; should be retrieved in STMML format from the Unit
 Registry
 ([http://unit.lternet.edu/unitregistry/](http://www.google.com/url?q=http%3A%2F%2Funit.lternet.edu%2Funitregistry%2F&sa=D&sntz=1&usg=AFQjCNHww6CKpPuowRSQ114t45vDm0pm4Q)).
-
+------
 Example: additionalMetadata custom unit
-
-> &lt;additionalMetadata&gt;
->
-> &lt;metadata&gt;
->
-> &lt;stmml:unitList&gt;
->
-> &lt;stmml:unit id="siemensPerMeter" name="siemensPerMeter"
-> abbreviation="S/m" unitType="conductance" parentSI="siemen"
-> multiplierToSI="1" constantToSI="0"&gt;
->
-> &lt;stmml:description&gt;conductivity unit&lt;/stmml:description&gt;
->
-> &lt;/stmml:unit&gt;
->
-> &lt;/stmml:unitList&gt;
->
-> &lt;/metadata&gt;
->
-> &lt;/additionalMetadata&gt;
-
+```
+<additionalMetadata>
+    <metadata>
+        <stmml:unitList>
+            <stmml:unit id="siemensPerMeter" name="siemensPerMeter" abbreviation="S/m" unitType="conductance" parentSI="siemen" multiplierToSI="1" constantToSI="0">
+                <stmml:description>conductivity unit</stmml:description>
+            </stmml:unit>
+        </stmml:unitList>
+    </metadata>
+</additionalMetadata>
+```
+------
 
 
 III.3 Provenance Tracking in EML
 --------------------------------
+TO DO: move this to the methods element.
 
 Wikitionary defines "provenance" as the "place or source of origin" of
 an object (June 2010, http://en.wiktionary.org/wiki/provenance). EML has
@@ -3222,189 +2397,35 @@ will depend on where the derived object is being described - for
 example, the &lt;methods&gt; tree at the &lt;dataset&gt; level could be
 used to describe the provenance information for the entire derived
 object.
-
+------
 Example: provenance
-
-> &lt;methods&gt;
->
-> &lt;methodStep&gt;
->
-> &lt;description&gt;
->
-> &lt;section&gt;
->
-> &lt;para&gt; We utilize NPP data collected from 1906 to 2006 from the
-> ONL LTER site. The ONL NPP data unit definition is kg/m\^2/yr. This
-> unit does not require conversion. &lt;/para&gt;
->
-> &lt;/section&gt;
->
-> &lt;/description&gt;
->
-> &lt;dataSource&gt;
->
-> &lt;title&gt; NPP data from ONL 1906 to 2006 &lt;/title&gt;
->
-> &lt;creator&gt;
->
-> &lt;organizationName&gt; ONL LTER &lt;/organizationName&gt;
->
-> &lt;/creator&gt;
->
-> &lt;distribution&gt;
->
-> &lt;online&gt;
->
-> &lt;url&gt; http://metacat.lternet.edu/knb/metacat/knb-lter-onl.23.1
-> &lt;/url&gt;
->
-> &lt;/online&gt;
->
-> &lt;/distribution&gt;
->
-> &lt;contact&gt;
->
-> &lt;organizationName&gt; ONL LTER &lt;/organizationName&gt;
->
-> &lt;positionName&gt; ONL Information Manager &lt;/positionName&gt;
->
-> &lt;electronicMailAddress&gt; im@onl.lternet.edu
-> &lt;/electronicMailAddress&gt;
->
-> &lt;/contact&gt;
->
-> &lt;/dataSource&gt;
->
-> &lt;/methodStep&gt;
->
-> &lt;/methods&gt;
-
-
-IV. Descriptions of EML sample files provided with this document
-================================================================
-
-Example 1: Complete EML from which the examples in this document were
-derived
-
-Example 2: EML for the provenance example
-
-V. Other resources 
-===================
-
-Documents are ordered by year. Applications are alphabetical by title.
-
-*Documents*:
-
-EML 2.1.0 schema and normative documentation (2008):
-[http://knb.ecoinformatics.org/software/eml/](http://www.google.com/url?q=http%3A%2F%2Fknb.ecoinformatics.org%2Fsoftware%2Feml%2F&sa=D&sntz=1&usg=AFQjCNF4N6AsKlyYSPW-7BidAbbYO8R57g)
-
-EML-2.1.0 FAQ (2008):
-[http://knb.ecoinformatics.org/software/eml/eml-2.1.0/eml-faq.html](http://www.google.com/url?q=http%3A%2F%2Fknb.ecoinformatics.org%2Fsoftware%2Feml%2Feml-2.1.0%2Feml-faq.html&sa=D&sntz=1&usg=AFQjCNHdzk-0kWI27Bz9yZA_woWdOzlIIg)
-
-ESRI to EML conversion stylesheet documentation and recommendations
-(yyyy: <http://im.lternet.edu/project/Esri2Eml>
-
-EML Best Practices for LTER Sites, Version 1 (2004):
-<http://im.lternet.edu/sites/im.lternet.edu/files/emlbestpractices_oct2004_final.pdf>
-
-EML Handbook (yyyy):
-<http://im.lternet.edu/sites/im.lternet.edu/files/emlHandbook.pdf>
-
-Report from the 2003 EML implementation workshop at SEV (2003):
-
-*Applications and Websites:*
-
-LNO Data Access Server:
-[http://im.lternet.edu/im\_practices/metadata/das](http://intranet.lternet.edu/im/im_practices/metadata/das)
-
-LNO Metacat Harvester info:
-[http://im.lternet.edu/node/418](http://intranet.lternet.edu/im/node/418)
-
-LTER Project Database:
-<http://im.lternet.edu/project/LTERProjectDatabase>
-
-LTER Unit dictionary: <http://unit.lternet.edu>
-
-Metacat and Morpho: <http://ecoinformatics.org/tools.html>
-
-Observational Data Model (ODM) used by CUASHI hydrological information
-system at:
-[http://his.cuahsi.org/index.html](http://www.google.com/url?q=http%3A%2F%2Fhis.cuahsi.org%2Findex.html&sa=D&sntz=1&usg=AFQjCNHKROli8pRG8-QDqcNuWWmkgQ9hew).
-
-VI. Contributors to this Document
-=================================
-
-**EML Best Practices Workshop, LTER Network Office, Albuquerque, NM
-(June 21-23, 2010)**
-
-Best Practices Working Group:
-
-· Dan Bahauddin (CDR)
-
-· Emery Boose (HFR)
-
-· Corinna Gries (NTL)
-
-· Margaret O’Brien (SBC)
-
-· Ken Ramsey (JRN)
-
-· Mark Servilla (LNO)
-
-· Theresa Valentine (AND)
-
-· Jonathan Walsh (BES)
-
-Co-participants:
-
-· James Brunt (LNO)
-
-· Inigo San Gil (LNO)
-
-· Philip Tarrant (CAP)
-
-· Yang Xia (LNO)
-
-**EML Best Practices Workshop, LTER Network Office, Albuquerque, NM (May
-19-20, 2004)**
-
-Best Practices Working Group:
-
-· James Brunt (LNO)
-
-· Corinna Gries (CAP)
-
-· Jeanine McGann (LNO)
-
-· Margaret O’Brien (SBC)
-
-· Ken Ramsey (JRN)
-
-· Wade Sheldon (GCE)
-
-Co-participants:
-
-· Duane Costa (LNO)
-
-· Mark Servilla (LNO)
-
-**LTER EML Implementation Workshop, Sevilleta Research Station,
-Sevilleta National Wildlife Refuge, NM (June 9-10, 2003)**
-
-Best Practices Working Group:
-
-· Barbara Benson (NTL)
-
-· James Brunt (LNO)
-
-· Don Henshaw (AND)
-
-· John Vande Castle (LNO)
-
-· Kristin Vanderbilt (SEV)
-
-Working Group Support:
-
-· Jeanine McGann (LNO)
+```
+<methods>
+    <methodStep>
+        <description>
+            <section>
+                <para> We utilize NPP data collected from 1906 to 2006 from the ONL LTER site. The ONL NPP data unit definition is kg/m^2/yr. This unit does not require conversion. </para>
+            </section>
+        </description>
+        <dataSource>
+            <title> NPP data from ONL 1906 to 2006 </title>
+            <creator>
+                <organizationName> ONL LTER </organizationName>
+            </creator>
+            <distribution>
+                <online>
+                    <url> http://metacat.lternet.edu/knb/metacat/knb-lter-onl.23.1 </url>
+                </online>
+            </distribution>
+            <contact>
+                <organizationName> ONL LTER </organizationName>
+                <positionName> ONL Information Manager </positionName>
+                <electronicMailAddress> im@onl.lternet.edu </electronicMailAddress>
+            </contact>
+        </dataSource>
+    </methodStep>
+</methods>
+```
+------
 
 
