@@ -1,85 +1,83 @@
 > **EML Best Practice Recommendations by Element**
 
 ========
+
 [I. Introduction 2](#i.-introduction)
 
-[II. Detailed content recommendations For Elements and Attributes
-7](#ii.-detailed-content-recommendations-for-elements-and-attributes)
+[II. Detailed content recommendations For Elements and Attributes](#ii.-detailed-content-recommendations-for-elements-and-attributes)
 
 
 [II.2 Recommendations by element](#ii.2-recommendations-by-element)
 
 [The root element: &lt;eml:eml&gt;](#the-root-element-emleml)
 
-[@packageId (XML attribute) 8](#packageid-xml-attribute)
+[@packageId (XML attribute)](#packageid-xml-attribute)
 
 [id, system and scope (XML attribute group)
 8](#id-system-and-scope-xml-attribute-group)
 
-[access 10](#access)
+[access](#access)
 
-[*dataset* 10](#_Toc297021932)
+[dataset](#_Toc297021932)
 
-[alternateIdentifier 11](#alternateidentifier)
+[alternateIdentifier](#alternateidentifier)
 
-[title (dataset) 12](#title-dataset)
+[title (dataset)](#title-dataset)
 
-[People and Organizations (Parties)
-12](#people-and-organizations-parties)
+[People and Organizations (Parties)](#people-and-organizations-parties)
 
-> [creator 13](#creator)
+> [creator](#creator)
 >
-> [metadataProvider 14](#metadataprovider)
+> [metadataProvider](#metadataprovider)
 >
-> [associatedParty 14](#associatedparty)
+> [associatedParty](#associatedparty)
 >
-> [contact 15](#contact)
+> [contact](#contact)
 >
-> [publisher 15](#publisher)
+> [publisher](#publisher)
 
-[pubDate 16](#pubdate)
+[pubDate](#pubdate)
 
-[abstract 16](#abstract)
+[abstract](#abstract)
 
-[keywordSet and keyword 16](#keywordset-and-keyword)
+[keywordSet and keyword](#keywordset-and-keyword)
 
-[intellectualRights 17](#intellectualrights)
+[intellectualRights](#intellectualrights)
 
-[distribution 18](#distribution)
+[distribution](#distribution)
 
-[coverage 20](#coverage)
+[coverage](#coverage)
 
-> [geographicCoverage 20](#geographiccoverage)
-
-[temporalCoverage 23](#temporalcoverage)
-
-[taxonomicCoverage 23](#taxonomiccoverage)
-
-[maintenance 26](#maintenance)
-
-> [methods 26](#methods)
+> [geographicCoverage](#geographiccoverage)
 >
-> [methodStep 27](#methodstep)
->
-> [instrumentation 27](#instrumentation)
->
-> [dataSource 27](#datasource)
->
-> [sampling 27](#sampling)
->
-> [qualityControl 28](#qualitycontrol)
+> [temporalCoverage](#temporalcoverage)
+> 
+> [taxonomicCoverage](#taxonomiccoverage)
 
-[project 29](#project)
+[maintenance](#maintenance)
+
+[methods](#methods)
+>
+> [methodStep](#methodstep)
+>
+> [instrumentation] (#instrumentation)
+>
+> [dataSource](#datasource)
+>
+> [sampling](#sampling)
+>
+> [qualityControl](#qualitycontrol)
+
+[project](#project)
 
 [\[entity\] = dataTable, spatialRaster, spatialVector, storedProcedure,
-view, otherEntity
-31](#entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity)
+view, otherEntity](#entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity)
 
-[attributeList 35](#attributelist)
+[attributeList](#attributelist)
 
-[constraint 43](#constraint)
+> [constraint](#constraint)
 
-[additionalMetadata 45](#additionalmetadata)
+[additionalMetadata](#additionalmetadata)
 
 
 I. Introduction
