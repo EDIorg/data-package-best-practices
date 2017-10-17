@@ -2,78 +2,44 @@
 
 ========
 
-[Introduction](#introduction)
-
-[Recommendations by element](#recommendations-by-element)
-
-[The root element: &lt;eml:eml&gt;](#the-root-element-emleml)
-
-[@packageId (XML attribute)](#packageid-xml-attribute)
-
-[id, system and scope (XML attribute group)](#id-system-and-scope-xml-attribute-group)
-
-[access](#access)
-
-[dataset](#dataset)
-
-[alternateIdentifier](#alternateidentifier)
-
-[title (dataset)](#title-dataset)
-
-[People and Organizations (Parties)](#people-and-organizations-parties)
-
-> [creator](#creator)
->
-> [metadataProvider](#metadataprovider)
->
-> [associatedParty](#associatedparty)
->
-> [contact](#contact)
->
-> [publisher](#publisher)
-
-[pubDate](#pubdate)
-
-[abstract](#abstract)
-
-[keywordSet and keyword](#keywordset-and-keyword)
-
-[intellectualRights](#intellectualrights)
-
-[distribution](#distribution)
-
-[coverage](#coverage)
-
-> [geographicCoverage](#geographiccoverage)
->
-> [temporalCoverage](#temporalcoverage)
-> 
-> [taxonomicCoverage](#taxonomiccoverage)
-
-[maintenance](#maintenance)
-
-[methods](#methods)
->
-> [methodStep](#methodstep)
->
-> [instrumentation](#instrumentation)
->
-> [dataSource](#datasource)
->
-> [sampling](#sampling)
->
-> [qualityControl](#qualitycontrol)
-
-[project](#project)
-
-[\[entity\] = dataTable, spatialRaster, spatialVector, storedProcedure,
+* [Introduction](#introduction)
+* [Recommendations by element](#recommendations-by-element)
+  * [The root element: &lt;eml:eml&gt;](#the-root-element-emleml)
+  * [@packageId (XML attribute)](#packageid-xml-attribute)
+  * [id, system and scope (XML attribute group)](#id-system-and-scope-xml-attribute-group)
+  * [access](#access)
+  * [dataset](#dataset)
+  * [alternateIdentifier](#alternateidentifier)
+  * [title (dataset)](#title-dataset)
+  * [People and Organizations (Parties)](#people-and-organizations-parties)
+    * [creator](#creator)
+    * [metadataProvider](#metadataprovider)
+    * [associatedParty](#associatedparty)
+    * [contact](#contact)
+    * [publisher](#publisher)
+  * [pubDate](#pubdate)
+  * [abstract](#abstract)
+  * [keywordSet and keyword](#keywordset-and-keyword)
+  * [intellectualRights](#intellectualrights)
+  * [distribution](#distribution)
+  * [coverage](#coverage)
+    * [geographicCoverage](#geographiccoverage)
+    * [temporalCoverage](#temporalcoverage)
+    * [taxonomicCoverage](#taxonomiccoverage)
+  * [maintenance](#maintenance)
+  * [methods](#methods)
+    * [methodStep](#methodstep)
+    * [instrumentation](#instrumentation)
+    * [dataSource](#datasource)
+    * [sampling](#sampling)
+    * [qualityControl](#qualitycontrol)
+    * [dataSource](#provenance)
+  * [project](#project)
+  * [\[entity\] = dataTable, spatialRaster, spatialVector, storedProcedure,
 view, otherEntity](#entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity)
-
-> [attributeList](#attributelist)
-> 
-> > [constraint](#constraint)
-
-[additionalMetadata](#additionalmetadata)
+    * [attributeList](#attributelist)
+    * [constraint](#constraint)
+* [additionalMetadata](#additionalmetadata)
 
 
 ### <a name="introduction"></a>Introduction
