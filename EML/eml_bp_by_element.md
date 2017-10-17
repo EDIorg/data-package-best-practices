@@ -46,7 +46,7 @@
 [distribution](#distribution)
 
 [coverage](#coverage)
-
+spacin
 > [geographicCoverage](#geographiccoverage)
 >
 > [temporalCoverage](#temporalcoverage)
@@ -59,7 +59,7 @@
 >
 > [methodStep](#methodstep)
 >
-> [instrumentation] (#instrumentation)
+> [instrumentation](#instrumentation)
 >
 > [dataSource](#datasource)
 >
@@ -72,9 +72,9 @@
 [\[entity\] = dataTable, spatialRaster, spatialVector, storedProcedure,
 view, otherEntity](#entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity)
 
-[attributeList](#attributelist)
-
-> [constraint](#constraint)
+> [attributeList](#attributelist)
+> 
+> > [constraint](#constraint)
 
 [additionalMetadata](#additionalmetadata)
 
