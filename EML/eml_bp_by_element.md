@@ -2,12 +2,9 @@
 
 ========
 
-[I. Introduction](#i.-introduction)
+[Introduction](#introduction)
 
-[II. Detailed content recommendations For Elements and Attributes](#ii.-detailed-content-recommendations-for-elements-and-attributes)
-
-
-[II.2 Recommendations by element](#ii.2-recommendations-by-element)
+[Recommendations by element](#recommendations-by-element)
 
 [The root element: &lt;eml:eml&gt;](#the-root-element-emleml)
 
@@ -79,7 +76,7 @@ view, otherEntity](#entity-datatable-spatialraster-spatialvector-storedprocedure
 [additionalMetadata](#additionalmetadata)
 
 
-### I. Introduction
+### Introduction
 ===============
 TO DO: rewrite to be less LTER-specific. put LTER bits into single doc.
 
@@ -147,10 +144,10 @@ trees at the most granular level is still advantageous and recommended.
 [link here.]
 
 
-II. Detailed content recommendations For Elements and Attributes 
-=================================================================
+### Recommendations by element
+-------------------------------
 
-II.1 General Recommendations
+General 
 ----------------------------
 
 Following are general best practices for creating EML dataset metadata:
@@ -200,8 +197,6 @@ synthesis project.
 The change history should be recorded in the &lt;**maintenance**&gt;
 element
 
-### II.2 Recommendations by element
--------------------------------
 
 ### ***The root element: &lt;eml:eml&gt;***
 
