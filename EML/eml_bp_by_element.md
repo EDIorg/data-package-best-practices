@@ -842,7 +842,7 @@ Example: pubDate, abstract,keywordSet, keyword
 
 This element is found at this location (XPath):
 
-**/eml:eml/dataset/intellectualRights **
+**/eml:eml/dataset/intellectualRights**
 
 **&lt;intellectualRights&gt;** should contain site data access policy,
 plus a description of any deviation from the general access policy
@@ -1012,7 +1012,7 @@ the coverage of a dataset in terms of space, taxonomy, and time,
 &lt;**temporalCoverage**&gt;. Poplulating these elements as recommended
 allows for more advanced uses.
 
-#### **geographicCoverage **
+#### **geographicCoverage**
 
 *General Information*: The &lt;**geographicCoverage**&gt; element is
 used to describe geographic locations of research sites and areas
@@ -1515,7 +1515,7 @@ Example: methods
 
 ------
 
-### ***project ***
+### ***project***
 
 This element is found at this location (XPath):
 
