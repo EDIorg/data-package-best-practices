@@ -79,7 +79,7 @@ view, otherEntity](#entity-datatable-spatialraster-spatialvector-storedprocedure
 [additionalMetadata](#additionalmetadata)
 
 
-I. Introduction
+### I. Introduction
 ===============
 TO DO: rewrite to be less LTER-specific. put LTER bits into single doc.
 
@@ -124,19 +124,13 @@ Pull info from original section 1.1 as needed.
 
 
 
-I.2. Organization of this document 
+I.2. Organization of these recommendations 
 -----------------------------------------------------
-1.2.1 Conventions used in this document
+1.2.1 Conventions used 
 
-**Conventions used in this document:** Fonts and type faces: example XML
-nodes are in fixed-width font. XML element and attribute names, XPath,
-and references to element names in text are in bold face, and elements
-are surrounded by angle brackets. Recommendations or notes on possible
-changes to the EML schema are in italic.
+Fonts and type faces: example XML nodes are in fixed-width font. XML element and attribute names, XPath, and references to element names in text are in bold face, and elements are surrounded by angle brackets. Recommendations or notes on possible changes to the EML schema are in italic.
 
-
-1.2.1 
-*XML Types*:
+1.2.1 XML Types:
 
 *Element Descriptions*: Several important EML elements can be placed at
 multiple locations in a dataset, e.g., coverage and methods. To
@@ -149,12 +143,8 @@ not imply that these trees belong only at that level; in fact, locating
 trees at the most granular level is still advantageous and recommended.
 
 
-
-Examples
-================================================================
-
-Example 1: Complete EML with all these examples
-
+1.2.3 Examples: Complete EML with all these examples
+[link here.]
 
 
 II. Detailed content recommendations For Elements and Attributes 
@@ -210,7 +200,7 @@ synthesis project.
 The change history should be recorded in the &lt;**maintenance**&gt;
 element
 
-II.2 Recommendations by element
+### II.2 Recommendations by element
 -------------------------------
 
 ### ***The root element: &lt;eml:eml&gt;***
@@ -263,7 +253,6 @@ Catalog managers.
 > knb-lter-\[site\].\[dataset number\].\[revision\], e.g.
 > knb-lter-gce.187.4
 
-See Section III for other information about EML documents in Metacat.
 
 ### ***id, system and scope (XML attribute group)***
 
@@ -395,7 +384,7 @@ Example: access
     </access>
 ```
 ------
-***dataset***
+### ***dataset***
 
 This element is found at these locations (XPath):
 
