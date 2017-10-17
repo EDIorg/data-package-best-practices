@@ -451,7 +451,7 @@ the data collected, geographic context, research site, and time frame
 ------
 
 Example: dataset, alternateIdentifier, shortName, title
-people-and-organizations-partiesxml
+```xml
 <dataset id="FLS-1" system="FLS" scope = "system">
     <alternateIdentifier>FLS-1</alternateIdentifier>
     <shortName>Arthropods</shortName>
