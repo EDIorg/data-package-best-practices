@@ -110,7 +110,7 @@ trees at the most granular level is still advantageous and recommended.
 [link here.]
 
 
-### Recommendations by element
+### <a name="recommendations-by-element"></a>Recommendations by element
 -------------------------------
 
 General 
@@ -164,7 +164,7 @@ The change history should be recorded in the &lt;**maintenance**&gt;
 element
 
 
-### ***The root element: &lt;eml:eml&gt;***
+### <a name="the-root-element-emleml"></a>***The root element: &lt;eml:eml&gt;***
 
 This element is the root element in all EML documents. The XPath
 notation is:
@@ -183,7 +183,7 @@ element (&lt;**eml:eml**&gt;):
 
 &lt;**additionalMetadata**&gt;
 
-### ***@packageId (XML attribute)***
+### <a name="packageid-xml-attribute"></a>***@packageId (XML attribute)***
 
 This attribute is required in all EML2.1 documents, and is found at this
 location (XPath):
@@ -215,7 +215,7 @@ Catalog managers.
 > knb-lter-gce.187.4
 
 
-### ***id, system and scope (XML attribute group)***
+### <a name="id-system-and-scope-xml-attribute-group"></a>***id, system and scope (XML attribute group)***
 
 This attribute group can be used on these EML elements:
 
@@ -310,7 +310,7 @@ Example: attributes packageId, id, system, and scope
 
 ------
 
-### ***access***
+### <a name="access"></a>***access***
 
 The dataset title element is found at this location (XPath):
 
@@ -353,7 +353,7 @@ Example: access
 
 ------
 
-### ***dataset***
+### <a name="dataset"></a>***dataset***
 
 This element is found at these locations (XPath):
 
@@ -416,7 +416,7 @@ entity (or entities), designated by choosing:
 \[ **dataTable** | **spatialRaster** | **spatialVector** |
 **storedProcedure** | **view** | **otherEntity** \]
 
-### ***alternateIdentifier***
+### <a name=""></a>***alternateIdentifier***
 
 The dataset title element is found at this location (XPath):
 
@@ -434,7 +434,7 @@ level, the &lt;**alternateIdentifier**&gt; should contain an alternate
 name for the data table (or other entity) itself (see additional
 comments under entities, below.)
 
-### ***title (dataset)***
+### <a name="title-dataset"></a>***title (dataset)***
 
 The dataset title element is found at this location (XPath):
 
@@ -451,7 +451,7 @@ the data collected, geographic context, research site, and time frame
 ------
 
 Example: dataset, alternateIdentifier, shortName, title
-```xml
+people-and-organizations-partiesxml
 <dataset id="FLS-1" system="FLS" scope = "system">
     <alternateIdentifier>FLS-1</alternateIdentifier>
     <shortName>Arthropods</shortName>
@@ -460,7 +460,7 @@ Example: dataset, alternateIdentifier, shortName, title
 
 ------
 
-### ***People and Organizations (Parties)***
+### <a name="people-and-organizations-parties"></a>***People and Organizations (Parties)***
 
 People and organizations are all described using a “ResponsibleParty”
 group of elements, which is found at these locations (XPath):
@@ -493,7 +493,7 @@ For example, for an information manager, site contact, pay careful
 attention to phone number and use an e-mail alias that can be passed on.
 (see below, under&lt;**contact**&gt;)
 
-#### creator
+#### <a name="creator"></a>**creator**
 
 This element is found at this location (XPath):
 
@@ -568,7 +568,7 @@ Example: creator
 
 ------
 
-#### ***metadataProvider***
+#### <a name="metadataprovider"></a>***metadataProvider***
 
 This element is found at this location (XPath):
 
@@ -608,7 +608,7 @@ Example: metadataProvider
 
 ------
 
-#### ***associatedParty***
+#### <a name="associatedparty"></a>***associatedParty***
 
 This element is found at this location (XPath):
 
@@ -648,7 +648,7 @@ Example: associatedParty
 
 ------
 
-#### ***contact***
+#### <a name="contact"></a>***contact***
 
 This element is found at this location (XPath):
 
@@ -684,7 +684,7 @@ Example: contact
 </contact>
 ```
 ------
-#### ***publisher***
+#### <a name="publisher"></a>***publisher***
 
 This element is found at this location (XPath):
 
@@ -709,7 +709,7 @@ Example: publisher using a reference to a creator from above
 ```
 ------
 
-### ***pubDate***
+### <a name="pubdate"></a>***pubDate***
 
 This element is found at this location (XPath):
 
@@ -718,7 +718,7 @@ This element is found at this location (XPath):
 The year of public release of data online should be listed as the
 &lt;**pubDate**&gt; element .
 
-### ***abstract***
+### <a name="abstract"></a>***abstract***
 
 This element is found at these locations (XPath):
 
@@ -737,7 +737,7 @@ parameters, use categories instead of listing all parameters (e.g. use
 the term “nutrients” instead of nitrate, phosphate, calcium, etc.), in
 combination with the parameters that seem most relevant for searches.
 
-### ***keywordSet and keyword***
+### <a name="keywordset-and-keyword"></a>***keywordSet and keyword***
 
 This element is found at these locations (XPath):
 
@@ -799,7 +799,7 @@ Example: pubDate, abstract,keywordSet, keyword
 ------
 
 
-### ***intellectualRights***
+### <a name="intellectualrights"></a>***intellectualRights***
 
 This element is found at this location (XPath):
 
@@ -853,7 +853,7 @@ Example: intellectualRights
 
 ------
 
-### ***distribution***
+### <a name="distribution"></a>***distribution***
 
 This element is found at these locations (XPath):
 
@@ -942,7 +942,7 @@ Example: distribution
 
 ---------
 
-### ***coverage***
+### <a name="coverage"></a>***coverage***
 
 This element is found at these locations (XPath):
 
@@ -973,7 +973,7 @@ the coverage of a dataset in terms of space, taxonomy, and time,
 &lt;**temporalCoverage**&gt;. Poplulating these elements as recommended
 allows for more advanced uses.
 
-#### **geographicCoverage**
+#### <a name="geographiccoverage"></a>**geographicCoverage**
 
 *General Information*: The &lt;**geographicCoverage**&gt; element is
 used to describe geographic locations of research sites and areas
@@ -1111,7 +1111,7 @@ These include GIS shapefiles, Keyhole Markup Language (KML or KMZ), or
 EML spatial modules. For more information, see Section III,
 Recommendations for Compatibility with External Applications.
 
-#### **temporalCoverage**
+#### <a name="temporalcoverage"></a>**temporalCoverage**
 
 The &lt;**temporalCoverage**&gt; element of a dataset represents the
 period of time the data were collected, not the year the study was put
@@ -1153,7 +1153,7 @@ Example: temporalCoverage
 
 --------
 
-#### **taxonomicCoverage**
+#### <a name="taxonomiccoverage"></a>**taxonomicCoverage**
 
 The &lt;**taxonomicCoverage**&gt; element should be used to document
 taxonomic information for all organisms relevant to the study. The
@@ -1277,7 +1277,7 @@ Example: taxonomicCoverage
 ```
 --------
 
-### ***maintenance***
+### <a name="maintenance"></a>***maintenance***
 
 This element is found at these locations (XPath):
 
@@ -1301,7 +1301,7 @@ Example: maintenance
 ```
 ----------
 
-### ***methods***
+### <a name="methods"></a>***methods***
 
 This element is found at these locations (XPath):
 
@@ -1338,7 +1338,7 @@ frequently sufficient and more user friendly.
 A description of methods contains the elements &lt;**methodStep**&gt;,
 &lt;**sampling**&gt;, and/or &lt;**qualityControl**&gt;.
 
-#### methodStep
+#### <a name="methodstep"></a>methodStep
 
 At least one &lt;**methodStep**&gt; is required under
 &lt;**methods**&gt;, and each step is a logical portion of the methods,
@@ -1355,14 +1355,14 @@ online document; see the recommendations above for using that tree.
 Alternatively, the entire protocol may be written into EML under
 protocol/methodStep.
 
-##### instrumentation 
+##### <a name="instrumentation"></a>instrumentation 
 
 **The** &lt;**instrumentation&gt;** tag should contain a full
 description of the instruments used, including manufacturer, model,
 calibration dates and accuracy. Changes in instrumentation and dates of
 changes should be mentioned earlier under the **&lt;description&gt;**.
 
-##### dataSource
+##### <a name="datasource"></a>dataSource
 
 **The** &lt;**dataSource&gt;** tag is for nesting an EML dataset which
 may be an input to a &lt;**methodStep**&gt; of the data being described,
@@ -1372,7 +1372,7 @@ system for recording the source data when a derived product is created
 and described with EML. For more information, see Section III,
 Recommendations for Compatibility with External Applications.
 
-#### sampling 
+#### <a name="sampling"></a>sampling 
 
 This optional tree can contain valuable and very specific information
 about the study site, coverage and frequency in addition to that listed
@@ -1402,7 +1402,7 @@ studyExtent tree. The LTERMapS project plans to use content or internal
 references from this tree; please see Section III for when creating
 metadata for that use.
 
-#### qualityControl
+#### <a name="qualitycontrol"></a>qualityControl
 
 Like other trees under &lt;**methods**&gt;, &lt;**qualityControl**&gt;
 can be used at the dataset, entity or attribute level, whichever is
@@ -1476,7 +1476,7 @@ Example: methods
 
 ------
 
-### ***project ***
+### <a name="project"></a>***project ***
 
 This element is found at this location (XPath):
 
@@ -1569,7 +1569,7 @@ Example: project
 
 ------
 
-###  ***\[entity\] = dataTable, spatialRaster, spatialVector, storedProcedure, view, otherEntity***
+###  <a name="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity"></a>***\[entity\] = dataTable, spatialRaster, spatialVector, storedProcedure, view, otherEntity***
 
 This element is found at this location (XPath):
 
@@ -1745,7 +1745,7 @@ typical uses and the elements used for that type.
 TO DO: there was a table here that did not reproduce. Decide if you still want it, reproduce in markdown.
 
 
-### ***attributeList***
+### <a name="attributelist"></a>***attributeList***
 
 This element tree is found at (XPath):
 
@@ -2228,7 +2228,7 @@ Example: Entity and attribute information for spatialRaster
 </spatialRaster>
 ```
 ------
-### ***constraint***
+### <a name="constraint"></a>***constraint***
 
 This element tree is found at (XPath):
 
@@ -2318,7 +2318,7 @@ Example: constraint
 
 ------
 
-### ***additionalMetadata***
+### <a name="additionalmetadata"></a>***additionalMetadata***
 
 This element tree is found at (XPath):
 
@@ -2380,7 +2380,7 @@ Example: additionalMetadata custom unit
 ------
 
 
-III.3 Provenance Tracking in EML
+### <a name="provenance"></a>Provenance Tracking in EML
 --------------------------------
 TO DO: move this to the methods element.
 
