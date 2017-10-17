@@ -333,8 +333,7 @@ Currently, a reasonable general practice should be to define a
 
 Example: attributes packageId, id, system, and scope
 
-```
-[sourcecode language="xml"]
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <eml:eml xmlns:ds="eml://ecoinformatics.org/dataset-2.1.0" 
     xmlns:xs="http://www.w3.org/2001/XMLSchema" 
@@ -378,8 +377,7 @@ presumably only the dataset submitter will be allowed access.
 ------
 
 Example: access
-```
-[sourcecode language="xml"]
+```xml
 <access authSystem="knb" order="allowFirst" scope="document">
          <allow>
             <principal>uid=FLS,o=lter,dc=ecoinformatics,dc=org</principal>
@@ -492,8 +490,7 @@ the data collected, geographic context, research site, and time frame
 ------
 
 Example: dataset, alternateIdentifier, shortName, title
-```
-[sourcecode language="xml"]
+```xml
 <dataset id="FLS-1" system="FLS" scope = "system">
     <alternateIdentifier>FLS-1</alternateIdentifier>
     <shortName>Arthropods</shortName>
@@ -557,8 +554,7 @@ for long term datasets.
 ------
 
 Example: creator
-```
-[sourcecode language="xml"]
+```xml
 <creator id="org-1" system="FLS" scope="system">
     <organizationName>Fictitious LTER Site</organizationName>
     <address>
@@ -632,8 +628,7 @@ for each &lt;**metadataProvider**&gt; element.
 ------
 
 Example: metadataProvider
-```
-[sourcecode language="xml"]
+```xml
 <metadataProvider>
     <organizationName>Fictitious LTER Site</organizationName>
     <address>
@@ -668,8 +663,7 @@ listed as an &lt;**associatedParty**&gt; using &lt;**role**&gt; of
 ------
 
 Example: associatedParty
-```
-[sourcecode language="xml"]
+```xml
 <associatedParty id="12010" system="FLS" scope="system">
     <individualName>
         <givenName>Ima</givenName>
@@ -712,8 +706,7 @@ than &lt;**contact**&gt;. Complete the &lt;**address**&gt;,
 ------
 
 Example: contact
-```
-[sourcecode language="xml"]
+```xml
 <contact>
     <positionName id=”pos-4”>Information Manager</positionName>
     <address>
@@ -748,8 +741,7 @@ for the organization information *
 ------
 
 Example: publisher using a reference to a creator from above
-```
-[sourcecode language="xml"]
+```xml
 <publisher>
     <references system=”FLS”>org-1</references>
 </publisher>
@@ -810,8 +802,7 @@ included.
 ------
 
 Example: pubDate, abstract,keywordSet, keyword
-```
-[sourcecode language="xml"]
+```xml
 <pubDate>2000</pubDate>
 <abstract>
     <para>Ground arthropods communities are monitored in different habitats in a rapidly changing environment. The arthropods are collected in traps four times a year in ten locations and determined as far as possible to family, genus or species.</para>
@@ -865,8 +856,7 @@ Network Data Access Policy:
 ------
 
 Example: intellectualRights
-```
-[sourcecode language="xml"]
+```xml
 <intellectualRights>
     <section>
         <title>Copyright Notice</title>
@@ -968,8 +958,7 @@ how to use it, read the online documentation:
 -------
 
 Example: distribution
-```
-[sourcecode language="xml"]
+```xml
 <distribution>
     <online>
         <onlineDescription>f1s-1 Data Web Page</onlineDescription>
@@ -1049,8 +1038,7 @@ American or more should have two bounding boxes, one for each site.
 -------
 
 Example: geographicCoverage at the dataset level
-```
-[sourcecode language="xml"]
+```xml
 <coverage>
     <geographicCoverage>
         <geographicDescription>Ficity, FI metropolitan area, USA</geographicDescription>
@@ -1082,8 +1070,7 @@ element. More information about sampling sites can be found under
 ---------
 
 Example: geographicCoverage for single sampling point locations
-```
-[sourcecode language="xml"]
+```xml
 <spatialSamplingUnits>
     <coverage>
         <geographicDescription>sitenumber 1</geographicDescription>
@@ -1190,8 +1177,7 @@ should be used to describe the ongoing nature of the data collection.
 -------
 
 Example: temporalCoverage
-```
-[sourcecode language="xml"]
+```xml
 <temporalCoverage>
     <rangeOfDates>
         <beginDate>
@@ -1251,8 +1237,7 @@ estimated importance, and reason for incomplete identifications.
 --------
 
 Example: taxonomicCoverage
-```
-[sourcecode language="xml"]
+```xml
 <taxonomicCoverage>
     <taxonomicSystem>
         <classificationSystem>
@@ -1346,8 +1331,7 @@ and unformatted text blocks.
 -------
 
 Example: maintenance
-```
-[sourcecode language="xml"]
+```xml
 <maintenance>
     <description>
         <para>Data are updated annually at the end of the calendar year.</para>
@@ -1468,8 +1452,7 @@ Tags are also available for a &lt;**citation**&gt; or
 ------
 
 Example: methods
-```
-[sourcecode language="xml"]
+```xml
 <methodStep>
         <description>
             <section>
@@ -1581,8 +1564,7 @@ site.
 ------
 
 Example: project
-```
-[sourcecode language="xml"]
+```xml
 <projec>
     <title>FSL basic monitoring program</title>
     <personnel id="pers-30" system="FLS">
@@ -1764,8 +1746,7 @@ be characterized by the other elements for the data type.
 
 Example: The elements in the EntityGroup, showing the
 &lt;**dataTable**&gt; entity.
-```
-[sourcecode language="xml"]
+```xml
 <dataTable>
     <entityName>arthro_hab</entityName>
     <entityDescription> habitat description for the sampling 
@@ -1977,8 +1958,7 @@ with the Unit defined in the &lt;**additionalMetadata**&gt; tree.
 ------
 
 Example: attributeList/attribute dataTable
-```
-[sourcecode language="xml"]
+```xml
 <attributeList>
     <attribute id="soil_chemistry.site_id">
         <attributeName>site_id</attributeName>
@@ -2110,8 +2090,7 @@ I.2.3.
 ------
 
 Example: Entity and attribute information for spatialVector
-```
-[sourcecode language="xml"]
+```xml
 <spatialVector id="Landuse for Ficity in 1955">
     <entityName>Landuse for Ficity in 1955</entityName>
     <entityDescription>This GIS layer represents a reconstructed generalized landuse map for the area of current Ficity around the time period of 1955.</entityDescription>
@@ -2200,8 +2179,7 @@ Example: Entity and attribute information for spatialVector
 ------
 
 Example: Entity and attribute information for spatialRaster
-```
-[sourcecode language="xml"]
+```xml
 <spatialRaster id="fi_24k">
     <entityName>fi_24k</entityName>
     <entityDefinition>Ficiticiou State 7.5 Minute Digital Elevation Model</entityDefinition>
@@ -2357,8 +2335,7 @@ no null values should be present for an attribute in this entity.
 ------
 
 Example: constraint
-```
-[sourcecode language="xml"]
+```xml
 <constraint id="soil_chemistry.PRIMARY">
     <primaryKey>
         <constraintName>PRIMARY</constraintName>
@@ -2427,8 +2404,7 @@ Registry
 ------
 
 Example: additionalMetadata custom unit
-```
-[sourcecode language="xml"]
+```xml
 <additionalMetadata>
     <metadata>
         <stmml:unitList>
@@ -2483,8 +2459,7 @@ object.
 ------
 
 Example: provenance
-```
-[sourcecode language="xml"]
+```xml
 <methods>
     <methodStep>
         <description>
