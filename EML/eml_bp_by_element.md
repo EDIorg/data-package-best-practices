@@ -46,7 +46,7 @@
 [distribution](#distribution)
 
 [coverage](#coverage)
-spacin
+
 > [geographicCoverage](#geographiccoverage)
 >
 > [temporalCoverage](#temporalcoverage)
