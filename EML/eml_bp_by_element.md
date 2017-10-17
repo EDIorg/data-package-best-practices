@@ -328,7 +328,9 @@ Currently, a reasonable general practice should be to define a
 **system** on the &lt;**eml:eml**&gt; element and set it to the site
 (but not set the system attribute at any other level), and to set
 **scope**=“document” on elements other than &lt;**eml:eml**&gt;.
+
 ------
+
 Example: attributes packageId, id, system, and scope
 
 ```
@@ -344,7 +346,9 @@ Example: attributes packageId, id, system, and scope
     scope="system">
 
 ```
+
 ------
+
 ### ***access***
 
 The dataset title element is found at this location (XPath):
@@ -369,7 +373,9 @@ Metacat should be formed according to Example below. With the exception
 of certain sensitive information, metadata should be publicly
 accessible. The &lt;**access**&gt; element is optional, and if omitted,
 presumably only the dataset submitter will be allowed access.
+
 ------
+
 Example: access
 ```
 <access authSystem="knb" order="allowFirst" scope="document">
@@ -383,7 +389,9 @@ Example: access
         </allow>
     </access>
 ```
+
 ------
+
 ### ***dataset***
 
 This element is found at these locations (XPath):
@@ -478,13 +486,17 @@ The dataset title element is found at this location (XPath):
 The dataset &lt;**title**&gt; should be descriptive and should mention
 the data collected, geographic context, research site, and time frame
 (what, where, and when).
-------
-Example: dataset, alternateIdentifier, shortName, title
 
+------
+
+Example: dataset, alternateIdentifier, shortName, title
+```
 <dataset id="FLS-1" system="FLS" scope = "system">
     <alternateIdentifier>FLS-1</alternateIdentifier>
     <shortName>Arthropods</shortName>
     <title>Long-term Ground Arthropod Monitoring Dataset at Ficity, USA from 1998 to 2003</title>
+```
+
 ------
 
 ### ***People and Organizations (Parties)***
@@ -538,7 +550,9 @@ to best search for long term datasets, and searchers frequently default
 to searches using PI’s last name. Therefore it is a reasonable practice
 to include more creators rather than fewer, even if it blurs the credit
 for long term datasets.
+
 ------
+
 Example: creator
 ```
 <creator id="org-1" system="FLS" scope="system">
@@ -590,7 +604,9 @@ Example: creator
     <onlineUrl>http://www.fsu.edu/~jecologist</onlineUrl>
 </creator>
 ```
+
 ------
+
 #### ***metadataProvider***
 
 This element is found at this location (XPath):
@@ -608,7 +624,9 @@ provider should be listed instead (see Example below). Complete the
 &lt;**address**&gt;, &lt;**phone**&gt;,
 &lt;**electronicMailAddress**&gt;, and &lt;**onlineURL**&gt; elements
 for each &lt;**metadataProvider**&gt; element.
+
 ------
+
 Example: metadataProvider
 ```
 <metadataProvider>
@@ -626,7 +644,9 @@ Example: metadataProvider
     <onlineUrl>http://www.fsu.edu/</onlineUrl>
 </metadataProvider>
 ```
+
 ------
+
 #### ***associatedParty***
 
 This element is found at this location (XPath):
@@ -639,7 +659,9 @@ All **&lt;associatedParty&gt;** trees require a &lt;**role**&gt;
 element. The parent university, institution, or agency could also be
 listed as an &lt;**associatedParty**&gt; using &lt;**role**&gt; of
 “owner” when appropriate.
+
 ------
+
 Example: associatedParty
 ```
 <associatedParty id="12010" system="FLS" scope="system">
@@ -662,6 +684,7 @@ Example: associatedParty
     <role>Technician</role>
 </associatedParty>
 ```
+
 ------
 
 #### ***contact***
@@ -679,7 +702,9 @@ who performed the work belong under &lt;**associatedParty**&gt; rather
 than &lt;**contact**&gt;. Complete the &lt;**address**&gt;,
 &lt;**phone**&gt;, &lt;**electronicMailAddress**&gt;, and
 &lt;**onlineURL**&gt; elements for the &lt;**contact**&gt; element.
+
 ------
+
 Example: contact
 ```
 <contact>
@@ -712,7 +737,9 @@ set. List the LTER site name, fully spelled out, in the
 
 *Recommendation for web display of LTER-EML: use &lt;**publisher**&gt;
 for the organization information *
+
 ------
+
 Example: publisher using a reference to a creator from above
 ```
 <publisher>
@@ -771,7 +798,9 @@ acronym (LTER, ILTER, etc.), organizational affiliation, funding source
 (i.e. co-funded with other sources, non-LTER funding etc.). In addition
 to specific keywords, relevant conceptual keywords should also be
 included.
+
 ------
+
 Example: pubDate, abstract,keywordSet, keyword
 ```
 <pubDate>2000</pubDate>
@@ -823,7 +852,9 @@ Network-wide data should be released on-line within 2-3 years, and if
 not, the reason needs to be documented in the metadata. (See also LTER
 Network Data Access Policy:
 <http://www.lternet.edu/data/netpolicy.html>)
+
 ------
+
 Example: intellectualRights
 ```
 <intellectualRights>
@@ -858,7 +889,9 @@ Example: intellectualRights
     </section>
 </intellectualRights>
 ```
+
 ------
+
 ### ***distribution***
 
 This element is found at these locations (XPath):
@@ -921,7 +954,9 @@ Data access logging can be implemented by using the Data Access Server
 (DAS) and its URL-proxy system. For more information about the DAS and
 how to use it, read the online documentation:
 <http://im.lternet.edu/im_practices/metadata/das>
+
 -------
+
 Example: distribution
 ```
 <distribution>
@@ -943,6 +978,7 @@ Example: distribution
     </physical>
 </dataTable>
 ```
+
 ---------
 
 ### ***coverage***
@@ -998,7 +1034,9 @@ level if there are significant distances between study sites and it
 would be confusing if they were grouped into one bounding box, For
 example, cross site studies where a bounding box would represent North
 American or more should have two bounding boxes, one for each site.
+
 -------
+
 Example: geographicCoverage at the dataset level
 ```
 <coverage>
@@ -1018,6 +1056,7 @@ Example: geographicCoverage at the dataset level
     </geographicCoverage>
 </coverage>
 ```
+
 ----------
 
 If sampling took place in discrete point location, those sites should
@@ -1027,7 +1066,9 @@ of individual sampling sites should be entered under
 &lt;**spatialSamplingUnits**&gt;, each site in a separate coverage
 element. More information about sampling sites can be found under
 &lt;**methods**&gt;,
+
 ---------
+
 Example: geographicCoverage for single sampling point locations
 ```
 <spatialSamplingUnits>
@@ -1060,6 +1101,7 @@ Example: geographicCoverage for single sampling point locations
     </coverage>
 </spatialSamplingUnits>
 ```
+
 ---------
 
 Latitudes and longitudes should be in the same commonly used datum
@@ -1131,7 +1173,9 @@ available, than an end date in the future that includes a period of time
 for which no data are yet available. Use the &lt;**maintanence**&gt; tag
 (below) to describe the update frequency. The methods/sampling tree
 should be used to describe the ongoing nature of the data collection.
+
 -------
+
 Example: temporalCoverage
 ```
 <temporalCoverage>
@@ -1145,6 +1189,7 @@ Example: temporalCoverage
     </rangeOfDates>
 </temporalCoverage>
 ```
+
 --------
 
 #### **taxonomicCoverage**
@@ -1188,7 +1233,9 @@ be listed in &lt;**taxonomicProcedures**&gt; are details of specimen
 processing, keys, and chemical or genetic analyses.
 &lt;**taxonomicCompleteness**&gt; may be used to document the status,
 estimated importance, and reason for incomplete identifications.
+
 --------
+
 Example: taxonomicCoverage
 ```
 <taxonomicCoverage>
@@ -1280,7 +1327,9 @@ changes to the data tables or metadata, including update frequency. The
 change history can also be used to describe alterations in static
 documents. The description element (TextType) can contain both formatted
 and unformatted text blocks.
+
 -------
+
 Example: maintenance
 ```
 <maintenance>
@@ -1399,7 +1448,9 @@ can be used at the dataset, entity or attribute level, whichever is
 appropriate. At its most basic, use the &lt;**description**&gt; element.
 Tags are also available for a &lt;**citation**&gt; or
 &lt;**protocol**&gt;.
+
 ------
+
 Example: methods
 ```
 <methodStep>
@@ -1461,6 +1512,7 @@ Example: methods
     </qualityControl>
 </methods>
 ```
+
 ------
 
 ### ***project ***
@@ -1508,7 +1560,9 @@ These can be referenced by the
 studyExtent/spatialSamplingUnits/referencedEntityId. The sibling
 &lt;**descriptor**&gt; tag can be used for text descriptions of the
 site.
+
 ------
+
 Example: project
 ```
 <projec>
@@ -1551,6 +1605,7 @@ Example: project
     </abstract>
 </project>
 ```
+
 ------
 
 ###  ***\[entity\] = dataTable, spatialRaster, spatialVector, storedProcedure, view, otherEntity***
@@ -1686,7 +1741,9 @@ the dataset level for more information.
 
 &lt;**additionalInfo**&gt; is a text field for any material that cannot
 be characterized by the other elements for the data type.
+
 ------
+
 Example: The elements in the EntityGroup, showing the
 &lt;**dataTable**&gt; entity.
 ```
@@ -1717,7 +1774,9 @@ Example: The elements in the EntityGroup, showing the
         </distribution>
     </physical>
 ```
+
 ------
+
 Each data type has a specific set of elements which follow the common
 elements. Table 1 is a summary of the Entity types, with examples of
 typical uses and the elements used for that type.
@@ -1895,7 +1954,9 @@ The examples show two attribute trees. The first was generated from an
 SQL system with a defined storage type. The second
 &lt;**attributeList**&gt; includes tags for &lt;**customUnits&gt;**,
 with the Unit defined in the &lt;**additionalMetadata**&gt; tree.
+
 ------
+
 Example: attributeList/attribute dataTable
 ```
 <attributeList>
@@ -2018,13 +2079,16 @@ Example: attributeList/attribute dataTable
     </attribute>
 </attributeList>
 ```
+
 ------
 
 The examples below show complete entity trees for
 &lt;**spatialVector**&gt; and &lt;**spatialRaster**&gt; converted via
 XSLT (stylesheet) from ESRI metadata format. For details see section
 I.2.3.
+
 ------
+
 Example: Entity and attribute information for spatialVector
 ```
 <spatialVector id="Landuse for Ficity in 1955">
@@ -2110,8 +2174,10 @@ Example: Entity and attribute information for spatialVector
     </spatialReference>
 </spatialVector>
 ```
+
 ------
 ------
+
 Example: Entity and attribute information for spatialRaster
 ```
 <spatialRaster id="fi_24k">
@@ -2265,7 +2331,9 @@ no null values should be present for an attribute in this entity.
 
 *Note: All &lt;**ConstraintType**&gt; entities require additional
 &lt;**constraintName**&gt; and &lt;**attributeReference**&gt; tags. *
+
 ------
+
 Example: constraint
 ```
 <constraint id="soil_chemistry.PRIMARY">
@@ -2286,6 +2354,7 @@ Example: constraint
     </foreignKey>
 </constraint>
 ```
+
 ------
 
 ### ***additionalMetadata***
@@ -2331,7 +2400,9 @@ elements. The EML Parser expects to find the description of a
 &lt;**customUnit**&gt; should be retrieved in STMML format from the Unit
 Registry
 ([http://unit.lternet.edu/unitregistry/](http://www.google.com/url?q=http%3A%2F%2Funit.lternet.edu%2Funitregistry%2F&sa=D&sntz=1&usg=AFQjCNHww6CKpPuowRSQ114t45vDm0pm4Q)).
+
 ------
+
 Example: additionalMetadata custom unit
 ```
 <additionalMetadata>
@@ -2344,6 +2415,7 @@ Example: additionalMetadata custom unit
     </metadata>
 </additionalMetadata>
 ```
+
 ------
 
 
@@ -2383,7 +2455,9 @@ will depend on where the derived object is being described - for
 example, the &lt;methods&gt; tree at the &lt;dataset&gt; level could be
 used to describe the provenance information for the entire derived
 object.
+
 ------
+
 Example: provenance
 ```
 <methods>
