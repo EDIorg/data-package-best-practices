@@ -47,7 +47,7 @@ view, otherEntity](#entity-datatable-spatialraster-spatialvector-storedprocedure
 TO DO: rewrite to be less LTER-specific. put LTER bits into single doc.
 
 
-The Ecological Metadata Language (EML) was adopted in 2003 as the exchange format for metadata contributed to the LTER network. As such, EML is one part of an LTER site’s information management system. This document contains recommended current views for best practices for EML content for our network’s use, and is also intended to augment the EML schema documentation (normative documents) for a less technical audience. Some notes on implementation are included as appropriate. This is one component of several Best Practice documents available to LTER sites, and related documents and resources are listed in the Additional Resources (Section V). The recommendations are directed towards achieving the following specific goals:
+The Ecological Metadata Language (EML) was adopted in 2003 as the exchange format for metadata contributed to the LTER network. As such, EML is one part of an LTER site's information management system. This document contains recommended current views for best practices for EML content for our network’s use, and is also intended to augment the EML schema documentation (normative documents) for a less technical audience. Some notes on implementation are included as appropriate. This is one component of several Best Practice documents available to LTER sites, and related documents and resources are listed in the Additional Resources (Section V). The recommendations are directed towards achieving the following specific goals:
 
 a)  Provide guidance and clarification in the implementation of EML for     datasets
 
@@ -82,7 +82,9 @@ Fonts and type faces: example XML nodes are in fixed-width font. XML element  nd
 
 1.2.1 XML Types:
 
-*Element Descriptions*: Several important EML elements can be placed at multiple locations in a dataset, e.g., coverage and methods. To illustrate all possible locations, the allowable XPath locations are listed for every element. XPath is a representation of the document’s hierarchical structure, which is similar to fileserver directory paths. For each element, recommendations for content have been grouped together when the element first appears (often at the dataset level). This does not imply that these trees belong only at that level; in fact, locating trees at the most granular level is still advantageous and recommended.
+*XPath*: Many elements can be placed at multiple locations in a dataset, e.g., coverage and methods. To illustrate all possible locations, the allowable XPath locations are listed for every element. XPath is a representation of the document's hierarchical structure, which is similar to fileserver directory paths. 
+
+*Grouped Element Descriptions: For each element, recommendations for content have been grouped together where the element first appears (often at the dataset level). This does not imply that these trees belong only at that level; in fact, locating trees at the most granular level is still advantageous and recommended.
 
 
 1.2.3 Examples: Complete EML with all these examples
@@ -97,13 +99,13 @@ General
 
 Following are general best practices for creating EML dataset metadata:
 
-*Metadata Distribution*: Do not publicly distribute EML documents containing elements with incorrect information as dataset metadata (i.e. as a workaround for problems with metadata content availability or to meet EML validation requirements). EML produced as draft, demonstration or for testing purposes should be clearly identified as such and not contributed to public metadata archives or clearinghouses.
+*Metadata Distribution*: Do not publicly distribute EML documents containing elements with incorrect information as dataset metadata (i.e. as a workaround for problems with metadata content availability or to meet validation requirements). EML produced as draft, demonstration or for testing purposes should be clearly identified as such and not contributed to public metadata archives or clearinghouses.
 
-*Text Elements*: Use EML text formatting tags whenever possible (e.g. &lt;**section**&gt;, &lt;**para**&gt;, &lt;**orderedlist**&gt;, etc.). Use &lt;**literalLayout**&gt; only when the field must contain HTML for formatting that is not available with Text Type. Note that the TextType elements were taken from docbook, and so do not use the “camelCase” notation that was generally adopted for EML.
+*Text Elements*: Use EML text formatting tags whenever possible (e.g. &lt;**section**&gt;, &lt;**para**&gt;, &lt;**orderedlist**&gt;, etc.). Use &lt;**literalLayout**&gt; only when the field must contain HTML for formatting that is not available with Text Type. Note that the TextType elements were taken from docbook, and so do not use the 'camelCase' notation that was generally adopted for EML elements.
 
 *Versioning*: It is recommended that metadata and data set versioning be handled at the site level. For example, data entities and corresponding metadata for ongoing long term datasets can be archived annually with correct end dates and versions of the EML. In the future, the NIS may assign unique ID to incoming EML files and data will be independent from the ID system used at the sites. Such a NIS ID would be assigned without knowledge of lineage or versions.
 
-*EML “id” Attribute*: Many EML elements are allowed to have an “id” attribute. In EML 2.1.0, all ids in a document must be unique. Care should be exercised when using id attributes to reference and re-use EML content. It may be preferable to duplicate content without ids when generating EML dynamically from a relational database system to avoid potential id conflicts. See below for more information on the id attribute.
+*EML "id" Attribute*: Many EML elements are allowed to have an “id” attribute. In EML 2.1.0, all ids in a document must be unique. Care should be exercised when using id attributes to reference and re-use EML content. It may be preferable to duplicate content without ids when generating EML dynamically from a relational database system to avoid potential id conflicts. See below for more information on the id attribute.
 
 *High-priority Elements*: To support locating datasets by time, geographic location, and taxonomically, metadata should provide as much information as possible, in the three &lt;**coverage**&gt; elements of &lt;**temporalCoverage**&gt; (when), &lt;**taxonomicCoverage**&gt; (what), and &lt;** geographicCoverage**&gt; (where) for the dataset.
 
@@ -134,9 +136,9 @@ This attribute is required in all EML2.1 documents, and is found at this locatio
 
 **/eml:eml/@packageId**
 
-As outlined in other sections (see versioning above, @**id** and &lt;**alternateIdentifier**&gt;, below) each site should manage unique identifiers and versioning at the local level (see @**system** discussion below). However, a central data catalog will handle identifiers at it’s scope and may assign a different ids. The LTER Network currently uses “Metacat” as its EML repository.Most sites synchronize the packageId with the Metacat “docid” designated in the harvester or at document upload, however synchronization is not required. Metacat and its harvester rely on numerical data set ids and  revision numbers for document management and synchronization. This may necessitate a workaround for sites that use non-numeric ids or don’t version data sets. Possible solutions include differentially generating EML optimized for Metacat (for sites capable of dynamic EML generation) and XSLT transformation.
+As outlined in other sections (see versioning above, @**id** and &lt;**alternateIdentifier**&gt;, below) each site should manage unique identifiers and versioning at the local level (see @**system** discussion below). However, a central data catalog will handle identifiers at it’s scope and may assign a different ids. TO DO: rewrite.  This may necessitate a workaround for sites that use non-numeric ids or don’t version data sets. Possible solutions include differentially generating EML optimized for Metacat (for sites capable of dynamic EML generation) and XSLT transformation.
 
-Currently, the packageId attribute is used to identify a site’s EML documents for searches in the LTER Data Catalog. A site’s packageId attribute in EML contributed to the KNB Metacat should be standardized as follows, or another format agreed upon by the site and LNO Data Catalog managers.
+Currently, the packageId attribute is used to identify a site's EML documents for searches in the LTER Data Catalog. A site's packageId attribute in EML contributed to the KNB Metacat should be standardized as follows, or another format agreed upon by the site and LNO Data Catalog managers.
 
 > knb-lter-\[site\].\[dataset number\].\[revision\], e.g.
 > knb-lter-gce.187.4
@@ -198,9 +200,9 @@ This attribute group can be used on these EML elements:
 
 These three attributes are found as a group and are usually optional, unless the id attribute is used as a reference. Each id must be unique in one EML document, i.e. a &lt;**creator**&gt; must have a different id than a &lt;**dataTable**&gt;. If the same person appears as dataset creator and protocol or project creator, the same id cannot be repeated, so either the content of the id must be changed or a reference used for repeated instances.
 
-The current restrictions can cause problems when content is drawn from a system with IDs (e.g. a personnel database), and is under consideration by the EML developers. Ideally the three attributes would work together. The **scope** attribute can have one of two values, “system” or “document”. It is preferred that when the scope is set to “system”, that the **system** attribute defines the ID-system, the **id** attribute content is (presumably) from that system.
+The current restrictions can cause problems when content is drawn from a system with IDs (e.g. a personnel database), and is under consideration by the EML developers. Ideally the three attributes would work together. The **scope** attribute can have one of two values, "system" or "document", that the **system** attribute defines the ID-system, the **id** attribute content is (presumably) from that system.
 
-Currently, a reasonable general practice should be to define a **system** on the &lt;**eml:eml**&gt; element and set it to the site (but not set the system attribute at any other level), and to set **scope**=“document” on elements other than &lt;**eml:eml**&gt;.
+Currently, a reasonable general practice should be to define a **system** on the &lt;**eml:eml**&gt; element and set it to the site (but not set the system attribute at any other level), and to set **scope**="document" on elements other than &lt;**eml:eml**&gt;.
 
 ------
 
@@ -230,7 +232,7 @@ The dataset title element is found at this location (XPath):
 
 **/eml:eml/\[entityType\]/physical/distribution/access**
 
-&lt;**access**&gt; contains a list of rules defining permissions for this file and its data entity. Values must be applicable by the system where data is stored. Metacat access control format conforms to the LDAP “distinguishedName (dn)” for an individual, as in “uid=FLS,o=LTER,dc=ecoinformatics,dc=org”.
+&lt;**access**&gt; contains a list of rules defining permissions for this file and its data entity. Values must be applicable by the system where data is stored. Metacat access control format conforms to the LDAP "distinguishedName (dn)" for an individual, as in "uid=FLS,o=LTER,dc=ecoinformatics,dc=org".
 
 As of EML 2.1.0, &lt;**access**&gt; trees are allowed at two places: as the first child of the &lt;**eml:eml**&gt; root element (a sibling to &lt;**dataset**&gt;) for controlling access to the entire document, and in a **physical/distribution** tree for controlling access to the resource URL. Access elements for documents contributed to the KNB Metacat should be formed according to Example below. With the exception of certain sensitive information, metadata should be publicly accessible. The &lt;**access**&gt; element is optional, and if omitted, presumably only the dataset submitter will be allowed access.
 
@@ -315,8 +317,7 @@ The dataset title element is found at this location (XPath):
 
 **/eml:eml/ dataset/\[entity\]/alternateIdentifier**
 
-The site’s data set id should be listed as the EML &lt;**alternateIdentifier**&gt;, particularly when it differs from the “**packageId**” attribute in the &lt;**eml:eml**&gt; element. The &lt;**alternateIdentifier**&gt; should also be used to denote that a dataset belongs to more than one LTER site by including the each site’s ID in a separate &lt;**alternateIdentifier**&gt; tag. At the entity level, the &lt;**alternateIdentifier**&gt; should contain an alternate
-name for the data table (or other entity) itself (see additional comments under entities, below.)
+The site's data set id should be listed as the EML &lt;**alternateIdentifier**&gt;, particularly when it differs from the **packageId** attribute in the &lt;**eml:eml**&gt; element. The &lt;**alternateIdentifier**&gt; should also be used to denote that a dataset belongs to more than one LTER site by including the each site’s ID in a separate &lt;**alternateIdentifier**&gt; tag. At the entity level, the &lt;**alternateIdentifier**&gt; should contain an alternate name for the data table (or other entity) itself (see additional comments under entities, below.)
 
 ### <a name="title-dataset"></a>***title (dataset)***
 
@@ -344,7 +345,7 @@ Example: dataset, alternateIdentifier, shortName, title
 
 ### <a name="people-and-organizations-parties"></a>***People and Organizations (Parties)***
 
-People and organizations are all described using a “ResponsibleParty” group of elements, which is found at these locations (XPath):
+People and organizations are all described using a ResponsibleParty group of elements, which is found at these locations (XPath):
 
 **/eml:eml/dataset/creator**
 
@@ -370,7 +371,7 @@ This element is found at this location (XPath):
 
 **/eml:eml/dataset/creator**
 
-**&lt;creator&gt;** The creator is considered to be the author of the dataset, i.e. the person(s) responsible for intellectual input into its creation. &lt;**surName&gt;** and &lt;**givenName&gt;** elements are used to build dataset citations, so these should be completed fully for credit to be understandable. For long term data sets, include the name of the LTER Site (using the &lt;**organizationName**&gt;) or role of Site PI (using &lt;**postitionName**&gt;). It should be kept in mind that different approaches taken by sites have lead to confusion over how to best search for long term datasets, and searchers frequently default to searches using PI’s last name. Therefore it is a  reasonable practice to include more creators rather than fewer, even if it  blurs the credit for long term datasets.
+**&lt;creator&gt;** The creator is considered to be the author of the dataset, i.e. the person(s) responsible for intellectual input into its creation. &lt;**surName&gt;** and &lt;**givenName&gt;** elements are used to build dataset citations, so these should be completed fully for credit to be understandable. For long term data sets, include the name of the LTER Site (using the &lt;**organizationName**&gt;) or role of Site PI (using &lt;**postitionName**&gt;). It should be kept in mind that different approaches taken by sites have lead to confusion over how to best search for long term datasets, and searchers frequently default to searches using PI's last name. Therefore it is a  reasonable practice to include more creators rather than fewer, even if it  blurs the credit for long term datasets.
 
 ------
 
@@ -464,7 +465,7 @@ This element is found at this location (XPath):
 
 **/eml:eml/dataset/associatedParty**
 
-List other people who were involved with the data in some way (field technicians, students assistants, etc.) as &lt;**associatedParty**&gt;. All **&lt;associatedParty&gt;** trees require a &lt;**role**&gt; element. The parent university, institution, or agency could also be listed as an &lt;**associatedParty**&gt; using &lt;**role**&gt; of “owner” when appropriate.
+List other people who were involved with the data in some way (field technicians, students assistants, etc.) as &lt;**associatedParty**&gt;. All **&lt;associatedParty&gt;** trees require a &lt;**role**&gt; element. The parent university, institution, or agency could also be listed as an &lt;**associatedParty**&gt; using &lt;**role**&gt; of "owner"  when appropriate.
 
 ------
 
@@ -506,8 +507,7 @@ A &lt;**contact**&gt; element is required in all EML datasets. Full contact info
 Example: contact
 ```xml
 <contact>
-    <positionName id=”pos-4”>Information Manager</positionName>
-    <address>
+    <positionName>Information Manager</positionName>
         <deliveryPoint>Department for Ecology</deliveryPoint>
         <deliveryPoint>Fictitious State University</deliveryPoint>
         <deliveryPoint>PO Box 111111</deliveryPoint>
@@ -536,7 +536,7 @@ The LTER site should be listed as the &lt;**publisher**&gt; of the data set. Lis
 Example: publisher using a reference to a creator from above
 ```xml
 <publisher>
-    <references system=”FLS”>org-1</references>
+    <references system="FLS">org-1</references>
 </publisher>
 ```
 ------
@@ -697,7 +697,7 @@ Example: distribution
         <distribution>
             <online>
                 <onlineDescription>f1s-1 Data Web Page</onlineDescription>
-                <url function=”download”>http://www.fsu.edu/lter/data/fls-1.csv</url>
+                <url function="download">http://www.fsu.edu/lter/data/fls-1.csv</url>
             </online>
         </distribution>
     </physical>
@@ -965,8 +965,7 @@ This element is found at these locations (XPath):
 
 *Note: in earlier EML versions, both "&lt;**method**&gt;" and "&lt;**methods**&gt;" elements were found, which caused confusion. The elements have now been standardized to "&lt;**methods**&gt;".*
 
-*General Information*: The &lt;**methods&gt;** tree appears at the dataset, entity, and attribute levels, and content is generally regarded as human readable, not machine readable. As a ‘rule of thumb’, methods are *descriptive*, and protocols are *prescriptive*, i.e. the methods describe what was done when collecting data, and protocols are a set of procedures or prescribed actions. A method often includes or follows a particular protocol. As a minimum, a reference to an external protocol should be given at the dataset level. However, detailed methods at this level are preferable. If further refinement is needed, methods can be defined for individual data entities or even individual &lt;**attribute**&gt;s if necessary. The scope of the method defined should match the EML document level at which it is applied. For example, methods at the &lt;**dataset**&gt; level describe the study, for a
-&lt;**dataTable**&gt; methods might include pre-/post-processing steps, and at the &lt;**attribute**&gt; level, quality control. The use of methods refinement varies among sites and some users prefer to have all methods in one place. Since they are mostly for human consumption, one detailed description of all steps taken at the dataset level is frequently sufficient and more user friendly.
+*General Information*: The &lt;**methods&gt;** tree appears at the dataset, entity, and attribute levels, and content is generally regarded as human readable, not machine readable. As a 'rule of thumb', methods are *descriptive*, and protocols are *prescriptive*, i.e. the methods describe what was done when collecting data, and protocols are a set of procedures or prescribed actions. A method often includes or follows a particular protocol. As a minimum, a reference to an external protocol should be given at the dataset level. However, detailed methods at this level are preferable. If further refinement is needed, methods can be defined for individual data entities or even individual &lt;**attribute**&gt;s if necessary. The scope of the method defined should match the EML document level at which it is applied. For example, methods at the &lt;**dataset**&gt; level describe the study, for a &lt;**dataTable**&gt; methods might include pre-/post-processing steps, and at the &lt;**attribute**&gt; level, quality control. The use of methods refinement varies among sites and some users prefer to have all methods in one place. Since they are mostly for human consumption, one detailed description of all steps taken at the dataset level is frequently sufficient and more user friendly.
 
 A description of methods contains the elements &lt;**methodStep**&gt;,
 &lt;**sampling**&gt;, and/or &lt;**qualityControl**&gt;.
@@ -992,7 +991,7 @@ changes should be mentioned earlier under the **&lt;description&gt;**.
 
 This optional tree can contain valuable and very specific information about the study site, coverage and frequency in addition to that listed at other levels. 
 
-&lt;**studyExtent**&gt; Provides specific information about the temporal and geographic extent of the study such as domains of interest in addition to geographic, temporal, and taxonomic coverage of the study site. It can be a surrogate for the &lt;**studyAreaDescription**&gt; under &lt;**project**&gt;. Descriptions can be either as a simple text using **&lt;description&gt;** or by including detailed temporal or geographic &lt;**coverage**&gt; elements describing discrete time periods sampled or multiple sub-regions sampled within the overall geographic bounding box that was described at the &lt;**dataset**&gt; level. The example shows the location of three insect traps within the LTER site’s overall sampling area, using the coverage tree. Note that single sampling site locations should be listed under &lt;**spatialSamplingUnits**&gt;.
+&lt;**studyExtent**&gt; Provides specific information about the temporal and geographic extent of the study such as domains of interest in addition to geographic, temporal, and taxonomic coverage of the study site. It can be a surrogate for the &lt;**studyAreaDescription**&gt; under &lt;**project**&gt;. Descriptions can be either as a simple text using **&lt;description&gt;** or by including detailed temporal or geographic &lt;**coverage**&gt; elements describing discrete time periods sampled or multiple sub-regions sampled within the overall geographic bounding box that was described at the &lt;**dataset**&gt; level. The example shows the location of three insect traps within the overall sampling area, using the coverage tree. Note that single sampling site locations should be listed under &lt;**spatialSamplingUnits**&gt;.
 
 &lt;**samplingDescription**&gt; a text based version, similar to the sampling methods section in a journal article.
 
@@ -1017,7 +1016,7 @@ Example: methods
         </description>
         <instrumentation>SBE MicroCAT 37-SM (S/N 1790); manufacturer: Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Conductivity (accuracy: 0.0003 S/m, readability: 0.00001 S/m, range: 0 to 7 S/m); last calibration: Feb 28, 2001</instrumentation> 
         <instrumentation>SBE MicroCAT 37-SM (S/N 1790); manufacturer: Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Pressure (water) (accuracy: 0.2m, readability: 0.0004m, range: 0 to 20m); last calibration: Feb 28, 2001</instrumentation>
-        <instrumentation>SBE MicroCAT 37-SM (S/N 1790); manufacturer: Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Temperature (water) (accuracy: 0.002°C, readability: 0.0001°C, range: -5 to 35°C); last calibration: Feb 28, 2001</instrumentation>
+        <instrumentation>SBE MicroCAT 37-SM (S/N 1790); manufacturer: Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Temperature (water) (accuracy: 0.002 degrees C, readability: 0.0001 degrees C, range: -5 to 35 degrees C); last calibration: Feb 28, 2001</instrumentation>
     </methodStep>
     <sampling>
         <studyExtent>
@@ -1079,7 +1078,7 @@ Originally, it was recommended that a &lt;**project**&gt; tree be included which
 *NOTE: Research project management may also be done using the LTERProject schema. The supplementary XSL stylesheets for that schema include export of EML2.1 &lt;**project**&gt; trees. For details see  online documentation:*
 *[http://im.lternet.edu/project/LTERProjectDatabase](http://www.google.com/url?q=http%3A%2F%2Fintranet.lternet.edu%2Fim%2Fproject%2FLTERProjectDatabase&sa=D&sntz=1&usg=AFQjCNHZD0SrYPF5y0bseC02fmiaDji2MQ))*
 
-Minimally, the description of an LTER site-level project should include &lt;**title**&gt;, &lt;**personnel**&gt; and &lt;**abstract**&gt;, with the study area description and mission statement. The &lt;**distribution**&gt; tree should link to the project’s home page, or alternatively could link to other publications describing the project. These elements are all used at the dataset level; see their individual sections for specific content  recommendations.
+Minimally, the description of an LTER site-level project should include &lt;**title**&gt;, &lt;**personnel**&gt; and &lt;**abstract**&gt;, with the study area description and mission statement. The &lt;**distribution**&gt; tree should link to the project's home page, or alternatively could link to other publications describing the project. These elements are all used at the dataset level; see their individual sections for specific content  recommendations.
 
 Two elements are unique to the &lt;**project**&gt; tree:
 
@@ -1174,7 +1173,7 @@ Every EML data entity has certain elements in common, called the **EntityGroup**
 
 &lt;**additionalInfo**&gt;
 
-&lt;**alternateIdentifier**&gt; (optional): The primary identifier belongs in the id attribute of the entityName (e.g., &lt;**dataTable id=”xxx”**&gt; , but this tag can accommodate additional identifiers that might be used, possibly from different data management systems. It is used similarly to the &lt;**alternateIdentifier**&gt; element at the dataset level, above.
+&lt;**alternateIdentifier**&gt; (optional): The primary identifier belongs in the id attribute of the entityName (e.g., &lt;**dataTable id="xxx"**&gt;, but this tag can accommodate additional identifiers that might be used, possibly from different data management systems. It is used similarly to the &lt;**alternateIdentifier**&gt; element at the dataset level, above.
 
 &lt;**entityName**&gt; (required): the name of the table, file, or database table. Often this is the original ascii file name. 
 
@@ -1184,7 +1183,7 @@ The **&lt;physical&gt;** tree (/eml:eml/dataset/\[entity\]/physical) further des
 
 &lt;**objectName**&gt; should be the name of the file when downloaded, or exported as text from a database. The &lt;**objectName**&gt; often is the filename of a file in a file system or that is accessible on the network, and might be the same as the &lt;**entityName**&gt;. However, a physical object (file) can have several entities, e.g. an Excel workbook with several sheets. If you are publishing Excel workbooks (not recommended practice), put the worksheet name in the &lt;**entityName**&gt;, and the filename in &lt;**objectName**&gt;.
 
-&lt;**externallyDefinedFormat**&gt; For data entities in prescribed formats (e.g., NetCDF, KML, Excel), name that format here. It is recommended that where possible, formats follow mime type (e.g., “image/jpeg”). Descriptions that are software-specific should include  manufacturer, program, and version, e.g. “Microsoft Excel 2003”. A KML file of sampling locations can be declared here as either “KML” or “KMZ”.
+&lt;**externallyDefinedFormat**&gt; For data entities in prescribed formats (e.g., NetCDF, KML, Excel), name that format here. It is recommended that where possible, formats follow mime type (e.g., "image/jpeg"). Descriptions that are software-specific should include  manufacturer, program, and version, e.g. "Microsoft Excel 2003". A KML file of sampling locations can be declared here as either "KML" or "KMZ".
 
 *Important: Whenever possible, sites should not publish data in dated, proprietary, binary formats such as MS-Excel workbooks.*
 
@@ -1193,7 +1192,7 @@ The **&lt;physical&gt;** tree (/eml:eml/dataset/\[entity\]/physical) further des
 The content of a &lt;**url**&gt; element at the entity level should deliver data, and not point to another application or use page. An exception is that an LTER-NIS DAS proxy URL may be used here so that data downloads may be logged by the Data Access Server. For more information about the DAS and how to use it, read the online documentation:
 [http://im.lternet.edu/im\_practices/metadata/das](http://www.google.com/url?q=http%3A%2F%2Fintranet.lternet.edu%2Fim%2Fim_practices%2Fmetadata%2Fdas&sa=D&sntz=1&usg=AFQjCNF5qpXdlir91CpUJAK7phLSymWTrQ)
 
-The &lt;**url**&gt;’s attribute, “function”, should have the value “download”. This is implied if the “function” attribute is omitted.
+The &lt;**url**&gt;'s attribute, "function", should have the value "download". This is implied if the "function" attribute is omitted.
 
 As of EML 2.1, there is also an optional &lt;**access**&gt; element in a &lt;**distribution**&gt; tree at the entity level. This element is intended specifically for controlling access to the data entity separately from the metadata. For more information on using the &lt;**access**&gt; tree, refer to the general access discussion above. 
 
@@ -1232,7 +1231,7 @@ Example: The elements in the EntityGroup, showing the
         <distribution>
             <online>
                 <onlineDescription>f1s-1 Data File</onlineDescription>
-                <url function=”download”>http://www.fsu.edu/lter/data/fls-1.csv</url>
+                <url function="download">http://www.fsu.edu/lter/data/fls-1.csv</url>
             </online>
         </distribution>
     </physical>
@@ -1277,33 +1276,31 @@ The &lt;**nominal**&gt; scale is used to represent named categories. Values are 
 
 &lt;**ordinal**&gt; values are categories that have a logical or ordered relationship to one another, but the magnitude of the differences between the values is not defined or meaningful. Example: Low, Medium, High.
 
-*Note: Both the nominal and ordinal scales are considered &lt;**nonNumericDomain**&gt; types, either text or an enumerated list. The &lt;**enumeratedDomain**&gt; applies to coded values, and a &lt;**codeDefinition**&gt; or a referenced entity containing the code explanations. For &lt;**textDomain**&gt; an optional pattern may describe the text, e.g., a US telephone number can be described by the format “\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d”.*
+*Note: Both the nominal and ordinal scales are considered &lt;**nonNumericDomain**&gt; types, either text or an enumerated list. The &lt;**enumeratedDomain**&gt; applies to coded values, and a &lt;**codeDefinition**&gt; or a referenced entity containing the code explanations. For &lt;**textDomain**&gt; an optional pattern may describe the text, e.g., a US telephone number can be described by the format "\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d"*.
 
-&lt;**interval**&gt; These measurements are ordinal, but in addition, use equal-sized units on a scale between values. The starting point is arbitrary, so a value of zero is not meaningful. Example: The Celsius temperature scale uses degrees which are equally spaced, but where zero does not represent “absolute zero” (i.e., the temperature at which molecular motion stops), and 20 C is not “twice as hot” as 10 C.
+&lt;**interval**&gt; These measurements are ordinal, but in addition, use equal-sized units on a scale between values. The starting point is arbitrary, so a value of zero is not meaningful. Example: The Celsius temperature scale uses degrees which are equally spaced, but where zero does not represent "absolute zero" (i.e., the temperature at which molecular motion stops), and 20 C is not "twice as hot" as 10 C.
 
-&lt;**ratio**&gt; measurements have a meaningful zero point, and ratio comparisons between values are legitimate. For example, the Kelvin scale 
-reflects the amount of kinetic energy of a substance (i.e., zero is the point where a substance transmits no thermal energy), and so temperature measured in kelvin units is a ratio measurement. Concentration is also a ratio measurement because a solution at 10 micromolePerLiter has twice as much substance as one at 5 micromolePerLiter.
+&lt;**ratio**&gt; measurements have a meaningful zero point, and ratio comparisons between values are legitimate. For example, the Kelvin scale reflects the amount of kinetic energy of a substance (i.e., zero is the point where a substance transmits no thermal energy), and so temperature measured in kelvin units is a ratio measurement. Concentration is also a ratio measurement because a solution at 10 micromolePerLiter has twice as much substance as one at 5 micromolePerLiter.
 
 *Note: The &lt;**interval**&gt; and &lt;**ratio**&gt; scales require additional tags describing &lt;**unit&gt;**, the &lt;**numericDomain&gt;**, and&lt;**precision&gt;**.*
 
-**&lt;unit&gt;** Units should be described in correct physical units. Terms which describe data but are not units should be used in &lt;**attributeDefinition**&gt;. For example, for data describing “milligrams of Carbon per square meter”, “Carbon” belongs in the &lt;**attributeDefinition**&gt;, while the **&lt;unit&gt;** is “milligramPerMeterSquared”.
+**&lt;unit&gt;** Units should be described in correct physical units. Terms which describe data but are not units should be part of the &lt;**attributeDefinition**&gt;. Often, for display (e.g, in a paper's figure) these are combined. For example, a display may have a Y-axis of "milligrams of Carbon per square meter". However, in the dataset  "Carbon" belongs in the &lt;**attributeDefinition**&gt;, while the **&lt;unit&gt;** is milligramPerMeterSquared". 
 
 &lt;**standardUnit**&gt; and &lt;**customUnit**&gt;: Unit names must be either &lt;**standardUnit**&gt;, from the unit dictionary included with EML
 ([http://knb.ecoinformatics.org/software/eml/eml-2.1.0/eml-unitTypeDefinitions.html\#StandardUnitDictionary](http://www.google.com/url?q=http%3A%2F%2Fknb.ecoinformatics.org%2Fsoftware%2Feml%2Feml-2.1.0%2Feml-unitTypeDefinitions.html%23StandardUnitDictionary&sa=D&sntz=1&usg=AFQjCNHWNNBs2ZW0wI-u2GrtUOs8QByDyw)) or &lt;**customUnit**&gt; and defined in the &lt;**additionalMetadata**&gt;. For LTER EML documents, a registry and database of units is available <http://unit.lternet.edu/unitregistry/>. It is recommended that for LTER documents, the &lt;**customUnit**&gt; element be used for all units with content pulled from the Unit Registry, even in the case where a unit is listed in the standard unit dictionary. Units in LTER documents should be added to the Unit Registry.
 
-For general purposes, the following guidelines (from ISO recommendations) apply to &lt;**customUnits**&gt;: Units should be written out, not abbreviated. Unit modifiers, such as “squared”, should follow the unit being modified. For example, meterSquared is preferred,  while squareMeter is improper. Units should be singular, such as “meter”, and not plural, such as “meters”.
+For general purposes, the following guidelines (from ISO recommendations) apply to &lt;**customUnits**&gt;: Units should be written out, not abbreviated. Unit modifiers, such as "squared", should follow the unit beig modified. For example, "meterSquared" is preferred,  while "squareMeter" is improper. Units should be singular, such as "meter", and not plural, such as "meters".
 
 &lt;**numericDomain**&gt; This tag includes elements specifying the &lt;**numberType**&gt; and the minimum and maximum allowable values of a numeric attribute. A measurement’s &lt;**numberType**&gt; should be defined as real, natural, whole or integer as explained in EML handbook: <http://im.lternet.edu/sites/im.lternet.edu/files/emlHandbook.pdf>. The &lt;**bounds**&gt; are theoretical or allowable minimum and maximum values (prescriptive), rather than the actual observed range in a data set (descriptive). The &lt;**bounds**&gt; tree is optional.
 
-**&lt;precision&gt;** describes the number of decimal places for the attribute. Currently, EML does not allow more than one precision value for a column. For example, a column containing lengths of fish may be measured to a precision of .01 meter for one species of fish (e.g., large), and .001 meters for a different species, but all the data on “fish length” are collected into one attribute and are measured using their appropriate precision values. For these cases precision can be omitted, but the variable precision information should be described in detail in **method/methodStep**. Together, the information in
+**&lt;precision&gt;** describes the number of decimal places for the attribute. Currently, EML does not allow more than one precision value for a column. For example, a column containing lengths of fish may be measured to a precision of .01 meter for one species of fish (e.g., large), and .001 meters for a different species, but all the data on "fish length" are collected into one attribute and are measured using their appropriate precision values. For these cases precision can be omitted, but the variable precision information should be described in detail in **method/methodStep**. Together, the information in
 &lt;**numericDomain**&gt; and &lt;**precision**&gt; are sufficient to decide upon an appropriate system-specific data type for representing a particular attribute. For example, an attribute with a numeric domain from 0-50,000 and a precision of 1 could be represented in the C language using a 'long' value, but if the precision is changed to '0.5' then a 'float' type would be needed.
 
-The &lt;**measurementType**&gt; element , &lt;**dateTime**&gt;, is a date-time value from the Gregorian calendar and it is recommended that these be expressed in a format that conforms to the ISO 8601 standard. An example of an allowable ISO date-time is “YYYY-MM-DD”, as in 2004-06-25, or, more fully, as “YYYY-MM-DDThh:mm:ssTZD” (eg 1997-07-16T19:20:30.45Z). The ISO standard is quite strict about the structure of date components. Since legacy data often contain non-standard dates, and existing equipment (e.g., sensors) may still be
-producing non-standard dates, the EML authors have provided additional allowable formats. See the EML documentation for a complete list. It is important to note that the dateTime field should not be used for recording time durations. In that case, use a &lt;**standardUnit**&gt; such as seconds, nominalMinute or nominalDay, or a &lt;**customUnit**&gt; that defines the unit in terms of its relationship to SI second.
+The &lt;**measurementType**&gt; element, &lt;**dateTime**&gt;, is a date-time value from the Gregorian calendar and it is recommended that these be expressed in a format that conforms to the ISO 8601 standard. An example of an allowable ISO date-time is "YYYY-MM-DD", as in 2004-06-25, or, more fully, as "YYYY-MM-DDThh:mm:ssTZD" (eg 1997-07-16T19:20:30.45Z). The ISO standard is quite strict about the structure of date components. Since legacy data often contain non-standard dates, and existing equipment (e.g., sensors) may still be producing non-standard dates, the EML authors have provided additional allowable formats. See the EML documentation for a complete list. It is important to note that the dateTime field should not be used for recording time durations. In that case, use a &lt;**standardUnit**&gt; such as seconds, nominalMinute or nominalDay, or a &lt;**customUnit**&gt; that defines the unit in terms of its relationship to SI second.
 
-*Note: this measurement type was called &lt;**datetime**&gt; in previous versions of EML. It was changed from all lower case (&lt;**datetime**&gt;) to “camel case” (&lt;**dateTime**&gt;) for internal consistency.*
+*Note: this measurement type was called &lt;**datetime**&gt; in previous versions of EML. It was changed from all lower case (&lt;**datetime**&gt;) to "camel case" (&lt;**dateTime**&gt;) for internal consistency.*
 
-The &lt;**missingValueCode**&gt; is optional, but should be included to describe any missing value codes present in the data set (e.g. NaN, ND, 9999). The missing value code is a string, not a value, which means that the content of this field must exactly match what appears in place of data values for it to be correctly interpreted, For example, if data are output with precision .01 and with missing values formatted to “-9999.00”, then the content of the &lt;**missingValueCode**&gt; element must be “-9999.00” not “-9999”.
+The &lt;**missingValueCode**&gt; is optional, but should be included to describe any missing value codes present in the data set (e.g. NaN, ND, 9999). The missing value code is a string, not a value, which means that the content of this field must exactly match what appears in place of data values for it to be correctly interpreted, For example, if data are output with precision .01 and with missing values formatted to "-9999.00", then he nor "-9999".
 
 The examples show two attribute trees. The first was generated from an SQL system with a defined storage type. The second &lt;**attributeList**&gt; includes tags for &lt;**customUnits&gt;**, with the Unit defined in the &lt;**additionalMetadata**&gt; tree.
 
@@ -1453,7 +1450,7 @@ Example: Entity and attribute information for spatialVector
         <distribution>
             <online>
                 <onlineDescription>f1s-20 Zipped Shapefile File</onlineDescription>
-                <url function=”download”> http://www.fsu.edu/lter/data/fls-20.zip</url>
+                <url function="download"> http://www.fsu.edu/lter/data/fls-20.zip</url>
             </online>
         </distribution>
     </physical>
@@ -1542,7 +1539,7 @@ Example: Entity and attribute information for spatialRaster
         <distribution>
             <online>
                 <onlineDescription>f1s-30 zipped raster data File</onlineDescription>
-                <url function=”download”> http://www.fsu.edu/lter/data/fls-30.zip</url>
+                <url function="download"> http://www.fsu.edu/lter/data/fls-30.zip</url>
             </online>
         </distribution>
     </physical>
@@ -1685,7 +1682,7 @@ This element tree is found at (XPath):
 
 **&lt;additionalMetadata&gt;** is a flexible field for including any other relevant metadata that pertains to the resource being described. Its content must be valid XML. A unit as a &lt;**customUnit**&gt; must be described in this tree.
 
-**&lt;describes&gt;** (optional) is a pointer to an “id” attribute on an EML element (“id” described in another area). This pointer must be identical to the attribute it is pointing at, so that automated processes are able to associate &lt;**additionalMetadata**&gt; to the described attribute. If the &lt;**describes**&gt; element is omitted, it is assumed that the &lt;**additionalMetadata**&gt; content applies to the entire EML document.
+**&lt;describes&gt;** (optional) is a pointer to an "id" attribute on an EML element ("id: described in another area). This pointer must be identical to the attribute it is pointing at, so that automated processes are able to associate &lt;**additionalMetadata**&gt; to the described attribute. If the &lt;**describes**&gt; element is omitted, it is assumed that the &lt;**additionalMetadata**&gt; content applies to the entire EML document.
 
 **&lt;metadata&gt;** contains the additional metadata to be included in the document. The contents can be any valid XML. This element should be used for extending EML to include metadata that is not already available in another part of the EML specification, or to include site- or system-specific extensions that are needed beyond the core metadata. The additional metadata contained in this field describes the element referenced in the 'describes' element preceding it. If &lt;**describes**&gt; is not used, &lt;**metadata**&gt; must contain sufficient information to define the association between
 &lt;**additionalMetadata**&gt; and the attribute being described.
