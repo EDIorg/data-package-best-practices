@@ -1,4 +1,6 @@
-> **EML Best Practice Recommendations by Element**
+# DEPRECATED #
+
+**EML Best Practice Recommendations by Element**
 
 ========
 
