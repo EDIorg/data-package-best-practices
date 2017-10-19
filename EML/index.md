@@ -1,6 +1,6 @@
 # DRAFT Best Practices for Metadata in Ecological Metadata Language (EML)
-========
-This is the index page. ToC
+
+This is the index page. so it needs a ToC
 * [Introduction](#introduction)
     * link to BP doc, v 3
 * [General Recommendations](#general-recommendations)
@@ -12,37 +12,34 @@ This is the index page. ToC
 
 
 ## <a name="introduction"></a>Introduction
-===============
 
-[EML Best Practices V3 Environmental Data Initiative. 2017 (linkable citation)](http://link/here.)
+[Best Practices for Metadata in Ecological Metadata Language (EML Best Practices V3). 2017. Environmental Data Initiative. (linkable citation)](http://link/here.)
 
-The above document contains recommended current views for best practices for EML content for our environmental data. It is intended to augment the EML schema documentation (normative documents) for a less technical audience. The current version (v3, 2017) is one component of several Best Practice documents available to EML constructors sites, and related documents and resources are listed at the bottom of this page. The recommendations are directed towards achieving the following specific goals:
-
+The above document contains current "Best Practice" recommendations for EML content for ecological and environmental data. It is intended to augment the EML schema documentation (normative documents) for a less technical audience. The current version (v3, 2017) is one component of several resources available to EML constructors, and related resources are listed at the bottom of this page. The recommendations are directed towards the following goals:
 - Provide guidance and clarification in the implementation of EML for     datasets
-- Minimize heterogeneity of EML documents to simplify development and re-use of software built for EML datasets
+- Minimize heterogeneity of EML documents to simplify development and re-use of software built to ingest it
 - Maximize interoperability of EML documents to facilitate data synthesis
 
-At time of publication (Autumn 2017), the proeuciton release of EML was EML.2.2.1. EML 2.3 is anticipated within the year.
+EML Best Practice recommendations have evolved over time. The most active contributors have been members of the LTER Information Manager's Committee during multiple working groups (see [Timeline](#timeline). EML has been widely used for several years with multiple applications written against it, and the community has had the opportunity to observe the consequences of many content patterns. As much as possible, recommendations have been aligned with the capability of dataset contributors, as well as with those experiences. 
 
-EML Best Practice recommendations have evolved over time. Their most active contributors have come from the LTER Information Manager's Committee during multiple working groups (see [Timeline](#timeline). As much as possible, recommendations are aligned with the current capability of dataset contributors. EML has been widely used for several years with multiple applications written against it, and the community has had the opportunity to observe the consequences of many content patterns.
+At time of this document's publication (Autumn 2017), the version of EML currently in production was EML.2.1.1. EML 2.2.0 is anticipated within the next year. Contact <a mailto="info@environmentalDataInitiative.org"><EDI/a> for more information.
 
-
-## <a name="generalrecommendations"> General Recommendations
-====================
+## <a name="generalrecommendations">General Recommendations
 
 Following are general best practices for handling EML dataset metadata:
 
-*Metadata Distribution*: Do not publicly distribute EML documents containing elements with incorrect information as dataset metadata (i.e. as a workaround for missing metadata or to meet validation requirements). EML produced as draft, demonstration or for testing purposes should be clearly identified as such and not contributed to public metadata archives or clearinghouses.
+*Metadata Distribution*: Do not publicly distribute EML documents containing elements with incorrect information, e.g., as a workaround for missing metadata or to meet validation requirements. EML produced as draft, demonstration or for testing purposes should be clearly identified as such and not contributed to public metadata archives, because these are passed on to large-scale clearinghouses. For previews of draft datasets, consult your repository to learn about options.
 
-*Data Package Identifiers*: Metadata and data set versioning are controlled by the contributor, and so identifiers are tied to local systems. Many repository systems that accepting EML-described data support principles of immutable metadata and data entity versioning.  EML has elements to contain package identifers, although these may be also be assigned externally. It is the responsibility of the submitters to understand the practices of their intended repository when using identifiers.
+*Data Package Identifiers*: Metadata and data set versioning are controlled by the contributor, and so identifiers are tied to local systems. Many repository systems that accept EML-described data support principles of immutable metadata and data entity versioning.  EML has elements to contain package identifers, although these may be also be assigned externally. It is the responsibility of the submitters to understand the practices of their intended repository when using identifiers.
 
 *High-priority Elements*: 
-* To support locating datasets by time, geographic location, and taxonomically, metadata should provide as much information as possible, in the three &lt;**coverage**&gt; elements of &lt;**temporalCoverage**&gt; (when), &lt;**taxonomicCoverage**&gt; (what), and &lt;** geographicCoverage**&gt; (where) for the dataset.
+* To support locating datasets by time, geographic location, and taxonomically, metadata should provide as much information as possible, in the three &lt;**coverage**&gt; elements of &lt;**temporalCoverage**&gt; (when), &lt;**taxonomicCoverage**&gt; (what), and &lt;**geographicCoverage**&gt; (where) for the dataset.
 * For a potential user to evaluate the relevance and usability of the data package for their research study or synthesis projects, metadata should include detailed descriptions in the &lt;**project**&gt;, &lt;**methods**&gt;, &lt;**protocols**&gt;, and &lt;**intellectualRights**&gt; elements.
 
 
-## <a name="other-resources"> Other Resources
-=================================
+## <a name="other-resources">Other Resources
+
+*Documents:*
 EML 2.1.0 schema and normative documentation (2008):
 [http://knb.ecoinformatics.org/software/eml/](http://www.google.com/url?q=http%3A%2F%2Fknb.ecoinformatics.org%2Fsoftware%2Feml%2F&sa=D&sntz=1&usg=AFQjCNF4N6AsKlyYSPW-7BidAbbYO8R57g)
 
@@ -67,7 +64,7 @@ Unit dictionary: <http://unit.lternet.edu>
 
 
 
-## <a name="timeline"> Timeline
+## <a name="timeline">Timeline
 =================================
 * 2017 EML BP v 3 link here to the doc TBD
 * 2011 LTER EML BP v2 - include a link to the PDF in /files/
