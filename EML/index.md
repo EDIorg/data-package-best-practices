@@ -1,9 +1,7 @@
-> **EML Best Practices for LTER Sites**
-
-TO DO
+# DRAFT Best Practices for Metadata in Ecological Metadata Language (EML)
 ========
 This is the index page. ToC
-* [Introduction 2](#introduction)
+* [Introduction](#introduction)
     * link to BP doc, v 3
 * [General Recommendations](#general-recommendations)
 * [Other Resources](#other-resources)
@@ -13,8 +11,9 @@ This is the index page. ToC
 *  [Timeline](#timeline)
 
 
-### <a name="introduction"></a>Introduction
+## <a name="introduction"></a>Introduction
 ===============
+
 [EML Best Practices V3 Environmental Data Initiative. 2017 (linkable citation)](http://link/here.)
 
 The above document contains recommended current views for best practices for EML content for our environmental data. It is intended to augment the EML schema documentation (normative documents) for a less technical audience. The current version (v3, 2017) is one component of several Best Practice documents available to EML constructors sites, and related documents and resources are listed at the bottom of this page. The recommendations are directed towards achieving the following specific goals:
@@ -28,8 +27,8 @@ At time of publication (Autumn 2017), the proeuciton release of EML was EML.2.2.
 EML Best Practice recommendations have evolved over time. Their most active contributors have come from the LTER Information Manager's Committee during multiple working groups (see [Timeline](#timeline). As much as possible, recommendations are aligned with the current capability of dataset contributors. EML has been widely used for several years with multiple applications written against it, and the community has had the opportunity to observe the consequences of many content patterns.
 
 
-###<a name="generalrecommendations"> General Recommendations
-=================================
+## <a name="generalrecommendations"> General Recommendations
+====================
 
 Following are general best practices for handling EML dataset metadata:
 
@@ -42,7 +41,7 @@ Following are general best practices for handling EML dataset metadata:
 * For a potential user to evaluate the relevance and usability of the data package for their research study or synthesis projects, metadata should include detailed descriptions in the &lt;**project**&gt;, &lt;**methods**&gt;, &lt;**protocols**&gt;, and &lt;**intellectualRights**&gt; elements.
 
 
-###<a name="other-resources"> Other Resources
+## <a name="other-resources"> Other Resources
 =================================
 EML 2.1.0 schema and normative documentation (2008):
 [http://knb.ecoinformatics.org/software/eml/](http://www.google.com/url?q=http%3A%2F%2Fknb.ecoinformatics.org%2Fsoftware%2Feml%2F&sa=D&sntz=1&usg=AFQjCNF4N6AsKlyYSPW-7BidAbbYO8R57g)
@@ -68,10 +67,8 @@ Unit dictionary: <http://unit.lternet.edu>
 
 
 
-###<a name="timeline"> Timeline
+## <a name="timeline"> Timeline
 =================================
-Timeline
-===================
 * 2017 EML BP v 3 link here to the doc TBD
 * 2011 LTER EML BP v2 - include a link to the PDF in /files/
 * 2008 EML 2.1 release
