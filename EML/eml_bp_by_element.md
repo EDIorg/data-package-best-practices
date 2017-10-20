@@ -1,5 +1,10 @@
 # DEPRECATED #
 
+Plan: V3 will be a static document, distributed as a PDF, linked from an index page (see index.md, this dir). 
+
+edit copy here (EDI shared folder" practices/Best Practice Recommendations/Drafts/EML BP from LTER/:
+https://docs.google.com/document/d/1Cwgwe5_2_2QdMRQiv4HE8vX_QRCWU7x2bEWJOsyRBro/edit#
+
 **EML Best Practice Recommendations by Element**
 
 ========
