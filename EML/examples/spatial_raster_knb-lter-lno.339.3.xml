@@ -1,0 +1,868 @@
+<?xml version="1.0"?><eml:eml xmlns:ds="eml://ecoinformatics.org/dataset-2.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:eml="eml://ecoinformatics.org/eml-2.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:res="eml://ecoinformatics.org/resource-2.0.1" xmlns:doc="eml://ecoinformatics.org/documentation-2.0.1" xmlns:stmml="http://www.xml-cml.org/schema/stmml" xmlns:sw="eml://ecoinformatics.org/software-2.0.1" xmlns:prot="eml://ecoinformatics.org/protocol-2.0.1" xmlns:cit="eml://ecoinformatics.org/literature-2.0.1" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.0.1 eml.xsd" packageId="knb-lter-lno.0339.3" system="knb" scope="system">
+  <dataset scope="document">
+    <alternateIdentifier>archive-lter-sev-tm-20000728</alternateIdentifier>
+    <title>archive-lter-sev-tm-20000728</title>
+    <creator scope="document">
+      <individualName>
+        <salutation>Dr.</salutation>
+        <givenName>John</givenName>
+        <surName>Vande Castle</surName>
+      </individualName>
+      <organizationName>LTER Network Office</organizationName>
+      <positionName>Associate Director for Technology Development</positionName>
+      <address scope="document">
+        <deliveryPoint>Long Term Ecological Research - Network Office</deliveryPoint>
+        <deliveryPoint>UNM Biology Department, MSC03-2020</deliveryPoint>
+        <deliveryPoint>1 University of New Mexico</deliveryPoint>
+        <city>Albuquerque</city>
+        <administrativeArea>NM</administrativeArea>
+        <postalCode>87131-0001</postalCode>
+        <country>USA</country>
+      </address>
+      <phone phonetype="voice">505-277-2634</phone>
+      <phone phonetype="voice">505-269-6957</phone>
+      <phone phonetype="fax">505-277-2541</phone>
+      <electronicMailAddress>jvc@lternet.edu</electronicMailAddress>
+      <onlineUrl>www.lternet.edu</onlineUrl>
+    </creator>
+    <metadataProvider scope="document">
+      <individualName>
+        <salutation>Dr.</salutation>
+        <givenName>Mark</givenName>
+        <surName>Servilla</surName>
+      </individualName>
+      <organizationName>LTER Network Office</organizationName>
+      <positionName>Faculty Associate</positionName>
+      <address scope="document">
+        <deliveryPoint>Long Term Ecological Research - Network Office</deliveryPoint>
+        <deliveryPoint>UNM Biology Department, MSC03-2020</deliveryPoint>
+        <deliveryPoint>1 University of New Mexico</deliveryPoint>
+        <city>Albuquerque</city>
+        <administrativeArea>NM</administrativeArea>
+        <postalCode>87131-0001</postalCode>
+        <country>USA</country>
+      </address>
+      <phone phonetype="voice">505-277-2619</phone>
+      <phone phonetype="voice">505-453-8593</phone>
+      <phone phonetype="fax">505-277-2541</phone>
+      <electronicMailAddress>mservilla@lternet.edu</electronicMailAddress>
+      <onlineUrl>www.lternet.edu</onlineUrl>
+    </metadataProvider>
+    <metadataProvider scope="document">
+      <individualName>
+        <salutation>Mr.</salutation>
+        <givenName>Duane</givenName>
+        <surName>Costa</surName>
+      </individualName>
+      <organizationName>LTER Network Office</organizationName>
+      <positionName>Analyst/Programmer</positionName>
+      <address scope="document">
+        <deliveryPoint>Long Term Ecological Research - Network Office</deliveryPoint>
+        <deliveryPoint>UNM Biology Department, MSC03-2020</deliveryPoint>
+        <deliveryPoint>1 University of New Mexico</deliveryPoint>
+        <city>Albuquerque</city>
+        <administrativeArea>NM</administrativeArea>
+        <postalCode>87131-0001</postalCode>
+        <country>USA</country>
+      </address>
+      <phone phonetype="voice">505-277-2708</phone>
+      <phone phonetype="fax">505-277-2541</phone>
+      <electronicMailAddress>dcosta@lternet.edu</electronicMailAddress>
+      <onlineUrl>www.lternet.edu</onlineUrl>
+    </metadataProvider>
+    <pubDate>2004</pubDate>
+    <abstract>
+      <para>
+This LTER Remote Sensing spatial raster dataset consists of LandsatTM (Landsat Thematic Mapper) imagery
+collected on 2000-07-28 and over the Sevilleta (SEV) LTER site.
+      </para>
+    </abstract>
+    <keywordSet>
+      <keyword>remote sensing</keyword>
+      <keyword>imagery</keyword>
+      <keyword>spatial raster</keyword>
+      <keyword>earth observation</keyword>
+      <keyword>satellite data</keyword>
+      <keyword>LTER</keyword>
+      <keyword>LandsatTM (Landsat Thematic Mapper)</keyword>
+      <keyword>Sevilleta (SEV)</keyword>
+    </keywordSet>
+    <intellectualRights>
+      <para>
+This LTER Remote Sensing spatial raster dataset may be freely distributed for
+all not for profit and non-commercial purposes.  Use of this dataset, original
+and derived, for any publication and/or marketing purpose requires proper credit
+to the U.S. LTER Program, the LTER Network Office, and the National Science
+Foundation under NSF Cooperative Agreement #DEB-0236154.
+      </para>
+    </intellectualRights>
+    <distribution scope="document">
+      <online>
+      <url function="download">ftp://ftp.lternet.edu/pub/archive/lter/sev/tm/20000728</url>
+      </online>
+    </distribution>
+    <coverage scope="document">
+      <geographicCoverage scope="document">
+        <geographicDescription>This LTER Remote Sensing spatial raster dataset contains Earth observation imagery of the Sevilleta (SEV) LTER.</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-106.882</westBoundingCoordinate>
+          <eastBoundingCoordinate>-106.882</eastBoundingCoordinate>
+          <northBoundingCoordinate>+34.353</northBoundingCoordinate>
+          <southBoundingCoordinate>+34.353</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage scope="document">
+        <singleDateTime>
+          <calendarDate>2000-07-28</calendarDate>
+        </singleDateTime>
+      </temporalCoverage>
+    </coverage>
+    <contact scope="document">
+      <individualName>
+        <salutation>Dr.</salutation>
+        <givenName>John</givenName>
+        <surName>Vande Castle</surName>
+      </individualName>
+      <organizationName>LTER Network Office</organizationName>
+      <positionName>Associate Director for Technology Development</positionName>
+      <address scope="document">
+        <deliveryPoint>Long Term Ecological Research - Network Office</deliveryPoint>
+        <deliveryPoint>UNM Biology Department, MSC03-2020</deliveryPoint>
+        <deliveryPoint>1 University of New Mexico</deliveryPoint>
+        <city>Albuquerque</city>
+        <administrativeArea>NM</administrativeArea>
+        <postalCode>87131-0001</postalCode>
+        <country>USA</country>
+      </address>
+      <phone phonetype="voice">505-277-2634</phone>
+      <phone phonetype="voice">505-269-6957</phone>
+      <phone phonetype="fax">505-277-2541</phone>
+      <electronicMailAddress>jvc@lternet.edu</electronicMailAddress>
+      <onlineUrl>www.lternet.edu</onlineUrl>
+    </contact>
+    <access authSystem="knb" order="allowFirst" scope="document">
+      <allow>
+        <principal>uid=dcosta,o=lter,dc=ecoinformatics,dc=org</principal>
+        <permission>all</permission>
+      </allow>
+      <allow>
+        <principal>uid=LNO,o=lter,dc=ecoinformatics,dc=org</principal>
+        <permission>all</permission>
+      </allow>
+      <allow>
+        <principal>public</principal>
+        <permission>read</permission>
+      </allow>
+    </access>
+    <spatialRaster scope="document">
+		<entityName>000728 Band 1</entityName>
+		<physical scope="document">
+			<objectName>L71033036_03620000728_B10.L1G</objectName>
+			<size unit="byte">57607101</size>
+			<dataFormat>
+				<binaryRasterFormat>
+					<rowColumnOrientation>row</rowColumnOrientation>
+					<nbits>8</nbits>
+					<byteorder>big-endian</byteorder>
+					<skipbytes>0</skipbytes>
+				</binaryRasterFormat>
+			</dataFormat>
+		    <distribution scope="document">
+				<online>
+					<url function="download">ftp://ftp.lternet.edu/pub/archive/lter/sev/tm/20000728/L71033036_03620000728_B10.L1G</url>
+				</online>
+			</distribution>
+		</physical>
+		<attributeList>
+			<attribute scope="document">
+				<attributeName>pixel</attributeName>
+				<attributeDefinition>
+					Geodetically corrected and resampled picture element that corresponds to a single detector on the TM sensor,
+					commonly referred to as a Digital Number.
+				</attributeDefinition>
+				<measurementScale>
+					<ratio>
+						<unit>
+							<standardUnit>dimensionless</standardUnit>
+						</unit>
+						<precision>1</precision>
+						<numericDomain>
+							<numberType>integer</numberType>
+							<bounds>
+								<minimum exclusive="false">0</minimum>
+								<maximum exclusive="false">255</maximum>
+							</bounds>
+						</numericDomain>
+					</ratio>
+				</measurementScale>
+			</attribute>
+		</attributeList>
+		<spatialReference scope="document">
+            <horizCoordSysName>WGS_1984_UTM_Zone_13N</horizCoordSysName>
+		</spatialReference>
+		<georeferenceInfo>
+			<cornerPoint>
+				<xCoordinate>294600.000</xCoordinate>
+				<yCoordinate>3938100.000</yCoordinate>
+				<pointInPixel>center</pointInPixel>
+				<corner>Upper Left</corner>
+			</cornerPoint>
+		</georeferenceInfo>
+		<horizontalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</horizontalAccuracy>
+		<verticalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</verticalAccuracy>
+		<cellSizeXDirection>30</cellSizeXDirection>
+		<cellSizeYDirection>30</cellSizeYDirection>
+		<numberOfBands>1</numberOfBands>
+		<rasterOrigin>Upper Left</rasterOrigin>
+		<rows>7191</rows>
+		<columns>8011</columns>
+		<verticals>1</verticals>
+		<cellGeometry>pixel</cellGeometry>
+		<imageDescription>
+			<bandDescription>
+				<sequenceIdentifier>1</sequenceIdentifier>
+				<highWavelength>0.515</highWavelength>
+				<lowWaveLength>0.450</lowWaveLength>
+				<waveLengthUnits>micron</waveLengthUnits>
+			</bandDescription>
+		</imageDescription>
+	</spatialRaster>
+    <spatialRaster scope="document">
+		<entityName>000728 Band 2</entityName>
+		<physical scope="document">
+			<objectName>L71033036_03620000728_B20.L1G</objectName>
+			<size unit="byte">57607101</size>
+			<dataFormat>
+				<binaryRasterFormat>
+					<rowColumnOrientation>row</rowColumnOrientation>
+					<nbits>8</nbits>
+					<byteorder>big-endian</byteorder>
+					<skipbytes>0</skipbytes>
+				</binaryRasterFormat>
+			</dataFormat>
+		    <distribution scope="document">
+				<online>
+					<url function="download">ftp://ftp.lternet.edu/pub/archive/lter/sev/tm/20000728/L71033036_03620000728_B20.L1G</url>
+				</online>
+			</distribution>
+		</physical>
+		<attributeList>
+			<attribute scope="document">
+				<attributeName>pixel</attributeName>
+				<attributeDefinition>
+					Geodetically corrected and resampled picture element that corresponds to a single detector on the TM sensor,
+					commonly referred to as a Digital Number.
+				</attributeDefinition>
+				<measurementScale>
+					<ratio>
+						<unit>
+							<standardUnit>dimensionless</standardUnit>
+						</unit>
+						<precision>1</precision>
+						<numericDomain>
+							<numberType>integer</numberType>
+							<bounds>
+								<minimum exclusive="false">0</minimum>
+								<maximum exclusive="false">255</maximum>
+							</bounds>
+						</numericDomain>
+					</ratio>
+				</measurementScale>
+			</attribute>
+		</attributeList>
+		<spatialReference scope="document">
+            <horizCoordSysName>WGS_1984_UTM_Zone_13N</horizCoordSysName>
+		</spatialReference>
+		<georeferenceInfo>
+			<cornerPoint>
+				<xCoordinate>294600.000</xCoordinate>
+				<yCoordinate>3938100.000</yCoordinate>
+				<pointInPixel>center</pointInPixel>
+				<corner>Upper Left</corner>
+			</cornerPoint>
+		</georeferenceInfo>
+		<horizontalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</horizontalAccuracy>
+		<verticalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</verticalAccuracy>
+		<cellSizeXDirection>30</cellSizeXDirection>
+		<cellSizeYDirection>30</cellSizeYDirection>
+		<numberOfBands>1</numberOfBands>
+		<rasterOrigin>Upper Left</rasterOrigin>
+		<rows>7191</rows>
+		<columns>8011</columns>
+		<verticals>1</verticals>
+		<cellGeometry>pixel</cellGeometry>
+		<imageDescription>
+			<bandDescription>
+				<sequenceIdentifier>2</sequenceIdentifier>
+				<highWavelength>0.605</highWavelength>
+				<lowWaveLength>0.525</lowWaveLength>
+				<waveLengthUnits>micron</waveLengthUnits>
+			</bandDescription>
+		</imageDescription>
+	</spatialRaster>
+    <spatialRaster scope="document">
+		<entityName>000728 Band 3</entityName>
+		<physical scope="document">
+			<objectName>L71033036_03620000728_B30.L1G</objectName>
+			<size unit="byte">57607101</size>
+			<dataFormat>
+				<binaryRasterFormat>
+					<rowColumnOrientation>row</rowColumnOrientation>
+					<nbits>8</nbits>
+					<byteorder>big-endian</byteorder>
+					<skipbytes>0</skipbytes>
+				</binaryRasterFormat>
+			</dataFormat>
+		    <distribution scope="document">
+				<online>
+					<url function="download">ftp://ftp.lternet.edu/pub/archive/lter/sev/tm/20000728/L71033036_03620000728_B30.L1G</url>
+				</online>
+			</distribution>
+		</physical>
+		<attributeList>
+			<attribute scope="document">
+				<attributeName>pixel</attributeName>
+				<attributeDefinition>
+					Geodetically corrected and resampled picture element that corresponds to a single detector on the TM sensor,
+					commonly referred to as a Digital Number.
+				</attributeDefinition>
+				<measurementScale>
+					<ratio>
+						<unit>
+							<standardUnit>dimensionless</standardUnit>
+						</unit>
+						<precision>1</precision>
+						<numericDomain>
+							<numberType>integer</numberType>
+							<bounds>
+								<minimum exclusive="false">0</minimum>
+								<maximum exclusive="false">255</maximum>
+							</bounds>
+						</numericDomain>
+					</ratio>
+				</measurementScale>
+			</attribute>
+		</attributeList>
+		<spatialReference scope="document">
+            <horizCoordSysName>WGS_1984_UTM_Zone_13N</horizCoordSysName>
+		</spatialReference>
+		<georeferenceInfo>
+			<cornerPoint>
+				<xCoordinate>294600.000</xCoordinate>
+				<yCoordinate>3938100.000</yCoordinate>
+				<pointInPixel>center</pointInPixel>
+				<corner>Upper Left</corner>
+			</cornerPoint>
+		</georeferenceInfo>
+		<horizontalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</horizontalAccuracy>
+		<verticalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</verticalAccuracy>
+		<cellSizeXDirection>30</cellSizeXDirection>
+		<cellSizeYDirection>30</cellSizeYDirection>
+		<numberOfBands>1</numberOfBands>
+		<rasterOrigin>Upper Left</rasterOrigin>
+		<rows>7191</rows>
+		<columns>8011</columns>
+		<verticals>1</verticals>
+		<cellGeometry>pixel</cellGeometry>
+		<imageDescription>
+			<bandDescription>
+				<sequenceIdentifier>3</sequenceIdentifier>
+				<highWavelength>0.690</highWavelength>
+				<lowWaveLength>0.630</lowWaveLength>
+				<waveLengthUnits>micron</waveLengthUnits>
+			</bandDescription>
+		</imageDescription>
+	</spatialRaster>
+    <spatialRaster scope="document">
+		<entityName>000728 Band 4</entityName>
+		<physical scope="document">
+			<objectName>L71033036_03620000728_B40.L1G</objectName>
+			<size unit="byte">57607101</size>
+			<dataFormat>
+				<binaryRasterFormat>
+					<rowColumnOrientation>row</rowColumnOrientation>
+					<nbits>8</nbits>
+					<byteorder>big-endian</byteorder>
+					<skipbytes>0</skipbytes>
+				</binaryRasterFormat>
+			</dataFormat>
+		    <distribution scope="document">
+				<online>
+					<url function="download">ftp://ftp.lternet.edu/pub/archive/lter/sev/tm/20000728/L71033036_03620000728_B40.L1G</url>
+				</online>
+			</distribution>
+		</physical>
+		<attributeList>
+			<attribute scope="document">
+				<attributeName>pixel</attributeName>
+				<attributeDefinition>
+					Geodetically corrected and resampled picture element that corresponds to a single detector on the TM sensor,
+					commonly referred to as a Digital Number.
+				</attributeDefinition>
+				<measurementScale>
+					<ratio>
+						<unit>
+							<standardUnit>dimensionless</standardUnit>
+						</unit>
+						<precision>1</precision>
+						<numericDomain>
+							<numberType>integer</numberType>
+							<bounds>
+								<minimum exclusive="false">0</minimum>
+								<maximum exclusive="false">255</maximum>
+							</bounds>
+						</numericDomain>
+					</ratio>
+				</measurementScale>
+			</attribute>
+		</attributeList>
+		<spatialReference scope="document">
+            <horizCoordSysName>WGS_1984_UTM_Zone_13N</horizCoordSysName>
+		</spatialReference>
+		<georeferenceInfo>
+			<cornerPoint>
+				<xCoordinate>294600.000</xCoordinate>
+				<yCoordinate>3938100.000</yCoordinate>
+				<pointInPixel>center</pointInPixel>
+				<corner>Upper Left</corner>
+			</cornerPoint>
+		</georeferenceInfo>
+		<horizontalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</horizontalAccuracy>
+		<verticalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</verticalAccuracy>
+		<cellSizeXDirection>30</cellSizeXDirection>
+		<cellSizeYDirection>30</cellSizeYDirection>
+		<numberOfBands>1</numberOfBands>
+		<rasterOrigin>Upper Left</rasterOrigin>
+		<rows>7191</rows>
+		<columns>8011</columns>
+		<verticals>1</verticals>
+		<cellGeometry>pixel</cellGeometry>
+		<imageDescription>
+			<bandDescription>
+				<sequenceIdentifier>4</sequenceIdentifier>
+				<highWavelength>0.900</highWavelength>
+				<lowWaveLength>0.750</lowWaveLength>
+				<waveLengthUnits>micron</waveLengthUnits>
+			</bandDescription>
+		</imageDescription>
+	</spatialRaster>
+    <spatialRaster scope="document">
+		<entityName>000728 Band 5</entityName>
+		<physical scope="document">
+			<objectName>L71033036_03620000728_B50.L1G</objectName>
+			<size unit="byte">57607101</size>
+			<dataFormat>
+				<binaryRasterFormat>
+					<rowColumnOrientation>row</rowColumnOrientation>
+					<nbits>8</nbits>
+					<byteorder>big-endian</byteorder>
+					<skipbytes>0</skipbytes>
+				</binaryRasterFormat>
+			</dataFormat>
+		    <distribution scope="document">
+				<online>
+					<url function="download">ftp://ftp.lternet.edu/pub/archive/lter/sev/tm/20000728/L71033036_03620000728_B50.L1G</url>
+				</online>
+			</distribution>
+		</physical>
+		<attributeList>
+			<attribute scope="document">
+				<attributeName>pixel</attributeName>
+				<attributeDefinition>
+					Geodetically corrected and resampled picture element that corresponds to a single detector on the TM sensor,
+					commonly referred to as a Digital Number.
+				</attributeDefinition>
+				<measurementScale>
+					<ratio>
+						<unit>
+							<standardUnit>dimensionless</standardUnit>
+						</unit>
+						<precision>1</precision>
+						<numericDomain>
+							<numberType>integer</numberType>
+							<bounds>
+								<minimum exclusive="false">0</minimum>
+								<maximum exclusive="false">255</maximum>
+							</bounds>
+						</numericDomain>
+					</ratio>
+				</measurementScale>
+			</attribute>
+		</attributeList>
+		<spatialReference scope="document">
+            <horizCoordSysName>WGS_1984_UTM_Zone_13N</horizCoordSysName>
+		</spatialReference>
+		<georeferenceInfo>
+			<cornerPoint>
+				<xCoordinate>294600.000</xCoordinate>
+				<yCoordinate>3938100.000</yCoordinate>
+				<pointInPixel>center</pointInPixel>
+				<corner>Upper Left</corner>
+			</cornerPoint>
+		</georeferenceInfo>
+		<horizontalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</horizontalAccuracy>
+		<verticalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</verticalAccuracy>
+		<cellSizeXDirection>30</cellSizeXDirection>
+		<cellSizeYDirection>30</cellSizeYDirection>
+		<numberOfBands>1</numberOfBands>
+		<rasterOrigin>Upper Left</rasterOrigin>
+		<rows>7191</rows>
+		<columns>8011</columns>
+		<verticals>1</verticals>
+		<cellGeometry>pixel</cellGeometry>
+		<imageDescription>
+			<bandDescription>
+				<sequenceIdentifier>5</sequenceIdentifier>
+				<highWavelength>1.750</highWavelength>
+				<lowWaveLength>1.550</lowWaveLength>
+				<waveLengthUnits>micron</waveLengthUnits>
+			</bandDescription>
+		</imageDescription>
+	</spatialRaster>
+    <spatialRaster scope="document">
+		<entityName>000728 Band 7</entityName>
+		<physical scope="document">
+			<objectName>L71033036_03620000728_B70.L1G</objectName>
+			<size unit="byte">57607101</size>
+			<dataFormat>
+				<binaryRasterFormat>
+					<rowColumnOrientation>row</rowColumnOrientation>
+					<nbits>8</nbits>
+					<byteorder>big-endian</byteorder>
+					<skipbytes>0</skipbytes>
+				</binaryRasterFormat>
+			</dataFormat>
+		    <distribution scope="document">
+				<online>
+					<url function="download">ftp://ftp.lternet.edu/pub/archive/lter/sev/tm/20000728/L71033036_03620000728_B70.L1G</url>
+				</online>
+			</distribution>
+		</physical>
+		<attributeList>
+			<attribute scope="document">
+				<attributeName>pixel</attributeName>
+				<attributeDefinition>
+					Geodetically corrected and resampled picture element that corresponds to a single detector on the TM sensor,
+					commonly referred to as a Digital Number.
+				</attributeDefinition>
+				<measurementScale>
+					<ratio>
+						<unit>
+							<standardUnit>dimensionless</standardUnit>
+						</unit>
+						<precision>1</precision>
+						<numericDomain>
+							<numberType>integer</numberType>
+							<bounds>
+								<minimum exclusive="false">0</minimum>
+								<maximum exclusive="false">255</maximum>
+							</bounds>
+						</numericDomain>
+					</ratio>
+				</measurementScale>
+			</attribute>
+		</attributeList>
+		<spatialReference scope="document">
+            <horizCoordSysName>WGS_1984_UTM_Zone_13N</horizCoordSysName>
+		</spatialReference>
+		<georeferenceInfo>
+			<cornerPoint>
+				<xCoordinate>294600.000</xCoordinate>
+				<yCoordinate>3938100.000</yCoordinate>
+				<pointInPixel>center</pointInPixel>
+				<corner>Upper Left</corner>
+			</cornerPoint>
+		</georeferenceInfo>
+		<horizontalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</horizontalAccuracy>
+		<verticalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</verticalAccuracy>
+		<cellSizeXDirection>30</cellSizeXDirection>
+		<cellSizeYDirection>30</cellSizeYDirection>
+		<numberOfBands>1</numberOfBands>
+		<rasterOrigin>Upper Left</rasterOrigin>
+		<rows>7191</rows>
+		<columns>8011</columns>
+		<verticals>1</verticals>
+		<cellGeometry>pixel</cellGeometry>
+		<imageDescription>
+			<bandDescription>
+				<sequenceIdentifier>7</sequenceIdentifier>
+				<highWavelength>2.350</highWavelength>
+				<lowWaveLength>2.090</lowWaveLength>
+				<waveLengthUnits>micron</waveLengthUnits>
+			</bandDescription>
+		</imageDescription>
+	</spatialRaster>
+    <spatialRaster scope="document">
+		<entityName>000728 Band 8</entityName>
+		<physical scope="document">
+			<objectName>L71033036_03620000728_B10.L1G</objectName>
+			<size unit="byte">230398001</size>
+			<dataFormat>
+				<binaryRasterFormat>
+					<rowColumnOrientation>row</rowColumnOrientation>
+					<nbits>8</nbits>
+					<byteorder>big-endian</byteorder>
+					<skipbytes>0</skipbytes>
+				</binaryRasterFormat>
+			</dataFormat>
+		    <distribution scope="document">
+				<online>
+					<url function="download">ftp://ftp.lternet.edu/pub/archive/lter/sev/tm/20000728/L71033036_03620000728_B10.L1G</url>
+				</online>
+			</distribution>
+		</physical>
+		<attributeList>
+			<attribute scope="document">
+				<attributeName>pixel</attributeName>
+				<attributeDefinition>
+					Geodetically corrected and resampled picture element that corresponds to a single detector on the TM sensor,
+					commonly referred to as a Digital Number.
+				</attributeDefinition>
+				<measurementScale>
+					<ratio>
+						<unit>
+							<standardUnit>dimensionless</standardUnit>
+						</unit>
+						<precision>1</precision>
+						<numericDomain>
+							<numberType>integer</numberType>
+							<bounds>
+								<minimum exclusive="false">0</minimum>
+								<maximum exclusive="false">255</maximum>
+							</bounds>
+						</numericDomain>
+					</ratio>
+				</measurementScale>
+			</attribute>
+		</attributeList>
+		<spatialReference scope="document">
+            <horizCoordSysName>WGS_1984_UTM_Zone_13N</horizCoordSysName>
+		</spatialReference>
+		<georeferenceInfo>
+			<cornerPoint>
+				<xCoordinate>294600.000</xCoordinate>
+				<yCoordinate>3938100.000</yCoordinate>
+				<pointInPixel>center</pointInPixel>
+				<corner>Upper Left</corner>
+			</cornerPoint>
+		</georeferenceInfo>
+		<horizontalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</horizontalAccuracy>
+		<verticalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</verticalAccuracy>
+		<cellSizeXDirection>15</cellSizeXDirection>
+		<cellSizeYDirection>15</cellSizeYDirection>
+		<numberOfBands>1</numberOfBands>
+		<rasterOrigin>Upper Left</rasterOrigin>
+		<rows>14381</rows>
+		<columns>16021</columns>
+		<verticals>1</verticals>
+		<cellGeometry>pixel</cellGeometry>
+		<imageDescription>
+			<bandDescription>
+				<sequenceIdentifier>8</sequenceIdentifier>
+				<highWavelength>0.900</highWavelength>
+				<lowWaveLength>0.520</lowWaveLength>
+				<waveLengthUnits>micron</waveLengthUnits>
+			</bandDescription>
+		</imageDescription>
+	</spatialRaster>
+    <spatialRaster scope="document">
+		<entityName>000728 Band 61</entityName>
+		<physical scope="document">
+			<objectName>L71033036_03620000728_B61.L1G</objectName>
+			<size unit="byte">14405576</size>
+			<dataFormat>
+				<binaryRasterFormat>
+					<rowColumnOrientation>row</rowColumnOrientation>
+					<nbits>8</nbits>
+					<byteorder>big-endian</byteorder>
+					<skipbytes>0</skipbytes>
+				</binaryRasterFormat>
+			</dataFormat>
+		    <distribution scope="document">
+				<online>
+					<url function="download">ftp://ftp.lternet.edu/pub/archive/lter/sev/tm/20000728/L71033036_03620000728_B61.L1G</url>
+				</online>
+			</distribution>
+		</physical>
+		<attributeList>
+			<attribute scope="document">
+				<attributeName>pixel</attributeName>
+				<attributeDefinition>
+					Geodetically corrected and resampled picture element that corresponds to a single detector on the TM sensor,
+					commonly referred to as a Digital Number.
+				</attributeDefinition>
+				<measurementScale>
+					<ratio>
+						<unit>
+							<standardUnit>dimensionless</standardUnit>
+						</unit>
+						<precision>1</precision>
+						<numericDomain>
+							<numberType>integer</numberType>
+							<bounds>
+								<minimum exclusive="false">0</minimum>
+								<maximum exclusive="false">255</maximum>
+							</bounds>
+						</numericDomain>
+					</ratio>
+				</measurementScale>
+			</attribute>
+		</attributeList>
+		<spatialReference scope="document">
+            <horizCoordSysName>WGS_1984_UTM_Zone_13N</horizCoordSysName>
+		</spatialReference>
+		<georeferenceInfo>
+			<cornerPoint>
+				<xCoordinate>294600.000</xCoordinate>
+				<yCoordinate>3938100.000</yCoordinate>
+				<pointInPixel>center</pointInPixel>
+				<corner>Upper Left</corner>
+			</cornerPoint>
+		</georeferenceInfo>
+		<horizontalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</horizontalAccuracy>
+		<verticalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</verticalAccuracy>
+		<cellSizeXDirection>60</cellSizeXDirection>
+		<cellSizeYDirection>60</cellSizeYDirection>
+		<numberOfBands>1</numberOfBands>
+		<rasterOrigin>Upper Left</rasterOrigin>
+		<rows>3596</rows>
+		<columns>4006</columns>
+		<verticals>1</verticals>
+		<cellGeometry>pixel</cellGeometry>
+		<imageDescription>
+			<bandDescription>
+				<sequenceIdentifier>61</sequenceIdentifier>
+				<highWavelength>12.500</highWavelength>
+				<lowWaveLength>10.400</lowWaveLength>
+				<waveLengthUnits>micron</waveLengthUnits>
+			</bandDescription>
+		</imageDescription>
+	</spatialRaster>
+    <spatialRaster scope="document">
+		<entityName>000728 Band 62</entityName>
+		<physical scope="document">
+			<objectName>L71033036_03620000728_B62.L1G</objectName>
+			<size unit="byte">14405576</size>
+			<dataFormat>
+				<binaryRasterFormat>
+					<rowColumnOrientation>row</rowColumnOrientation>
+					<nbits>8</nbits>
+					<byteorder>big-endian</byteorder>
+					<skipbytes>0</skipbytes>
+				</binaryRasterFormat>
+			</dataFormat>
+		    <distribution scope="document">
+				<online>
+					<url function="download">ftp://ftp.lternet.edu/pub/archive/lter/sev/tm/20000728/L71033036_03620000728_B62.L1G</url>
+				</online>
+			</distribution>
+		</physical>
+		<attributeList>
+			<attribute scope="document">
+				<attributeName>pixel</attributeName>
+				<attributeDefinition>
+					Geodetically corrected and resampled picture element that corresponds to a single detector on the TM sensor,
+					commonly referred to as a Digital Number.
+				</attributeDefinition>
+				<measurementScale>
+					<ratio>
+						<unit>
+							<standardUnit>dimensionless</standardUnit>
+						</unit>
+						<precision>1</precision>
+						<numericDomain>
+							<numberType>integer</numberType>
+							<bounds>
+								<minimum exclusive="false">0</minimum>
+								<maximum exclusive="false">255</maximum>
+							</bounds>
+						</numericDomain>
+					</ratio>
+				</measurementScale>
+			</attribute>
+		</attributeList>
+		<spatialReference scope="document">
+            <horizCoordSysName>WGS_1984_UTM_Zone_13N</horizCoordSysName>
+		</spatialReference>
+		<georeferenceInfo>
+			<cornerPoint>
+				<xCoordinate>294600.000</xCoordinate>
+				<yCoordinate>3938100.000</yCoordinate>
+				<pointInPixel>center</pointInPixel>
+				<corner>Upper Left</corner>
+			</cornerPoint>
+		</georeferenceInfo>
+		<horizontalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</horizontalAccuracy>
+		<verticalAccuracy>
+			<accuracyReport>Unknown</accuracyReport>
+		</verticalAccuracy>
+		<cellSizeXDirection>60</cellSizeXDirection>
+		<cellSizeYDirection>60</cellSizeYDirection>
+		<numberOfBands>1</numberOfBands>
+		<rasterOrigin>Upper Left</rasterOrigin>
+		<rows>3596</rows>
+		<columns>4006</columns>
+		<verticals>1</verticals>
+		<cellGeometry>pixel</cellGeometry>
+		<imageDescription>
+			<bandDescription>
+				<sequenceIdentifier>62</sequenceIdentifier>
+				<highWavelength>12.500</highWavelength>
+				<lowWaveLength>10.400</lowWaveLength>
+				<waveLengthUnits>micron</waveLengthUnits>
+			</bandDescription>
+		</imageDescription>
+	</spatialRaster>
+  </dataset>
+  <additionalMetadata>
+    <fileList>
+    20000728_B10.L1G
+    20000728_B20.L1G
+    20000728_B30.L1G
+    20000728_B40.L1G
+    20000728_B50.L1G
+    20000728_B61.L1G
+    20000728_HDF.L1G
+    20000728_MTL.L1G
+    20000728_B62.L1G
+    20000728_B70.L1G
+    20000728_B80.L1G
+    20000728/README.HDF
+    20000728.jpg
+    </fileList>
+  </additionalMetadata>
+</eml:eml>

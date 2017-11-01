@@ -1,0 +1,1195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.0.0" packageId="1058377556406" system="FLS" scope="system" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.0.0 http://ces.asu.edu/eml/eml.xsd">
+   <dataset id="FLS-1" system="FLS">
+      <alternateIdentifier>FLS-1</alternateIdentifier>
+      <shortName>Arthropods</shortName>
+      <title>Longterm Ground Arthropod Monitoring Dataset at Ficity, USA from 1998 to 2003</title>
+      <creator id="org-1" system="FLS">
+         <organizationName>Fictitious LTER Site</organizationName>
+         <address>
+            <deliveryPoint>Department for Ecology</deliveryPoint>
+            <deliveryPoint>Fictitious State University</deliveryPoint>
+            <deliveryPoint>PO Box 111111</deliveryPoint>
+            <city>Ficity</city>
+            <administrativeArea>FI</administrativeArea>
+            <postalCode>11111-1111</postalCode>
+         </address>
+         <phone phonetype="voice">(999) 999-9999</phone>
+         <electronicMailAddress>fsu@fi.univ.edu</electronicMailAddress>
+         <onlineUrl>http://www.fsu.edu/</onlineUrl>
+      </creator>
+      <creator id="pers-1" system="FLS">
+         <individualName>
+            <salutation>Dr.</salutation>
+            <givenName>Joe</givenName>
+            <givenName>T.</givenName>
+            <surName>Ecologist Jr.</surName>
+         </individualName>
+         <organizationName>FSL LTER</organizationName>
+         <address>
+            <deliveryPoint>Department for Ecology</deliveryPoint>
+            <deliveryPoint>Fictitious State University</deliveryPoint>
+            <deliveryPoint>PO Box 111111</deliveryPoint>
+            <city>Ficity</city>
+            <administrativeArea>FI</administrativeArea>
+            <postalCode>11111-1111</postalCode>
+         </address>
+         <phone phonetype="voice">(999) 999-9999</phone>
+         <electronicMailAddress>jecologist@fi.univ.edu</electronicMailAddress>
+         <onlineUrl>http://www.fsu.edu/~jecologist</onlineUrl>
+      </creator>
+      <metadataProvider>
+         <organizationName>Fictitious LTER Site</organizationName>
+         <address>
+            <deliveryPoint>Department for Ecology</deliveryPoint>
+            <deliveryPoint>Fictitious State University</deliveryPoint>
+            <deliveryPoint>PO Box 111111</deliveryPoint>
+            <city>Ficity</city>
+            <administrativeArea>FI</administrativeArea>
+            <postalCode>11111-1111</postalCode>
+         </address>
+         <phone phonetype="voice">(999) 999-9999</phone>
+         <electronicMailAddress>fsu@fi.univ.edu</electronicMailAddress>
+         <onlineUrl>http://www.fsu.edu/</onlineUrl>
+      </metadataProvider>
+      <associatedParty id="12010" system="FLS">
+         <individualName>
+            <givenName>Ima</givenName>
+            <surName>Testuser</surName>
+         </individualName>
+         <organizationName>FSL LTER</organizationName>
+         <address>
+            <deliveryPoint>Department for Ecology</deliveryPoint>
+            <deliveryPoint>Fictitious State University</deliveryPoint>
+            <deliveryPoint>PO Box 111111</deliveryPoint>
+            <city>Ficity</city>
+            <administrativeArea>FI</administrativeArea>
+            <postalCode>11111-1111</postalCode>
+         </address>
+         <phone phonetype="voice">(999) 999-9999</phone>
+         <electronicMailAddress>itestuser@lternet.edu</electronicMailAddress>
+         <onlineUrl>http://search.lternet.edu/directory_view.php?personid=12010&amp;query=itestuser</onlineUrl>
+         <role>Technician</role>
+      </associatedParty>
+      <pubDate>2000</pubDate>
+      <abstract>
+         <para>Ground arthropods communities are monitored in different habitats in a rapidly
+            changing environment. The arthropods are collected in traps four times a year in ten
+            locations and determined as far as possible to family, genus or species.</para>
+      </abstract>
+      <keywordSet>
+         <keyword keywordType="place">City</keyword>
+         <keyword keywordType="place">State</keyword>
+         <keyword keywordType="place">Region</keyword>
+         <keyword keywordType="place">County</keyword>
+         <keyword keywordType="theme">FLS</keyword>
+         <keyword keywordType="theme">Fictitious LTER Site</keyword>
+         <keyword keywordType="theme">LTER</keyword>
+      </keywordSet>
+      <keywordSet>
+         <keyword keywordType="theme">Ecology</keyword>
+         <keyword keywordType="theme">biodiversity</keyword>
+         <keyword keywordType="theme">Population Dynamics</keyword>
+         <keyword keywordType="theme">Terrestrial</keyword>
+         <keyword keywordType="theme">arthropods</keyword>
+         <keyword keywordType="theme">pitfall trap</keyword>
+         <keyword keywordType="theme">monitoring</keyword>
+         <keyword keywordType="theme">Richness</keyword>
+         <keyword keywordType="theme">Abundance</keyword>
+      </keywordSet>
+      <intellectualRights>
+         <section>
+            <title>Copyright Notice</title>
+            <para> Copyright Board of Regents, Fictitious State University. This dataset is released
+               to the public and may be used for academic, educational, or commercial purposes
+               subject to the following restrictions:</para>
+            <para>
+               <itemizedlist>
+                  <listitem>
+                     <para>While FLS LTER will make every effort possible to control and document
+                        the quality of the data it publishes, the data are made available "as is". </para>
+                  </listitem>
+                  <listitem>
+                     <para>FLS LTER cannot assume responsibility for damages resulting from mis-use
+                        or mis-interpretation of datasets or from errors or omissions that may exist
+                        in the data.</para>
+                  </listitem>
+                  <listitem>
+                     <para>It is considered a matter of professional ethics to acknowledge the work
+                        of other scientists that has resulted in data used in subsequent research.</para>
+                  </listitem>
+                  <listitem>
+                     <para>FLS LTER expects that any use of data from this server will be
+                        accompanied with the appropriate citations and acknowledgments. </para>
+                  </listitem>
+                  <listitem>
+                     <para>FLS LTER encourages users to contact the original investigator
+                        responsible for the data that they are accessing. Where appropriate,
+                        researchers whose projects are integrally dependent on FLS LTER data are
+                        encouraged to consider collaboration and/or co-authorship with original
+                        investigators. </para>
+                  </listitem>
+                  <listitem>
+                     <para>FLS LTER requests that users submit to FLS LTER one copy of any
+                        publication resulting from the use of data obtained from this site. </para>
+                  </listitem>
+                  <listitem>
+                     <para>FLS LTER requests that users not redistribute data obtained from this
+                        site. However, links or references to this site may be freely posted.</para>
+                  </listitem>
+               </itemizedlist>
+            </para>
+         </section>
+      </intellectualRights>
+      <distribution>
+         <online>
+            <connectionDefinition id="FSL1_SQL">
+               <schemeName system="FLS">Microsoft SQL Server</schemeName>
+               <description>
+                  <para>This scheme describes the connection information needed to connect to a
+                     relational database hosted on a network server</para>
+               </description>
+               <parameterDefinition>
+                  <name>version</name>
+                  <definition>The version identifier of the software</definition>
+                  <defaultValue>7.0.842</defaultValue>
+               </parameterDefinition>
+               <parameterDefinition>
+                  <name>host</name>
+                  <definition>The host name or ip number where the service is running</definition>
+                  <defaultValue>fi.univ.edu</defaultValue>
+               </parameterDefinition>
+               <parameterDefinition>
+                  <name>port</name>
+                  <definition>The port number where the service is listening</definition>
+                  <defaultValue>1433</defaultValue>
+               </parameterDefinition>
+               <parameterDefinition>
+                  <name>catalog</name>
+                  <definition>The name of the database or catalog</definition>
+                  <defaultValue>monitoring</defaultValue>
+               </parameterDefinition>
+               <parameterDefinition>
+                  <name>owner</name>
+                  <definition>The owner name or schema for the object</definition>
+                  <defaultValue>dbo</defaultValue>
+               </parameterDefinition>
+            </connectionDefinition>
+         </online>
+      </distribution>
+      <distribution>
+         <online>
+            <url>http://www.fsu.edu/lter/data/fsl-1.txt</url>
+         </online>
+      </distribution>
+      <coverage>
+         <geographicCoverage>
+            <geographicDescription>Ficity, FI metropolitan area, USA</geographicDescription>
+            <boundingCoordinates>
+               <westBoundingCoordinate>-112.373614</westBoundingCoordinate>
+               <eastBoundingCoordinate>-111.612936</eastBoundingCoordinate>
+               <northBoundingCoordinate>33.708829</northBoundingCoordinate>
+               <southBoundingCoordinate>33.298975</southBoundingCoordinate>
+               <boundingAltitudes>
+                  <altitudeMinimum>300</altitudeMinimum>
+                  <altitudeMaximum>600</altitudeMaximum>
+                  <altitudeUnits>meter</altitudeUnits>
+               </boundingAltitudes>
+            </boundingCoordinates>
+         </geographicCoverage>
+         <temporalCoverage>
+            <rangeOfDates>
+               <beginDate>
+                  <calendarDate>1998-11-12</calendarDate>
+               </beginDate>
+               <endDate>
+                  <calendarDate>2003-12-31</calendarDate>
+               </endDate>
+            </rangeOfDates>
+         </temporalCoverage>
+         <taxonomicCoverage>
+            <taxonomicClassification>
+               <taxonRankName>Kingdom</taxonRankName>
+               <taxonRankValue>Animalia</taxonRankValue>
+               <taxonomicClassification>
+                  <taxonRankName>Phylum</taxonRankName>
+                  <taxonRankValue>Mollusca</taxonRankValue>
+                  <taxonomicClassification>
+                     <taxonRankName>Class</taxonRankName>
+                     <taxonRankValue>Gastropoda</taxonRankValue>
+                     <taxonomicClassification>
+                        <taxonRankName>Order</taxonRankName>
+                        <taxonRankValue>Basommatophora</taxonRankValue>
+                        <taxonomicClassification>
+                           <taxonRankName>Genus</taxonRankName>
+                           <taxonRankValue>Detracia</taxonRankValue>
+                           <taxonomicClassification>
+                              <taxonRankName>Species</taxonRankName>
+                              <taxonRankValue>Detracia floridana</taxonRankValue>
+                              <commonName>Florida Melampus</commonName>
+                           </taxonomicClassification>
+                        </taxonomicClassification>
+                     </taxonomicClassification>
+                  </taxonomicClassification>
+               </taxonomicClassification>
+            </taxonomicClassification>
+            <taxonomicClassification>
+               <taxonRankName>Kingdom</taxonRankName>
+               <taxonRankValue>Animalia</taxonRankValue>
+               <taxonomicClassification>
+                  <taxonRankName>Phylum</taxonRankName>
+                  <taxonRankValue>Mollusca</taxonRankValue>
+                  <taxonomicClassification>
+                     <taxonRankName>Class</taxonRankName>
+                     <taxonRankValue>Bivalvia</taxonRankValue>
+                     <taxonomicClassification>
+                        <taxonRankName>Order</taxonRankName>
+                        <taxonRankValue>Filibranchia</taxonRankValue>
+                        <taxonomicClassification>
+                           <taxonRankName>Genus</taxonRankName>
+                           <taxonRankValue>Geukensia</taxonRankValue>
+                           <taxonomicClassification>
+                              <taxonRankName>Species</taxonRankName>
+                              <taxonRankValue>Geukensia demissa</taxonRankValue>
+                              <commonName>Ribbed Mussel</commonName>
+                           </taxonomicClassification>
+                        </taxonomicClassification>
+                     </taxonomicClassification>
+                  </taxonomicClassification>
+               </taxonomicClassification>
+            </taxonomicClassification>
+         </taxonomicCoverage>
+      </coverage>
+      <maintenance>
+         <description>
+            <para> There have been no changes to the metadata or data files since publication
+               online. </para>
+         </description>
+      </maintenance>
+      <contact id="pers-4">
+         <positionName>Data Manager</positionName>
+         <address>
+            <deliveryPoint>Department for Ecology</deliveryPoint>
+            <deliveryPoint>Fictitious State University</deliveryPoint>
+            <deliveryPoint>PO Box 111111</deliveryPoint>
+            <city>Ficity</city>
+            <administrativeArea>FI</administrativeArea>
+            <postalCode>11111-1111</postalCode>
+         </address>
+         <phone phonetype="voice">(111) 222-3333</phone>
+         <phone phonetype="fax">(111) 222-3334</phone>
+         <electronicMailAddress>fls.data@fi.univ.edu</electronicMailAddress>
+         <onlineUrl>http://www.fsu.edu/lter</onlineUrl>
+      </contact>
+      <publisher>
+         <references>org-1</references>
+      </publisher>
+      <methods>
+         <methodStep>
+            <description>
+               <para>
+                  <literalLayout>FSL Protocol for Surveying Ground Arthropods has been used</literalLayout>
+               </para>
+            </description>
+            <protocol>
+               <title>FSL Protocol for Surveying Ground Arthropods in school yards</title>
+               <creator>
+                  <references>pers-1</references>
+               </creator>
+               <pubDate>2000</pubDate>
+               <abstract>
+                  <para>This protocol is being used by FLS arthropod monitoring program. Ground
+                     arthropoed are collected in pit fall traps buried into the soil and left for 72
+                     hours. Sampling takes place fours times a year in three location. The trapped
+                     arthropods are determined and data entered into a database.</para>
+               </abstract>
+               <keywordSet>
+                  <keyword keywordType="theme">Ecology</keyword>
+                  <keyword keywordType="theme">biodiversity</keyword>
+                  <keyword keywordType="theme">Population Dynamics</keyword>
+                  <keyword keywordType="theme">Terrestrial</keyword>
+                  <keyword keywordType="theme">arthropods</keyword>
+                  <keyword keywordType="theme">pitfall trap</keyword>
+                  <keyword keywordType="theme">monitoring</keyword>
+                  <keyword keywordType="theme">Richness</keyword>
+                  <keyword keywordType="theme">Abundance</keyword>
+               </keywordSet>
+               <distribution>
+                  <online>
+                     <url>http://fls.fi.univ.edu/protocol/arthropods/arthro.htm</url>
+                  </online>
+               </distribution>
+               <proceduralStep>
+                  <description>
+                     <section>
+                        <title>Materials needed</title>
+                        <para>
+                           <itemizedlist>
+                              <listitem>
+                                 <para>Bulb planter</para>
+                              </listitem>
+                              <listitem>
+                                 <para>Metric measuring tape</para>
+                              </listitem>
+                              <listitem>
+                                 <para>Metric ruler</para>
+                              </listitem>
+                              <listitem>
+                                 <para>Tweezers</para>
+                              </listitem>
+                              <listitem>
+                                 <para>Magnifying glass</para>
+                              </listitem>
+                              <listitem>
+                                 <para>16-ounce Solo cups and lids</para>
+                              </listitem>
+                              <listitem>
+                                 <para>Pencils</para>
+                              </listitem>
+                              <listitem>
+                                 <para>Data sheets</para>
+                              </listitem>
+                              <listitem>
+                                 <para>Ziploc bags</para>
+                              </listitem>
+                              <listitem>
+                                 <para>Cooler with blue ice (if you have a freezer in which to store
+                                    samples, you'll only use the cooler when you're outside. If you
+                                    don't have a freezer or you don't want to put your samples in
+                                    it, then be sure to check the ice periodically).</para>
+                              </listitem>
+                           </itemizedlist>
+                        </para>
+                     </section>
+                     <section>
+                        <para>
+                           <orderedlist>
+                              <listitem>
+                                 <para>Use pit traps to collect arthropods once a month. The pit
+                                    traps consist of two 16-ounce Solo cups, one inside the other,
+                                    buried in the ground so that the top of the cup is ever so
+                                    slightly below the surface of the soil. (If the top of the cup
+                                    is above the ground, the bugs will walk around your trap instead
+                                    of into it.)</para>
+                              </listitem>
+                              <listitem>
+                                 <para>Use a bulb planter to dig 10 holes in a line, 5 meters apart</para>
+                              </listitem>
+                              <listitem>
+                                 <para>Complete a habitat description for each of your trap lines.
+                                    Record your findings on the habitat description data sheet. You
+                                    will need to do this before entering data into the CAP LTER
+                                    database. YOU ONLY NEED TO DO THIS ONCE PER TRAP LINE</para>
+                              </listitem>
+                              <listitem>
+                                 <para>Place the pit traps (Solo cups) in the ground. Remember to
+                                    use two cups, one inside the other</para>
+                              </listitem>
+                              <listitem>
+                                 <para>Leave the traps alone for 72 hours</para>
+                              </listitem>
+                              <listitem>
+                                 <para>After 72 hours, empty the traps into Ziploc bags. Use a
+                                    different bag for each trap (all arthropods collected in one
+                                    trap are called a "sample") and include a label indicating the
+                                    collected sample' s corresponding trap site number</para>
+                              </listitem>
+                              <listitem>
+                                 <para>Take the collected arthropods to your indoor workspace for identification</para>
+                              </listitem>
+                              <listitem>
+                                 <para>Download the data sheet and identification key and use them
+                                    to record your observations</para>
+                              </listitem>
+                           </orderedlist>
+                        </para>
+                     </section>
+                  </description>
+               </proceduralStep>
+            </protocol>
+         </methodStep>
+         <sampling>
+            <studyExtent>
+               <coverage>
+                  <temporalCoverage>
+                     <rangeOfDates>
+                        <beginDate>
+                           <calendarDate>1998-11-12</calendarDate>
+                        </beginDate>
+                        <endDate>
+                           <calendarDate>2003-12-31</calendarDate>
+                        </endDate>
+                     </rangeOfDates>
+                  </temporalCoverage>
+                  <geographicCoverage>
+                     <geographicDescription>Ficity, FI metropolitan area, USA</geographicDescription>
+                     <boundingCoordinates>
+                        <westBoundingCoordinate>-112.373614</westBoundingCoordinate>
+                        <eastBoundingCoordinate>-111.612936</eastBoundingCoordinate>
+                        <northBoundingCoordinate>33.708829</northBoundingCoordinate>
+                        <southBoundingCoordinate>33.298975</southBoundingCoordinate>
+                        <boundingAltitudes>
+                           <altitudeMinimum>300</altitudeMinimum>
+                           <altitudeMaximum>600</altitudeMaximum>
+                           <altitudeUnits>meter</altitudeUnits>
+                        </boundingAltitudes>
+                     </boundingCoordinates>
+                  </geographicCoverage>
+               </coverage>
+            </studyExtent>
+            <samplingDescription>
+               <para>Arthropod pit fall traps are placed in three different locations four times a year.</para>
+            </samplingDescription>
+            <spatialSamplingUnits>
+               <coverage>
+                  <geographicDescription>site number 1</geographicDescription>
+                  <boundingCoordinates>
+                     <westBoundingCoordinate>-112.2</westBoundingCoordinate>
+                     <eastBoundingCoordinate>-112.2</eastBoundingCoordinate>
+                     <northBoundingCoordinate>33.5</northBoundingCoordinate>
+                     <southBoundingCoordinate>33.5</southBoundingCoordinate>
+                  </boundingCoordinates>
+               </coverage>
+               <coverage>
+                  <geographicDescription>site number 2</geographicDescription>
+                  <boundingCoordinates>
+                     <westBoundingCoordinate>-111.7</westBoundingCoordinate>
+                     <eastBoundingCoordinate>-111.7</eastBoundingCoordinate>
+                     <northBoundingCoordinate>33.6</northBoundingCoordinate>
+                     <southBoundingCoordinate>33.6</southBoundingCoordinate>
+                  </boundingCoordinates>
+               </coverage>
+               <coverage>
+                  <geographicDescription>site number 3</geographicDescription>
+                  <boundingCoordinates>
+                     <westBoundingCoordinate>-112.1</westBoundingCoordinate>
+                     <eastBoundingCoordinate>-112.1</eastBoundingCoordinate>
+                     <northBoundingCoordinate>33.7</northBoundingCoordinate>
+                     <southBoundingCoordinate>33.7</southBoundingCoordinate>
+                  </boundingCoordinates>
+               </coverage>
+            </spatialSamplingUnits>
+         </sampling>
+      </methods>
+      <project>
+         <title>Fictitious Longterm Ecological Research Site</title>
+         <personnel id="pers-12" system="FLS">
+            <individualName>
+               <givenName>Kim</givenName>
+               <givenName>L.</givenName>
+               <surName>Pi</surName>
+            </individualName>
+            <address>
+               <deliveryPoint>Department for Ecology</deliveryPoint>
+               <deliveryPoint>Fictitious State University</deliveryPoint>
+               <deliveryPoint>PO Box 111111</deliveryPoint>
+               <city>Ficity</city>
+               <administrativeArea>FI</administrativeArea>
+               <postalCode>11111-1111</postalCode>
+            </address>
+            <role>principalInvestigator</role>
+         </personnel>
+         <personnel id="im" system="FLS">
+            <individualName>
+               <givenName>Ima</givenName>
+               <givenName>Great</givenName>
+               <surName>IM</surName>
+            </individualName>
+            <address>
+               <deliveryPoint>Department for Ecology</deliveryPoint>
+               <deliveryPoint>Fictitious State University</deliveryPoint>
+               <deliveryPoint>PO Box 111111</deliveryPoint>
+               <city>Ficity</city>
+               <administrativeArea>FI</administrativeArea>
+               <postalCode>11111-1111</postalCode>
+            </address>
+            <role>informationManager</role>
+         </personnel>
+         <abstract>
+            <para>The FLS is committed to further the <itemizedlist>
+                  <listitem>
+                     <para>Understanding ecological phenomena over long temporal and large
+                           spatial scales</para>
+                  </listitem>
+                  <listitem>
+                     <para>Creating a legacy of well-designed and documented long-term
+                           experiments and observations for future generations</para>
+                  </listitem>
+                  <listitem>
+                     <para>Conducting major synthetic and theoretical efforts</para>
+                  </listitem>
+                  <listitem>
+                     <para>Providing information for the identification and solution of
+                           ecological problems</para>
+                  </listitem>
+               </itemizedlist>
+            </para>
+         </abstract>
+         <funding>
+            <para>National Science Foundation under Grant No.
+DEB 9999999, Ficticous Long-Term Ecological Research (FLS LTER)</para>
+         </funding>
+         <relatedProject>
+            <title>FSL basic monitoring program</title>
+            <personnel id="pers-30" system="FLS">
+               <individualName>
+                  <salutation>Dr.</salutation>
+                  <givenName>Eva</givenName>
+                  <givenName>M.</givenName>
+                  <surName>Scientist</surName>
+               </individualName>
+               <address>
+                  <deliveryPoint>Department for Ecology</deliveryPoint>
+                  <deliveryPoint>Fictitious State University</deliveryPoint>
+                  <deliveryPoint>PO Box 111111</deliveryPoint>
+                  <city>Ficity</city>
+                  <administrativeArea>FI</administrativeArea>
+                  <postalCode>11111-1111</postalCode>
+               </address>
+               <role>principalInvestigator</role>
+            </personnel>
+            <personnel id="pers-130" system="FLS">
+               <individualName>
+                  <givenName>Monica</givenName>
+                  <givenName>D.</givenName>
+                  <surName>Techy</surName>
+               </individualName>
+               <address>
+                  <deliveryPoint>Department for Ecology</deliveryPoint>
+                  <deliveryPoint>Fictitious State University</deliveryPoint>
+                  <deliveryPoint>PO Box 111111</deliveryPoint>
+                  <city>Ficity</city>
+                  <administrativeArea>FI</administrativeArea>
+                  <postalCode>11111-1111</postalCode>
+               </address>
+               <role> principalInvestigator</role>
+            </personnel>
+            <abstract>
+               <para>The FLS basic monitoring program consists of monitoring of arthropod populations,
+               plant net primary productivity, and bird populations. Monitoring takes place at 3
+               locations, 4 times a year. Climate parameters a continuously measured at all stations.</para>
+            </abstract>
+         </relatedProject>
+      </project>
+      <access authSystem="FLS">
+         <allow>
+            <principal>public</principal>
+            <permission>read</permission>
+         </allow>
+      </access>
+      <dataTable id="dbo.arthro_hab">
+         <entityName>dbo.arthro_hab</entityName>
+         <entityDescription>habitat description for the sampling locations</entityDescription>
+         <physical>
+            <objectName>arthro_hab</objectName>
+            <dataFormat>
+               <externallyDefinedFormat>
+                  <formatName>Microsoft SQL Server</formatName>
+                  <formatVersion>7.0.842</formatVersion>
+               </externallyDefinedFormat>
+            </dataFormat>
+            <distribution>
+               <online>
+                  <connection>
+                     <connectionDefinition>
+                        <references>FLS1_SQL</references>
+                     </connectionDefinition>
+                     <parameter>
+                        <name>catalog</name>
+                        <value>monitoring</value>
+                     </parameter>
+                     <parameter>
+                        <name>owner</name>
+                        <value>dbo</value>
+                     </parameter>
+                  </connection>
+               </online>
+            </distribution>
+         </physical>
+         <attributeList id="arthro_hab.attributeList">
+            <attribute id="dbo.arthro_hab.site_id">
+               <attributeName>site_id</attributeName>
+               <attributeDefinition>unique three letter acronym for the site</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">varchar</storageType>
+               <measurementScale>
+                  <nominal>
+                     <nonNumericDomain>
+                        <enumeratedDomain>
+                           <entityCodeList>
+                              <entityReference>dbo.sites</entityReference>
+                              <valueAttributeReference>dbo.sites.site_id</valueAttributeReference>
+                              <definitionAttributeReference>dbo.sites.description</definitionAttributeReference>
+                           </entityCodeList>
+                        </enumeratedDomain>
+                     </nonNumericDomain>
+                  </nominal>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_hab.habitat_id">
+               <attributeName>habitat_id</attributeName>
+               <attributeDefinition>unique ID number for each habitat description as found at the site</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">int</storageType>
+               <measurementScale>
+                  <nominal>
+                     <nonNumericDomain>
+                        <textDomain>
+                           <definition>habitat ID number</definition>
+                        </textDomain>
+                     </nonNumericDomain>
+                  </nominal>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_hab.recording_date">
+               <attributeName>recording_date</attributeName>
+               <attributeDefinition>date when the habitat description was recorded</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">datetime</storageType>
+               <measurementScale>
+                  <datetime>
+                     <formatString>MM/DD/YYYY</formatString>
+                     <dateTimePrecision>1</dateTimePrecision>
+                     <dateTimeDomain>
+                        <bounds>
+                           <minimum exclusive="false">1/10/2002</minimum>
+                           <maximum exclusive="false">11/25/2003</maximum>
+                        </bounds>
+                     </dateTimeDomain>
+                  </datetime>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_hab.area">
+               <attributeName>area</attributeName>
+               <attributeDefinition>size of the area in which the sampling takes place</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">int</storageType>
+               <measurementScale>
+                  <ratio>
+                     <unit>
+                        <standardUnit>squareMeter</standardUnit>
+                     </unit>
+                     <precision>1</precision>
+                     <numericDomain>
+                        <numberType>integer</numberType>
+                     </numericDomain>
+                  </ratio>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_hab.shrubcover">
+               <attributeName>shrubcover</attributeName>
+               <attributeDefinition>percent of the area covered by shrubs</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">int</storageType>
+               <measurementScale>
+                  <ratio>
+                     <unit>
+                        <standardUnit>dimensionless</standardUnit>
+                     </unit>
+                     <precision>1</precision>
+                     <numericDomain>
+                        <numberType>integer</numberType>
+                     </numericDomain>
+                  </ratio>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_hab.tree_canopy">
+               <attributeName>tree_canopy</attributeName>
+               <attributeDefinition>percent of the area covered by trees</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">int</storageType>
+               <measurementScale>
+                  <ratio>
+                     <unit>
+                        <standardUnit>dimensionless</standardUnit>
+                     </unit>
+                     <precision>1</precision>
+                     <numericDomain>
+                        <numberType>integer</numberType>
+                     </numericDomain>
+                  </ratio>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_hab.lawn">
+               <attributeName>lawn</attributeName>
+               <attributeDefinition>perccent of the area coverd by lawn</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">int</storageType>
+               <measurementScale>
+                  <ratio>
+                     <unit>
+                        <standardUnit>dimensionless</standardUnit>
+                     </unit>
+                     <precision>1</precision>
+                     <numericDomain>
+                        <numberType>integer</numberType>
+                     </numericDomain>
+                  </ratio>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_hab.other">
+               <attributeName>other</attributeName>
+               <attributeDefinition>percent of the area covered by vegetation other than trees, shrubs or lawn</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">int</storageType>
+               <measurementScale>
+                  <ratio>
+                     <unit>
+                        <standardUnit>dimensionless</standardUnit>
+                     </unit>
+                     <precision>1</precision>
+                     <numericDomain>
+                        <numberType>integer</numberType>
+                     </numericDomain>
+                  </ratio>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_hab.paved_building">
+               <attributeName>paved_building</attributeName>
+               <attributeDefinition>percent area coverd by pavement or buildings</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">int</storageType>
+               <measurementScale>
+                  <ratio>
+                     <unit>
+                        <standardUnit>dimensionless</standardUnit>
+                     </unit>
+                     <precision>1</precision>
+                     <numericDomain>
+                        <numberType>integer</numberType>
+                     </numericDomain>
+                  </ratio>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_hab.gravel_soil">
+               <attributeName>gravel_soil</attributeName>
+               <attributeDefinition>percent area covered by gravel or open soil</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">int</storageType>
+               <measurementScale>
+                  <ratio>
+                     <unit>
+                        <standardUnit>dimensionless</standardUnit>
+                     </unit>
+                     <precision>1</precision>
+                     <numericDomain>
+                        <numberType>integer</numberType>
+                     </numericDomain>
+                  </ratio>
+               </measurementScale>
+            </attribute>
+         </attributeList>
+      </dataTable>
+      <dataTable id="dbo.arthro_samples">
+         <entityName>dbo.arthro_samples</entityName>
+         <entityDescription>parameters for each sample taken</entityDescription>
+         <physical>
+            <objectName>arthro_samples</objectName>
+            <dataFormat>
+               <externallyDefinedFormat>
+                  <formatName>Microsoft SQL Server</formatName>
+                  <formatVersion>7.0.842</formatVersion>
+               </externallyDefinedFormat>
+            </dataFormat>
+            <distribution>
+               <online>
+                  <connection>
+                     <connectionDefinition>
+                        <references>FLS1_SQL</references>
+                     </connectionDefinition>
+                     <parameter>
+                        <name>catalog</name>
+                        <value>monitoring</value>
+                     </parameter>
+                     <parameter>
+                        <name>owner</name>
+                        <value>dbo</value>
+                     </parameter>
+                  </connection>
+               </online>
+            </distribution>
+         </physical>
+         <attributeList id="arthro_samples.attributeList">
+            <attribute id="dbo.arthro_samples.sample_id">
+               <attributeName>sample_id</attributeName>
+               <attributeDefinition>ID number for each sample taken</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">int</storageType>
+               <measurementScale>
+                  <nominal>
+                     <nonNumericDomain>
+                        <textDomain>
+                           <definition>Sequential unique whole numbers that are automatically generated.</definition>
+                        </textDomain>
+                     </nonNumericDomain>
+                  </nominal>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_samples.site_id">
+               <attributeName>site_id</attributeName>
+               <attributeDefinition>three letter code for site ID to link to the site description table</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">varchar</storageType>
+               <measurementScale>
+                  <nominal>
+                     <nonNumericDomain>
+                        <enumeratedDomain>
+                           <entityCodeList>
+                              <entityReference>dbo.sites</entityReference>
+                              <valueAttributeReference>dbo.sites.site_id</valueAttributeReference>
+                              <definitionAttributeReference>dbo.sites.description</definitionAttributeReference>
+                           </entityCodeList>
+                        </enumeratedDomain>
+                     </nonNumericDomain>
+                  </nominal>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_samples.habitat_id">
+               <attributeName>habitat_id</attributeName>
+               <attributeDefinition>habitat ID number to link the habitat description table</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">int</storageType>
+               <measurementScale>
+                  <nominal>
+                     <nonNumericDomain>
+                        <enumeratedDomain>
+                           <entityCodeList>
+                              <entityReference>dbo.arthro_hab</entityReference>
+                              <valueAttributeReference>dbo.arthro_hab.habitat_id</valueAttributeReference>
+                              <definitionAttributeReference/>
+                           </entityCodeList>
+                        </enumeratedDomain>
+                     </nonNumericDomain>
+                  </nominal>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_samples.sample_date">
+               <attributeName>sample_date</attributeName>
+               <attributeDefinition>date when sample was taken</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">smalldatetime</storageType>
+               <measurementScale>
+                  <datetime>
+                     <formatString>MM/DD/YYYY</formatString>
+                     <dateTimePrecision>1</dateTimePrecision>
+                     <dateTimeDomain>
+                        <bounds>
+                           <minimum exclusive="false">11/12/1998</minimum>
+                           <maximum exclusive="false">11/25/2003</maximum>
+                        </bounds>
+                     </dateTimeDomain>
+                  </datetime>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_samples.comments">
+               <attributeName>comments</attributeName>
+               <attributeDefinition>comments on for the sample taking, e.g. if there were any problems, or particularly bad weather etc.</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">varchar</storageType>
+               <measurementScale>
+                  <nominal>
+                     <nonNumericDomain>
+                        <textDomain>
+                           <definition>free text</definition>
+                        </textDomain>
+                     </nonNumericDomain>
+                  </nominal>
+               </measurementScale>
+            </attribute>
+         </attributeList>
+      </dataTable>
+      <dataTable id="dbo.arthro_specimens">
+         <entityName>dbo.arthro_specimens</entityName>
+         <entityDescription>counts of individuals for each species per sample</entityDescription>
+         <physical>
+            <objectName>arthro_specimens</objectName>
+            <dataFormat>
+               <externallyDefinedFormat>
+                  <formatName>Microsoft SQL Server</formatName>
+                  <formatVersion>7.0.842</formatVersion>
+               </externallyDefinedFormat>
+            </dataFormat>
+            <distribution>
+               <online>
+                  <connection>
+                     <connectionDefinition>
+                        <references>FLS1_SQL</references>
+                     </connectionDefinition>
+                     <parameter>
+                        <name>catalog</name>
+                        <value>monitoring</value>
+                     </parameter>
+                     <parameter>
+                        <name>owner</name>
+                        <value>dbo</value>
+                     </parameter>
+                  </connection>
+               </online>
+            </distribution>
+         </physical>
+         <attributeList id="arthro_specimens.attributeList">
+            <attribute id="dbo.arthro_specimens.taxon">
+               <attributeName>taxon</attributeName>
+               <attributeDefinition>six letter taxon ID to link to taxon information table</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">varchar</storageType>
+               <measurementScale>
+                  <nominal>
+                     <nonNumericDomain>
+                        <enumeratedDomain>
+                           <entityCodeList>
+                              <entityReference>dbo.arthro_taxa</entityReference>
+                              <valueAttributeReference>dbo.arthro_taxa.taxon</valueAttributeReference>
+                              <definitionAttributeReference>dbo.arthro_taxa.taxon_name</definitionAttributeReference>
+                           </entityCodeList>
+                        </enumeratedDomain>
+                     </nonNumericDomain>
+                  </nominal>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_specimens.sample_id">
+               <attributeName>sample_id</attributeName>
+               <attributeDefinition>sample ID number to link to sample information table</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">int</storageType>
+               <measurementScale>
+                  <nominal>
+                     <nonNumericDomain>
+                        <enumeratedDomain>
+                           <entityCodeList>
+                              <entityReference>dbo.arthro_samples</entityReference>
+                              <valueAttributeReference>dbo.arthro_samples.sample_id</valueAttributeReference>
+                              <definitionAttributeReference/>
+                           </entityCodeList>
+                        </enumeratedDomain>
+                     </nonNumericDomain>
+                  </nominal>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_specimens.frequency">
+               <attributeName>frequency</attributeName>
+               <attributeDefinition>number of individuals found for this taxon</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">int</storageType>
+               <measurementScale>
+                  <ratio>
+                     <unit>
+                        <standardUnit>dimensionless</standardUnit>
+                     </unit>
+                     <precision>1</precision>
+                     <numericDomain>
+                        <numberType>integer</numberType>
+                     </numericDomain>
+                  </ratio>
+               </measurementScale>
+            </attribute>
+         </attributeList>
+      </dataTable>
+      <dataTable id="dbo.arthro_taxa">
+         <entityName>dbo.arthro_taxa</entityName>
+         <entityDescription>list of taxa found in this study</entityDescription>
+         <physical>
+            <objectName>arthro_taxa</objectName>
+            <dataFormat>
+               <externallyDefinedFormat>
+                  <formatName>Microsoft SQL Server</formatName>
+                  <formatVersion>7.0.842</formatVersion>
+               </externallyDefinedFormat>
+            </dataFormat>
+            <distribution>
+               <online>
+                  <connection>
+                     <connectionDefinition>
+                        <references>FLS1_SQL</references>
+                     </connectionDefinition>
+                     <parameter>
+                        <name>catalog</name>
+                        <value>monitoring</value>
+                     </parameter>
+                     <parameter>
+                        <name>owner</name>
+                        <value>dbo</value>
+                     </parameter>
+                  </connection>
+               </online>
+            </distribution>
+         </physical>
+         <attributeList id="arthro_taxa.attributeList">
+            <attribute id="dbo.arthro_taxa.taxon">
+               <attributeName>taxon</attributeName>
+               <attributeDefinition>FSL specific six leter code for the taxon Name</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">varchar</storageType>
+               <measurementScale>
+                  <nominal>
+                     <nonNumericDomain>
+                        <textDomain>
+                           <definition>Unique species name abbreviation</definition>
+                        </textDomain>
+                     </nonNumericDomain>
+                  </nominal>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_taxa.taxon_id">
+               <attributeName>taxon_id</attributeName>
+               <attributeDefinition>taxonomic code as used in ITIS (TSN)</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">int</storageType>
+               <measurementScale>
+                  <nominal>
+                     <nonNumericDomain>
+                        <textDomain>
+                           <definition>unique number as used in ITIS</definition>
+                        </textDomain>
+                     </nonNumericDomain>
+                  </nominal>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_taxa.taxon_name">
+               <attributeName>taxon_name</attributeName>
+               <attributeDefinition>name of taxon as used in this study</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">varchar</storageType>
+               <measurementScale>
+                  <nominal>
+                     <nonNumericDomain>
+                        <textDomain>
+                           <definition>taxon name</definition>
+                        </textDomain>
+                     </nonNumericDomain>
+                  </nominal>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.arthro_taxa.date_entered">
+               <attributeName>date_entered</attributeName>
+               <attributeDefinition>the date this taxon was first entered into the  taxon list</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">datetime</storageType>
+               <measurementScale>
+                  <datetime>
+                     <formatString>MM/DD/YYYY</formatString>
+                     <dateTimePrecision>1</dateTimePrecision>
+                     <dateTimeDomain>
+                        <bounds>
+                           <minimum exclusive="false">6/5/2000</minimum>
+                           <maximum exclusive="false">12/12/2001</maximum>
+                        </bounds>
+                     </dateTimeDomain>
+                  </datetime>
+               </measurementScale>
+            </attribute>
+         </attributeList>
+      </dataTable>
+      <dataTable id="dbo.sites">
+         <entityName>dbo.sites</entityName>
+         <entityDescription>detailed description of each sampling site</entityDescription>
+         <physical>
+            <objectName>sites</objectName>
+            <dataFormat>
+               <externallyDefinedFormat>
+                  <formatName>Microsoft SQL Server</formatName>
+                  <formatVersion>7.0.842</formatVersion>
+               </externallyDefinedFormat>
+            </dataFormat>
+            <distribution>
+               <online>
+                  <connection>
+                     <connectionDefinition>
+                        <references>FLS1_SQL</references>
+                     </connectionDefinition>
+                     <parameter>
+                        <name>catalog</name>
+                        <value>monitoring</value>
+                     </parameter>
+                     <parameter>
+                        <name>owner</name>
+                        <value>dbo</value>
+                     </parameter>
+                  </connection>
+               </online>
+            </distribution>
+         </physical>
+         <attributeList id="sites.attributeList">
+            <attribute id="dbo.sites.site_id">
+               <attributeName>site_id</attributeName>
+               <attributeDefinition>unique three letter site abbreviation</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">varchar</storageType>
+               <measurementScale>
+                  <nominal>
+                     <nonNumericDomain>
+                        <textDomain>
+                           <definition>Unique arbitrary ID letters and numbers</definition>
+                        </textDomain>
+                     </nonNumericDomain>
+                  </nominal>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.sites.sitename">
+               <attributeName>sitename</attributeName>
+               <attributeDefinition>full text site name</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">varchar</storageType>
+               <measurementScale>
+                  <nominal>
+                     <nonNumericDomain>
+                        <textDomain>
+                           <definition>name of site</definition>
+                        </textDomain>
+                     </nonNumericDomain>
+                  </nominal>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.sites.address">
+               <attributeName>address</attributeName>
+               <attributeDefinition>street address of the site</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">varchar</storageType>
+               <measurementScale>
+                  <nominal>
+                     <nonNumericDomain>
+                        <textDomain>
+                           <definition>US street address</definition>
+                        </textDomain>
+                     </nonNumericDomain>
+                  </nominal>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.sites.description">
+               <attributeName>description</attributeName>
+               <attributeDefinition>description of the site</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">text</storageType>
+               <measurementScale>
+                  <nominal>
+                     <nonNumericDomain>
+                        <textDomain>
+                           <definition>free text</definition>
+                        </textDomain>
+                     </nonNumericDomain>
+                  </nominal>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.sites.city">
+               <attributeName>city</attributeName>
+               <attributeDefinition>name of the city the site is located in</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">varchar</storageType>
+               <measurementScale>
+                  <nominal>
+                     <nonNumericDomain>
+                        <textDomain>
+                           <definition>City within Phoenix metropolitan area</definition>
+                        </textDomain>
+                     </nonNumericDomain>
+                  </nominal>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.sites.zipcode">
+               <attributeName>zipcode</attributeName>
+               <attributeDefinition>zipcode the site is located in</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">varchar</storageType>
+               <measurementScale>
+                  <nominal>
+                     <nonNumericDomain>
+                        <textDomain>
+                           <definition>US zip code</definition>
+                        </textDomain>
+                     </nonNumericDomain>
+                  </nominal>
+               </measurementScale>
+            </attribute>
+            <attribute id="dbo.sites.date_entered">
+               <attributeName>date_entered</attributeName>
+               <attributeDefinition>date the site information was entered</attributeDefinition>
+               <storageType typeSystem="Microsoft SQL Server">datetime</storageType>
+               <measurementScale>
+                  <datetime>
+                     <formatString>MM/DD/YYYY</formatString>
+                     <dateTimePrecision>1</dateTimePrecision>
+                     <dateTimeDomain>
+                        <bounds>
+                           <minimum exclusive="false">8/15/1999</minimum>
+                           <maximum exclusive="false">12/2/2003</maximum>
+                        </bounds>
+                     </dateTimeDomain>
+                  </datetime>
+               </measurementScale>
+            </attribute>
+         </attributeList>
+      </dataTable>
+   </dataset>
+</eml:eml>

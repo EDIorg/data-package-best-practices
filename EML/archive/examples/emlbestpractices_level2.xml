@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.0.1" packageId="1058377556406" system="FLS" scope="system" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.0.0 P:\LTER\dm\EMLworkingFiles\eml-2.0.1\eml.xsd">
+	<dataset id="FLS-1" system="FLS">
+		<alternateIdentifier>FLS-1</alternateIdentifier>
+		<shortName>Arthropods</shortName>
+		<title>Longterm Ground Arthropod Monitoring Dataset at Ficity, USA from 1998 to 2003</title>
+		<creator id="org-1" system="FLS">
+			<organizationName>Fictitious LTER Site</organizationName>
+			<address>
+				<deliveryPoint>Department for Ecology</deliveryPoint>
+				<deliveryPoint>Fictitious State University</deliveryPoint>
+				<deliveryPoint>PO Box 111111</deliveryPoint>
+				<city>Ficity</city>
+				<administrativeArea>FI</administrativeArea>
+				<postalCode>11111-1111</postalCode>
+			</address>
+			<phone phonetype="voice">(999) 999-9999</phone>
+			<electronicMailAddress>fsu@fi.univ.edu</electronicMailAddress>
+			<onlineUrl>http://www.fsu.edu/</onlineUrl>
+		</creator>
+		<creator id="pers-1" system="FLS">
+			<individualName>
+				<salutation>Dr.</salutation>
+				<givenName>Joe</givenName>
+				<givenName>T.</givenName>
+				<surName>Ecologist Jr.</surName>
+			</individualName>
+			<organizationName>FSL LTER</organizationName>
+			<address>
+				<deliveryPoint>Department for Ecology</deliveryPoint>
+				<deliveryPoint>Fictitious State University</deliveryPoint>
+				<deliveryPoint>PO Box 111111</deliveryPoint>
+				<city>Ficity</city>
+				<administrativeArea>FI</administrativeArea>
+				<postalCode>11111-1111</postalCode>
+			</address>
+			<phone phonetype="voice">(999) 999-9999</phone>
+			<electronicMailAddress>jecologist@fi.univ.edu</electronicMailAddress>
+			<onlineUrl>http://www.fsu.edu/~jecologist</onlineUrl>
+		</creator>
+		<metadataProvider>
+			<organizationName>Fictitious LTER Site</organizationName>
+			<address>
+				<deliveryPoint>Department for Ecology</deliveryPoint>
+				<deliveryPoint>Fictitious State University</deliveryPoint>
+				<deliveryPoint>PO Box 111111</deliveryPoint>
+				<city>Ficity</city>
+				<administrativeArea>FI</administrativeArea>
+				<postalCode>11111-1111</postalCode>
+			</address>
+			<phone phonetype="voice">(999) 999-9999</phone>
+			<electronicMailAddress>fsu@fi.univ.edu</electronicMailAddress>
+			<onlineUrl>http://www.fsu.edu/</onlineUrl>
+		</metadataProvider>
+		<associatedParty id="12010" system="FLS">
+			<individualName>
+				<givenName>Ima</givenName>
+				<surName>Testuser</surName>
+			</individualName>
+			<organizationName>FSL LTER</organizationName>
+			<address>
+				<deliveryPoint>Department for Ecology</deliveryPoint>
+				<deliveryPoint>Fictitious State University</deliveryPoint>
+				<deliveryPoint>PO Box 111111</deliveryPoint>
+				<city>Ficity</city>
+				<administrativeArea>FI</administrativeArea>
+				<postalCode>11111-1111</postalCode>
+			</address>
+			<phone phonetype="voice">(999) 999-9999</phone>
+			<electronicMailAddress>itestuser@lternet.edu</electronicMailAddress>
+			<onlineUrl>http://search.lternet.edu/directory_view.php?personid=12010&amp;query=itestuser</onlineUrl>
+			<role>Technician</role>
+		</associatedParty>
+		<pubDate>2000</pubDate>
+		<abstract>
+			<para>Ground arthropods communities are monitored in different habitats in a rapidly
+            changing environment. The arthropods are collected in traps four times a year in ten
+            locations and determined as far as possible to family, genus or species.</para>
+		</abstract>
+		<keywordSet>
+			<keyword keywordType="place">City</keyword>
+			<keyword keywordType="place">State</keyword>
+			<keyword keywordType="place">Region</keyword>
+			<keyword keywordType="place">County</keyword>
+			<keyword keywordType="theme">FLS</keyword>
+			<keyword keywordType="theme">Fictitious LTER Site</keyword>
+			<keyword keywordType="theme">LTER</keyword>
+		</keywordSet>
+		<keywordSet>
+			<keyword keywordType="theme">Ecology</keyword>
+			<keyword keywordType="theme">biodiversity</keyword>
+			<keyword keywordType="theme">Population Dynamics</keyword>
+			<keyword keywordType="theme">Terrestrial</keyword>
+			<keyword keywordType="theme">arthropods</keyword>
+			<keyword keywordType="theme">pitfall trap</keyword>
+			<keyword keywordType="theme">monitoring</keyword>
+			<keyword keywordType="theme">Richness</keyword>
+			<keyword keywordType="theme">Abundance</keyword>
+		</keywordSet>
+		<distribution>
+			<online>
+				<url>http://www.fsu.edu/lter/data/fsl-1.htm</url>
+			</online>
+		</distribution>
+		<coverage>
+			<geographicCoverage>
+				<geographicDescription>Ficity, FI metropolitan area, USA</geographicDescription>
+				<boundingCoordinates>
+					<westBoundingCoordinate>-112.373614</westBoundingCoordinate>
+					<eastBoundingCoordinate>-111.612936</eastBoundingCoordinate>
+					<northBoundingCoordinate>33.708829</northBoundingCoordinate>
+					<southBoundingCoordinate>33.298975</southBoundingCoordinate>
+					<boundingAltitudes>
+						<altitudeMinimum>300</altitudeMinimum>
+						<altitudeMaximum>600</altitudeMaximum>
+						<altitudeUnits>meter</altitudeUnits>
+					</boundingAltitudes>
+				</boundingCoordinates>
+			</geographicCoverage>
+			<temporalCoverage>
+				<rangeOfDates>
+					<beginDate>
+						<calendarDate>1998-11-12</calendarDate>
+					</beginDate>
+					<endDate>
+						<calendarDate>2003-12-31</calendarDate>
+					</endDate>
+				</rangeOfDates>
+			</temporalCoverage>
+			<taxonomicCoverage>
+				<taxonomicClassification>
+					<taxonRankName>Kingdom</taxonRankName>
+					<taxonRankValue>Animalia</taxonRankValue>
+					<taxonomicClassification>
+						<taxonRankName>Phylum</taxonRankName>
+						<taxonRankValue>Mollusca</taxonRankValue>
+						<taxonomicClassification>
+							<taxonRankName>Class</taxonRankName>
+							<taxonRankValue>Gastropoda</taxonRankValue>
+							<taxonomicClassification>
+								<taxonRankName>Order</taxonRankName>
+								<taxonRankValue>Basommatophora</taxonRankValue>
+								<taxonomicClassification>
+									<taxonRankName>Genus</taxonRankName>
+									<taxonRankValue>Detracia</taxonRankValue>
+									<taxonomicClassification>
+										<taxonRankName>Species</taxonRankName>
+										<taxonRankValue>Detracia floridana</taxonRankValue>
+										<commonName>Florida Melampus</commonName>
+									</taxonomicClassification>
+								</taxonomicClassification>
+							</taxonomicClassification>
+						</taxonomicClassification>
+					</taxonomicClassification>
+				</taxonomicClassification>
+				<taxonomicClassification>
+					<taxonRankName>Kingdom</taxonRankName>
+					<taxonRankValue>Animalia</taxonRankValue>
+					<taxonomicClassification>
+						<taxonRankName>Phylum</taxonRankName>
+						<taxonRankValue>Mollusca</taxonRankValue>
+						<taxonomicClassification>
+							<taxonRankName>Class</taxonRankName>
+							<taxonRankValue>Bivalvia</taxonRankValue>
+							<taxonomicClassification>
+								<taxonRankName>Order</taxonRankName>
+								<taxonRankValue>Filibranchia</taxonRankValue>
+								<taxonomicClassification>
+									<taxonRankName>Genus</taxonRankName>
+									<taxonRankValue>Geukensia</taxonRankValue>
+									<taxonomicClassification>
+										<taxonRankName>Species</taxonRankName>
+										<taxonRankValue>Geukensia demissa</taxonRankValue>
+										<commonName>Ribbed Mussel</commonName>
+									</taxonomicClassification>
+								</taxonomicClassification>
+							</taxonomicClassification>
+						</taxonomicClassification>
+					</taxonomicClassification>
+				</taxonomicClassification>
+			</taxonomicCoverage>
+		</coverage>
+		<maintenance>
+			<description>
+				<para> There have been no changes to the metadata or data files since publication
+               online. </para>
+			</description>
+		</maintenance>
+		<contact id="pers-4">
+			<positionName>Data Manager</positionName>
+			<address>
+				<deliveryPoint>Department for Ecology</deliveryPoint>
+				<deliveryPoint>Fictitious State University</deliveryPoint>
+				<deliveryPoint>PO Box 111111</deliveryPoint>
+				<city>Ficity</city>
+				<administrativeArea>FI</administrativeArea>
+				<postalCode>11111-1111</postalCode>
+			</address>
+			<phone phonetype="voice">(111) 222-3333</phone>
+			<phone phonetype="fax">(111) 222-3334</phone>
+			<electronicMailAddress>fls.data@fi.univ.edu</electronicMailAddress>
+			<onlineUrl>http://www.fsu.edu/lter</onlineUrl>
+		</contact>
+		<publisher>
+			<references>org-1</references>
+		</publisher>
+	</dataset>
+</eml:eml>

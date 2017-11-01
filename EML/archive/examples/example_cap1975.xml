@@ -1,0 +1,410 @@
+<?xml version="1.0"?>
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.0.0" system="CES"
+    packageId="16"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.0.0 http://ces.asu.edu/eml/eml.xsd">
+    <dataset id="1975" system="CES">
+        <shortName>1975</shortName>
+        <title>Landuse Classification 1975</title>
+        <creator id="169" system="ASU">
+            <individualName>
+                <givenName>Charles</givenName>
+                <givenName>L.</givenName>
+                <surName>Redman</surName>
+            </individualName>
+            <address>
+                <deliveryPoint>Center for Environmental Studies</deliveryPoint>
+                <deliveryPoint>Arizona State University</deliveryPoint>
+                <deliveryPoint>POB 873211</deliveryPoint>
+                <city>Tempe</city>
+                <administrativeArea>AZ</administrativeArea>
+                <postalCode>85287-3211</postalCode>
+                <country>USA</country>
+            </address>
+        </creator>
+        <creator id="27" system="ASU">
+            <individualName>
+                <givenName>Cherie</givenName>
+                <surName>Moritz</surName>
+            </individualName>
+        </creator>
+        <creator id="125" system="ASU">
+            <individualName>
+                <givenName>Matt</givenName>
+                <surName>Bucchin</surName>
+            </individualName>
+            <address>
+                <deliveryPoint>Information Technology, GIS Laboratory</deliveryPoint>
+                <deliveryPoint>Arizona State University</deliveryPoint>
+                <deliveryPoint>PO Box 870101</deliveryPoint>
+                <city>Tempe</city>
+                <administrativeArea>AZ</administrativeArea>
+                <postalCode>85287-0101</postalCode>
+            </address>
+        </creator>
+        <creator id="126" system="ASU">
+            <individualName>
+                <givenName>Peter</givenName>
+                <givenName>H.</givenName>
+                <surName>McCartney</surName>
+            </individualName>
+            <address>
+                <deliveryPoint>Center for Environmental Studies</deliveryPoint>
+                <deliveryPoint>Arizona State University</deliveryPoint>
+                <deliveryPoint>POB 873211</deliveryPoint>
+                <city>TEMPE</city>
+                <administrativeArea>AZ</administrativeArea>
+                <postalCode>85287-3211</postalCode>
+                <country>USA</country>
+            </address>
+        </creator>
+        <creator id="79" system="ASU">
+            <individualName>
+                <givenName>Jana</givenName>
+                <surName>Fry</surName>
+            </individualName>
+            <address>
+                <deliveryPoint>Department of Information Technology- GIS</deliveryPoint>
+                <deliveryPoint>Arizona State University</deliveryPoint>
+                <deliveryPoint>POB 870101</deliveryPoint>
+                <city>Tempe</city>
+                <administrativeArea>AZ</administrativeArea>
+                <postalCode>85287</postalCode>
+                <country>USA</country>
+            </address>
+        </creator>
+        <creator id="109" system="ASU">
+            <individualName>
+                <givenName>Kimberly</givenName>
+                <surName>Knowles-Yanez</surName>
+            </individualName>
+            <address>
+                <deliveryPoint>Center for Environmental Studies</deliveryPoint>
+                <deliveryPoint>Arizona State University</deliveryPoint>
+                <deliveryPoint>PO Box 873211</deliveryPoint>
+                <city>Tempe</city>
+                <administrativeArea>AZ</administrativeArea>
+                <postalCode>85287-3211</postalCode>
+            </address>
+        </creator>
+        <pubDate>1998</pubDate>
+        <language>en</language>
+        <series>Historic Land Use Change - Phase1</series>
+        <abstract>
+            <para>This dataset is part of a time series of maps that encompasses the development of
+                the entire 20th century. Landuse categories include Urban, Agriculture, Desert, and
+                Recreation. The development of these maps is to describe the nature of the change of
+                each category between years. Based upon available data, the years used for this
+                dataset are 1912, 1934, 1955, 1975, and 1995. Data sources used include U.S. Soil
+                Conservation Service air photos, USGS topographic maps, Glendale Historical Society,
+                Salt River Project historical agricultural data, and Arizona Department of Water
+                Resoures historical agricutlural data.</para>
+        </abstract>
+        <keywordSet>
+            <keyword keywordType="theme">landuse</keyword>
+            <keyword keywordType="theme">classification</keyword>
+            <keyword keywordType="theme">1975</keyword>
+        </keywordSet>
+        <keywordSet>
+            <keyword keywordType="place">Phoenix</keyword>
+            <keyword keywordType="place">Arizona</keyword>
+            <keyword keywordType="place">Sonoran Desert</keyword>
+            <keyword keywordType="theme">caplter</keyword>
+            <keyword keywordType="theme">Central Arizona Phoenix Longterm Ecological Research</keyword>
+            <keyword keywordType="theme">urban</keyword>
+            <keyword keywordType="theme">metropolitan area</keyword>
+        </keywordSet>
+        <intellectualRights>
+            <section>
+                <para> Copyright Board of Regents, Arizona State University. This dataset is
+                    released to the public and may be used for academic, educational, or commercial
+                    purposes subject to the following restrictions:</para>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>While CAP LTER will make every effort possible to control and
+                                document the quality of the data it publishes, the data are made
+                                available "as is". </para>
+                        </listitem>
+                        <listitem>
+                            <para>CAP LTER cannot assume responsibility for damages resulting from
+                                mis-use or mis-interpretation of datasets or from errors or
+                                omissions that may exist in the data.</para>
+                        </listitem>
+                        <listitem>
+                            <para>It is considered a matter of professional ethics to acknowledge
+                                the work of other scientists that has resulted in data used in
+                                subsequent research.</para>
+                        </listitem>
+                        <listitem>
+                            <para>CAP LTER expects that any use of data from this server will be
+                                accompanied with the appropriate citations and acknowledgments. </para>
+                        </listitem>
+                        <listitem>
+                            <para>CAP LTER encourages users to contact the original investigator
+                                responsible for the data that they are accessing. Where appropriate,
+                                researchers whose projects are integrally dependent on CAP LTER data
+                                are encouraged to consider collaboration and/or co-authorship with
+                                original investigators. </para>
+                        </listitem>
+                        <listitem>
+                            <para>CAP LTER requests that users submit to the Center for
+                                Environmental Studies, ASU, one copy of any publication resulting
+                                from the use of data obtained from this site. </para>
+                        </listitem>
+                        <listitem>
+                            <para>CAP LTER requests that users not redistribute data obtained from
+                                this site. However, links or references to this site may be freely posted.</para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+            </section>
+        </intellectualRights>
+        <distribution>
+            <online>
+                <url>http://seinet.asu.edu/DataCatalog/wholeRecord.jsp?id=16&amp;source=ces_dataset</url>
+            </online>
+        </distribution>
+        <distribution>
+            <online>
+                <connectionDefinition id="CES1_DATA">
+                    <schemeName system="http://ces.asu.edu/metadataStandards/connectionDictionary.xml">smb</schemeName>
+                    <description>
+                        <para/>
+                    </description>
+                    <parameterDefinition>
+                        <name>domain</name>
+                        <definition>The domain of the file location</definition>
+                        <defaultValue>lter</defaultValue>
+                    </parameterDefinition>
+                    <parameterDefinition>
+                        <name>host</name>
+                        <definition>The host name of the file location</definition>
+                        <defaultValue>Cesnas01.asu.edu</defaultValue>
+                    </parameterDefinition>
+                    <parameterDefinition>
+                        <name>share</name>
+                        <definition>The share of the file location</definition>
+                        <defaultValue>data</defaultValue>
+                    </parameterDefinition>
+                    <parameterDefinition>
+                        <name>path</name>
+                        <definition>The path within the share</definition>
+                        <defaultValue/>
+                    </parameterDefinition>
+                    <parameterDefinition>
+                        <name>file</name>
+                        <definition>The file name</definition>
+                        <defaultValue/>
+                    </parameterDefinition>
+                </connectionDefinition>
+            </online>
+        </distribution>
+        <coverage>
+            <temporalCoverage>
+                <singleDateTime>
+                    <calendarDate>1975-01-01</calendarDate>
+                </singleDateTime>
+            </temporalCoverage>
+            <geographicCoverage>
+                <geographicDescription>Phoenix Area</geographicDescription>
+                <boundingCoordinates>
+                    <westBoundingCoordinate>-112.888083</westBoundingCoordinate>
+                    <eastBoundingCoordinate>-111.182804</eastBoundingCoordinate>
+                    <northBoundingCoordinate>33.998779</northBoundingCoordinate>
+                    <southBoundingCoordinate>33.196775</southBoundingCoordinate>
+                </boundingCoordinates>
+            </geographicCoverage>
+        </coverage>
+        <purpose>
+            <para>The purpose of this dataset is to develop a time series of broadly categorized
+                landuse maps for the entire CAP-LTER study area.</para>
+        </purpose>
+        <contact id="Datamanager">
+            <positionName>Data Manager</positionName>
+            <organizationName>Center for Environmental Studies, Arizona State University</organizationName>
+            <address>
+                <deliveryPoint>Center for Environmental Studies</deliveryPoint>
+                <deliveryPoint>Arizona State University</deliveryPoint>
+                <deliveryPoint>POB 873211</deliveryPoint>
+                <city>TEMPE</city>
+                <administrativeArea>AZ</administrativeArea>
+                <postalCode>85287-3211</postalCode>
+                <country>USA</country>
+            </address>
+            <phone phonetype="voice">(480) 965 2975</phone>
+            <phone phonetype="fax">(480) 965-8087</phone>
+            <electronicMailAddress>caplter.data@asu.edu</electronicMailAddress>
+        </contact>
+        <publisher>
+            <organizationName>Central Arizona Phoenix LTER</organizationName>
+            <address>
+                <deliveryPoint>Center for Environmental Studies</deliveryPoint>
+                <deliveryPoint>Arizona State University</deliveryPoint>
+                <deliveryPoint>POB 873211</deliveryPoint>
+                <city>TEMPE</city>
+                <administrativeArea>AZ</administrativeArea>
+                <postalCode>85287-3211</postalCode>
+                <country>USA</country>
+            </address>
+        </publisher>
+        <methods>
+            <methodStep>
+                <description>
+                    <section>
+                        <title>Step 1. Urban</title>
+                        <para>Boundaries were determined based on the pre-existing 1974 Land Use
+                            Land Cover (LULC) dataset from the USGS Geographic Information Retrieval
+                            Analysis System (GIRAS).</para>
+                    </section>
+                    <section>
+                        <title>Step 2. Agriculture</title>
+                        <para>Boundaries were determined based on the pre-existing 1974 Land Use
+                            Land Cover (LULC) dataset from the USGS Geographic Information Retrieval
+                            Analysis System (GIRAS).</para>
+                    </section>
+                    <section>
+                        <title>Step 3. Desert</title>
+                        <para>Boundaries were determined based on the pre-existing 1974 Land Use
+                            Land Cover (LULC) dataset from the USGS Geographic Information Retrieval
+                            Analysis System (GIRAS).</para>
+                    </section>
+                </description>
+                <dataSource>
+                    <title>Land Use and Land Cover Digital Data From 1:250,000 and 1:100,000 Scale Maps</title>
+                    <creator>
+                        <organizationName>United States Geological Survey</organizationName>
+                    </creator>
+                    <contact>
+                        <organizationName>United States Geological Survey</organizationName>
+                    </contact>
+                </dataSource>
+            </methodStep>
+            <methodStep>
+                <description>
+                    <section>
+                        <title>Step 4. Recreation</title>
+                        <para>The boundaries for the regional parks were derived from the MAG 1995
+                            Existing Landuse spatial data set. The parks that were added for this
+                            time period were designated as Parks prior to 1975 as confirmed by the
+                            Maricopa County Parks and Recreation Department.</para>
+                    </section>
+                </description>
+                <dataSource>
+                    <title>MAG 1995 Existing Landuse</title>
+                    <creator>
+                        <organizationName>Maricopa Associated Governments</organizationName>
+                    </creator>
+                    <contact>
+                        <organizationName>Maricopa Associated Governments</organizationName>
+                    </contact>
+                </dataSource>
+            </methodStep>
+        </methods>
+        <access authSystem="ces">
+            <allow>
+                <principal>PUBLIC</principal>
+                <permission>read</permission>
+            </allow>
+        </access>
+        <spatialVector id="1975">
+            <entityName>Landuse for Phoenix in 1975</entityName>
+            <entityDescription>This GIS layer represents a reconstructed generalized landuse map of
+                the Valley around the time period of 1975.</entityDescription>
+            <physical>
+                <objectName>1975</objectName>
+                <dataFormat>
+                    <externallyDefinedFormat>
+                        <formatName>Shapefile</formatName>
+                    </externallyDefinedFormat>
+                </dataFormat>
+                <distribution>
+                    <online>
+                        <url>\\Cesnas01\data\lter19\phase1\1975.shp</url>
+                    </online>
+                </distribution>
+                <distribution>
+                    <online>
+                        <connection>
+                            <connectionDefinition>
+                                <references>CES1_DATA</references>
+                            </connectionDefinition>
+                            <parameter>
+                                <name>path</name>
+                                <value>lter19\phase1</value>
+                            </parameter>
+                            <parameter>
+                                <name>file</name>
+                                <value>1975.shp</value>
+                            </parameter>
+                        </connection>
+                    </online>
+                </distribution>
+            </physical>
+            <attributeList>
+                <attribute id="FID">
+                    <attributeName>FID</attributeName>
+                    <attributeDefinition>Internal feature number.</attributeDefinition>
+                    <storageType typeSystem="http://www.esri.com/metadata/esriprof80.html">OID</storageType>
+                    <measurementScale>
+                        <nominal>
+                            <nonNumericDomain>
+                                <textDomain>
+                                    <definition>Sequential unique whole numbers that are
+                                        automatically generated.</definition>
+                                </textDomain>
+                            </nonNumericDomain>
+                        </nominal>
+                    </measurementScale>
+                </attribute>
+                <attribute id="Shape">
+                    <attributeName>Shape</attributeName>
+                    <attributeDefinition>Feature geometry.</attributeDefinition>
+                    <storageType typeSystem="http://www.esri.com/metadata/esriprof80.html">Geometry</storageType>
+                    <measurementScale>
+                        <nominal>
+                            <nonNumericDomain>
+                                <textDomain>
+                                    <definition>Coordinates defining the features.</definition>
+                                </textDomain>
+                            </nonNumericDomain>
+                        </nominal>
+                    </measurementScale>
+                </attribute>
+                <attribute id="Z975">
+                    <attributeName>Z975</attributeName>
+                    <attributeDefinition>This field signifies the landuse value for each polygon.</attributeDefinition>
+                    <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">string</storageType>
+                    <measurementScale>
+                        <nominal>
+                            <nonNumericDomain>
+                                <enumeratedDomain>
+                                    <codeDefinition>
+                                        <code>Agriculture</code>
+                                        <definition>Agricultural land use</definition>
+                                    </codeDefinition>
+                                    <codeDefinition>
+                                        <code>Urban</code>
+                                        <definition>Urbanized area</definition>
+                                    </codeDefinition>
+                                    <codeDefinition>
+                                        <code>Desert</code>
+                                        <definition>Unmodified area</definition>
+                                    </codeDefinition>
+                                    <codeDefinition>
+                                        <code>Recreation</code>
+                                        <definition>Recreational land use</definition>
+                                    </codeDefinition>
+                                </enumeratedDomain>
+                            </nonNumericDomain>
+                        </nominal>
+                    </measurementScale>
+                </attribute>
+            </attributeList>
+            <geometry>Polygon</geometry>
+            <geometricObjectCount>78</geometricObjectCount>
+            <spatialReference>
+                <horizCoordSysName>NAD_1927_UTM_Zone_12N</horizCoordSysName>
+            </spatialReference>
+        </spatialVector>
+    </dataset>
+</eml:eml>
