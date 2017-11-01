@@ -2,13 +2,15 @@
 
 Dir holds files on EML best practices.  Originated with LTER working group.
 
-## Files: 
-eml_bp_by_element.md - draft 
+## Active:
+top level holds active files. Generally, this is 
+* a word doc, which will be distributed as a PDF 
+* examples, which most likely will stay here, and be linked from the PDF distribution page on the EDI website.
+* index.md - draft of the PDF distribution page. 
 
 
-### /incoming/:
-original word doc file (2011), and first generation output markdown output using pandoc:  
+## Archive: 
+* old versions of the doc, from 2004 and 2010 
+* version 2 in markdown, and partially edited. project is currently-shelved.
 
-```
- pandoc -f docx -t markdown emlbestpractices-2.0-DRAFT_20110627.docx -o   eml_bp_2011.markdown
-```
+
