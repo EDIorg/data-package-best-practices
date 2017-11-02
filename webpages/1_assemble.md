@@ -1,13 +1,10 @@
-A "data package" is the published unit of data and metadata together.Several approaches to designing data packages have emerged
-and are all valid concepts. Data repositories that are designed both for archive and delivery (like EDI) have these features, which are advantageous to both contributors and users:
-- assign DOIs, for data citation
-- metadata and data immutability, so that cited data can be reliably returned to (and an analysis repeated)
-- data package versioning, with earlier versions still available via their DOI.
-In general then, all data packages are static, and in the case of ongoing time-series, are "snapshots" over time. 
+A "data package" is the published unit of data and metadata together. Several approaches to designing data packages have emerged
+and are all valid. Data repositories that are designed both for archive and delivery (like EDI) have these features, which are advantageous to both contributors and users:
+- *assign DOIs*, for data citation
+- *metadata and data immutability*, so that cited data can be reliably revisited (and analyses repeated)
+- *support data package versioning*, with earlier versions still available via their DOI.
 
-
-Following are several examples of how data packages are constructed:
-
+In general then, all data packages are static, and in the case of ongoing time-series, are "snapshots" over time. Following are several examples of how data packages are constructed:
 1. Data collected with defined beginning and end dates are published together 
 in logical units, and described together with one EML file. For instance, a 
 data table could be accompanied by a table of sampling sites or taxonomic information 
@@ -31,7 +28,7 @@ or stored in a "look-up table" (described in EML as another entity) and linked.
 
 
 
-
+- either links here, or in above, or unite the two sections.
 - - [Considerable amount of stuff from LTER can go here - mob
 - - Dataset design - (Type-specific recommendations)
 - - Small tables and static datasets (possibly related to publication)
