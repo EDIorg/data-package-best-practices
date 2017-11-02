@@ -28,9 +28,9 @@ or stored in a "look-up table" (described in EML as another entity) and linked.
 
 
 
-- either links here, or in above, or unite the two sections.
+- either links here, or in above, or unite the two sections somehow. 
 - - [Considerable amount of stuff from LTER can go here - mob
-- - Dataset design - (Type-specific recommendations)
+- - Dataset design - (Type-specific ? domain-specific? recommendations)
 - - Small tables and static datasets (possibly related to publication)
 - - Ongoing time series
 - - Streaming data 
