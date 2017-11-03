@@ -1,22 +1,26 @@
-A "data package" is the published unit of data and metadata together.Several approaches to designing data packages have emerged
-and are all valid. Data repositories that are designed for both archive and delivery (like EDI) have these features:
+# 1. Organize and assemble your data and metadata
+
+*Data*: To get started, organize your data into the fewest logical units. Ideally, many tables of the same structure and content should be compiled into a single table. Spatial data files (e.g. shape files) of a common theme or scope should be zipped up in their respective folders.
+
+*Metadata*: Essential metadata is the who, what, when, where, why and how - which will be placed in structured metadata. "Who, what, when, where" are essential data documentation. "Why and how" aid in understanding the data and are generally described in text.
+
+You will be producing a "data package" -- the published unit of data and metadata together. Data repositories that are designed for both archive and delivery (like EDI) have these features, which you should keep in mind:
 - **assign DOIs**, for data citation
 - **metadata and data immutability**, so that cited data can be reliably returned to (and an analysis repeated)
 - **data package versioning**, with earlier versions still available via their DOI.
 
-In general then, all data packages are static, and in the case of ongoing time-series, are "snapshots" over time. Below are several examples of how data packages are constructed. The main features to consider are 
+Below are guidelines for grouping data into packages. The main features to consider are 
 - similarity and relatedness of methods and observations, and
-- temporal nature, ie, whether sampling is completed or ongoing
+- temporal nature, i.e., whether sampling is completed or planned to be ongoing
 
-1. *Data collected with defined beginning and end dates* are often organized
-into units, and packaged together with one EML file. A primary data table could be accompanied by a table of sampling sites or taxonomic information that contains more material than can be fit into EML metadata.
-     1. *Data from a large sampling campaign where many parameters are measured* (and possibly independent) could be combined into one EML dataset with multiple data entities as above, or
-     2. broken up into several packages, all accompanied by some of the same metadata and each with some unique metadata. 
-Both patterns are valid, and designers should choose a style which works best for their particular data and circumstances.
-1. With *ongoing time-series observations* (instrumented or not), some designers choose to group all observations into a single entit, and add data to a data entity and update existing EML metadata when methods or other ancillary material remains constant. Others create new datasets for each logical unit (e.g., a summer sampling season), regardless of
-similarities or differences in methods. There are advantages and disadvantages to both approaches. [LINK HERE TO A TIME SERIES PAGE? OR IS THAT BELOW?]
+- *Groups of data units with fixed start/end dates*: Often these are packaged together with one metadata file. A primary data table could be accompanied by a table of sampling sites or taxonomic information that contains more material than can be fit into structured metadata.
+    + *Large sampling campaign where many parameters are measured* (and possibly independent): These may benefit from  being broken into several packages, all accompanied by some of the same metadata and each with some unique metadata. 
+Both patterns (one package or several) are valid. In addition to considering your own mangagement constraints and circumstances, be aware of your data's potential future uses, and whether certain data entities naturally belong together.
+- *ongoing time-series observations* (instrumented or not): Remember that all data packages have static data entities, and so in the case of ongoing time-series, these are "snapshots" at points in time.
+    + continuous: all observations are groupled into a single unit (table), with plans to add data by revising the same package and updating metadata. 
+    + non-continuous: a new packages is created for each logical unit (e.g., a summer sampling season), regardless of similarities or differences in methods.
+There are advantages and disadvantages to both approaches. Long-term time series are some of the most valuable data there is. [LINK HERE TO A TIME SERIES PAGE? OR IS THAT BELOW?]
 
-Regardless of packaging style, some metadata elements are essential for data discovery - e.g., the coverage elements for sampling sites, taxonomy and dates.
 
 
 - either links here, or in above, or unite the two sections somehow. 
