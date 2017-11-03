@@ -24,8 +24,8 @@ Below are basic rules for scientists preparing data for archive:
     - "trace" = trace amount (e.g., instead of  "&lt; .02" for a nitrate value)
     - "-99999" = not available (some researchers prefer to keep their missing values of the same type as the data)
 1. Data tables exported as CSV from spreadsheet software like Excel should quote string fields or "escape" commas in string fields. we recommend exporting from MS excel using this menu choice:
-    - Mac, MS Excel 2011: File > Export > TO DO
-    - PC, MS Excel ____: File > Export > TO DO
+    - Mac, MS Excel 2011: File &gt; Export &gt; TO DO
+    - PC, MS Excel TO DO: File &gt; Export &gt; TO DO
 
  
 
