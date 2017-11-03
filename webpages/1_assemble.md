@@ -14,14 +14,15 @@ Below are guidelines for grouping data into packages. The main features to consi
 - temporal nature, i.e., whether sampling is completed or planned to be ongoing
 
 *Groups of data units with fixed start/end dates*: Often these are packaged together with one metadata file. A primary data table could be accompanied by a table of sampling sites or taxonomic information that contains more material than can be fit into structured metadata.
-    + *Large sampling campaign where many parameters are measured* (and possibly independent): These may benefit from  being broken into several packages, all accompanied by some of the same metadata and each with some unique metadata. 
+- *Large sampling campaign where many parameters are measured* (and possibly independent): These may benefit from  being broken into several packages, all accompanied by some of the same metadata and each with some unique metadata. 
 
 Both patterns (one package or multiple) are valid. In addition to considering your own mangagement constraints and circumstances, be aware of your data's potential future uses, and whether certain data entities naturally belong together.
 
 *ongoing time-series observations* (instrumented or not): Remember that all data packages have static data entities, and so in the case of ongoing time-series, these are "snapshots" at points in time.
-    + continuous: all observations are groupled into a single unit (table), with plans to add data by revising the same package and updating metadata. 
-    + non-continuous: a new packages is created for each logical unit (e.g., a summer sampling season), regardless of similarities or differences in methods.
-There are advantages and disadvantages to both approaches. Long-term time series are some of the most valuable data there is. [LINK HERE TO A TIME SERIES PAGE]
+- continuous: all observations are groupled into a single unit (table), with plans to add data by revising the same package and updating metadata. 
+- non-continuous: a new packages is created for each logical unit (e.g., a summer sampling season), regardless of similarities or differences in methods.
+
+There are advantages and disadvantages to both approaches.  [LINK HERE TO A TIME SERIES PAGE]
 
 NEXT: Format and QC tables -> [LINK HERE TO step 2]
 <!-- to be added:
