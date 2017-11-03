@@ -2,10 +2,10 @@
 intro paragraph
 
 - DIY (for data mgrs) 
-    - EML congruence reports mob
-    - How to submit
-- Get help from EDI - colin?
-    - Review/approve drafts
+    - EML congruence reports mob [link here to NEW page]()
+    - How to submit [link here to EXISTING page]()
+- Get help from EDI - colin? [link here to EXISTING page]()
+    - Review/approve drafts [link here to EXISTING? page]()
 
     
  
@@ -13,5 +13,4 @@ intro paragraph
 NEXT: Create EML Metadata -> [LINK HERE TO step 5]
 <!-- to be added:
 
-- - EDIs Software registry - how to use and/or contribute - kristin
 -->

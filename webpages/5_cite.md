@@ -2,12 +2,11 @@
 
 Intro paragraph
 
-- Recommended data citation
-- How to link your data package on your website 
-- How to link Your Dataset to Your ORCID Record
+- Recommended data citation 
+- How to link your data package on your website  [link here to EXISTING page]()
+- How to link Your Dataset to Your ORCID Record [link here to EXISTING page]()
  
 
 <!-- to be added:
 
-- - EDIs Software registry - how to use and/or contribute - kristin
 -->
