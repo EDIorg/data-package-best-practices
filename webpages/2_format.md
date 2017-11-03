@@ -2,11 +2,9 @@
 
 Although we accept most file formats, we recommend that you use tabular data (comma or tab delimited ASCII text) and geospatial data types.  For multi-year observations, we strongly encourage you to compile your tabular data into a single file delimited by commas or tab spaces.  If you are having trouble with this, we will be here to help you out.  Your geospatial data files should be compressed into a single or multiple .zip directories.
 
-<!-- 
-<ul>
-    <li>Data QC and QC - colin’s intro page</li>
-    <li>Colin’s draft(?) pages here - see dir called Data OA/QC - colin</li>
-</ul>
+<!-- comment this out you wp pos
+    - Data QC and QC - colin’s intro page
+    - Colin’s draft(?) pages here - see dir called Data OA/QC - colin
 -->
 
 Below are basic rules for scientists preparing data for archive:
