@@ -18,10 +18,10 @@ Below are basic rules for scientists preparing data for archive:
             - EDI recommends dates be in ISO 8601 format (as above), although other formats are allowed.
     - type (numeric or character)
         - e.g., do not enter a range of values in a column that contains numeric values (e.g., "< .02" for nitrate concentration). Your data will be entered into a database, and databases reject tables with columns having mixed data types. See below under "missing values".
-1. Be careful of character formatting (e.g. superscript) or symbols (e.g. degree, accent marks, smart quotes) within the data table. Even in fields typed as "character" these may produce unintelligible characters during conversion, or when emailed.
-1. Specify (in the metadata) the code you use for missing values in your tables. We recommend that missing fields (values) in data are NOT left blank.Software handles missing value code before ingesting the data table based on column's type.   Multiple missing values are allowed. Specify a definition for each missing value code, e.g.,
+1. Be careful of character formatting (e.g. superscript) or symbols (e.g. degree, accent marks, smart quotes) within the data table. Even in fields typed as "character" these may produce unintelligible characters during conversion, or if emailed.
+1. Specify (in the metadata) the code you use for missing values in your tables. We recommend that missing fields (values) in data are NOT left blank.Software interprets fields with a missing value code before ingesting the data table. Multiple missing values are allowed in one column. You will need to specify a definition for each missing value code, e.g.,
     - "NA" = not collected
-    - "trace" = trace amount (e.g., instead of  "< .02" for a nitrate value)
+    - "trace" = trace amount (e.g., instead of  "&lt; .02" for a nitrate value)
     - "-99999" = not available (some researchers prefer to keep their missing values of the same type as the data)
 1. Data tables exported as CSV from spreadsheet software like Excel should quote string fields or "escape" commas in string fields. we recommend exporting from MS excel using this menu choice:
     - Mac, MS Excel 2011: File > Export > TO DO
