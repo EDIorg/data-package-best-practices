@@ -1,12 +1,14 @@
 # 2. Format and QC data tables
 
 Although we accept most file formats, we recommend that you use tabular data (comma or tab delimited ASCII text) and geospatial data types.  For multi-year observations, we strongly encourage you to compile your tabular data into a single file delimited by commas or tab spaces.  If you are having trouble with this, we will be here to help you out.  Your geospatial data files should be compressed into a single or multiple .zip directories.
+
 <!-- 
 <ul>
     <li>Data QC and QC - colin’s intro page</li>
     <li>Colin’s draft(?) pages here - see dir called Data OA/QC - colin</li>
 </ul>
 -->
+
 Below are basic rules for scientists preparing data for archive:
 1. Use consistent data organization.  You may be planning to submit your data manually to us in several tables (e.g., organized by year). If so, each table must have the same structure; that is, the attributes must have the same order and identical names in all the tables so we can write code to process your data.
 1. "Consistent formatting" also means:
@@ -30,7 +32,7 @@ Below are basic rules for scientists preparing data for archive:
  
 
 NEXT: Create EML Metadata -> [LINK HERE TO step 3]
-<!-- to be added:
 
+<!-- to be added:
 - - EDIs Software registry - how to use and/or contribute - kristin
 -->
