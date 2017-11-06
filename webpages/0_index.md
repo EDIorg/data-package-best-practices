@@ -43,7 +43,12 @@
 </tbody>
 </table>
 </li>
- 	<li><strong>Submit your data package (data and metadata)</strong>
+</ul>
+</li>
+</ul>
+
+<ul>
+ 	<li><strong>4. Submit your data package (data and metadata)</strong>
 <table>
 <tbody>
 <tr>
@@ -61,9 +66,14 @@
 </tbody>
 </table>
 </li>
- 	<li><strong>Cite it</strong>
+</ul>
+</li>
+</ul>
+
 <ul>
- 	<li>You're done! You can retrieve your data citation, and/or its DOI, or to link the data package to your web page
+ 	<li><strong>5. Cite it</strong>
+<ul>
+ 	<li>You're done. You can retrieve your data citation, and/or its DOI, or to link the data package to your web page
 <ul>
  	<li>More about citing and linking data packages [link here to EXISTING page]()</li>
 </ul>
