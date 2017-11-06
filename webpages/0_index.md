@@ -1,5 +1,4 @@
-<ul>
- 	<li><strong>1. Assemble data and metadata </strong>
+<h3>1. Assemble data and metadata </h3>
 <ul>
  	<li style="text-align: left;"><span style="font-weight: 400;">You should organize your data into logical units based on structure and theme.  EDI has recommendations for organizing data by theme. </span>
 <ul>
@@ -7,11 +6,9 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 
-<ul>
- 	<li><strong>2. Format and QC data tables</strong>
+
+<h3>2. Format and QC data tables</h3>
 <ul>
  	<li><span style="font-weight: 400;">Some data types may benefit from a specific format and by having specific types of checks run. You'll want to keep track of the QC steps you take so others will know what's been done to these data. </span>
 <ul>
@@ -21,11 +18,9 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 
-<ul>
- 	<li><strong>3. Create EML metadata</strong>
+
+<h3>3. Create EML metadata</h3>
 <table>
 <tbody>
 <tr>
@@ -44,11 +39,9 @@
 </table>
 </li>
 </ul>
-</li>
-</ul>
 
-<ul>
- 	<li><strong>4. Submit your data package (data and metadata)</strong>
+
+<h3>4. Submit your data package (data and metadata)</h3>
 <table>
 <tbody>
 <tr>
@@ -67,17 +60,12 @@
 </table>
 </li>
 </ul>
-</li>
-</ul>
 
-<ul>
- 	<li><strong>5. Cite it</strong>
+
+<h3>5. Cite it</h3>
 <ul>
  	<li>You're done. You can retrieve your data citation, and/or its DOI, or to link the data package to your web page
 <ul>
  	<li>More about citing and linking data packages [link here to EXISTING page]()</li>
 </ul>
 </li>
-</ul>
-</li>
-</ol>
