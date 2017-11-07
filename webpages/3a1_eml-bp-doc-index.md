@@ -15,17 +15,16 @@ At time of this document's publication (late 2017), the version of EML currently
 
 ## <a name="other-resources">Other EML Resources
 
-*Other Related Documentation and tools:*
 EML 2.1.0 schema and normative documentation (2008):
-[http://knb.ecoinformatics.org/software/eml/](http://knb.ecoinformatics.org/software/eml/)
+<http://knb.ecoinformatics.org/software/eml/>
 
-ESRI to EML conversion stylesheet documentation and recommendations (yyyy)
+ESRI to EML conversion stylesheet documentation and recommendations (2008):
 <http://im.lternet.edu/project/Esri2Eml>
 
-EML Handbook (yyyy):
+EML Handbook (2003):
 <http://im.lternet.edu/sites/im.lternet.edu/files/emlHandbook.pdf>
 
-Unit dictionary: <http://unit.lternet.edu>
+LTER Unit dictionary: <http://unit.lternet.edu>
 
 
 
