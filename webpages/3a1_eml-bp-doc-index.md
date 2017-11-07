@@ -1,10 +1,10 @@
-# DRAFT Best Practices for Dataset Metadata in Ecological Metadata Language (EML)
-
+<!-- page title:  Best Practices for Dataset Metadata in Ecological Metadata Language (EML) -->
 [Best Practices for Dataset Metadata in Ecological Metadata Language (EML Best Practices V3). 2017. Environmental Data Initiative. (linkable citation)](http://link/here.)
 
 ## <a name="introduction"></a>Introduction
 
 This document contains current "Best Practice" recommendations for EML content for metadata related to ecological and environmental data. It is intended to augment the EML schema documentation for a less-technical audience. This is one component of several resources available to EML preparers, and related resources are listed below. These recommendations are directed towards the following goals:
+
 - Provide guidance and clarification in the implementation of EML for datasets
 - Minimize heterogeneity of EML documents to simplify development and re-use of software built to ingest it
 - Maximize interoperability of EML documents to facilitate data synthesis
