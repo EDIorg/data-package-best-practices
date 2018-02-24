@@ -206,26 +206,17 @@ no unit. Calendar dates and time durations are sometimes confused (see
 the dateTime type, above and section 5, below; LTER Unit Best Practices
 Draft, section 5.3)
 
-| **Attribute**   | **example       | **Proper**      | **Improper**    |
-|                 | value**         |                 |                 |
-|-----------------|-----------------|-----------------|--------------  | 
-| date            | 2009-01-06      | type: dateTime  | type: ratio     |
-|                 |                 |                 |                 |
-|                 |                 | pattern:        | unit:           |
-|                 |                 | YYYY-MM-DD      | yyyy-mm-dd      |
-|-----------------|-----------------|-----------------|--------------
-| day of year     | 345             | type: interval  | type: ratio     |
-|                 |                 |                 |                 |
-|                 | 35.5            | unit:           | unit: day       |
-|                 |                 | nominalDay      | (custom)        |
-|                 |                 | (standard)      |                 |
-|-----------------|-----------------|-----------------|--------------
-| datenum (in     | 7668554.3455    | type: interval  | type: ratio     |
-| this case, from |                 |                 |                 |
-| Matlab)         |                 | unit:           | unit: day       |
-|                 |                 | nominalDay      | (custom)        |
-|                 |                 | (standard)      |                 |
-|-----------------|-----------------|-----------------|--------------
+| *Attribute*                         | *example value*   | *Proper*        | *Improper*    |
+|-------------------------------------|---------------------|-----------------|--------------  | 
+| date                                | 2009-01-06          | type: dateTime  | type: ratio     |
+|                                     |                     | pattern: YYYY-MM-DD | unit:yyyy-mm-dd           |
+|-------------------------------------|---------------------|-----------------|--------------
+| day of year                         | 345\\               | type: interval  | type: ratio     |
+|                                     | 35.5                | unit: nominalDay| unit: day       |
+|-------------------------------------|---------------------|-----------------|--------------
+| datenum (in this case, from Matlab) | 7668554.3455        | type: interval  | type: ratio     |
+|                                     |                     | unit: nominalDay | unit: day       |
+|-------------------------------------|---------------------|-----------------|--------------
 
 4\. Recommendations for creating custom units
 
