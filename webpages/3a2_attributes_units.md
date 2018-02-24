@@ -132,25 +132,24 @@ anomaly arising from the limitations of the ... measurement scale ..".
 
 2.3.1 Unit Type:
 
-Morpho users will use its pull down menu. This table of examples was
-reproduced from SBC's Morpho Users Guide (2009). \[To Do: a better
+\[To Do: a better
 description of what a unit type is.\]
 
 | *example*                           | *Unit Type*           | *example units*            |
 |-------------------------------------|-----------------------|-----------------------------| 
 | number, count                       | dimensionless         | number                      |
 | length                              | length                | meter                 |
-| biomass                             | mass                  | grams, kilograms      | 
+| biomass                             | mass                  | gram, kilogram      | 
 | matlab datenumber,  elapsed time    | time                  | nominalDay, second    |
 | temperature                         | temperature           | Celsius               |
 | density of kelp or benthic critter  | areal density         | numberPerMeterSquared |
-| standing crop                       | areal mass density    | gramsPerMeterSquared  |
+| standing crop                       | areal mass density    | gramPerMeterSquared  |
 | phytoplankton density               | volumetric density    | numberPerMeterCubed   |
-| concentration,  dissolved nutrients | Amount of substance concentration  | molesPerLiter |
+| concentration,  dissolved nutrients | Amount of substance concentration  | molePerLiter |
 | particulate CHN                     | mass density          | milligramPerMeterCubed |
 | water currents                      | speed                 | meterPerSecond       |
 | stream discharge                    | volumetricRate        | literPerSecond, meterCubedPerDay  |
-| production rate                     | areal mass density rate   | gramsPerMeterSquaredPerYear, meterCubedPerDay |
+| production rate                     | areal mass density rate   | gramPerMeterSquaredPerYear, meterCubedPerDay |
 
 
 2.3.2 Naming Units:
@@ -171,6 +170,12 @@ attributes are being developed that will allow more advanced constructs,
 and which will allow important specific pieces of information (like an
 element) to be specified.
 
+
+PUT THE NIST and SI RULES HERE
+
+
+
+
 3\. Examples and Common mistakes
 
 These examples come from custom units that were submitted in EML
@@ -184,7 +189,7 @@ Pattern A. Naming conventions were not used. A custom unit was created
 when a standard unit is available, or a custom unit was created that did
 not follow naming conventions (LTER Unit Best Practices Draft 5.1).
 
-  | **Attribute** |  **Proper**  |    **Improper** |
+  | *Attribute* |  *Proper*  |    *Improper* |
   |---------------|---------------|--------------  | 
   |branch length  |Meter          |m               |
   |sampling area  |meterSquared   |squareMeters    |
@@ -220,8 +225,7 @@ Draft, section 5.3)
 
 4\. Recommendations for creating custom units
 
- NIST/SI RULES HERE
- 
+SEE NIST RULES ABOVE.
 
 4.1. Check what others in the community are doing before creating a new
 unit.\
