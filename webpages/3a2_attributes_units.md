@@ -193,11 +193,11 @@ Pattern B. part of the attribute was included in the unit name. The
 correct unit may have been already available as a standard unit
 (NIST\#11; LTER Unit Best Practices Draft 5.2.2)
 
-  **Attribute**         **Proper**                        **Improper**
-  --------------------- --------------------------------- ----------------------
-  bacterial abundance   Number                            bacteria
-  primary production    milligramsPerMeterSquaredPerDay   mgC/m3/day
-  short shoot growth    numberPerCentimeterSquared        short shoots per cm2
+  | *Attribute*       |  *Proper*                       | *Improper* |
+  |-------------------|---------------------------------|--------------  | 
+  |bacterial abundance|   Number                         |    bacteria |
+  |primary production |   milligramsPerMeterSquaredPerDay|   mgC/m3/day |
+  |short shoot growth |   numberPerCentimeterSquared     |   short shoots per cm2 |
 
 Pattern C. A unit not required because the attribute was inappropriately
 typed. An attribute was given a measurement type \"interval\" or
@@ -206,27 +206,26 @@ no unit. Calendar dates and time durations are sometimes confused (see
 the dateTime type, above and section 5, below; LTER Unit Best Practices
 Draft, section 5.3)
 
-+-----------------+-----------------+-----------------+-----------------+
 | **Attribute**   | **example       | **Proper**      | **Improper**    |
 |                 | value**         |                 |                 |
-+=================+=================+=================+=================+
+|-----------------|-----------------|-----------------|--------------  | 
 | date            | 2009-01-06      | type: dateTime  | type: ratio     |
 |                 |                 |                 |                 |
 |                 |                 | pattern:        | unit:           |
 |                 |                 | YYYY-MM-DD      | yyyy-mm-dd      |
-+-----------------+-----------------+-----------------+-----------------+
+|-----------------|-----------------|-----------------|--------------
 | day of year     | 345             | type: interval  | type: ratio     |
 |                 |                 |                 |                 |
 |                 | 35.5            | unit:           | unit: day       |
 |                 |                 | nominalDay      | (custom)        |
 |                 |                 | (standard)      |                 |
-+-----------------+-----------------+-----------------+-----------------+
+|-----------------|-----------------|-----------------|--------------
 | datenum (in     | 7668554.3455    | type: interval  | type: ratio     |
 | this case, from |                 |                 |                 |
 | Matlab)         |                 | unit:           | unit: day       |
 |                 |                 | nominalDay      | (custom)        |
 |                 |                 | (standard)      |                 |
-+-----------------+-----------------+-----------------+-----------------+
+|-----------------|-----------------|-----------------|--------------
 
 4\. Recommendations for creating custom units
 
@@ -424,20 +423,20 @@ mixed and mathematical operations are not applied to unit names.
 NIST \#22 Obsolete Terms: The obsolete terms normality, molarity, and
 molal and their symbols N, M, and m are not used.
 
-+-----------------------+-----------------------+-----------------------+
+|-----------------------|-----------------------|-----------------------|
 | **proper**            | concentration of B    | molality of solute B  |
 |                       | and its symbol cB and | and its symbol bB,    |
 |                       | SI unit mol/m3 (or a  |                       |
 |                       | related acceptable    | or mB and SI unit     |
 |                       | unit)                 | mol/kg, (or a related |
 |                       |                       | unit of the SI)       |
-+=======================+=======================+=======================+
+|-----------------------|-----------------------|-----------------------|
 | **improper**          | normality and the     | molarity and the      |
 |                       | symbol N              | symbol M,             |
 |                       |                       |                       |
 |                       |                       | molal and the symbol  |
 |                       |                       | m                     |
-+-----------------------+-----------------------+-----------------------+
+|-----------------------|-----------------------|-----------------------|
 
 7\. EML representation of created units UNDER CONSTRUCTION
 
