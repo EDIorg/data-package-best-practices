@@ -112,7 +112,6 @@ also have a meaningful zero point, which allows ratios between values to
 have meaning. Examples of a ratio scale include the Kelvin temperature
 scale (200K is half as hot as 400K) and length in meters (e.g., 10
 meters is twice as long as 5 meters). Concentrations are of ratio type.
-
 **dateTime**: is for Gregorian dates and times, which have
 characteristics of both the ordinal type (ordered categories) and
 interval type (equidistant points on a scale). By making dateTime a
@@ -137,43 +136,22 @@ Morpho users will use its pull down menu. This table of examples was
 reproduced from SBC's Morpho Users Guide (2009). \[To Do: a better
 description of what a unit type is.\]
 
-+-----------------------+-----------------------+-----------------------+
-| **example             | **Unit Type**         | **example units       |
-| observations**        |                       | (standard)**          |
-+=======================+=======================+=======================+
-| number, count         | dimensionless         | number                |
-+-----------------------+-----------------------+-----------------------+
-| length                | length                | meter                 |
-+-----------------------+-----------------------+-----------------------+
-| biomass               | mass                  | grams, kilograms      |
-+-----------------------+-----------------------+-----------------------+
-| matlab datenumber,    | time                  | nominalDay, second    |
-| elapsed time          |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| temperature           | temperature           | Celsius               |
-+-----------------------+-----------------------+-----------------------+
-| density of kelp or    | areal density         | numberPerMeterSquared |
-| benthic critter       |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| standing crop         | areal mass density    | gramsPerMeterSquared  |
-+-----------------------+-----------------------+-----------------------+
-| phytoplankton density | volumetric density    | numberPerMeterCubed   |
-+-----------------------+-----------------------+-----------------------+
-| concentration,        | Amount of substance   | molesPerLiter         |
-|                       | concentration         |                       |
-| dissolved nutrients   |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| particulate CHN       | mass density          | milligramsPerMeterCub |
-|                       |                       | ed                    |
-+-----------------------+-----------------------+-----------------------+
-| water currents        | speed                 | metersPerSecond       |
-+-----------------------+-----------------------+-----------------------+
-| stream discharge      | volumetricRate        | litersPerSecond,      |
-|                       |                       | cubicMetersPerDay     |
-+-----------------------+-----------------------+-----------------------+
-| production rate       | areal mass density    | gramsPerMeterSquaredP |
-|                       | rate                  | erYear                |
-+-----------------------+-----------------------+-----------------------+
+| *example*                           | *Unit Type*           | *example units*            |
+|-------------------------------------|-----------------------|-----------------------------| 
+| number, count                       | dimensionless         | number                      |
+| length                              | length                | meter                 |
+| biomass                             | mass                  | grams, kilograms      | 
+| matlab datenumber,  elapsed time    | time                  | nominalDay, second    |
+| temperature                         | temperature           | Celsius               |
+| density of kelp or benthic critter  | areal density         | numberPerMeterSquared |
+| standing crop                       | areal mass density    | gramsPerMeterSquared  |
+| phytoplankton density               | volumetric density    | numberPerMeterCubed   |
+| concentration,  dissolved nutrients | Amount of substance concentration  | molesPerLiter |
+| particulate CHN                     | mass density          | milligramPerMeterCubed |
+| water currents                      | speed                 | meterPerSecond       |
+| stream discharge                    | volumetricRate        | literPerSecond, meterCubedPerDay  |
+| production rate                     | areal mass density rate   | gramsPerMeterSquaredPerYear, meterCubedPerDay |
+
 
 2.3.2 Naming Units:
 
