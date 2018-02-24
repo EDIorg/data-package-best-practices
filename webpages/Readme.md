@@ -12,6 +12,9 @@ Other hints for working with with md/workpress:
 1. you cannot use md code blocks in WP. at all. not even with html.
 1. lists should be separated by blank lines (pandoc likes this too - maybe a markdown flavor?)
 1. md-style links probaby wont work at all in WP. md uses filenames to link, WP creates a page name for the link. so all the links were added later.
+1. WP seems to ignore commented-out HTML sections. It is ok with commented-out text. So don't try to use this mechanism for future additions and notes.
+
+Note: these pages are out of sync with the content on the WP site, mainly due to limitations/practices of WP. 
 
 
 
