@@ -229,6 +229,9 @@ Draft, section 5.3)
 
 4\. Recommendations for creating custom units
 
+ NIST/SI RULES HERE
+ 
+
 4.1. Check what others in the community are doing before creating a new
 unit.\
 4.2. Place only the most broad and essential measurement information in
@@ -302,32 +305,33 @@ hh:mm:ss.sss
 
 5.1. Dates should be accompanied by a format string that conforms to the
 ISO 8601 standard using the following symbols.
-
-  Y     year
-  ----- ---------------------------------------------------------------------------------------------------------
-  M     month
-  W     month abbreviation (e.g., JAN)
-  D     day
-  h     hour
-  m     minute
-  s     second
-  T     time designator (demarcates date and time parts of a dateTime)
-  Z     UTC designator, indicating value is in UTC time
-  .     indicates a decimal fraction of a unit
-  +/-   indicates a positive or negative number, or a positive or negative time zone adjustment relative to UTC
-  \-    indicates a separator between date components
-  A/P   am or pm designator
+ 
+| synbol| meaning |
+|-------|---------------------|
+|  Y   |  year|
+|  M   |  month|
+|  W   |  month abbreviation (e.g., JAN)|
+|  D   |  day|
+|  h   |  hour|
+|  m   |  minute|
+|  s   |  second|
+|  T   |  time designator (demarcates date and time parts of a dateTime)|
+|  Z   |  UTC designator, indicating value is in UTC time|
+|  .   |  indicates a decimal fraction of a unit|
+|  +/- | indicates a positive or negative number, or a positive or negative time zone adjustment relative to UTC|
+|  \-  | indicates a separator between date components|
+|  A/P |  am or pm designator|
 
 5.2. Here are some examples of the format strings that can be
 constructed in the ISO 8601 standard
 
-                 **Format string**     **Example value**
-  -------------- --------------------- ---------------------
-  ISO Date       YYYY-MM-DD            2002-10-14
-  ISO Datetime   YYYY-MM-DDThh:mm:ss   2002-10-14T09:13:45
-  ISO Time       hh:mm:ss              17:13:45
-  ISO Time       hh:mm:ss.sss          09:13:45.432
-  ISO Time       hh:mm.mm              09:13.42
+ |               | **Format string**   |  **Example value** |
+ | --------------| ---------------------|---------------------|
+ | ISO Date      | YYYY-MM-DD           |2002-10-14|
+ | ISO Datetime  | YYYY-MM-DDThh:mm:ss  |2002-10-14T09:13:45|
+ | ISO Time      | hh:mm:ss             |17:13:45|
+ | ISO Time      | hh:mm:ss.sss         |09:13:45.432|
+ | ISO Time      | hh:mm.mm             |09:13.42|
 
 5.3. Here are some examples of the format strings that are allowed,
 although they are not standard
