@@ -206,10 +206,10 @@ Pattern A. Naming conventions were not used. A custom unit was created
 when a standard unit is available, or a custom unit was created that did
 not follow naming conventions (LTER Unit Best Practices Draft 5.1).
 
-  **Attribute**   **Proper**      **Improper**
-  --------------- --------------- --------------
-  branch length   Meter           m
-  sampling area   metersSquared   squareMeters
+  | **Attribute** |  **Proper**  |    **Improper** |
+  |---------------|---------------|--------------  | 
+  |branch length  |Meter          |m               |
+  |sampling area  |meterSquared   |squareMeters    |
 
 Pattern B. part of the attribute was included in the unit name. The
 correct unit may have been already available as a standard unit
