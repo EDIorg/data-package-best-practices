@@ -17,9 +17,9 @@ Other hints for working with with md/workpress:
 So the process:
 1. edit in markdown
 1. commit to git
-1. convert to HTML with pandoc
+1. convert to HTML with pandoc (local)
 1. copy HTML page into WP
-1. edit in WP (in the raw editor, not wisiwig!)
+1. edit in WP (in the raw editor, not wysiwyg!)
     1. links
     1. remove dev sections you would have liked to just comment out
   
