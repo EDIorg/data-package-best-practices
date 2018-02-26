@@ -15,11 +15,11 @@ Other hints for working with with md/workpress:
 1. WP seems to ignore commented-out HTML sections. It is ok with commented-out text. So don't try to use this mechanism for future additions and notes. But you can keep these sections in the markdown.
 
 So the process:
-1. edit in markdown
-1. commit to git
+1. edit pages in markdown
+1. commit markdown to git
 1. convert to HTML with pandoc (local)
 1. copy HTML page into WP
-1. edit in WP (in the raw editor, not wysiwyg!)
+1. edit HTML in WP (in the raw editor, not wysiwyg!)
     1. links
     1. remove dev sections you would have liked to just comment out
   
