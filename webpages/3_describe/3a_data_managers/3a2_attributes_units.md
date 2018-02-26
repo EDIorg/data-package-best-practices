@@ -1,21 +1,7 @@
-Attributes and Units in LTER Data Packages (SBC-LTER)
 
-2009-03-03, v 0.9, M. O'Brien
+# Attributes and Units for EML Metadata
 
-Includes Excerpts from and modifications of
-
-EML Best Practices for Units DRAFT (LTER IMC Units Dictionary Working
-Group)
-
-2009-02-13
-
-and
-
-EML 2.1.0 Schema Documentation (EML Development group)
-
-2009-03-01
-
-1\. Introduction
+## Introduction
 
 In general use, the term 'attribute' defines a property of an object,
 element or a file (in computer science). In database vocabulary, a table
@@ -61,13 +47,30 @@ specifications, and so use English words instead of international
 symbols. The EML developers and the LTER IM Committee are aware of this
 shortcoming.
 
-2\. Attributes
+### History of this document
+Paragraph describing LTER contribution
+
+Naming conventions for Custom Units were developed by LTER after
+observing inconsistencies in the standard units shipped with EML, and
+the confusion this occasionally causes. Recommendations givem here for naming
+conventions for custom units in EML are based on NIST and SI
+recommendations.
+
+Includes Excerpts from and modifications of
+
+EML Best Practices for Units DRAFT (LTER IMC Units Dictionary Working
+Group)
+
+
+EML 2.1.0 Schema Documentation (EML Development group)
+
+## Attributes
 
 A complete attribute description is composed of several parts. The
 guidelines here are to assist in choosing attribute names, measurement
 types (measurement scale), and their units (if appropriate).
 
-2.1. Attributes Names and Labels
+### Attributes Names and Labels
 
 When naming and labeling table attributes (i.e., 'variables'), any
 strings are allowed, including acronyms or ad hoc groups of letters.
@@ -78,7 +81,7 @@ misinterpreted by different computing systems; e.g., don't use '@' for
 'at'. A label is optional, but can be longer, capitalized, or use whole
 words to clarify the display on the web or in another application
 
-2.2. Measurement Scale
+### Measurement Scale
 
 When defining an attribute in EML, you will be specifying a "Measurement
 Scale", which is a data typology borrowed from Statistics and introduced
@@ -97,21 +100,25 @@ assigned to distinguish them from other observations. Examples: using
 the number 1 for male and 2 for female, a species code or binomial, or
 the name of the site where the observation was made. Columns that
 contain strings or simple text are nominal type.\
+
 **Ordinal:** values are categories that have a logical or ordered
 relationship to one another, but the magnitude of the difference between
 values is irregular or is not defined. Examples: academic grades: A, B,
 C, D, F, or ranking quality 1=high, 2=medium, 3=low.\
+
 **Interval:** is used for data which consist of equidistant points on a
 scale, i.e., it is ordinal but the magnitude between the steps is known.
 Examples: the Celsius scale is an interval scale, since degrees are
 equally spaced but there is no natural zero point. Since the '0' of the
 Celsius scale is tied to a property of water, 20 C is not twice as hot
 as 10 C. Another example is pH.\
+
 **Ratio:** is used for data which consists of equidistant points that
 also have a meaningful zero point, which allows ratios between values to
 have meaning. Examples of a ratio scale include the Kelvin temperature
 scale (200K is half as hot as 400K) and length in meters (e.g., 10
 meters is twice as long as 5 meters). Concentrations are of ratio type.
+
 **dateTime**: is for Gregorian dates and times, which have
 characteristics of both the ordinal type (ordered categories) and
 interval type (equidistant points on a scale). By making dateTime a
@@ -119,7 +126,14 @@ separate category and providing an unambiguous mechanism for describing
 date formats, datasets contain the information needed to parse date
 values into their appropriate components (e.g., days, months, years).
 
-2.3. Units
+
+Consider links to 3 other pages:
+1. text types (nominal, ordinal) - the EML BP linked here.
+2. numeric types (interval, ratio) link the units material here.
+3. dateTimes - the date time examples go here, or link to BP. 
+
+
+## Units
 
 In EML, only measurement types **Interval** and **Ratio** include units.
 "The unit type 'dimensionless' is preserved," and "is synonymous with
@@ -130,7 +144,7 @@ anomaly arising from the limitations of the ... measurement scale ..".
 (<http://knb.ecoinformatics.org/software/eml/eml-2.0.1/index.html>
 \[5\])\"
 
-2.3.1 Unit Type:
+### Unit Type:
 
 \[To Do: a better
 description of what a unit type is.\]
@@ -152,7 +166,7 @@ description of what a unit type is.\]
 | production rate                     | areal mass density rate   | gramPerMeterSquaredPerYear, meterCubedPerDay |
 
 
-2.3.2 Naming Units:
+### Naming Units:
 
 Although you have freedom naming attributes, you should keep in mind
 that the unit should be described in correct physical units. You may be
@@ -171,12 +185,93 @@ and which will allow important specific pieces of information (like an
 element) to be specified.
 
 
-PUT THE NIST and SI RULES HERE
+### NIST and SI RULES HERE
+Checklist for units
+
+The National Institute of Standard and Technology (NIST) provides a checklist 
+for units in manuscripts: \
+[http://www.physics.nist.gov/cuu/Units/checklist.html
+\[9](http://www.physics.nist.gov/cuu/Units/checklist.html)\]. We are using 
+the checklist here to summarize the naming conventions for units in EML.
+
+NIST \#3 Plurals: Unit symbols are unaltered in the plural (e.g., use 75
+cm, not 75 cms.)
+
+NIST \#11 Information & units: Information is not mixed with unit
+symbols or names. Proper: "the water content is 20 mL/kg". Improper: "20
+mL H2O/ kg"
+
+NIST \#22 Obsolete Terms: The terms normality, molarity, and
+molal (and their symbols N, M, and m) are obsolete and not used.
+
+
+NIST \#2, \#8, \#18 Abbreviations: Abbreviations such as sec, cc, or mps
+are avoided and only standard unit symbols, prefix symbols, unit names,
+and prefix names are used. The combinations of letters \"ppm,\" \"ppb,\"
+and \"ppt,\" and the terms part per million, part per billion, and part
+per trillion, and the like, are not used to express the values of
+quantities. Acronyms or ad hoc groups of letters should not be used as
+units.
+
+
+NIST \#5 Multiplication & division: A space or half-high dot is used to
+signify the multiplication of units. A solidus (i.e., slash), horizontal
+line, or negative exponent is used to signify the division of units. The
+solidus must not be repeated on the same line unless parentheses are
+used.
+
+NIST \#9 Unit modifications: Unit symbols (or names) are not modified by
+the addition of subscripts or other information. For example, use Vmax =
+1000 V, not V= 1000 Vmax
+
+NIST \#10 Percent: the symbol % is used to represent simply the number
+0.01 proper: "D = 0.2 %, where D is defined by the relation D = (l1 -
+l2)/l2". Improper: "the length l1 exceeds the length l2 by 0.2 %"
+
+N
+NIST \#12 Math notation: It is clear to which unit symbol a numerical
+value belongs and which mathematical operation applies to the value of a
+quantity.
+
+  **proper**     35 cm x 48 cm   20 °C to 30 °C   123 g ± 2 g or (123 ± 2) g   240 x (1 ± 10 %) V
+  -------------- --------------- ---------------- ---------------------------- ----------------------------------------------
+  **improper**   35 x 48 cm      20 °C-30 °C      123 ± 2 g                    240 V ± 10 % (one cannot add 240 V and 10 %)
+
+NIST \#13 Unit symbols & names: Unit symbols and unit names are not
+mixed and mathematical operations are not applied to unit names.
+
+  **proper**:     kg/m3            kg · m-3    kilogram per cubic meter   
+  --------------- ---------------- ----------- -------------------------- -------------
+  **improper **   kg/cubic meter   kg per m3   kilogram per meter3        kilogram/m3
+
+.
+
+
+|-----------------------|-----------------------|-----------------------|
+| **proper**            | concentration of B    | molality of solute B  |
+|                       | and its symbol cB and | and its symbol bB,    |
+|                       | SI unit mol/m3 (or a  |                       |
+|                       | related acceptable    | or mB and SI unit     |
+|                       | unit)                 | mol/kg, (or a related |
+|                       |                       | unit of the SI)       |
+|-----------------------|-----------------------|-----------------------|
+| **improper**          | normality and the     | molarity and the      |
+|                       | symbol N              | symbol M,             |
+|                       |                       |                       |
+|                       |                       | molal and the symbol  |
+|                       |                       | m                     |
+|-----------------------|-----------------------|-----------------------|
 
 
 
 
-3\. Examples and Common mistakes
+
+
+
+
+
+
+## Examples and Common mistakes
 
 These examples come from custom units that were submitted in EML
 documents to the LTER network. The Units Working group analyzed several
@@ -223,6 +318,9 @@ Draft, section 5.3)
 |                                     |                     | unit: nominalDay | unit: day       |
 |-------------------------------------|---------------------|-----------------|--------------
 
+
+
+
 4\. Recommendations for creating custom units
 
 SEE NIST RULES ABOVE.
@@ -241,11 +339,7 @@ the difference between any 2 values is one day.
 
 4.4. Naming Conventions
 
-LTER IMC naming conventions for Custom Units were developed after
-observing inconsistencies in the standard units shipped with EML, and
-the confusion this occasionally causes. Recommendations for naming
-conventions for custom units in EML are based on NIST and SI
-recommendations.
+
 
 4.4.1 Name first the unit then the modifier, i.e. \'meterSquared\'
 rather than \'squareMeter\'. This applies to each element in the unit
@@ -269,6 +363,11 @@ or special characters.
 
 4.4.6 Singular terms are preferred over plural terms (ie. gram vs.
 grams)
+
+
+
+
+
 
 5\. Gregorian Dates (excerpt from EML specification, URL \#2)
 
@@ -361,82 +460,7 @@ be \"hh:mm:ss.sss\". Note that this only indicates the number of
 decimals used to record the value and not the precision of the
 measurement (see dateTimePrecision for that).
 
-6\. Checklist for units
-
-The National Institute of Standard and Technology (NIST) provides a
-reminder of the uncertainty involved in units as well and rules in the
-form of a checklist\
-[http://www.physics.nist.gov/cuu/Units/checklist.html
-\[9](http://www.physics.nist.gov/cuu/Units/checklist.html%20%5b9)\].
-Several of the points on this checklist address specific issues that
-have arisen in recent LTER community discussions of units and are listed
-here for easy reference. This checklist id appropriate for any resource
-containing units, not just LTER datasets (e.g., published papers).
-
-NIST \#2, \#8, \#18 Abbreviations: Abbreviations such as sec, cc, or mps
-are avoided and only standard unit symbols, prefix symbols, unit names,
-and prefix names are used. The combinations of letters \"ppm,\" \"ppb,\"
-and \"ppt,\" and the terms part per million, part per billion, and part
-per trillion, and the like, are not used to express the values of
-quantities. Acronyms or ad hoc groups of letters should not be used as
-units.
-
-NIST \#3 Plurals: Unit symbols are unaltered in the plural (e.g., use 75
-cm, not 75 cms.)
-
-NIST \#5 Multiplication & division: A space or half-high dot is used to
-signify the multiplication of units. A solidus (i.e., slash), horizontal
-line, or negative exponent is used to signify the division of units. The
-solidus must not be repeated on the same line unless parentheses are
-used.
-
-NIST \#9 Unit modifications: Unit symbols (or names) are not modified by
-the addition of subscripts or other information. For example, use Vmax =
-1000 V, not V= 1000 Vmax
-
-NIST \#10 Percent: the symbol % is used to represent simply the number
-0.01 proper: "D = 0.2 %, where D is defined by the relation D = (l1 -
-l2)/l2". Improper: "the length l1 exceeds the length l2 by 0.2 %"
-
-NIST \#11 Information & units: Information is not mixed with unit
-symbols or names. Proper: "the water content is 20 mL/kg". Improper: "20
-mL H2O/ kg"
-
-NIST \#12 Math notation: It is clear to which unit symbol a numerical
-value belongs and which mathematical operation applies to the value of a
-quantity.
-
-  **proper**     35 cm x 48 cm   20 °C to 30 °C   123 g ± 2 g or (123 ± 2) g   240 x (1 ± 10 %) V
-  -------------- --------------- ---------------- ---------------------------- ----------------------------------------------
-  **improper**   35 x 48 cm      20 °C-30 °C      123 ± 2 g                    240 V ± 10 % (one cannot add 240 V and 10 %)
-
-NIST \#13 Unit symbols & names: Unit symbols and unit names are not
-mixed and mathematical operations are not applied to unit names.
-
-  **proper**:     kg/m3            kg · m-3    kilogram per cubic meter   
-  --------------- ---------------- ----------- -------------------------- -------------
-  **improper **   kg/cubic meter   kg per m3   kilogram per meter3        kilogram/m3
-
-.
-
-NIST \#22 Obsolete Terms: The obsolete terms normality, molarity, and
-molal and their symbols N, M, and m are not used.
-
-|-----------------------|-----------------------|-----------------------|
-| **proper**            | concentration of B    | molality of solute B  |
-|                       | and its symbol cB and | and its symbol bB,    |
-|                       | SI unit mol/m3 (or a  |                       |
-|                       | related acceptable    | or mB and SI unit     |
-|                       | unit)                 | mol/kg, (or a related |
-|                       |                       | unit of the SI)       |
-|-----------------------|-----------------------|-----------------------|
-| **improper**          | normality and the     | molarity and the      |
-|                       | symbol N              | symbol M,             |
-|                       |                       |                       |
-|                       |                       | molal and the symbol  |
-|                       |                       | m                     |
-|-----------------------|-----------------------|-----------------------|
-
+6\. 
 7\. EML representation of created units UNDER CONSTRUCTION
 
 This section for those editing XML documents, and not for those using
@@ -477,15 +501,12 @@ designated if there is to be support for unit conversions.
 
 **Links:**\
 \[1\]
-http://intranet.lternet.edu/im/news/committees/working\_groups/unit\_dictionary/EML\_bestpractices\_units\_DRAFT\
 \[2\] http://www.bipm.org/en/si/\
 \[3\] http://en.wikipedia.org/wiki/ISO\_31\
 \[4\] http://www.ch.ic.ac.uk/rzepa/codata2/\
-\[5\] http://knb.ecoinformatics.org/software/eml/eml-2.0.1/index.html\
-\[6\] http://intranet.lternet.edu/im/im\_practices/metadata/guides\
-\[7\] http://www.physics.nist.gov/cuu/index.html;\
+\[7\] http://physics.nist.gov/cuu/index.html\
 \[8\] http://physics.nist.gov/cuu/Units/bibliography.html\
-\[9\] http://www.physics.nist.gov/cuu/Units/checklist.html\
+\[9\] http://physics.nist.gov/cuu/Units/checklist.html\
 \[10\] http://www.bipm.org/en/si/si\_brochure/\
 \[11\] http://www.jstage.jst.go.jp/article/dsj/1/0/1\_128/\_article\
 \[12\]
