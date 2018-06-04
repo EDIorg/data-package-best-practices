@@ -1,32 +1,26 @@
 ## Check overview
 ### Categorization 
-- Justification: The framers (LTER IMC) specified that data package checking should not cause undue burden for data package submitters, and so the value of each check must be justified. 
-  - “Discovery” justification applies to those elements used by search tools or during human evaluation.
-  - “Workflow” was applied to checks for data package features essential to workflow software and automated ingestion. 
-  - “PASTA” refers to data package features specifically required by core NIS software components
-  - “Good practice” was gleaned from EML Best Practices documents
-- Scope: Because communities are expected to employ different criteria for data package acceptance, each check can be categorized with a ‘scope’, to indicate the community applying it - packaging aspect
-- response behavior
+- Justification: data package checking should not cause undue burden for submitters, and so the value of each check must be justified. 
+  - Discovery: justification applies to those elements used by search tools or during human evaluation.
+  - Workflow: was applied to checks for data package features essential to workflow software and automated ingestion. 
+  - PASTA: refers to data package features specifically required by core NIS software components
+  - Good practice: was gleaned from EML Best Practices documents
+- Scope: Because communities are expected to employ different criteria for data package acceptance, each check can be categorized with a ‘scope’, to indicate the community applying it
 - Packaging aspect: reflects the part of a data package where a check operates. 
-  - “Metadata” checks are concerned purely with metadata presence or content, e.g., a check for the presence of an XML element, such as
+  - Metadata: checks are concerned purely with metadata presence or content, e.g., a check for the presence of an XML element, such as
 `<methods>` or `<geographicCoverage>`. 
-  - “Data” checks are concerned only with the data entity, e.g., a check that simply returns a row of data or examines a data record for possible delimiters. 
-  - “Congruence” checks examine the agreement between metadata and data, e.g., to compare the number of attributes listed in metadata to the number of columns in a data table
+  - Data: checks are concerned only with the data entity, e.g., a check that simply returns a row of data or examines a data record for possible delimiters. 
+  - Congruence: checks examine the agreement between metadata and data, e.g., to compare the number of attributes listed in metadata to the number of columns in a data table
 - Priority: Each check was given one of three priority levels (high, medium, low) depending on its importance to LTER and to the IMC. Priority levels may help guide the implementation, but are not the only factor used to determine the schedule
 ### Response behavior
-Of particular interest to data managers is their Response behavior because some checks affect whether a package can be accepted. 
-
-There are a total of four possible responses in two major classes. Checks designated as “info” do not have pass/fail criteria and do not affect the acceptance of the data package in any way. An “info” check is for informational purposes only; for example, the check to display a few lines of content of a URL.  The second class of check can affect insertion of a package into the NIS. Their responses will be either “valid”, or one of “warn” or “error”.  With two levels of non-valid response (“warn” or “error”), code behavior can be customized
+Of particular interest to data managers is a check's response behavior because some checks affect whether a package can be accepted. There are a total of four possible responses in two major classes. Checks designated as “info” do not have pass/fail criteria and do not affect the acceptance of the data package in any way. An “info” check is for informational purposes only. The second class of check can affect insertion of a package. Their responses will be either “valid”, or one of “warn” or “error”.  With two levels of non-valid response, code behavior can be customized.
 #### Summary
-- “info”: check is for informational purposes only; for example, the check to display a few lines of content of a URL.
-- “valid”:  means that all criteria of the check were met.
-- “warn”: Warn” means that the criteria of the check were not met and that there may be some problem needing attention, but that
-the data package is still acceptable. 
-- “error”: the entire data package will be rejected.
+- info: check is for informational purposes only; for example, the check to display a few lines of content of a URL.
+- valid:  means that all criteria of the check were met.
+- warn: Warn” means that the criteria of the check were not met and that there may be some problem needing attention, but that the data package is still acceptable. 
+- error: the entire data package will be rejected.
 
-Understandably, checks classified with the “valid/error” response
-behavior were of greatest importance to classify correctly, because
-these would deny upload to PASTA. Only checks whose failure would
-mean that a data package is unusable should generate an “error”
-  - Check types
+Understandably, checks classified with the “valid/error” response behavior were of greatest importance to classify correctly, because
+these would deny upload to PASTA. Only checks whose failure would mean that a data package is unusable should generate an “error”
+  - Check types 
   - List of deal-breakers
