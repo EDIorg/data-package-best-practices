@@ -16,11 +16,10 @@
 Of particular interest to data managers is a check's response behavior because some checks affect whether a package can be accepted. There are a total of four possible responses in two major classes. Checks designated as “info” do not have pass/fail criteria and do not affect the acceptance of the data package in any way. An “info” check is for informational purposes only. The second class of check can affect insertion of a package. Their responses will be either “valid”, or one of “warn” or “error”.  With two levels of non-valid response, code behavior can be customized.
 #### Summary
 - info: check is for informational purposes only; for example, the check to display a few lines of content of a URL.
-- valid:  means that all criteria of the check were met.
-- warn: Warn” means that the criteria of the check were not met and that there may be some problem needing attention, but that the data package is still acceptable. 
+- valid: all criteria of the check were met.
+- warn: the criteria of the check were not met and that there may be some problem needing attention, but that the data package is still acceptable. 
 - error: the entire data package will be rejected.
 
 Understandably, checks classified with the “valid/error” response behavior were of greatest importance to classify correctly, because
 these would deny upload to PASTA. Only checks whose failure would mean that a data package is unusable should generate an “error”
-  - Check types 
   - List of deal-breakers
