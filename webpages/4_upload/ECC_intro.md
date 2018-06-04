@@ -13,9 +13,14 @@ In addition to basic pass/fail criteria, each check's definition includes catego
 
 For details of checks, see [Check overview ](check_overview.md)
 ## How to 
-- intro, then (new page)
-  - Modes  - eval vs upload
-  - Report interpretation
+An XML schema contains the output. Using XML allows output can be transformed for a variety of purposes, e.g., an individual report can be transformed into HTML for web presentation during evaluation of a single data package, or results from a group of reports can be aggregated and statistics computed. 
+
+Two modes: 
+- Evaluate: 
+- Upload: 
+
+For details of modes and interpreting reports, see [ECC How to](ECC_how_to.md)
+
 ## Process for adding checks
 ## How to get involved - ECC working group (github link)
 
