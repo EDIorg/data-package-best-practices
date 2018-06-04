@@ -22,4 +22,11 @@ Of particular interest to data managers is a check's response behavior because s
 
 Understandably, checks classified with the “valid/error” response behavior were of greatest importance to classify correctly, because
 these would deny upload to PASTA. Only checks whose failure would mean that a data package is unusable should generate an “error”
-  - List of deal-breakers
+
+- Types of checks whose failure means a data package is unusable:
+  - XML documents that do not comply with the EML schema because these cannot be transformed to HTML or their XPaths interpreted
+  - Package identifiers outside the controlled LTER Network format, as these cannot be entered into Network catalogs
+  - Metadata URLs for data entities that are broken links, because data cannot be accessed by any means
+  - Non-unique entity names in metadata (within one package), because individual data entities cannot be distinguished
+  - The count of entity attributes (e.g., columns) in metadata does not match the count of columns in data entities, because incongruity
+generally means (at best) jagged rows, which is unacceptable to analysis environments like R or Matlab; or (at worst) the metadata does not belong with this data entity, which renders the package unusable.
