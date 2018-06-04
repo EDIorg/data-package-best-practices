@@ -30,3 +30,4 @@ these would deny upload to PASTA. Only checks whose failure would mean that a da
   - Non-unique entity names in metadata (within one package), because individual data entities cannot be distinguished
   - The count of entity attributes (e.g., columns) in metadata does not match the count of columns in data entities, because incongruity
 generally means (at best) jagged rows, which is unacceptable to analysis environments like R or Matlab; or (at worst) the metadata does not belong with this data entity, which renders the package unusable.
+  - Integrity checksum of a downloaded data entity does not match the stated checksum. As with a count of columns, a mismatch may mean that the metadata does not belong with this data entity, and should be confirmed before continuing.
