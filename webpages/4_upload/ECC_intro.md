@@ -16,8 +16,10 @@ For details of checks, see [Check overview ](check_overview.md)
 An XML schema contains the output. Using XML allows output can be transformed for a variety of purposes, e.g., an individual report can be transformed into HTML for web presentation during evaluation of a single data package, or results from a group of reports can be aggregated and statistics computed. 
 
 Two modes: 
-- Evaluate: 
-- Upload: 
+- Evaluate: Typically, software for evaluating XML stops at the first error and repeated submissions are required until all errors have been exposed. In the ECC however, at much as possible, all errors be exposed in one run (rather than stopping processing) so that a submitter sees as many problems as possible at once. This feature saves a considerable time. Of course, some errors will prevent future
+processing, e.g., if a data-URL does not return a data entity, that entity cannot be examined. Reports from Evaluation mode are
+stored for 180 days only.
+- Upload:  The Quality Engine halts on the first error, saving processor time. Upon a successful upload, the quality report document is stored permanently as part of the data package (associated via the resource map), and can be accessed and displayed alongside its metadata and data. 
 
 For details of modes and interpreting reports, see [ECC How to](ECC_how_to.md)
 
