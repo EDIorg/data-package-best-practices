@@ -23,7 +23,7 @@ Of particular interest to data managers is a check's response behavior because s
 Understandably, checks classified with the “valid/error” response behavior were of greatest importance to classify correctly, because
 these would deny upload to PASTA. Only checks whose failure would mean that a data package is unusable should generate an “error”
 
-### Types of checks whose failure means a data package is unusable:
+### Types of checks whose failure means a data package is unusable
 - **XML documents that do not comply with the EML schema** because these cannot be transformed to HTML or their XPaths interpreted
 - **Package identifiers outside the controlled formatting scheme**, as these cannot be entered into Network catalogs
 - **Metadata URLs for data entities that are broken links**, because data cannot be accessed by any means
