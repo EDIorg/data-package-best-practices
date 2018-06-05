@@ -24,5 +24,10 @@ stored for 180 days only.
 For details of modes and interpreting reports, see [ECC How to](ECC_how_to.md)
 
 ## Process for adding checks
-## How to get involved - ECC working group (github link)
+Checks are periodically added (there are currently about 40). We release new checks (if there are any) at 6 month intervals, typically May and November. An EDI news item will accompany the release.
+
+## Get Involved 
+- The ECC has a GitHub space here: https://github.com/EDIorg/ECC. There are meeting notes, plus outlines and analyses for potential new checks. 
+- An active committee exists, and we welcome new members.
+- If you have a suggestion for a check, enter it as an "issue". This is the best spot, since issues can be discussed publicly, and linked to developer tasks. 
 
