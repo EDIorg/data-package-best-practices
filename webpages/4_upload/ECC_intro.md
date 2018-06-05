@@ -9,7 +9,7 @@ the EML Congruence Checker reports on aspects of data packages submitted to ensu
 ## Example
 - https://portal.edirepository.org/nis/reportviewer?packageid=edi.140.1
 ## Check overview 
-In addition to basic pass/fail criteria, each check's definition includes categorization according to several features: scope, justification, response behavior, packaging aspect, and priority. Although some typologies simply facilitate organization or communication (e.g., justification, priority), having a specific, granular definition for each check forced contributors to focus on their most salient features and facilitated coding. Checks that would prevent insertion were considered and justified with special care. The high number of checks recorded to date reflects the complexity of datasets submitted, and the granularity allowed by EML metadata.
+In addition to basic pass/fail criteria, each check's definition includes categorization according to several features: scope, justification, response behavior, packaging aspect, and priority. Although some typologies simply facilitate organization or communication (e.g., justification, priority), having a specific, granular definition for each check meant that code was conentrated on the most salient features. Checks that would prevent insertion were considered and justified with special care. The high number of checks recorded to date reflects the complexity of datasets submitted, and the granularity allowed by EML metadata.
 
 For details of checks, see [Check overview ](check_overview.md)
 ## How to work with checks
