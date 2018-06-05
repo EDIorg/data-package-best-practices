@@ -13,6 +13,9 @@ You must be logged into either an EDI or LTER account to access this tool. Log i
 - Evaluate/Upload packages or
 - View Evaluate/Upload results
 
+![Tools login](Tools_login.png)
+
+
 
 ### Report interpretation
 With very few users and with responses that are somewhat arcane, it is simpler for us to go over your report with you. Do not hesitate to ask for help (info@environmentaldatainitiative.org). 
