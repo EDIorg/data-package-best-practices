@@ -22,9 +22,14 @@ With very few users and with responses that are somewhat arcane, it is simpler f
 Generally, the columns to the left are what the checker expects, and the right columns are what the checker found. 
 
 Sample reports:
-- All fields valid (upload mode)
+- All fields valid (upload mode). See the column labeled "Status". Checks returning "Valid" will be green; Checks returning "info" are blue.
   - https://portal.edirepository.org/nis/reportviewer?packageid=edi.140.1
-- Report showing warns (upload mode)
+- Report showing warns (upload mode). See the column labeled "Status". Checks returning "warn" will be orange.
   - https://portal.lternet.edu/nis/reportviewer?packageid=knb-lter-sbc.117.1
-- Report showing errors (eval mode; link will expire in ~Sept 2018)
+  
+  ![Example, info-warn-valid](info_warn_valid.png)
+  
+- Report showing errors (eval mode; link will expire in ~Sept 2018)  Checks returning "error" will be red.
   - https://portal.lternet.edu/nis/reportviewer?packageid=knb-lter-sbc.117.1&localPath=%2Fhome%2Fpasta%2Flocal%2Fharvester%2FSBC-evaluate-2018-03-19-1521501458684%2Fknb-lter-sbc.117.1%2FqualityReport.xml
+
+  ![Example, error-warn-valid](error_warn_valid.png)
