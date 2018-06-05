@@ -1,4 +1,4 @@
-## How to 
+## How to use the EML Congruence checker
 ### Output
 An XML schema contains the output. Using XML allows output can be transformed for a variety of purposes, e.g., an individual report can be transformed into HTML for web presentation during evaluation of a single data package, or results from a group of reports can be aggregated and statistics computed. 
 
@@ -8,9 +8,15 @@ processing, e.g., if a data-URL does not return a data entity, that entity canno
 stored for 180 days only.
 - Upload:  The Quality Engine halts on the first error, saving processor time. Upon a successful upload, the quality report document is stored permanently as part of the data package (associated via the resource map), and can be accessed and displayed alongside its metadata and data. 
 
+### Log in
+You must be logged into either an EDI or LTER account to access this tool. Log in from the "Tools" menu, either 
+- Evaluate/Upload packages or
+- View Evaluate/Upload results
+
+
 ### Report interpretation
-With very few users and with responses that are somewhat arcane, it is simpler for us to go over your report with you. Do not hesitate to ask for help (info@environmentaldatainitiative.org )
-Generally, the left columns are what the checker expects, and the right columns are what the checker found. 
+With very few users and with responses that are somewhat arcane, it is simpler for us to go over your report with you. Do not hesitate to ask for help (info@environmentaldatainitiative.org). 
+Generally, the columns to the left are what the checker expects, and the right columns are what the checker found. 
 
 Sample reports:
 - All fields valid (upload mode)
