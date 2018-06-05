@@ -12,7 +12,7 @@ the EML Congruence Checker reports on aspects of data packages submitted to ensu
 In addition to basic pass/fail criteria, each check's definition includes categorization according to several features: scope, justification, response behavior, packaging aspect, and priority. Although some typologies simply facilitate organization or communication (e.g., justification, priority), having a specific, granular definition for each check forced contributors to focus on their most salient features and facilitated coding. Checks that would prevent insertion were considered and justified with special care. The high number of checks recorded to date reflects the complexity of datasets submitted, and the granularity allowed by EML metadata.
 
 For details of checks, see [Check overview ](check_overview.md)
-## How to 
+## How to work with checks
 An XML schema contains the output. Using XML allows output can be transformed for a variety of purposes, e.g., an individual report can be transformed into HTML for web presentation during evaluation of a single data package, or results from a group of reports can be aggregated and statistics computed. 
 
 Two modes: 
