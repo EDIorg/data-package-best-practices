@@ -1,6 +1,6 @@
 ## Check overview
 ### Categorization 
-Checks are categorizes several different ways: 
+Checks are categorizes several different ways. Some typologies simply facilitate organization or communication (e.g., justification, priority). Specific, granular definitions forces check creators to focus on their most salient features and facilitates coding. 
 - **Justification**: data package checking should not cause undue burden for submitters, and so the value of each check must be justified. 
   - Discovery: justification applies to those elements used by search tools or during human evaluation.
   - Workflow: was applied to checks for data package features essential to workflow software and automated ingestion. 
