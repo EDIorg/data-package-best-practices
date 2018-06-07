@@ -6,7 +6,7 @@ Checks are categorizes several different ways. Some typologies simply facilitate
   - Workflow: was applied to checks for data package features essential to workflow software and automated ingestion. 
   - PASTA: refers to data package features specifically required by core NIS software components
   - Good practice: was gleaned from EML Best Practices documents
-- **Scope**: Because communities are expected to employ different criteria for data package acceptance, each check can be categorized with a ‘scope’, to indicate the community applying it
+- **System**: Because communities are expected to employ different criteria for data package acceptance, each check can be categorized with a ‘system’ (or 'scope'), to indicate the community applying it
 - **Packaging aspect**: reflects the part of a data package where a check operates. 
   - Metadata: checks are concerned purely with metadata presence or content, e.g., a check for the presence of an XML element, such as
 `<methods>` or `<geographicCoverage>`. 
