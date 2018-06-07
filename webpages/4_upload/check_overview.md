@@ -18,7 +18,7 @@ Of particular interest to data managers is a check's response behavior because s
 #### Summary
 - **info**: check is for informational purposes only; for example, the check to display a few lines of content of a URL.
 - **valid**: all criteria of the check were met.
-- **warn**: the criteria of the check were not met and that there may be some problem needing attention, but that the data package is still acceptable. 
+- **warn**: the criteria of the check were not met and that there may be some problem needing attention, but the data package is still acceptable. 
 - **error**: the entire data package will be rejected.
 
 Understandably, checks classified with the “valid/error” response behavior were of greatest importance to classify correctly, because
