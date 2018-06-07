@@ -20,7 +20,7 @@ You must be logged into either an EDI or LTER account to access this tool. Log i
 
 ### Report interpretation
 With very few users and with responses that are somewhat arcane, it is simpler for us to go over your report with you. Do not hesitate to ask for help (info@environmentaldatainitiative.org). 
-Generally, the columns to the left are what the checker expects, and the right columns are what the checker found. 
+Generally, in the HTML view of a report, the columns to the left are what the checker expects, and the right columns are what the checker found. 
 
 Sample reports:
 - All fields valid (upload mode). See the column labeled "Status". Checks returning "Valid" will be green; Checks returning "info" are blue.
