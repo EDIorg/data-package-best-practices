@@ -20,7 +20,7 @@ For details of checks, please see the [check overview ](check_overview.md)
 
 Check results are stored in an XML document, which can be transformed for a variety of purposes, e.g., an individual report can be transformed into HTML for web presentation during evaluation of a single data package, or results from a group of reports can be aggregated. 
 
-Approaches to performing checks:
+### Modes of check execution ###
 
 - Evaluate: An EML document can be evaluated by the ECC Quality Engine without adding it to the repository. Typically, software for evaluating XML stops at the first error, and repeated submissions are required until all errors have been exposed. In the ECC, however, as much as possible, all errors are exposed in one run (as opposed to the first error encountered stopping subsequent checks) so that the report provided to the data set submitter catalogs most or all of potential problems. This feature can save considerable time. Of course, there are some errors that will prevent subsequent checks from running. For example, a data entity cannot be evaluated if a URL or other means of accessing the data is not provided. Reports from Evaluate mode are stored for 180 days.
 - Upload: When an EML document is uploaded for the purpose of being added to the repository, the ECC Quality Engine halts on the first error, saving processor time. Upon successful upload, the quality report document is stored permanently as part of the data package (associated via the resource map), and can be accessed and displayed alongside its metadata and data. 
