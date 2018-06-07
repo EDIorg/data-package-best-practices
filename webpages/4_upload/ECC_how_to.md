@@ -1,4 +1,5 @@
 ## How to use the EML Congruence checker
+For instruction on Input, see how-to page on submitting a package [Not yet written at this time].
 ### Output
 An XML document contains the output. Using XML allows output can be transformed for a variety of purposes, e.g., an individual report can be transformed into HTML for web presentation during evaluation of a single data package, or results from a group of reports can be aggregated and statistics computed. 
 
