@@ -4,7 +4,7 @@ Checks are categorizes several different ways. Some typologies simply facilitate
 - **Justification**: data package checking should not cause undue burden for submitters, and so the value of each check must be justified. 
   - Discovery: justification applies to those elements used by search tools or during human evaluation.
   - Workflow: was applied to checks for data package features essential to workflow software and automated ingestion. 
-  - PASTA: refers to data package features specifically required by core NIS software components
+  - PASTA: refers to data package features specifically required by core software components
   - Good practice: was gleaned from EML Best Practices documents
 - **System**: Because communities are expected to employ different criteria for data package acceptance, each check can be categorized with a ‘system’ (or 'scope'), to indicate the community applying it
 - **Packaging aspect**: reflects the part of a data package where a check operates. 
@@ -12,7 +12,7 @@ Checks are categorizes several different ways. Some typologies simply facilitate
 `<methods>` or `<geographicCoverage>`. 
   - Data: checks are concerned only with the data entity, e.g., a check that simply returns a row of data or examines a data record for possible delimiters. 
   - Congruence: checks examine the agreement between metadata and data, e.g., to compare the number of attributes listed in metadata to the number of columns in a data table
-- **Priority**: Each check was given one of three priority levels (high, medium, low) depending on its importance to LTER and to the IMC. Priority levels may help guide the implementation, but are not the only factor used to determine the schedule
+- **Priority**: Each check was given one of three priority levels (high, medium, low) depending on its importance to user communities. Priority levels may help guide the implementation, but are not the only factor used to determine the schedule
 ### Response behavior
 Of particular interest to data managers is a check's response behavior because some checks affect whether a package can be accepted. There are a total of four possible responses in two major classes. Checks designated as “info” do not have pass/fail criteria and do not affect the acceptance of the data package in any way. An “info” check is for informational purposes only. The second class of check can affect insertion of a package. Their responses will be either “valid”, or one of “warn” or “error”.  With two levels of non-valid response, code behavior can be customized.
 #### Summary
