@@ -22,12 +22,12 @@ Of particular interest to data managers is a check's response behavior because s
 - **error**: the entire data package will be rejected.
 
 Understandably, checks classified with the “valid/error” response behavior were of greatest importance to classify correctly, because
-these would deny upload to PASTA. Only checks whose failure would mean that a data package is unusable should generate an “error”
+these would deny upload to PASTA. Only checks whose failure would mean that a data package is unusable should generate an “error”.
 
 ### Types of checks whose failure means a data package is unusable
 - **XML documents that do not comply with the EML schema** because these cannot be transformed to HTML or their XPaths interpreted
-- **Package identifiers outside the controlled formatting scheme**, as these cannot be entered into Network catalogs
+- **Package identifiers outside the controlled formatting scheme**, as these cannot be cataloged
 - **Metadata URLs for data entities that are broken links**, because data cannot be accessed by any means
 - **Non-unique entity names in metadata (within one package)**, because individual data entities cannot be distinguished
-- **The count of entity attributes (e.g., columns) in metadata does not match the count of columns** in data entities, because incongruity generally means (at best) jagged rows, which is unacceptable to analysis environments like R or Matlab; or (at worst) the metadata does not belong with this data entity, which renders the package unusable.
+- **The count of entity attributes (e.g., columns) in metadata does not match the count of columns in data entities**, because incongruity generally means (at best) jagged rows, which is unacceptable to analysis environments like R or Matlab; or (at worst) the metadata does not belong with this data entity, which renders the package unusable.
 - **Integrity checksum of a downloaded data entity does not match the stated checksum**. As with a count of columns, a mismatch may mean that the metadata does not belong with this data entity, and should be confirmed before continuing.
