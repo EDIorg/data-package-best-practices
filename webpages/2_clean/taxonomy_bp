@@ -1,0 +1,25 @@
+How-to: Taxonomy
+
+1. EDI recommends resolving taxonomic information to trustworthy taxonomic information systems, i.e. using IDs from those taxonomic systems because:
+	a) The IDs are stable even if the taxonomy names change
+	b) Taxon systems usually provide a user interface for retrieving other taxon levels, old names, type specimen etc.
+2. EDI recommends the following practices for use of Taxonomy: 
+	a) Columns in your data tables:
+		i)   Scientific name
+		ii)  Serial number/ID provided as by the taxonomic authority you are using.
+		iii) Categorical variable for the name of taxonomic information system, for example ITIS or WoRMS (or other).
+		iv)  Explain acronyms such as "ITIS " in metadata.
+	b) The lowest possible taxon level should be referenced.
+	c) This practice should be applied to the most recent data and older ones if time allows.
+3. The Taxon System should cover the taxonomy in your geographic area and be reliable. 
+4. Examples of Taxonomy Systems
+	a) World Register of Marine Species (WoRMS)
+	b) Integrated Taxonomic Information System (ITIS), for terrestrial ecosystems.
+5. Potential conflicts and other issues:
+	a) Reconciling multiple returns on a search
+	b) Coalescing sp > genus and vice versa, 
+	c) Decision on when you need expert review.
+6. EDI provides the taxonomyCleanr R package to clean your taxonomy data.
+	a) For a youtube video check out: https://www.youtube.com/watch?v=zNhe7JXZf44&t=16s
+	b) Code and instructions can be found on EDI’s github space: https://github.com/EDIorg/taxonomyCleanr
+
