@@ -1,8 +1,6 @@
 # How-To: Taxonomy
 
-EDI recommends the following practices for use of Taxonomy in your data tables and metadata.
-
-## Resolve taxonomic information to trustworthy taxonomic information systems
+### Resolve taxonomic information to trustworthy taxonomic information systems
 
 Use IDs from those taxonomic systems because:
 
@@ -14,18 +12,15 @@ Columns in your data tables:
 	* Scientific name
 	* Serial number/ID provided as by the taxonomic authority you are using.
 	* Categorical variable for the name of taxonomic information system.
+	* The lowest possible taxon level should be referenced.
+	* Explain acronyms such as "ITIS " in metadata.
+	* This practice should be applied to the most recent data and older ones if time allows.
   
-  * Explain acronyms such as "ITIS " in metadata.
+## The Taxon System should cover the taxonomy in your geographic area and be reliable:
 	
-  * The lowest possible taxon level should be referenced.
-	
-  * This practice should be applied to the most recent data and older ones if time allows.
-  
-The Taxon System should cover the taxonomy in your geographic area and be reliable:
-	
-  * Examples of Taxon Information Systems are:
-	* World Register of Marine Species [(WoRMS)](http://marinespecies.org/)
-	* Integrated Taxonomic Information System [(ITIS)](https://www.itis.gov/), for terrestrial ecosystems.
+* Examples of Taxon Information Systems are:
+* World Register of Marine Species [(WoRMS)](http://marinespecies.org/)
+* Integrated Taxonomic Information System [(ITIS)](https://www.itis.gov/), for terrestrial ecosystems.
 		
   * Potential conflicts and other issues:
 	* Reconciling multiple returns on a search
