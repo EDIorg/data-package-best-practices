@@ -4,10 +4,10 @@
 
 Use IDs from those taxonomic systems because:
 
-	* The IDs are stable even if the taxonomy names change
+	* The IDs are stable even if the taxonomy names change.
 	* Taxon systems usually provide a user interface for retrieving other taxon levels, old names, type specimen etc.
   
-Columns in your data tables:
+Include the following columns in your data tables:
 
 	* Scientific name.
 	* Serial number/ID provided by the taxonomic authority you are using.
@@ -16,7 +16,7 @@ Columns in your data tables:
 	* Explain acronyms of Taxonomy Information System (for example "ITIS") in metadata.
 	* This practice should be applied to the most recent data and older ones if time allows.
   
-### The Taxon System should cover the taxonomy in your geographic area and be reliable:
+### The Taxon System should cover the taxonomy in your geographic area and type of ecosystem.
 	
 * Examples of Taxon Information Systems are:
   * World Register of Marine Species [(WoRMS)](http://marinespecies.org/)
