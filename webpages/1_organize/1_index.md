@@ -51,15 +51,15 @@ can be managed or updated independently. Some metadata may be repeated, but this
 when the dataset is first created. Subsequent updates will be streamlined.
  
 ## Datasets of particular types or scientific domains
-###Spatial data 
+### Spatial data 
 Spatial data (e.g. shape files) of a common theme or scope should be zipped 
 up in their respective folders. In EML, these should be typed as "otherEntity"
 
-###Streaming data 
+### Streaming data 
 - with the GCE Data Toolbox for Matlab [link here to EXISTING page]()
 
-###Community survey data
+### Community survey data
 - Using the ecocomDP model [link here to EXISTING page]()
 
-###Meteorology
+### Meteorology
 - LTER climdb-overhaul 
