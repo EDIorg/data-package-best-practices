@@ -78,7 +78,8 @@ can be managed or updated independently. Some metadata is repeated across all pa
 first created (such as locations or owners), but subsequent updates will be streamlined.
  
 
-## 3. "Long" vs. "Wide"
+## 3. Presentation
+e.g., "Long" vs. "Wide"
 something about the tidyverse
 [long_wide.md]()
 
