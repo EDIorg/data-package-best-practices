@@ -65,3 +65,13 @@ description in EML we recommend that each data table oncontain only the key-valu
 values for a single sensor (or as separate entities in one data package). Most of these
 data models describe the condept of a single "data stream:, which may be used to achieve this
 dynamically
+
+
+## Attribution
+This material adapted by EDI from
+
+- LTER IMC. 2011. EML Best Practices for LTER Sites, Version 2. 
+https://lternet.edu/wp-content/uploads/2018/06/EML-Best-Practices-for-LTER-Sites-Version-2.pdf
+- Wikipedia: Wide and Narrow Data.  https://en.wikipedia.org/wiki/Wide_and_narrow_data (accessed 2018-07-22)
+- https://tidyr.tidyverse.org/
+- Hadley  Wickham, H. 2014. Tidy Data. Journal of Statistical Software. 59:1-23. DOI:10.18637/jss.v059.i10
