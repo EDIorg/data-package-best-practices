@@ -24,9 +24,9 @@ are summarized below.
 
 ## Features
 |Feature  |Long  | Wide  | 
-|--|--|--|---|
+|--|--|--|
 |size  |tend to be compact, with no empty cells |there may be many empty cells | 
-|additions (ongoing datasets only)  |multiple rows are added for each time & location addition  |genenerally, one row per time & location addition  | 
+|additions (ongoing datasets only)  |multiple rows are added for each time & location addition  |genenerally, one row per time & location addition| 
 |data model maintenance, e.g., for an ongoing dataset  |no columns will need to be added for new measurements; new measurements are simply new rows  |you may need to add columns over time, e.g., when new measurements are added  | 
 |implications for EML ```<attribute>``` typing |"value" must be typed and described generally enough to fit all values, e.g., "string" |structured attribute descriptions can be very detailed |   
 |implications for EML ```<attribute>``` enumeration |keys (variable names) should be enumerated; ie, the metadata explictly states what content is allowed in that column (you would update the enumerations if measurements are added)|variable names are in the ```<attributeName>``` element for each column. |   
