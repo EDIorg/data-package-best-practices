@@ -14,7 +14,7 @@ Other hints for working with with md/workpress:
 1. md-style links probaby wont work at all in WP. md uses filenames to link, WP creates a page name for the link. so all the links were added later (in the html).
 1. WP seems to ignore commented-out HTML sections. It is ok with commented-out text. So don't try to use this mechanism to save chunks for future additions and notes. But you can keep these sections in the markdown.
 
-So the process:
+## Process:
 1. edit pages in markdown
 1. commit markdown to git
 1. convert to HTML with pandoc (local)
