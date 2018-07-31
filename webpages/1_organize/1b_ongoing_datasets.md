@@ -51,9 +51,10 @@ There are advantages and disadvantages to each approach.
 </th>
 <td>- User will be able to find and download all data at one time  
 </td>
-<td>- More work for the creators, as data are 'pre-inegrated' by them
+<td>- More work for the creators if there are changes, as data are 'pre-inegrated' by them
 </td>
-<td>tbd 
+<td>- knb-lter-mcr.7 
+<br/>- knb-lter-bnz.212
 </td>
 </tr>
 
@@ -66,9 +67,7 @@ changes between collection events are significant<br/>
 </td>
 <td>- User must find, download and integrate many data packages to create a time series
 </td>
-<td>- GCE? aren't they per-year?, but identical? 
-<br/>- pisco instruments - also identical, per deployment
-<br/>- forestry - where they do something new every 5 yrs on the same trees: BNZ?
+<td>- PISCO instrument data (see DataONE.org)
 </td>
 </tr>
 
@@ -83,7 +82,8 @@ changes between collection events are significant<br/>
 option "to skip upload if PASTA has a matching entity" (requires a checksum).
 
 </td>
-<td>tbd
+<td>- knb-lter-sbc.54
+<br/>- knb-lter-bnz.398.19
 </td>
 </tr>
 </table>
