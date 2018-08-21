@@ -9,8 +9,8 @@ Directory holds material archived from the LTER IMC EML BP working groups.
 
 ## Still to do (this WG)
 1. download static files from links referenced in the 
-- landing page and 
-- working group notes.
+    - landing page and 
+    - working group notes.
 1. zip it up.
 
 ## then...
