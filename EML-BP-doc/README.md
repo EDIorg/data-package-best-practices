@@ -14,3 +14,9 @@ top level holds active files. Generally, this is
 * version 2 in markdown, and partially edited. project is currently-shelved.
 
 
+## Notes on migrating from Word to markdown:
+
+For compiling to PDF from markdown (tested on Windows):
+1. Install Python and then enter this in a command prompt: `pip install grip`
+2. In a command prompt, enter `grip your-filename.md`. This runs a local server to display the markdown rendered as HTML.
+3. Use Chrome's **Save as PDF** option from the Print menu to save the result to PDF.
