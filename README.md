@@ -37,7 +37,7 @@ This git repository/website is not intended to be your only resource for data ma
 - how to interpret congruence checker messages (ECC)
 - broader topics, e.g., 
   - handling bibliographic resouces
-  - finding and using of all-in-one solutions such as DEIMS, GCE-toolbox
+  - finding and using all-in-one solutions such as DEIMS, GCE-toolbox
   - back-end databases such as LTER-metabase
 
 
