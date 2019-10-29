@@ -2,9 +2,9 @@
 
 This repository was initiated in late 2019, after EML 2.2 release.  It holds best practices recommendations related to data packages, written by the community of data managers who contributed to the EDI repository. It is organized as gh-pages. 
 
-There are several axes of organization anticipated, based on:
+There are several axes of organization anticipated, based on
 
-- metadata concepts derived from EML metadata, e.g.:
+- metadata concepts 
   - creators
   - keywords
   - geoCoverage 
@@ -16,12 +16,12 @@ There are several axes of organization anticipated, based on:
   - data entities
   - citations of papers (in a data package)
   
-- scientific domain:
+- scientific domain
   - community survey data
   - meteorology/hydrology data
   - model output
   
-- organizing principles:
+- organizing principles
   - offline data
   - key-value pair tables (long vs. wide)
 
