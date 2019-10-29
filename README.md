@@ -34,7 +34,7 @@ There are several axes of organization anticipated, based on
 ## What this repository does not contain
 This git repository/website is not intended to be your only resource for data management. This repository's focus is "data packages", and of course other aspects of data and information management overlap with that. Many other tools exist, and have their own repositories and help-pages. See EDI's [5 phases of data publication](https://github.com/EDIorg/five_phases_DM) for informatation and links to resources related to:
 - how to interact with the EDI repository and portal (PASTA)
-- how to interpret congruence checker (ECC)
+- how to interpret congruence checker messages (ECC)
 - broader topics, e.g., 
   - handling bibliographic resouces
   - finding and using of all-in-one solutions such as DEIMS, GCE-toolbox
