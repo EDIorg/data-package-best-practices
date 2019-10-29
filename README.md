@@ -26,6 +26,8 @@ There are several axes of organization anticipated, based on
   - key-value pair tables (long vs. wide)
   - model output
   - drone-collected
+  - photo imagery
+  - acoustics
 
 
 
