@@ -1,16 +1,21 @@
-# EML 
+# Purpose
 
-Dir holds files on EML best practices.  Originated with LTER working group.
+Directory holds markdown for metadata-focused BPs. 
+
+## Goals:
+1. directory can be exported as a citable, versioned document, e.g. EML_metadata_best_practices_v4_yyyy.pdf
+1. markdown files can be kept up to date by subcommittees, with a review plan for changes.
+
+
 
 ## Active:
-top level holds active files. Generally, this is 
-* a word doc, which will be distributed as a PDF 
-* examples, which most likely will stay here, and be linked from the PDF distribution page on the EDI website.
-* index.md - draft of the PDF distribution page. 
+top level holds active files. Generally, these are 
+* markdown files, organized by metadata topics (generally aligned with EML elements)
+* examples
+* index.md - including link to most recent PDF distribution. 
 
 
-## Archive: 
-* old versions of the doc, from 2004 and 2010 
-* version 2 in markdown, and partially edited. project is currently-shelved.
+## Inactive: 
+* older versions of the doc can be found at [archive/](../archive) of this repository
 
 
