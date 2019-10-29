@@ -4,7 +4,7 @@ This repository was initiated in late 2019, after EML 2.2 release.  It holds bes
 
 There are several axes of organization anticipated, based on
 
-- metadata concepts 
+- metadata concepts (apply to most or all scientific domains)
   - creators
   - keywords
   - geoCoverage 
@@ -19,11 +19,14 @@ There are several axes of organization anticipated, based on
 - scientific domain
   - community survey data
   - meteorology/hydrology data
-  - model output
+  - genomics
   
-- organizing principles
+- organizing practices (often apply to multiple scientific domains) 
   - offline data
   - key-value pair tables (long vs. wide)
+  - model output
+  - drone-collected
+
 
 
 ## What this repository does not contain
@@ -37,8 +40,8 @@ This git repository/website is not intended to be your only resource for data ma
 
 
 ## Background:
-- The first "BPs" related to the collection in this repository were focused on the use of the EML metadata schema, and created by the LTER data managers [version 1 EML BP, 2005](link here, in archive dir). 
-- Over time, that document was expanded to include specifics about data types and LTER practices related to the then-nascent PASTA system [version 2 EML BP, 2012?](link here, in archive dir).  
+- The first "BPs" (and the origins of this collection) were focused on the use of the EML metadata schema, and created by the LTER data managers [version 1 EML BP, 2005](link here, in archive dir). 
+- Over time, that document was expanded to include specifics about data types and practices of the LTER related to the then-nascent PASTA system [version 2 EML BP, 2012?](link here, in archive dir).  
 - As these recommendations for practice continue to grow, [EDI](https://environmentaldatainitiative.org) (established in 2016) 
   - revised the EML BP to general material about use of the EML spec [version 3 EML BP, 2017](link here, in archive dir)
   - created this repository to house that and other data package recommendations as gh-pages.
