@@ -1,6 +1,6 @@
 # Purpose
 
-Directory holds markdown for metadata-focused BPs. 
+Directory holds markdown for metadata-focused BPs. It maintains the historical name, "EML-BP-doc", although that may change.
 
 ## Goals:
 1. directory can be exported as a citable, versioned document, e.g. EML_metadata_best_practices_v4_yyyy.pdf
