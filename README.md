@@ -29,7 +29,7 @@ There are several axes of organization anticipated, based on:
 ## Background:
 - The first "BPs" related to the collection in this repository were focused on the use of the EML metadata schema, and created by the LTER data managers [version 1 EML BP, 2005](link here, in archive dir). 
 - Over time, that document was expanded to include specifics about data types and LTER practices related to the then-nascent PASTA system [version 2 EML BP, 2012?](link here, in archive dir).  
-- As these recommendations for practice continue to grow, [EDI](link here) (established in 2016) 
+- As these recommendations for practice continue to grow, [EDI](https://environmentaldatainitiative.org) (established in 2016) 
   - revised the EML BP to general material about use of the EML spec [version 3 EML BP, 2017](link here, in archive dir)
   - created this repository to house that and other data package recommendations as gh-pages.
   
