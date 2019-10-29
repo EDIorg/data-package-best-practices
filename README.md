@@ -26,6 +26,15 @@ There are several axes of organization anticipated, based on:
   - key-value pair tables (long vs. wide)
 
 
+## What this repository does not contain
+This git repository/website is not intended to be your only resource for data management. This repository's focus is "data packages", and of course other aspects of data and information management overlap with that. Many other tools exist, and have their own repositories and help-pages. See EDI's [5 phases of data publication](https://github.com/EDIorg/five_phases_DM) for informatation an links to resources related to:
+- how to interact with the EDI repository and portal (PASTA)
+- how to interpret congruence checker (ECC)
+- other aspects of data mgt, e.g., 
+  - handling bibliographic resouces
+  - finding and using of all-in-one solutions such as DEIMS, GCE-toolbox
+  - back-end databases such as LTER-metabase
+
 
 ## Background:
 - The first "BPs" related to the collection in this repository were focused on the use of the EML metadata schema, and created by the LTER data managers [version 1 EML BP, 2005](link here, in archive dir). 
@@ -35,11 +44,3 @@ There are several axes of organization anticipated, based on:
   - created this repository to house that and other data package recommendations as gh-pages.
   
   
-## what this repository does not contain
-This git repository/website is not intended to be your only resource for data management. This repository's focus is "data packages", and of course other aspects of data and information management overlap with that. Many other tools exist, and have their own repositories and help-pages. See EDI's [5 phases of data publication](https://github.com/EDIorg/five_phases_DM) for informatation an links to resources related to:
-- how to interact with the EDI repository and portal (PASTA)
-- how to interpret congruence checker (ECC)
-- other aspects of data mgt, e.g., 
-  - handling bibliographic resouces
-  - finding and using of all-in-one solutions such as DEIMS, GCE-toolbox
-  - back-end databases such as LTER-metabase
