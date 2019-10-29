@@ -1,8 +1,6 @@
 # data-package-best-practices
 
-Initiated in 2019, after EML 2.2 release. 
-
-This repo holds BPs related to data packages. It is organized as gh-pages. 
+This repository was initiated in late 2019, after EML 2.2 release.  It holds best practices recommendations related to data packages, written by the community of data managers who contributed to the EDI repository. It is organized as gh-pages. 
 
 There are several axes of organization anticipated, based on:
 
@@ -37,9 +35,9 @@ There are several axes of organization anticipated, based on:
   
   
 ## what this repository does not contain
-This git repository/website is not intended to be your ownly resource for data management. And of course other aspects of data and information management overlap with the main topic here: data packages. Many other tools exist, and have their own repositories and help-pages. See EDI's [link here](5 phases of data publication) for informatation an links to resources related to:
-- how to interact with the EDI repository and portal
+This git repository/website is not intended to be your ownly resource for data management. It's focus is "data package", and of course other aspects of data and information management overlap with that. Many other tools exist, and have their own repositories and help-pages. See EDI's [link here](5 phases of data publication) for informatation an links to resources related to:
+- how to interact with the EDI repository and portal (PASTA)
 - other aspects of data mgt, e.g., 
-  - handling of bibliographic resouces
+  - handling bibliographic resouces
   - use of all-in-one solutions such as DEIMS, GCE-toolbox
   - back-end databases such as LTER-metabase
