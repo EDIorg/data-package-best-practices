@@ -16,9 +16,10 @@ There are several axes of organization anticipated, based on:
   - data entities
   - citations of papers (in a data package)
   
-- content types:
+- scientific domain:
   - community survey data
   - meteorology/hydrology data
+  - model output
   
 - organizing principles:
   - offline data
