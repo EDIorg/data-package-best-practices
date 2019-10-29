@@ -19,7 +19,7 @@ There are several axes of organization anticipated, based on
 - scientific domain
   - community survey data
   - meteorology/hydrology data
-  - genomics
+  - genomics and metagenomics
   
 - organizing practices (often apply to multiple scientific domains) 
   - offline data
