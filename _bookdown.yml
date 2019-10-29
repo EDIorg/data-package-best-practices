@@ -1,0 +1,10 @@
+site: "bookdown::bookdown_site"
+output:
+  bookdown::gitbook: default
+documentclass: book
+rmd_files: [
+    "README.md",
+    "EML-BP-doc/README.md",
+    "history/history.md"]
+delete_merged_file: true
+output_dir: ../dist
