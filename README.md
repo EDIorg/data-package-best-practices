@@ -27,15 +27,15 @@ There are several axes of organization anticipated, based on:
 
 
 ## Background:
-- The first "BPs" related to the collection in this repository were focused on the use of the EML metadata schema, and created by the LTER data managers [link here, in archive dir])(version 1 EML BP, 2005). 
-- Over time, that document was expanded to include specifics about data types and LTER practices related to the then-nascent PASTA system ([link here, in archive dir](version 2 EML BP, 2012?).  
-- As these recommendations for practice continue to grow, [link here] (EDI) (established in 2016) 
-  - revised the EML BP to general material about use of the EML spec [link here, in archive dir])(version 3 EML BP, 2017)
+- The first "BPs" related to the collection in this repository were focused on the use of the EML metadata schema, and created by the LTER data managers [version 1 EML BP, 2005](link here, in archive dir). 
+- Over time, that document was expanded to include specifics about data types and LTER practices related to the then-nascent PASTA system [version 2 EML BP, 2012?](link here, in archive dir).  
+- As these recommendations for practice continue to grow, [EDI](link here) (established in 2016) 
+  - revised the EML BP to general material about use of the EML spec [version 3 EML BP, 2017](link here, in archive dir)
   - created this repository to house that and other data package recommendations as gh-pages.
   
   
 ## what this repository does not contain
-This git repository/website is not intended to be your ownly resource for data management. It's focus is "data package", and of course other aspects of data and information management overlap with that. Many other tools exist, and have their own repositories and help-pages. See EDI's [link here](5 phases of data publication) for informatation an links to resources related to:
+This git repository/website is not intended to be your ownly resource for data management. It's focus is "data package", and of course other aspects of data and information management overlap with that. Many other tools exist, and have their own repositories and help-pages. See EDI's [5 phases of data publicationlink here](link here) for informatation an links to resources related to:
 - how to interact with the EDI repository and portal (PASTA)
 - other aspects of data mgt, e.g., 
   - handling bibliographic resouces
