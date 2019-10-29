@@ -35,9 +35,9 @@ There are several axes of organization anticipated, based on:
   
   
 ## what this repository does not contain
-This git repository/website is not intended to be your ownly resource for data management. It's focus is "data package", and of course other aspects of data and information management overlap with that. Many other tools exist, and have their own repositories and help-pages. See EDI's [5 phases of data publicationlink here](link here) for informatation an links to resources related to:
+This git repository/website is not intended to be your only resource for data management. This repository's focus is "data packages", and of course other aspects of data and information management overlap with that. Many other tools exist, and have their own repositories and help-pages. See EDI's [5 phases of data publicationlink here](link here) for informatation an links to resources related to:
 - how to interact with the EDI repository and portal (PASTA)
 - other aspects of data mgt, e.g., 
   - handling bibliographic resouces
-  - use of all-in-one solutions such as DEIMS, GCE-toolbox
+  - finding and using of all-in-one solutions such as DEIMS, GCE-toolbox
   - back-end databases such as LTER-metabase
