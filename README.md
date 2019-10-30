@@ -21,7 +21,7 @@ There are several axes of organization anticipated, based on
   - meteorology/hydrology data
   - genomics and metagenomics
   
-- organizing practices (often apply to multiple scientific domains) 
+- acquisition method or organizing practice (often apply to multiple scientific domains) 
   - offline data
   - key-value pair tables (long vs. wide)
   - model output
