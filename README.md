@@ -1,10 +1,10 @@
 # data-package-best-practices
 
-This repository was initiated in late 2019, after EML 2.2 release.  It holds best practices recommendations related to data packages, written by the community of data managers who contributed to the EDI repository. It is organized as gh-pages. 
+This repository was initiated in late 2019, after EML 2.2 release.  It holds best practices recommendations related to data packages, written by the community of data managers who contributed to the EDI repository. The public-facing view is organized as gh-pages, which are copied over from draft area *when ready* (ie, edits to pages do not automatically become public). 
 
-There are several axes of organization anticipated, based on
+There are several axes of organization anticipated, below, with examples.
 
-- metadata concepts (apply to most or all scientific domains)
+- Metadata concepts (apply to most or all scientific domains)
   - creators
   - keywords
   - geoCoverage 
@@ -16,12 +16,12 @@ There are several axes of organization anticipated, based on
   - data entities
   - citations of papers (in a data package)
   
-- scientific domain
+- Scientific domain
   - community survey data
   - meteorology/hydrology data
   - genomics and metagenomics
   
-- acquisition method or organizing practice (often apply to multiple scientific domains) 
+- Acquisition method or organizing practice (often apply to multiple scientific domains) 
   - offline data
   - key-value pair tables (long vs. wide)
   - model output
