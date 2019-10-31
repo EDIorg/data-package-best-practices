@@ -1,0 +1,27 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      collapse: section
+      before: |
+        <li><a href="/data-package-best-practices/">Data Package Best Practices</a></li>
+        <ul>
+          <li><a href="./">Metadata Concepts</a></li>
+          <li><a href="../scientific_domain/">Scientific Domain</a></li>
+          <li><a href="#">Challenging Data Types</a></li>
+        </ul>  
+      after: |
+       <li><a href="https://EnvironmentalDataInitiative" target="blank">Environmental Data Initiative</a></li> LOGO HERE.
+       
+
+
+## The download link for pdf will probably be an explicit link to a citable version. 
+#    download: ["pdf", "epub"]
+## You'll want these sections for citable versions. open them later. 
+# bookdown::pdf_book:
+#  includes:
+#    in_header: preamble.tex
+#  latex_engine: xelatex
+#  citation_package: natbib
+#  keep_tex: yes
+#bookdown::epub_book: default

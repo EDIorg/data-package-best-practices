@@ -1,0 +1,14 @@
+book_filename: "EML-BP-doc"
+delete_merged_file: true
+language:
+  ui:
+   #  chapter_name: "Chapter "
+rmd_files: [
+    "index.Rmd",
+    "history.md",
+    "conventions.md",
+    "general_recommendations.md",
+    "root_element.md",
+    "access.md",
+    "about_this_book_draft.md"
+    ]
