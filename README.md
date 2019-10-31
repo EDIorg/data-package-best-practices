@@ -21,7 +21,7 @@ There are several axes of organization anticipated, below, with examples.
   - meteorology/hydrology data
   - genomics and metagenomics
   
-- Acquisition method or organizing practice (often apply to multiple scientific domains) 
+- Challenging data types, organized by acquisition method or platform (multiple scientific domains) 
   - offline data
   - key-value pair tables (long vs. wide)
   - model output
