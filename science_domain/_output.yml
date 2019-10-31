@@ -1,0 +1,15 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      collapse: section
+      before: |
+        <li><a href="/data-package-best-practices/">Data Package Best Practices</a></li>
+        <ul>
+          <li><a href="../EMLmetadata/">Metadata Concepts</a></li>
+          <li><a href="./">Scientific Domain</a></li>
+          <li><a href="#">Challenging Data Types</a></li>
+        </ul>  
+      after: |
+       <li><a href="https://EnvironmentalDataInitiative" target="blank">Environmental Data Initiative</a></li> LOGO HERE.
+       

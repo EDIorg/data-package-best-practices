@@ -1,0 +1,11 @@
+book_filename: "scientific_domain"
+delete_merged_file: true
+language:
+  ui:
+   #  chapter_name: "Chapter "
+rmd_files: [
+    "index.Rmd",
+    "ecological_community_surveys.md",
+    "meteorolgy_hydrology.md",
+    "genomics_metagenomics.md",
+    ]
