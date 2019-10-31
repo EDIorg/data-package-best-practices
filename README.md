@@ -51,7 +51,7 @@ This git repository/website is not intended to be your only resource for data ma
   
 
 ## Anticipated workflow 
-Details are being worked out. A workflow such as the below allows for review of drafts, with a public-facing view created after that review. It also allows for some sections to be exposed as citable PDFs if necessary.
+Details are being worked out. A workflow such as the below allows for review of drafts, with a public-facing view created after that review. It also allows for some sections to be exposed as citable PDFs if necessary (e.g., for the EML BP doc).
 1. edit markdown
 1. review, e.g. by BP committee
 1. build book(s)
