@@ -41,7 +41,7 @@ This git repository/website is not intended to be your only resource for data ma
   - back-end databases such as LTER-metabase
 
 
-## Background:
+## Background
 - The first "BPs" (and the origins of this collection) were focused on the use of the EML metadata schema, and created by the LTER data managers [version 1 EML BP, 2005](link here, in archive dir). 
 - Over time, that document was expanded to include specifics about data types and practices of the LTER related to the then-nascent PASTA system [version 2 EML BP, 2012?](link here, in archive dir).  
 - As these recommendations for practice continue to grow, [EDI](https://environmentaldatainitiative.org) (established in 2016) 
@@ -49,3 +49,11 @@ This git repository/website is not intended to be your only resource for data ma
   - created this repository to house that and other data package recommendations as gh-pages.
   
   
+
+## Anticipated workflow 
+Details are being worked out. A workflow such as the below allows for review of drafts, with a public-facing view created after that review. It also allows for some sections to be exposed as citable PDFs if necessary.
+1. edit markdown
+1. review, e.g. by BP committee
+1. build book(s)
+1. move _book/* to docs
+1. add-commit-push (docs)
