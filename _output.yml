@@ -2,7 +2,9 @@ bookdown::gitbook:
   css: style.css
   config:
     toc:
-      collapse: section
+      number_sections: FALSE
+     # collapse: null
       before: |
-        <li><a href="./">EML-BP-doc</a></li>
- 
+        <li><a href="./">Data Package Best Practices</a></li>
+      after: |
+        <li><a href="https://EnvironmentalDataInitiative" target="blank">Environmental Data Initiative</a></li> LOGO HERE.
