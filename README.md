@@ -2,7 +2,7 @@
 
 This repository was initiated in late 2019, after EML 2.2 release.  It holds best practices recommendations related to data packages, written by the community of data managers who contributed to the EDI repository. The public-facing view is organized as gitbooks, which are copied over from the draft area *when ready* (ie, edits to pages do not automatically become public). 
 
-There are several axes of organization anticipated, below, with examples.
+There are several axes of organization anticipated, below, with examples. All are likely to link out to other help docs.
 
 - Metadata concept (apply to most or all scientific domains)
   - creators
@@ -16,7 +16,7 @@ There are several axes of organization anticipated, below, with examples.
   - data entities
   - citations of papers (in a data package)
   
-- Scientific domain
+- Scientific domain 
   - community survey data
   - meteorology/hydrology data
   - genomics and metagenomics
