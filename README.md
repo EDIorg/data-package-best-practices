@@ -2,6 +2,15 @@
 
 This repository was initiated in late 2019, after EML 2.2 release.  It holds best practices recommendations related to data packages, written by the community of data managers who contributed to the EDI repository. The public-facing view is organized as gitbooks, which are copied over from the draft area *when ready* (ie, edits to pages do not automatically become public). 
 
+
+## Background
+- The first "BPs" (and the origins of this collection) were focused on the use of the EML metadata schema, and created by the LTER data managers [version 1 EML BP, 2005](link here, in archive dir). 
+- Over time, that document was expanded to include specifics about data types and practices of the LTER related to the then-nascent PASTA system [version 2 EML BP, 2012?](link here, in archive dir).  
+- As these recommendations for practice continue to grow, [EDI](https://environmentaldatainitiative.org) (established in 2016) 
+  - revised the EML BP to general material about use of the EML spec [version 3 EML BP, 2017](link here, in archive dir), which became the basis of the metadata section above
+  - created this repository to house that and other data package recommendations as gh-pages.
+  
+## Organization
 There are several axes of organization anticipated, below, with examples. All are likely to link out to other help docs.
 
 - Metadata concept (apply to most or all scientific domains)
@@ -40,15 +49,6 @@ This git repository/website is not intended to be your only resource for data ma
   - finding and using all-in-one solutions such as DEIMS, GCE-toolbox
   - back-end databases such as LTER-metabase
 
-
-## Background
-- The first "BPs" (and the origins of this collection) were focused on the use of the EML metadata schema, and created by the LTER data managers [version 1 EML BP, 2005](link here, in archive dir). 
-- Over time, that document was expanded to include specifics about data types and practices of the LTER related to the then-nascent PASTA system [version 2 EML BP, 2012?](link here, in archive dir).  
-- As these recommendations for practice continue to grow, [EDI](https://environmentaldatainitiative.org) (established in 2016) 
-  - revised the EML BP to general material about use of the EML spec [version 3 EML BP, 2017](link here, in archive dir), which became the basis of the metadata section above
-  - created this repository to house that and other data package recommendations as gh-pages.
-  
-  
 
 ## Anticipated workflow 
 Details are being worked out. A workflow such as the below allows for review of drafts, with a public-facing view created after that review. It also allows for some sections to be exposed as citable PDFs if necessary (e.g., for the EML BP doc).
