@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Data Package Best Practices</title>
+  <meta name="description" content="Best practice recommendations for data packages, described by Ecological Metadata Language (EML)." />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Data Package Best Practices" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Best practice recommendations for data packages, described by Ecological Metadata Language (EML)." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Data Package Best Practices" />
+  
+  <meta name="twitter:description" content="Best practice recommendations for data packages, described by Ecological Metadata Language (EML)." />
+  
+
+<meta name="author" content="Environmental Data Initiative" />
+
+
+<meta name="date" content="2019-11-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Data Package Best Practices</a></li>
+
+<li class="divider"></li>
+<li><a href="#section"></a><ul>
+<li class="chapter" data-level="" data-path=""><a href="#metadata-concepts"><i class="fa fa-check"></i>Metadata concepts</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#scientific-domains"><i class="fa fa-check"></i>Scientific domains</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#challenging-data-types"><i class="fa fa-check"></i>Challenging data types</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://EnvironmentalDataInitiative" target="blank">Environmental Data Initiative</a></li> LOGO HERE.
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Package Best Practices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Data Package Best Practices</h1>
+<p class="author"><em>Environmental Data Initiative</em></p>
+<p class="date"><em>2019-11-01</em></p>
+</div>
+<div id="section" class="section level1 unnumbered">
+<h1></h1>
+<p>This website contains current “Best Practice” recommendations for ecological and environmental science data packages. These recommendations are directed towards the following goals:</p>
+<ul>
+<li>Provide guidance and clarification in the use of Ecological Metadata Language (EML)</li>
+<li>Minimize heterogeneity of EML documents to simplify development and re-use of software built to ingest it</li>
+<li>Maximize interoperability of EML documents to facilitate data synthesis</li>
+</ul>
+<div id="metadata-concepts" class="section level2 unnumbered">
+<h2>Metadata concepts</h2>
+<p>These recommendations apply to most or all scientific domains. This section subsumes V3 of the static document “Best Practices for Dataset Metadata in Ecological Metadata Language (EML)”</p>
+<p><strong><a href="EMLmetadata/index.html">Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</a></strong></p>
+</div>
+<div id="scientific-domains" class="section level2 unnumbered">
+<h2>Scientific domains</h2>
+<p>many of these topics have extensive, related code bases, which some of these recommendations take into account (and link to). Such as</p>
+<ul>
+<li>community survey data</li>
+<li>meteorology/hydrology data</li>
+<li>genomics and metagenomics</li>
+</ul>
+<p><strong>[Recommendations for data from specific Scientific domains{(science_domain/index.html)}</strong></p>
+</div>
+<div id="challenging-data-types" class="section level2 unnumbered">
+<h2>Challenging data types</h2>
+<p>Certain data have special handling based on their acquisition method or platform. Some are raw data that should be preserved because they have uses beyond their original purpose. Many are not specific to any one scientific domain. <strong>how about a better title for these!?</strong> Examples:</p>
+<ul>
+<li>offline data
+<ul>
+<li>sometimes necessary if size prevents efficient delivery over HTTP</li>
+</ul></li>
+<li>key-value pair tables
+<ul>
+<li>and the choice of long vs. wide</li>
+</ul></li>
+<li>model output</li>
+<li>drone-collected</li>
+<li>photo imagery</li>
+<li>acoustics</li>
+</ul>
+<p><strong>LINK TO BPs about Challenging data types</strong></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"number_sections": false
+}
+});
+});
+</script>
+
+</body>
+
+</html>
