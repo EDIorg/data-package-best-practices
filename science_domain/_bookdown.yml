@@ -1,5 +1,6 @@
 book_filename: "scientific_domain"
 delete_merged_file: true
+output_dir: ../docs/scientific_domain
 language:
   ui:
    #  chapter_name: "Chapter "

@@ -11,5 +11,8 @@ bookdown::gitbook:
           <li><a href="#">Challenging Data Types</a></li>
         </ul>  
       after: |
-       <li><a href="https://EnvironmentalDataInitiative" target="blank">Environmental Data Initiative</a></li> LOGO HERE.
+       <ul>
+        <li><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></li>
+        <li>LOGO HERE.<li>
+       </ul>
        

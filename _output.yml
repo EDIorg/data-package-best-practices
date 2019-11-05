@@ -7,4 +7,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">Data Package Best Practices</a></li>
       after: |
-        <li><a href="https://EnvironmentalDataInitiative" target="blank">Environmental Data Initiative</a></li> LOGO HERE.
+        <ul>
+          <li><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></li>
+          <li>LOGO HERE.<li>
+        </ul>
