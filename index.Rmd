@@ -10,7 +10,7 @@ biblio-style: apalike
 description: "Best practice recommendations for data packages, described by Ecological Metadata Language (EML)."
 ---
 
-# {-}
+## Overview {-}
 This website contains current “Best Practice” recommendations for ecological and environmental science data packages. These recommendations are directed towards the following goals:
 
 - Provide guidance and clarification in the use of Ecological Metadata Language (EML)
