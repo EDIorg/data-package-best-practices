@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Data Package Best Practices</title>
+  <title>1 About this Site – DRAFT - DRAFT - DRAFT | Data Package Best Practices</title>
   <meta name="description" content="Best practice recommendations for data packages, described by Ecological Metadata Language (EML)." />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Data Package Best Practices" />
+  <meta property="og:title" content="1 About this Site – DRAFT - DRAFT - DRAFT | Data Package Best Practices" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Data Package Best Practices" />
+  <meta name="twitter:title" content="1 About this Site – DRAFT - DRAFT - DRAFT | Data Package Best Practices" />
   
   <meta name="twitter:description" content="Best practice recommendations for data packages, described by Ecological Metadata Language (EML)." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="index.html"/>
 
-<link rel="next" href="about-this-site-draft-draft-draft.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -165,52 +165,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Data Package Best Practices</h1>
-<p class="author"><em>Environmental Data Initiative</em></p>
-<p class="date"><em>2019-11-05</em></p>
-</div>
-<div id="section" class="section level1 unnumbered">
-<h1></h1>
-<p>This website contains current “Best Practice” recommendations for ecological and environmental science data packages. These recommendations are directed towards the following goals:</p>
+<div id="about-this-site-draft---draft---draft" class="section level1">
+<h1><span class="header-section-number">1</span> About this Site – DRAFT - DRAFT - DRAFT</h1>
+<p>This site is book written in <strong>Markdown</strong>, and transformed to HTML with the <strong>bookdown</strong> package</p>
+<p>The <strong>bookdown</strong> package can be installed from CRAN or Github:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="about-this-site-draft-draft-draft.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</span>
+<span id="cb1-2"><a href="about-this-site-draft-draft-draft.html#cb1-2"></a><span class="co"># or the development version</span></span>
+<span id="cb1-3"><a href="about-this-site-draft-draft-draft.html#cb1-3"></a><span class="co"># devtools::install_github(&quot;rstudio/bookdown&quot;)</span></span></code></pre></div>
+<p>It is based on the <em>sample</em> from <a href="https://bookdown.org/yihui/rmarkdown/bookdown-start.html" class="uri">https://bookdown.org/yihui/rmarkdown/bookdown-start.html</a></p>
+<div id="guidelines-and-requirmements" class="section level2">
+<h2><span class="header-section-number">1.1</span> Guidelines and requirmements</h2>
 <ul>
-<li>Provide guidance and clarification in the use of Ecological Metadata Language (EML)</li>
-<li>Minimize heterogeneity of EML documents to simplify development and re-use of software built to ingest it</li>
-<li>Maximize interoperability of EML documents to facilitate data synthesis</li>
+<li>Each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading <code>#</code>.</li>
+<li>To compile the PDF, you need XeLaTeX. Install TinyTeX (which includes XeLaTeX): <a href="https://yihui.name/tinytex/" class="uri">https://yihui.name/tinytex/</a>.</li>
+<li>site is served from the docs directory as gh-pages.</li>
 </ul>
-<div id="metadata-concepts" class="section level2 unnumbered">
-<h2>Metadata concepts</h2>
-<p>These recommendations apply to most or all scientific domains. This section subsumes V3 of the static document “Best Practices for Dataset Metadata in Ecological Metadata Language (EML)”</p>
-<p><strong><a href="EMLmetadata/index.html">Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</a></strong></p>
 </div>
-<div id="scientific-domains" class="section level2 unnumbered">
-<h2>Scientific domains</h2>
-<p>many of these topics have extensive, related code bases, which some of these recommendations take into account (and link to). Such as</p>
-<ul>
-<li>community survey data</li>
-<li>meteorology/hydrology data</li>
-<li>genomics and metagenomics</li>
-</ul>
-<p><strong>[Recommendations for data from specific Scientific domains{(science_domain/index.html)}</strong></p>
+<div id="steps-details-tbd" class="section level2">
+<h2><span class="header-section-number">1.2</span> Steps (details TBD)</h2>
+<ol style="list-style-type: decimal">
+<li>edit markdown</li>
+<li>review in master branch, e.g. by BP committee or other</li>
+<li>build book(s) - output sent to docs</li>
+<li>add-commit-push (docs)</li>
+</ol>
 </div>
-<div id="challenging-data-types" class="section level2 unnumbered">
-<h2>Challenging data types</h2>
-<p>Certain data have special handling based on their acquisition method or platform. Some are raw data that should be preserved because they have uses beyond their original purpose. Many are not specific to any one scientific domain. <strong>how about a better title for these!?</strong> Examples:</p>
+<div id="other-stuff-you-might-need.-also-notes.-some-to-be-dropped" class="section level2">
+<h2><span class="header-section-number">1.3</span> Other stuff you might need. also notes. some to be dropped</h2>
 <ul>
-<li>offline data
+<li><p>how to pandoc</p></li>
+<li><p>how to handle citations with bib</p></li>
+<li><p>how to handle the left menu</p>
 <ul>
-<li>sometimes necessary if size prevents efficient delivery over HTTP</li>
+<li>within books</li>
+<li>index page does not have to be a book</li>
 </ul></li>
-<li>key-value pair tables
+<li><p>how to drop numbering!</p>
 <ul>
-<li>and the choice of long vs. wide</li>
+<li>this: <code>## Metadata concept {-}</code></li>
+<li>or even this: <code># {-}</code></li>
+<li>it might be a hack. if so, advise on better way.</li>
 </ul></li>
-<li>model output</li>
-<li>drone-collected</li>
-<li>photo imagery</li>
-<li>acoustics</li>
+<li><p>the search function (in header) only works once files are on a server. To preview drafts, use serve_book (if installed) or generate thru an Rproject.</p></li>
+<li><p>To create a bib database for R packages</p></li>
 </ul>
-<p><strong>LINK TO BPs about Challenging data types</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="about-this-site-draft-draft-draft.html#cb2-1"></a><span class="co"># automatically create a bib database for R packages</span></span>
+<span id="cb2-2"><a href="about-this-site-draft-draft-draft.html#cb2-2"></a>knitr<span class="op">::</span><span class="kw">write_bib</span>(<span class="kw">c</span>(</span>
+<span id="cb2-3"><a href="about-this-site-draft-draft-draft.html#cb2-3"></a>  <span class="kw">.packages</span>(), <span class="st">&#39;bookdown&#39;</span>, <span class="st">&#39;knitr&#39;</span>, <span class="st">&#39;rmarkdown&#39;</span></span>
+<span id="cb2-4"><a href="about-this-site-draft-draft-draft.html#cb2-4"></a>), <span class="st">&#39;packages.bib&#39;</span>)</span></code></pre></div>
 
 </div>
 </div>
@@ -219,8 +221,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="about-this-site-draft-draft-draft.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
