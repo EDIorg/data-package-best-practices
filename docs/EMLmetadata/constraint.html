@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
-  <meta name="description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <title>20 constraint | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
+  <meta name="description" content="20 constraint | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  <meta property="og:title" content="20 constraint | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <meta property="og:description" content="20 constraint | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  <meta name="twitter:title" content="20 constraint | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   
-  <meta name="twitter:description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <meta name="twitter:description" content="20 constraint | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   
 
 <meta name="author" content="Environmental Data Initiative" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction.html"/>
-<link rel="next" href="general-recommendations.html"/>
+<link rel="prev" href="attributelist.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -221,78 +221,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="conventions-and-definitions" class="section level1">
-<h1><span class="header-section-number">3</span> Conventions and Definitions</h1>
-<div id="audience" class="section level2">
-<h2><span class="header-section-number">3.1</span> Audience</h2>
-<p>This document is intended for data managers. It assumes that readers are familiar with</p>
-<ul>
-<li>the basic structure of an XML document, and the ability to edit in an XML
-editor like OxygenXML or XMLSpy.</li>
-<li>the process for contributing data to a repository. If you reached this
-document from a repository’s help-page, contact them for more information.</li>
-</ul>
-</div>
-<div id="fonts-and-typeface" class="section level2">
-<h2><span class="header-section-number">3.2</span> Fonts and typeface</h2>
-<p>Numbered examples of EML nodes are in fixed-width font:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="conventions-and-definitions.html#cb1-1"></a><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></span></code></pre></div>
-<p>XML element and attribute names, XPath and references to element names
-in text are in bold face. Single element names are surrounded by angle
-brackets, as they appear in XML.</p>
-<p>&lt;<strong>dataTable</strong>&gt;<br />
-<strong>/eml:eml/@packageId</strong></p>
-<p>Some recommendations have special context, e.g., an XML element or
-attribute may be requested by a community (e.g., LTER), or required by
-the EDI repository (but not by other repositories).</p>
-<p><em>Context notes: Recommendations for EML usage in a specific context are
-called “context notes”, and are placed in separate paragraphs, in
-italic.</em></p>
-</div>
-<div id="definitions" class="section level2">
-<h2><span class="header-section-number">3.3</span> Definitions</h2>
-<dl>
-<dt>
-EML preparer
-</dt>
-<dd>
-the person responsible for “building” the EML metadata
-record. Generally, this is a data manager working with a project or
-physical site that produces data.
-</dd>
-<dt>
-Contributor
-</dt>
-<dd>
-the research project contributing the data package, e.g.,
-an LTER or OBFS site, or a Macrosystems project. Generally, the “EML
-preparer” works with or for the “Contributor.”
-</dd>
-<dt>
-Data package
-</dt>
-<dd>
-the EML metadata together with its entity or entities.
-This is generally the unit housed in repositories. We use this term to
-avoid confusion with the EML element “<b>dataset</b>”.
-</dd>
-</dl>
-</div>
-<div id="other-eml-resources" class="section level2">
-<h2><span class="header-section-number">3.4</span> Other EML Resources</h2>
-<p>Some sections refer to further information or tools. These can be found
-on the EDI website, under “Resources and How To…”, at
-<a href="https://environmentaldatarepository.org">https://environmentaldatarepository.org</a></p>
+<div id="constraint" class="section level1">
+<h1><span class="header-section-number">20</span> constraint</h1>
+<p>This element tree is found at (XPath):<br />
+<strong>/eml:eml/dataset/dataTable/constraint</strong><br />
+<strong>/eml:eml/dataset/view/constraint</strong><br />
+<strong>/eml:eml/dataset/spatialRaster/constraint</strong><br />
+<strong>/eml:eml/dataset/spatialVector/constraint</strong><br />
+<strong>/eml:eml/dataset/storedProcedure/constraint</strong></p>
+<p>The &lt;<strong>constraint</strong>&gt; tree is for describing any integrity constraints
+between entities within a data package (e.g. tables), as they would be maintained in a
+relational management system. Use of the &lt;<strong>constraint</strong>&gt; tree is
+encouraged when data elements contain integrity constraints from a
+relational database. Example TO-DO shows the constraints for the
+&lt;<strong>attributeList</strong>&gt; in Example TO-DO. If there are constraints in
+which several columns are involved, these should be described in
+methods/qualityControl, since EML is not currently equipped to handle
+keys defined by multiple columns. When the &lt;<strong>constraint</strong>&gt; tree is
+used, all of the entities that may be referenced should be in the same
+package. There are six child elements:</p>
+<p>&lt;<strong>primaryKey</strong>&gt; is an element which declares the primary key in the
+entity to which the defined constraint pertains.</p>
+<p>&lt;<strong>uniqueKey</strong>&gt; is an element which represents a unique key within the
+referenced entity. This is different from a primary key in that it does
+not form any implicit foreign key relationships to other entities;
+however it is required to be unique within the entity.</p>
+<p>&lt;<strong>nonNullConstraint</strong>&gt; defines a constraint that indicates that no
+null values should be present for an attribute in this entity.</p>
+<p>&lt;<strong>checkConstraint</strong>&gt; defines a constraint which checks a conditional
+clause within an entity.</p>
+<p>&lt;<strong>foreignKey</strong>&gt; defines an SQL statement or other language
+implementation of the condition for a check constraint. Generally this
+provides a means for constraining the values within and among entities.
+It also provides the means to meaningfully link table for explanation of
+codes (de-normalization).</p>
+<p>&lt;<strong>joinCondition</strong>&gt; defines a foreign key relationship among entities
+which relates this entity to another’s primary key.</p>
+<p>The &lt;<strong>primaryKey</strong>&gt;, &lt;<strong>uniqueKey</strong>&gt;, &lt;<strong>nonNullConstraint</strong>&gt;
+require an additional &lt;<strong>key</strong>&gt; tag defining the attribute to which
+this constraint applies, referenced by its id attribute (described in
+another area). All &lt;<strong>ConstraintType</strong>&gt; entities require additional
+&lt;<strong>constraintName</strong>&gt; and &lt;<strong>attributeReference</strong>&gt; tags.</p>
+<hr />
+<p>Example 24: constraint</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb27-1"><a href="constraint.html#cb27-1"></a><span class="kw">&lt;constraint</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.PRIMARY&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb27-2"><a href="constraint.html#cb27-2"></a>   <span class="kw">&lt;primaryKey&gt;</span></span>
+<span id="cb27-3"><a href="constraint.html#cb27-3"></a>      <span class="kw">&lt;constraintName&gt;</span>PRIMARY<span class="kw">&lt;/constraintName&gt;</span></span>
+<span id="cb27-4"><a href="constraint.html#cb27-4"></a>      <span class="kw">&lt;key&gt;</span></span>
+<span id="cb27-5"><a href="constraint.html#cb27-5"></a>         <span class="kw">&lt;attributeReference&gt;</span>soil_chemistry.ID<span class="kw">&lt;/attributeReference&gt;</span></span>
+<span id="cb27-6"><a href="constraint.html#cb27-6"></a>      <span class="kw">&lt;/key&gt;</span></span>
+<span id="cb27-7"><a href="constraint.html#cb27-7"></a>   <span class="kw">&lt;/primaryKey&gt;</span></span>
+<span id="cb27-8"><a href="constraint.html#cb27-8"></a><span class="kw">&lt;/constraint&gt;</span></span>
+<span id="cb27-9"><a href="constraint.html#cb27-9"></a><span class="kw">&lt;constraint</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.FK_soil_chemistry_sites&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb27-10"><a href="constraint.html#cb27-10"></a>   <span class="kw">&lt;foreignKey&gt;</span></span>
+<span id="cb27-11"><a href="constraint.html#cb27-11"></a>      <span class="kw">&lt;constraintName&gt;</span>FK_soil_chemistry_sites<span class="kw">&lt;/constraintName&gt;</span></span>
+<span id="cb27-12"><a href="constraint.html#cb27-12"></a>      <span class="kw">&lt;key&gt;</span></span>
+<span id="cb27-13"><a href="constraint.html#cb27-13"></a>         <span class="kw">&lt;attributeReference&gt;</span>soil_chemistry.site_id<span class="kw">&lt;/attributeReference&gt;</span></span>
+<span id="cb27-14"><a href="constraint.html#cb27-14"></a>      <span class="kw">&lt;/key&gt;</span></span>
+<span id="cb27-15"><a href="constraint.html#cb27-15"></a>      <span class="kw">&lt;entityReference&gt;</span>sites<span class="kw">&lt;/entityReference&gt;</span></span>
+<span id="cb27-16"><a href="constraint.html#cb27-16"></a>   <span class="kw">&lt;/foreignKey&gt;</span></span>
+<span id="cb27-17"><a href="constraint.html#cb27-17"></a><span class="kw">&lt;/constraint&gt;</span></span></code></pre></div>
+<hr />
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="general-recommendations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="attributelist.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>19 attributeList | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
+  <meta name="description" content="19 attributeList | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="19 attributeList | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="19 attributeList | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="19 attributeList | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  
+  <meta name="twitter:description" content="19 attributeList | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  
+
+<meta name="author" content="Environmental Data Initiative" />
+
+
+<meta name="date" content="2019-11-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html"/>
+<link rel="next" href="constraint.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="/data-package-best-practices/">Data Package Best Practices</a></li>
+<ul>
+  <li><a href="./">Metadata Concepts</a></li>
+  <li><a href="../scientific_domain/">Scientific Domain</a></li>
+  <li><a href="#">Challenging Data Types</a></li>
+</ul>  
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html"><i class="fa fa-check"></i><b>3</b> Conventions and Definitions</a><ul>
+<li class="chapter" data-level="3.1" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#audience"><i class="fa fa-check"></i><b>3.1</b> Audience</a></li>
+<li class="chapter" data-level="3.2" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#fonts-and-typeface"><i class="fa fa-check"></i><b>3.2</b> Fonts and typeface</a></li>
+<li class="chapter" data-level="3.3" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#definitions"><i class="fa fa-check"></i><b>3.3</b> Definitions</a></li>
+<li class="chapter" data-level="3.4" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#other-eml-resources"><i class="fa fa-check"></i><b>3.4</b> Other EML Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="general-recommendations.html"><a href="general-recommendations.html"><i class="fa fa-check"></i><b>4</b> General Recommendations</a><ul>
+<li class="chapter" data-level="4.1" data-path="general-recommendations.html"><a href="general-recommendations.html#metadata-distribution"><i class="fa fa-check"></i><b>4.1</b> Metadata Distribution</a></li>
+<li class="chapter" data-level="4.2" data-path="general-recommendations.html"><a href="general-recommendations.html#data-package-identifiers"><i class="fa fa-check"></i><b>4.2</b> Data Package Identifiers</a></li>
+<li class="chapter" data-level="4.3" data-path="general-recommendations.html"><a href="general-recommendations.html#high-priority-elements"><i class="fa fa-check"></i><b>4.3</b> High-priority Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="Root-element.html"><a href="Root-element.html"><i class="fa fa-check"></i><b>5</b> The root element: &lt;eml:eml&gt;</a><ul>
+<li class="chapter" data-level="5.1" data-path="Root-element.html"><a href="Root-element.html#schemalocation-xml-attribute"><i class="fa fa-check"></i><b>5.1</b> @schemaLocation (XML attribute)</a></li>
+<li class="chapter" data-level="5.2" data-path="Root-element.html"><a href="Root-element.html#packageid-xml-attribute"><i class="fa fa-check"></i><b>5.2</b> @packageId (XML attribute)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="top-level-elements.html"><a href="top-level-elements.html"><i class="fa fa-check"></i><b>6</b> Top Level Elements</a><ul>
+<li class="chapter" data-level="6.1" data-path="top-level-elements.html"><a href="top-level-elements.html#access"><i class="fa fa-check"></i><b>6.1</b> access</a></li>
+<li class="chapter" data-level="6.2" data-path="top-level-elements.html"><a href="top-level-elements.html#dataset"><i class="fa fa-check"></i><b>6.2</b> dataset</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="top-level-elements.html"><a href="top-level-elements.html#alternateidentifier"><i class="fa fa-check"></i><b>6.2.1</b> alternateIdentifier</a></li>
+<li class="chapter" data-level="6.2.2" data-path="top-level-elements.html"><a href="top-level-elements.html#title-dataset"><i class="fa fa-check"></i><b>6.2.2</b> title (dataset)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="top-level-elements.html"><a href="top-level-elements.html#additionalMetadata"><i class="fa fa-check"></i><b>6.3</b> additionalMetadata</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="title-dataset-1.html"><a href="title-dataset-1.html"><i class="fa fa-check"></i><b>7</b> title (dataset)</a></li>
+<li class="chapter" data-level="8" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html"><i class="fa fa-check"></i><b>8</b> People and Organizations (Parties)</a><ul>
+<li class="chapter" data-level="8.1" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#userid"><i class="fa fa-check"></i><b>8.1</b> userId</a></li>
+<li class="chapter" data-level="8.2" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#creator"><i class="fa fa-check"></i><b>8.2</b> creator</a></li>
+<li class="chapter" data-level="8.3" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#metadataprovider"><i class="fa fa-check"></i><b>8.3</b> metadataProvider</a></li>
+<li class="chapter" data-level="8.4" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#associatedparty"><i class="fa fa-check"></i><b>8.4</b> associatedParty</a></li>
+<li class="chapter" data-level="8.5" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#contact"><i class="fa fa-check"></i><b>8.5</b> contact</a></li>
+<li class="chapter" data-level="8.6" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#publisher"><i class="fa fa-check"></i><b>8.6</b> publisher</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="pubdate.html"><a href="pubdate.html"><i class="fa fa-check"></i><b>9</b> pubDate</a></li>
+<li class="chapter" data-level="10" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i><b>10</b> abstract</a></li>
+<li class="chapter" data-level="11" data-path="keywordset-and-keyword.html"><a href="keywordset-and-keyword.html"><i class="fa fa-check"></i><b>11</b> keywordSet and keyword</a></li>
+<li class="chapter" data-level="12" data-path="intellectualrights.html"><a href="intellectualrights.html"><i class="fa fa-check"></i><b>12</b> intellectualRights</a></li>
+<li class="chapter" data-level="13" data-path="distribution.html"><a href="distribution.html"><i class="fa fa-check"></i><b>13</b> distribution</a><ul>
+<li class="chapter" data-level="13.1" data-path="distribution.html"><a href="distribution.html#dataset-level"><i class="fa fa-check"></i><b>13.1</b> Dataset level</a></li>
+<li class="chapter" data-level="13.2" data-path="distribution.html"><a href="distribution.html#entity-level"><i class="fa fa-check"></i><b>13.2</b> Entity level</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="coverage.html"><a href="coverage.html"><i class="fa fa-check"></i><b>14</b> coverage</a><ul>
+<li class="chapter" data-level="14.1" data-path="coverage.html"><a href="coverage.html#geographiccoverage"><i class="fa fa-check"></i><b>14.1</b> geographicCoverage</a></li>
+<li class="chapter" data-level="14.2" data-path="coverage.html"><a href="coverage.html#temporalcoverage"><i class="fa fa-check"></i><b>14.2</b> temporalCoverage</a></li>
+<li class="chapter" data-level="14.3" data-path="coverage.html"><a href="coverage.html#taxonomiccoverage"><i class="fa fa-check"></i><b>14.3</b> taxonomicCoverage</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="maintenance.html"><a href="maintenance.html"><i class="fa fa-check"></i><b>15</b> maintenance</a></li>
+<li class="chapter" data-level="16" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>16</b> methods</a><ul>
+<li class="chapter" data-level="16.1" data-path="methods.html"><a href="methods.html#methodstep"><i class="fa fa-check"></i><b>16.1</b> methodStep</a><ul>
+<li class="chapter" data-level="16.1.1" data-path="methods.html"><a href="methods.html#instrumentation"><i class="fa fa-check"></i><b>16.1.1</b> instrumentation</a></li>
+<li class="chapter" data-level="16.1.2" data-path="methods.html"><a href="methods.html#datasource"><i class="fa fa-check"></i><b>16.1.2</b> dataSource</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="methods.html"><a href="methods.html#sampling"><i class="fa fa-check"></i><b>16.2</b> sampling</a></li>
+<li class="chapter" data-level="16.3" data-path="methods.html"><a href="methods.html#qualitycontrol"><i class="fa fa-check"></i><b>16.3</b> qualityControl</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>17</b> project</a></li>
+<li class="chapter" data-level="18" data-path="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html"><i class="fa fa-check"></i><b>18</b> [entity] = dataTable, spatialRaster, spatialVector, storedProcedure, view, otherEntity</a></li>
+<li class="chapter" data-level="19" data-path="attributelist.html"><a href="attributelist.html"><i class="fa fa-check"></i><b>19</b> attributeList</a></li>
+<li class="chapter" data-level="20" data-path="constraint.html"><a href="constraint.html"><i class="fa fa-check"></i><b>20</b> constraint</a></li>
+<li class="divider"></li>
+<ul>
+  <li><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></li>
+  <li>LOGO HERE.<li>
+</ul>       
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="attributelist" class="section level1">
+<h1><span class="header-section-number">19</span> attributeList</h1>
+<p>This element tree is found at (XPath):<br />
+<strong>/eml:eml/dataset/dataTable/attributeList</strong><br />
+<strong>/eml:eml/dataset/view/attributeList</strong><br />
+<strong>/eml:eml/dataset/storedProcedure/attributeList</strong><br />
+<strong>/eml:eml/dataset/spatialRaster/attributeList</strong><br />
+<strong>/eml:eml/dataset/spatialVector/attributeList</strong><br />
+<strong>/eml:eml/dataset/otherEntity/attributeList</strong></p>
+<p>The &lt;<strong>attributeList</strong>&gt; tree is required for all data types except for
+&lt;<strong>otherEntity</strong>&gt;. It describes all variables in a data entity in
+individual &lt;<strong>attribute</strong>&gt; elements. The description includes the name
+and definition of each attribute, its domain, definitions of coded
+values, and other pertinent information.</p>
+<p>&lt;<strong>attributeName</strong>&gt; is typically the name of a field in a data table.
+This is often short and/or cryptic. It is recommended that
+attributeNames be suitable for use as a variable, e.g., composed of
+ASCII characters, and that the &lt;<strong>attributeName</strong>&gt;s match the column
+headers of a CSV or other text table.</p>
+<p><em>Context: in the EDI repository,</em> &lt;<strong>attributeName</strong>&gt;<em>s must be unique
+within a data entity.</em></p>
+<p>&lt;<strong>attributeLabel</strong>&gt; (optional): is used to provide a less ambiguous
+or less cryptic alternative identification than what is provided in
+&lt;<strong>attributeName</strong>&gt;. &lt;<strong>attributeLabel</strong>&gt; is likely to be used as a
+column or row header in an HTML display.</p>
+<p>&lt;<strong>attributeDefinition</strong>&gt; gives a precise and complete definition of
+attribute being documented. It explains the contents of the attribute
+fully so that a data user can interpret the attribute accurately.</p>
+<p>&lt;<strong>storageType</strong>&gt; may be system specific, as for a RDBMS, i.e., A
+Microsoft SQL varchar, or Oracle datetime. This field represents a
+‘hint’ to processing systems as to how the attribute might be
+represented in a system or language, but is distinct from the actual
+expression of the domain of the attribute. Non system-specific values
+include float, integer and string.</p>
+<p>&lt;<strong>measurementScale</strong>&gt; indicates the type of scale from which values
+are drawn for the attribute. EML’s attribute-unit model is described in
+detail; see “Other Resources”. One of the 5 scale types must be used:
+nominal, ordinal, interval, ratio, or dateTime, as follows:</p>
+<div id="non-numeric-types" class="section level4">
+<h4><span class="header-section-number">19.0.0.1</span> Non-numeric types:</h4>
+<p>The &lt;<strong>nominal</strong>&gt; scale is used to represent named categories. Values are
+assigned to distinguish them from other observations. This would include
+a list of coded values (e.g. 1=male, 2=female), or plain text
+descriptions. Columns that contain strings or simple text are nominal.
+Example: plot1, plot2, plot3.</p>
+<p>&lt;<strong>ordinal</strong>&gt; values are categories that have a logical or ordered
+relationship to one another, but the magnitude of the differences
+between the values is not defined or meaningful. Example: Low, Medium,
+High.</p>
+<p>Both the nominal and ordinal scales are &lt;<strong>nonNumericDomain</strong>&gt; types,
+and can be either text or an enumerated list. The
+&lt;<strong>enumeratedDomain</strong>&gt; applies to coded values, and requires a
+&lt;<strong>codeDefinition</strong>&gt; or a referenced entity containing the code
+explanations. For &lt;<strong>textDomain</strong>&gt; an optional pattern may describe
+the text, e.g., a US telephone number can be described by the format
+“\d\d\d-\d\d\d-\d\d\d\d”.</p>
+</div>
+<div id="numeric-types" class="section level4">
+<h4><span class="header-section-number">19.0.0.2</span> Numeric types:</h4>
+<p>&lt;<strong>interval</strong>&gt; measurements are ordinal, but in addition, use
+equal-sized units on a scale between values. Because the units are equal
+sized, these measurements are numeric. However, the starting point is
+arbitrary, so a value of zero is not meaningful. For example, the
+Celsius temperature scale uses degrees which are equally spaced, but
+where zero does not represent “absolute zero” (i.e., the temperature at
+which molecular motion stops), and 20 C is not “twice as hot” as 10 C.</p>
+<p>&lt;<strong>ratio</strong>&gt; measurements have a meaningful zero point, and ratio
+comparisons between values are legitimate. For example, the Kelvin scale
+reflects the amount of kinetic energy of a substance (i.e., zero is the
+point where a substance transmits no thermal energy), and so temperature
+measured in kelvin units is a ratio measurement. Concentration is also a
+ratio measurement because a solution at 10 micromolePerLiter has twice
+as much substance as one at 5 micromolePerLiter.</p>
+<p>The numeric types &lt;<strong>interval</strong>&gt; and &lt;<strong>ratio</strong>&gt; scales require
+additional tags describing the &lt;<strong>unit&gt;</strong>, &lt;<strong>numericDomain&gt;</strong>,
+and&lt;<strong>precision&gt;</strong>.</p>
+<p>&lt;<strong>unit</strong>&gt; Units should be described in correct physical units. Terms
+which describe data but are not units should be used in
+&lt;<strong>attributeDefinition</strong>&gt;. For example, for data describing
+“milligrams of Carbon per square meter”, “Carbon” belongs in the
+&lt;<strong>attributeDefinition</strong>&gt;, while the &lt;<strong>unit</strong>&gt; is
+“milligramPerMeterSquared”.</p>
+<p>&lt;<strong>standardUnit</strong>&gt; and &lt;<strong>customUnit</strong>&gt;: Unit names must be either
+&lt;<strong>standardUnit</strong>&gt;, from the unit dictionary included with EML
+(<a href="http://knb.ecoinformatics.org/software/eml/eml-2.1.0/eml-unitTypeDefinitions.html#StandardUnitDictionary">http://knb.ecoinformatics.org/software/eml/eml-2.1.0/eml-unitTypeDefinitions.html#StandardUnitDictionary</a>)
+or &lt;<strong>customUnit</strong>&gt; and defined in the &lt;<strong>additionalMetadata</strong>&gt;.</p>
+<p>For general purposes, the following guidelines (from ISO
+recommendations) apply to &lt;<strong>customUnits</strong>&gt;: Units should be written
+out, not abbreviated. Unit modifiers, such as “squared”, should follow
+the unit being modified. For example, meterSquared is preferred, while
+squareMeter is improper. Units should be singular, such as “meter”, and
+not plural, such as “meters”.</p>
+<p><em>Context: EDI has adopted the LTER Unit Registry and recommends that
+&lt;<strong>customUnit</strong>&gt; element be used for all units with content pulled
+from the Unit Registry, even when the unit is already listed in the
+standard unit dictionary.</em></p>
+<p>&lt;<strong>numericDomain</strong>&gt; This tag includes elements specifying the
+&lt;<strong>numberType</strong>&gt; and the minimum and maximum allowable values of a
+numeric attribute. A measurement’s &lt;<strong>numberType</strong>&gt; should be defined
+as real, natural, whole or integer as explained in EML handbook: (see
+“Other Resources”). The &lt;<strong>bounds</strong>&gt; are theoretical or allowable
+minimum and maximum values (prescriptive), rather than the actual
+observed range in a data set (descriptive). The &lt;<strong>bounds</strong>&gt; tree is
+optional.</p>
+<p>&lt;<strong>precision</strong>&gt; describes the number of decimal places for the
+attribute. Currently, EML does not allow more than one precision value
+for a column. For example, a column containing lengths of fish may be
+measured to a precision of .01 meter for one species of fish (e.g.,
+large), and .001 meters for a different species, but all the data on
+“fish length” are collected into one attribute and are measured using
+their appropriate precision values. For these cases precision can be
+omitted, but the variable precision information should be described in
+detail in <strong>method/methodStep</strong>. Together, the information in
+&lt;<strong>numericDomain</strong>&gt; and &lt;<strong>precision</strong>&gt; are sufficient to decide
+upon an appropriate system-specific data type for representing a
+particular attribute. For example, an attribute with a numeric domain
+from 0-50,000 and a precision of 1 could be represented in the C
+language using a ‘long’ value, but if the precision is changed to
+‘0.5’ then a ‘float’ type would be needed.</p>
+<p>The &lt;<strong>measurementType</strong>&gt; element, &lt;<strong>dateTime</strong>&gt;, is a date-time
+value from the Gregorian calendar and it is recommended that these be
+expressed in a format that conforms to the ISO 8601 standard. An example
+of an allowable ISO date-time is “YYYY-MM-DD”, as in 2004-06-25, or,
+more fully, as “YYYY-MM-DDThh:mm:ssTZD” (eg 1997-07-16T19:20:30.45Z).
+The ISO standard is quite strict about the structure of date components.
+Since legacy data often contain non-standard dates, and existing
+equipment (e.g., sensors) may still be producing non-standard dates, the
+EML authors have provided additional allowable formats. See the EML
+documentation for a complete list. It is important to note that the
+dateTime field should not be used for recording time durations. In that
+case, use a unit such as seconds, nominalMinute or nominalDay, that
+defines the duration in terms of its relationship to SI second.</p>
+<p>The &lt;<strong>missingValueCode</strong>&gt; is optional, but should be included to
+describe any missing value codes present in the data set (e.g. NA, NaN,
+ND, 9999). The missing value code is a string, not a value, which means
+that the content of this field must exactly match what appears in place
+of data values for it to be correctly interpreted. For example, if data
+are output with precision .01 and with missing values formatted to
+“-9999.00”, then the content of the &lt;<strong>missingValueCode</strong>&gt; element
+must be “-9999.00” not “-9999”.</p>
+<p>The examples show two attribute trees. The first was generated from an
+SQL system with a defined storage type. The second &lt;<strong>attributeList</strong>&gt;
+includes tags for &lt;<strong>customUnits</strong>&gt;, with the Unit defined in the
+&lt;<strong>additionalMetadata</strong>&gt; tree.</p>
+<hr />
+<p>Example 21: attributeList/attribute dataTable</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb24-1"><a href="attributelist.html#cb24-1"></a><span class="kw">&lt;attributeList&gt;</span></span>
+<span id="cb24-2"><a href="attributelist.html#cb24-2"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.site_id&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb24-3"><a href="attributelist.html#cb24-3"></a>      <span class="kw">&lt;attributeName&gt;</span>site_id<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb24-4"><a href="attributelist.html#cb24-4"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>Site id as used in sites table<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb24-5"><a href="attributelist.html#cb24-5"></a>      <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="kw">&gt;</span>string<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb24-6"><a href="attributelist.html#cb24-6"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb24-7"><a href="attributelist.html#cb24-7"></a>         <span class="kw">&lt;nominal&gt;</span></span>
+<span id="cb24-8"><a href="attributelist.html#cb24-8"></a>            <span class="kw">&lt;nonNumericDomain&gt;</span></span>
+<span id="cb24-9"><a href="attributelist.html#cb24-9"></a>               <span class="kw">&lt;textDomain&gt;</span></span>
+<span id="cb24-10"><a href="attributelist.html#cb24-10"></a>                  <span class="kw">&lt;definition&gt;</span>Site id as used in sites table<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb24-11"><a href="attributelist.html#cb24-11"></a>               <span class="kw">&lt;/textDomain&gt;</span></span>
+<span id="cb24-12"><a href="attributelist.html#cb24-12"></a>            <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
+<span id="cb24-13"><a href="attributelist.html#cb24-13"></a>         <span class="kw">&lt;/nominal&gt;</span></span>
+<span id="cb24-14"><a href="attributelist.html#cb24-14"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb24-15"><a href="attributelist.html#cb24-15"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb24-16"><a href="attributelist.html#cb24-16"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.pH&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb24-17"><a href="attributelist.html#cb24-17"></a>      <span class="kw">&lt;attributeName&gt;</span>pH<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb24-18"><a href="attributelist.html#cb24-18"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>ph of soil solution<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb24-19"><a href="attributelist.html#cb24-19"></a>      <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="kw">&gt;</span>float<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb24-20"><a href="attributelist.html#cb24-20"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb24-21"><a href="attributelist.html#cb24-21"></a>         <span class="kw">&lt;ratio&gt;</span></span>
+<span id="cb24-22"><a href="attributelist.html#cb24-22"></a>            <span class="kw">&lt;unit&gt;</span></span>
+<span id="cb24-23"><a href="attributelist.html#cb24-23"></a>               <span class="kw">&lt;standardUnit&gt;</span>dimensionless<span class="kw">&lt;/standardUnit&gt;</span></span>
+<span id="cb24-24"><a href="attributelist.html#cb24-24"></a>            <span class="kw">&lt;/unit&gt;</span></span>
+<span id="cb24-25"><a href="attributelist.html#cb24-25"></a>            <span class="kw">&lt;precision&gt;</span>0.01<span class="kw">&lt;/precision&gt;</span></span>
+<span id="cb24-26"><a href="attributelist.html#cb24-26"></a>            <span class="kw">&lt;numericDomain&gt;</span></span>
+<span id="cb24-27"><a href="attributelist.html#cb24-27"></a>               <span class="kw">&lt;numberType&gt;</span>real<span class="kw">&lt;/numberType&gt;</span></span>
+<span id="cb24-28"><a href="attributelist.html#cb24-28"></a>            <span class="kw">&lt;/numericDomain&gt;</span></span>
+<span id="cb24-29"><a href="attributelist.html#cb24-29"></a>         <span class="kw">&lt;/ratio&gt;</span></span>
+<span id="cb24-30"><a href="attributelist.html#cb24-30"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb24-31"><a href="attributelist.html#cb24-31"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb24-32"><a href="attributelist.html#cb24-32"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;pass2001.q110&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb24-33"><a href="attributelist.html#cb24-33"></a>      <span class="kw">&lt;attributeName&gt;</span>q110<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb24-34"><a href="attributelist.html#cb24-34"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>Q110-Preference for front yard landscape<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb24-35"><a href="attributelist.html#cb24-35"></a>      <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="kw">&gt;</span>float<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb24-36"><a href="attributelist.html#cb24-36"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb24-37"><a href="attributelist.html#cb24-37"></a>         <span class="kw">&lt;ordinal&gt;</span></span>
+<span id="cb24-38"><a href="attributelist.html#cb24-38"></a>            <span class="kw">&lt;nonNumericDomain&gt;</span></span>
+<span id="cb24-39"><a href="attributelist.html#cb24-39"></a>               <span class="kw">&lt;enumeratedDomain&gt;</span></span>
+<span id="cb24-40"><a href="attributelist.html#cb24-40"></a>                  <span class="kw">&lt;codeDefinition&gt;</span></span>
+<span id="cb24-41"><a href="attributelist.html#cb24-41"></a>                     <span class="kw">&lt;code&gt;</span>1.00<span class="kw">&lt;/code&gt;</span></span>
+<span id="cb24-42"><a href="attributelist.html#cb24-42"></a>                     <span class="kw">&lt;definition&gt;</span>1-A desert landscape<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb24-43"><a href="attributelist.html#cb24-43"></a>                  <span class="kw">&lt;/codeDefinition&gt;</span></span>
+<span id="cb24-44"><a href="attributelist.html#cb24-44"></a>                  <span class="kw">&lt;codeDefinition&gt;</span></span>
+<span id="cb24-45"><a href="attributelist.html#cb24-45"></a>                     <span class="kw">&lt;code&gt;</span>2.00<span class="kw">&lt;/code&gt;</span></span>
+<span id="cb24-46"><a href="attributelist.html#cb24-46"></a>                     <span class="kw">&lt;definition&gt;</span>2-Mostly lawn<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb24-47"><a href="attributelist.html#cb24-47"></a>                  <span class="kw">&lt;/codeDefinition&gt;</span></span>
+<span id="cb24-48"><a href="attributelist.html#cb24-48"></a>                  <span class="kw">&lt;codeDefinition&gt;</span></span>
+<span id="cb24-49"><a href="attributelist.html#cb24-49"></a>                     <span class="kw">&lt;code&gt;</span>3.00<span class="kw">&lt;/code&gt;</span></span>
+<span id="cb24-50"><a href="attributelist.html#cb24-50"></a>                     <span class="kw">&lt;definition&gt;</span>3-Some lawn<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb24-51"><a href="attributelist.html#cb24-51"></a>                  <span class="kw">&lt;/codeDefinition&gt;</span></span>
+<span id="cb24-52"><a href="attributelist.html#cb24-52"></a>               <span class="kw">&lt;/enumeratedDomain&gt;</span></span>
+<span id="cb24-53"><a href="attributelist.html#cb24-53"></a>            <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
+<span id="cb24-54"><a href="attributelist.html#cb24-54"></a>         <span class="kw">&lt;/ordinal&gt;</span></span>
+<span id="cb24-55"><a href="attributelist.html#cb24-55"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb24-56"><a href="attributelist.html#cb24-56"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb24-57"><a href="attributelist.html#cb24-57"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;att.2&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb24-58"><a href="attributelist.html#cb24-58"></a>      <span class="kw">&lt;attributeName&gt;</span>Year<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb24-59"><a href="attributelist.html#cb24-59"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>Calendar year of the observation from years 1990 - 2010<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb24-60"><a href="attributelist.html#cb24-60"></a>      <span class="kw">&lt;storageType&gt;</span>integer<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb24-61"><a href="attributelist.html#cb24-61"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb24-62"><a href="attributelist.html#cb24-62"></a>         <span class="kw">&lt;dateTime&gt;</span></span>
+<span id="cb24-63"><a href="attributelist.html#cb24-63"></a>            <span class="kw">&lt;formatString&gt;</span>YYYY<span class="kw">&lt;/formatString&gt;</span></span>
+<span id="cb24-64"><a href="attributelist.html#cb24-64"></a>            <span class="kw">&lt;dateTimePrecision&gt;</span>1<span class="kw">&lt;/dateTimePrecision&gt;</span></span>
+<span id="cb24-65"><a href="attributelist.html#cb24-65"></a>            <span class="kw">&lt;dateTimeDomain&gt;</span></span>
+<span id="cb24-66"><a href="attributelist.html#cb24-66"></a>               <span class="kw">&lt;bounds&gt;</span></span>
+<span id="cb24-67"><a href="attributelist.html#cb24-67"></a>                  <span class="kw">&lt;minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>1993<span class="kw">&lt;/minimum&gt;</span></span>
+<span id="cb24-68"><a href="attributelist.html#cb24-68"></a>                  <span class="kw">&lt;maximum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>2003<span class="kw">&lt;/maximum&gt;</span></span>
+<span id="cb24-69"><a href="attributelist.html#cb24-69"></a>               <span class="kw">&lt;/bounds&gt;</span></span>
+<span id="cb24-70"><a href="attributelist.html#cb24-70"></a>            <span class="kw">&lt;/dateTimeDomain&gt;</span></span>
+<span id="cb24-71"><a href="attributelist.html#cb24-71"></a>         <span class="kw">&lt;/dateTime&gt;</span></span>
+<span id="cb24-72"><a href="attributelist.html#cb24-72"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb24-73"><a href="attributelist.html#cb24-73"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb24-74"><a href="attributelist.html#cb24-74"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;att.7&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb24-75"><a href="attributelist.html#cb24-75"></a>      <span class="kw">&lt;attributeName&gt;</span>Count<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb24-76"><a href="attributelist.html#cb24-76"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>Number of individuals observed<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb24-77"><a href="attributelist.html#cb24-77"></a>      <span class="kw">&lt;storageType&gt;</span>integer<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb24-78"><a href="attributelist.html#cb24-78"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb24-79"><a href="attributelist.html#cb24-79"></a>         <span class="kw">&lt;interval&gt;</span></span>
+<span id="cb24-80"><a href="attributelist.html#cb24-80"></a>            <span class="kw">&lt;unit&gt;</span></span>
+<span id="cb24-81"><a href="attributelist.html#cb24-81"></a>               <span class="kw">&lt;standardUnit&gt;</span>number<span class="kw">&lt;/standardUnit&gt;</span></span>
+<span id="cb24-82"><a href="attributelist.html#cb24-82"></a>            <span class="kw">&lt;/unit&gt;</span></span>
+<span id="cb24-83"><a href="attributelist.html#cb24-83"></a>            <span class="kw">&lt;precision&gt;</span>1<span class="kw">&lt;/precision&gt;</span></span>
+<span id="cb24-84"><a href="attributelist.html#cb24-84"></a>            <span class="kw">&lt;numericDomain&gt;</span></span>
+<span id="cb24-85"><a href="attributelist.html#cb24-85"></a>               <span class="kw">&lt;numberType&gt;</span>whole<span class="kw">&lt;/numberType&gt;</span></span>
+<span id="cb24-86"><a href="attributelist.html#cb24-86"></a>               <span class="kw">&lt;bounds&gt;</span></span>
+<span id="cb24-87"><a href="attributelist.html#cb24-87"></a>                  <span class="kw">&lt;minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>0<span class="kw">&lt;/minimum&gt;</span></span>
+<span id="cb24-88"><a href="attributelist.html#cb24-88"></a>               <span class="kw">&lt;/bounds&gt;</span></span>
+<span id="cb24-89"><a href="attributelist.html#cb24-89"></a>            <span class="kw">&lt;/numericDomain&gt;</span></span>
+<span id="cb24-90"><a href="attributelist.html#cb24-90"></a>         <span class="kw">&lt;/interval&gt;</span></span>
+<span id="cb24-91"><a href="attributelist.html#cb24-91"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb24-92"><a href="attributelist.html#cb24-92"></a>      <span class="kw">&lt;missingValueCode&gt;</span></span>
+<span id="cb24-93"><a href="attributelist.html#cb24-93"></a>         <span class="kw">&lt;code&gt;</span>NaN<span class="kw">&lt;/code&gt;</span></span>
+<span id="cb24-94"><a href="attributelist.html#cb24-94"></a>         <span class="kw">&lt;codeExplanation&gt;</span>value not recorded or invalid<span class="kw">&lt;/codeExplanation&gt;</span></span>
+<span id="cb24-95"><a href="attributelist.html#cb24-95"></a>      <span class="kw">&lt;/missingValueCode&gt;</span></span>
+<span id="cb24-96"><a href="attributelist.html#cb24-96"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb24-97"><a href="attributelist.html#cb24-97"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;att.7&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb24-98"><a href="attributelist.html#cb24-98"></a>      <span class="kw">&lt;attributeName&gt;</span>cond<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb24-99"><a href="attributelist.html#cb24-99"></a>      <span class="kw">&lt;attributeLabel&gt;</span>Conductivity<span class="kw">&lt;/attributeLabel&gt;</span></span>
+<span id="cb24-100"><a href="attributelist.html#cb24-100"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>measured with SeaBird Elecronics CTD-911<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb24-101"><a href="attributelist.html#cb24-101"></a>      <span class="kw">&lt;storageType&gt;</span>float<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb24-102"><a href="attributelist.html#cb24-102"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb24-103"><a href="attributelist.html#cb24-103"></a>         <span class="kw">&lt;ratio&gt;</span></span>
+<span id="cb24-104"><a href="attributelist.html#cb24-104"></a>            <span class="kw">&lt;unit&gt;</span></span>
+<span id="cb24-105"><a href="attributelist.html#cb24-105"></a>               <span class="kw">&lt;customUnit&gt;</span>siemensPerMeter<span class="kw">&lt;/customUnit&gt;</span></span>
+<span id="cb24-106"><a href="attributelist.html#cb24-106"></a>            <span class="kw">&lt;/unit&gt;</span></span>
+<span id="cb24-107"><a href="attributelist.html#cb24-107"></a>            <span class="kw">&lt;precision&gt;</span>0.0001<span class="kw">&lt;/precision&gt;</span></span>
+<span id="cb24-108"><a href="attributelist.html#cb24-108"></a>            <span class="kw">&lt;numericDomain&gt;</span></span>
+<span id="cb24-109"><a href="attributelist.html#cb24-109"></a>               <span class="kw">&lt;numberType&gt;</span>real<span class="kw">&lt;/numberType&gt;</span></span>
+<span id="cb24-110"><a href="attributelist.html#cb24-110"></a>               <span class="kw">&lt;bounds&gt;</span></span>
+<span id="cb24-111"><a href="attributelist.html#cb24-111"></a>                  <span class="kw">&lt;minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>0<span class="kw">&lt;/minimum&gt;</span></span>
+<span id="cb24-112"><a href="attributelist.html#cb24-112"></a>                  <span class="kw">&lt;maximum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>40<span class="kw">&lt;/maximum&gt;</span></span>
+<span id="cb24-113"><a href="attributelist.html#cb24-113"></a>               <span class="kw">&lt;/bounds&gt;</span></span>
+<span id="cb24-114"><a href="attributelist.html#cb24-114"></a>            <span class="kw">&lt;/numericDomain&gt;</span></span>
+<span id="cb24-115"><a href="attributelist.html#cb24-115"></a>         <span class="kw">&lt;/ratio&gt;</span></span>
+<span id="cb24-116"><a href="attributelist.html#cb24-116"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb24-117"><a href="attributelist.html#cb24-117"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb24-118"><a href="attributelist.html#cb24-118"></a><span class="kw">&lt;/attributeList&gt;</span></span></code></pre></div>
+<hr />
+<p>The examples below show complete entity trees for &lt;<strong>spatialVector</strong>&gt;
+and &lt;<strong>spatialRaster</strong>&gt; converted via XSLT (stylesheet) from ESRI
+metadata format. For details see “Other Resources”.</p>
+<hr />
+<p>Example 22: Entity and attribute information for spatialVector</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb25-1"><a href="attributelist.html#cb25-1"></a><span class="kw">&lt;spatialVector</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb25-2"><a href="attributelist.html#cb25-2"></a>   <span class="kw">&lt;entityName&gt;</span>Landuse for Ficity in 1955<span class="kw">&lt;/entityName&gt;</span></span>
+<span id="cb25-3"><a href="attributelist.html#cb25-3"></a>   <span class="kw">&lt;entityDescription&gt;</span>This GIS layer represents a reconstructed</span>
+<span id="cb25-4"><a href="attributelist.html#cb25-4"></a>      generalized landuse map for the area of current Ficity around the time</span>
+<span id="cb25-5"><a href="attributelist.html#cb25-5"></a>      period of 1955.<span class="kw">&lt;/entityDescription&gt;</span></span>
+<span id="cb25-6"><a href="attributelist.html#cb25-6"></a>   <span class="kw">&lt;physical&gt;</span></span>
+<span id="cb25-7"><a href="attributelist.html#cb25-7"></a>      <span class="kw">&lt;objectName&gt;</span>fls-20.zip<span class="kw">&lt;/objectName&gt;</span></span>
+<span id="cb25-8"><a href="attributelist.html#cb25-8"></a>      <span class="kw">&lt;dataFormat&gt;</span></span>
+<span id="cb25-9"><a href="attributelist.html#cb25-9"></a>         <span class="kw">&lt;externallyDefinedFormat&gt;</span></span>
+<span id="cb25-10"><a href="attributelist.html#cb25-10"></a>            <span class="kw">&lt;formatName&gt;</span>Shapefile<span class="kw">&lt;/formatName&gt;</span></span>
+<span id="cb25-11"><a href="attributelist.html#cb25-11"></a>         <span class="kw">&lt;/externallyDefinedFormat&gt;</span></span>
+<span id="cb25-12"><a href="attributelist.html#cb25-12"></a>      <span class="kw">&lt;/dataFormat&gt;</span></span>
+<span id="cb25-13"><a href="attributelist.html#cb25-13"></a>      <span class="kw">&lt;distribution&gt;</span></span>
+<span id="cb25-14"><a href="attributelist.html#cb25-14"></a>         <span class="kw">&lt;online&gt;</span></span>
+<span id="cb25-15"><a href="attributelist.html#cb25-15"></a>            <span class="kw">&lt;onlineDescription&gt;</span>f1s-20 Zipped Shapefile File<span class="kw">&lt;/onlineDescription&gt;</span></span>
+<span id="cb25-16"><a href="attributelist.html#cb25-16"></a>            <span class="kw">&lt;url</span><span class="ot"> function=</span><span class="st">&quot;download&quot;</span><span class="kw">&gt;</span>http://www.fsu.edu/lter/data/fls-20.zip<span class="kw">&lt;/url&gt;</span></span>
+<span id="cb25-17"><a href="attributelist.html#cb25-17"></a>         <span class="kw">&lt;/online&gt;</span></span>
+<span id="cb25-18"><a href="attributelist.html#cb25-18"></a>      <span class="kw">&lt;/distribution&gt;</span></span>
+<span id="cb25-19"><a href="attributelist.html#cb25-19"></a>   <span class="kw">&lt;/physical&gt;</span></span>
+<span id="cb25-20"><a href="attributelist.html#cb25-20"></a>   <span class="kw">&lt;attributeList</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.attributeList&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb25-21"><a href="attributelist.html#cb25-21"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.FID&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb25-22"><a href="attributelist.html#cb25-22"></a>         <span class="kw">&lt;attributeName&gt;</span>FID<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb25-23"><a href="attributelist.html#cb25-23"></a>         <span class="kw">&lt;attributeDefinition&gt;</span>Internal feature number.<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb25-24"><a href="attributelist.html#cb25-24"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>OID<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb25-25"><a href="attributelist.html#cb25-25"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb25-26"><a href="attributelist.html#cb25-26"></a>            <span class="kw">&lt;nominal&gt;</span></span>
+<span id="cb25-27"><a href="attributelist.html#cb25-27"></a>               <span class="kw">&lt;nonNumericDomain&gt;</span></span>
+<span id="cb25-28"><a href="attributelist.html#cb25-28"></a>                  <span class="kw">&lt;textDomain&gt;</span></span>
+<span id="cb25-29"><a href="attributelist.html#cb25-29"></a>                     <span class="kw">&lt;definition&gt;</span></span>
+<span id="cb25-30"><a href="attributelist.html#cb25-30"></a>                        Sequential unique whole numbers that are automatically generated.</span>
+<span id="cb25-31"><a href="attributelist.html#cb25-31"></a>                     <span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb25-32"><a href="attributelist.html#cb25-32"></a>                  <span class="kw">&lt;/textDomain&gt;</span></span>
+<span id="cb25-33"><a href="attributelist.html#cb25-33"></a>               <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
+<span id="cb25-34"><a href="attributelist.html#cb25-34"></a>            <span class="kw">&lt;/nominal&gt;</span></span>
+<span id="cb25-35"><a href="attributelist.html#cb25-35"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb25-36"><a href="attributelist.html#cb25-36"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb25-37"><a href="attributelist.html#cb25-37"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.Shape&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb25-38"><a href="attributelist.html#cb25-38"></a>         <span class="kw">&lt;attributeName&gt;</span>Shape<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb25-39"><a href="attributelist.html#cb25-39"></a>         <span class="kw">&lt;attributeDefinition&gt;</span>Feature geometry.<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb25-40"><a href="attributelist.html#cb25-40"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>Geometry<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb25-41"><a href="attributelist.html#cb25-41"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb25-42"><a href="attributelist.html#cb25-42"></a>            <span class="kw">&lt;nominal&gt;</span></span>
+<span id="cb25-43"><a href="attributelist.html#cb25-43"></a>               <span class="kw">&lt;nonNumericDomain&gt;</span></span>
+<span id="cb25-44"><a href="attributelist.html#cb25-44"></a>                  <span class="kw">&lt;textDomain&gt;</span></span>
+<span id="cb25-45"><a href="attributelist.html#cb25-45"></a>                     <span class="kw">&lt;definition&gt;</span>Coordinates defining the features.<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb25-46"><a href="attributelist.html#cb25-46"></a>                  <span class="kw">&lt;/textDomain&gt;</span></span>
+<span id="cb25-47"><a href="attributelist.html#cb25-47"></a>               <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
+<span id="cb25-48"><a href="attributelist.html#cb25-48"></a>            <span class="kw">&lt;/nominal&gt;</span></span>
+<span id="cb25-49"><a href="attributelist.html#cb25-49"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb25-50"><a href="attributelist.html#cb25-50"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb25-51"><a href="attributelist.html#cb25-51"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.Z955&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb25-52"><a href="attributelist.html#cb25-52"></a>         <span class="kw">&lt;attributeName&gt;</span>Z955<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb25-53"><a href="attributelist.html#cb25-53"></a>         <span class="kw">&lt;attributeDefinition&gt;</span></span>
+<span id="cb25-54"><a href="attributelist.html#cb25-54"></a>            This field signifies the landuse value for each polygon.</span>
+<span id="cb25-55"><a href="attributelist.html#cb25-55"></a>         <span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb25-56"><a href="attributelist.html#cb25-56"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="kw">&gt;</span>string<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb25-57"><a href="attributelist.html#cb25-57"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb25-58"><a href="attributelist.html#cb25-58"></a>            <span class="kw">&lt;nominal&gt;</span></span>
+<span id="cb25-59"><a href="attributelist.html#cb25-59"></a>               <span class="kw">&lt;nonNumericDomain&gt;</span></span>
+<span id="cb25-60"><a href="attributelist.html#cb25-60"></a>                  <span class="kw">&lt;enumeratedDomain&gt;</span></span>
+<span id="cb25-61"><a href="attributelist.html#cb25-61"></a>                     <span class="kw">&lt;codeDefinition&gt;</span></span>
+<span id="cb25-62"><a href="attributelist.html#cb25-62"></a>                        <span class="kw">&lt;code&gt;</span>Agriculture<span class="kw">&lt;/code&gt;</span></span>
+<span id="cb25-63"><a href="attributelist.html#cb25-63"></a>                        <span class="kw">&lt;definition&gt;</span>Agricultural land use<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb25-64"><a href="attributelist.html#cb25-64"></a>                     <span class="kw">&lt;/codeDefinition&gt;</span></span>
+<span id="cb25-65"><a href="attributelist.html#cb25-65"></a>                     <span class="kw">&lt;codeDefinition&gt;</span></span>
+<span id="cb25-66"><a href="attributelist.html#cb25-66"></a>                        <span class="kw">&lt;code&gt;</span>Urban<span class="kw">&lt;/code&gt;</span></span>
+<span id="cb25-67"><a href="attributelist.html#cb25-67"></a>                        <span class="kw">&lt;definition&gt;</span>Urbanized area<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb25-68"><a href="attributelist.html#cb25-68"></a>                     <span class="kw">&lt;/codeDefinition&gt;</span></span>
+<span id="cb25-69"><a href="attributelist.html#cb25-69"></a>                     <span class="kw">&lt;codeDefinition&gt;</span></span>
+<span id="cb25-70"><a href="attributelist.html#cb25-70"></a>                        <span class="kw">&lt;code&gt;</span>Desert<span class="kw">&lt;/code&gt;</span></span>
+<span id="cb25-71"><a href="attributelist.html#cb25-71"></a>                        <span class="kw">&lt;definition&gt;</span>Unmodified area<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb25-72"><a href="attributelist.html#cb25-72"></a>                     <span class="kw">&lt;/codeDefinition&gt;</span></span>
+<span id="cb25-73"><a href="attributelist.html#cb25-73"></a>                     <span class="kw">&lt;codeDefinition&gt;</span></span>
+<span id="cb25-74"><a href="attributelist.html#cb25-74"></a>                        <span class="kw">&lt;code&gt;</span>Recreation<span class="kw">&lt;/code&gt;</span></span>
+<span id="cb25-75"><a href="attributelist.html#cb25-75"></a>                        <span class="kw">&lt;definition&gt;</span>Recreational land use<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb25-76"><a href="attributelist.html#cb25-76"></a>                     <span class="kw">&lt;/codeDefinition&gt;</span></span>
+<span id="cb25-77"><a href="attributelist.html#cb25-77"></a>                  <span class="kw">&lt;/enumeratedDomain&gt;</span></span>
+<span id="cb25-78"><a href="attributelist.html#cb25-78"></a>               <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
+<span id="cb25-79"><a href="attributelist.html#cb25-79"></a>            <span class="kw">&lt;/nominal&gt;</span></span>
+<span id="cb25-80"><a href="attributelist.html#cb25-80"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb25-81"><a href="attributelist.html#cb25-81"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb25-82"><a href="attributelist.html#cb25-82"></a>   <span class="kw">&lt;/attributeList&gt;</span></span>
+<span id="cb25-83"><a href="attributelist.html#cb25-83"></a>   <span class="kw">&lt;geometry&gt;</span>Polygon<span class="kw">&lt;/geometry&gt;</span></span>
+<span id="cb25-84"><a href="attributelist.html#cb25-84"></a>   <span class="kw">&lt;geometricObjectCount&gt;</span>78<span class="kw">&lt;/geometricObjectCount&gt;</span></span>
+<span id="cb25-85"><a href="attributelist.html#cb25-85"></a>   <span class="kw">&lt;spatialReference&gt;</span></span>
+<span id="cb25-86"><a href="attributelist.html#cb25-86"></a>      <span class="kw">&lt;horizCoordSysName&gt;</span>NAD_1927_UTM_Zone_12N<span class="kw">&lt;/horizCoordSysName&gt;</span></span>
+<span id="cb25-87"><a href="attributelist.html#cb25-87"></a>   <span class="kw">&lt;/spatialReference&gt;</span></span>
+<span id="cb25-88"><a href="attributelist.html#cb25-88"></a><span class="kw">&lt;/spatialVector&gt;</span></span></code></pre></div>
+<hr />
+<hr />
+<p>Example 23: Entity and attribute information for spatialRaster</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb26-1"><a href="attributelist.html#cb26-1"></a><span class="kw">&lt;spatialRaster</span><span class="ot"> id=</span><span class="st">&quot;fi_24k&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb26-2"><a href="attributelist.html#cb26-2"></a>   <span class="kw">&lt;entityName&gt;</span>fi_24k<span class="kw">&lt;/entityName&gt;</span></span>
+<span id="cb26-3"><a href="attributelist.html#cb26-3"></a>   <span class="kw">&lt;entityDefinition&gt;</span>Ficiticiou State 7.5 Minute Digital Elevation Model<span class="kw">&lt;/entityDefinition&gt;</span></span>
+<span id="cb26-4"><a href="attributelist.html#cb26-4"></a>   <span class="kw">&lt;physical&gt;</span></span>
+<span id="cb26-5"><a href="attributelist.html#cb26-5"></a>      <span class="kw">&lt;objectName&gt;</span>fls-30.zip<span class="kw">&lt;/objectName&gt;</span></span>
+<span id="cb26-6"><a href="attributelist.html#cb26-6"></a>      <span class="kw">&lt;dataFormat&gt;</span></span>
+<span id="cb26-7"><a href="attributelist.html#cb26-7"></a>         <span class="kw">&lt;externallyDefinedFormat&gt;</span></span>
+<span id="cb26-8"><a href="attributelist.html#cb26-8"></a>            <span class="kw">&lt;formatName&gt;</span>Esri Grid<span class="kw">&lt;/formatName&gt;</span></span>
+<span id="cb26-9"><a href="attributelist.html#cb26-9"></a>         <span class="kw">&lt;/externallyDefinedFormat&gt;</span></span>
+<span id="cb26-10"><a href="attributelist.html#cb26-10"></a>      <span class="kw">&lt;/dataFormat&gt;</span></span>
+<span id="cb26-11"><a href="attributelist.html#cb26-11"></a>      <span class="kw">&lt;distribution&gt;</span></span>
+<span id="cb26-12"><a href="attributelist.html#cb26-12"></a>         <span class="kw">&lt;online&gt;</span></span>
+<span id="cb26-13"><a href="attributelist.html#cb26-13"></a>            <span class="kw">&lt;onlineDescription&gt;</span>f1s-30 zipped raster data File<span class="kw">&lt;/onlineDescription&gt;</span></span>
+<span id="cb26-14"><a href="attributelist.html#cb26-14"></a>            <span class="kw">&lt;url</span><span class="ot"> function=</span><span class="st">&quot;download&quot;</span><span class="kw">&gt;</span>http://www.fsu.edu/lter/data/fls-30.zip<span class="kw">&lt;/url&gt;</span></span>
+<span id="cb26-15"><a href="attributelist.html#cb26-15"></a>         <span class="kw">&lt;/online&gt;</span></span>
+<span id="cb26-16"><a href="attributelist.html#cb26-16"></a>      <span class="kw">&lt;/distribution&gt;</span></span>
+<span id="cb26-17"><a href="attributelist.html#cb26-17"></a>   <span class="kw">&lt;/physical&gt;</span></span>
+<span id="cb26-18"><a href="attributelist.html#cb26-18"></a>   <span class="kw">&lt;attributeList</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.attributeList&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb26-19"><a href="attributelist.html#cb26-19"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.ObjectID&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb26-20"><a href="attributelist.html#cb26-20"></a>         <span class="kw">&lt;attributeName&gt;</span>ObjectID<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb26-21"><a href="attributelist.html#cb26-21"></a>         <span class="kw">&lt;attributeDefinition&gt;</span>Internal feature number.<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb26-22"><a href="attributelist.html#cb26-22"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>OID<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb26-23"><a href="attributelist.html#cb26-23"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb26-24"><a href="attributelist.html#cb26-24"></a>            <span class="kw">&lt;nominal&gt;</span></span>
+<span id="cb26-25"><a href="attributelist.html#cb26-25"></a>               <span class="kw">&lt;nonNumericDomain&gt;</span></span>
+<span id="cb26-26"><a href="attributelist.html#cb26-26"></a>                  <span class="kw">&lt;textDomain&gt;</span></span>
+<span id="cb26-27"><a href="attributelist.html#cb26-27"></a>                     <span class="kw">&lt;definition&gt;</span></span>
+<span id="cb26-28"><a href="attributelist.html#cb26-28"></a>                        Sequential unique whole numbers that are automatically generated.</span>
+<span id="cb26-29"><a href="attributelist.html#cb26-29"></a>                     <span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb26-30"><a href="attributelist.html#cb26-30"></a>                  <span class="kw">&lt;/textDomain&gt;</span></span>
+<span id="cb26-31"><a href="attributelist.html#cb26-31"></a>               <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
+<span id="cb26-32"><a href="attributelist.html#cb26-32"></a>            <span class="kw">&lt;/nominal&gt;</span></span>
+<span id="cb26-33"><a href="attributelist.html#cb26-33"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb26-34"><a href="attributelist.html#cb26-34"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb26-35"><a href="attributelist.html#cb26-35"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.Cell Value&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb26-36"><a href="attributelist.html#cb26-36"></a>         <span class="kw">&lt;attributeName&gt;</span>Cell Value<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb26-37"><a href="attributelist.html#cb26-37"></a>         <span class="kw">&lt;attributeDefinition&gt;</span>Elevation Value<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb26-38"><a href="attributelist.html#cb26-38"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>Integer<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb26-39"><a href="attributelist.html#cb26-39"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb26-40"><a href="attributelist.html#cb26-40"></a>            <span class="kw">&lt;ratio&gt;</span></span>
+<span id="cb26-41"><a href="attributelist.html#cb26-41"></a>               <span class="kw">&lt;unit&gt;</span></span>
+<span id="cb26-42"><a href="attributelist.html#cb26-42"></a>                  <span class="kw">&lt;standardUnit&gt;</span>meter<span class="kw">&lt;/standardUnit&gt;</span></span>
+<span id="cb26-43"><a href="attributelist.html#cb26-43"></a>               <span class="kw">&lt;/unit&gt;</span></span>
+<span id="cb26-44"><a href="attributelist.html#cb26-44"></a>               <span class="kw">&lt;precision</span> <span class="kw">/&gt;</span></span>
+<span id="cb26-45"><a href="attributelist.html#cb26-45"></a>               <span class="kw">&lt;numericDomain&gt;</span></span>
+<span id="cb26-46"><a href="attributelist.html#cb26-46"></a>                  <span class="kw">&lt;numberType&gt;</span>integer<span class="kw">&lt;/numberType&gt;</span></span>
+<span id="cb26-47"><a href="attributelist.html#cb26-47"></a>                  <span class="kw">&lt;bounds&gt;</span></span>
+<span id="cb26-48"><a href="attributelist.html#cb26-48"></a>                     <span class="kw">&lt;minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>-5193.000000<span class="kw">&lt;/minimum&gt;</span></span>
+<span id="cb26-49"><a href="attributelist.html#cb26-49"></a>                     <span class="kw">&lt;maximum</span><span class="ot"> exclusive=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>14785.000000<span class="kw">&lt;/maximum&gt;</span></span>
+<span id="cb26-50"><a href="attributelist.html#cb26-50"></a>                  <span class="kw">&lt;/bounds&gt;</span></span>
+<span id="cb26-51"><a href="attributelist.html#cb26-51"></a>               <span class="kw">&lt;/numericDomain&gt;</span></span>
+<span id="cb26-52"><a href="attributelist.html#cb26-52"></a>            <span class="kw">&lt;/ratio&gt;</span></span>
+<span id="cb26-53"><a href="attributelist.html#cb26-53"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb26-54"><a href="attributelist.html#cb26-54"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb26-55"><a href="attributelist.html#cb26-55"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.Count&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb26-56"><a href="attributelist.html#cb26-56"></a>         <span class="kw">&lt;attributeName&gt;</span>Count<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb26-57"><a href="attributelist.html#cb26-57"></a>         <span class="kw">&lt;attributeDefinition&gt;</span>Count<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb26-58"><a href="attributelist.html#cb26-58"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>Integer<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb26-59"><a href="attributelist.html#cb26-59"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb26-60"><a href="attributelist.html#cb26-60"></a>            <span class="kw">&lt;ratio&gt;</span></span>
+<span id="cb26-61"><a href="attributelist.html#cb26-61"></a>               <span class="kw">&lt;unit&gt;</span></span>
+<span id="cb26-62"><a href="attributelist.html#cb26-62"></a>                  <span class="kw">&lt;standardUnit&gt;</span>number<span class="kw">&lt;/standardUnit&gt;</span></span>
+<span id="cb26-63"><a href="attributelist.html#cb26-63"></a>               <span class="kw">&lt;/unit&gt;</span></span>
+<span id="cb26-64"><a href="attributelist.html#cb26-64"></a>               <span class="kw">&lt;precision</span> <span class="kw">/&gt;</span></span>
+<span id="cb26-65"><a href="attributelist.html#cb26-65"></a>               <span class="kw">&lt;numericDomain&gt;</span></span>
+<span id="cb26-66"><a href="attributelist.html#cb26-66"></a>                  <span class="kw">&lt;numberType&gt;</span>whole<span class="kw">&lt;/numberType&gt;</span></span>
+<span id="cb26-67"><a href="attributelist.html#cb26-67"></a>               <span class="kw">&lt;/numericDomain&gt;</span></span>
+<span id="cb26-68"><a href="attributelist.html#cb26-68"></a>            <span class="kw">&lt;/ratio&gt;</span></span>
+<span id="cb26-69"><a href="attributelist.html#cb26-69"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb26-70"><a href="attributelist.html#cb26-70"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb26-71"><a href="attributelist.html#cb26-71"></a>   <span class="kw">&lt;/attributeList&gt;</span></span>
+<span id="cb26-72"><a href="attributelist.html#cb26-72"></a>   <span class="kw">&lt;spatialReference&gt;</span></span>
+<span id="cb26-73"><a href="attributelist.html#cb26-73"></a>      <span class="kw">&lt;horizCoordSysName&gt;</span>NAD_1927_UTM_Zone_12N<span class="kw">&lt;/horizCoordSysName&gt;</span></span>
+<span id="cb26-74"><a href="attributelist.html#cb26-74"></a>   <span class="kw">&lt;/spatialReference&gt;</span></span>
+<span id="cb26-75"><a href="attributelist.html#cb26-75"></a>   <span class="kw">&lt;horizontalAccuracy&gt;</span>not available<span class="kw">&lt;/horizontalAccuracy&gt;</span></span>
+<span id="cb26-76"><a href="attributelist.html#cb26-76"></a>   <span class="kw">&lt;verticalAccuracy&gt;</span>not available<span class="kw">&lt;/verticalAccuracy&gt;</span></span>
+<span id="cb26-77"><a href="attributelist.html#cb26-77"></a>   <span class="kw">&lt;cellSizeXDirection&gt;</span>30.0<span class="kw">&lt;/cellSizeXDirection&gt;</span></span>
+<span id="cb26-78"><a href="attributelist.html#cb26-78"></a>   <span class="kw">&lt;cellSizeYDirection&gt;</span>30.0<span class="kw">&lt;/cellSizeYDirection&gt;</span></span>
+<span id="cb26-79"><a href="attributelist.html#cb26-79"></a>   <span class="kw">&lt;numberOfBands&gt;</span>1<span class="kw">&lt;/numberOfBands&gt;</span></span>
+<span id="cb26-80"><a href="attributelist.html#cb26-80"></a>   <span class="kw">&lt;rasterOrigin&gt;</span>Upper Left<span class="kw">&lt;/rasterOrigin&gt;</span></span>
+<span id="cb26-81"><a href="attributelist.html#cb26-81"></a>   <span class="kw">&lt;rows&gt;</span>21092<span class="kw">&lt;/rows&gt;</span></span>
+<span id="cb26-82"><a href="attributelist.html#cb26-82"></a>   <span class="kw">&lt;columns&gt;</span>18136<span class="kw">&lt;/columns&gt;</span></span>
+<span id="cb26-83"><a href="attributelist.html#cb26-83"></a>   <span class="kw">&lt;verticals&gt;</span>1<span class="kw">&lt;/verticals&gt;</span></span>
+<span id="cb26-84"><a href="attributelist.html#cb26-84"></a>   <span class="kw">&lt;cellGeometry&gt;</span>matrix<span class="kw">&lt;/cellGeometry&gt;</span></span>
+<span id="cb26-85"><a href="attributelist.html#cb26-85"></a><span class="kw">&lt;/spatialRaster&gt;</span></span></code></pre></div>
+<hr />
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="constraint.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

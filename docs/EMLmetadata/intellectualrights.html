@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
-  <meta name="description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <title>12 intellectualRights | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
+  <meta name="description" content="12 intellectualRights | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  <meta property="og:title" content="12 intellectualRights | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <meta property="og:description" content="12 intellectualRights | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  <meta name="twitter:title" content="12 intellectualRights | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   
-  <meta name="twitter:description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <meta name="twitter:description" content="12 intellectualRights | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   
 
 <meta name="author" content="Environmental Data Initiative" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction.html"/>
-<link rel="next" href="general-recommendations.html"/>
+<link rel="prev" href="keywordset-and-keyword.html"/>
+<link rel="next" href="distribution.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -221,78 +221,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="conventions-and-definitions" class="section level1">
-<h1><span class="header-section-number">3</span> Conventions and Definitions</h1>
-<div id="audience" class="section level2">
-<h2><span class="header-section-number">3.1</span> Audience</h2>
-<p>This document is intended for data managers. It assumes that readers are familiar with</p>
-<ul>
-<li>the basic structure of an XML document, and the ability to edit in an XML
-editor like OxygenXML or XMLSpy.</li>
-<li>the process for contributing data to a repository. If you reached this
-document from a repository’s help-page, contact them for more information.</li>
-</ul>
-</div>
-<div id="fonts-and-typeface" class="section level2">
-<h2><span class="header-section-number">3.2</span> Fonts and typeface</h2>
-<p>Numbered examples of EML nodes are in fixed-width font:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="conventions-and-definitions.html#cb1-1"></a><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></span></code></pre></div>
-<p>XML element and attribute names, XPath and references to element names
-in text are in bold face. Single element names are surrounded by angle
-brackets, as they appear in XML.</p>
-<p>&lt;<strong>dataTable</strong>&gt;<br />
-<strong>/eml:eml/@packageId</strong></p>
-<p>Some recommendations have special context, e.g., an XML element or
-attribute may be requested by a community (e.g., LTER), or required by
-the EDI repository (but not by other repositories).</p>
-<p><em>Context notes: Recommendations for EML usage in a specific context are
-called “context notes”, and are placed in separate paragraphs, in
-italic.</em></p>
-</div>
-<div id="definitions" class="section level2">
-<h2><span class="header-section-number">3.3</span> Definitions</h2>
-<dl>
-<dt>
-EML preparer
-</dt>
-<dd>
-the person responsible for “building” the EML metadata
-record. Generally, this is a data manager working with a project or
-physical site that produces data.
-</dd>
-<dt>
-Contributor
-</dt>
-<dd>
-the research project contributing the data package, e.g.,
-an LTER or OBFS site, or a Macrosystems project. Generally, the “EML
-preparer” works with or for the “Contributor.”
-</dd>
-<dt>
-Data package
-</dt>
-<dd>
-the EML metadata together with its entity or entities.
-This is generally the unit housed in repositories. We use this term to
-avoid confusion with the EML element “<b>dataset</b>”.
-</dd>
-</dl>
-</div>
-<div id="other-eml-resources" class="section level2">
-<h2><span class="header-section-number">3.4</span> Other EML Resources</h2>
-<p>Some sections refer to further information or tools. These can be found
-on the EDI website, under “Resources and How To…”, at
-<a href="https://environmentaldatarepository.org">https://environmentaldatarepository.org</a></p>
+<div id="intellectualrights" class="section level1">
+<h1><span class="header-section-number">12</span> intellectualRights</h1>
+<p>This element is found at this location (XPath):<br />
+<strong>/eml:eml/dataset/intellectualRights</strong></p>
+<p>&lt;<strong>intellectualRights</strong>&gt; are controlled at the source, however it is
+recommended that data be released with as few restrictions as possible.
+Each data package should contain a data access policy, plus a
+description of any deviation from the general policy specific for this
+particular package (e.g. restricted-access packages). The timeframe for
+release should be included as well.</p>
+<p><em>Context: If no</em> &lt;<strong>intellectualRights</strong>&gt; <em>element is included EDI
+will insert text that releases data under “CC-0” (shown in example). The
+LTER Network-wide default policy is “CC-BY”. Please consult those
+organizations for more information and more details.</em></p>
+<hr />
+<p>Example 10: intellectualRights</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb13-1"><a href="intellectualrights.html#cb13-1"></a><span class="kw">&lt;intellectualRights&gt;</span></span>
+<span id="cb13-2"><a href="intellectualrights.html#cb13-2"></a>   <span class="kw">&lt;section&gt;</span></span>
+<span id="cb13-3"><a href="intellectualrights.html#cb13-3"></a>      <span class="kw">&lt;title&gt;</span>Data Policy<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb13-4"><a href="intellectualrights.html#cb13-4"></a>      <span class="kw">&lt;para&gt;</span>This data package is released to the &quot;public domain&quot; under</span>
+<span id="cb13-5"><a href="intellectualrights.html#cb13-5"></a>         Creative Commons CC0 1.0 &quot;No Rights Reserved&quot; (see:</span>
+<span id="cb13-6"><a href="intellectualrights.html#cb13-6"></a>         https://creativecommons.org/publicdomain/zero/1.0/). It is considered</span>
+<span id="cb13-7"><a href="intellectualrights.html#cb13-7"></a>         professional etiquette to provide attribution of the original work if</span>
+<span id="cb13-8"><a href="intellectualrights.html#cb13-8"></a>         this data package is shared in whole or by individual components. A</span>
+<span id="cb13-9"><a href="intellectualrights.html#cb13-9"></a>         generic citation is provided for this data package on the website</span>
+<span id="cb13-10"><a href="intellectualrights.html#cb13-10"></a>         https://portal.edirepository.org (herein &quot;website&quot;) in the summary</span>
+<span id="cb13-11"><a href="intellectualrights.html#cb13-11"></a>         metadata page. Communication (and collaboration) with the creators of</span>
+<span id="cb13-12"><a href="intellectualrights.html#cb13-12"></a>         this data package is recommended to prevent duplicate research or</span>
+<span id="cb13-13"><a href="intellectualrights.html#cb13-13"></a>         publication. This data package (and its components) is made available</span>
+<span id="cb13-14"><a href="intellectualrights.html#cb13-14"></a>         &quot;as is&quot; and with no warranty of accuracy or fitness for use. The</span>
+<span id="cb13-15"><a href="intellectualrights.html#cb13-15"></a>         creators of this data package and the website shall not be liable for</span>
+<span id="cb13-16"><a href="intellectualrights.html#cb13-16"></a>         any damages resulting from misinterpretation or misuse of the data</span>
+<span id="cb13-17"><a href="intellectualrights.html#cb13-17"></a>         package or its components. Periodic updates of this data package may</span>
+<span id="cb13-18"><a href="intellectualrights.html#cb13-18"></a>         be available from the website. Thank you.<span class="kw">&lt;/para&gt;</span></span>
+<span id="cb13-19"><a href="intellectualrights.html#cb13-19"></a>   <span class="kw">&lt;/section&gt;</span></span>
+<span id="cb13-20"><a href="intellectualrights.html#cb13-20"></a><span class="kw">&lt;/intellectualRights&gt;</span></span></code></pre></div>
+<hr />
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="general-recommendations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="keywordset-and-keyword.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="distribution.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

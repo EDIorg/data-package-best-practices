@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
-  <meta name="description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <title>7 title (dataset) | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
+  <meta name="description" content="7 title (dataset) | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  <meta property="og:title" content="7 title (dataset) | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <meta property="og:description" content="7 title (dataset) | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  <meta name="twitter:title" content="7 title (dataset) | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   
-  <meta name="twitter:description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <meta name="twitter:description" content="7 title (dataset) | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   
 
 <meta name="author" content="Environmental Data Initiative" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction.html"/>
-<link rel="next" href="general-recommendations.html"/>
+<link rel="prev" href="top-level-elements.html"/>
+<link rel="next" href="people-and-organizations-parties.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -221,78 +221,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="conventions-and-definitions" class="section level1">
-<h1><span class="header-section-number">3</span> Conventions and Definitions</h1>
-<div id="audience" class="section level2">
-<h2><span class="header-section-number">3.1</span> Audience</h2>
-<p>This document is intended for data managers. It assumes that readers are familiar with</p>
-<ul>
-<li>the basic structure of an XML document, and the ability to edit in an XML
-editor like OxygenXML or XMLSpy.</li>
-<li>the process for contributing data to a repository. If you reached this
-document from a repository’s help-page, contact them for more information.</li>
-</ul>
-</div>
-<div id="fonts-and-typeface" class="section level2">
-<h2><span class="header-section-number">3.2</span> Fonts and typeface</h2>
-<p>Numbered examples of EML nodes are in fixed-width font:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="conventions-and-definitions.html#cb1-1"></a><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></span></code></pre></div>
-<p>XML element and attribute names, XPath and references to element names
-in text are in bold face. Single element names are surrounded by angle
-brackets, as they appear in XML.</p>
-<p>&lt;<strong>dataTable</strong>&gt;<br />
-<strong>/eml:eml/@packageId</strong></p>
-<p>Some recommendations have special context, e.g., an XML element or
-attribute may be requested by a community (e.g., LTER), or required by
-the EDI repository (but not by other repositories).</p>
-<p><em>Context notes: Recommendations for EML usage in a specific context are
-called “context notes”, and are placed in separate paragraphs, in
-italic.</em></p>
-</div>
-<div id="definitions" class="section level2">
-<h2><span class="header-section-number">3.3</span> Definitions</h2>
-<dl>
-<dt>
-EML preparer
-</dt>
-<dd>
-the person responsible for “building” the EML metadata
-record. Generally, this is a data manager working with a project or
-physical site that produces data.
-</dd>
-<dt>
-Contributor
-</dt>
-<dd>
-the research project contributing the data package, e.g.,
-an LTER or OBFS site, or a Macrosystems project. Generally, the “EML
-preparer” works with or for the “Contributor.”
-</dd>
-<dt>
-Data package
-</dt>
-<dd>
-the EML metadata together with its entity or entities.
-This is generally the unit housed in repositories. We use this term to
-avoid confusion with the EML element “<b>dataset</b>”.
-</dd>
-</dl>
-</div>
-<div id="other-eml-resources" class="section level2">
-<h2><span class="header-section-number">3.4</span> Other EML Resources</h2>
-<p>Some sections refer to further information or tools. These can be found
-on the EDI website, under “Resources and How To…”, at
-<a href="https://environmentaldatarepository.org">https://environmentaldatarepository.org</a></p>
+<div id="title-dataset-1" class="section level1">
+<h1><span class="header-section-number">7</span> title (dataset)</h1>
+<p>The dataset title element is found at this location (XPath):<br />
+<strong>/eml:eml/ dataset/title</strong><br />
+<strong>/eml:eml/method/methodStep/protocol/title</strong><br />
+<strong>/eml:eml/project/title</strong></p>
+<p>The dataset &lt;<strong>title</strong>&gt; should be descriptive and should mention the
+data collected, geographic context, research site, and time frame (what,
+where, and when).</p>
+<hr />
+<p>Example 3: dataset, alternateIdentifier, shortName, title</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb6-1"><a href="title-dataset-1.html#cb6-1"></a><span class="kw">&lt;dataset</span><span class="ot"> id=</span><span class="st">&quot;FLS-1&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="ot"> scope</span> <span class="ot">=</span> <span class="st">&quot;system&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb6-2"><a href="title-dataset-1.html#cb6-2"></a>   <span class="kw">&lt;alternateIdentifier&gt;</span>FLS-1<span class="kw">&lt;/alternateIdentifier&gt;</span></span>
+<span id="cb6-3"><a href="title-dataset-1.html#cb6-3"></a>   <span class="kw">&lt;shortName&gt;</span>Arthropods<span class="kw">&lt;/shortName&gt;</span></span>
+<span id="cb6-4"><a href="title-dataset-1.html#cb6-4"></a>   <span class="kw">&lt;title&gt;</span>Long-term Ground Arthropod Monitoring Dataset at Ficity, USA</span>
+<span id="cb6-5"><a href="title-dataset-1.html#cb6-5"></a>      from 1998 to 2003<span class="kw">&lt;/title&gt;</span></span></code></pre></div>
+<hr />
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="general-recommendations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="top-level-elements.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="people-and-organizations-parties.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

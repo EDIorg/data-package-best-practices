@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7 access | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
-  <meta name="description" content="7 access | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <title>8 additionalMetadata | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
+  <meta name="description" content="8 additionalMetadata | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7 access | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  <meta property="og:title" content="8 additionalMetadata | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="7 access | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <meta property="og:description" content="8 additionalMetadata | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7 access | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  <meta name="twitter:title" content="8 additionalMetadata | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   
-  <meta name="twitter:description" content="7 access | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <meta name="twitter:description" content="8 additionalMetadata | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   
 
 <meta name="author" content="Environmental Data Initiative" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="top-level-elements-1.html"/>
-<link rel="next" href="additionalmetadata.html"/>
+<link rel="prev" href="access.html"/>
+<link rel="next" href="people-and-organizations-parties.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -221,92 +221,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="access" class="section level1">
-<h1><span class="header-section-number">7</span> access</h1>
-<p>The access element is found at this location (XPath):<br />
-<strong>/eml:eml/access</strong><br />
-<strong>/eml:eml/[entityType]/physical/distribution/access</strong></p>
-<p>&lt;<strong>access</strong>&gt; contains a list of rules defining permissions for this
-metadata record and its data entity. Values must be applicable by the
-system where data is stored. Many repositories follow the KNB system of
-using access control format that conforms to the LDAP “distinguishedName
-(dn)” for an individual, as in
-“uid=FLS,o=LTER,dc=ecoinformatics,dc=org”.</p>
-<p>As of EML 2.1.0, &lt;<strong>access</strong>&gt; trees are allowed at two places: as the
-first child of the &lt;<strong>eml:eml</strong>&gt; root element (a sibling to
-&lt;<strong>dataset</strong>&gt;) for controlling access to the entire document, and in a
-<strong>physical/distribution</strong> tree for controlling access to the resource
-URL. With the exception of certain sensitive information, metadata
-should be publicly accessible. The &lt;<strong>access</strong>&gt; element is optional,
-and if omitted, the repository may presume that only the dataset
-submitter will be allowed access.</p>
+<div id="additionalmetadata" class="section level1">
+<h1><span class="header-section-number">8</span> additionalMetadata</h1>
+<p>This element tree is found at (XPath):<br />
+<strong>eml:eml/additionalMetadata</strong></p>
+<p>&lt;<strong>additionalMetadata</strong>&gt; is a flexible field for including any other
+relevant metadata that pertains to the resource being described. Its
+content must be valid XML. A unit as a &lt;<strong>customUnit</strong>&gt; must be
+described in this tree.</p>
+<p>&lt;<strong>describes</strong>&gt; (optional) is a pointer to an “id” attribute on an EML
+element (“id” described in another area). This pointer must be identical
+to the attribute it is pointing at, so that automated processes are able
+to associate &lt;<strong>additionalMetadata</strong>&gt; to the described attribute. If
+the &lt;<strong>describes</strong>&gt; element is omitted, it is assumed that the
+&lt;<strong>additionalMetadata</strong>&gt; content applies to the entire EML document.</p>
+<p>&lt;<strong>metadata</strong>&gt; contains the additional metadata to be included in the
+document. The contents can be any valid XML. This element should be used
+for extending EML to include metadata that is not already available in
+another part of the EML specification, or to include site- or
+system-specific extensions that are needed beyond the core metadata. The
+additional metadata contained in this field describes the element
+referenced in the &lt;<strong>describes</strong>&gt; element preceding it. If
+&lt;<strong>describes</strong>&gt; is not used, either &lt;<strong>metadata</strong>&gt; must contain
+sufficient information to define the association between
+&lt;<strong>additionalMetadata</strong>&gt; or the &lt;<strong>additionalMetadata</strong>&gt; can be
+presumed to apply to the entire data package.</p>
+<p>An example of “sufficient information to define the association” is the
+definition of a &lt;<strong>customUnit</strong>&gt;. The EML Parser expects to find the
+description of a &lt;<strong>customUnit</strong>&gt; in the id attribute of a
+&lt;<strong>unit</strong>&gt; element in a &lt;<strong>unitList</strong>&gt;, i.e., at
+/eml:eml/additionalMetadata/metadata/unitList/unit. For example,
+<code>"stmml:unit id="siemensPerMeter"</code> points at the &lt;<strong>customUnit</strong>&gt;
+<code>"siemensPerMeter"</code>. The EML Parser is available from GitHub, with the EML
+project. For descriptions of custom units see “Other Resources”.</p>
 <hr />
-<p>Example 2: access</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb3-1"><a href="access.html#cb3-1"></a><span class="kw">&lt;access</span><span class="ot"> authSystem=</span><span class="st">&quot;knb&quot;</span><span class="ot"> order=</span><span class="st">&quot;allowFirst&quot;</span><span class="ot"> scope=</span><span class="st">&quot;document&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb3-2"><a href="access.html#cb3-2"></a>   <span class="kw">&lt;allow&gt;</span></span>
-<span id="cb3-3"><a href="access.html#cb3-3"></a>      <span class="kw">&lt;principal&gt;</span>uid=FLS,o=lter,dc=ecoinformatics,dc=org<span class="kw">&lt;/principal&gt;</span></span>
-<span id="cb3-4"><a href="access.html#cb3-4"></a>      <span class="kw">&lt;permission&gt;</span>all<span class="kw">&lt;/permission&gt;</span></span>
-<span id="cb3-5"><a href="access.html#cb3-5"></a>   <span class="kw">&lt;/allow&gt;</span></span>
-<span id="cb3-6"><a href="access.html#cb3-6"></a>   <span class="kw">&lt;allow&gt;</span></span>
-<span id="cb3-7"><a href="access.html#cb3-7"></a>      <span class="kw">&lt;principal&gt;</span>public<span class="kw">&lt;/principal&gt;</span></span>
-<span id="cb3-8"><a href="access.html#cb3-8"></a>      <span class="kw">&lt;permission&gt;</span>read<span class="kw">&lt;/permission&gt;</span></span>
-<span id="cb3-9"><a href="access.html#cb3-9"></a>   <span class="kw">&lt;/allow&gt;</span></span>
-<span id="cb3-10"><a href="access.html#cb3-10"></a><span class="kw">&lt;/access&gt;</span></span></code></pre></div>
+<p>Example 25: additionalMetadata custom unit</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb5-1"><a href="additionalmetadata.html#cb5-1"></a><span class="kw">&lt;additionalMetadata&gt;</span></span>
+<span id="cb5-2"><a href="additionalmetadata.html#cb5-2"></a>   <span class="kw">&lt;metadata&gt;</span></span>
+<span id="cb5-3"><a href="additionalmetadata.html#cb5-3"></a>      <span class="kw">&lt;stmml:unitList&gt;</span></span>
+<span id="cb5-4"><a href="additionalmetadata.html#cb5-4"></a>         <span class="kw">&lt;stmml:unit</span><span class="ot"> id=</span><span class="st">&quot;siemensPerMeter&quot;</span><span class="ot"> name=</span><span class="st">&quot;siemensPerMeter&quot;</span><span class="ot"> abbreviation=</span><span class="st">&quot;S/m&quot;</span> </span>
+<span id="cb5-5"><a href="additionalmetadata.html#cb5-5"></a><span class="ot">         unitType=</span><span class="st">&quot;conductance&quot;</span><span class="ot"> parentSI=</span><span class="st">&quot;siemen&quot;</span><span class="ot"> multiplierToSI=</span><span class="st">&quot;1&quot;</span><span class="ot"> constantToSI=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb5-6"><a href="additionalmetadata.html#cb5-6"></a>            <span class="kw">&lt;stmml:description&gt;</span>conductivity unit<span class="kw">&lt;/stmml:description&gt;</span></span>
+<span id="cb5-7"><a href="additionalmetadata.html#cb5-7"></a>         <span class="kw">&lt;/stmml:unit&gt;</span></span>
+<span id="cb5-8"><a href="additionalmetadata.html#cb5-8"></a>      <span class="kw">&lt;/stmml:unitList&gt;</span></span>
+<span id="cb5-9"><a href="additionalmetadata.html#cb5-9"></a>   <span class="kw">&lt;/metadata&gt;</span></span>
+<span id="cb5-10"><a href="additionalmetadata.html#cb5-10"></a><span class="kw">&lt;/additionalMetadata&gt;</span></span></code></pre></div>
 <hr />
 
-<div id="dataset" class="section level2">
-<h2><span class="header-section-number">7.1</span> dataset</h2>
-<p>This element is found at these locations (XPath):<br />
-<strong>/eml:eml/dataset</strong></p>
-<p>Under &lt;<strong>dataset</strong>&gt;, the following elements are available. Some are
-optional, but if they appear, this order is enforced by the schema.
-Generally, the recommendations are presented here in this order, with
-the exception of elements related to people and organizations which are
-grouped together so that the distinctions between the uses of those
-elements are clear. Elements that can appear at different levels within
-an EML file are discussed at their first appearance, or highest level.</p>
-<p>&lt;<strong>alternateIdentifer</strong>&gt;<br />
-&lt;<strong>shortName</strong>&gt;<br />
-&lt;<strong>title</strong>&gt;<br />
-&lt;<strong>creator</strong>&gt;<br />
-&lt;<strong>metadataProvider</strong>&gt;<br />
-&lt;<strong>associatedParty</strong>&gt;<br />
-&lt;<strong>pubDate</strong>&gt;<br />
-&lt;<strong>language</strong>&gt;<br />
-&lt;<strong>series</strong>&gt;<br />
-&lt;<strong>abstract</strong>&gt;<br />
-&lt;<strong>keywordSet</strong>&gt;<br />
-&lt;<strong>additionalInfo</strong>&gt;<br />
-&lt;<strong>intellectualRights</strong>&gt;<br />
-&lt;<strong>distribution</strong>&gt;<br />
-&lt;<strong>coverage</strong>&gt;<br />
-&lt;<strong>purpose</strong> &gt;<br />
-&lt;<strong>maintenance</strong>&gt;<br />
-&lt;<strong>contact</strong>&gt;<br />
-&lt;<strong>publisher</strong>&gt;<br />
-&lt;<strong>pubPlace</strong>&gt;<br />
-&lt;<strong>project</strong>&gt;</p>
-<p>These elements are then followed by one or more elements for the data
-entity (or entities), designated by choosing:</p>
-<p>[ <strong>dataTable</strong> | <strong>spatialRaster</strong> | <strong>spatialVector</strong> |
-<strong>storedProcedure</strong> | <strong>view</strong> | <strong>otherEntity</strong> ]</p>
-<div id="alternateidentifier" class="section level3">
-<h3><span class="header-section-number">7.1.1</span> alternateIdentifier</h3>
-<p>The alternateIdentifier element is found at this location (XPath):<br />
-<strong>/eml:eml/ dataset/alternateIdentifier</strong><br />
-<strong>/eml:eml/ dataset/[entity]/alternateIdentifier</strong></p>
-<p>The contributing organization’s local data set identifier should be
-listed as the EML &lt;<strong>alternateIdentifier</strong>&gt;, particularly when it
-differs from the “<strong>packageId</strong>” attribute in the &lt;<strong>eml:eml</strong>&gt;
-element. The &lt;<strong>alternateIdentifier</strong>&gt; should also be used to denote
-that a package belongs to more than contributing organization by
-including each individual ID in a separate &lt;<strong>alternateIdentifier</strong>&gt;
-tag. At the entity level, the &lt;<strong>alternateIdentifier</strong>&gt; should contain
-an alternate name for the data table (or other entity) itself (see
-additional comments under entities, below.)</p>
-</div>
-<div id="title-dataset" class="section level3">
-<h3><span class="header-section-number">7.1.2</span> title (dataset)</h3>
+<div id="title-dataset-1" class="section level3">
+<h3><span class="header-section-number">8.0.1</span> title (dataset)</h3>
 <p>The dataset title element is found at this location (XPath):<br />
 <strong>/eml:eml/ dataset/title</strong><br />
 <strong>/eml:eml/method/methodStep/protocol/title</strong><br />
@@ -316,14 +279,13 @@ data collected, geographic context, research site, and time frame (what,
 where, and when).</p>
 <hr />
 <p>Example 3: dataset, alternateIdentifier, shortName, title</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb4-1"><a href="access.html#cb4-1"></a><span class="kw">&lt;dataset</span><span class="ot"> id=</span><span class="st">&quot;FLS-1&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="ot"> scope</span> <span class="ot">=</span> <span class="st">&quot;system&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb4-2"><a href="access.html#cb4-2"></a>   <span class="kw">&lt;alternateIdentifier&gt;</span>FLS-1<span class="kw">&lt;/alternateIdentifier&gt;</span></span>
-<span id="cb4-3"><a href="access.html#cb4-3"></a>   <span class="kw">&lt;shortName&gt;</span>Arthropods<span class="kw">&lt;/shortName&gt;</span></span>
-<span id="cb4-4"><a href="access.html#cb4-4"></a>   <span class="kw">&lt;title&gt;</span>Long-term Ground Arthropod Monitoring Dataset at Ficity, USA</span>
-<span id="cb4-5"><a href="access.html#cb4-5"></a>      from 1998 to 2003<span class="kw">&lt;/title&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb6-1"><a href="additionalmetadata.html#cb6-1"></a><span class="kw">&lt;dataset</span><span class="ot"> id=</span><span class="st">&quot;FLS-1&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="ot"> scope</span> <span class="ot">=</span> <span class="st">&quot;system&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb6-2"><a href="additionalmetadata.html#cb6-2"></a>   <span class="kw">&lt;alternateIdentifier&gt;</span>FLS-1<span class="kw">&lt;/alternateIdentifier&gt;</span></span>
+<span id="cb6-3"><a href="additionalmetadata.html#cb6-3"></a>   <span class="kw">&lt;shortName&gt;</span>Arthropods<span class="kw">&lt;/shortName&gt;</span></span>
+<span id="cb6-4"><a href="additionalmetadata.html#cb6-4"></a>   <span class="kw">&lt;title&gt;</span>Long-term Ground Arthropod Monitoring Dataset at Ficity, USA</span>
+<span id="cb6-5"><a href="additionalmetadata.html#cb6-5"></a>      from 1998 to 2003<span class="kw">&lt;/title&gt;</span></span></code></pre></div>
 <hr />
 
-</div>
 </div>
 </div>
             </section>
@@ -331,8 +293,8 @@ where, and when).</p>
           </div>
         </div>
       </div>
-<a href="top-level-elements-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="additionalmetadata.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="access.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="people-and-organizations-parties.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

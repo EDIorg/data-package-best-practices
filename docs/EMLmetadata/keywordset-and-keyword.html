@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
-  <meta name="description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <title>11 keywordSet and keyword | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
+  <meta name="description" content="11 keywordSet and keyword | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  <meta property="og:title" content="11 keywordSet and keyword | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <meta property="og:description" content="11 keywordSet and keyword | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  <meta name="twitter:title" content="11 keywordSet and keyword | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   
-  <meta name="twitter:description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <meta name="twitter:description" content="11 keywordSet and keyword | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   
 
 <meta name="author" content="Environmental Data Initiative" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction.html"/>
-<link rel="next" href="general-recommendations.html"/>
+<link rel="prev" href="abstract.html"/>
+<link rel="next" href="intellectualrights.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -221,78 +221,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="conventions-and-definitions" class="section level1">
-<h1><span class="header-section-number">3</span> Conventions and Definitions</h1>
-<div id="audience" class="section level2">
-<h2><span class="header-section-number">3.1</span> Audience</h2>
-<p>This document is intended for data managers. It assumes that readers are familiar with</p>
-<ul>
-<li>the basic structure of an XML document, and the ability to edit in an XML
-editor like OxygenXML or XMLSpy.</li>
-<li>the process for contributing data to a repository. If you reached this
-document from a repository’s help-page, contact them for more information.</li>
-</ul>
-</div>
-<div id="fonts-and-typeface" class="section level2">
-<h2><span class="header-section-number">3.2</span> Fonts and typeface</h2>
-<p>Numbered examples of EML nodes are in fixed-width font:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="conventions-and-definitions.html#cb1-1"></a><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></span></code></pre></div>
-<p>XML element and attribute names, XPath and references to element names
-in text are in bold face. Single element names are surrounded by angle
-brackets, as they appear in XML.</p>
-<p>&lt;<strong>dataTable</strong>&gt;<br />
-<strong>/eml:eml/@packageId</strong></p>
-<p>Some recommendations have special context, e.g., an XML element or
-attribute may be requested by a community (e.g., LTER), or required by
-the EDI repository (but not by other repositories).</p>
-<p><em>Context notes: Recommendations for EML usage in a specific context are
-called “context notes”, and are placed in separate paragraphs, in
-italic.</em></p>
-</div>
-<div id="definitions" class="section level2">
-<h2><span class="header-section-number">3.3</span> Definitions</h2>
-<dl>
-<dt>
-EML preparer
-</dt>
-<dd>
-the person responsible for “building” the EML metadata
-record. Generally, this is a data manager working with a project or
-physical site that produces data.
-</dd>
-<dt>
-Contributor
-</dt>
-<dd>
-the research project contributing the data package, e.g.,
-an LTER or OBFS site, or a Macrosystems project. Generally, the “EML
-preparer” works with or for the “Contributor.”
-</dd>
-<dt>
-Data package
-</dt>
-<dd>
-the EML metadata together with its entity or entities.
-This is generally the unit housed in repositories. We use this term to
-avoid confusion with the EML element “<b>dataset</b>”.
-</dd>
-</dl>
-</div>
-<div id="other-eml-resources" class="section level2">
-<h2><span class="header-section-number">3.4</span> Other EML Resources</h2>
-<p>Some sections refer to further information or tools. These can be found
-on the EDI website, under “Resources and How To…”, at
-<a href="https://environmentaldatarepository.org">https://environmentaldatarepository.org</a></p>
+<div id="keywordset-and-keyword" class="section level1">
+<h1><span class="header-section-number">11</span> keywordSet and keyword</h1>
+<p>This element is found at these locations (XPath):<br />
+<strong>/eml:eml/dataset/keywordSet</strong><br />
+<strong>/eml:eml/dataset/project/keywordSet</strong></p>
+<p>It is recommended that meaningful sets of keywords each be contained
+within &lt;<strong>keywordSet</strong>&gt; tag. Use one &lt;<strong>keywordSet</strong>&gt; for a group of
+terms identifying the contributing organization(s), e.g., the LTER or
+OBFS site, LTREB or Macrosystems project , which is especially if data
+are co-funded or funding is leveraged. Meaningful geographic place names
+also are appropriate (e.g. state, city, county). If groups of keywords
+are from a specific vocabulary, its name belongs the optional tag
+&lt;<strong>keywordThesaurus</strong>&gt;.</p>
+<p><em>Context: Communities sometimes have specific requests for keywords to
+assist in searches. E.g, the LTER requests that keywords should include
+a LTER core research area(s), the network acronym (LTER, ILTER, etc.),
+three-letter site acronym and site name. In addition to specific
+keywords, relevant conceptual keywords should also be included, e.g.,
+from the LTER Controlled Vocabulary.</em></p>
+<hr />
+<p>Example 9: pubDate, abstract,keywordSet, keyword</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb12-1"><a href="keywordset-and-keyword.html#cb12-1"></a><span class="kw">&lt;pubDate&gt;</span>2014<span class="kw">&lt;/pubDate&gt;</span></span>
+<span id="cb12-2"><a href="keywordset-and-keyword.html#cb12-2"></a><span class="kw">&lt;abstract&gt;</span></span>
+<span id="cb12-3"><a href="keywordset-and-keyword.html#cb12-3"></a>   <span class="kw">&lt;para&gt;</span>Ground arthropods communities are monitored in different</span>
+<span id="cb12-4"><a href="keywordset-and-keyword.html#cb12-4"></a>      habitats in a rapidly changing environment. The arthropods are</span>
+<span id="cb12-5"><a href="keywordset-and-keyword.html#cb12-5"></a>      collected in traps four times a year in ten locations and determined</span>
+<span id="cb12-6"><a href="keywordset-and-keyword.html#cb12-6"></a>      as far as possible to family, genus or species.<span class="kw">&lt;/para&gt;</span></span>
+<span id="cb12-7"><a href="keywordset-and-keyword.html#cb12-7"></a><span class="kw">&lt;/abstract&gt;</span></span>
+<span id="cb12-8"><a href="keywordset-and-keyword.html#cb12-8"></a><span class="kw">&lt;keywordSet&gt;</span></span>
+<span id="cb12-9"><a href="keywordset-and-keyword.html#cb12-9"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;place&quot;</span><span class="kw">&gt;</span>City<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-10"><a href="keywordset-and-keyword.html#cb12-10"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;place&quot;</span><span class="kw">&gt;</span>State<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-11"><a href="keywordset-and-keyword.html#cb12-11"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;place&quot;</span><span class="kw">&gt;</span>Region<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-12"><a href="keywordset-and-keyword.html#cb12-12"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;place&quot;</span><span class="kw">&gt;</span>County<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-13"><a href="keywordset-and-keyword.html#cb12-13"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>FLS<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-14"><a href="keywordset-and-keyword.html#cb12-14"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>Fictitious LTER Site<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-15"><a href="keywordset-and-keyword.html#cb12-15"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>LTER<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-16"><a href="keywordset-and-keyword.html#cb12-16"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>Arthropods<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-17"><a href="keywordset-and-keyword.html#cb12-17"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>Richness<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-18"><a href="keywordset-and-keyword.html#cb12-18"></a>   <span class="kw">&lt;keywordThesaurus&gt;</span>FLS site thesaurus<span class="kw">&lt;/keywordThesaurus&gt;</span></span>
+<span id="cb12-19"><a href="keywordset-and-keyword.html#cb12-19"></a><span class="kw">&lt;/keywordSet&gt;</span></span>
+<span id="cb12-20"><a href="keywordset-and-keyword.html#cb12-20"></a><span class="kw">&lt;keywordSet&gt;</span></span>
+<span id="cb12-21"><a href="keywordset-and-keyword.html#cb12-21"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>ecology<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-22"><a href="keywordset-and-keyword.html#cb12-22"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>biodiversity<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-23"><a href="keywordset-and-keyword.html#cb12-23"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>population dynamics<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-24"><a href="keywordset-and-keyword.html#cb12-24"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>terrestrial<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-25"><a href="keywordset-and-keyword.html#cb12-25"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>arthropods<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-26"><a href="keywordset-and-keyword.html#cb12-26"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>pitfall trap<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-27"><a href="keywordset-and-keyword.html#cb12-27"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>monitoring<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-28"><a href="keywordset-and-keyword.html#cb12-28"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>abundance<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-29"><a href="keywordset-and-keyword.html#cb12-29"></a>   <span class="kw">&lt;keywordThesaurus&gt;</span>LTER controlled vocabulary<span class="kw">&lt;/keywordThesaurus&gt;</span></span>
+<span id="cb12-30"><a href="keywordset-and-keyword.html#cb12-30"></a><span class="kw">&lt;/keywordSet&gt;</span></span>
+<span id="cb12-31"><a href="keywordset-and-keyword.html#cb12-31"></a><span class="kw">&lt;keywordSet&gt;</span></span>
+<span id="cb12-32"><a href="keywordset-and-keyword.html#cb12-32"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>populations<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-33"><a href="keywordset-and-keyword.html#cb12-33"></a>   <span class="kw">&lt;keywordThesaurus&gt;</span>LTER core research areas<span class="kw">&lt;/keywordThesaurus&gt;</span></span>
+<span id="cb12-34"><a href="keywordset-and-keyword.html#cb12-34"></a><span class="kw">&lt;/keywordSet&gt;</span></span></code></pre></div>
+<hr />
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="general-recommendations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="abstract.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intellectualrights.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
-  <meta name="description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <title>17 project | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
+  <meta name="description" content="17 project | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  <meta property="og:title" content="17 project | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <meta property="og:description" content="17 project | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  <meta name="twitter:title" content="17 project | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   
-  <meta name="twitter:description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <meta name="twitter:description" content="17 project | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   
 
 <meta name="author" content="Environmental Data Initiative" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction.html"/>
-<link rel="next" href="general-recommendations.html"/>
+<link rel="prev" href="methods.html"/>
+<link rel="next" href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -221,78 +221,92 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="conventions-and-definitions" class="section level1">
-<h1><span class="header-section-number">3</span> Conventions and Definitions</h1>
-<div id="audience" class="section level2">
-<h2><span class="header-section-number">3.1</span> Audience</h2>
-<p>This document is intended for data managers. It assumes that readers are familiar with</p>
-<ul>
-<li>the basic structure of an XML document, and the ability to edit in an XML
-editor like OxygenXML or XMLSpy.</li>
-<li>the process for contributing data to a repository. If you reached this
-document from a repository’s help-page, contact them for more information.</li>
-</ul>
-</div>
-<div id="fonts-and-typeface" class="section level2">
-<h2><span class="header-section-number">3.2</span> Fonts and typeface</h2>
-<p>Numbered examples of EML nodes are in fixed-width font:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="conventions-and-definitions.html#cb1-1"></a><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></span></code></pre></div>
-<p>XML element and attribute names, XPath and references to element names
-in text are in bold face. Single element names are surrounded by angle
-brackets, as they appear in XML.</p>
-<p>&lt;<strong>dataTable</strong>&gt;<br />
-<strong>/eml:eml/@packageId</strong></p>
-<p>Some recommendations have special context, e.g., an XML element or
-attribute may be requested by a community (e.g., LTER), or required by
-the EDI repository (but not by other repositories).</p>
-<p><em>Context notes: Recommendations for EML usage in a specific context are
-called “context notes”, and are placed in separate paragraphs, in
-italic.</em></p>
-</div>
-<div id="definitions" class="section level2">
-<h2><span class="header-section-number">3.3</span> Definitions</h2>
-<dl>
-<dt>
-EML preparer
-</dt>
-<dd>
-the person responsible for “building” the EML metadata
-record. Generally, this is a data manager working with a project or
-physical site that produces data.
-</dd>
-<dt>
-Contributor
-</dt>
-<dd>
-the research project contributing the data package, e.g.,
-an LTER or OBFS site, or a Macrosystems project. Generally, the “EML
-preparer” works with or for the “Contributor.”
-</dd>
-<dt>
-Data package
-</dt>
-<dd>
-the EML metadata together with its entity or entities.
-This is generally the unit housed in repositories. We use this term to
-avoid confusion with the EML element “<b>dataset</b>”.
-</dd>
-</dl>
-</div>
-<div id="other-eml-resources" class="section level2">
-<h2><span class="header-section-number">3.4</span> Other EML Resources</h2>
-<p>Some sections refer to further information or tools. These can be found
-on the EDI website, under “Resources and How To…”, at
-<a href="https://environmentaldatarepository.org">https://environmentaldatarepository.org</a></p>
+<div id="project" class="section level1">
+<h1><span class="header-section-number">17</span> project</h1>
+<p>This element is found at this location (XPath):<br />
+<strong>/eml:eml/dataset/project</strong></p>
+<p><strong>General information</strong>: EML is one of the few specifications
+with a detailed tree dedicated to projects, and which can be nested,
+using &lt;<strong>relatedProject</strong>&gt; At its simplest, a &lt;<strong>project</strong>&gt; tree can
+hold a general descriptions of the project sponsoring the data package
+and nested if smaller sub-projects. A related project Minimally, the
+description of a project should include &lt;<strong>title</strong>&gt;, &lt;<strong>personnel</strong>&gt;
+and &lt;<strong>abstract</strong>&gt;, with the study area description and mission
+statement. The &lt;<strong>distribution</strong>&gt; tree should link to the project’s
+home page, or alternatively could link to a publication describing the
+project. As stated earlier, the description of elements that are reused
+(e.g., XML types) are discussed where they first appear, so the
+descriptions for these three elements (&lt;<strong>title</strong>&gt;, &lt;<strong>personnel</strong>&gt;
+and &lt;<strong>abstract</strong>&gt;) can be found above, under &lt;<strong>dataset</strong>&gt;, above.
+Two elements are unique to the &lt;<strong>project</strong>&gt; tree,
+&lt;<strong>fundingSource</strong>&gt; and &lt;<strong>studyAreaDiscription</strong>&gt;.</p>
+<p>&lt;<strong>fundingSource</strong>&gt; should contain the agency and grant number. It is
+not optional.</p>
+<p>&lt;<strong>studyAreaDiscription</strong>&gt; tree and its accompanying &lt;<strong>citation</strong>&gt;
+tree are optional, and may be used to describe non-coverage
+characteristics of the study area such as climate, geology or
+disturbances or references to citable biological or geophysical
+classification systems such as the Bailey Ecoregions or the Holdridge
+Life Zones. The <strong>studyAreaDiscription</strong> tree also supports multiple
+&lt;<strong>coverage</strong>&gt; elements that can be used to describe the geographic
+boundaries of individual study sites within the larger area. These can
+be referenced by the
+<strong>studyExtent/spatialSamplingUnits/referencedEntityId</strong>. The sibling
+&lt;<strong>descriptor</strong>&gt; tag can be used for text descriptions of the site.</p>
+<hr />
+<p>Example 19: project</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb22-1"><a href="project.html#cb22-1"></a><span class="kw">&lt;project&gt;</span></span>
+<span id="cb22-2"><a href="project.html#cb22-2"></a>   <span class="kw">&lt;title&gt;</span>FSL basic monitoring program<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb22-3"><a href="project.html#cb22-3"></a>   <span class="kw">&lt;personnel</span><span class="ot"> id=</span><span class="st">&quot;pers-30&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb22-4"><a href="project.html#cb22-4"></a>      <span class="kw">&lt;individualName&gt;</span></span>
+<span id="cb22-5"><a href="project.html#cb22-5"></a>         <span class="kw">&lt;salutation&gt;</span>Dr.<span class="kw">&lt;/salutation&gt;</span></span>
+<span id="cb22-6"><a href="project.html#cb22-6"></a>         <span class="kw">&lt;givenName&gt;</span>Eva<span class="kw">&lt;/givenName&gt;</span></span>
+<span id="cb22-7"><a href="project.html#cb22-7"></a>         <span class="kw">&lt;givenName&gt;</span>M.<span class="kw">&lt;/givenName&gt;</span></span>
+<span id="cb22-8"><a href="project.html#cb22-8"></a>         <span class="kw">&lt;surName&gt;</span>Scientist<span class="kw">&lt;/surName&gt;</span></span>
+<span id="cb22-9"><a href="project.html#cb22-9"></a>      <span class="kw">&lt;/individualName&gt;</span></span>
+<span id="cb22-10"><a href="project.html#cb22-10"></a>      <span class="kw">&lt;address&gt;</span></span>
+<span id="cb22-11"><a href="project.html#cb22-11"></a>         <span class="kw">&lt;deliveryPoint&gt;</span>Department of Ecology<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb22-12"><a href="project.html#cb22-12"></a>         <span class="kw">&lt;deliveryPoint&gt;</span>Fictitious State University<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb22-13"><a href="project.html#cb22-13"></a>         <span class="kw">&lt;deliveryPoint&gt;</span>PO Box 111111<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb22-14"><a href="project.html#cb22-14"></a>         <span class="kw">&lt;city&gt;</span>Ficity<span class="kw">&lt;/city&gt;</span></span>
+<span id="cb22-15"><a href="project.html#cb22-15"></a>         <span class="kw">&lt;administrativeArea&gt;</span>FI<span class="kw">&lt;/administrativeArea&gt;</span></span>
+<span id="cb22-16"><a href="project.html#cb22-16"></a>         <span class="kw">&lt;postalCode&gt;</span>11111-1111<span class="kw">&lt;/postalCode&gt;</span></span>
+<span id="cb22-17"><a href="project.html#cb22-17"></a>      <span class="kw">&lt;/address&gt;</span></span>
+<span id="cb22-18"><a href="project.html#cb22-18"></a>      <span class="kw">&lt;role&gt;</span>principalInvestigator<span class="kw">&lt;/role&gt;</span></span>
+<span id="cb22-19"><a href="project.html#cb22-19"></a>   <span class="kw">&lt;/personnel&gt;</span></span>
+<span id="cb22-20"><a href="project.html#cb22-20"></a>   <span class="kw">&lt;personnel</span><span class="ot"> id=</span><span class="st">&quot;pers-130&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb22-21"><a href="project.html#cb22-21"></a>      <span class="kw">&lt;individualName&gt;</span></span>
+<span id="cb22-22"><a href="project.html#cb22-22"></a>         <span class="kw">&lt;givenName&gt;</span>Monica<span class="kw">&lt;/givenName&gt;</span></span>
+<span id="cb22-23"><a href="project.html#cb22-23"></a>         <span class="kw">&lt;givenName&gt;</span>D.<span class="kw">&lt;/givenName&gt;</span></span>
+<span id="cb22-24"><a href="project.html#cb22-24"></a>         <span class="kw">&lt;surName&gt;</span>Techy<span class="kw">&lt;/surName&gt;</span></span>
+<span id="cb22-25"><a href="project.html#cb22-25"></a>      <span class="kw">&lt;/individualName&gt;</span></span>
+<span id="cb22-26"><a href="project.html#cb22-26"></a>      <span class="kw">&lt;address&gt;</span></span>
+<span id="cb22-27"><a href="project.html#cb22-27"></a>         <span class="kw">&lt;deliveryPoint&gt;</span>Department for Ecology<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb22-28"><a href="project.html#cb22-28"></a>         <span class="kw">&lt;deliveryPoint&gt;</span>Fictitious State University<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb22-29"><a href="project.html#cb22-29"></a>         <span class="kw">&lt;deliveryPoint&gt;</span>PO Box 111111<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb22-30"><a href="project.html#cb22-30"></a>         <span class="kw">&lt;city&gt;</span>Ficity<span class="kw">&lt;/city&gt;</span></span>
+<span id="cb22-31"><a href="project.html#cb22-31"></a>         <span class="kw">&lt;administrativeArea&gt;</span>FI<span class="kw">&lt;/administrativeArea&gt;</span></span>
+<span id="cb22-32"><a href="project.html#cb22-32"></a>         <span class="kw">&lt;postalCode&gt;</span>11111-1111<span class="kw">&lt;/postalCode&gt;</span></span>
+<span id="cb22-33"><a href="project.html#cb22-33"></a>      <span class="kw">&lt;/address&gt;</span></span>
+<span id="cb22-34"><a href="project.html#cb22-34"></a>      <span class="kw">&lt;role&gt;</span>principalInvestigator<span class="kw">&lt;/role&gt;</span></span>
+<span id="cb22-35"><a href="project.html#cb22-35"></a>   <span class="kw">&lt;/personnel&gt;</span></span>
+<span id="cb22-36"><a href="project.html#cb22-36"></a>   <span class="kw">&lt;abstract&gt;</span></span>
+<span id="cb22-37"><a href="project.html#cb22-37"></a>      <span class="kw">&lt;para&gt;</span>The FLS basic monitoring program consists of monitoring of</span>
+<span id="cb22-38"><a href="project.html#cb22-38"></a>         arthropod populations, plant net primary productivity, and bird</span>
+<span id="cb22-39"><a href="project.html#cb22-39"></a>         populations. Monitoring takes place at 3 locations, 4 times a year.</span>
+<span id="cb22-40"><a href="project.html#cb22-40"></a>         Climate parameters a continuously measured at all stations.<span class="kw">&lt;/para&gt;</span></span>
+<span id="cb22-41"><a href="project.html#cb22-41"></a>   <span class="kw">&lt;/abstract&gt;</span></span>
+<span id="cb22-42"><a href="project.html#cb22-42"></a><span class="kw">&lt;/project&gt;</span></span></code></pre></div>
+<hr />
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="general-recommendations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

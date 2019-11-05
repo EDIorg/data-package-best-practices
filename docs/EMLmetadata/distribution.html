@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
-  <meta name="description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <title>13 distribution | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
+  <meta name="description" content="13 distribution | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  <meta property="og:title" content="13 distribution | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <meta property="og:description" content="13 distribution | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  <meta name="twitter:title" content="13 distribution | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   
-  <meta name="twitter:description" content="3 Conventions and Definitions | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <meta name="twitter:description" content="13 distribution | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   
 
 <meta name="author" content="Environmental Data Initiative" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction.html"/>
-<link rel="next" href="general-recommendations.html"/>
+<link rel="prev" href="intellectualrights.html"/>
+<link rel="next" href="coverage.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -221,68 +221,79 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="conventions-and-definitions" class="section level1">
-<h1><span class="header-section-number">3</span> Conventions and Definitions</h1>
-<div id="audience" class="section level2">
-<h2><span class="header-section-number">3.1</span> Audience</h2>
-<p>This document is intended for data managers. It assumes that readers are familiar with</p>
-<ul>
-<li>the basic structure of an XML document, and the ability to edit in an XML
-editor like OxygenXML or XMLSpy.</li>
-<li>the process for contributing data to a repository. If you reached this
-document from a repository’s help-page, contact them for more information.</li>
-</ul>
+<div id="distribution" class="section level1">
+<h1><span class="header-section-number">13</span> distribution</h1>
+<p>This element is found at these locations (XPath):<br />
+<strong>/eml:eml/dataset/distribution</strong><br />
+<strong>/eml:eml/dataset/[entity]/physical/distribution</strong></p>
+<p>The &lt;<strong>distribution</strong>&gt; element can appear at both the dataset and
+entity levels.</p>
+<div id="dataset-level" class="section level2">
+<h2><span class="header-section-number">13.1</span> Dataset level</h2>
+<p>At the dataset level, the <code>&lt;distribution&gt;</code> element should be used for information only,
+because it applies to the entire package, not only to one entity.</p>
+<p><em>Context: The EDI repository will ignore a <code>&lt;distribution&gt;</code> element
+at the dataset level.</em></p>
 </div>
-<div id="fonts-and-typeface" class="section level2">
-<h2><span class="header-section-number">3.2</span> Fonts and typeface</h2>
-<p>Numbered examples of EML nodes are in fixed-width font:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="conventions-and-definitions.html#cb1-1"></a><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></span></code></pre></div>
-<p>XML element and attribute names, XPath and references to element names
-in text are in bold face. Single element names are surrounded by angle
-brackets, as they appear in XML.</p>
-<p>&lt;<strong>dataTable</strong>&gt;<br />
-<strong>/eml:eml/@packageId</strong></p>
-<p>Some recommendations have special context, e.g., an XML element or
-attribute may be requested by a community (e.g., LTER), or required by
-the EDI repository (but not by other repositories).</p>
-<p><em>Context notes: Recommendations for EML usage in a specific context are
-called “context notes”, and are placed in separate paragraphs, in
-italic.</em></p>
-</div>
-<div id="definitions" class="section level2">
-<h2><span class="header-section-number">3.3</span> Definitions</h2>
-<dl>
-<dt>
-EML preparer
-</dt>
-<dd>
-the person responsible for “building” the EML metadata
-record. Generally, this is a data manager working with a project or
-physical site that produces data.
-</dd>
-<dt>
-Contributor
-</dt>
-<dd>
-the research project contributing the data package, e.g.,
-an LTER or OBFS site, or a Macrosystems project. Generally, the “EML
-preparer” works with or for the “Contributor.”
-</dd>
-<dt>
-Data package
-</dt>
-<dd>
-the EML metadata together with its entity or entities.
-This is generally the unit housed in repositories. We use this term to
-avoid confusion with the EML element “<b>dataset</b>”.
-</dd>
-</dl>
-</div>
-<div id="other-eml-resources" class="section level2">
-<h2><span class="header-section-number">3.4</span> Other EML Resources</h2>
-<p>Some sections refer to further information or tools. These can be found
-on the EDI website, under “Resources and How To…”, at
-<a href="https://environmentaldatarepository.org">https://environmentaldatarepository.org</a></p>
+<div id="entity-level" class="section level2">
+<h2><span class="header-section-number">13.2</span> Entity level</h2>
+<p>The entity-level <code>&lt;distribution&gt;</code> element contains information on how that
+specific data entity (e.g., data table) can be accessed. The &lt;<strong>distribution</strong>&gt; element
+has one of three children for describing the location of the resource:
+&lt;<strong>online</strong>&gt;, &lt;<strong>offline</strong>&gt;, and &lt;<strong>inline</strong>&gt;.</p>
+<p><strong>Offline Data</strong>: Use the &lt;<strong>offline</strong>&gt; element to describe
+restricted access data or data that is not available online. The minimum
+that should be included is the &lt;<strong>mediumName</strong>&gt; tag, if using the
+&lt;<strong>offline</strong>&gt; element.</p>
+<p><strong>Inline Data</strong>: The &lt;<strong>inline</strong>&gt; element contains data that
+is stored directly within the EML document. Data included as text or
+string will be parsed. If data are not to be parsed, encode them as
+“CDATA sections,” by surrounding them with “<code>&lt;![CDATA[</code>” and “<code>]]&gt;</code>”
+tags.</p>
+<p><strong>Online Data</strong>: The &lt;<strong>online</strong>&gt; element has two sub
+elements, &lt;<strong>url</strong>&gt;, and &lt;<strong>onlineDescription</strong>&gt; (optional).
+&lt;<strong>url</strong>&gt; tags may have an optional attribute named <strong>function</strong>,
+which may be set to either “download” or “information”. If the
+“function” attribute is omitted, then “download” is implied.</p>
+<p><strong>@function=“download”</strong>: accessing the URL directly returns the data
+stream</p>
+<p><strong>@function=“information”</strong>: URL leads to a data catalog, intended-use
+page, or other page that provides information about downloading the
+object but does not directly return the data stream, then the
+“function” attribute should be set to “information”.</p>
+<p><em>Context: for am EML data package to be accepted into the EDI
+repository, it must include at least one URL; at the entity level (e.g.,
+a dataTable at /eml:eml/dataset/dataTable/physical/distribution/url).
+The URL must include the function attribute with the value “download”
+(or empty, i.e., defaults to “download”).</em></p>
+<p><em>Context: The EDI repository system has alternatives for uploading data
+entities if you do not have a server which can deliver entities via a URL (http).
+Contact EDI for more information on these options.</em></p>
+<p>When used at the entity level, an alternative tag is available to
+&lt;<strong>url</strong>&gt;, called &lt;<strong>connection</strong>&gt;. This element is discussed under
+data entities, below.</p>
+<p>As of EML 2.1, there is also an optional &lt;<strong>access</strong>&gt; element in a
+&lt;<strong>distribution</strong>&gt; tree at the data entity level
+<strong>(/eml:eml/dataset/[entity]/physical/distribution/access</strong>). This
+element is intended specifically for controlling access to the data
+entity itself. For more information on the &lt;<strong>access</strong>&gt; tree, see
+above, under the general access discussion.</p>
+<hr />
+<p>Example 11b: distribution at the data entity level</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb14-1"><a href="distribution.html#cb14-1"></a><span class="kw">&lt;dataTable&gt;</span></span>
+<span id="cb14-2"><a href="distribution.html#cb14-2"></a>   <span class="kw">&lt;physical&gt;</span></span>
+<span id="cb14-3"><a href="distribution.html#cb14-3"></a>   ...</span>
+<span id="cb14-4"><a href="distribution.html#cb14-4"></a>      <span class="kw">&lt;distribution&gt;</span></span>
+<span id="cb14-5"><a href="distribution.html#cb14-5"></a>         <span class="kw">&lt;online&gt;</span></span>
+<span id="cb14-6"><a href="distribution.html#cb14-6"></a>            <span class="kw">&lt;onlineDescription&gt;</span>f1s-1 Data Web Page<span class="kw">&lt;/onlineDescription&gt;</span></span>
+<span id="cb14-7"><a href="distribution.html#cb14-7"></a>            <span class="kw">&lt;url</span><span class="ot"> function=</span><span class="st">&quot;download&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb14-8"><a href="distribution.html#cb14-8"></a>               http://www.fsu.edu/lter/data/fls-1.csv</span>
+<span id="cb14-9"><a href="distribution.html#cb14-9"></a>            <span class="kw">&lt;/url&gt;</span></span>
+<span id="cb14-10"><a href="distribution.html#cb14-10"></a>         <span class="kw">&lt;/online&gt;</span></span>
+<span id="cb14-11"><a href="distribution.html#cb14-11"></a>      <span class="kw">&lt;/distribution&gt;</span></span>
+<span id="cb14-12"><a href="distribution.html#cb14-12"></a>   <span class="kw">&lt;/physical&gt;</span></span>
+<span id="cb14-13"><a href="distribution.html#cb14-13"></a><span class="kw">&lt;/dataTable&gt;</span></span></code></pre></div>
+<hr />
 
 </div>
 </div>
@@ -291,8 +302,8 @@ on the EDI website, under “Resources and How To…”, at
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="general-recommendations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="intellectualrights.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="coverage.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
