@@ -8,42 +8,72 @@ documentclass: book
 biblio-style: apalike
 # link-citations: yes
 description: "Best practice recommendations for data packages, described by Ecological Metadata Language (EML)."
+cover-image: "EDI-logo-sm.png"
+favicon: "favicon.ico"
+github-repo: "EDIorg/data-package-best-practices"
 ---
+# {-}
 
 ## Overview {-}
 This website contains current “Best Practice” recommendations for ecological and environmental science data packages. These recommendations are directed towards the following goals:
 
-- Provide guidance and clarification in the use of Ecological Metadata Language (EML)
-- Minimize heterogeneity of EML documents to simplify development and re-use of software built to ingest it
-- Maximize interoperability of EML documents to facilitate data synthesis
+- Provide guidance and clarification on
+  - the use of Ecological Metadata Language (EML)
+  - arrangement of tables or other data entities within different types of data packages
+- Minimize heterogeneity of EML-described data packages to simplify development and re-use of software
+- Maximize interoperability to facilitate data synthesis
 
 
-## Metadata concepts {-}
+## EML Metadata concepts {-}
 These recommendations apply to most or all scientific domains. This section subsumes V3 of the static document "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)"
 
  **[Best Practices for Dataset Metadata in Ecological Metadata Language (EML)](EMLmetadata/index.html)**
   
 ## Scientific domains {-}
-many of these topics have extensive, related code bases, which some of these recommendations take into account (and link to). Such as
+This section contains recommendations for data from certain scientific domains. Many of these topics have extensive, related code bases, which some of these recommendations take into account (and link to). 
+
+Examples:
 
 - community survey data
 - meteorology/hydrology data
 - genomics and metagenomics
   
-**[Recommendations for data from specific Scientific domains{(science_domain/index.html)}**
+**[Recommendations for data from specific scientific domains](scientific_domain/index.html)**
   
-## Challenging data types {-}
-Certain data have special handling based on their acquisition method or platform. Some are raw data that should be preserved because they have uses beyond their original purpose. Many are not specific to any one scientific domain. **how about a better title for these!?** Examples:
+## Non-tabular data and other packaging challenges {-}
+Certain data have special handling based on their acquisition method or platform. Some are raw data that should be preserved because they have uses beyond their original purpose. Many are not exclusive to a single scientific domain. 
 
-- offline data 
-  - sometimes necessary if size prevents efficient delivery over HTTP
+Examples:
+
 - key-value pair tables 
   - and the choice of long vs. wide
 - model output
 - drone-collected
 - photo imagery
-- acoustics
+  - quadrat photos
+  - series of still images from fixed cameras
+  - digital microscopy
+  - video
+- audio
+- telemetry
+- flow cytometry
 
-**LINK TO BPs about Challenging data types**
+**[Recommendations for non-tabular and other packaging challenges](non_tabular/index.html)**
+
+## Application-specific recommendations {-}
+Recommendations for data intended for specific handling or intended for certain applications. In most cases these are mediated by EDI.
+
+TBD: decide if this goes here. if not, then where?
+
+Examples:
+
+- offline data 
+  - sometimes necessary if size prevents efficient delivery over HTTP)
+- Specific features DataONE handles or indexes (or does not handle)
+- Data that are to be replicated to another repository 
+- 
+
+**TBD: link (if it even goes here...)** 
+
 
 

@@ -2,10 +2,13 @@
 
 
 ## Overview
+
  DRAFT - DRAFT - DRAFT
 
-This site is book written in **Markdown**, and transformed to HTML with the **bookdown** package  
+This site is book written in **Markdown**, and transformed to HTML with the **R bookdown** package. Original pages can be found at https://github.com/EDIorg/data-package-best-practices, and the site is served from the docs directory as gh-pages.
 
+## Requirements
+### Bookdown 
 The **bookdown** package can be installed from CRAN or Github:
 
 ```{r eval=FALSE}
@@ -16,21 +19,27 @@ install.packages("bookdown")
 
 It is based on the _sample_ from  https://bookdown.org/yihui/rmarkdown/bookdown-start.html
 
-## Guidelines and requirmements
-- Each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
-- To compile the PDF, you need XeLaTeX. Install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
-- site is served from the docs directory as gh-pages.
+### TinyTeX
+To compile the PDF, you need XeLaTeX. Install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
+
+
+## Guidelines
+- Chapters are defined by the the presence of first-level heading `#`. 
+- Each Rmd or md file contains one chapter 
+- the search function (in header) only works once files are on a server. it searches both text and code blocks. 
 
 ## Steps (details TBD)
-1. edit markdown
-1. review in master branch, e.g. by BP committee or other
+1. edit markdown (tbd: in a fork-PR? branch?)
+1. review, e.g. by BP committee or other, accept changes 
 1. build book(s) - output sent to docs
-1. add-commit-push (docs)
+  1. TBD: single script.
+1. add-commit-push (originals and docs)
+1. TBD: need guidelines for when a PDF is warranted (fixed doc was requested for EML section, maybe others)
 
 
 
 ## Other stuff you might need. also notes. some to be dropped
-- how to pandoc
+- how to pandoc ?
 - how to handle citations with bib
 - how to handle the left menu 
   - within books
@@ -41,8 +50,11 @@ It is based on the _sample_ from  https://bookdown.org/yihui/rmarkdown/bookdown-
   - or even this: `# {-}`
   - it might be a hack. if so, advise on better way.
 
+- what happens to files that have only second-level headings `##`  - they become subsections of the chapter loaded just ahead of them (with a top-level heading)
 
-- the search function (in header) only works once files are on a server. To preview drafts, use serve_book (if installed) or generate thru an Rproject. 
+
+ - the search function (in header) only works once files are on a server. To preview drafts, use serve_book (if installed) or generate thru an Rproject.
+
 
 
 - To create a bib database for R packages
