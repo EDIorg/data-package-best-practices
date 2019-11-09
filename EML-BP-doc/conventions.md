@@ -1,7 +1,7 @@
 # Conventions and Definitions
 
 
-### Audience
+## Audience
 
 This document is intended for data managers. It assumes that readers are familiar with
 
@@ -10,7 +10,7 @@ This document is intended for data managers. It assumes that readers are familia
 - the process for contributing data to a repository. If you reached this
   document from a repository's help-page, contact them for more information.
 
-### Fonts and typeface
+## Fonts and typeface
 
 Numbered examples of EML nodes are in fixed-width font:
 
@@ -23,7 +23,7 @@ in text are in bold face. Single element names are surrounded by angle
 brackets, as they appear in XML.
 
 <**dataTable**>  
-**/eml:eml/@packageId**
+**/eml:eml/\@packageId**
 
 Some recommendations have special context, e.g., an XML element or
 attribute may be requested by a community (e.g., LTER), or required by
@@ -33,7 +33,7 @@ _Context notes: Recommendations for EML usage in a specific context are
 called "context notes", and are placed in separate paragraphs, in
 italic._
 
-### Definitions
+## Definitions
 
 <dl>
   <dt>EML preparer</dt>
@@ -52,7 +52,7 @@ This is generally the unit housed in repositories. We use this term to
 avoid confusion with the EML element "<b>dataset</b>".</dd>
 </dl>
 
-### Other EML Resources
+## Other EML Resources
 
 Some sections refer to further information or tools. These can be found
 on the EDI website, under "Resources and How To...", at
