@@ -10,5 +10,21 @@ rmd_files: [
     "conventions.md",
     "general_recommendations.md",
     "root_element.md",
-    "access.md"
+    "top_level_elements.md",
+        "access.md",
+        "dataset.md",
+        "additionalMetadata.md",
+    "title.md",
+    "people_organizations.md",
+    "pub_date.md",
+    "abstract.md",
+    "keywords.md",
+    "intellectual_rights.md",
+    "distribution.md",
+    "coverage.md",
+    "maintenance.md",
+    "methods.md",
+    "project.md",
+    "entities.md",
+    "constraint.md"
     ]
