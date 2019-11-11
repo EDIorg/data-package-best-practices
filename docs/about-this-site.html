@@ -24,7 +24,7 @@
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2019-11-06" />
+<meta name="date" content="2019-11-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -142,9 +142,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About this Site</a><ul>
 <li class="chapter" data-level="0.1" data-path="about-this-site.html"><a href="about-this-site.html#overview-1"><i class="fa fa-check"></i><b>0.1</b> Overview</a></li>
-<li class="chapter" data-level="0.2" data-path="about-this-site.html"><a href="about-this-site.html#guidelines-and-requirmements"><i class="fa fa-check"></i><b>0.2</b> Guidelines and requirmements</a></li>
-<li class="chapter" data-level="0.3" data-path="about-this-site.html"><a href="about-this-site.html#steps-details-tbd"><i class="fa fa-check"></i><b>0.3</b> Steps (details TBD)</a></li>
-<li class="chapter" data-level="0.4" data-path="about-this-site.html"><a href="about-this-site.html#other-stuff-you-might-need.-also-notes.-some-to-be-dropped"><i class="fa fa-check"></i><b>0.4</b> Other stuff you might need. also notes. some to be dropped</a></li>
+<li class="chapter" data-level="0.2" data-path="about-this-site.html"><a href="about-this-site.html#requirements"><i class="fa fa-check"></i><b>0.2</b> Requirements</a><ul>
+<li class="chapter" data-level="0.2.1" data-path="about-this-site.html"><a href="about-this-site.html#bookdown"><i class="fa fa-check"></i><b>0.2.1</b> Bookdown</a></li>
+<li class="chapter" data-level="0.2.2" data-path="about-this-site.html"><a href="about-this-site.html#tinytex"><i class="fa fa-check"></i><b>0.2.2</b> TinyTeX</a></li>
+</ul></li>
+<li class="chapter" data-level="0.3" data-path="about-this-site.html"><a href="about-this-site.html#guidelines"><i class="fa fa-check"></i><b>0.3</b> Guidelines</a></li>
+<li class="chapter" data-level="0.4" data-path="about-this-site.html"><a href="about-this-site.html#steps-details-tbd"><i class="fa fa-check"></i><b>0.4</b> Steps (details TBD)</a></li>
+<li class="chapter" data-level="0.5" data-path="about-this-site.html"><a href="about-this-site.html#other-stuff-you-might-need.-also-notes.-some-to-be-dropped"><i class="fa fa-check"></i><b>0.5</b> Other stuff you might need. also notes. some to be dropped</a></li>
 </ul></li>
 <li class="divider"></li>
 <ul>
@@ -172,35 +176,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>About this Site</h1>
 <div id="overview-1" class="section level2">
 <h2><span class="header-section-number">0.1</span> Overview</h2>
-<p>DRAFT - DRAFT - DRAFT-xxx</p>
-<p>This site is book written in <strong>Markdown</strong>, and transformed to HTML with the <strong>bookdown</strong> package</p>
+<p>DRAFT - DRAFT - DRAFT</p>
+<p>This site is book written in <strong>Markdown</strong>, and transformed to HTML with the <strong>R bookdown</strong> package. Original pages can be found at <a href="https://github.com/EDIorg/data-package-best-practices" class="uri">https://github.com/EDIorg/data-package-best-practices</a>, and the site is served from the docs directory as gh-pages.</p>
+</div>
+<div id="requirements" class="section level2">
+<h2><span class="header-section-number">0.2</span> Requirements</h2>
+<div id="bookdown" class="section level3">
+<h3><span class="header-section-number">0.2.1</span> Bookdown</h3>
 <p>The <strong>bookdown</strong> package can be installed from CRAN or Github:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="about-this-site.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</span>
 <span id="cb1-2"><a href="about-this-site.html#cb1-2"></a><span class="co"># or the development version</span></span>
 <span id="cb1-3"><a href="about-this-site.html#cb1-3"></a><span class="co"># devtools::install_github(&quot;rstudio/bookdown&quot;)</span></span></code></pre></div>
 <p>It is based on the <em>sample</em> from <a href="https://bookdown.org/yihui/rmarkdown/bookdown-start.html" class="uri">https://bookdown.org/yihui/rmarkdown/bookdown-start.html</a></p>
 </div>
-<div id="guidelines-and-requirmements" class="section level2">
-<h2><span class="header-section-number">0.2</span> Guidelines and requirmements</h2>
+<div id="tinytex" class="section level3">
+<h3><span class="header-section-number">0.2.2</span> TinyTeX</h3>
+<p>To compile the PDF, you need XeLaTeX. Install TinyTeX (which includes XeLaTeX): <a href="https://yihui.name/tinytex/" class="uri">https://yihui.name/tinytex/</a>.</p>
+</div>
+</div>
+<div id="guidelines" class="section level2">
+<h2><span class="header-section-number">0.3</span> Guidelines</h2>
 <ul>
-<li>Each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading <code>#</code>.</li>
-<li>To compile the PDF, you need XeLaTeX. Install TinyTeX (which includes XeLaTeX): <a href="https://yihui.name/tinytex/" class="uri">https://yihui.name/tinytex/</a>.</li>
-<li>site is served from the docs directory as gh-pages.</li>
+<li>Chapters are defined by the the presence of first-level heading <code>#</code>.</li>
+<li>Each Rmd or md file contains one chapter</li>
+<li>the search function (in header) only works once files are on a server. it searches both text and code blocks.</li>
 </ul>
 </div>
 <div id="steps-details-tbd" class="section level2">
-<h2><span class="header-section-number">0.3</span> Steps (details TBD)</h2>
+<h2><span class="header-section-number">0.4</span> Steps (details TBD)</h2>
 <ol style="list-style-type: decimal">
-<li>edit markdown</li>
-<li>review in master branch, e.g. by BP committee or other</li>
+<li>edit markdown (tbd: in a fork-PR? branch?)</li>
+<li>review, e.g. by BP committee or other, accept changes</li>
 <li>build book(s) - output sent to docs</li>
-<li>add-commit-push (docs)</li>
+<li>TBD: single script.</li>
+<li>add-commit-push (originals and docs)</li>
+<li>TBD: need guidelines for when a PDF is warranted (fixed doc was requested for EML section, maybe others)</li>
 </ol>
 </div>
 <div id="other-stuff-you-might-need.-also-notes.-some-to-be-dropped" class="section level2">
-<h2><span class="header-section-number">0.4</span> Other stuff you might need. also notes. some to be dropped</h2>
+<h2><span class="header-section-number">0.5</span> Other stuff you might need. also notes. some to be dropped</h2>
 <ul>
-<li><p>how to pandoc</p></li>
+<li><p>how to pandoc ?</p></li>
 <li><p>how to handle citations with bib</p></li>
 <li><p>how to handle the left menu</p>
 <ul>
@@ -213,6 +229,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>or even this: <code># {-}</code></li>
 <li>it might be a hack. if so, advise on better way.</li>
 </ul></li>
+<li><p>what happens to files that have only second-level headings <code>##</code> - they become subsections of the chapter loaded just ahead of them (with a top-level heading)</p></li>
 <li><p>the search function (in header) only works once files are on a server. To preview drafts, use serve_book (if installed) or generate thru an Rproject.</p></li>
 <li><p>To create a bib database for R packages</p></li>
 </ul>

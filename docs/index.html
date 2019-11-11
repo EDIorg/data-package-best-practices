@@ -24,7 +24,7 @@
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2019-11-06" />
+<meta name="date" content="2019-11-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -142,9 +142,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About this Site</a><ul>
 <li class="chapter" data-level="0.1" data-path="about-this-site.html"><a href="about-this-site.html#overview-1"><i class="fa fa-check"></i><b>0.1</b> Overview</a></li>
-<li class="chapter" data-level="0.2" data-path="about-this-site.html"><a href="about-this-site.html#guidelines-and-requirmements"><i class="fa fa-check"></i><b>0.2</b> Guidelines and requirmements</a></li>
-<li class="chapter" data-level="0.3" data-path="about-this-site.html"><a href="about-this-site.html#steps-details-tbd"><i class="fa fa-check"></i><b>0.3</b> Steps (details TBD)</a></li>
-<li class="chapter" data-level="0.4" data-path="about-this-site.html"><a href="about-this-site.html#other-stuff-you-might-need.-also-notes.-some-to-be-dropped"><i class="fa fa-check"></i><b>0.4</b> Other stuff you might need. also notes. some to be dropped</a></li>
+<li class="chapter" data-level="0.2" data-path="about-this-site.html"><a href="about-this-site.html#requirements"><i class="fa fa-check"></i><b>0.2</b> Requirements</a><ul>
+<li class="chapter" data-level="0.2.1" data-path="about-this-site.html"><a href="about-this-site.html#bookdown"><i class="fa fa-check"></i><b>0.2.1</b> Bookdown</a></li>
+<li class="chapter" data-level="0.2.2" data-path="about-this-site.html"><a href="about-this-site.html#tinytex"><i class="fa fa-check"></i><b>0.2.2</b> TinyTeX</a></li>
+</ul></li>
+<li class="chapter" data-level="0.3" data-path="about-this-site.html"><a href="about-this-site.html#guidelines"><i class="fa fa-check"></i><b>0.3</b> Guidelines</a></li>
+<li class="chapter" data-level="0.4" data-path="about-this-site.html"><a href="about-this-site.html#steps-details-tbd"><i class="fa fa-check"></i><b>0.4</b> Steps (details TBD)</a></li>
+<li class="chapter" data-level="0.5" data-path="about-this-site.html"><a href="about-this-site.html#other-stuff-you-might-need.-also-notes.-some-to-be-dropped"><i class="fa fa-check"></i><b>0.5</b> Other stuff you might need. also notes. some to be dropped</a></li>
 </ul></li>
 <li class="divider"></li>
 <ul>
@@ -171,7 +175,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Data Package Best Practices</h1>
 <p class="author"><em>Environmental Data Initiative</em></p>
-<p class="date"><em>2019-11-06</em></p>
+<p class="date"><em>2019-11-11</em></p>
 </div>
 <div id="section" class="section level1 unnumbered">
 <h1></h1>
@@ -179,9 +183,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Overview</h2>
 <p>This website contains current “Best Practice” recommendations for ecological and environmental science data packages. These recommendations are directed towards the following goals:</p>
 <ul>
-<li>Provide guidance and clarification in the use of Ecological Metadata Language (EML)</li>
-<li>Minimize heterogeneity of EML documents to simplify development and re-use of software built to ingest it</li>
-<li>Maximize interoperability of EML documents to facilitate data synthesis</li>
+<li>Provide guidance and clarification on
+<ul>
+<li>the use of Ecological Metadata Language (EML)</li>
+<li>arrangement of tables or other data entities within different types of data packages</li>
+</ul></li>
+<li>Minimize heterogeneity of EML-described data packages to simplify development and re-use of software</li>
+<li>Maximize interoperability to facilitate data synthesis</li>
 </ul>
 </div>
 <div id="eml-metadata-concepts" class="section level2 unnumbered">
@@ -213,11 +221,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>drone-collected</li>
 <li>photo imagery
 <ul>
-<li>quadrat photos for generating abundances</li>
+<li>quadrat photos</li>
 <li>series of still images from fixed cameras</li>
 <li>digital microscopy</li>
+<li>video</li>
 </ul></li>
-<li>acoustics</li>
+<li>audio</li>
 <li>telemetry</li>
 <li>flow cytometry</li>
 </ul>
