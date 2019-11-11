@@ -51,9 +51,10 @@ This git repository/website is not intended to be your only resource for data ma
 
 
 ## Anticipated workflow 
-Details are being worked out. A workflow such as the below allows for review of drafts, with a public-facing view created after that review. It also allows for some sections to be exposed as citable PDFs if necessary (e.g., for the EML BP doc).
+Details are being worked out. A workflow such as the below allows for review of drafts, with a public-facing view created after that review. It also allows for some sections to be exposed as citable PDFs if necessary (e.g., for the EML BP doc). To be determined are editing practices such as use of branches, fork+PR, and guidelines for when a PDF version is warranted.
 1. edit markdown
-1. review, e.g. by BP committee
-1. build book(s)
-1. move _book/* to docs
-1. add-commit-push (docs)
+1. review, e.g. by a working group or external committee
+1. build book(s), exporting to `/docs`
+1. optional: create PDF of book(s)
+1. add-commit-push raw markdown
+1. add-commit-push `/docs`
