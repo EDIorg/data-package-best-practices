@@ -1,0 +1,74 @@
+# Site title and subtitle. This is used in _includes/header.html
+title: 'Data Package Best Practices'
+subtitle: 'update this line. forked from project_documentation_test3'
+
+# if you wish to integrate disqus on pages set your shortname here
+disqus_shortname: ''
+
+# if you use google analytics, add your tracking id here
+google_analytics_id: ''
+
+# Enable/show navigation. There are there options:
+#   0 - always hide
+#   1 - always show
+#   2 - show only if posts are present
+navigation: 1
+
+# URL to source code, used in _includes/footer.html
+# TO DO: update this RUL
+codeurl: 'https://github.com/mobb/fork_test3_index_page2'
+
+
+# Default categories (in order) to appear in the navigation
+sections: [
+    ['bp4bp', 'How to Contribute'],
+    ['ref', 'Reference'],
+    ['dev', 'Developers'],
+    ['post', 'Posts']
+]
+
+# Keep as an empty string if served up at the root. If served up at a specific
+# path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
+# baseurl: 'https://github.com/mobb/fork_test3_index_page2'
+baseurl: '/fork_test3_index_page2'
+
+# Dates are not included in permalinks
+permalink: none
+
+# Syntax highlighting
+highlighter: rouge
+
+# Since these are pages, it doesn't really matter
+future: true
+
+# Exclude non-site files
+exclude: ['bin', 'README.md']
+
+# Use the kramdown Markdown renderer
+markdown: kramdown
+redcarpet:
+    extensions: [
+        'no_intra_emphasis',
+        'fenced_code_blocks',
+        'autolink',
+        'strikethrough',
+        'superscript',
+        'with_toc_data',
+        'tables',
+        'hardwrap'
+    ]
+
+
+
+# adding collections
+collections:
+    guides:
+        output: true
+        permalink: /:collection/:name
+
+
+
+
+
+
+theme: jekyll-theme-minimal
