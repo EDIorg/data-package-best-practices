@@ -1,21 +1,10 @@
 ---
 layout: page
-title:  "Best Practice guide template"
+title:  "Best Practice Guide Template"
 date:   2017-09-07
 categories: tut
+order: 2
 ---
-
-Page template based on kramdown  
-1. Copy this page to a new file with a filename of this form: YYYY-MM-DD-filename-for-html.md
-1. edit the "categories" in the top-matter to "bp"
-2. add your bp text.
-
-
-When it is converted by git, it will be under a menu item for "Guides" (other docs based on the category), and have a filename "filename-for-html.html"
-
-This page has examples, and also shows you what how the md is transformed to html. nice. \ 
- https://kramdown.gettalong.org/quickref.html
-
 
 ## Introduction
 Short paragraph, maybe some background.
@@ -26,8 +15,9 @@ Short paragraph, maybe some background.
 what the recommendation is.
 
 ---
-## How to or examples
+## Details or examples
 how to do it. 
+
 
 ### File and image links
 Example of how to create a link: <a href="{{ site.baseurl }}/files/966.pdf">link to 966.pdf</a>.
@@ -36,22 +26,29 @@ Example of how to create a link: <a href="{{ site.baseurl }}/files/966.pdf">link
 <a href="{{ site.baseurl }}/files/966.pdf">link to 966.pdf</a>. 
 ~~~~~
 
-This example uses HTML, and tildes. Seems to me that tokens should not be replaced in a code block. If they are, look a the source. You can also use markdown shortcuts. see the kramdown quick ref.
+- To link to another page in this website:
+    - Use the site.baseurl token for the URL head. 
+    - add the section and page after the slash.
 
-Steps
-1. commit the file to the files dir
-1. create link using site.baseurl
+```html
+<a href="{{ site.baseurl }}/EMLmetadata/keywordset-and-keyword.html">link to EML keyword section</a>
+```
 
 
-Example of a how to include an image. Same process, use the images dir and site.baseurl:
-<img src="{{ site.baseurl }}/images/EDI-logo-svg-240.png" alt="EDI logo" height="80" width="80"/>
 
-~~~
-<img src="{{ site.baseurl }}/images/EDI-logo-svg-240.png" alt="EDI logo" height="80" width="80"/>
-~~~~
+
+- To link to smething in the repository archive: 
+    - Use the site.codeurl token for the URL head. 
+    - add the section and page after the slash.
+
+```html
+<a href="{{ site.codeurl }}/master/archive/EML-BP-doc/emlbestpractices_oct2004.pdf">link to EML BP doc 2004 version</a>
+```
 
 ### Code blocks
-put code examples in code blocks
+Put code examples in code blocks. There are several ways: 
+
+Tildes: You can also use markdown shortcuts. Also see the kramdown quick ref.
 ~~~~~
 simplest way to do a code block is to surround by defined by tildes.
 ~~
@@ -61,10 +58,17 @@ many tildes as the starting line.
 
 
 Code block with language specified uses backticks:
-``` ruby
-def what?
-  42
-end
+``` XML
+<access authSystem="knb" order="allowFirst" scope="document">
+   <allow>
+      <principal>uid=FLS,o=lter,dc=ecoinformatics,dc=org</principal>
+      <permission>all</permission>
+   </allow>
+   <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+   </allow>
+</access>
 ```
 
 
