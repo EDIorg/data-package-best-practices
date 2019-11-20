@@ -15,9 +15,12 @@ This website contains current \"Best Practice\" recommendations for ecological a
 - Minimize heterogeneity of EML-described data packages to simplify development and re-use of software
 - Maximize interoperability to facilitate data synthesis
 
+To participate in the "Best Practices for Data Packages" project, see "About this site".
+
 
 ## EML Metadata concepts
-These recommendations apply to most or all scientific domains. This section subsumes V3 of the static document "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)"
+The recommendations for EML metadata apply to all data packages. This section subsumes V3 of the static document "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)". Presentation as a website allows for bookmarking and cross-links. The entire most recent (versioned, citable) release is also available as a PDF. 
+
 
  **[Best Practices for Dataset Metadata in Ecological Metadata Language (EML)](EMLmetadata/index.html)**
   
