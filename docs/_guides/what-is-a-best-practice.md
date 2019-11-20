@@ -2,7 +2,7 @@
 layout: page
 title:  "What makes a \"Best Practice\"?"
 date:   2017-09-06
-categories: bp4bp
+categories: tut
 ---
 This post should show up under How to Contribute
 
