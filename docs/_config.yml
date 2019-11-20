@@ -21,8 +21,8 @@ codeurl: 'https://github.com/EDIorg/data-package-best-practices'
 
 # Default categories (in order) to appear in the navigation
 sections: [
-    ['doc', 'Site Documentation'],
-    ['tut', 'How to Contribute'],
+    ['about', 'About This Site'],
+    ['tut', 'Information for Contributors'],
     ['ref', 'Reference'],
     ['dev', 'Developers'],
     ['post', 'Posts']
