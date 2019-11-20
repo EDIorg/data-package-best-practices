@@ -1,15 +1,18 @@
 ---
 layout: page
-title:  "What makes a \"Best Practice\"?"
-date:   2017-09-06
+title:  "What is a \"Best Practice\"?"
+date:   2019-11-20
 categories: tut
 order: 1
 ---
 
-## What is a "Best Practice"?
-- A set of guidelines, not dependent on a particular implementation or software
-- Justifiable, as in, what's best for a data type or metadata element
-- Decided on by a community. It's not just something that happened once, locally 
+Best practices are procedures or guidelines that are accepted or prescribed as being correct or most effective.
+
+For data packages, this means:
+
+- A set of guidelinesthat not dependent on a particular implementation or software
+- Justifiable - as in, what's best for a data type or metadata element
+- Vetted by a community, rather than an example of a local practice 
     - to highlight local projects consider a webinar or databits article. 
 - Keep in mind that BPs can be influenced by both local practices and software choices
 

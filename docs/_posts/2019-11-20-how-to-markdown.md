@@ -31,12 +31,27 @@ Insert a horizontal rule with three or more asterisks, dashes or underscores, op
 
 ---------------
 
+```md
+* * *
+
+---
+
+  _  _  _  _
+
+---------------
+```
 
 
 ### code block
 
 <pre><code>this is a code block defined by pre and code tags.
 </code></pre>
+
+```xml
+<pre>
+  <code>this is a code block defined by pre and code tags.</code>
+</pre>
+```
 
 ~~~~~
 This is a code block defined by tildes.
@@ -46,7 +61,7 @@ many tildes as the starting line. this code block has 2 imbedded tildes that did
 ~~~~~~~~~~~
 
 
-code block with language specified is defined by backquotes:
+A code block with language specified is defined by backquotes:
 
 ```ruby
 def what?
@@ -62,6 +77,16 @@ end
    3. sub item three
 2. Item two
 
+#### list numbering is automatic (look at src md to see original labeling)
+1. Item parent
+   1. sub item 
+   1. sub item 
+   1. sub item 
+1. Item another parent
+   1. sub item
+   1. sub item
+
+
 
 
 ### File and image links
@@ -71,7 +96,7 @@ Example of how to create a link: <a href="{{ site.baseurl }}/files/966.pdf">link
 <a href="{{ site.baseurl }}/files/966.pdf">link to 966.pdf</a>.
 ~~~~
 
-This example uses HTML, and tildes. Seems to me that tokens should not be replaced in a code block. If they are, look a the source. You can also use markdown shortcuts. see the kramdown quick ref.
+This example uses HTML, and tildes. This code block has a token in it, which ideally is not replaced in a code block. If they are, look a the source. You can also use markdown shortcuts. see the kramdown quick ref.
 
 Steps
 1. commit the file appropriate dir (in this case, we used `doc/file`. For many files, the archive is a better choice.
@@ -81,9 +106,9 @@ Steps
 Example of how to create a link to a doc elsewhere in the repo: 
 <a href="{{ site.codeurl }}/master/archive/EML-BP-doc/emlbestpractices_oct2004.pdf">link to EML BP doc 2004 version</a>
 
-~~~
+```
 <a href="{{ site.codeurl }}/master/archive/EML-BP-doc/emlbestpractices_oct2004.pdf">link to EML BP doc 2004 version</a>
-~~~~~
+```
 
 
 
