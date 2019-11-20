@@ -2,7 +2,7 @@
 layout: page
 title:  "Best Practice guide template"
 date:   2017-09-07
-categories: bp4bp
+categories: bpbp
 ---
 
 Page template based on kramdown  
