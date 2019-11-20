@@ -5,9 +5,8 @@ description: "Best practice recommendations for data packages, described by Ecol
 favicon: "favicon.ico"
 github-repo: "EDIorg/data-package-best-practices"
 ---
-# {-}
 
-## Overview {-}
+## Overview
 This website contains current \"Best Practice\" recommendations for ecological and environmental science data packages. These recommendations are directed towards the following goals:
 
 - Provide guidance and clarification on
@@ -17,24 +16,24 @@ This website contains current \"Best Practice\" recommendations for ecological a
 - Maximize interoperability to facilitate data synthesis
 
 
-## EML Metadata concepts {-}
+## EML Metadata concepts
 These recommendations apply to most or all scientific domains. This section subsumes V3 of the static document "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)"
 
  **[Best Practices for Dataset Metadata in Ecological Metadata Language (EML)](EMLmetadata/index.html)**
   
-## Scientific domains {-}
-This section contains recommendations for data from certain scientific domains. Many of these topics have extensive, related code bases, which some of these recommendations take into account (and link to). 
+## Scientific domains
+This section contains recommendations for data from certain scientific domains. Many of these topics have extensive, related code bases, which some of these recommendations take into account and link to. 
 
 Examples:
 
-- community survey data
-- meteorology/hydrology data
+- ecological community survey data
+- meteorology and/or hydrology data
 - genomics and metagenomics
 - soil carbon cycling
   
 **[Recommendations for data from specific scientific domains](scientific_domain/index.html)**
   
-## Non-tabular data and other packaging challenges {-}
+## Non-tabular data and other packaging challenges
 Certain data have special handling based on their acquisition method or platform. Some are raw data that should be preserved because they have uses beyond their original purpose. Many are not exclusive to a single scientific domain. 
 
 Examples:
@@ -54,7 +53,7 @@ Examples:
 
 **[Recommendations for non-tabular and other packaging challenges](non_tabular/index.html)**
 
-## Application-specific recommendations {-}
+## Application-specific recommendations
 Recommendations for data intended for specific handling or intended for certain applications. In most cases these are mediated by EDI.
 
 TBD: decide if this goes here. if not, then where?
