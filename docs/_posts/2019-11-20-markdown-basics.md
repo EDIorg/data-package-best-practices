@@ -42,7 +42,7 @@ Insert a horizontal rule with three or more asterisks, dashes or underscores, op
 ```
 
 
-### code block
+### Code Blocks
 
 <pre><code>this is a code block defined by pre and code tags.
 </code></pre>
@@ -68,6 +68,15 @@ def what?
   42
 end
 ```
+
+
+
+For an inline code block: use `single backtick`
+```
+For an inline code block: use `single backtick`
+```
+
+
 
 
 ### nested lists
@@ -124,35 +133,5 @@ Example of a how to include an image. Same process, use the images dir and site.
 <img src="{{ site.baseurl }}/images/EDI-logo-svg-240.png" alt="EDI logo" height="80" width="80"/> 
 
 ```
-
-
-
-### Code blocks
-put code examples in code blocks
-
-
-
-Code block with language specified uses backticks:
-
-``` ruby
-def what?
-  42
-end
-```
-
-For an inline code block: use `single backtick`
-```
-For an inline code block: use `single backtick`
-```
-
-It is possible to use a string of tildes also:
-
-~~~~
-Another way to do a code block is to surround with tildes.
-~
-Ending lines must have at least as
-many tildes as the starting line.
-this block has an single tilde embedded
-~~~~~~~~~~
 
 
