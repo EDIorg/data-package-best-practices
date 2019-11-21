@@ -121,7 +121,9 @@ Example of a how to include an image. Same process, use the images dir and site.
 <img src="{{ site.baseurl }}/images/EDI-logo-svg-240.png" alt="EDI logo" height="80" width="80"/>
 
 ```
-<img src="{{ site.baseurl }}/images/EDI-logo-svg-240.png" alt="EDI logo" height="80" width="80"/>```
+<img src="{{ site.baseurl }}/images/EDI-logo-svg-240.png" alt="EDI logo" height="80" width="80"/> 
+
+```
 
 
 
@@ -131,24 +133,26 @@ put code examples in code blocks
 
 
 Code block with language specified uses backticks:
+
 ``` ruby
 def what?
   42
 end
 ```
 
-Inline code blocks: use `single backtick`
+For an inline code block: use `single backtick`
 ```
-Inline code blocks: use `single backtick`
+For an inline code block: use `single backtick`
 ```
 
 It is possible to use a string of tildes also:
 
 ~~~~
-simplest way to do a code block is to surround by defined by tildes.
+Another way to do a code block is to surround with tildes.
 ~
 Ending lines must have at least as
 many tildes as the starting line.
+this block has an single tilde embedded
 ~~~~~~~~~~
 
 
