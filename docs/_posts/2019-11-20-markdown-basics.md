@@ -120,9 +120,10 @@ Example of how to create a link to a doc elsewhere in the repo:
 Example of a how to include an image. Same process, use the images dir and site.baseurl:
 <img src="{{ site.baseurl }}/images/EDI-logo-svg-240.png" alt="EDI logo" height="80" width="80"/>
 
-~~
-<img src="{{ site.baseurl }}/images/EDI-logo-svg-240.png" alt="EDI logo" height="80" width="80"/>
-~~~
+```
+<img src="{{ site.baseurl }}/images/EDI-logo-svg-240.png" alt="EDI logo" height="80" width="80"/>```
+
+
 
 ### Code blocks
 put code examples in code blocks
@@ -139,6 +140,11 @@ Code block with language specified uses backticks:
 def what?
   42
 end
+```
+
+Inline code blocks: use `single backtick`
+```
+Inline code blocks: use `single backtick`
 ```
 
 
