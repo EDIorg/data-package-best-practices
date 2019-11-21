@@ -109,10 +109,10 @@ Steps
 1. create link using site.codeurl (for files eslewhere in the repository)
 
 Example of how to create a link to a doc elsewhere in the repo: 
-<a href="{{ site.codeurl }}/ftree/master/archive/EML-BP-doc/emlbestpractices_oct2004.pdf">link to EML BP doc 2004 version</a>
+<a href="{{ site.codeurl }}/tree/master/archive/EML-BP-doc/emlbestpractices_oct2004.pdf">link to EML BP doc 2004 version</a>
 
 ```
-<a href="{{ site.codeurl }}/master/archive/EML-BP-doc/emlbestpractices_oct2004.pdf">link to EML BP doc 2004 version</a>
+<a href="{{ site.codeurl }}/tree/master/archive/EML-BP-doc/emlbestpractices_oct2004.pdf">link to EML BP doc 2004 version</a>
 ```
 
 
