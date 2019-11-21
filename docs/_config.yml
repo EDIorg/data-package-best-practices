@@ -1,5 +1,5 @@
 # Site title and subtitle. This is used in _includes/header.html
-title: 'Data Package Best Practices'
+title: 'EDI Data Package Best Practices'
 subtitle: 'Recommendations for data packages described with EML metadata'
 
 # if you wish to integrate disqus on pages set your shortname here
@@ -15,13 +15,12 @@ google_analytics_id: ''
 navigation: 1
 
 # URL to source code, used in _includes/footer.html
-# TO DO: update this RUL
 codeurl: 'https://github.com/EDIorg/data-package-best-practices'
 
 
 # Default categories (in order) to appear in the navigation
 sections: [
-    ['about', 'About This Site'],
+    ['about', 'About'],
     ['tut', 'Information for Contributors'],
     ['ref', 'Reference'],
     ['dev', 'Developers'],
@@ -61,14 +60,11 @@ redcarpet:
 
 
 
-# adding collections
-collections:
-    guides:
-        output: true
-        permalink: /:collection/:name
-
-
-
+# Section for adding collections
+# collections:
+#    guides:
+#        output: true
+#        permalink: /:collection/:name
 
 
 
