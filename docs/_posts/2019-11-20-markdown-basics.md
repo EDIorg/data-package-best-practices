@@ -93,10 +93,15 @@ end
 Example of how to create a link: <a href="{{ site.baseurl }}/files/966.pdf">link to 966.pdf</a>.
 
 ~~~
-<a href="{{ site.baseurl }}/files/966.pdf">link to 966.pdf</a>.
+<a href="{{ site.baseurl }}/files/966.pdf">link to 966.pdf</a>
 ~~~~
 
 This example uses HTML, and tildes. This code block has a token in it, which ideally is not replaced in a code block. If they are, look a the source. You can also use markdown shortcuts. see the kramdown quick ref.
+
+Markdown shortcut:
+~~~
+[link to 996.pdf]({{ site.baseurl }}/files/966.pdf")
+~~~~
 
 Steps
 1. commit the file appropriate dir (in this case, we used `doc/file`. For many files, the archive is a better choice.
@@ -104,7 +109,7 @@ Steps
 1. create link using site.codeurl (for files eslewhere in the repository)
 
 Example of how to create a link to a doc elsewhere in the repo: 
-<a href="{{ site.codeurl }}/master/archive/EML-BP-doc/emlbestpractices_oct2004.pdf">link to EML BP doc 2004 version</a>
+<a href="{{ site.codeurl }}/ftree/master/archive/EML-BP-doc/emlbestpractices_oct2004.pdf">link to EML BP doc 2004 version</a>
 
 ```
 <a href="{{ site.codeurl }}/master/archive/EML-BP-doc/emlbestpractices_oct2004.pdf">link to EML BP doc 2004 version</a>
