@@ -127,12 +127,7 @@ Example of a how to include an image. Same process, use the images dir and site.
 
 ### Code blocks
 put code examples in code blocks
-~~~~
-simplest way to do a code block is to surround by defined by tildes.
-~
-Ending lines must have at least as
-many tildes as the starting line.
-~~~~~~~~~~
+
 
 
 Code block with language specified uses backticks:
@@ -147,6 +142,13 @@ Inline code blocks: use `single backtick`
 Inline code blocks: use `single backtick`
 ```
 
+It is possible to use a string of tildes also:
 
+~~~~
+simplest way to do a code block is to surround by defined by tildes.
+~
+Ending lines must have at least as
+many tildes as the starting line.
+~~~~~~~~~~
 
 
