@@ -3,7 +3,7 @@ layout: page
 title: "Using Bookdown"
 category: tut
 date: 2019-11-21 09:23:31
-order: 2
+order: 4
 ---
 
 
@@ -24,7 +24,7 @@ Each section is a bookdown-book, so it is **self-contained**. Using this format 
 ### Bookdown 
 The **bookdown** package can be installed from CRAN or Github:
 
-```{r eval=FALSE}
+```R
 install.packages("bookdown")
 # or the development version
 # devtools::install_github("rstudio/bookdown")
@@ -72,7 +72,7 @@ To compile the PDF, you need XeLaTeX. Install TinyTeX (which includes XeLaTeX): 
 
 - To create a bib database for R packages
 
-```{r include=TRUE}
+```R
 # automatically create a bib database for R packages
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
