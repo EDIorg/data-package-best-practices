@@ -1,0 +1,13 @@
+book_filename: "non_tabular"
+delete_merged_file: true
+output_dir: ../docs/non_tabular
+language:
+  ui:
+   #  chapter_name: "Chapter "
+rmd_files: [
+    "index.Rmd",
+    "model_output.md",
+    "key_value_pair_tables.md",
+    "offline_data.md",
+    "photos_quadrats.md"	
+    ]

@@ -1,0 +1,18 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      collapse: section
+      before: |
+        <li><a href="/data-package-best-practices/">Data Package Best Practices</a></li>
+        <ul>
+          <li><a href="/data-package-best-practices/EMLmetadata/">Metadata Concepts</a></li>
+          <li><a href="/data-package-best-practices/scientific_domain/">Scientific Domain</a></li>
+          <li><a href="/data-package-best-practices/non_tabular/">Non-tabular data and other packaging challenges</a></li>
+        </ul> 
+      after: |
+       <ul>
+        <li><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></li>
+        <li>![EDI logo](https://github.com/EDIorg/data-package-best-practices/blob/master/EDI-logo-sm.png)<li>
+       </ul>
+       
