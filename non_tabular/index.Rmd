@@ -10,7 +10,7 @@ biblio-style: apalike
 description: "Best practice recommendations for non-tablular data, and other packaging challenges requiring special handling. All data are from ecological and environmental sciences."
 ---
 
-# Preface
+# Non-tablular data, other challenges {-}
 
 Best practice recommendations for non-tablular data, and other packaging challenges requiring special handling. All data are from ecological and environmental sciences.
 See navigation menu for specific topics.

@@ -4,15 +4,19 @@ bookdown::gitbook:
     toc:
       collapse: section
       before: |
-        <li><h4><a class="brand" href="/data-package-best-practices/">EDI Data Package Best Practices</a></h4></li>
+        <li><h4><a class="brand" href="/data-package-best-practices/">Data Package Best Practices</a></h4></li>
         <ul>
           <li><a href="/data-package-best-practices/EMLmetadata/">Metadata Concepts</a></li>
           <li><a href="/data-package-best-practices/scientific_domain/">Scientific Domain</a></li>
           <li><a href="/data-package-best-practices/non_tabular/">Non-tabular data and other packaging challenges</a></li>
         </ul> 
+      
       after: |
-       <ul>
-        <li><h4><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></h4></li>
-        <li><img src="../../images/EDI-logo-sm.png" alt="EDI Logo" height="90" width="90"/><li>
-       </ul>
-       
+       <li class="divider"></li>
+       <li>
+        <div class="text-center">
+            <ul>
+                <li><h4><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></h4></li>
+                <li><img class="img-responsive center-block" src="../../data-package-best-practices/images/EDI-logo-svg-240.png" alt="EDI Logo" height="90" width="90"/><li>
+            </ul>
+       </div>
