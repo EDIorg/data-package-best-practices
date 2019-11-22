@@ -1,10 +1,10 @@
 bookdown::gitbook:
-  css: style.css
+  css: style.css 
   config:
     toc:
       collapse: section
       before: |
-        <li><a href="/data-package-best-practices/">Data Package Best Practices</a></li>
+        <li><h4><a class="brand" href="/data-package-best-practices/">EDI Data Package Best Practices</a></h4></li>
         <ul>
           <li><a href="/data-package-best-practices/EMLmetadata/">Metadata Concepts</a></li>
           <li><a href="/data-package-best-practices/scientific_domain/">Scientific Domain</a></li>
