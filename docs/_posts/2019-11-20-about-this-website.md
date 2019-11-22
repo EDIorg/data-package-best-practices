@@ -55,9 +55,11 @@ Menu navigation is controlled by categories, labeled in the `_config.yml` and as
 See the `_config.yml` for the nav sections (and other site-wide material)
 
 
-### BP sections: tbd
-To add new material to bookdown sections, see the about : link tbd
+### BP sections: 
 
-    - bookdown for sub-sections, so that they can be reviewd first.
+The major sections of this site are written in **Markdown**, and transformed to HTML with the **R bookdown** package. 
+
+Instructions for using **bookdown** can be found with other information for contributors, under "[Using Bookdown]({{ site.baseurl }}/tut/using-bookdown.html)"
+
 
 
