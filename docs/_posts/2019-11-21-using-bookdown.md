@@ -62,6 +62,7 @@ Other material we might need, e.g. bookdown-specific markdown. Also notes; some 
   - boiler plate  
   - within books
   - numbering 
+    - automatic numbering - how it works (link out)
     - how to drop section from being numbered! 
       - this: `## Metadata concept {-}`
       - or even this: `# {-}`
