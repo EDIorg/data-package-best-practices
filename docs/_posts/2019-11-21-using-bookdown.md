@@ -66,11 +66,11 @@ Other material we might need, e.g. bookdown-specific markdown. Also notes; some 
             - this: `## Metadata concept {-}`
             - or even this: `# {-}`
             - it might be a hack. if so, advise on better way.
+        - what happens to files that have only second-level headings `##`
+            - they become subsections of the chapter loaded just ahead of them (that has a top-level heading)
 
-        - what happens to files that have only second-level headings `##`  - they become subsections of the chapter loaded just ahead of them (with a top-level heading)
 
-
- - the search function (in header) only works once files are on a server. To preview drafts, use serve_book (if installed) or generate thru an Rproject.
+- the search function (in header) only works once files are on a server. To preview drafts, use ` serve_book ` (if installed) or generate thru an Rproject.
 
 
 
