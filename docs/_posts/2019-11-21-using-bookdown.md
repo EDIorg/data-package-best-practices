@@ -54,18 +54,20 @@ TBD (as marked, and others): collect these as issues labeled "BP Committee"
 
 
 
-## Other stuff you might need. also notes. some to be dropped
-- how to pandoc (find a link, maybe)
-- how to handle citations with bib
+## Parking Lot
+Other material we might need, e.g. bookdown-specific markdown. Also notes; some likely to be dropped
+- pandoc ref - low priority (find a link, maybe)
+- how to handle citations with bibtex
 - how to handle the left menu 
+  - boiler plate  
   - within books
+  - numbering 
+        - how to drop section from being numbered! 
+            - this: `## Metadata concept {-}`
+            - or even this: `# {-}`
+            - it might be a hack. if so, advise on better way.
 
-- how to drop numbering! 
-  - this: `## Metadata concept {-}`
-  - or even this: `# {-}`
-  - it might be a hack. if so, advise on better way.
-
-- what happens to files that have only second-level headings `##`  - they become subsections of the chapter loaded just ahead of them (with a top-level heading)
+        - what happens to files that have only second-level headings `##`  - they become subsections of the chapter loaded just ahead of them (with a top-level heading)
 
 
  - the search function (in header) only works once files are on a server. To preview drafts, use serve_book (if installed) or generate thru an Rproject.
