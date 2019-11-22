@@ -12,7 +12,7 @@ bookdown::gitbook:
         </ul> 
       after: |
        <ul>
-        <li><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></li>
-        <li>![EDI logo](https://github.com/EDIorg/data-package-best-practices/blob/master/EDI-logo-sm.png)<li>
+        <li><h4><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></h4></li>
+        <li><img src="https://github.com/EDIorg/data-package-best-practices/blob/master/EDI-logo-sm.png" alt="EDI Logo" height="90" width="90"/><li>
        </ul>
        
