@@ -9,4 +9,5 @@ rmd_files: [
     "ecological_community_surveys.md",
     "meteorolgy_hydrology.md",
     "genomics_metagenomics.md",
+    "soil_carbon.md"	
     ]
