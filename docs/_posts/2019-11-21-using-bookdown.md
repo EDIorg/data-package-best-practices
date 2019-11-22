@@ -15,9 +15,8 @@ order: 4
 The major sections of this site are written in **Markdown**, and transformed to HTML with the **R bookdown** package. Original pages can be found at https://github.com/EDIorg/data-package-best-practices, and the site is served from the docs directory as gh-pages.
 
 Each section is a bookdown-book, so it is **self-contained**. Using this format has these advantages:
-- output is compatible with gh-pages
-- chapter organization is controlled by a configuration file ( `_bookdown.yml` )
-- public posting of the book is controlled by running a script
+- books can be served through gh-pages
+- posting to a webserver (e.g., github;s) is controlled by running a script
 - bookdown can also create PDFs for archive or printing
 
 ## Requirements
@@ -30,7 +29,7 @@ install.packages("bookdown")
 # devtools::install_github("rstudio/bookdown")
 ```
 
-It is based on the _sample_ from  https://bookdown.org/yihui/rmarkdown/bookdown-start.html
+These books are based on the _sample_ from  https://bookdown.org/yihui/rmarkdown/bookdown-start.html
 
 ### TinyTeX
 To compile the PDF, you need XeLaTeX. Install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
@@ -38,25 +37,26 @@ To compile the PDF, you need XeLaTeX. Install TinyTeX (which includes XeLaTeX): 
 
 ## Guidelines
 - Chapters are defined by the the presence of first-level heading `#`. 
+- Chapter organization is controlled by a configuration file ( `_bookdown.yml` )
+- a navigation menu can be added ( `_output.yml` )
 - Each Rmd or md file contains one chapter 
 - the search function (in header) only works once files are on a server. it searches both text and code blocks. 
 
 ## Steps (details TBD)
-1. edit markdown (tbd: in a fork-PR? branch?)
-1. review, e.g. by BP committee or other, accept changes 
+1. edit markdown (tbd: via fork-PR? branch?)
+1. review, e.g. by BP committee or other; accept changes 
 1. build book(s) - output sent to docs
-  1. TBD: single script.
+   1. TBD: single script.
 1. add-commit-push (originals and docs)
-1. TBD: need guidelines for when a PDF is warranted (fixed doc was requested for EML section, maybe others)
+    1. TBD: see repo issues labeled "BP Committee")
 
 
 
 ## Other stuff you might need. also notes. some to be dropped
-- how to pandoc ?
+- how to pandoc (find a link, maybe)
 - how to handle citations with bib
 - how to handle the left menu 
   - within books
-  - index page does not have to be a book
 
 - how to drop numbering! 
   - this: `## Metadata concept {-}`
