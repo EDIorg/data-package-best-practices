@@ -42,13 +42,15 @@ To compile the PDF, you need XeLaTeX. Install TinyTeX (which includes XeLaTeX): 
 - Each Rmd or md file contains one chapter 
 - the search function (in header) only works once files are on a server. it searches both text and code blocks. 
 
-## Steps (details TBD)
-1. edit markdown (tbd: via fork-PR? branch?)
-1. review, e.g. by BP committee or other; accept changes 
+## Steps
+1. edit markdown (TBD: via fork-PR? branch?)
+1. review, e.g. by BP committee or other
+1. accept changes, commit 
 1. build book(s) - output sent to docs
-   1. TBD: single script.
-1. add-commit-push (originals and docs)
-    1. TBD: see repo issues labeled "BP Committee")
+   1. TBD: scripts (each, all).
+1. add-commit-push (docs)
+
+TBD (as marked, and others): collect these as issues labeled "BP Committee"
 
 
 
