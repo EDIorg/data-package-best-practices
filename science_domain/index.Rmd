@@ -1,5 +1,5 @@
 --- 
-title: "Best Practices for Data Packages, in Scientific Domains"
+title: "Best Practices for Data Packages, Selected Scientific Domains"
 author: "Environmental Data Initiative"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -10,7 +10,7 @@ biblio-style: apalike
 description: "Best practice recommendations for data packages from environmental science domains."
 ---
 
-# Preface
+# Scientific Domain {-}
 
 This document contains current recommendations for data packages from specific scientific domains. Not all domains are covered.
 See navigation menu.

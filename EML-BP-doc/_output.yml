@@ -11,10 +11,12 @@ bookdown::gitbook:
           <li><a href="/data-package-best-practices/non_tabular/">Non-tabular data and other packaging challenges</a></li>
         </ul>  
       after: |
-        <ul>
-          <li><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></li>
-          <li>![EDI logo](https://github.com/EDIorg/data-package-best-practices/blob/master/EDI-logo-sm.png "EDI logo")<li>
-        </ul>       
+      
+            <ul>
+                <li><h4><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></h4></li>
+                <li><img class="img-responsive center-block" src="../../data-package-best-practices/images/EDI-logo-svg-240.png" alt="EDI Logo" height="90" width="90"/><li>
+            </ul>
+
 
 
 ## The download link for pdf will probably be an explicit link to a citable version. 
