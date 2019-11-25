@@ -2,28 +2,29 @@
 
 ## Introduction
 
-Data entities are kept offline when they are too large to be handled easily by the HTTP protocol,  are expected to be rarely requested, and can be mailed on an external drive. The limit for “too large” is somewhat subjective; our current working limit for datasets that are “too large for HTTP” is 100 gb (total size). If you suspect your data fall into this category, contact EDI for advice (support@environmentaldatainitiative.org).
+Data entities are kept offline when they are too large to be handled easily by the HTTP protocol, are expected to be rarely requested, and can be mailed on an external drive.  If you suspect your data fall into this category, contact EDI for advice (support@environmentaldatainitiative.org). Below are recommendations for the EDI repository's handling of data packages that have an offline component.
 
 ### Authors
 Margaret O’Brien, Corinna Gries
 
 
 ### Background
-paragraph, more specific background if needed.
+Standard practice is to handle data entities (both upload and download) via the HTTP protocol, using a URL. However, for very large datasets HTTP can fail due to physical limits. The limit for “too large” is somewhat subjective; EDI's current limit for datasets that are “too large for HTTP” is 100 gb (all data and metadata). 
 
 ## Recommendations for data packages
 
 
 ### Physical Storage
 
-*   Add data to external drive in native (non-compressed, non-tarred, non-zipped) format, deliver to EDI (mail).
-*   EDI will store three copies, one external hard drive each in New Mexico and in Wisconsin, one copy in general EDI backup cloud storage
+*   Add data to external drive in native (non-compressed, non-tarred, non-zipped) format, deliver to EDI (e.g., by physical mail).
+*   EDI will store three copies, one external hard drive each in New Mexico and in Wisconsin, one copy in general EDI backup cloud storage.
 
 
 ### #Data package
 
-*   The hard drive should contain at least two entities: the data (which will be offline) and an inventory of holdings of that entity.
-*   Content of the manifest (inventory of holdings) would be dictated by the type of data entity. Suggested columns are:
+*   The hard drive should contain at least two entities: the data (which will be offline) and an inventory or manifest of holdings of that entity.
+*   Content of the manifest (inventory of holdings) would be dictated by the type of data entity. The **manifest will be on anline entity** so that potential requestors can evaluate the offline resource before requesting it.
+*  Suggested columns are:
     *   Filename(s)
     *   Format (netCDF, tabular csv, etc.)
     *   Start_datetime
@@ -32,6 +33,9 @@ paragraph, more specific background if needed.
     *   Location_lon
     *   (other params the PIs may feel are essential)
     *   Checksum
+   
+   
+
 
 
 ### Package Metadata 
@@ -43,21 +47,25 @@ paragraph, more specific background if needed.
 *   Creators
 *   Contact (will be responsible for sending out copies as requested.) positionName: EDI Repository Manager Email: support@environmentaldatainitiative.org
 *   Methods - detailed collection/generation methods for the offline data entities. Detailed information for re-using the data. (May instead be included in the manifest table if different for different offline files.)
-*   Offline Entity Description: Describe as you would for an online resource. Restate the software needed to read the individual files if this is important to a user.
-*   Regular column descriptions for the manifest (inventory of holdings).
+*   Data Entities
+    * Offline Entity: 
+        *   Describe as you would for an online resource. Restate the software needed to read the individual files if this is important to a user. See [Table 1](#table_1) and [Sample XML](#sample_eml_offline).
+    * Manifest (inventory of the offline holdings)
+        *    Column descriptions as for any data table
 
 
 ### EML
 
-At least two entities should be described:
+In addition to basic resource-level metadata, at least two entities should be described:
 
 
 *   Manifest (inventory) should be a tableEntity: will be the online entity and described as all 
 *   Offline entity: 
     *   Fill out high-level fields as for an online resource. Restate the software needed to read the individual files if this is important to a user. 
-    *   Distribution node will be `offline (See Table 1, code block)
+    *   Distribution node will be `offline` (See Table 1, code block)
 
-Table 1. Three required fields for an offline distribution  
+
+Table 1. Three required fields for an offline distribution  (#table_1)
 
 
 <table>
@@ -82,7 +90,7 @@ Table 1. Three required fields for an offline distribution
 </table>
 
 
-Sample XML:
+Sample XML, offline entity (#sample_xml_offline)
 
 ```xml
 

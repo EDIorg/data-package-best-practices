@@ -52,6 +52,70 @@
 
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -89,9 +153,19 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="offline-data.html"><a href="offline-data.html"><i class="fa fa-check"></i><b>3</b> Offline Data</a><ul>
 <li class="chapter" data-level="3.1" data-path="offline-data.html"><a href="offline-data.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="offline-data.html"><a href="offline-data.html#background-2"><i class="fa fa-check"></i><b>3.1.1</b> Background</a></li>
+<li class="chapter" data-level="3.1.1" data-path="offline-data.html"><a href="offline-data.html#authors"><i class="fa fa-check"></i><b>3.1.1</b> Authors</a></li>
+<li class="chapter" data-level="3.1.2" data-path="offline-data.html"><a href="offline-data.html#background-2"><i class="fa fa-check"></i><b>3.1.2</b> Background</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="offline-data.html"><a href="offline-data.html#recommendations-for-data-packages-2"><i class="fa fa-check"></i><b>3.2</b> Recommendations for data packages</a></li>
+<li class="chapter" data-level="3.2" data-path="offline-data.html"><a href="offline-data.html#recommendations-for-data-packages-2"><i class="fa fa-check"></i><b>3.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="offline-data.html"><a href="offline-data.html#physical-storage"><i class="fa fa-check"></i><b>3.2.1</b> Physical Storage</a></li>
+<li class="chapter" data-level="3.2.2" data-path="offline-data.html"><a href="offline-data.html#data-package"><i class="fa fa-check"></i><b>3.2.2</b> #Data package</a></li>
+<li class="chapter" data-level="3.2.3" data-path="offline-data.html"><a href="offline-data.html#package-metadata"><i class="fa fa-check"></i><b>3.2.3</b> Package Metadata</a></li>
+<li class="chapter" data-level="3.2.4" data-path="offline-data.html"><a href="offline-data.html#eml"><i class="fa fa-check"></i><b>3.2.4</b> EML</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="offline-data.html"><a href="offline-data.html#references"><i class="fa fa-check"></i><b>3.3</b> References</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="offline-data.html"><a href="offline-data.html#eml-documentation"><i class="fa fa-check"></i><b>3.3.1</b> EML documentation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="offline-data.html"><a href="offline-data.html#potential-issues"><i class="fa fa-check"></i><b>3.4</b> Potential Issues</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="photos-quadrats.html"><a href="photos-quadrats.html"><i class="fa fa-check"></i><b>4</b> Photos - quadrats</a><ul>
 <li class="chapter" data-level="4.1" data-path="photos-quadrats.html"><a href="photos-quadrats.html#introduction-3"><i class="fa fa-check"></i><b>4.1</b> Introduction</a><ul>
@@ -125,16 +199,123 @@
 <h1><span class="header-section-number">3</span> Offline Data</h1>
 <div id="introduction-2" class="section level2">
 <h2><span class="header-section-number">3.1</span> Introduction</h2>
-<p>TO DO: there is a google-doc of this, convert to markdown.</p>
-<p>Some background info, why this is needed.</p>
+<p>Data entities are kept offline when they are too large to be handled easily by the HTTP protocol, are expected to be rarely requested, and can be mailed on an external drive. The limit for “too large” is somewhat subjective; our current working limit for datasets that are “too large for HTTP” is 100 gb (total size). If you suspect your data fall into this category, contact EDI for advice (<a href="mailto:support@environmentaldatainitiative.org" class="email">support@environmentaldatainitiative.org</a>).</p>
+<div id="authors" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Authors</h3>
+<p>Margaret O’Brien, Corinna Gries</p>
+</div>
 <div id="background-2" class="section level3">
-<h3><span class="header-section-number">3.1.1</span> Background</h3>
+<h3><span class="header-section-number">3.1.2</span> Background</h3>
 <p>paragraph, more specific background if needed.</p>
 </div>
 </div>
 <div id="recommendations-for-data-packages-2" class="section level2">
 <h2><span class="header-section-number">3.2</span> Recommendations for data packages</h2>
-<p>How to handle this data type</p>
+<div id="physical-storage" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Physical Storage</h3>
+<ul>
+<li>Add data to external drive in native (non-compressed, non-tarred, non-zipped) format, deliver to EDI (mail).</li>
+<li>EDI will store three copies, one external hard drive each in New Mexico and in Wisconsin, one copy in general EDI backup cloud storage</li>
+</ul>
+</div>
+<div id="data-package" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> #Data package</h3>
+<ul>
+<li>The hard drive should contain at least two entities: the data (which will be offline) and an inventory of holdings of that entity.</li>
+<li>Content of the manifest (inventory of holdings) would be dictated by the type of data entity. Suggested columns are:
+<ul>
+<li>Filename(s)</li>
+<li>Format (netCDF, tabular csv, etc.)</li>
+<li>Start_datetime</li>
+<li>End_datetime</li>
+<li>Location_lat</li>
+<li>Location_lon</li>
+<li>(other params the PIs may feel are essential)</li>
+<li>Checksum</li>
+</ul></li>
+</ul>
+</div>
+<div id="package-metadata" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Package Metadata</h3>
+<p>(in EDI metadata template and converted to EML - generally, as for any data package)</p>
+<ul>
+<li>Abstract: describe the collection generally. If individual files require specific software to read, provide the name of that software.</li>
+<li>Creators</li>
+<li>Contact (will be responsible for sending out copies as requested.) positionName: EDI Repository Manager Email: <a href="mailto:support@environmentaldatainitiative.org" class="email">support@environmentaldatainitiative.org</a></li>
+<li>Methods - detailed collection/generation methods for the offline data entities. Detailed information for re-using the data. (May instead be included in the manifest table if different for different offline files.)</li>
+<li>Offline Entity Description: Describe as you would for an online resource. Restate the software needed to read the individual files if this is important to a user.</li>
+<li>Regular column descriptions for the manifest (inventory of holdings).</li>
+</ul>
+</div>
+<div id="eml" class="section level3">
+<h3><span class="header-section-number">3.2.4</span> EML</h3>
+<p>At least two entities should be described:</p>
+<ul>
+<li>Manifest (inventory) should be a tableEntity: will be the online entity and described as all</li>
+<li>Offline entity:
+<ul>
+<li>Fill out high-level fields as for an online resource. Restate the software needed to read the individual files if this is important to a user.</li>
+<li>Distribution node will be `offline (See Table 1, code block)</li>
+</ul></li>
+</ul>
+<p>Table 1. Three required fields for an offline distribution</p>
+<table>
+<tr>
+<td>
+physical/objectName
+</td>
+<td>
+As for any entity, this is the name of the file or data object
+</td>
+</tr>
+<tr>
+<td>
+dataFormat/ExternallyDefinedFormat/formatName
+</td>
+<td>
+The name of the format the data object is in. If there is a special compression applied, list it here.
+</td>
+</tr>
+<tr>
+<td>
+distribution/offline/mediumName
+</td>
+<td>
+Instead of a data URL, you will have an offline distribution node. The name of almost all offline media is “external drive”, because that is how you will deliver the data to a requestor.
+</td>
+</tr>
+</table>
+<p>Sample XML:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="offline-data.html#cb1-1"></a></span>
+<span id="cb1-2"><a href="offline-data.html#cb1-2"></a><span class="kw">&lt;physical&gt;</span></span>
+<span id="cb1-3"><a href="offline-data.html#cb1-3"></a>  <span class="kw">&lt;objectName&gt;</span>mainl_2005acc.zip<span class="kw">&lt;/objectName&gt;</span></span>
+<span id="cb1-4"><a href="offline-data.html#cb1-4"></a>  <span class="kw">&lt;dataFormat&gt;</span></span>
+<span id="cb1-5"><a href="offline-data.html#cb1-5"></a>    <span class="kw">&lt;externallyDefinedFormat&gt;</span></span>
+<span id="cb1-6"><a href="offline-data.html#cb1-6"></a>      <span class="kw">&lt;formatName&gt;</span>netCDF file<span class="kw">&lt;/formatName&gt;</span></span>
+<span id="cb1-7"><a href="offline-data.html#cb1-7"></a>    <span class="kw">&lt;/externallyDefinedFormat&gt;</span></span>
+<span id="cb1-8"><a href="offline-data.html#cb1-8"></a>  <span class="kw">&lt;/dataFormat&gt;</span></span>
+<span id="cb1-9"><a href="offline-data.html#cb1-9"></a>  <span class="kw">&lt;distribution&gt;</span></span>
+<span id="cb1-10"><a href="offline-data.html#cb1-10"></a>    <span class="kw">&lt;offline&gt;</span></span>
+<span id="cb1-11"><a href="offline-data.html#cb1-11"></a>      <span class="kw">&lt;mediumName&gt;</span>External drive<span class="kw">&lt;/mediumName&gt;</span></span>
+<span id="cb1-12"><a href="offline-data.html#cb1-12"></a>    <span class="kw">&lt;/offline&gt;</span></span>
+<span id="cb1-13"><a href="offline-data.html#cb1-13"></a>  <span class="kw">&lt;/distribution&gt;</span></span>
+<span id="cb1-14"><a href="offline-data.html#cb1-14"></a><span class="kw">&lt;/physical&gt;</span></span></code></pre></div>
+</div>
+</div>
+<div id="references" class="section level2">
+<h2><span class="header-section-number">3.3</span> References</h2>
+<div id="eml-documentation" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> EML documentation</h3>
+<p><a href="https://eml.ecoinformatics.org/schema/index.html">https://eml.ecoinformatics.org/schema/index.html</a></p>
+<p>Look for the PhysicalDistributionType</p>
+</div>
+</div>
+<div id="potential-issues" class="section level2">
+<h2><span class="header-section-number">3.4</span> Potential Issues</h2>
+<ul>
+<li><p>ssd formatting (eventually, whatever we use, it will become unusable).</p></li>
+<li><p>Even with cloud storage, eventually a binary format will become unusable</p></li>
+</ul>
 
 </div>
 </div>
