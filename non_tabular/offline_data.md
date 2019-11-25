@@ -20,7 +20,7 @@ Standard practice is to handle data entities (both upload and download) via the 
 *   EDI will store three copies, one external hard drive each in New Mexico and in Wisconsin, one copy in general EDI backup cloud storage.
 
 
-### #Data package
+### Data package
 
 *   The hard drive should contain at least two entities: the data (which will be offline) and an inventory or manifest of holdings of that entity.
 *   Content of the manifest (inventory of holdings) would be dictated by the type of data entity. The **manifest will be on anline entity** so that potential requestors can evaluate the offline resource before requesting it.
@@ -35,9 +35,6 @@ Standard practice is to handle data entities (both upload and download) via the 
     *   Checksum
    
    
-
-
-
 ### Package Metadata 
 
 (in EDI metadata template and converted to EML - generally, as for any data package)
@@ -49,7 +46,7 @@ Standard practice is to handle data entities (both upload and download) via the 
 *   Methods - detailed collection/generation methods for the offline data entities. Detailed information for re-using the data. (May instead be included in the manifest table if different for different offline files.)
 *   Data Entities
     * Offline Entity: 
-        *   Describe as you would for an online resource. Restate the software needed to read the individual files if this is important to a user. See [Table 1](#table_1) and [Sample XML](#sample_eml_offline).
+        *   Describe as you would for an online resource. Restate the software needed to read the individual files if this is important to a user. See [Table 1](#table_1) and [Sample XML](#sample_xml_offline).
     * Manifest (inventory of the offline holdings)
         *    Column descriptions as for any data table
 
@@ -65,7 +62,7 @@ In addition to basic resource-level metadata, at least two entities should be de
     *   Distribution node will be `offline` (See Table 1, code block)
 
 
-Table 1. Three required fields for an offline distribution  (#table_1)
+#### Table 1. Three required fields for an offline distribution  {#table_1}
 
 
 <table>
@@ -90,7 +87,7 @@ Table 1. Three required fields for an offline distribution  (#table_1)
 </table>
 
 
-Sample XML, offline entity (#sample_xml_offline)
+#### Sample XML, offline entity   {#sample_xml_offline}
 
 ```xml
 
