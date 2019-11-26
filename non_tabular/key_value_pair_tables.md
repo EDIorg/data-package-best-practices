@@ -17,7 +17,7 @@ The ecocomDP model developed by EDI for harmonizing ecological community survey 
 
 
 ## Sensor data
-The Attribute - Value format is especially efficient for sensor data and variations of this data model have been developed in communities handling large volumes of sensor data (e.g., ODM or Observation Data Model from CUAHSI).  For more information for using that model in EML data packages, see [Recommendations for meteorology and hydrology data.html](../scientific_domain/meteorology-and-hydrology-data.html.html).
+The Attribute - Value format is especially efficient for sensor data and variations of this data model have been developed in communities handling large volumes of sensor data (e.g., ODM or Observation Data Model from CUAHSI).  For more information for using that model in EML data packages, see [Recommendations for meteorology and hydrology data.html](../scientific_domain/meteorology-and-hydrology-data.html).
 
 For a single site, this data model is useful when sensors are frequently changed or redeployed or when several different sets of sensor deployments exist. To accurately describe in EML (e.g., typing, precision), it is recommended that each data table contain only the Attribute – Value formatted values for a single sensor. A single data package with data from multiple sensors, can have values for each sensor in separate entities (data tables). Most of these data models describe the concept of a single “data stream,” which may be used to achieve the here recommended approach dynamically.
 
