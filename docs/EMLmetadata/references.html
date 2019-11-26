@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>19 constraint | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
-  <meta name="description" content="19 constraint | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <title>References | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
+  <meta name="description" content="References | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="19 constraint | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  <meta property="og:title" content="References | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="19 constraint | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <meta property="og:description" content="References | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="19 constraint | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
+  <meta name="twitter:title" content="References | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   
-  <meta name="twitter:description" content="19 constraint | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
+  <meta name="twitter:description" content="References | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
   
 
 <meta name="author" content="Environmental Data Initiative" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="attributelist.html"/>
-<link rel="next" href="references.html"/>
+<link rel="prev" href="constraint.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -223,76 +223,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="constraint" class="section level1">
-<h1><span class="header-section-number">19</span> constraint</h1>
-<p>This element tree is found at (XPath):<br />
-<strong>/eml:eml/dataset/dataTable/constraint</strong><br />
-<strong>/eml:eml/dataset/view/constraint</strong><br />
-<strong>/eml:eml/dataset/spatialRaster/constraint</strong><br />
-<strong>/eml:eml/dataset/spatialVector/constraint</strong><br />
-<strong>/eml:eml/dataset/storedProcedure/constraint</strong></p>
-<p>The &lt;<strong>constraint</strong>&gt; tree is for describing any integrity constraints
-between entities within a data package (e.g. tables), as they would be maintained in a
-relational management system. Use of the &lt;<strong>constraint</strong>&gt; tree is
-encouraged when data elements contain integrity constraints from a
-relational database. Example TO-DO shows the constraints for the
-&lt;<strong>attributeList</strong>&gt; in Example TO-DO. If there are constraints in
-which several columns are involved, these should be described in
-methods/qualityControl, since EML is not currently equipped to handle
-keys defined by multiple columns. When the &lt;<strong>constraint</strong>&gt; tree is
-used, all of the entities that may be referenced should be in the same
-package. There are six child elements:</p>
-<p>&lt;<strong>primaryKey</strong>&gt; is an element which declares the primary key in the
-entity to which the defined constraint pertains.</p>
-<p>&lt;<strong>uniqueKey</strong>&gt; is an element which represents a unique key within the
-referenced entity. This is different from a primary key in that it does
-not form any implicit foreign key relationships to other entities;
-however it is required to be unique within the entity.</p>
-<p>&lt;<strong>nonNullConstraint</strong>&gt; defines a constraint that indicates that no
-null values should be present for an attribute in this entity.</p>
-<p>&lt;<strong>checkConstraint</strong>&gt; defines a constraint which checks a conditional
-clause within an entity.</p>
-<p>&lt;<strong>foreignKey</strong>&gt; defines an SQL statement or other language
-implementation of the condition for a check constraint. Generally this
-provides a means for constraining the values within and among entities.
-It also provides the means to meaningfully link table for explanation of
-codes (de-normalization).</p>
-<p>&lt;<strong>joinCondition</strong>&gt; defines a foreign key relationship among entities
-which relates this entity to another’s primary key.</p>
-<p>The &lt;<strong>primaryKey</strong>&gt;, &lt;<strong>uniqueKey</strong>&gt;, &lt;<strong>nonNullConstraint</strong>&gt;
-require an additional &lt;<strong>key</strong>&gt; tag defining the attribute to which
-this constraint applies, referenced by its id attribute (described in
-another area). All &lt;<strong>ConstraintType</strong>&gt; entities require additional
-&lt;<strong>constraintName</strong>&gt; and &lt;<strong>attributeReference</strong>&gt; tags.</p>
-<hr />
-<p>Example 24: constraint</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb27-1"><a href="constraint.html#cb27-1"></a><span class="kw">&lt;constraint</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.PRIMARY&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb27-2"><a href="constraint.html#cb27-2"></a>   <span class="kw">&lt;primaryKey&gt;</span></span>
-<span id="cb27-3"><a href="constraint.html#cb27-3"></a>      <span class="kw">&lt;constraintName&gt;</span>PRIMARY<span class="kw">&lt;/constraintName&gt;</span></span>
-<span id="cb27-4"><a href="constraint.html#cb27-4"></a>      <span class="kw">&lt;key&gt;</span></span>
-<span id="cb27-5"><a href="constraint.html#cb27-5"></a>         <span class="kw">&lt;attributeReference&gt;</span>soil_chemistry.ID<span class="kw">&lt;/attributeReference&gt;</span></span>
-<span id="cb27-6"><a href="constraint.html#cb27-6"></a>      <span class="kw">&lt;/key&gt;</span></span>
-<span id="cb27-7"><a href="constraint.html#cb27-7"></a>   <span class="kw">&lt;/primaryKey&gt;</span></span>
-<span id="cb27-8"><a href="constraint.html#cb27-8"></a><span class="kw">&lt;/constraint&gt;</span></span>
-<span id="cb27-9"><a href="constraint.html#cb27-9"></a><span class="kw">&lt;constraint</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.FK_soil_chemistry_sites&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb27-10"><a href="constraint.html#cb27-10"></a>   <span class="kw">&lt;foreignKey&gt;</span></span>
-<span id="cb27-11"><a href="constraint.html#cb27-11"></a>      <span class="kw">&lt;constraintName&gt;</span>FK_soil_chemistry_sites<span class="kw">&lt;/constraintName&gt;</span></span>
-<span id="cb27-12"><a href="constraint.html#cb27-12"></a>      <span class="kw">&lt;key&gt;</span></span>
-<span id="cb27-13"><a href="constraint.html#cb27-13"></a>         <span class="kw">&lt;attributeReference&gt;</span>soil_chemistry.site_id<span class="kw">&lt;/attributeReference&gt;</span></span>
-<span id="cb27-14"><a href="constraint.html#cb27-14"></a>      <span class="kw">&lt;/key&gt;</span></span>
-<span id="cb27-15"><a href="constraint.html#cb27-15"></a>      <span class="kw">&lt;entityReference&gt;</span>sites<span class="kw">&lt;/entityReference&gt;</span></span>
-<span id="cb27-16"><a href="constraint.html#cb27-16"></a>   <span class="kw">&lt;/foreignKey&gt;</span></span>
-<span id="cb27-17"><a href="constraint.html#cb27-17"></a><span class="kw">&lt;/constraint&gt;</span></span></code></pre></div>
-<hr />
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
 
+<div id="refs" class="references">
+<div>
+<p>Jones, Matthew, Margaret O’Brien, Bryce Mecum, Carl Boettiger, Mark Schildhauer, Mitchell Maier, Timothy Whiteaker, Stevan Earl, and Steven Chong. 2019. “Ecological Metadata Language Version 2.2.0.” <a href="https://doi.org/10.5063/f11834t2">https://doi.org/10.5063/f11834t2</a>.</p>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="attributelist.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="constraint.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
