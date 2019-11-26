@@ -34,15 +34,21 @@ These books are based on the _sample_ from  https://bookdown.org/yihui/rmarkdown
 ### TinyTeX
 To compile the PDF, you need XeLaTeX. Install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
 
+## This website has three (3) books, each one has a directory
+### EML-BP-docs
+### scientific_domain
+### non_tablular_data
 
-## Guidelines
+
+## General Guidelines (for a single book)
 - Chapters are defined by the the presence of first-level heading `#`. 
 - Chapter organization is controlled by a configuration file ( `_bookdown.yml` )
 - a navigation menu can be added ( `_output.yml` )
 - Each Rmd or md file contains one chapter 
 - the search function (in header) only works once files are on a server. it searches both text and code blocks. 
 
-## Steps
+## Steps to edit a book page
+This section is a work in progress, as some of the process are still TBD. Those marked below and others are collected as issues labeled "BP Committee"
 1. edit markdown (TBD: via fork-PR? branch?)
 1. review, e.g. by BP committee or other
 1. accept changes, commit 
@@ -50,14 +56,30 @@ To compile the PDF, you need XeLaTeX. Install TinyTeX (which includes XeLaTeX): 
    1. TBD: scripts (each, all).
 1. add-commit-push (docs)
 
-TBD (as marked, and others): collect these as issues labeled "BP Committee"
+
+
+## Cross-book linkages
+- All three books are generated to the repository's docs directory, where they live in subdirs alongside the top-level pages (like this one). 
+- use relative URLs to link between them. e.g. to link from a page under a *scientific_domain* to a page under ` EML_bp_doc`: `[anchor tag text here](../EML-BP-doc/abstract.html)`
+- you can use in-page anchor tags too: `[anchor tag text here](../EML-BP-doc/distribution.html#entity-level)` . Note the convention of separating header words with dashes.
+
+
+## External Citations (with bibtex)
+1. Confirm that there is a References section in the book, and that it is included in the ` _bookdown.yml `. If not see the book here: ` EML-BP-doc/ ` for an example to copy.
+1. Create entry: Add a bibtex-style entry for the resource you want to cite to the book.bib file in the respective book. 
+1. Cite it: like this: `EML schema documentation [@EML_2019]`
+   1. ` [@key] ` means the citation will be enclosed in parens. ` @key `, it won't. 
+1. Bookdown does the rest: 
+   1. inserts the citation into the text in place of the key
+   1. creates a References section to the bottom of the *page* you added the citation with a formatted entry 
+   1. adds formatted entry to the references section at the end of the *book* 
+1. See an example at ` EML-BP-doc/index.md `
 
 
 
 ## Parking Lot
 Other material we might need, e.g. bookdown-specific markdown. Also notes; some likely to be dropped
 - pandoc ref - low priority (find a link, maybe)
-- how to handle citations with bibtex
 - how to handle the left menu 
   - boiler plate  
   - within books
