@@ -26,5 +26,6 @@ rmd_files: [
     "methods.md",
     "project.md",
     "entities.md",
-    "constraint.md"
+    "constraint.md",
+    "references.md"
     ]

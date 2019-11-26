@@ -6,13 +6,13 @@ site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
-link-citations: yes
+link-citations: true
 description: "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)."
 ---
 
 # EML Best Practices {-}
 
-This document contains current “Best Practice” recommendations for EML content for metadata related to ecological and environmental data. It is intended to augment the EML schema documentation for a less-technical audience. This is one component of several resources available to EML preparers. These recommendations are directed towards the following goals:
+This document contains current 'Best Practice' recommendations for EML content for metadata related to ecological and environmental data. It is intended to augment the EML schema documentation [@EML_2019] for a less-technical audience. This is one component of several resources available to EML preparers. These recommendations are directed towards the following goals:
 
 - Provide guidance and clarification in the implementation of EML for datasets
 - Minimize heterogeneity of EML documents to simplify development and re-use of software built to ingest it
