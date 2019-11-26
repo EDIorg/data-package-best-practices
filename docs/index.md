@@ -33,6 +33,7 @@ Examples:
 - meteorology and/or hydrology data
 - genomics and metagenomics
 - soil carbon cycling
+- ocean acidification 
   
 **[Recommendations for data from specific scientific domains](scientific_domain/index.html)**
   
@@ -52,7 +53,8 @@ Examples:
   - video
 - audio
 - telemetry
-- flow cytometry
+- GIS data
+- flow cytometry output
 
 **[Recommendations for non-tabular and other packaging challenges](non_tabular/index.html)**
 
