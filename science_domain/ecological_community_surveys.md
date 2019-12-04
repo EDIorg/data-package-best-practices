@@ -31,11 +31,11 @@ Community survey data are of great interest to the broader biodiversity communit
 
 ### Dates
 Temporal sampling regime is consistent 
-*   Best: consistent dateTime format throughout 
+*   **Best**: consistent dateTime format throughout 
     *   [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.6.56](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.6.56) 
-*   OK: sampling regime changes over time (yyyy, vs yyyy-mm-dd)
+*   **OK**: sampling regime changes over time (yyyy, vs yyyy-mm-dd)
         *   YYYY, vs YYYY-MM-DD
-*   Not useable: date and time columns are not typed in EML as dateTimes (i.e, typed as strings, as below) 
+*   **Not useable**: date and time columns are not typed in EML as dateTimes (i.e, typed as strings, as below) 
 
 ![alt_text](images/DPBP-community-surveys0.png "image_tooltip")
 
@@ -44,32 +44,32 @@ Temporal sampling regime is consistent
 ### Locations 
 Should be complete, with latitude and longitude
 
-*   Best: digital lat/lon
+*   **Best**: digital lat/lon
     *   example:    [https://portal.edirepository.org/nis/metadataviewer?packageid=edi.5.3](https://portal.edirepository.org/nis/metadataviewer?packageid=edi.5.3) 
-*   OK (need processing):
+*   **OK** (need processing):
     *   In metadata only:
         * example: [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33) 
     *   Deg-min-sec (strings)
     *   Locations in second table
-*   Not usable: sites codes without lat/lon
+*   **Not useable**: sites codes without lat/lon
 
 
 ### Site nesting
 Sampling site nesting can be understood: 
-*   Best: subsites labeled
+*   **Best**: subsites labeled
     *  example: [https://portal.edirepository.org/nis/metadataviewer?packageid=edi.5.3](https://portal.edirepository.org/nis/metadataviewer?packageid=edi.5.3) 
-*   OK: 
-*   Not useable:
+*   **OK**: 
+*   **Not useable**:
 
 
 ### Taxa
 Taxa can be resolved 
 
-*   Best: Taxon codes are assigned at source 
+*   **Best**: Taxon codes are assigned at source 
     *  example: [https://portal.edirepository.org/nis/metadataviewer?packageid=edi.3.5](https://portal.edirepository.org/nis/metadataviewer?packageid=edi.3.5) 
-*   OK: species binomials
+*   **OK**: species binomials
     *  example: [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33) 
-    *   Not useable: local codes only
+    *   **Not useable**: local codes only
         * example (*if all they had included was the column called “sp_code”):  [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33)      
 
 
@@ -77,12 +77,12 @@ Taxa can be resolved
 
 Metadata can be matched to entity column
 
-    *   Best: attributeName exactly matches column header  
-        *  example [https://portal.edirepository.org/nis/metadataviewer?packageid=edi.3.5](https://portal.edirepository.org/nis/metadataviewer?packageid=edi.3.5) 
-    *   OK: can be matched by manual examination
-        * example  [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.1039.9](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.1039.9)
-    *   Marginal: no header
-        *   example
+*   **Best**: attributeName exactly matches column header  
+    *  example [https://portal.edirepository.org/nis/metadataviewer?packageid=edi.3.5](https://portal.edirepository.org/nis/metadataviewer?packageid=edi.3.5) 
+*   **OK**: can be matched by manual examination
+    * example  [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.1039.9](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.1039.9)
+*   **Marginal**: no header
+    *   example
 
 This feature has come up in other discussions. Its true that the EML does assert what the content of a column is. However, there is no explicit “key” into that column except for the column header. If these do not match (or are absent), then there is nothing to go on but trust. That’s fine if data are shared only within a tightly knit community, but is less likely to happen when data are reused. 
 
@@ -92,10 +92,10 @@ This feature has come up in other discussions. Its true that the EML does assert
 ### Table linkages
 Foreign Key linkages are clear 
 
-*   Best: EML constraint included, with referential integrity 
+*   **Best**: EML constraint included, with referential integrity 
     *  example [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.6.56](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.6.56) 
-*   OK: FK detected manually, has referential integrity
+*   **OK**: FK detected manually, has referential integrity
     *   url
-*   Not Usable: FK detected manually, but no referential integrity
+*   **Not useable**: FK detected manually, but no referential integrity
     *   url 
 
