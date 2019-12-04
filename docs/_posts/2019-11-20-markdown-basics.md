@@ -6,11 +6,10 @@ categories: tut
 order: 3
 ---
 
-Describes markdown format for EDI documentation. Based on Kramdown. Examine the raw file to see syntax.
+Brief description of markdown format for EDI documentation.  Examine the raw file to see syntax. 
 
+These templates are based on Kramdown. This page has examples, and also shows you what how the md is transformed to html: https://kramdown.gettalong.org/quickref.html
 
-This page has examples, and also shows you what how the md is transformed to html. nice. \ 
- https://kramdown.gettalong.org/quickref.html
 
 # Typical Components - headers, sections
 
@@ -101,7 +100,7 @@ For an inline code block: use `single backtick`
 ### File and image links
 Example of how to create a link: <a href="{{ site.baseurl }}/files/966.pdf">link to 966.pdf</a>.
 
-~~~
+~~~ruby
 <a href="{{ site.baseurl }}/files/966.pdf">link to 966.pdf</a>
 ~~~~
 
@@ -112,15 +111,15 @@ Markdown shortcut:
 [link to 996.pdf]({{ site.baseurl }}/files/966.pdf")
 ~~~~
 
-Steps
+How to link to a file
 1. commit the file appropriate dir (in this case, we used `doc/file`. For many files, the archive is a better choice.
-1. create link using site.baseurl (for files in `doc/files`)
-1. create link using site.codeurl (for files eslewhere in the repository)
+1. create link using `site.baseurl` (for files in `doc/files`)
+1. create link using `site.codeurl` (for files elsewhere in the repository)
 
 Example of how to create a link to a doc elsewhere in the repo: 
 <a href="{{ site.codeurl }}/tree/master/archive/EML-BP-doc/emlbestpractices_oct2004.pdf">link to EML BP doc 2004 version</a>
 
-```
+```ruby
 <a href="{{ site.codeurl }}/tree/master/archive/EML-BP-doc/emlbestpractices_oct2004.pdf">link to EML BP doc 2004 version</a>
 ```
 
@@ -129,7 +128,7 @@ Example of how to create a link to a doc elsewhere in the repo:
 Example of a how to include an image. Same process, use the images dir and site.baseurl:
 <img src="{{ site.baseurl }}/images/EDI-logo-svg-240.png" alt="EDI logo" height="80" width="80"/>
 
-```
+```ruby
 <img src="{{ site.baseurl }}/images/EDI-logo-svg-240.png" alt="EDI logo" height="80" width="80"/> 
 
 ```

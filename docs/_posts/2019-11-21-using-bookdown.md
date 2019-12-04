@@ -12,11 +12,11 @@ order: 4
 
  DRAFT - DRAFT - DRAFT
 
-The major sections of this site are written in **Markdown**, and transformed to HTML with the **R bookdown** package. Original pages can be found at https://github.com/EDIorg/data-package-best-practices, and the site is served from the docs directory as gh-pages.
+The major sections of this site are written in **Markdown**, and transformed to HTML with the **R bookdown** package. Original pages can be found in subdirectories of this repository: https://github.com/EDIorg/data-package-best-practices, and the entire site is served from the docs directory as gh-pages.
 
 Each section is a bookdown-book, so it is **self-contained**. Using this format has these advantages:
 - books can be served through gh-pages
-- posting to a webserver (e.g., github;s) is controlled by running a script
+- posting to a webserver (e.g., github's) is controlled by running a script
 - bookdown can also create PDFs for archive or printing
 
 ## Requirements
@@ -34,7 +34,8 @@ These books are based on the _sample_ from  https://bookdown.org/yihui/rmarkdown
 ### TinyTeX
 To compile the PDF, you need XeLaTeX. Install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
 
-## This website has three (3) books, each one has a directory
+## Website organization
+This website has three (3) books, each one has a directory
 ### EML-BP-docs
 ### scientific_domain
 ### non_tablular_data
@@ -45,14 +46,14 @@ To compile the PDF, you need XeLaTeX. Install TinyTeX (which includes XeLaTeX): 
 - Chapter organization is controlled by a configuration file ( `_bookdown.yml` )
 - a navigation menu can be added ( `_output.yml` )
 - Each Rmd or md file contains one chapter 
-- the search function (in header) only works once files are on a server. it searches both text and code blocks. 
+- the search function (in header) only works once files are on a server. it searches both text and code blocks, but only within a single book. 
 
 ## Steps to edit a book page
-This section is a work in progress, as some of the process are still TBD. Those marked below and others are collected as issues labeled "BP Committee"
+This section is a work in progress, as some of the process are still TBD, which are for a Best Practices Committee to decide. See the repo (https://github.com/EDIorg/data-package-best-practices/issues), issues labeled "BP Committee"
 1. edit markdown (TBD: via fork-PR? branch?)
 1. review, e.g. by BP committee or other
 1. accept changes, commit 
-1. build book(s) - output sent to docs
+1. build book(s) - output sent to your local docs dir
    1. TBD: scripts (each, all).
 1. add-commit-push (docs)
 
@@ -65,13 +66,13 @@ This section is a work in progress, as some of the process are still TBD. Those 
 
 
 ## External Citations (with bibtex)
-1. Confirm that there is a References section in the book, and that it is included in the ` _bookdown.yml `. If not see the book here: ` EML-BP-doc/ ` for an example to copy.
+1. Confirm that there is a References section in the book, and that it is included in the ` _bookdown.yml `. If not see this book: ` EML-BP-doc/ ` for an example to copy.
 1. Create entry: Add a bibtex-style entry for the resource you want to cite to the book.bib file in the respective book. 
-1. Cite it: like this: `EML schema documentation [@EML_2019]`
-   1. ` [@key] ` means the citation will be enclosed in parens. ` @key `, it won't. 
+1. Cite it: in a page, cite like this: `EML schema documentation [@EML_2019]`
+   1. The ` [@key] ` syntax means the citation will be enclosed in parens. Without the square brackets, ` @key `, it won't. 
 1. Bookdown does the rest: 
    1. inserts the citation into the text in place of the key
-   1. creates a References section to the bottom of the *page* you added the citation with a formatted entry 
+   1. creates a References section to the bottom of the *page* containing a formatted entry 
    1. adds formatted entry to the references section at the end of the *book* 
 1. See an example at ` EML-BP-doc/index.md `
 
@@ -79,8 +80,10 @@ This section is a work in progress, as some of the process are still TBD. Those 
 
 ## Parking Lot
 Other material we might need, e.g. bookdown-specific markdown. Also notes; some likely to be dropped
+- the bookdown bible: https://bookdown.org/yihui/bookdown/
 - pandoc ref - low priority (find a link, maybe)
-- how to handle the left menu 
+- how the left menu works
+  - what is by-convention, what you can control
   - boiler plate  
   - within books
   - numbering 

@@ -15,21 +15,21 @@ This website contains current \"Best Practice\" recommendations for ecological a
 - Minimize heterogeneity of EML-described data packages to simplify development and re-use of software
 - Maximize interoperability to facilitate data synthesis
 
-To participate in the "Best Practices for Data Packages" project, see "About this site".
+To participate in the "Best Practices for Data Packages" project, see "[About this site](about/about-this-website.html)".
 
 
 ## EML Metadata concepts
-The recommendations for EML metadata apply to all data packages. This section subsumes V3 of the static document "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)". Presentation as a website allows for bookmarking and cross-links. The entire most recent (versioned, citable) release is also available as a PDF. 
+The recommendations for EML metadata apply to all data packages. This section subsumes V3 of the static PDF document "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)," last updated in 2017. Presentation of this material as a website allows for bookmarking and cross-links. The entire most recent (versioned, citable) release can also be made available as a PDF. 
 
 
  **[Best Practices for Dataset Metadata in Ecological Metadata Language (EML)](EMLmetadata/index.html)**
   
 ## Scientific domains
-This section contains recommendations for data from certain scientific domains. Many of these topics have extensive, related code bases, which some of these recommendations take into account and link to. 
+This section contains recommendations for data from certain scientific domains. Many of these topics have extensive related code bases, which recommendations can take into account and link to. 
 
 Examples:
 
-- ecological community survey data
+- ecological community surveys
 - meteorology and/or hydrology data
 - genomics and metagenomics
 - soil carbon cycling
@@ -61,7 +61,7 @@ Examples:
 ## Application-specific recommendations
 Recommendations for data intended for specific handling or intended for certain applications. In most cases these are mediated by EDI.
 
-TBD: decide if this goes here. if not, then where?
+TBD: decide if this material goes here. if not, then where? Some of these topics are highly relevant to the goals stated above. 
 
 Examples:
 
@@ -69,7 +69,8 @@ Examples:
   - sometimes necessary if size prevents efficient delivery over HTTP)
 - Specific features DataONE handles or indexes (or does not handle)
 - Data that are to be replicated to another repository 
-- 
+- TBD: EDI profile for EML
+  - this is directly relevant to the goal of 'reducing heterogeneity'
 
 **TBD: link (if it even goes here...)** 
 
