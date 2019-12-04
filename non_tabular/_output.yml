@@ -6,7 +6,7 @@ bookdown::gitbook:
       before: |
         <li><h4><a class="brand" href="/data-package-best-practices/">Data Package Best Practices</a></h4></li>
         <ul>
-          <li><a href="/data-package-best-practices/EMLmetadata/">Metadata Concepts</a></li>
+          <li><a href="/data-package-best-practices/EMLmetadata/">EML Metadata</a></li>
           <li><a href="/data-package-best-practices/scientific_domain/">Scientific Domain</a></li>
           <li><a href="/data-package-best-practices/non_tabular/">Non-tabular data and other packaging challenges</a></li>
         </ul> 
