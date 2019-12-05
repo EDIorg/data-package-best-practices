@@ -23,15 +23,16 @@ Although a prescribed format would make data easily reused, the complexity of co
 Community survey data are of great interest to the broader biodiversity community, particularly through their support for portals such as GBIF, and the use of the Darwin Core Vocabulary. Harmonization is the first step in this process.
 
 
-## Recommendations for datasets
-
-### Definitions and conventions
+## Definitions and conventions
 The recommendations and examples below are organized according to how easily the data are reused. In all cases **Best** is preferred, and the recommended. 
-- Best: Data are easily understood (do not require manual handling or further investigation 
-- OK: Some manual or custom or specialized handling required
-- Marginal: Additional metadata is required, along with custom handling and probably investigation (e.g., questions answered via email)
-- Not useable: the dataset has significant metadata missing; or has too many inconsistencies or layout challenges for it to be used even with manual handling. 
+- **Best**: Data are easily understood (do not require manual handling or further investigation)
+- **OK**: Some manual, custom or specialized handling required
+- **Marginal**: Additional metadata is required, along with custom handling and probably investigation (e.g., questions answered via email)
+- **Not useable**: the dataset has significant metadata missing; or has too many inconsistencies or layout challenges for it to be used even with manual handling. 
 
+
+
+## Recommendations for datasets
 
 ### Sampling methods
 Methods are generally text metadata
@@ -46,8 +47,8 @@ Methods are generally text metadata
 ### Dates
 Temporal sampling regime is consistent 
 
-*   **Best**: consistent dateTime format throughout
-    *   [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.6.56](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.6.56) 
+*   **Best**: A column for dateTime is in the entity, and its format is consistent throughout 
+    *  example: [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.6.56](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.6.56) 
 *   **OK**: sampling regime changes over time (yyyy, vs yyyy-mm-dd)
         *   YYYY, vs YYYY-MM-DD
 *   **Not useable**: date and time columns are not typed in EML as dateTimes (i.e, typed as strings, as below) 
@@ -66,7 +67,7 @@ Synthesis efforts may be able to circumvent the lack of true dates by dropping r
 ### Locations 
 Should be complete, with latitude and longitude
 
-*   **Best**: digital lat/lon
+*   **Best**: Columns for digital lat/lon
     *   example:    [https://portal.edirepository.org/nis/metadataviewer?packageid=edi.5.3](https://portal.edirepository.org/nis/metadataviewer?packageid=edi.5.3) 
 *   **OK** (need custom processing):
     *   In metadata only:
@@ -89,9 +90,9 @@ Sampling site nesting can be understood
 ### Taxa
 Taxa can be resolved 
 
-*   **Best**: Taxon codes are assigned at source by those familiar with these taxonomic groups
+*   **Best**: Taxon codes in the entity itself, assigned at source by those familiar with these taxonomic groups
     *  example: [https://portal.edirepository.org/nis/metadataviewer?packageid=edi.3.5](https://portal.edirepository.org/nis/metadataviewer?packageid=edi.3.5) 
-*   **OK**: species binomials
+*   **OK**: species binomials (ids will have to be added later, by someone less familiar with these taxa)
     *  example: [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33) 
     *   **Not useable**: local codes only
         * example (*if all they had included was the column called “sp_code”):  [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33)      
