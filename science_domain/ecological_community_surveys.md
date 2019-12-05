@@ -10,7 +10,7 @@ We know from experience that primary research data sets cannot be easily reused 
 
 ## Authors
 - Margaret O'Brien (https://orcid.org/0000-0002-1693-8322)
-- ecocomDP working group: 
+- ecocomDP working group: https://environmentaldatainitiative.org/dataset-design/data-package-design-for-community-survey-data/
 
 ## Anticipated use cases
 
