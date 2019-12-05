@@ -8,6 +8,9 @@ We know from experience that primary research data sets cannot be easily reused 
 - synthesis scientists working with this type of data
 - lessons learned from harmonization of primary data, e.g., EDI's `ecocomDP` project.
 
+## Authors
+- Margaret O'Brien (https://orcid.org/0000-0002-1693-8322)
+- ecocomDP working group: 
 
 ## Anticipated use cases
 
@@ -24,7 +27,7 @@ Community survey data are of great interest to the broader biodiversity communit
 
 
 ## Definitions and conventions
-The recommendations and examples below are organized according to how easily the data are reused. In all cases **Best** is preferred, and the recommended. 
+The recommendations and examples below are organized according to how easily the data are reused. In all cases **Best** is preferred, and recommended. **Marginal** and **not useable** may overlap in some situations.
 - **Best**: Data are easily understood (do not require manual handling or further investigation)
 - **OK**: Some manual, custom or specialized handling required
 - **Marginal**: Additional metadata is required, along with custom handling and probably investigation (e.g., questions answered via email)
