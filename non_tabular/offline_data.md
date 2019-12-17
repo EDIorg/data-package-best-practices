@@ -23,7 +23,7 @@ Standard practice is to handle data entities (both upload and download) via the 
 ### Data package
 
 *   The hard drive should contain at least two entities: the data (which will be offline) and an inventory or manifest of holdings of that entity.
-*   Content of the manifest (inventory of holdings) would be dictated by the type of data entity. The **manifest will be on anline entity** so that potential requestors can evaluate the offline resource before requesting it.
+*   Content of the manifest (inventory of holdings) would be dictated by the type of data entity. The **manifest will be on online entity** so that potential requestors can evaluate the offline resource before requesting it.
 *  Suggested columns are:
     *   Filename(s)
     *   Format (netCDF, tabular csv, etc.)
