@@ -18,9 +18,7 @@ order: 1
 - Based on a fork of http://bruth.github.io/jekyll-docs-template/
 - Changes (after pushed to github) are public immediately
 
-<img src="{{ site.baseurl }}/images/DPBP_layout.png" alt="DPBP layout"/>
-
-
+<img src="{{ site.baseurl }}/images/DPBP_layout.png" alt="DPBP layout" width="800px"/>
 
 #### Best Practice sections 
 - Composed of multiple sections, each composed of multiple pages and moderated by the appropriate committee
