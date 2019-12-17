@@ -92,7 +92,7 @@ In addition to basic resource-level metadata, at least two entities should be de
 ```xml
 
 <physical>
-  <objectName>mainl_2005acc.zip</objectName>
+  <objectName>mainl_2005acc.nc</objectName>
   <dataFormat>
     <externallyDefinedFormat>
       <formatName>netCDF file</formatName>
