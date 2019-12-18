@@ -21,11 +21,13 @@ bookdown::gitbook:
 
 ## The download link for pdf will probably be an explicit link to a citable version. 
 #    download: ["pdf", "epub"]
+
 ## You'll want these sections for citable versions. open them later. 
-# bookdown::pdf_book:
-#  includes:
-#    in_header: preamble.tex
-#  latex_engine: xelatex
-#  citation_package: natbib
-#  keep_tex: yes
+bookdown::pdf_book:
+  includes:
+    # in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes
+
 #bookdown::epub_book: default
