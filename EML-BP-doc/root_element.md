@@ -30,16 +30,12 @@ and versioning at the local level (see **\@system** discussion below).
 The **packageId** attribute can be used to contain the same identifier
 as is used by the repository.
 
-See Section III for other information about EML documents in Metacat.
-
 _Context Note: The packageID attribute is required in all EML documents
-submitted to EDI. It is entered into the repository software, and the
-format is standardized to three parts: scope, package-number, revision.
+submitted to the EDI repository. It is entered into the repository software, 
+and theformat is standardized to three parts: scope, package-number, revision.
 The scope should be "edi" unless another scope is justified by prior
 arrangement. See Example 1._
 
-
----
 
 Example 1: attributes packageId, id, system, and scope
 ```xml
@@ -55,4 +51,4 @@ Example 1: attributes packageId, id, system, and scope
    system="FLS"
    scope="system">
 ```
----
+

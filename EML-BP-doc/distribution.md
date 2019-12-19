@@ -15,7 +15,6 @@ because it applies to the entire package, not only to one entity.
 _Context: The EDI repository will ignore a `<distribution>` element
 at the dataset level._
 
----
 Example 11a: distribution at the dataset level
 ```xml
 <distribution>
@@ -27,7 +26,6 @@ Example 11a: distribution at the dataset level
    </online>
 </distribution>
 ```
----
 
 ## Entity level
 The entity-level `<distribution>` element contains information on how that
@@ -81,7 +79,6 @@ element is intended specifically for controlling access to the data
 entity itself. For more information on the <**access**> tree, see
 above, under the general access discussion.
 
----
 
 Example 11b: distribution at the data entity level
 ```xml
@@ -99,4 +96,3 @@ Example 11b: distribution at the data entity level
    </physical>
 </dataTable>
 ```
----

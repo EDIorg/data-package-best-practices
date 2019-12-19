@@ -21,7 +21,6 @@ three-letter site acronym and site name. In addition to specific
 keywords, relevant conceptual keywords should also be included, e.g.,
 from the LTER Controlled Vocabulary._
 
----
 
 Example 9: pubDate, abstract,keywordSet, keyword
 ```xml
@@ -60,4 +59,3 @@ Example 9: pubDate, abstract,keywordSet, keyword
    <keywordThesaurus>LTER core research areas</keywordThesaurus>
 </keywordSet>
 ```
----

@@ -103,7 +103,7 @@ used at the dataset, entity or attribute level, whichever is
 appropriate. At its most basic, use the <**description**> element.
 Tags are also available for a <**citation**> or <**protocol**>.
 
----
+
 
 Example 17: methods
 ```xml
@@ -188,9 +188,9 @@ Example 17: methods
    </qualityControl>
 </methods>
 ```
----
 
----
+
+
 
 Example 18: methods, with dataSource
 ```xml
@@ -222,4 +222,4 @@ Example 18: methods, with dataSource
    </methodStep>
 </methods>
 ```
----
+

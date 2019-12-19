@@ -145,7 +145,7 @@ the dataset level for more information.
 <**additionalInfo**> is a text field for any material that cannot be
 characterized by the other elements for the data type.
 
----
+
 
 Example 20: The elements in the EntityGroup, showing the <dataTable> entity.
 ```xml
@@ -178,7 +178,7 @@ Example 20: The elements in the EntityGroup, showing the <dataTable> entity.
    </physical>
 </dataTable>
 ```
----
+
 
 Each data type has a specific set of elements that follow the common
 elements. Table 2 shows the specific trees that are applied to each of
@@ -422,7 +422,7 @@ SQL system with a defined storage type. The second <**attributeList**>
 includes tags for <**customUnits**>, with the Unit defined in the
 <**additionalMetadata**> tree.
 
----
+
 
 Example 21: attributeList/attribute dataTable
 ```xml
@@ -545,13 +545,13 @@ Example 21: attributeList/attribute dataTable
    </attribute>
 </attributeList>
 ```
----
+
 
 The examples below show complete entity trees for <**spatialVector**>
 and <**spatialRaster**> converted via XSLT (stylesheet) from ESRI
 metadata format. For details see "Other Resources".
 
----
+
 
 Example 22: Entity and attribute information for spatialVector
 ```xml
@@ -644,9 +644,9 @@ Example 22: Entity and attribute information for spatialVector
    </spatialReference>
 </spatialVector>
 ```
----
 
----
+
+
 
 Example 23: Entity and attribute information for spatialRaster
 ```xml
@@ -736,4 +736,4 @@ Example 23: Entity and attribute information for spatialRaster
    <cellGeometry>matrix</cellGeometry>
 </spatialRaster>
 ```
----
+

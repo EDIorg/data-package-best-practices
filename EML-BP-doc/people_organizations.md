@@ -54,7 +54,6 @@ examples here are for ORCID identifiers, and that organization has asked
 that its full URI be used as both the **system** attribute, and as the
 head of the identifier itself.
 
----
 
 Example 4: creator
 ```xml
@@ -116,7 +115,6 @@ Example 4: creator
    </userId>
 </creator>
 ```
----
 
 ## creator
 
@@ -150,7 +148,6 @@ element. For acquired data sets, where the <**creator**> or
 metadata content, the actual metadata content provider should be listed
 instead (see Example below).
 
----
 
 Example 5: metadataProvider
 ```xml
@@ -172,7 +169,6 @@ Example 5: metadataProvider
    </userId>
 </metadataProvider>
 ```
----
 
 ## associatedParty
 
@@ -185,7 +181,6 @@ technicians, students assistants, etc.) as <**associatedParty**>. All
 university, institution, or agency could also be listed as an
 <**associatedParty**> using <**role**> of "owner" when appropriate.
 
----
 
 Example 6: associatedParty
 ```xml
@@ -212,7 +207,6 @@ Example 6: associatedParty
    <role>Technician</role>
 </associatedParty>
 ```
----
 
 ## contact
 
@@ -229,7 +223,6 @@ the work belong under <**associatedParty**> rather than
 <**electronicMailAddress**>, and <**onlineURL**> elements for the
 <**contact**> element.
 
----
 
 Example 7: contact
 ```xml
@@ -251,7 +244,6 @@ Example 7: contact
    </userId>
 </contact>
 ```
----
 
 ## publisher
 
@@ -266,7 +258,6 @@ the organization's name (<**organizationName**>). Complete the
 displays may use this element, although typically, the repository
 becomes the publisher in citations.
 
----
 
 Example 8: publisher
 ```xml
@@ -274,4 +265,3 @@ Example 8: publisher
    <organizationName>Fictitious LTER site</organizationName>
 </publisher>
 ```
----

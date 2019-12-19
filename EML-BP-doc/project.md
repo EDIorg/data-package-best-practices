@@ -35,7 +35,6 @@ be referenced by the
 **studyExtent/spatialSamplingUnits/referencedEntityId**. The sibling
 <**descriptor**> tag can be used for text descriptions of the site.
 
----
 
 Example 19: project
 ```xml
@@ -82,4 +81,3 @@ Example 19: project
    </abstract>
 </project>
 ```
----

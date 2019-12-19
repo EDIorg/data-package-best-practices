@@ -16,7 +16,6 @@ will insert text that releases data under "CC-0" (shown in example). The
 LTER Network-wide default policy is "CC-BY". Please consult those
 organizations for more information and more details._
 
----
 
 Example 10: intellectualRights
 ```xml
@@ -41,4 +40,3 @@ Example 10: intellectualRights
    </section>
 </intellectualRights>
 ```
----

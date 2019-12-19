@@ -2,7 +2,7 @@
 
 The access element is found at this location (XPath):  
 **/eml:eml/access**  
-**/eml:eml/[entityType]/physical/distribution/access**
+**/eml:eml/\[entityType\]/physical/distribution/access**
 
 <**access**> contains a list of rules defining permissions for this
 metadata record and its data entity. Values must be applicable by the
@@ -20,7 +20,6 @@ should be publicly accessible. The <**access**> element is optional,
 and if omitted, the repository may presume that only the dataset
 submitter will be allowed access.
 
----
 
 Example 2: access
 ```xml
@@ -35,5 +34,5 @@ Example 2: access
    </allow>
 </access>
 ```
----
+
 

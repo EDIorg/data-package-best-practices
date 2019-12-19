@@ -10,7 +10,6 @@ change history can also be used to describe alterations in static
 documents. The description element (TextType) can contain both formatted
 and unformatted text blocks.
 
----
 
 Example 16: maintenance
 ```xml
@@ -22,4 +21,3 @@ Example 16: maintenance
    </description>
 </maintenance>
 ```
----

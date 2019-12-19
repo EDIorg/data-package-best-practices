@@ -37,7 +37,6 @@ description of a <**customUnit**> in the id attribute of a
 `"siemensPerMeter"`. The EML Parser is available from GitHub, with the EML
 project. For descriptions of custom units see "Other Resources".
 
----
 
 Example 25: additionalMetadata custom unit
 ```xml
@@ -52,4 +51,3 @@ Example 25: additionalMetadata custom unit
    </metadata>
 </additionalMetadata>
 ```
----

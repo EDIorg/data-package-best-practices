@@ -45,7 +45,7 @@ there are significant distances between study sites and grouping them in
 one bounding box would be misleading or confusing. For example, a
 cross-site study should have bounding boxes for each site.
 
----
+
 
 Example 12: geographicCoverage at the dataset level
 ```xml
@@ -68,14 +68,14 @@ Example 12: geographicCoverage at the dataset level
    </geographicCoverage>
 </coverage>
 ```
----
+
 
 If sampling took place in discrete point location, those sites should
 also appear with or without a bounding box. Individual sampling sites
 may also be be entered under <**spatialSamplingUnits**>, each site in
 a separate coverage element (see below).
 
----
+
 
 Example 13: geographicCoverage under spatialSamplingUnits
 ```xml
@@ -109,7 +109,7 @@ Example 13: geographicCoverage under spatialSamplingUnits
    </coverage>
 </spatialSamplingUnits>
 ```
----
+
 
 Latitudes and longitudes should be in the same datum, commonly used
 (i.e., all values in WGS84 or NAD83) and expressed to at least six
@@ -184,7 +184,7 @@ no data are yet available. Use the <**maintanence**> tag (below) to
 describe the update frequency. The methods/sampling tree should be used
 to describe the ongoing nature of the data collection.
 
----
+
 
 Example 14: temporalCoverage
 ```xml
@@ -199,7 +199,7 @@ Example 14: temporalCoverage
    </rangeOfDates>
 </temporalCoverage>
 ```
----
+
 
 ## taxonomicCoverage
 
@@ -241,7 +241,7 @@ processing, keys, and chemical or genetic analyses.
 <**taxonomicCompleteness**> may be used to document the status,
 estimated importance, and reason for incomplete identifications.
 
----
+
 
 Example 15: taxonomicCoverage
 ```xml
@@ -330,4 +330,4 @@ Example 15: taxonomicCoverage
    </taxonomicClassification>
 </taxonomicCoverage>
 ```
----
+

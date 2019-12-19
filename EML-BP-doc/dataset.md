@@ -67,7 +67,6 @@ The dataset <**title**> should be descriptive and should mention the
 data collected, geographic context, research site, and time frame (what,
 where, and when).
 
----
 
 Example 3: dataset, alternateIdentifier, shortName, title
 ```xml
@@ -77,4 +76,3 @@ Example 3: dataset, alternateIdentifier, shortName, title
    <title>Long-term Ground Arthropod Monitoring Dataset at Ficity, USA
       from 1998 to 2003</title>
 ```
----

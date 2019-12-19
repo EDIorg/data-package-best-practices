@@ -49,7 +49,6 @@ this constraint applies, referenced by its id attribute (described in
 another area). All <**ConstraintType**> entities require additional
 <**constraintName**> and <**attributeReference**> tags.
 
----
 
 Example 24: constraint
 ```xml
@@ -71,4 +70,3 @@ Example 24: constraint
    </foreignKey>
 </constraint>
 ```
----
