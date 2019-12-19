@@ -6,12 +6,14 @@
 # is warranted, eg, EML BP doc, version 4.
 
 # render the current markdown files as a PDF (using _bookdown.yml):
-# and saves as a  PDF in the archive directory
-# note that this command does NOT use the _output.ywl at all.
+# and save as a PDF in the archive directory
+# note that this command does NOT use the _output.yml at all.
 
 # debugging
-options(tinytex.verbose = TRUE)
-bookdown::render_book('index.Rmd', 'bookdown::pdf_book', output_dir = '../archive/test')
+# options(tinytex.verbose = TRUE)
+
+# bookdown::render_book('index.Rmd', 'bookdown::pdf_book', output_dir = '.')
+bookdown::render_book('index.Rmd', 'bookdown::pdf_book')
 
 # rename the file:
 # bookdown does not let me control the name of the output file (one of the many 'conventions'?). 
@@ -19,11 +21,13 @@ bookdown::render_book('index.Rmd', 'bookdown::pdf_book', output_dir = '../archiv
 # running bookdown! Perhaps bookdown needs a clean session? which includes  
 # cleaning out any variables I create? however, it still has access to the args array.
 # I need a R-expert.
+# also note: sometimes the arg includes a space at the beginning of the string. 
+# figure that one out. - see issue #25. it also runs fine if comment out the bookdown command.
 
 args = commandArgs(trailingOnly = TRUE)
 output_filename <- args[1]
 print(paste('saving to output to ', output_filename) )
 
-setwd("../archive/test")
-file.rename("EML-BP-doc.pdf", output_filename)
-# file.rename("non_tabular.pdf", output_filename)
+# copy the pdf output to the name specified in the command line. 
+# working LaTeX file and log are left in working dir
+file.copy("EML-BP-doc.pdf", paste("../archive/test2/", output_filename))
