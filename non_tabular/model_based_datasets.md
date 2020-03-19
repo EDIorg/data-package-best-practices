@@ -22,7 +22,7 @@ The Environmental Data Initiative (EDI) is used as the representative data repos
 
 ### 1. Referencing models in EML
 
-For data packages related to a model, whether the model is archived within the same data package or not, indicate linkage to the model in EML following [Best practices for archiving software/code](https://docs.google.com/document/d/1BcDgTtrcC6bt814xnJT_aAHf_6booU2nMI83PWc7ots/edit#) {NEED GITHUB LINK} (section 1.2 and 2 in that document). 
+For data packages related to a model, whether the model is archived within the same data package or not, indicate linkage to the model in EML following [Best practices for archiving software/code](https://github.com/EDIorg/data-package-best-practices/blob/master/non_tabular/model_based_datasets.md) (section 1.2 and 2 in that document). 
 
 Example EML snippet relating data to models via the method description:
 
@@ -56,15 +56,15 @@ The model used to produce certain data needs to be well documented and linked fr
 
 Note that these scenarios (model code archived with data, or standalone in EDI, or elsewhere) are not mutually exclusive. Any project that involves code might make use of both established and custom software hosted on many different platforms, and might use some or all archiving options.
 
-To decide between archiving options, consider the questions listed in [best practices for publishing software/code](https://docs.google.com/document/d/1BcDgTtrcC6bt814xnJT_aAHf_6booU2nMI83PWc7ots/edit#) {NEED GITHUB LINK} (see section 1).
+To decide between archiving options, consider the questions listed in [best practices for publishing software/code](https://github.com/EDIorg/data-package-best-practices/blob/master/non_tabular/model_based_datasets.md) (see section 1).
 
 #### 2.1. Model code and data in the same package
 
-The goal of this practice is to ensure complete transparency of the data, and it applies to one-off models developed for the associated data, or occasionally to larger code bases for the reasons outlined [best practices for publishing software/code](https://docs.google.com/document/d/1BcDgTtrcC6bt814xnJT_aAHf_6booU2nMI83PWc7ots/edit#) {NEED GITHUB LINK} (see section 1). Include the code as a dataset/otherEntity. Additionally, it is recommended to include a CodeMeta JSON-LD file, which can also be handled and documented in EML as dataset/otherEntity. CodeMeta is a metadata standard for software and code compatible with schema.org. Refer to [best practices for publishing software](https://docs.google.com/document/d/1BcDgTtrcC6bt814xnJT_aAHf_6booU2nMI83PWc7ots/edit#) {NEED GITHUB LINK} for how to document the code and create CodeMeta.
+The goal of this practice is to ensure complete transparency of the data, and it applies to one-off models developed for the associated data, or occasionally to larger code bases for the reasons outlined [best practices for publishing software/code](https://github.com/EDIorg/data-package-best-practices/blob/master/non_tabular/model_based_datasets.md) (see section 1). Include the code as a dataset/otherEntity. Additionally, it is recommended to include a CodeMeta JSON-LD file, which can also be handled and documented in EML as dataset/otherEntity. CodeMeta is a metadata standard for software and code compatible with schema.org. Refer to [best practices for publishing software](https://github.com/EDIorg/data-package-best-practices/blob/master/non_tabular/model_based_datasets.md) for how to document the code and create CodeMeta.
 
 #### 2.2. Model code as standalone package
 
-If the model has been used to generate several datasets, i.e., is more widely applicable, it can be archived as its own package in EDI and assigned a DOI. Include the code as a dataset/otherEntity. Additionally, it is recommended to include a CodeMeta JSON-LD file, which can also be handled and documented in EML as dataset/otherEntity. CodeMeta is a metadata standard for software and code compatible with schema.org. Refer to [best practices for publishing software](https://docs.google.com/document/d/1BcDgTtrcC6bt814xnJT_aAHf_6booU2nMI83PWc7ots/edit#) {NEED GITHUB LINK} for how to document the code and create CodeMeta.
+If the model has been used to generate several datasets, i.e., is more widely applicable, it can be archived as its own package in EDI and assigned a DOI. Include the code as a dataset/otherEntity. Additionally, it is recommended to include a CodeMeta JSON-LD file, which can also be handled and documented in EML as dataset/otherEntity. CodeMeta is a metadata standard for software and code compatible with schema.org. Refer to [best practices for publishing software](https://github.com/EDIorg/data-package-best-practices/blob/master/non_tabular/model_based_datasets.md) for how to document the code and create CodeMeta.
 
 Consider including a list of derived data product(s) and their DOIs, ideally in the abstract of the EDI model package. This might lead to a chicken-and-egg issue, in which case we recommend publishing the model first, then including its DOI in the associated data packages(s). Then the IM might choose to take an extra step and push a revision to the model package to include the data DOIs.
 
@@ -95,4 +95,4 @@ Example model data packages already in EDI illustrative of different approaches:
 
 [Best practices for offline data](https://github.com/EDIorg/data-package-best-practices/blob/master/non_tabular/offline_data.md)
 
-[Best practices for publishing software](https://docs.google.com/document/d/1BcDgTtrcC6bt814xnJT_aAHf_6booU2nMI83PWc7ots/edit#) {NEED GITHUB LINK}
+[Best practices for publishing software](https://github.com/EDIorg/data-package-best-practices/blob/master/non_tabular/model_based_datasets.md)
