@@ -548,7 +548,7 @@ Example 21: attributeList/attribute dataTable
 
 
 The examples below show complete entity trees for <**spatialVector**>
-and <**spatialRaster**> converted via XSLT (stylesheet) from ESRI
+and <**spatialRaster**> converted via XSLT (stylesheet) from Esri
 metadata format. For details see "Other Resources".
 
 
@@ -737,3 +737,39 @@ Example 23: Entity and attribute information for spatialRaster
 </spatialRaster>
 ```
 
+The <**otherEntity**> data type includes the free text <**entityType**> element for naming the type of the entity.  The **otherEntity/physical/dataFormat/externallyDefinedFormat/formatName** element stores the file format. While there is no controlled vocabulary for the content of these elements, Table 3 provides some suggestions. For other cases, consider using [MIME types](https://www.iana.org/assignments/media-types/media-types.xhtml) for the <**formatName**>. 
+
+Table 3. Entity types and format names for some <**otherEntity**> types.
+
+<table>
+  <tr>
+    <th>Common Name</th>
+    <th>Entity Type</th>
+    <th>Format Name</th>
+  </tr>
+  <tr>
+    <td>R script</td>
+    <td>R script</td>
+    <td>application/r</td>
+  </tr>
+  <tr>
+    <td>R markdown</td>
+    <td>R markdown</td>
+    <td>text/markdown</td>
+  </tr>
+  <tr>
+    <td>PHP script</td>
+    <td>PHP script</td>
+    <td>application/php</td>
+  </tr>
+  <tr>
+    <td>JPG image</td>
+    <td>photograph</td>
+    <td>image/jpg</td>
+  </tr>
+  <tr>
+    <td>PDF document</td>
+    <td>document</td>
+    <td>application/pdf</td>
+  </tr>
+</table>

@@ -6,7 +6,8 @@ language:
    #  chapter_name: "Chapter "
 rmd_files: [
     "index.Rmd",
-    "model_output.md",
+    "software_and_code.md",
+    "model_based_datasets.md",
     "key_value_pair_tables.md",
     "offline_data.md",
     "photos_quadrats.md"	
