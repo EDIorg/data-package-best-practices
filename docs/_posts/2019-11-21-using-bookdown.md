@@ -31,14 +31,21 @@ install.packages("bookdown")
 
 These books are based on the _sample_ from  https://bookdown.org/yihui/rmarkdown/bookdown-start.html
 
+each book needs to be compiled separately:
+e.g.:
+setwd("../EML-BP-doc")
+bookdown::render_book("EML-BP-doc")
+
+
 ### TinyTeX
 To compile the PDF, you need XeLaTeX. Install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
 
 ## Website organization
 This website has three (3) books, each one has a directory
 ### EML-BP-docs
+### datapackage_design_BP
 ### scientific_domain
-### non_tablular_data
+
 
 
 ## General Guidelines (for a single book)

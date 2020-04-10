@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Still Images | Best Practices for Data Package Design</title>
+  <meta name="description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Still Images | Best Practices for Data Package Design" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Still Images | Best Practices for Data Package Design" />
+  
+  <meta name="twitter:description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
+  
+
+<meta name="author" content="Environmental Data Initiative" />
+
+
+<meta name="date" content="2020-04-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="model-based-datasets.html"/>
+<link rel="next" href="genomic-and-metagenomic-data.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><h4><a class="brand" href="/data-package-best-practices/">Data Package Best Practices</a></h4></li>
+<ul>
+  <li><a href="/data-package-best-practices/EMLmetadata/">EML Metadata</a></li>
+  <li><a href="/data-package-best-practices/datapackage-design/">Data Package Design</a></li>
+  <li><a href="/data-package-best-practices/scientific_domain/">Data Products for Synthesis Research</a></li>
+</ul> 
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Best Practice Recommendations for Data Package Design</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#data-file-type"><i class="fa fa-check"></i>Data File Type</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#enitites-to-include-in-a-data-package"><i class="fa fa-check"></i>Enitites to Include in a Data Package</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#splitting-and-lumping-of-data"><i class="fa fa-check"></i>Splitting and Lumping of Data</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#data-file-format"><i class="fa fa-check"></i>Data File Format</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#data-in-other-repositories"><i class="fa fa-check"></i>Data in Other Repositories</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#very-large-datasets"><i class="fa fa-check"></i>Very Large Datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html"><i class="fa fa-check"></i><b>1</b> Key-Value Pair Tables</a><ul>
+<li class="chapter" data-level="1.1" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
+<li class="chapter" data-level="1.2" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#recommendations-for-data-packages"><i class="fa fa-check"></i><b>1.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#biodiversity-data"><i class="fa fa-check"></i><b>1.2.1</b> Biodiversity data</a></li>
+<li class="chapter" data-level="1.2.2" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#sensor-data"><i class="fa fa-check"></i><b>1.2.2</b> Sensor data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="code-in-edi.html"><a href="code-in-edi.html"><i class="fa fa-check"></i><b>2</b> Code in EDI</a><ul>
+<li class="chapter" data-level="2.1" data-path="code-in-edi.html"><a href="code-in-edi.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="code-in-edi.html"><a href="code-in-edi.html#background"><i class="fa fa-check"></i><b>2.1.1</b> Background</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="code-in-edi.html"><a href="code-in-edi.html#recommendations-for-data-packages-1"><i class="fa fa-check"></i><b>2.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="code-in-edi.html"><a href="code-in-edi.html#softwarecode-in-edi"><i class="fa fa-check"></i><b>2.2.1</b> Software/code in EDI</a></li>
+<li class="chapter" data-level="2.2.2" data-path="code-in-edi.html"><a href="code-in-edi.html#documenting-softwarecode"><i class="fa fa-check"></i><b>2.2.2</b> Documenting software/code</a></li>
+<li class="chapter" data-level="2.2.3" data-path="code-in-edi.html"><a href="code-in-edi.html#linking-between-code-and-data"><i class="fa fa-check"></i><b>2.2.3</b> Linking between code and data</a></li>
+<li class="chapter" data-level="2.2.4" data-path="code-in-edi.html"><a href="code-in-edi.html#external-software"><i class="fa fa-check"></i><b>2.2.4</b> External software</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="code-in-edi.html"><a href="code-in-edi.html#resources"><i class="fa fa-check"></i><b>2.3</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="model-based-datasets.html"><a href="model-based-datasets.html"><i class="fa fa-check"></i><b>3</b> Model Based Datasets</a><ul>
+<li class="chapter" data-level="3.1" data-path="model-based-datasets.html"><a href="model-based-datasets.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="model-based-datasets.html"><a href="model-based-datasets.html#background-1"><i class="fa fa-check"></i><b>3.1.1</b> Background</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="model-based-datasets.html"><a href="model-based-datasets.html#recommendations-for-data-packages-2"><i class="fa fa-check"></i><b>3.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="model-based-datasets.html"><a href="model-based-datasets.html#referencing-models-in-eml"><i class="fa fa-check"></i><b>3.2.1</b> Referencing models in EML</a></li>
+<li class="chapter" data-level="3.2.2" data-path="model-based-datasets.html"><a href="model-based-datasets.html#model-code"><i class="fa fa-check"></i><b>3.2.2</b> Model code</a></li>
+<li class="chapter" data-level="3.2.3" data-path="model-based-datasets.html"><a href="model-based-datasets.html#model-input-and-output-data"><i class="fa fa-check"></i><b>3.2.3</b> Model input and output data</a></li>
+<li class="chapter" data-level="3.2.4" data-path="model-based-datasets.html"><a href="model-based-datasets.html#model-parameters"><i class="fa fa-check"></i><b>3.2.4</b> Model parameters</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="model-based-datasets.html"><a href="model-based-datasets.html#resources-1"><i class="fa fa-check"></i><b>3.3</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="still-images.html"><a href="still-images.html"><i class="fa fa-check"></i><b>4</b> Still Images</a><ul>
+<li class="chapter" data-level="4.1" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#recommendations-for-data-packages"><i class="fa fa-check"></i><b>4.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="still-images.html"><a href="still-images.html#recommendations-for-metadata"><i class="fa fa-check"></i><b>4.2.1</b> Recommendations for Metadata</a></li>
+<li class="chapter" data-level="4.2.2" data-path="still-images.html"><a href="still-images.html#image-catalog"><i class="fa fa-check"></i><b>4.2.2</b> Image Catalog</a></li>
+<li class="chapter" data-level="4.2.3" data-path="still-images.html"><a href="still-images.html#data-extracted-from-images"><i class="fa fa-check"></i><b>4.2.3</b> Data Extracted from Images</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="still-images.html"><a href="still-images.html#resources-2"><i class="fa fa-check"></i><b>4.3</b> Resources</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="still-images.html"><a href="still-images.html#examples-in-edi"><i class="fa fa-check"></i><b>4.3.1</b> Examples in EDI</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html"><i class="fa fa-check"></i><b>5</b> Genomic and Metagenomic Data</a><ul>
+<li class="chapter" data-level="5.1" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#introduction"><i class="fa fa-check"></i><b>5.1</b> Introduction</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="code-in-edi.html"><a href="code-in-edi.html#background"><i class="fa fa-check"></i><b>5.1.1</b> Background</a></li>
+<li class="chapter" data-level="5.1.2" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#types-of-genomics-datasets-commonly-encountered"><i class="fa fa-check"></i><b>5.1.2</b> Types of Genomics Datasets Commonly Encountered</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#recommendations-for-datasets"><i class="fa fa-check"></i><b>5.2</b> Recommendations for Datasets</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#metadata-for-all-genomics-datasets-archived-in-edi"><i class="fa fa-check"></i><b>5.2.1</b> Metadata for All Genomics Datasets Archived in EDI</a></li>
+<li class="chapter" data-level="5.2.2" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#genomics-data-summary"><i class="fa fa-check"></i><b>5.2.2</b> Genomics Data Summary</a></li>
+<li class="chapter" data-level="5.2.3" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#genomics-data-with-ancillary-data"><i class="fa fa-check"></i><b>5.2.3</b> Genomics Data with Ancillary Data</a></li>
+<li class="chapter" data-level="5.2.4" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#derived-data-products"><i class="fa fa-check"></i><b>5.2.4</b> Derived data products</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="code-in-edi.html"><a href="code-in-edi.html#resources"><i class="fa fa-check"></i><b>5.3</b> Resources</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#tips-for-locating-metadata"><i class="fa fa-check"></i><b>5.3.1</b> Tips for locating metadata</a></li>
+<li class="chapter" data-level="5.3.2" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#links-to-various-repositories"><i class="fa fa-check"></i><b>5.3.2</b> Links to various repositories</a></li>
+<li class="chapter" data-level="5.3.3" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#related-best-practices-and-templates"><i class="fa fa-check"></i><b>5.3.3</b> Related Best Practices and Templates</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="large-data-sets.html"><a href="large-data-sets.html"><i class="fa fa-check"></i><b>6</b> Large Data Sets</a><ul>
+<li class="chapter" data-level="6.1" data-path="large-data-sets.html"><a href="large-data-sets.html#introduction-3"><i class="fa fa-check"></i><b>6.1</b> Introduction</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="large-data-sets.html"><a href="large-data-sets.html#background-2"><i class="fa fa-check"></i><b>6.1.1</b> Background</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="large-data-sets.html"><a href="large-data-sets.html#recommendations-for-data-packages-3"><i class="fa fa-check"></i><b>6.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="large-data-sets.html"><a href="large-data-sets.html#physical-storage"><i class="fa fa-check"></i><b>6.2.1</b> Physical Storage</a></li>
+<li class="chapter" data-level="6.2.2" data-path="large-data-sets.html"><a href="large-data-sets.html#data-package"><i class="fa fa-check"></i><b>6.2.2</b> Data package</a></li>
+<li class="chapter" data-level="6.2.3" data-path="large-data-sets.html"><a href="large-data-sets.html#package-metadata"><i class="fa fa-check"></i><b>6.2.3</b> Package Metadata</a></li>
+<li class="chapter" data-level="6.2.4" data-path="large-data-sets.html"><a href="large-data-sets.html#eml"><i class="fa fa-check"></i><b>6.2.4</b> EML</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="large-data-sets.html"><a href="large-data-sets.html#references"><i class="fa fa-check"></i><b>6.3</b> References</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="large-data-sets.html"><a href="large-data-sets.html#eml-documentation"><i class="fa fa-check"></i><b>6.3.1</b> EML documentation</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="large-data-sets.html"><a href="large-data-sets.html#potential-issues"><i class="fa fa-check"></i><b>6.4</b> Potential Issues</a></li>
+</ul></li>
+<li class="divider"></li>
+<ul>
+    <li><h4><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></h4></li>
+    <li><img class="img-responsive center-block" src="../../data-package-best-practices/images/EDI-logo-svg-240.png" alt="EDI Logo" height="90" width="90"/><li>
+</ul>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Best Practices for Data Package Design</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="still-images" class="section level1">
+<h1><span class="header-section-number">4</span> Still Images</h1>
+<p>Authors: Gastil Gastil-Buhl, Corinna Gries, Tim Whiteaker, Li Kui, Jason Downing, Greg Maurer, Renée Brown, Mark Servilla, Stace Beaulieu, Mary Martin, and An Nguyen</p>
+<div id="introduction" class="section level2">
+<h2><span class="header-section-number">4.1</span> Introduction</h2>
+<p>This document describes best practices for archiving still images, such as images that are taken and analyzed for a certain measurement, including but not limited to abundance, presence/absence, and coverage following the definition in the <a href="http://purl.obolibrary.org/obo/IAO_0000101">OBO ontology</a> for ‘image’: “An image is an affine projection to a two dimensional surface, of measurements of some quality of an entity or entities repeated at regular intervals across a spatial range, where the measurements are represented as color and luminosity on the projected surface.” Examples include photos of sea ice taken from an automated camera station, images created during flow cytometry, and images taken by an unmanned vehicle (underwater or aerial) for the above purpose. This best practice does not cover images that fall under the geospatial raster category such as satellite imagery, nor does it cover images already well handled in other systems, e.g., natural history specimen images, phenocam images.</p>
+<p>This document was written for the intended audience of a Long Term Ecological Research (LTER) information manager (IM), though it is applicable to anyone handling image data in the context of a larger ecological research program. We assume that the target archive is designed to handle ecological data, and that a given archive package will include metadata written in Ecological Metadata Language (EML) format. We refer to the Environmental Data Initiative (EDI) as an example archive. The same practices could be applied to other similar repositories.</p>
+<p>If large amounts of images (&gt;100GB in total) are to be archived, please coordinate with EDI before uploading.</p>
+</div>
+<div id="recommendations-for-data-packages" class="section level2">
+<h2><span class="header-section-number">4.2</span> Recommendations for data packages</h2>
+<p>A still image data package includes the following:</p>
+<ul>
+<li><a href="still-images.html#recommendations-for-metadata">EML Metadata</a></li>
+<li>a CSV data table with meta information for each image, serving as an <a href="still-images.html#image-catalog">image catalog</a></li>
+<li>(optional) one or more image files or one or more zip files of the images as ‘otherEntity’</li>
+<li>(optional) data tables with information <a href="still-images.html#data-extracted-from-images">extracted from the images</a></li>
+<li>(optional) data tables with other environmental information measured during image acquisition</li>
+</ul>
+<p>An image data package may contain image files individually (small numbers, up to ~10) or bundled as a zip archive. The decision of how to bundle images into zip archives and then into data packages should be guided by the overall goal of making image data usable for the intended purpose of the images. In most cases this involves finding specific images by, e.g., time or location of acquisition or some other aspect of interest. Hence, a balance has to be achieved between packages that are either too large or too numerous to be handled by a user. In addition, the effort of documenting images (each individually or in groups) has to be taken into account. The same decisions need to be applied within a data package in the design of zip archives. Images may be grouped by space and/or time. E.g., a stationary camera’s output may be archived in annual data packages, each of which may contain monthly zip files if the number of images is large. A moving camera’s output may also be archived in annual data packages, but individual zip files may hold all images for one transect. Another consideration is the timing of archiving. One should strive for archiving a fully processed group of images when no more changes or updates are expected due to the large volume to be handled repeatedly for each update.</p>
+<div id="recommendations-for-metadata" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Recommendations for Metadata</h3>
+<p>Metadata are provided at two levels. The EML file and a csv file serving as an image catalog. Of course, all image data packages need the good discovery level metadata in EML (who, what, where, when, how, why). The detail provided on the level of the included csv image catalog (see below) should be guided by the same principles as stated above: to enable optimal usability of the images. E.g., images from a stationary camera need latitude and longitude only in the EML file not for every image. By contrast, images from a moving camera may need that information for every image or at least for every site/quadrat/transect.</p>
+<p>In addition to keywords describing the general purpose of the images (e.g., ice phenology, community composition, richness, etc.) it is recommended to include the keyword: Image with the semantic annotation from OBO:</p>
+<blockquote>
+<p><strong>Term IRI:</strong> <a href="http://purl.obolibrary.org/obo/IAO_0000101">http://purl.obolibrary.org/obo/IAO_0000101</a>**</p>
+<p><strong>Definition:</strong> An image is an affine projection to a two dimensional surface, of measurements of some quality of an entity or entities repeated at regular intervals across a spatial range, where the measurements are represented as color and luminosity on the projected surface.</p>
+</blockquote>
+</div>
+<div id="image-catalog" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Image Catalog</h3>
+<p>The image catalog is a required CSV data table with meta information for each image or each zip archive of a group of images. Each row in the catalog represents a single image or zip archive of a group of images. At a minimum, the table includes an attribute for the image/zip filename and additional attributes if other essential information varies per image/zip. Additional attributes may include essential information on the camera, date, time, creator, location, the image, the subject</p>
+<ul>
+<li>(required) Filename of each image or zip archive. If each image is described a relative path (directory structure) of the image including file extension, e.g., IMG_1001.jpg or 2018/SITE3/IMG1001.jpg should be included. Within this attribute in the image catalog, each value should be unique.</li>
+<li>(optional) Link/URL to download image if the image is available on a different system.</li>
+<li>(optional) Creator</li>
+<li>(optional) Datetime: Date and time associated with the image, in <a href="https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations">ISO 8601 format</a>, e.g., 2007-04-05T12:30-02:00. Use the date and time that is important to the end user’s interpretation of the image.</li>
+<li>(optional) Location: Latitude and longitude in decimal degrees, site name, transect name, altitude, depth, habitat etc.</li>
+<li>(optional) all other conditions/descriptions that will help identify an image for use within the collection. Be consistent, use a controlled vocabulary for these fields, so that a user can search on them. Examples are: weather conditions, organism name, etc.</li>
+<li>(optional) Camera/instrument characteristics: model, settings, settings of a microscope</li>
+<li>(optional) Image characteristics: angle, distance, scale for pixel, resolution, magnification</li>
+</ul>
+</div>
+<div id="data-extracted-from-images" class="section level3">
+<h3><span class="header-section-number">4.2.3</span> Data Extracted from Images</h3>
+<p>For data tables with information extracted from images (e.g., species abundance or coverage, or measurements that are made from image processing), whether included in the image data package or in a separate package, provide information to enable a user to locate the image from which a data value was extracted. This likely means including image filenames as a data column, or some other unique identifier or link if filenames cannot be used for this purpose. Or, if a given data row is derived from more than one image, consider including a cross reference table relating images to data rows.</p>
+</div>
+</div>
+<div id="resources-2" class="section level2">
+<h2><span class="header-section-number">4.3</span> Resources</h2>
+<div id="examples-in-edi" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Examples in EDI</h3>
+<ul>
+<li><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&amp;identifier=210011005">https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&amp;identifier=210011005</a></li>
+<li><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcm.2016.2">https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcm.2016.2</a></li>
+<li><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-mcr&amp;identifier=5006">https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-mcr&amp;identifier=5006</a></li>
+<li><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-mcr&amp;identifier=5013">https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-mcr&amp;identifier=5013</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="model-based-datasets.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="genomic-and-metagenomic-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

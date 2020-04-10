@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Genomic and Metagenomic Data | Best Practices for Data Package Design</title>
+  <meta name="description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Genomic and Metagenomic Data | Best Practices for Data Package Design" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Genomic and Metagenomic Data | Best Practices for Data Package Design" />
+  
+  <meta name="twitter:description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
+  
+
+<meta name="author" content="Environmental Data Initiative" />
+
+
+<meta name="date" content="2020-04-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="still-images.html"/>
+<link rel="next" href="large-data-sets.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><h4><a class="brand" href="/data-package-best-practices/">Data Package Best Practices</a></h4></li>
+<ul>
+  <li><a href="/data-package-best-practices/EMLmetadata/">EML Metadata</a></li>
+  <li><a href="/data-package-best-practices/datapackage-design/">Data Package Design</a></li>
+  <li><a href="/data-package-best-practices/scientific_domain/">Data Products for Synthesis Research</a></li>
+</ul> 
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Best Practice Recommendations for Data Package Design</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#data-file-type"><i class="fa fa-check"></i>Data File Type</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#enitites-to-include-in-a-data-package"><i class="fa fa-check"></i>Enitites to Include in a Data Package</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#splitting-and-lumping-of-data"><i class="fa fa-check"></i>Splitting and Lumping of Data</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#data-file-format"><i class="fa fa-check"></i>Data File Format</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#data-in-other-repositories"><i class="fa fa-check"></i>Data in Other Repositories</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#very-large-datasets"><i class="fa fa-check"></i>Very Large Datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html"><i class="fa fa-check"></i><b>1</b> Key-Value Pair Tables</a><ul>
+<li class="chapter" data-level="1.1" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
+<li class="chapter" data-level="1.2" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#recommendations-for-data-packages"><i class="fa fa-check"></i><b>1.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#biodiversity-data"><i class="fa fa-check"></i><b>1.2.1</b> Biodiversity data</a></li>
+<li class="chapter" data-level="1.2.2" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#sensor-data"><i class="fa fa-check"></i><b>1.2.2</b> Sensor data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="code-in-edi.html"><a href="code-in-edi.html"><i class="fa fa-check"></i><b>2</b> Code in EDI</a><ul>
+<li class="chapter" data-level="2.1" data-path="code-in-edi.html"><a href="code-in-edi.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="code-in-edi.html"><a href="code-in-edi.html#background"><i class="fa fa-check"></i><b>2.1.1</b> Background</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="code-in-edi.html"><a href="code-in-edi.html#recommendations-for-data-packages-1"><i class="fa fa-check"></i><b>2.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="code-in-edi.html"><a href="code-in-edi.html#softwarecode-in-edi"><i class="fa fa-check"></i><b>2.2.1</b> Software/code in EDI</a></li>
+<li class="chapter" data-level="2.2.2" data-path="code-in-edi.html"><a href="code-in-edi.html#documenting-softwarecode"><i class="fa fa-check"></i><b>2.2.2</b> Documenting software/code</a></li>
+<li class="chapter" data-level="2.2.3" data-path="code-in-edi.html"><a href="code-in-edi.html#linking-between-code-and-data"><i class="fa fa-check"></i><b>2.2.3</b> Linking between code and data</a></li>
+<li class="chapter" data-level="2.2.4" data-path="code-in-edi.html"><a href="code-in-edi.html#external-software"><i class="fa fa-check"></i><b>2.2.4</b> External software</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="code-in-edi.html"><a href="code-in-edi.html#resources"><i class="fa fa-check"></i><b>2.3</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="model-based-datasets.html"><a href="model-based-datasets.html"><i class="fa fa-check"></i><b>3</b> Model Based Datasets</a><ul>
+<li class="chapter" data-level="3.1" data-path="model-based-datasets.html"><a href="model-based-datasets.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="model-based-datasets.html"><a href="model-based-datasets.html#background-1"><i class="fa fa-check"></i><b>3.1.1</b> Background</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="model-based-datasets.html"><a href="model-based-datasets.html#recommendations-for-data-packages-2"><i class="fa fa-check"></i><b>3.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="model-based-datasets.html"><a href="model-based-datasets.html#referencing-models-in-eml"><i class="fa fa-check"></i><b>3.2.1</b> Referencing models in EML</a></li>
+<li class="chapter" data-level="3.2.2" data-path="model-based-datasets.html"><a href="model-based-datasets.html#model-code"><i class="fa fa-check"></i><b>3.2.2</b> Model code</a></li>
+<li class="chapter" data-level="3.2.3" data-path="model-based-datasets.html"><a href="model-based-datasets.html#model-input-and-output-data"><i class="fa fa-check"></i><b>3.2.3</b> Model input and output data</a></li>
+<li class="chapter" data-level="3.2.4" data-path="model-based-datasets.html"><a href="model-based-datasets.html#model-parameters"><i class="fa fa-check"></i><b>3.2.4</b> Model parameters</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="model-based-datasets.html"><a href="model-based-datasets.html#resources-1"><i class="fa fa-check"></i><b>3.3</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="still-images.html"><a href="still-images.html"><i class="fa fa-check"></i><b>4</b> Still Images</a><ul>
+<li class="chapter" data-level="4.1" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#recommendations-for-data-packages"><i class="fa fa-check"></i><b>4.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="still-images.html"><a href="still-images.html#recommendations-for-metadata"><i class="fa fa-check"></i><b>4.2.1</b> Recommendations for Metadata</a></li>
+<li class="chapter" data-level="4.2.2" data-path="still-images.html"><a href="still-images.html#image-catalog"><i class="fa fa-check"></i><b>4.2.2</b> Image Catalog</a></li>
+<li class="chapter" data-level="4.2.3" data-path="still-images.html"><a href="still-images.html#data-extracted-from-images"><i class="fa fa-check"></i><b>4.2.3</b> Data Extracted from Images</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="still-images.html"><a href="still-images.html#resources-2"><i class="fa fa-check"></i><b>4.3</b> Resources</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="still-images.html"><a href="still-images.html#examples-in-edi"><i class="fa fa-check"></i><b>4.3.1</b> Examples in EDI</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html"><i class="fa fa-check"></i><b>5</b> Genomic and Metagenomic Data</a><ul>
+<li class="chapter" data-level="5.1" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#introduction"><i class="fa fa-check"></i><b>5.1</b> Introduction</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="code-in-edi.html"><a href="code-in-edi.html#background"><i class="fa fa-check"></i><b>5.1.1</b> Background</a></li>
+<li class="chapter" data-level="5.1.2" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#types-of-genomics-datasets-commonly-encountered"><i class="fa fa-check"></i><b>5.1.2</b> Types of Genomics Datasets Commonly Encountered</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#recommendations-for-datasets"><i class="fa fa-check"></i><b>5.2</b> Recommendations for Datasets</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#metadata-for-all-genomics-datasets-archived-in-edi"><i class="fa fa-check"></i><b>5.2.1</b> Metadata for All Genomics Datasets Archived in EDI</a></li>
+<li class="chapter" data-level="5.2.2" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#genomics-data-summary"><i class="fa fa-check"></i><b>5.2.2</b> Genomics Data Summary</a></li>
+<li class="chapter" data-level="5.2.3" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#genomics-data-with-ancillary-data"><i class="fa fa-check"></i><b>5.2.3</b> Genomics Data with Ancillary Data</a></li>
+<li class="chapter" data-level="5.2.4" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#derived-data-products"><i class="fa fa-check"></i><b>5.2.4</b> Derived data products</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="code-in-edi.html"><a href="code-in-edi.html#resources"><i class="fa fa-check"></i><b>5.3</b> Resources</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#tips-for-locating-metadata"><i class="fa fa-check"></i><b>5.3.1</b> Tips for locating metadata</a></li>
+<li class="chapter" data-level="5.3.2" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#links-to-various-repositories"><i class="fa fa-check"></i><b>5.3.2</b> Links to various repositories</a></li>
+<li class="chapter" data-level="5.3.3" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#related-best-practices-and-templates"><i class="fa fa-check"></i><b>5.3.3</b> Related Best Practices and Templates</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="large-data-sets.html"><a href="large-data-sets.html"><i class="fa fa-check"></i><b>6</b> Large Data Sets</a><ul>
+<li class="chapter" data-level="6.1" data-path="large-data-sets.html"><a href="large-data-sets.html#introduction-3"><i class="fa fa-check"></i><b>6.1</b> Introduction</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="large-data-sets.html"><a href="large-data-sets.html#background-2"><i class="fa fa-check"></i><b>6.1.1</b> Background</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="large-data-sets.html"><a href="large-data-sets.html#recommendations-for-data-packages-3"><i class="fa fa-check"></i><b>6.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="large-data-sets.html"><a href="large-data-sets.html#physical-storage"><i class="fa fa-check"></i><b>6.2.1</b> Physical Storage</a></li>
+<li class="chapter" data-level="6.2.2" data-path="large-data-sets.html"><a href="large-data-sets.html#data-package"><i class="fa fa-check"></i><b>6.2.2</b> Data package</a></li>
+<li class="chapter" data-level="6.2.3" data-path="large-data-sets.html"><a href="large-data-sets.html#package-metadata"><i class="fa fa-check"></i><b>6.2.3</b> Package Metadata</a></li>
+<li class="chapter" data-level="6.2.4" data-path="large-data-sets.html"><a href="large-data-sets.html#eml"><i class="fa fa-check"></i><b>6.2.4</b> EML</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="large-data-sets.html"><a href="large-data-sets.html#references"><i class="fa fa-check"></i><b>6.3</b> References</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="large-data-sets.html"><a href="large-data-sets.html#eml-documentation"><i class="fa fa-check"></i><b>6.3.1</b> EML documentation</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="large-data-sets.html"><a href="large-data-sets.html#potential-issues"><i class="fa fa-check"></i><b>6.4</b> Potential Issues</a></li>
+</ul></li>
+<li class="divider"></li>
+<ul>
+    <li><h4><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></h4></li>
+    <li><img class="img-responsive center-block" src="../../data-package-best-practices/images/EDI-logo-svg-240.png" alt="EDI Logo" height="90" width="90"/><li>
+</ul>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Best Practices for Data Package Design</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="genomic-and-metagenomic-data" class="section level1">
+<h1><span class="header-section-number">5</span> Genomic and Metagenomic Data</h1>
+<p>Authors: Hap Garritt, Tim Whiteaker, Sarah Elmendorf, An Nguyen, Gastil Gastil-Buhl, Renée Brown, Corinna Gries, and Li Kui</p>
+<div id="introduction" class="section level2">
+<h2><span class="header-section-number">5.1</span> Introduction</h2>
+<p>Genomic and metagenomic data that originate from gene sequencing techniques are most often stored in genomic repositories such as National Center for Biotechnology Information (NCBI) GenBank and the European Nucleotide Archive. Currently these data are not always easily discoverable in the context of other environmental data from the same project or research site. Here, we describe best practices to (a) allow discoverability using Ecological Metadata Language (EML) metadata; (b) archive ancillary data that are not included in the genomic repository; and (c) archive a data product derived from genomics data (without including the raw sequence data), while preserving access to original data in the associated genomic repository.</p>
+<p>This document was written for the intended audience of a Long Term Ecological Research (LTER) information manager (IM), though it is applicable to anyone handling genomics data in the context of a larger ecological research program. EDI is used as the representative data repository in this document. The same practices could be applied to other similar repositories.</p>
+<div id="background" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Background</h3>
+<p>Genomic data refers to the complete genetic information (either DNA or RNA) of an organism. Metagenomic data refers to the study of genomes recovered from environmental samples (water, soils etc.), i.e., genomes from multiple organisms. The sequence data consists of the order and arrangement of DNA bases (Adenine (A), Cytosine (C), Guanine (G), Thymine (T)) associated with individual species or multiple organisms from environmental samples.</p>
+<p>Genomic and metagenomic sequence datasets can be very large, include many sequence runs and typically are stored in associated community repositories that include specialized tools for searching, accessing, and analyzing (e.g., BLAST). Thus it is preferable that a specialized sequence database be the primary archive for the sequences themselves, rather than a generalist repository such as the <a href="https://environmentaldatainitiative.org/">Environmental Data Initiative</a> (EDI). Sequence repositories assign unique identifiers to projects, samples and/or single sequences, often called accession numbers, which can be used to locate sequence data.</p>
+<p>There are numerous genomic databases. The investigator is typically responsible for sequence data submission to their repository of choice and most are familiar with the data submission process as it is often required for subsequent manuscript publication. Therefore, selection of a genomic repository and submission of genomic data to a genomic repository is outside the scope of this document, although the recommended data repositories for nucleic acid sequence data for the journal Scientific Data may provide some useful guidance (<a href="https://www.nature.com/sdata/policies/repositories#nuc">https://www.nature.com/sdata/policies/repositories#nuc</a>). The key point here is that the genomic researcher should be in communication with the information manager about where data have been submitted including accession numbers and metadata important for discovery.</p>
+<p>This document discusses best practices for making these sequence data discoverable in the data repository (EDI) that holds related environmental measurements and in the context of a larger research site in general and in particular, when these additional measurements (of biochemistry, environmental conditions) were taken on the same samples that have been used for genetic analysis. Note that each genomic repository may have its own mechanism for reverse linking to such contextual data in EDI, and these mechanisms are beyond the scope of this document.</p>
+<p>Furthermore, a distinction should be made between raw/original sequence data and derived products such as metagenome-assembled genomes (MAGS) and operational taxonomic units (OTUs), which are dependent upon algorithms/post processing of raw data. These data products (frequently a community analysis) need to be archived in EDI.</p>
+</div>
+<div id="types-of-genomics-datasets-commonly-encountered" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Types of Genomics Datasets Commonly Encountered</h3>
+<p>An information manager typically encounters one of four types of genomics datasets:</p>
+<ul>
+<li>Only sequence data</li>
+<li>Sequence data with ancillary environmental data already submitted to the genetic repository</li>
+<li>Sequence data with ancillary environmental data not yet archived</li>
+<li>Derived data product with or without ancillary environmental data</li>
+</ul>
+</div>
+</div>
+<div id="recommendations-for-datasets" class="section level2">
+<h2><span class="header-section-number">5.2</span> Recommendations for Datasets</h2>
+<p><img src="../images/genomics_decision_tree.png" /></p>
+<p>Figure 1. Decision tree and workflow for different cases of genetic sequence data</p>
+<p>The remainder of this document describes best practices in these sections:</p>
+<ol style="list-style-type: decimal">
+<li><a href="genomic-and-metagenomic-data.html#metadata-for-all-genomics-datasets-archived-in-edi">Metadata for all genomics datasets</a></li>
+<li><a href="genomic-and-metagenomic-data.html#genomics-data-summary">Genomics data summary</a></li>
+<li><a href="genomic-and-metagenomic-data.html#genomics-data-with-ancillary-data">Genomics data with ancillary data</a></li>
+<li><a href="genomic-and-metagenomic-data.html#derived-data-products">Derived data products</a></li>
+</ol>
+<div id="metadata-for-all-genomics-datasets-archived-in-edi" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Metadata for All Genomics Datasets Archived in EDI</h3>
+<p>Do be as complete as feasible with the metadata, including creator lists, maintenance, contacts, project description, and so on, as described in EML Best Practices. Include geographic coverage, temporal coverage, and taxonomic coverage if possible so that users can locate the dataset by space, time, and taxa. Guidance for specific fields is provided below.</p>
+<ul>
+<li><strong>Dataset title</strong> - Follow general best practices for dataset titles. Consider using the same title as in the genomics repository if that title makes sense.</li>
+<li><strong>Abstract </strong>- Study description giving rise to the genomics data. Indicate that more details are available in the genomics repository, and provide a link to the repository. You could Include links for related datasets here, e.g., for water or soil chemistry, but we recommend including such data in the same data package with the genomics data summary.</li>
+<li><strong>Keywords </strong>- In addition to keywords typically used by the site, use keywords that help identify this as a genomics dataset, such as:
+<ul>
+<li>genomics</li>
+<li>metagenomics</li>
+<li>target gene or subfragment (e.g. 16S rRNA, 18S rRNA, nif, amoA, rpo, ITS)</li>
+<li>the sequencing technique (e.g., Sanger, pyrosequencing, ABI-solid)</li>
+<li>Consider using keywords that the investigator supplied on genomics data submission templates, such as <a href="https://press3.mcs.anl.gov/gensc/mixs/">MIxS templates</a>.</li>
+<li>the genomics repository name
+Genomics data with ancillary data, regardless of where they are archived, include relevant keywords such as:</li>
+<li>nitrogen</li>
+<li>soil moisture
+Derived data products, include relevant keyword such as</li>
+<li>OTU</li>
+<li>population</li>
+<li>community</li>
+</ul></li>
+<li><strong>Dataset Methods </strong>- Describe sampling and sequencing methods here. Describe methods for collection and processing of ancillary data as appropriate.</li>
+<li><strong>Literature </strong>- Take advantage of EML 2.2 capabilities for citing publications to reference papers associated with the genomics data.</li>
+</ul>
+</div>
+<div id="genomics-data-summary" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Genomics Data Summary</h3>
+<p>Every genomics dataset should contain at least one table with a summary or index of what is stored in a genomics repository. This enables all data from a particular genomics dataset to be discovered. Below are suggested attributes for this data table. Some attributes may not be appropriate for all datasets, and additional attributes could be provided (e.g., from MIxS templates) if available. Note that the granularity of data depends upon which database link is used for accession number from the genomics data repository. For example, in NCBI, there are accession numbers for a project, samples within the project, and sequence datasets from a given sample. The information manager should work with the genomics researcher to determine for which level of granularity accession numbers should be provided in related data packages in EDI.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Attribute</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Sample_ID</td>
+<td align="left">Generally the locally used identifier for the sample, accession numbers may be used instead</td>
+</tr>
+<tr class="even">
+<td align="left">Collection_date</td>
+<td align="left">Date of sample collection</td>
+</tr>
+<tr class="odd">
+<td align="left">Location_name</td>
+<td align="left">Locally used name of collection site</td>
+</tr>
+<tr class="even">
+<td align="left">Latitude</td>
+<td align="left">Latitude of sampling area in decimal degrees</td>
+</tr>
+<tr class="odd">
+<td align="left">Longitude</td>
+<td align="left">Longitude of sampling area in decimal degrees</td>
+</tr>
+<tr class="even">
+<td align="left">Genomics_repository</td>
+<td align="left">Name of genomics repository</td>
+</tr>
+<tr class="odd">
+<td align="left">Accession_number</td>
+<td align="left">Range of accession numbers or single accession number for a study. Some studies have hundreds of accession numbers.</td>
+</tr>
+<tr class="even">
+<td align="left">Accession_link</td>
+<td align="left">Accession number based URL for the dataset in the genomics repository, e.g., <a href="https://www.ncbi.nlm.nih.gov/nuccore/AY741555">https://www.ncbi.nlm.nih.gov/nuccore/AY741555</a>. <br> If providing a range of accession numbers, you may have to be creative, for example, by providing a search URL that will return the desired list, e.g., <a href="https://www.ncbi.nlm.nih.gov/popset/?term=AY741555">https://www.ncbi.nlm.nih.gov/popset/?term=AY741555</a>. <br>Recommendation is to link to the widest level of granularity for which additional data useful to interpretation are ONLY archived on EDI. As an example, if an OTU table which is archived on EDI provides taxonomic identifications for many samples, it would be most useful for an end user if that table on EDI also contained the corresponding BioSample number from NCBI. However, if there are no derived products on EDI that exist on a per sample basis, then linking to the larger BioProject would be sufficient, because NCBI provides the child BioSample hierarchy under BioProject that will allow a user to discover all the data.</td>
+</tr>
+<tr class="odd">
+<td align="left">seq_method</td>
+<td align="left">Sequencing method used; e.g., Sanger, pyrosequencing, ABI-solid. This attribute is used in MIxS templates, where it is called seq_meth.</td>
+</tr>
+<tr class="even">
+<td align="left">internal_control_seq</td>
+<td align="left">Internal control sequences used in the dataset, e.g., <em>Thermus Thermophilus</em>. If no internal control is added then you could leave you could use <em>none</em> or indicate as such iethods section in EML if the same applies to all records in the dataset.</td>
+</tr>
+<tr class="odd">
+<td align="left">env_biome</td>
+<td align="left">Biomes are defined based on factors such as plant structures, leaf types, plant spacing, and other factors like climate. Biome should be treated as the descriptor of the broad ecological context of a sample. Examples include: estuarine biome, marine coral reef biome, temperate deciduous broadleaf forest, or subtropical desert biome. EnvO (v 2013-06-14) terms can be found via the link: <a href="www.environmentontology.org/Browse-EnvO">www.environmentontology.org/Browse-EnvO</a> by searching for <em>biome</em>. This attribute is used in MIxS templates.</td>
+</tr>
+<tr class="even">
+<td align="left">env_feature</td>
+<td align="left">Environmental feature level includes geographic environmental features. Compared to biome, feature is a descriptor of the more local environment. Examples include: harbor, cliff, or lake. EnvO (v 2013-06-14) terms can be found via the link: <a href="www.environmentontology.org/Browse-EnvO">www.environmentontology.org/Browse-EnvO</a> by searching for <em>environmental feature</em>. This attribute is used in MIxS templates.</td>
+</tr>
+<tr class="odd">
+<td align="left">env_material</td>
+<td align="left">The environmental material displaced by the sample, or material in which a sample was embedded, prior to the sampling event. Environmental material terms are generally mass nouns. Examples include: alluvial sediment or coastal sea water. EnvO (v 2013-06-14) terms can be found via the link: <a href="www.environmentontology.org/Browse-EnvO">www.environmentontology.org/Browse-EnvO</a> by searching for <em>environmental material</em>. This attribute is used in MIxS templates.</td>
+</tr>
+<tr class="even">
+<td align="left">Taxon_description</td>
+<td align="left">If applicable, e.g., Genus species, or taxonomic group</td>
+</tr>
+<tr class="odd">
+<td align="left">Reference_publication</td>
+<td align="left">Title of publication providing in-depth context for data</td>
+</tr>
+<tr class="even">
+<td align="left">Publication_DOI</td>
+<td align="left">Publication DOI</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="genomics-data-with-ancillary-data" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> Genomics Data with Ancillary Data</h3>
+<p>If the ancillary environmental data are to be archived in EDI, make sure a link to the genomics data is established. Include in your data table(s) the following columns at a minimum, which allow the user to identify the related genomics dataset:</p>
+<ul>
+<li>A column identifying the accession number for the related genomics data</li>
+<li>The full URL linking to the related genomics dataset</li>
+<li>The same sample ID as in the genomics data summary table, i.e., use the sample ID as a key field to relate records from one data table to another</li>
+</ul>
+<p>Note for sequence data: to align with the Darwin Core standard, you can use a column header “associatedSequences” (<a href="https://dwc.tdwg.org/terms/#dwc:associatedSequences" class="uri">https://dwc.tdwg.org/terms/#dwc:associatedSequences</a>) and populate each record with a unique identifier (or list concatenated and separated of identifiers) for the sequence data in the other repository (e.g., SNLBE002-17, a sequence in Barcode Of Life Data system, aka BOLD) or full URL (e.g., <a href="http://www.boldsystems.org/index.php/Public_RecordView?processid=SNLBE002-17" class="uri">http://www.boldsystems.org/index.php/Public_RecordView?processid=SNLBE002-17</a>).</p>
+<p>You can specify the genomics repository in the package’s metadata. For the case of more than one related repository, you can include a column identifying the data repository in the data table.</p>
+<p>You may include additional columns about the genomics data as needed.</p>
+<p>Many external genomics repositories allow ancillary data such as sample chemistry to be archived together with the sequence data. To avoid data duplication, best practices are to archive on EDI <em>only</em> data that have not been archived elsewhere. However, to enable discovery of these ancillary data on the genomics repository, we recommend including appropriate keywords and methods to indicate that environmental (or other, non-sequence) data are available in the related genomics dataset archive.</p>
+</div>
+<div id="derived-data-products" class="section level3">
+<h3><span class="header-section-number">5.2.4</span> Derived data products</h3>
+<p>Data products derived from genomics data frequently are community/population/trait datasets where species, OTUs or traits have been determined from the sequence data. In such datasets it is important to ensure the reliable connection back to the original genomics data via accession numbers.</p>
+</div>
+</div>
+<div id="resources" class="section level2">
+<h2><span class="header-section-number">5.3</span> Resources</h2>
+<div id="tips-for-locating-metadata" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Tips for locating metadata</h3>
+<p>If information is not readily available for populating metadata in EML, they may be found in the genomics repository.</p>
+<p>For data in NCBI, go to the<a href="https://www.ncbi.nlm.nih.gov/search/">NCBI website</a> and search using accession number or search by accession number in a specific NCBI Database, for example Genes PopSet (the PopSet database is a collection of related DNA sequences derived from population, phylogenetic, mutation and ecosystem studies that have been submitted to NCBI) and there will be lots of metadata that investigators provided when submitting data.</p>
+<p>For sequences submitted to the <a href="https://www.ncbi.nlm.nih.gov/sra">NCBI Sequence Read Archive</a>, there are some easily accessible online tools for generating tables of linked sequence data and their metadata. For an example, go to the example dataset at <a href="https://www.ncbi.nlm.nih.gov/bioproject/305753">https://www.ncbi.nlm.nih.gbov/bioproject/305753</a>, and click the number next to <strong>SRA Experiments</strong> to see a list of all experiments. Then click <strong>Send results to Run selector</strong> to see a table summarizing geolocations and associated metadata which could be archived at EDI or used to extract metadata for EML preparation.</p>
+</div>
+<div id="links-to-various-repositories" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Links to various repositories</h3>
+<p><a href="https://www.ncbi.nlm.nih.gov/search/">NCBI Databases</a> - list of various databases with search capabilities. See also <a href="https://www.ncbi.nlm.nih.gov/genbank/submit/">How to submit data to GenBank</a>.</p>
+<p><a href="http://www.ddbj.nig.ac.jp/">DNA DataBank of Japan (DDBJ)</a> - list of various databases with search capabilities. See also<a href="https://www.ddbj.nig.ac.jp/submission-e.html">Submissions</a>.</p>
+<p><a href="http://www.ebi.ac.uk/ena/">European Nucleotide Archive (ENA)</a> - list of various databases with search capabilities. See also <a href="https://www.ebi.ac.uk/ena/submit">Submit and update</a>.</p>
+<p><a href="https://img.jgi.doe.gov/">Integrated Microbial Genomes &amp; Microbiomes (IMG/M) system</a> from the Joint Genome Institute</p>
+<p><a href="https://www.bco-dmo.org/contributing-sequence-accession-numbers">BCO-DMO examples</a> for contributing sequence accession numbers.</p>
+<p><a href="http://www.barcodinglife.com/">Barcode of Life DataSystems (BOLD)</a> DNA barcoding is a taxonomic method, that uses one or more standardized short genetic markers in an organism’s DNA to identify it as belonging to a particular species. Through this method unknown DNA samples are identified to registered species based on comparison to a reference library.</p>
+<p><a href="http://www.mg-rast.org/mgmain.html?mgpage=downloadintro">MG-RAST</a> (technically an analysis pipeline not a primary repository, but replicates to primary repositories)<span style="text-decoration:underline;"> <span style="text-decoration:underline;"></span> Replicates to the European Bioinformatics Institute (EMBL-EBI), which in turn replicates to the NCBI Sequence Read Archive (such that data submitted on MG-RAST will automatically appear on all three)</p>
+<p><a href="https://www.ncbi.nlm.nih.gov/Sequin/acc.html">NCBI Accession Number prefixes</a></p>
+</div>
+<div id="related-best-practices-and-templates" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> Related Best Practices and Templates</h3>
+<p><a href="https://environmentaldatainitiative.files.wordpress.com/2017/11/emlbestpractices-v3.pdf">EML Best Practices v3</a></p>
+<p><a href="https://github.com/EDIorg/data-package-best-practices">Data Package Best Practices on GitHub</a> (includes latest draft of EML Best Practices)</p>
+<p><a href="https://press3.mcs.anl.gov/gensc/mixs/">Minimum Information about any (x) Sequence (MIxS) templates</a></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="still-images.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="large-data-sets.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
