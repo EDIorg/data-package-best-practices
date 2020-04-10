@@ -7,8 +7,8 @@ bookdown::gitbook:
         <li><a href="/data-package-best-practices/">Data Package Best Practices</a></li>
         <ul>
           <li><a href="/data-package-best-practices/EMLmetadata/">EML Metadata</a></li>
-          <li><a href="/data-package-best-practices/scientific_domain/">Scientific Domain</a></li>
-          <li><a href="/data-package-best-practices/non_tabular/">Non-tabular data and other packaging challenges</a></li>
+          <li><a href="/data-package-best-practices/datapackage-design/">Data Package Design</a></li>
+          <li><a href="/data-package-best-practices/scientific_domain/">Data Products for Synthesis Research</a></li>
         </ul> 
       after: |
             <ul>
