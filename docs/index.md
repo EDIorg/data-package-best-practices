@@ -30,7 +30,7 @@ The recommendations for EML metadata apply to all data packages. This section su
 Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories. 
 
 
-**[Recommendations for data package design](datapackage-design-BP/index.html)**
+**[Recommendations for data package design](datapackage-design/index.html)**
 
 
 ## Data Products for Synthesis Research
