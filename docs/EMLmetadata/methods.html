@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>15 methods | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
   <meta name="description" content="15 methods | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="15 methods | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2019-12-17" />
+<meta name="date" content="2020-04-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,9 +53,9 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,16 +64,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,9 +80,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -133,8 +131,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="/data-package-best-practices/">Data Package Best Practices</a></li>
 <ul>
   <li><a href="/data-package-best-practices/EMLmetadata/">EML Metadata</a></li>
-  <li><a href="/data-package-best-practices/scientific_domain/">Scientific Domain</a></li>
-  <li><a href="/data-package-best-practices/non_tabular/">Non-tabular data and other packaging challenges</a></li>
+  <li><a href="/data-package-best-practices/datapackage-design/">Data Package Design</a></li>
+  <li><a href="/data-package-best-practices/scientific_domain/">Data Products for Synthesis Research</a></li>
 </ul>  
 
 <li class="divider"></li>
@@ -317,119 +315,115 @@ sampling methods section in a journal article.</p>
 used at the dataset, entity or attribute level, whichever is
 appropriate. At its most basic, use the &lt;<strong>description</strong>&gt; element.
 Tags are also available for a &lt;<strong>citation</strong>&gt; or &lt;<strong>protocol</strong>&gt;.</p>
-<hr />
 <p>Example 17: methods</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb20-1"><a href="methods.html#cb20-1"></a><span class="kw">&lt;methods&gt;</span></span>
-<span id="cb20-2"><a href="methods.html#cb20-2"></a>   <span class="kw">&lt;methodStep&gt;</span></span>
-<span id="cb20-3"><a href="methods.html#cb20-3"></a>      <span class="kw">&lt;description&gt;</span></span>
-<span id="cb20-4"><a href="methods.html#cb20-4"></a>         <span class="kw">&lt;section&gt;</span></span>
-<span id="cb20-5"><a href="methods.html#cb20-5"></a>            <span class="kw">&lt;title&gt;</span></span>
-<span id="cb20-6"><a href="methods.html#cb20-6"></a>               Pitfall trap sampling for ground arthropod biodiversity monitoring</span>
-<span id="cb20-7"><a href="methods.html#cb20-7"></a>            <span class="kw">&lt;/title&gt;</span></span>
-<span id="cb20-8"><a href="methods.html#cb20-8"></a>            <span class="kw">&lt;para&gt;</span>Supplies used: pitfall traps (P-16 plastic Solo cups with</span>
-<span id="cb20-9"><a href="methods.html#cb20-9"></a>               lids) metal spades and large bulb planters (to dig holes in which to</span>
-<span id="cb20-10"><a href="methods.html#cb20-10"></a>               put traps) 70% ethanol (to preserve specimens) Qorpak glass jars with</span>
-<span id="cb20-11"><a href="methods.html#cb20-11"></a>               lids from the VWR Corporation, 120ml (4oz), cap size 58-400 (comes</span>
-<span id="cb20-12"><a href="methods.html#cb20-12"></a>               included), Qorpak no. 7743C, VWR catalog no. 16195-703.<span class="kw">&lt;/para&gt;</span></span>
-<span id="cb20-13"><a href="methods.html#cb20-13"></a>            <span class="kw">&lt;para&gt;</span>Between 10 and 21 traps are placed at each site in siutable</span>
-<span id="cb20-14"><a href="methods.html#cb20-14"></a>               location.<span class="kw">&lt;/para&gt;</span></span>
-<span id="cb20-15"><a href="methods.html#cb20-15"></a>            <span class="kw">&lt;para&gt;</span>All trapped taxa counted and measured (body length), most taxa</span>
-<span id="cb20-16"><a href="methods.html#cb20-16"></a>               identified to Family, ants to Genus<span class="kw">&lt;/para&gt;</span></span>
-<span id="cb20-17"><a href="methods.html#cb20-17"></a>         <span class="kw">&lt;/section&gt;</span></span>
-<span id="cb20-18"><a href="methods.html#cb20-18"></a>      <span class="kw">&lt;/description&gt;</span></span>
-<span id="cb20-19"><a href="methods.html#cb20-19"></a>      <span class="kw">&lt;instrumentation&gt;</span>SBE MicroCAT 37-SM (S/N 1790); manufacturer:</span>
-<span id="cb20-20"><a href="methods.html#cb20-20"></a>         Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Conductivity</span>
-<span id="cb20-21"><a href="methods.html#cb20-21"></a>         (accuracy: 0.0003 S/m, readability: 0.00001 S/m, range: 0 to 7 S/m);</span>
-<span id="cb20-22"><a href="methods.html#cb20-22"></a>         last calibration: Feb 28, 2001<span class="kw">&lt;/instrumentation&gt;</span></span>
-<span id="cb20-23"><a href="methods.html#cb20-23"></a>      <span class="kw">&lt;instrumentation&gt;</span>SBE MicroCAT 37-SM (S/N 1790); manufacturer:</span>
-<span id="cb20-24"><a href="methods.html#cb20-24"></a>         Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Pressure</span>
-<span id="cb20-25"><a href="methods.html#cb20-25"></a>         (water) (accuracy: 0.2m, readability: 0.0004m, range: 0 to 20m); last</span>
-<span id="cb20-26"><a href="methods.html#cb20-26"></a>         calibration: Feb 28, 2001<span class="kw">&lt;/instrumentation&gt;</span></span>
-<span id="cb20-27"><a href="methods.html#cb20-27"></a>      <span class="kw">&lt;instrumentation&gt;</span>SBE MicroCAT 37-SM (S/N 1790); manufacturer:</span>
-<span id="cb20-28"><a href="methods.html#cb20-28"></a>         Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Temperature</span>
-<span id="cb20-29"><a href="methods.html#cb20-29"></a>         (water) (accuracy: 0.002°C, readability: 0.0001°C, range: -5 to 35°C);</span>
-<span id="cb20-30"><a href="methods.html#cb20-30"></a>         last calibration: Feb 28, 2001<span class="kw">&lt;/instrumentation&gt;</span></span>
-<span id="cb20-31"><a href="methods.html#cb20-31"></a>   <span class="kw">&lt;/methodStep&gt;</span></span>
-<span id="cb20-32"><a href="methods.html#cb20-32"></a>   <span class="kw">&lt;sampling&gt;</span></span>
-<span id="cb20-33"><a href="methods.html#cb20-33"></a>      <span class="kw">&lt;studyExtent&gt;</span></span>
-<span id="cb20-34"><a href="methods.html#cb20-34"></a>         <span class="kw">&lt;description&gt;</span></span>
-<span id="cb20-35"><a href="methods.html#cb20-35"></a>            <span class="kw">&lt;para&gt;</span>Arthropod pit fall traps are placed in three different</span>
-<span id="cb20-36"><a href="methods.html#cb20-36"></a>               locations four times a year<span class="kw">&lt;/para&gt;</span></span>
-<span id="cb20-37"><a href="methods.html#cb20-37"></a>         <span class="kw">&lt;/description&gt;</span></span>
-<span id="cb20-38"><a href="methods.html#cb20-38"></a>      <span class="kw">&lt;/studyExtent&gt;</span></span>
-<span id="cb20-39"><a href="methods.html#cb20-39"></a>      <span class="kw">&lt;samplingDescription&gt;</span></span>
-<span id="cb20-40"><a href="methods.html#cb20-40"></a>         <span class="kw">&lt;para&gt;</span>Six traps were set in a transect at each location.<span class="kw">&lt;/para&gt;</span></span>
-<span id="cb20-41"><a href="methods.html#cb20-41"></a>      <span class="kw">&lt;/samplingDescription&gt;</span></span>
-<span id="cb20-42"><a href="methods.html#cb20-42"></a>      <span class="kw">&lt;spatialSamplingUnits&gt;</span></span>
-<span id="cb20-43"><a href="methods.html#cb20-43"></a>         <span class="kw">&lt;coverage&gt;</span></span>
-<span id="cb20-44"><a href="methods.html#cb20-44"></a>            <span class="kw">&lt;geographicDescription&gt;</span>site number 1<span class="kw">&lt;/geographicDescription&gt;</span></span>
-<span id="cb20-45"><a href="methods.html#cb20-45"></a>            <span class="kw">&lt;boundingCoordinates&gt;</span></span>
-<span id="cb20-46"><a href="methods.html#cb20-46"></a>               <span class="kw">&lt;westBoundingCoordinate&gt;</span>-112.234566<span class="kw">&lt;/westBoundingCoordinate&gt;</span></span>
-<span id="cb20-47"><a href="methods.html#cb20-47"></a>               <span class="kw">&lt;eastBoundingCoordinate&gt;</span>-112.234566<span class="kw">&lt;/eastBoundingCoordinate&gt;</span></span>
-<span id="cb20-48"><a href="methods.html#cb20-48"></a>               <span class="kw">&lt;northBoundingCoordinate&gt;</span>33.534566<span class="kw">&lt;/northBoundingCoordinate&gt;</span></span>
-<span id="cb20-49"><a href="methods.html#cb20-49"></a>               <span class="kw">&lt;southBoundingCoordinate&gt;</span>33.534566<span class="kw">&lt;/southBoundingCoordinate&gt;</span></span>
-<span id="cb20-50"><a href="methods.html#cb20-50"></a>            <span class="kw">&lt;/boundingCoordinates&gt;</span></span>
-<span id="cb20-51"><a href="methods.html#cb20-51"></a>         <span class="kw">&lt;/coverage&gt;</span></span>
-<span id="cb20-52"><a href="methods.html#cb20-52"></a>         <span class="kw">&lt;coverage&gt;</span></span>
-<span id="cb20-53"><a href="methods.html#cb20-53"></a>            <span class="kw">&lt;geographicDescription&gt;</span>site number 2<span class="kw">&lt;/geographicDescription&gt;</span></span>
-<span id="cb20-54"><a href="methods.html#cb20-54"></a>            <span class="kw">&lt;boundingCoordinates&gt;</span></span>
-<span id="cb20-55"><a href="methods.html#cb20-55"></a>               <span class="kw">&lt;westBoundingCoordinate&gt;</span>-111.745677<span class="kw">&lt;/westBoundingCoordinate&gt;</span></span>
-<span id="cb20-56"><a href="methods.html#cb20-56"></a>               <span class="kw">&lt;eastBoundingCoordinate&gt;</span>-111.745677<span class="kw">&lt;/eastBoundingCoordinate&gt;</span></span>
-<span id="cb20-57"><a href="methods.html#cb20-57"></a>               <span class="kw">&lt;northBoundingCoordinate&gt;</span>33.64577<span class="kw">&lt;/northBoundingCoordinate&gt;</span></span>
-<span id="cb20-58"><a href="methods.html#cb20-58"></a>               <span class="kw">&lt;southBoundingCoordinate&gt;</span>33.64577<span class="kw">&lt;/southBoundingCoordinate&gt;</span></span>
-<span id="cb20-59"><a href="methods.html#cb20-59"></a>            <span class="kw">&lt;/boundingCoordinates&gt;</span></span>
-<span id="cb20-60"><a href="methods.html#cb20-60"></a>         <span class="kw">&lt;/coverage&gt;</span></span>
-<span id="cb20-61"><a href="methods.html#cb20-61"></a>         <span class="kw">&lt;coverage&gt;</span></span>
-<span id="cb20-62"><a href="methods.html#cb20-62"></a>            <span class="kw">&lt;geographicDescription&gt;</span>site number 3<span class="kw">&lt;/geographicDescription&gt;</span></span>
-<span id="cb20-63"><a href="methods.html#cb20-63"></a>            <span class="kw">&lt;boundingCoordinates&gt;</span></span>
-<span id="cb20-64"><a href="methods.html#cb20-64"></a>               <span class="kw">&lt;westBoundingCoordinate&gt;</span>-112.167899<span class="kw">&lt;/westBoundingCoordinate&gt;</span></span>
-<span id="cb20-65"><a href="methods.html#cb20-65"></a>               <span class="kw">&lt;eastBoundingCoordinate&gt;</span>-112.16799<span class="kw">&lt;/eastBoundingCoordinate&gt;</span></span>
-<span id="cb20-66"><a href="methods.html#cb20-66"></a>               <span class="kw">&lt;northBoundingCoordinate&gt;</span>33.76799<span class="kw">&lt;/northBoundingCoordinate&gt;</span></span>
-<span id="cb20-67"><a href="methods.html#cb20-67"></a>               <span class="kw">&lt;southBoundingCoordinate&gt;</span>33.76799<span class="kw">&lt;/southBoundingCoordinate&gt;</span></span>
-<span id="cb20-68"><a href="methods.html#cb20-68"></a>            <span class="kw">&lt;/boundingCoordinates&gt;</span></span>
-<span id="cb20-69"><a href="methods.html#cb20-69"></a>         <span class="kw">&lt;/coverage&gt;</span></span>
-<span id="cb20-70"><a href="methods.html#cb20-70"></a>      <span class="kw">&lt;/spatialSamplingUnits&gt;</span></span>
-<span id="cb20-71"><a href="methods.html#cb20-71"></a>   <span class="kw">&lt;/sampling&gt;</span></span>
-<span id="cb20-72"><a href="methods.html#cb20-72"></a>   <span class="kw">&lt;qualityControl&gt;</span></span>
-<span id="cb20-73"><a href="methods.html#cb20-73"></a>      <span class="kw">&lt;description&gt;</span></span>
-<span id="cb20-74"><a href="methods.html#cb20-74"></a>         <span class="kw">&lt;para&gt;</span>All specimens are archived for future reference. Quality</span>
-<span id="cb20-75"><a href="methods.html#cb20-75"></a>            control during data entry is achieved with standard database</span>
-<span id="cb20-76"><a href="methods.html#cb20-76"></a>            techniques of pulldowns that prevent typos and constraints. Scientists</span>
-<span id="cb20-77"><a href="methods.html#cb20-77"></a>            inspect standard data summary statistics after data entry.<span class="kw">&lt;/para&gt;</span></span>
-<span id="cb20-78"><a href="methods.html#cb20-78"></a>      <span class="kw">&lt;/description&gt;</span></span>
-<span id="cb20-79"><a href="methods.html#cb20-79"></a>   <span class="kw">&lt;/qualityControl&gt;</span></span>
-<span id="cb20-80"><a href="methods.html#cb20-80"></a><span class="kw">&lt;/methods&gt;</span></span></code></pre></div>
-<hr />
-<hr />
+<div class="sourceCode" id="cb21"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">&lt;methods&gt;</span></a>
+<a class="sourceLine" id="cb21-2" title="2">   <span class="kw">&lt;methodStep&gt;</span></a>
+<a class="sourceLine" id="cb21-3" title="3">      <span class="kw">&lt;description&gt;</span></a>
+<a class="sourceLine" id="cb21-4" title="4">         <span class="kw">&lt;section&gt;</span></a>
+<a class="sourceLine" id="cb21-5" title="5">            <span class="kw">&lt;title&gt;</span></a>
+<a class="sourceLine" id="cb21-6" title="6">               Pitfall trap sampling for ground arthropod biodiversity monitoring</a>
+<a class="sourceLine" id="cb21-7" title="7">            <span class="kw">&lt;/title&gt;</span></a>
+<a class="sourceLine" id="cb21-8" title="8">            <span class="kw">&lt;para&gt;</span>Supplies used: pitfall traps (P-16 plastic Solo cups with</a>
+<a class="sourceLine" id="cb21-9" title="9">               lids) metal spades and large bulb planters (to dig holes in which to</a>
+<a class="sourceLine" id="cb21-10" title="10">               put traps) 70% ethanol (to preserve specimens) Qorpak glass jars with</a>
+<a class="sourceLine" id="cb21-11" title="11">               lids from the VWR Corporation, 120ml (4oz), cap size 58-400 (comes</a>
+<a class="sourceLine" id="cb21-12" title="12">               included), Qorpak no. 7743C, VWR catalog no. 16195-703.<span class="kw">&lt;/para&gt;</span></a>
+<a class="sourceLine" id="cb21-13" title="13">            <span class="kw">&lt;para&gt;</span>Between 10 and 21 traps are placed at each site in siutable</a>
+<a class="sourceLine" id="cb21-14" title="14">               location.<span class="kw">&lt;/para&gt;</span></a>
+<a class="sourceLine" id="cb21-15" title="15">            <span class="kw">&lt;para&gt;</span>All trapped taxa counted and measured (body length), most taxa</a>
+<a class="sourceLine" id="cb21-16" title="16">               identified to Family, ants to Genus<span class="kw">&lt;/para&gt;</span></a>
+<a class="sourceLine" id="cb21-17" title="17">         <span class="kw">&lt;/section&gt;</span></a>
+<a class="sourceLine" id="cb21-18" title="18">      <span class="kw">&lt;/description&gt;</span></a>
+<a class="sourceLine" id="cb21-19" title="19">      <span class="kw">&lt;instrumentation&gt;</span>SBE MicroCAT 37-SM (S/N 1790); manufacturer:</a>
+<a class="sourceLine" id="cb21-20" title="20">         Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Conductivity</a>
+<a class="sourceLine" id="cb21-21" title="21">         (accuracy: 0.0003 S/m, readability: 0.00001 S/m, range: 0 to 7 S/m);</a>
+<a class="sourceLine" id="cb21-22" title="22">         last calibration: Feb 28, 2001<span class="kw">&lt;/instrumentation&gt;</span></a>
+<a class="sourceLine" id="cb21-23" title="23">      <span class="kw">&lt;instrumentation&gt;</span>SBE MicroCAT 37-SM (S/N 1790); manufacturer:</a>
+<a class="sourceLine" id="cb21-24" title="24">         Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Pressure</a>
+<a class="sourceLine" id="cb21-25" title="25">         (water) (accuracy: 0.2m, readability: 0.0004m, range: 0 to 20m); last</a>
+<a class="sourceLine" id="cb21-26" title="26">         calibration: Feb 28, 2001<span class="kw">&lt;/instrumentation&gt;</span></a>
+<a class="sourceLine" id="cb21-27" title="27">      <span class="kw">&lt;instrumentation&gt;</span>SBE MicroCAT 37-SM (S/N 1790); manufacturer:</a>
+<a class="sourceLine" id="cb21-28" title="28">         Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Temperature</a>
+<a class="sourceLine" id="cb21-29" title="29">         (water) (accuracy: 0.002°C, readability: 0.0001°C, range: -5 to 35°C);</a>
+<a class="sourceLine" id="cb21-30" title="30">         last calibration: Feb 28, 2001<span class="kw">&lt;/instrumentation&gt;</span></a>
+<a class="sourceLine" id="cb21-31" title="31">   <span class="kw">&lt;/methodStep&gt;</span></a>
+<a class="sourceLine" id="cb21-32" title="32">   <span class="kw">&lt;sampling&gt;</span></a>
+<a class="sourceLine" id="cb21-33" title="33">      <span class="kw">&lt;studyExtent&gt;</span></a>
+<a class="sourceLine" id="cb21-34" title="34">         <span class="kw">&lt;description&gt;</span></a>
+<a class="sourceLine" id="cb21-35" title="35">            <span class="kw">&lt;para&gt;</span>Arthropod pit fall traps are placed in three different</a>
+<a class="sourceLine" id="cb21-36" title="36">               locations four times a year<span class="kw">&lt;/para&gt;</span></a>
+<a class="sourceLine" id="cb21-37" title="37">         <span class="kw">&lt;/description&gt;</span></a>
+<a class="sourceLine" id="cb21-38" title="38">      <span class="kw">&lt;/studyExtent&gt;</span></a>
+<a class="sourceLine" id="cb21-39" title="39">      <span class="kw">&lt;samplingDescription&gt;</span></a>
+<a class="sourceLine" id="cb21-40" title="40">         <span class="kw">&lt;para&gt;</span>Six traps were set in a transect at each location.<span class="kw">&lt;/para&gt;</span></a>
+<a class="sourceLine" id="cb21-41" title="41">      <span class="kw">&lt;/samplingDescription&gt;</span></a>
+<a class="sourceLine" id="cb21-42" title="42">      <span class="kw">&lt;spatialSamplingUnits&gt;</span></a>
+<a class="sourceLine" id="cb21-43" title="43">         <span class="kw">&lt;coverage&gt;</span></a>
+<a class="sourceLine" id="cb21-44" title="44">            <span class="kw">&lt;geographicDescription&gt;</span>site number 1<span class="kw">&lt;/geographicDescription&gt;</span></a>
+<a class="sourceLine" id="cb21-45" title="45">            <span class="kw">&lt;boundingCoordinates&gt;</span></a>
+<a class="sourceLine" id="cb21-46" title="46">               <span class="kw">&lt;westBoundingCoordinate&gt;</span>-112.234566<span class="kw">&lt;/westBoundingCoordinate&gt;</span></a>
+<a class="sourceLine" id="cb21-47" title="47">               <span class="kw">&lt;eastBoundingCoordinate&gt;</span>-112.234566<span class="kw">&lt;/eastBoundingCoordinate&gt;</span></a>
+<a class="sourceLine" id="cb21-48" title="48">               <span class="kw">&lt;northBoundingCoordinate&gt;</span>33.534566<span class="kw">&lt;/northBoundingCoordinate&gt;</span></a>
+<a class="sourceLine" id="cb21-49" title="49">               <span class="kw">&lt;southBoundingCoordinate&gt;</span>33.534566<span class="kw">&lt;/southBoundingCoordinate&gt;</span></a>
+<a class="sourceLine" id="cb21-50" title="50">            <span class="kw">&lt;/boundingCoordinates&gt;</span></a>
+<a class="sourceLine" id="cb21-51" title="51">         <span class="kw">&lt;/coverage&gt;</span></a>
+<a class="sourceLine" id="cb21-52" title="52">         <span class="kw">&lt;coverage&gt;</span></a>
+<a class="sourceLine" id="cb21-53" title="53">            <span class="kw">&lt;geographicDescription&gt;</span>site number 2<span class="kw">&lt;/geographicDescription&gt;</span></a>
+<a class="sourceLine" id="cb21-54" title="54">            <span class="kw">&lt;boundingCoordinates&gt;</span></a>
+<a class="sourceLine" id="cb21-55" title="55">               <span class="kw">&lt;westBoundingCoordinate&gt;</span>-111.745677<span class="kw">&lt;/westBoundingCoordinate&gt;</span></a>
+<a class="sourceLine" id="cb21-56" title="56">               <span class="kw">&lt;eastBoundingCoordinate&gt;</span>-111.745677<span class="kw">&lt;/eastBoundingCoordinate&gt;</span></a>
+<a class="sourceLine" id="cb21-57" title="57">               <span class="kw">&lt;northBoundingCoordinate&gt;</span>33.64577<span class="kw">&lt;/northBoundingCoordinate&gt;</span></a>
+<a class="sourceLine" id="cb21-58" title="58">               <span class="kw">&lt;southBoundingCoordinate&gt;</span>33.64577<span class="kw">&lt;/southBoundingCoordinate&gt;</span></a>
+<a class="sourceLine" id="cb21-59" title="59">            <span class="kw">&lt;/boundingCoordinates&gt;</span></a>
+<a class="sourceLine" id="cb21-60" title="60">         <span class="kw">&lt;/coverage&gt;</span></a>
+<a class="sourceLine" id="cb21-61" title="61">         <span class="kw">&lt;coverage&gt;</span></a>
+<a class="sourceLine" id="cb21-62" title="62">            <span class="kw">&lt;geographicDescription&gt;</span>site number 3<span class="kw">&lt;/geographicDescription&gt;</span></a>
+<a class="sourceLine" id="cb21-63" title="63">            <span class="kw">&lt;boundingCoordinates&gt;</span></a>
+<a class="sourceLine" id="cb21-64" title="64">               <span class="kw">&lt;westBoundingCoordinate&gt;</span>-112.167899<span class="kw">&lt;/westBoundingCoordinate&gt;</span></a>
+<a class="sourceLine" id="cb21-65" title="65">               <span class="kw">&lt;eastBoundingCoordinate&gt;</span>-112.16799<span class="kw">&lt;/eastBoundingCoordinate&gt;</span></a>
+<a class="sourceLine" id="cb21-66" title="66">               <span class="kw">&lt;northBoundingCoordinate&gt;</span>33.76799<span class="kw">&lt;/northBoundingCoordinate&gt;</span></a>
+<a class="sourceLine" id="cb21-67" title="67">               <span class="kw">&lt;southBoundingCoordinate&gt;</span>33.76799<span class="kw">&lt;/southBoundingCoordinate&gt;</span></a>
+<a class="sourceLine" id="cb21-68" title="68">            <span class="kw">&lt;/boundingCoordinates&gt;</span></a>
+<a class="sourceLine" id="cb21-69" title="69">         <span class="kw">&lt;/coverage&gt;</span></a>
+<a class="sourceLine" id="cb21-70" title="70">      <span class="kw">&lt;/spatialSamplingUnits&gt;</span></a>
+<a class="sourceLine" id="cb21-71" title="71">   <span class="kw">&lt;/sampling&gt;</span></a>
+<a class="sourceLine" id="cb21-72" title="72">   <span class="kw">&lt;qualityControl&gt;</span></a>
+<a class="sourceLine" id="cb21-73" title="73">      <span class="kw">&lt;description&gt;</span></a>
+<a class="sourceLine" id="cb21-74" title="74">         <span class="kw">&lt;para&gt;</span>All specimens are archived for future reference. Quality</a>
+<a class="sourceLine" id="cb21-75" title="75">            control during data entry is achieved with standard database</a>
+<a class="sourceLine" id="cb21-76" title="76">            techniques of pulldowns that prevent typos and constraints. Scientists</a>
+<a class="sourceLine" id="cb21-77" title="77">            inspect standard data summary statistics after data entry.<span class="kw">&lt;/para&gt;</span></a>
+<a class="sourceLine" id="cb21-78" title="78">      <span class="kw">&lt;/description&gt;</span></a>
+<a class="sourceLine" id="cb21-79" title="79">   <span class="kw">&lt;/qualityControl&gt;</span></a>
+<a class="sourceLine" id="cb21-80" title="80"><span class="kw">&lt;/methods&gt;</span></a></code></pre></div>
 <p>Example 18: methods, with dataSource</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb21-1"><a href="methods.html#cb21-1"></a><span class="kw">&lt;methods&gt;</span></span>
-<span id="cb21-2"><a href="methods.html#cb21-2"></a>   <span class="kw">&lt;methodStep&gt;</span></span>
-<span id="cb21-3"><a href="methods.html#cb21-3"></a>      <span class="kw">&lt;description&gt;</span></span>
-<span id="cb21-4"><a href="methods.html#cb21-4"></a>         <span class="kw">&lt;section&gt;</span></span>
-<span id="cb21-5"><a href="methods.html#cb21-5"></a>            <span class="kw">&lt;para&gt;</span>We utilize NPP data collected from 1906 to 2006 from the ONL</span>
-<span id="cb21-6"><a href="methods.html#cb21-6"></a>               LTER site. The ONL NPP data unit definition is kg/m\^2/yr. This unit</span>
-<span id="cb21-7"><a href="methods.html#cb21-7"></a>               does not require conversion.<span class="kw">&lt;/para&gt;</span></span>
-<span id="cb21-8"><a href="methods.html#cb21-8"></a>         <span class="kw">&lt;/section&gt;</span></span>
-<span id="cb21-9"><a href="methods.html#cb21-9"></a>      <span class="kw">&lt;/description&gt;</span></span>
-<span id="cb21-10"><a href="methods.html#cb21-10"></a>      <span class="kw">&lt;dataSource&gt;</span></span>
-<span id="cb21-11"><a href="methods.html#cb21-11"></a>         <span class="kw">&lt;title&gt;</span>NPP data from ONL 1906 to 2006<span class="kw">&lt;/title&gt;</span></span>
-<span id="cb21-12"><a href="methods.html#cb21-12"></a>         <span class="kw">&lt;creator&gt;</span></span>
-<span id="cb21-13"><a href="methods.html#cb21-13"></a>            <span class="kw">&lt;organizationName&gt;</span>ONL LTER<span class="kw">&lt;/organizationName&gt;</span></span>
-<span id="cb21-14"><a href="methods.html#cb21-14"></a>         <span class="kw">&lt;/creator&gt;</span></span>
-<span id="cb21-15"><a href="methods.html#cb21-15"></a>         <span class="kw">&lt;distribution&gt;</span></span>
-<span id="cb21-16"><a href="methods.html#cb21-16"></a>            <span class="kw">&lt;online&gt;</span></span>
-<span id="cb21-17"><a href="methods.html#cb21-17"></a>               <span class="kw">&lt;url&gt;</span>http://metacat.lternet.edu/knb/metacat/knb-lter-onl.23.1<span class="kw">&lt;/url&gt;</span></span>
-<span id="cb21-18"><a href="methods.html#cb21-18"></a>            <span class="kw">&lt;/online&gt;</span></span>
-<span id="cb21-19"><a href="methods.html#cb21-19"></a>         <span class="kw">&lt;/distribution&gt;</span></span>
-<span id="cb21-20"><a href="methods.html#cb21-20"></a>         <span class="kw">&lt;contact&gt;</span></span>
-<span id="cb21-21"><a href="methods.html#cb21-21"></a>            <span class="kw">&lt;organizationName&gt;</span>ONL LTER<span class="kw">&lt;/organizationName&gt;</span></span>
-<span id="cb21-22"><a href="methods.html#cb21-22"></a>            <span class="kw">&lt;positionName&gt;</span>ONL Information Manager<span class="kw">&lt;/positionName&gt;</span></span>
-<span id="cb21-23"><a href="methods.html#cb21-23"></a>            <span class="kw">&lt;electronicMailAddress&gt;</span>im@onl.lternet.edu<span class="kw">&lt;/electronicMailAddress&gt;</span></span>
-<span id="cb21-24"><a href="methods.html#cb21-24"></a>         <span class="kw">&lt;/contact&gt;</span></span>
-<span id="cb21-25"><a href="methods.html#cb21-25"></a>      <span class="kw">&lt;/dataSource&gt;</span></span>
-<span id="cb21-26"><a href="methods.html#cb21-26"></a>   <span class="kw">&lt;/methodStep&gt;</span></span>
-<span id="cb21-27"><a href="methods.html#cb21-27"></a><span class="kw">&lt;/methods&gt;</span></span></code></pre></div>
-<hr />
+<div class="sourceCode" id="cb22"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">&lt;methods&gt;</span></a>
+<a class="sourceLine" id="cb22-2" title="2">   <span class="kw">&lt;methodStep&gt;</span></a>
+<a class="sourceLine" id="cb22-3" title="3">      <span class="kw">&lt;description&gt;</span></a>
+<a class="sourceLine" id="cb22-4" title="4">         <span class="kw">&lt;section&gt;</span></a>
+<a class="sourceLine" id="cb22-5" title="5">            <span class="kw">&lt;para&gt;</span>We utilize NPP data collected from 1906 to 2006 from the ONL</a>
+<a class="sourceLine" id="cb22-6" title="6">               LTER site. The ONL NPP data unit definition is kg/m\^2/yr. This unit</a>
+<a class="sourceLine" id="cb22-7" title="7">               does not require conversion.<span class="kw">&lt;/para&gt;</span></a>
+<a class="sourceLine" id="cb22-8" title="8">         <span class="kw">&lt;/section&gt;</span></a>
+<a class="sourceLine" id="cb22-9" title="9">      <span class="kw">&lt;/description&gt;</span></a>
+<a class="sourceLine" id="cb22-10" title="10">      <span class="kw">&lt;dataSource&gt;</span></a>
+<a class="sourceLine" id="cb22-11" title="11">         <span class="kw">&lt;title&gt;</span>NPP data from ONL 1906 to 2006<span class="kw">&lt;/title&gt;</span></a>
+<a class="sourceLine" id="cb22-12" title="12">         <span class="kw">&lt;creator&gt;</span></a>
+<a class="sourceLine" id="cb22-13" title="13">            <span class="kw">&lt;organizationName&gt;</span>ONL LTER<span class="kw">&lt;/organizationName&gt;</span></a>
+<a class="sourceLine" id="cb22-14" title="14">         <span class="kw">&lt;/creator&gt;</span></a>
+<a class="sourceLine" id="cb22-15" title="15">         <span class="kw">&lt;distribution&gt;</span></a>
+<a class="sourceLine" id="cb22-16" title="16">            <span class="kw">&lt;online&gt;</span></a>
+<a class="sourceLine" id="cb22-17" title="17">               <span class="kw">&lt;url&gt;</span>http://metacat.lternet.edu/knb/metacat/knb-lter-onl.23.1<span class="kw">&lt;/url&gt;</span></a>
+<a class="sourceLine" id="cb22-18" title="18">            <span class="kw">&lt;/online&gt;</span></a>
+<a class="sourceLine" id="cb22-19" title="19">         <span class="kw">&lt;/distribution&gt;</span></a>
+<a class="sourceLine" id="cb22-20" title="20">         <span class="kw">&lt;contact&gt;</span></a>
+<a class="sourceLine" id="cb22-21" title="21">            <span class="kw">&lt;organizationName&gt;</span>ONL LTER<span class="kw">&lt;/organizationName&gt;</span></a>
+<a class="sourceLine" id="cb22-22" title="22">            <span class="kw">&lt;positionName&gt;</span>ONL Information Manager<span class="kw">&lt;/positionName&gt;</span></a>
+<a class="sourceLine" id="cb22-23" title="23">            <span class="kw">&lt;electronicMailAddress&gt;</span>im@onl.lternet.edu<span class="kw">&lt;/electronicMailAddress&gt;</span></a>
+<a class="sourceLine" id="cb22-24" title="24">         <span class="kw">&lt;/contact&gt;</span></a>
+<a class="sourceLine" id="cb22-25" title="25">      <span class="kw">&lt;/dataSource&gt;</span></a>
+<a class="sourceLine" id="cb22-26" title="26">   <span class="kw">&lt;/methodStep&gt;</span></a>
+<a class="sourceLine" id="cb22-27" title="27"><span class="kw">&lt;/methods&gt;</span></a></code></pre></div>
 
 </div>
 </div>
@@ -458,12 +452,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -478,6 +471,10 @@ gitbook.start({
 "link": null,
 "text": null
 },
+"view": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "section"
@@ -486,6 +483,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

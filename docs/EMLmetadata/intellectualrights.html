@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>11 intellectualRights | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
   <meta name="description" content="11 intellectualRights | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="11 intellectualRights | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2019-12-17" />
+<meta name="date" content="2020-04-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,9 +53,9 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,16 +64,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,9 +80,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -133,8 +131,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="/data-package-best-practices/">Data Package Best Practices</a></li>
 <ul>
   <li><a href="/data-package-best-practices/EMLmetadata/">EML Metadata</a></li>
-  <li><a href="/data-package-best-practices/scientific_domain/">Scientific Domain</a></li>
-  <li><a href="/data-package-best-practices/non_tabular/">Non-tabular data and other packaging challenges</a></li>
+  <li><a href="/data-package-best-practices/datapackage-design/">Data Package Design</a></li>
+  <li><a href="/data-package-best-practices/scientific_domain/">Data Products for Synthesis Research</a></li>
 </ul>  
 
 <li class="divider"></li>
@@ -237,29 +235,27 @@ release should be included as well.</p>
 will insert text that releases data under “CC-0” (shown in example). The
 LTER Network-wide default policy is “CC-BY”. Please consult those
 organizations for more information and more details.</em></p>
-<hr />
 <p>Example 10: intellectualRights</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb13-1"><a href="intellectualrights.html#cb13-1"></a><span class="kw">&lt;intellectualRights&gt;</span></span>
-<span id="cb13-2"><a href="intellectualrights.html#cb13-2"></a>   <span class="kw">&lt;section&gt;</span></span>
-<span id="cb13-3"><a href="intellectualrights.html#cb13-3"></a>      <span class="kw">&lt;title&gt;</span>Data Policy<span class="kw">&lt;/title&gt;</span></span>
-<span id="cb13-4"><a href="intellectualrights.html#cb13-4"></a>      <span class="kw">&lt;para&gt;</span>This data package is released to the &quot;public domain&quot; under</span>
-<span id="cb13-5"><a href="intellectualrights.html#cb13-5"></a>         Creative Commons CC0 1.0 &quot;No Rights Reserved&quot; (see:</span>
-<span id="cb13-6"><a href="intellectualrights.html#cb13-6"></a>         https://creativecommons.org/publicdomain/zero/1.0/). It is considered</span>
-<span id="cb13-7"><a href="intellectualrights.html#cb13-7"></a>         professional etiquette to provide attribution of the original work if</span>
-<span id="cb13-8"><a href="intellectualrights.html#cb13-8"></a>         this data package is shared in whole or by individual components. A</span>
-<span id="cb13-9"><a href="intellectualrights.html#cb13-9"></a>         generic citation is provided for this data package on the website</span>
-<span id="cb13-10"><a href="intellectualrights.html#cb13-10"></a>         https://portal.edirepository.org (herein &quot;website&quot;) in the summary</span>
-<span id="cb13-11"><a href="intellectualrights.html#cb13-11"></a>         metadata page. Communication (and collaboration) with the creators of</span>
-<span id="cb13-12"><a href="intellectualrights.html#cb13-12"></a>         this data package is recommended to prevent duplicate research or</span>
-<span id="cb13-13"><a href="intellectualrights.html#cb13-13"></a>         publication. This data package (and its components) is made available</span>
-<span id="cb13-14"><a href="intellectualrights.html#cb13-14"></a>         &quot;as is&quot; and with no warranty of accuracy or fitness for use. The</span>
-<span id="cb13-15"><a href="intellectualrights.html#cb13-15"></a>         creators of this data package and the website shall not be liable for</span>
-<span id="cb13-16"><a href="intellectualrights.html#cb13-16"></a>         any damages resulting from misinterpretation or misuse of the data</span>
-<span id="cb13-17"><a href="intellectualrights.html#cb13-17"></a>         package or its components. Periodic updates of this data package may</span>
-<span id="cb13-18"><a href="intellectualrights.html#cb13-18"></a>         be available from the website. Thank you.<span class="kw">&lt;/para&gt;</span></span>
-<span id="cb13-19"><a href="intellectualrights.html#cb13-19"></a>   <span class="kw">&lt;/section&gt;</span></span>
-<span id="cb13-20"><a href="intellectualrights.html#cb13-20"></a><span class="kw">&lt;/intellectualRights&gt;</span></span></code></pre></div>
-<hr />
+<div class="sourceCode" id="cb13"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">&lt;intellectualRights&gt;</span></a>
+<a class="sourceLine" id="cb13-2" title="2">   <span class="kw">&lt;section&gt;</span></a>
+<a class="sourceLine" id="cb13-3" title="3">      <span class="kw">&lt;title&gt;</span>Data Policy<span class="kw">&lt;/title&gt;</span></a>
+<a class="sourceLine" id="cb13-4" title="4">      <span class="kw">&lt;para&gt;</span>This data package is released to the &quot;public domain&quot; under</a>
+<a class="sourceLine" id="cb13-5" title="5">         Creative Commons CC0 1.0 &quot;No Rights Reserved&quot; (see:</a>
+<a class="sourceLine" id="cb13-6" title="6">         https://creativecommons.org/publicdomain/zero/1.0/). It is considered</a>
+<a class="sourceLine" id="cb13-7" title="7">         professional etiquette to provide attribution of the original work if</a>
+<a class="sourceLine" id="cb13-8" title="8">         this data package is shared in whole or by individual components. A</a>
+<a class="sourceLine" id="cb13-9" title="9">         generic citation is provided for this data package on the website</a>
+<a class="sourceLine" id="cb13-10" title="10">         https://portal.edirepository.org (herein &quot;website&quot;) in the summary</a>
+<a class="sourceLine" id="cb13-11" title="11">         metadata page. Communication (and collaboration) with the creators of</a>
+<a class="sourceLine" id="cb13-12" title="12">         this data package is recommended to prevent duplicate research or</a>
+<a class="sourceLine" id="cb13-13" title="13">         publication. This data package (and its components) is made available</a>
+<a class="sourceLine" id="cb13-14" title="14">         &quot;as is&quot; and with no warranty of accuracy or fitness for use. The</a>
+<a class="sourceLine" id="cb13-15" title="15">         creators of this data package and the website shall not be liable for</a>
+<a class="sourceLine" id="cb13-16" title="16">         any damages resulting from misinterpretation or misuse of the data</a>
+<a class="sourceLine" id="cb13-17" title="17">         package or its components. Periodic updates of this data package may</a>
+<a class="sourceLine" id="cb13-18" title="18">         be available from the website. Thank you.<span class="kw">&lt;/para&gt;</span></a>
+<a class="sourceLine" id="cb13-19" title="19">   <span class="kw">&lt;/section&gt;</span></a>
+<a class="sourceLine" id="cb13-20" title="20"><span class="kw">&lt;/intellectualRights&gt;</span></a></code></pre></div>
 
 </div>
             </section>
@@ -287,12 +283,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -307,6 +302,10 @@ gitbook.start({
 "link": null,
 "text": null
 },
+"view": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "section"
@@ -315,6 +314,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

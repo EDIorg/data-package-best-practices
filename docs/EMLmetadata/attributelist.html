@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>18 attributeList | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</title>
   <meta name="description" content="18 attributeList | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)." />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="18 attributeList | Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2019-12-17" />
+<meta name="date" content="2020-04-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,9 +53,9 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,16 +64,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,9 +80,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -133,8 +131,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="/data-package-best-practices/">Data Package Best Practices</a></li>
 <ul>
   <li><a href="/data-package-best-practices/EMLmetadata/">EML Metadata</a></li>
-  <li><a href="/data-package-best-practices/scientific_domain/">Scientific Domain</a></li>
-  <li><a href="/data-package-best-practices/non_tabular/">Non-tabular data and other packaging challenges</a></li>
+  <li><a href="/data-package-best-practices/datapackage-design/">Data Package Design</a></li>
+  <li><a href="/data-package-best-practices/scientific_domain/">Data Products for Synthesis Research</a></li>
 </ul>  
 
 <li class="divider"></li>
@@ -367,309 +365,373 @@ must be “-9999.00” not “-9999”.</p>
 SQL system with a defined storage type. The second &lt;<strong>attributeList</strong>&gt;
 includes tags for &lt;<strong>customUnits</strong>&gt;, with the Unit defined in the
 &lt;<strong>additionalMetadata</strong>&gt; tree.</p>
-<hr />
 <p>Example 21: attributeList/attribute dataTable</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb24-1"><a href="attributelist.html#cb24-1"></a><span class="kw">&lt;attributeList&gt;</span></span>
-<span id="cb24-2"><a href="attributelist.html#cb24-2"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.site_id&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb24-3"><a href="attributelist.html#cb24-3"></a>      <span class="kw">&lt;attributeName&gt;</span>site_id<span class="kw">&lt;/attributeName&gt;</span></span>
-<span id="cb24-4"><a href="attributelist.html#cb24-4"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>Site id as used in sites table<span class="kw">&lt;/attributeDefinition&gt;</span></span>
-<span id="cb24-5"><a href="attributelist.html#cb24-5"></a>      <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="kw">&gt;</span>string<span class="kw">&lt;/storageType&gt;</span></span>
-<span id="cb24-6"><a href="attributelist.html#cb24-6"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
-<span id="cb24-7"><a href="attributelist.html#cb24-7"></a>         <span class="kw">&lt;nominal&gt;</span></span>
-<span id="cb24-8"><a href="attributelist.html#cb24-8"></a>            <span class="kw">&lt;nonNumericDomain&gt;</span></span>
-<span id="cb24-9"><a href="attributelist.html#cb24-9"></a>               <span class="kw">&lt;textDomain&gt;</span></span>
-<span id="cb24-10"><a href="attributelist.html#cb24-10"></a>                  <span class="kw">&lt;definition&gt;</span>Site id as used in sites table<span class="kw">&lt;/definition&gt;</span></span>
-<span id="cb24-11"><a href="attributelist.html#cb24-11"></a>               <span class="kw">&lt;/textDomain&gt;</span></span>
-<span id="cb24-12"><a href="attributelist.html#cb24-12"></a>            <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
-<span id="cb24-13"><a href="attributelist.html#cb24-13"></a>         <span class="kw">&lt;/nominal&gt;</span></span>
-<span id="cb24-14"><a href="attributelist.html#cb24-14"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
-<span id="cb24-15"><a href="attributelist.html#cb24-15"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
-<span id="cb24-16"><a href="attributelist.html#cb24-16"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.pH&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb24-17"><a href="attributelist.html#cb24-17"></a>      <span class="kw">&lt;attributeName&gt;</span>pH<span class="kw">&lt;/attributeName&gt;</span></span>
-<span id="cb24-18"><a href="attributelist.html#cb24-18"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>ph of soil solution<span class="kw">&lt;/attributeDefinition&gt;</span></span>
-<span id="cb24-19"><a href="attributelist.html#cb24-19"></a>      <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="kw">&gt;</span>float<span class="kw">&lt;/storageType&gt;</span></span>
-<span id="cb24-20"><a href="attributelist.html#cb24-20"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
-<span id="cb24-21"><a href="attributelist.html#cb24-21"></a>         <span class="kw">&lt;ratio&gt;</span></span>
-<span id="cb24-22"><a href="attributelist.html#cb24-22"></a>            <span class="kw">&lt;unit&gt;</span></span>
-<span id="cb24-23"><a href="attributelist.html#cb24-23"></a>               <span class="kw">&lt;standardUnit&gt;</span>dimensionless<span class="kw">&lt;/standardUnit&gt;</span></span>
-<span id="cb24-24"><a href="attributelist.html#cb24-24"></a>            <span class="kw">&lt;/unit&gt;</span></span>
-<span id="cb24-25"><a href="attributelist.html#cb24-25"></a>            <span class="kw">&lt;precision&gt;</span>0.01<span class="kw">&lt;/precision&gt;</span></span>
-<span id="cb24-26"><a href="attributelist.html#cb24-26"></a>            <span class="kw">&lt;numericDomain&gt;</span></span>
-<span id="cb24-27"><a href="attributelist.html#cb24-27"></a>               <span class="kw">&lt;numberType&gt;</span>real<span class="kw">&lt;/numberType&gt;</span></span>
-<span id="cb24-28"><a href="attributelist.html#cb24-28"></a>            <span class="kw">&lt;/numericDomain&gt;</span></span>
-<span id="cb24-29"><a href="attributelist.html#cb24-29"></a>         <span class="kw">&lt;/ratio&gt;</span></span>
-<span id="cb24-30"><a href="attributelist.html#cb24-30"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
-<span id="cb24-31"><a href="attributelist.html#cb24-31"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
-<span id="cb24-32"><a href="attributelist.html#cb24-32"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;pass2001.q110&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb24-33"><a href="attributelist.html#cb24-33"></a>      <span class="kw">&lt;attributeName&gt;</span>q110<span class="kw">&lt;/attributeName&gt;</span></span>
-<span id="cb24-34"><a href="attributelist.html#cb24-34"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>Q110-Preference for front yard landscape<span class="kw">&lt;/attributeDefinition&gt;</span></span>
-<span id="cb24-35"><a href="attributelist.html#cb24-35"></a>      <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="kw">&gt;</span>float<span class="kw">&lt;/storageType&gt;</span></span>
-<span id="cb24-36"><a href="attributelist.html#cb24-36"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
-<span id="cb24-37"><a href="attributelist.html#cb24-37"></a>         <span class="kw">&lt;ordinal&gt;</span></span>
-<span id="cb24-38"><a href="attributelist.html#cb24-38"></a>            <span class="kw">&lt;nonNumericDomain&gt;</span></span>
-<span id="cb24-39"><a href="attributelist.html#cb24-39"></a>               <span class="kw">&lt;enumeratedDomain&gt;</span></span>
-<span id="cb24-40"><a href="attributelist.html#cb24-40"></a>                  <span class="kw">&lt;codeDefinition&gt;</span></span>
-<span id="cb24-41"><a href="attributelist.html#cb24-41"></a>                     <span class="kw">&lt;code&gt;</span>1.00<span class="kw">&lt;/code&gt;</span></span>
-<span id="cb24-42"><a href="attributelist.html#cb24-42"></a>                     <span class="kw">&lt;definition&gt;</span>1-A desert landscape<span class="kw">&lt;/definition&gt;</span></span>
-<span id="cb24-43"><a href="attributelist.html#cb24-43"></a>                  <span class="kw">&lt;/codeDefinition&gt;</span></span>
-<span id="cb24-44"><a href="attributelist.html#cb24-44"></a>                  <span class="kw">&lt;codeDefinition&gt;</span></span>
-<span id="cb24-45"><a href="attributelist.html#cb24-45"></a>                     <span class="kw">&lt;code&gt;</span>2.00<span class="kw">&lt;/code&gt;</span></span>
-<span id="cb24-46"><a href="attributelist.html#cb24-46"></a>                     <span class="kw">&lt;definition&gt;</span>2-Mostly lawn<span class="kw">&lt;/definition&gt;</span></span>
-<span id="cb24-47"><a href="attributelist.html#cb24-47"></a>                  <span class="kw">&lt;/codeDefinition&gt;</span></span>
-<span id="cb24-48"><a href="attributelist.html#cb24-48"></a>                  <span class="kw">&lt;codeDefinition&gt;</span></span>
-<span id="cb24-49"><a href="attributelist.html#cb24-49"></a>                     <span class="kw">&lt;code&gt;</span>3.00<span class="kw">&lt;/code&gt;</span></span>
-<span id="cb24-50"><a href="attributelist.html#cb24-50"></a>                     <span class="kw">&lt;definition&gt;</span>3-Some lawn<span class="kw">&lt;/definition&gt;</span></span>
-<span id="cb24-51"><a href="attributelist.html#cb24-51"></a>                  <span class="kw">&lt;/codeDefinition&gt;</span></span>
-<span id="cb24-52"><a href="attributelist.html#cb24-52"></a>               <span class="kw">&lt;/enumeratedDomain&gt;</span></span>
-<span id="cb24-53"><a href="attributelist.html#cb24-53"></a>            <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
-<span id="cb24-54"><a href="attributelist.html#cb24-54"></a>         <span class="kw">&lt;/ordinal&gt;</span></span>
-<span id="cb24-55"><a href="attributelist.html#cb24-55"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
-<span id="cb24-56"><a href="attributelist.html#cb24-56"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
-<span id="cb24-57"><a href="attributelist.html#cb24-57"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;att.2&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb24-58"><a href="attributelist.html#cb24-58"></a>      <span class="kw">&lt;attributeName&gt;</span>Year<span class="kw">&lt;/attributeName&gt;</span></span>
-<span id="cb24-59"><a href="attributelist.html#cb24-59"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>Calendar year of the observation from years 1990 - 2010<span class="kw">&lt;/attributeDefinition&gt;</span></span>
-<span id="cb24-60"><a href="attributelist.html#cb24-60"></a>      <span class="kw">&lt;storageType&gt;</span>integer<span class="kw">&lt;/storageType&gt;</span></span>
-<span id="cb24-61"><a href="attributelist.html#cb24-61"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
-<span id="cb24-62"><a href="attributelist.html#cb24-62"></a>         <span class="kw">&lt;dateTime&gt;</span></span>
-<span id="cb24-63"><a href="attributelist.html#cb24-63"></a>            <span class="kw">&lt;formatString&gt;</span>YYYY<span class="kw">&lt;/formatString&gt;</span></span>
-<span id="cb24-64"><a href="attributelist.html#cb24-64"></a>            <span class="kw">&lt;dateTimePrecision&gt;</span>1<span class="kw">&lt;/dateTimePrecision&gt;</span></span>
-<span id="cb24-65"><a href="attributelist.html#cb24-65"></a>            <span class="kw">&lt;dateTimeDomain&gt;</span></span>
-<span id="cb24-66"><a href="attributelist.html#cb24-66"></a>               <span class="kw">&lt;bounds&gt;</span></span>
-<span id="cb24-67"><a href="attributelist.html#cb24-67"></a>                  <span class="kw">&lt;minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>1993<span class="kw">&lt;/minimum&gt;</span></span>
-<span id="cb24-68"><a href="attributelist.html#cb24-68"></a>                  <span class="kw">&lt;maximum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>2003<span class="kw">&lt;/maximum&gt;</span></span>
-<span id="cb24-69"><a href="attributelist.html#cb24-69"></a>               <span class="kw">&lt;/bounds&gt;</span></span>
-<span id="cb24-70"><a href="attributelist.html#cb24-70"></a>            <span class="kw">&lt;/dateTimeDomain&gt;</span></span>
-<span id="cb24-71"><a href="attributelist.html#cb24-71"></a>         <span class="kw">&lt;/dateTime&gt;</span></span>
-<span id="cb24-72"><a href="attributelist.html#cb24-72"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
-<span id="cb24-73"><a href="attributelist.html#cb24-73"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
-<span id="cb24-74"><a href="attributelist.html#cb24-74"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;att.7&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb24-75"><a href="attributelist.html#cb24-75"></a>      <span class="kw">&lt;attributeName&gt;</span>Count<span class="kw">&lt;/attributeName&gt;</span></span>
-<span id="cb24-76"><a href="attributelist.html#cb24-76"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>Number of individuals observed<span class="kw">&lt;/attributeDefinition&gt;</span></span>
-<span id="cb24-77"><a href="attributelist.html#cb24-77"></a>      <span class="kw">&lt;storageType&gt;</span>integer<span class="kw">&lt;/storageType&gt;</span></span>
-<span id="cb24-78"><a href="attributelist.html#cb24-78"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
-<span id="cb24-79"><a href="attributelist.html#cb24-79"></a>         <span class="kw">&lt;interval&gt;</span></span>
-<span id="cb24-80"><a href="attributelist.html#cb24-80"></a>            <span class="kw">&lt;unit&gt;</span></span>
-<span id="cb24-81"><a href="attributelist.html#cb24-81"></a>               <span class="kw">&lt;standardUnit&gt;</span>number<span class="kw">&lt;/standardUnit&gt;</span></span>
-<span id="cb24-82"><a href="attributelist.html#cb24-82"></a>            <span class="kw">&lt;/unit&gt;</span></span>
-<span id="cb24-83"><a href="attributelist.html#cb24-83"></a>            <span class="kw">&lt;precision&gt;</span>1<span class="kw">&lt;/precision&gt;</span></span>
-<span id="cb24-84"><a href="attributelist.html#cb24-84"></a>            <span class="kw">&lt;numericDomain&gt;</span></span>
-<span id="cb24-85"><a href="attributelist.html#cb24-85"></a>               <span class="kw">&lt;numberType&gt;</span>whole<span class="kw">&lt;/numberType&gt;</span></span>
-<span id="cb24-86"><a href="attributelist.html#cb24-86"></a>               <span class="kw">&lt;bounds&gt;</span></span>
-<span id="cb24-87"><a href="attributelist.html#cb24-87"></a>                  <span class="kw">&lt;minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>0<span class="kw">&lt;/minimum&gt;</span></span>
-<span id="cb24-88"><a href="attributelist.html#cb24-88"></a>               <span class="kw">&lt;/bounds&gt;</span></span>
-<span id="cb24-89"><a href="attributelist.html#cb24-89"></a>            <span class="kw">&lt;/numericDomain&gt;</span></span>
-<span id="cb24-90"><a href="attributelist.html#cb24-90"></a>         <span class="kw">&lt;/interval&gt;</span></span>
-<span id="cb24-91"><a href="attributelist.html#cb24-91"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
-<span id="cb24-92"><a href="attributelist.html#cb24-92"></a>      <span class="kw">&lt;missingValueCode&gt;</span></span>
-<span id="cb24-93"><a href="attributelist.html#cb24-93"></a>         <span class="kw">&lt;code&gt;</span>NaN<span class="kw">&lt;/code&gt;</span></span>
-<span id="cb24-94"><a href="attributelist.html#cb24-94"></a>         <span class="kw">&lt;codeExplanation&gt;</span>value not recorded or invalid<span class="kw">&lt;/codeExplanation&gt;</span></span>
-<span id="cb24-95"><a href="attributelist.html#cb24-95"></a>      <span class="kw">&lt;/missingValueCode&gt;</span></span>
-<span id="cb24-96"><a href="attributelist.html#cb24-96"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
-<span id="cb24-97"><a href="attributelist.html#cb24-97"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;att.7&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb24-98"><a href="attributelist.html#cb24-98"></a>      <span class="kw">&lt;attributeName&gt;</span>cond<span class="kw">&lt;/attributeName&gt;</span></span>
-<span id="cb24-99"><a href="attributelist.html#cb24-99"></a>      <span class="kw">&lt;attributeLabel&gt;</span>Conductivity<span class="kw">&lt;/attributeLabel&gt;</span></span>
-<span id="cb24-100"><a href="attributelist.html#cb24-100"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>measured with SeaBird Elecronics CTD-911<span class="kw">&lt;/attributeDefinition&gt;</span></span>
-<span id="cb24-101"><a href="attributelist.html#cb24-101"></a>      <span class="kw">&lt;storageType&gt;</span>float<span class="kw">&lt;/storageType&gt;</span></span>
-<span id="cb24-102"><a href="attributelist.html#cb24-102"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
-<span id="cb24-103"><a href="attributelist.html#cb24-103"></a>         <span class="kw">&lt;ratio&gt;</span></span>
-<span id="cb24-104"><a href="attributelist.html#cb24-104"></a>            <span class="kw">&lt;unit&gt;</span></span>
-<span id="cb24-105"><a href="attributelist.html#cb24-105"></a>               <span class="kw">&lt;customUnit&gt;</span>siemensPerMeter<span class="kw">&lt;/customUnit&gt;</span></span>
-<span id="cb24-106"><a href="attributelist.html#cb24-106"></a>            <span class="kw">&lt;/unit&gt;</span></span>
-<span id="cb24-107"><a href="attributelist.html#cb24-107"></a>            <span class="kw">&lt;precision&gt;</span>0.0001<span class="kw">&lt;/precision&gt;</span></span>
-<span id="cb24-108"><a href="attributelist.html#cb24-108"></a>            <span class="kw">&lt;numericDomain&gt;</span></span>
-<span id="cb24-109"><a href="attributelist.html#cb24-109"></a>               <span class="kw">&lt;numberType&gt;</span>real<span class="kw">&lt;/numberType&gt;</span></span>
-<span id="cb24-110"><a href="attributelist.html#cb24-110"></a>               <span class="kw">&lt;bounds&gt;</span></span>
-<span id="cb24-111"><a href="attributelist.html#cb24-111"></a>                  <span class="kw">&lt;minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>0<span class="kw">&lt;/minimum&gt;</span></span>
-<span id="cb24-112"><a href="attributelist.html#cb24-112"></a>                  <span class="kw">&lt;maximum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>40<span class="kw">&lt;/maximum&gt;</span></span>
-<span id="cb24-113"><a href="attributelist.html#cb24-113"></a>               <span class="kw">&lt;/bounds&gt;</span></span>
-<span id="cb24-114"><a href="attributelist.html#cb24-114"></a>            <span class="kw">&lt;/numericDomain&gt;</span></span>
-<span id="cb24-115"><a href="attributelist.html#cb24-115"></a>         <span class="kw">&lt;/ratio&gt;</span></span>
-<span id="cb24-116"><a href="attributelist.html#cb24-116"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
-<span id="cb24-117"><a href="attributelist.html#cb24-117"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
-<span id="cb24-118"><a href="attributelist.html#cb24-118"></a><span class="kw">&lt;/attributeList&gt;</span></span></code></pre></div>
-<hr />
+<div class="sourceCode" id="cb25"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">&lt;attributeList&gt;</span></a>
+<a class="sourceLine" id="cb25-2" title="2">   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.site_id&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb25-3" title="3">      <span class="kw">&lt;attributeName&gt;</span>site_id<span class="kw">&lt;/attributeName&gt;</span></a>
+<a class="sourceLine" id="cb25-4" title="4">      <span class="kw">&lt;attributeDefinition&gt;</span>Site id as used in sites table<span class="kw">&lt;/attributeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb25-5" title="5">      <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="kw">&gt;</span>string<span class="kw">&lt;/storageType&gt;</span></a>
+<a class="sourceLine" id="cb25-6" title="6">      <span class="kw">&lt;measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb25-7" title="7">         <span class="kw">&lt;nominal&gt;</span></a>
+<a class="sourceLine" id="cb25-8" title="8">            <span class="kw">&lt;nonNumericDomain&gt;</span></a>
+<a class="sourceLine" id="cb25-9" title="9">               <span class="kw">&lt;textDomain&gt;</span></a>
+<a class="sourceLine" id="cb25-10" title="10">                  <span class="kw">&lt;definition&gt;</span>Site id as used in sites table<span class="kw">&lt;/definition&gt;</span></a>
+<a class="sourceLine" id="cb25-11" title="11">               <span class="kw">&lt;/textDomain&gt;</span></a>
+<a class="sourceLine" id="cb25-12" title="12">            <span class="kw">&lt;/nonNumericDomain&gt;</span></a>
+<a class="sourceLine" id="cb25-13" title="13">         <span class="kw">&lt;/nominal&gt;</span></a>
+<a class="sourceLine" id="cb25-14" title="14">      <span class="kw">&lt;/measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb25-15" title="15">   <span class="kw">&lt;/attribute&gt;</span></a>
+<a class="sourceLine" id="cb25-16" title="16">   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.pH&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb25-17" title="17">      <span class="kw">&lt;attributeName&gt;</span>pH<span class="kw">&lt;/attributeName&gt;</span></a>
+<a class="sourceLine" id="cb25-18" title="18">      <span class="kw">&lt;attributeDefinition&gt;</span>ph of soil solution<span class="kw">&lt;/attributeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb25-19" title="19">      <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="kw">&gt;</span>float<span class="kw">&lt;/storageType&gt;</span></a>
+<a class="sourceLine" id="cb25-20" title="20">      <span class="kw">&lt;measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb25-21" title="21">         <span class="kw">&lt;ratio&gt;</span></a>
+<a class="sourceLine" id="cb25-22" title="22">            <span class="kw">&lt;unit&gt;</span></a>
+<a class="sourceLine" id="cb25-23" title="23">               <span class="kw">&lt;standardUnit&gt;</span>dimensionless<span class="kw">&lt;/standardUnit&gt;</span></a>
+<a class="sourceLine" id="cb25-24" title="24">            <span class="kw">&lt;/unit&gt;</span></a>
+<a class="sourceLine" id="cb25-25" title="25">            <span class="kw">&lt;precision&gt;</span>0.01<span class="kw">&lt;/precision&gt;</span></a>
+<a class="sourceLine" id="cb25-26" title="26">            <span class="kw">&lt;numericDomain&gt;</span></a>
+<a class="sourceLine" id="cb25-27" title="27">               <span class="kw">&lt;numberType&gt;</span>real<span class="kw">&lt;/numberType&gt;</span></a>
+<a class="sourceLine" id="cb25-28" title="28">            <span class="kw">&lt;/numericDomain&gt;</span></a>
+<a class="sourceLine" id="cb25-29" title="29">         <span class="kw">&lt;/ratio&gt;</span></a>
+<a class="sourceLine" id="cb25-30" title="30">      <span class="kw">&lt;/measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb25-31" title="31">   <span class="kw">&lt;/attribute&gt;</span></a>
+<a class="sourceLine" id="cb25-32" title="32">   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;pass2001.q110&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb25-33" title="33">      <span class="kw">&lt;attributeName&gt;</span>q110<span class="kw">&lt;/attributeName&gt;</span></a>
+<a class="sourceLine" id="cb25-34" title="34">      <span class="kw">&lt;attributeDefinition&gt;</span>Q110-Preference for front yard landscape<span class="kw">&lt;/attributeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb25-35" title="35">      <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="kw">&gt;</span>float<span class="kw">&lt;/storageType&gt;</span></a>
+<a class="sourceLine" id="cb25-36" title="36">      <span class="kw">&lt;measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb25-37" title="37">         <span class="kw">&lt;ordinal&gt;</span></a>
+<a class="sourceLine" id="cb25-38" title="38">            <span class="kw">&lt;nonNumericDomain&gt;</span></a>
+<a class="sourceLine" id="cb25-39" title="39">               <span class="kw">&lt;enumeratedDomain&gt;</span></a>
+<a class="sourceLine" id="cb25-40" title="40">                  <span class="kw">&lt;codeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb25-41" title="41">                     <span class="kw">&lt;code&gt;</span>1.00<span class="kw">&lt;/code&gt;</span></a>
+<a class="sourceLine" id="cb25-42" title="42">                     <span class="kw">&lt;definition&gt;</span>1-A desert landscape<span class="kw">&lt;/definition&gt;</span></a>
+<a class="sourceLine" id="cb25-43" title="43">                  <span class="kw">&lt;/codeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb25-44" title="44">                  <span class="kw">&lt;codeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb25-45" title="45">                     <span class="kw">&lt;code&gt;</span>2.00<span class="kw">&lt;/code&gt;</span></a>
+<a class="sourceLine" id="cb25-46" title="46">                     <span class="kw">&lt;definition&gt;</span>2-Mostly lawn<span class="kw">&lt;/definition&gt;</span></a>
+<a class="sourceLine" id="cb25-47" title="47">                  <span class="kw">&lt;/codeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb25-48" title="48">                  <span class="kw">&lt;codeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb25-49" title="49">                     <span class="kw">&lt;code&gt;</span>3.00<span class="kw">&lt;/code&gt;</span></a>
+<a class="sourceLine" id="cb25-50" title="50">                     <span class="kw">&lt;definition&gt;</span>3-Some lawn<span class="kw">&lt;/definition&gt;</span></a>
+<a class="sourceLine" id="cb25-51" title="51">                  <span class="kw">&lt;/codeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb25-52" title="52">               <span class="kw">&lt;/enumeratedDomain&gt;</span></a>
+<a class="sourceLine" id="cb25-53" title="53">            <span class="kw">&lt;/nonNumericDomain&gt;</span></a>
+<a class="sourceLine" id="cb25-54" title="54">         <span class="kw">&lt;/ordinal&gt;</span></a>
+<a class="sourceLine" id="cb25-55" title="55">      <span class="kw">&lt;/measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb25-56" title="56">   <span class="kw">&lt;/attribute&gt;</span></a>
+<a class="sourceLine" id="cb25-57" title="57">   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;att.2&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb25-58" title="58">      <span class="kw">&lt;attributeName&gt;</span>Year<span class="kw">&lt;/attributeName&gt;</span></a>
+<a class="sourceLine" id="cb25-59" title="59">      <span class="kw">&lt;attributeDefinition&gt;</span>Calendar year of the observation from years 1990 - 2010<span class="kw">&lt;/attributeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb25-60" title="60">      <span class="kw">&lt;storageType&gt;</span>integer<span class="kw">&lt;/storageType&gt;</span></a>
+<a class="sourceLine" id="cb25-61" title="61">      <span class="kw">&lt;measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb25-62" title="62">         <span class="kw">&lt;dateTime&gt;</span></a>
+<a class="sourceLine" id="cb25-63" title="63">            <span class="kw">&lt;formatString&gt;</span>YYYY<span class="kw">&lt;/formatString&gt;</span></a>
+<a class="sourceLine" id="cb25-64" title="64">            <span class="kw">&lt;dateTimePrecision&gt;</span>1<span class="kw">&lt;/dateTimePrecision&gt;</span></a>
+<a class="sourceLine" id="cb25-65" title="65">            <span class="kw">&lt;dateTimeDomain&gt;</span></a>
+<a class="sourceLine" id="cb25-66" title="66">               <span class="kw">&lt;bounds&gt;</span></a>
+<a class="sourceLine" id="cb25-67" title="67">                  <span class="kw">&lt;minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>1993<span class="kw">&lt;/minimum&gt;</span></a>
+<a class="sourceLine" id="cb25-68" title="68">                  <span class="kw">&lt;maximum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>2003<span class="kw">&lt;/maximum&gt;</span></a>
+<a class="sourceLine" id="cb25-69" title="69">               <span class="kw">&lt;/bounds&gt;</span></a>
+<a class="sourceLine" id="cb25-70" title="70">            <span class="kw">&lt;/dateTimeDomain&gt;</span></a>
+<a class="sourceLine" id="cb25-71" title="71">         <span class="kw">&lt;/dateTime&gt;</span></a>
+<a class="sourceLine" id="cb25-72" title="72">      <span class="kw">&lt;/measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb25-73" title="73">   <span class="kw">&lt;/attribute&gt;</span></a>
+<a class="sourceLine" id="cb25-74" title="74">   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;att.7&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb25-75" title="75">      <span class="kw">&lt;attributeName&gt;</span>Count<span class="kw">&lt;/attributeName&gt;</span></a>
+<a class="sourceLine" id="cb25-76" title="76">      <span class="kw">&lt;attributeDefinition&gt;</span>Number of individuals observed<span class="kw">&lt;/attributeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb25-77" title="77">      <span class="kw">&lt;storageType&gt;</span>integer<span class="kw">&lt;/storageType&gt;</span></a>
+<a class="sourceLine" id="cb25-78" title="78">      <span class="kw">&lt;measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb25-79" title="79">         <span class="kw">&lt;interval&gt;</span></a>
+<a class="sourceLine" id="cb25-80" title="80">            <span class="kw">&lt;unit&gt;</span></a>
+<a class="sourceLine" id="cb25-81" title="81">               <span class="kw">&lt;standardUnit&gt;</span>number<span class="kw">&lt;/standardUnit&gt;</span></a>
+<a class="sourceLine" id="cb25-82" title="82">            <span class="kw">&lt;/unit&gt;</span></a>
+<a class="sourceLine" id="cb25-83" title="83">            <span class="kw">&lt;precision&gt;</span>1<span class="kw">&lt;/precision&gt;</span></a>
+<a class="sourceLine" id="cb25-84" title="84">            <span class="kw">&lt;numericDomain&gt;</span></a>
+<a class="sourceLine" id="cb25-85" title="85">               <span class="kw">&lt;numberType&gt;</span>whole<span class="kw">&lt;/numberType&gt;</span></a>
+<a class="sourceLine" id="cb25-86" title="86">               <span class="kw">&lt;bounds&gt;</span></a>
+<a class="sourceLine" id="cb25-87" title="87">                  <span class="kw">&lt;minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>0<span class="kw">&lt;/minimum&gt;</span></a>
+<a class="sourceLine" id="cb25-88" title="88">               <span class="kw">&lt;/bounds&gt;</span></a>
+<a class="sourceLine" id="cb25-89" title="89">            <span class="kw">&lt;/numericDomain&gt;</span></a>
+<a class="sourceLine" id="cb25-90" title="90">         <span class="kw">&lt;/interval&gt;</span></a>
+<a class="sourceLine" id="cb25-91" title="91">      <span class="kw">&lt;/measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb25-92" title="92">      <span class="kw">&lt;missingValueCode&gt;</span></a>
+<a class="sourceLine" id="cb25-93" title="93">         <span class="kw">&lt;code&gt;</span>NaN<span class="kw">&lt;/code&gt;</span></a>
+<a class="sourceLine" id="cb25-94" title="94">         <span class="kw">&lt;codeExplanation&gt;</span>value not recorded or invalid<span class="kw">&lt;/codeExplanation&gt;</span></a>
+<a class="sourceLine" id="cb25-95" title="95">      <span class="kw">&lt;/missingValueCode&gt;</span></a>
+<a class="sourceLine" id="cb25-96" title="96">   <span class="kw">&lt;/attribute&gt;</span></a>
+<a class="sourceLine" id="cb25-97" title="97">   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;att.7&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb25-98" title="98">      <span class="kw">&lt;attributeName&gt;</span>cond<span class="kw">&lt;/attributeName&gt;</span></a>
+<a class="sourceLine" id="cb25-99" title="99">      <span class="kw">&lt;attributeLabel&gt;</span>Conductivity<span class="kw">&lt;/attributeLabel&gt;</span></a>
+<a class="sourceLine" id="cb25-100" title="100">      <span class="kw">&lt;attributeDefinition&gt;</span>measured with SeaBird Elecronics CTD-911<span class="kw">&lt;/attributeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb25-101" title="101">      <span class="kw">&lt;storageType&gt;</span>float<span class="kw">&lt;/storageType&gt;</span></a>
+<a class="sourceLine" id="cb25-102" title="102">      <span class="kw">&lt;measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb25-103" title="103">         <span class="kw">&lt;ratio&gt;</span></a>
+<a class="sourceLine" id="cb25-104" title="104">            <span class="kw">&lt;unit&gt;</span></a>
+<a class="sourceLine" id="cb25-105" title="105">               <span class="kw">&lt;customUnit&gt;</span>siemensPerMeter<span class="kw">&lt;/customUnit&gt;</span></a>
+<a class="sourceLine" id="cb25-106" title="106">            <span class="kw">&lt;/unit&gt;</span></a>
+<a class="sourceLine" id="cb25-107" title="107">            <span class="kw">&lt;precision&gt;</span>0.0001<span class="kw">&lt;/precision&gt;</span></a>
+<a class="sourceLine" id="cb25-108" title="108">            <span class="kw">&lt;numericDomain&gt;</span></a>
+<a class="sourceLine" id="cb25-109" title="109">               <span class="kw">&lt;numberType&gt;</span>real<span class="kw">&lt;/numberType&gt;</span></a>
+<a class="sourceLine" id="cb25-110" title="110">               <span class="kw">&lt;bounds&gt;</span></a>
+<a class="sourceLine" id="cb25-111" title="111">                  <span class="kw">&lt;minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>0<span class="kw">&lt;/minimum&gt;</span></a>
+<a class="sourceLine" id="cb25-112" title="112">                  <span class="kw">&lt;maximum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>40<span class="kw">&lt;/maximum&gt;</span></a>
+<a class="sourceLine" id="cb25-113" title="113">               <span class="kw">&lt;/bounds&gt;</span></a>
+<a class="sourceLine" id="cb25-114" title="114">            <span class="kw">&lt;/numericDomain&gt;</span></a>
+<a class="sourceLine" id="cb25-115" title="115">         <span class="kw">&lt;/ratio&gt;</span></a>
+<a class="sourceLine" id="cb25-116" title="116">      <span class="kw">&lt;/measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb25-117" title="117">   <span class="kw">&lt;/attribute&gt;</span></a>
+<a class="sourceLine" id="cb25-118" title="118"><span class="kw">&lt;/attributeList&gt;</span></a></code></pre></div>
 <p>The examples below show complete entity trees for &lt;<strong>spatialVector</strong>&gt;
-and &lt;<strong>spatialRaster</strong>&gt; converted via XSLT (stylesheet) from ESRI
+and &lt;<strong>spatialRaster</strong>&gt; converted via XSLT (stylesheet) from Esri
 metadata format. For details see “Other Resources”.</p>
-<hr />
 <p>Example 22: Entity and attribute information for spatialVector</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb25-1"><a href="attributelist.html#cb25-1"></a><span class="kw">&lt;spatialVector</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb25-2"><a href="attributelist.html#cb25-2"></a>   <span class="kw">&lt;entityName&gt;</span>Landuse for Ficity in 1955<span class="kw">&lt;/entityName&gt;</span></span>
-<span id="cb25-3"><a href="attributelist.html#cb25-3"></a>   <span class="kw">&lt;entityDescription&gt;</span>This GIS layer represents a reconstructed</span>
-<span id="cb25-4"><a href="attributelist.html#cb25-4"></a>      generalized landuse map for the area of current Ficity around the time</span>
-<span id="cb25-5"><a href="attributelist.html#cb25-5"></a>      period of 1955.<span class="kw">&lt;/entityDescription&gt;</span></span>
-<span id="cb25-6"><a href="attributelist.html#cb25-6"></a>   <span class="kw">&lt;physical&gt;</span></span>
-<span id="cb25-7"><a href="attributelist.html#cb25-7"></a>      <span class="kw">&lt;objectName&gt;</span>fls-20.zip<span class="kw">&lt;/objectName&gt;</span></span>
-<span id="cb25-8"><a href="attributelist.html#cb25-8"></a>      <span class="kw">&lt;dataFormat&gt;</span></span>
-<span id="cb25-9"><a href="attributelist.html#cb25-9"></a>         <span class="kw">&lt;externallyDefinedFormat&gt;</span></span>
-<span id="cb25-10"><a href="attributelist.html#cb25-10"></a>            <span class="kw">&lt;formatName&gt;</span>Shapefile<span class="kw">&lt;/formatName&gt;</span></span>
-<span id="cb25-11"><a href="attributelist.html#cb25-11"></a>         <span class="kw">&lt;/externallyDefinedFormat&gt;</span></span>
-<span id="cb25-12"><a href="attributelist.html#cb25-12"></a>      <span class="kw">&lt;/dataFormat&gt;</span></span>
-<span id="cb25-13"><a href="attributelist.html#cb25-13"></a>      <span class="kw">&lt;distribution&gt;</span></span>
-<span id="cb25-14"><a href="attributelist.html#cb25-14"></a>         <span class="kw">&lt;online&gt;</span></span>
-<span id="cb25-15"><a href="attributelist.html#cb25-15"></a>            <span class="kw">&lt;onlineDescription&gt;</span>f1s-20 Zipped Shapefile File<span class="kw">&lt;/onlineDescription&gt;</span></span>
-<span id="cb25-16"><a href="attributelist.html#cb25-16"></a>            <span class="kw">&lt;url</span><span class="ot"> function=</span><span class="st">&quot;download&quot;</span><span class="kw">&gt;</span>http://www.fsu.edu/lter/data/fls-20.zip<span class="kw">&lt;/url&gt;</span></span>
-<span id="cb25-17"><a href="attributelist.html#cb25-17"></a>         <span class="kw">&lt;/online&gt;</span></span>
-<span id="cb25-18"><a href="attributelist.html#cb25-18"></a>      <span class="kw">&lt;/distribution&gt;</span></span>
-<span id="cb25-19"><a href="attributelist.html#cb25-19"></a>   <span class="kw">&lt;/physical&gt;</span></span>
-<span id="cb25-20"><a href="attributelist.html#cb25-20"></a>   <span class="kw">&lt;attributeList</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.attributeList&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb25-21"><a href="attributelist.html#cb25-21"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.FID&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb25-22"><a href="attributelist.html#cb25-22"></a>         <span class="kw">&lt;attributeName&gt;</span>FID<span class="kw">&lt;/attributeName&gt;</span></span>
-<span id="cb25-23"><a href="attributelist.html#cb25-23"></a>         <span class="kw">&lt;attributeDefinition&gt;</span>Internal feature number.<span class="kw">&lt;/attributeDefinition&gt;</span></span>
-<span id="cb25-24"><a href="attributelist.html#cb25-24"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>OID<span class="kw">&lt;/storageType&gt;</span></span>
-<span id="cb25-25"><a href="attributelist.html#cb25-25"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
-<span id="cb25-26"><a href="attributelist.html#cb25-26"></a>            <span class="kw">&lt;nominal&gt;</span></span>
-<span id="cb25-27"><a href="attributelist.html#cb25-27"></a>               <span class="kw">&lt;nonNumericDomain&gt;</span></span>
-<span id="cb25-28"><a href="attributelist.html#cb25-28"></a>                  <span class="kw">&lt;textDomain&gt;</span></span>
-<span id="cb25-29"><a href="attributelist.html#cb25-29"></a>                     <span class="kw">&lt;definition&gt;</span></span>
-<span id="cb25-30"><a href="attributelist.html#cb25-30"></a>                        Sequential unique whole numbers that are automatically generated.</span>
-<span id="cb25-31"><a href="attributelist.html#cb25-31"></a>                     <span class="kw">&lt;/definition&gt;</span></span>
-<span id="cb25-32"><a href="attributelist.html#cb25-32"></a>                  <span class="kw">&lt;/textDomain&gt;</span></span>
-<span id="cb25-33"><a href="attributelist.html#cb25-33"></a>               <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
-<span id="cb25-34"><a href="attributelist.html#cb25-34"></a>            <span class="kw">&lt;/nominal&gt;</span></span>
-<span id="cb25-35"><a href="attributelist.html#cb25-35"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
-<span id="cb25-36"><a href="attributelist.html#cb25-36"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
-<span id="cb25-37"><a href="attributelist.html#cb25-37"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.Shape&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb25-38"><a href="attributelist.html#cb25-38"></a>         <span class="kw">&lt;attributeName&gt;</span>Shape<span class="kw">&lt;/attributeName&gt;</span></span>
-<span id="cb25-39"><a href="attributelist.html#cb25-39"></a>         <span class="kw">&lt;attributeDefinition&gt;</span>Feature geometry.<span class="kw">&lt;/attributeDefinition&gt;</span></span>
-<span id="cb25-40"><a href="attributelist.html#cb25-40"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>Geometry<span class="kw">&lt;/storageType&gt;</span></span>
-<span id="cb25-41"><a href="attributelist.html#cb25-41"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
-<span id="cb25-42"><a href="attributelist.html#cb25-42"></a>            <span class="kw">&lt;nominal&gt;</span></span>
-<span id="cb25-43"><a href="attributelist.html#cb25-43"></a>               <span class="kw">&lt;nonNumericDomain&gt;</span></span>
-<span id="cb25-44"><a href="attributelist.html#cb25-44"></a>                  <span class="kw">&lt;textDomain&gt;</span></span>
-<span id="cb25-45"><a href="attributelist.html#cb25-45"></a>                     <span class="kw">&lt;definition&gt;</span>Coordinates defining the features.<span class="kw">&lt;/definition&gt;</span></span>
-<span id="cb25-46"><a href="attributelist.html#cb25-46"></a>                  <span class="kw">&lt;/textDomain&gt;</span></span>
-<span id="cb25-47"><a href="attributelist.html#cb25-47"></a>               <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
-<span id="cb25-48"><a href="attributelist.html#cb25-48"></a>            <span class="kw">&lt;/nominal&gt;</span></span>
-<span id="cb25-49"><a href="attributelist.html#cb25-49"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
-<span id="cb25-50"><a href="attributelist.html#cb25-50"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
-<span id="cb25-51"><a href="attributelist.html#cb25-51"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.Z955&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb25-52"><a href="attributelist.html#cb25-52"></a>         <span class="kw">&lt;attributeName&gt;</span>Z955<span class="kw">&lt;/attributeName&gt;</span></span>
-<span id="cb25-53"><a href="attributelist.html#cb25-53"></a>         <span class="kw">&lt;attributeDefinition&gt;</span></span>
-<span id="cb25-54"><a href="attributelist.html#cb25-54"></a>            This field signifies the landuse value for each polygon.</span>
-<span id="cb25-55"><a href="attributelist.html#cb25-55"></a>         <span class="kw">&lt;/attributeDefinition&gt;</span></span>
-<span id="cb25-56"><a href="attributelist.html#cb25-56"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="kw">&gt;</span>string<span class="kw">&lt;/storageType&gt;</span></span>
-<span id="cb25-57"><a href="attributelist.html#cb25-57"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
-<span id="cb25-58"><a href="attributelist.html#cb25-58"></a>            <span class="kw">&lt;nominal&gt;</span></span>
-<span id="cb25-59"><a href="attributelist.html#cb25-59"></a>               <span class="kw">&lt;nonNumericDomain&gt;</span></span>
-<span id="cb25-60"><a href="attributelist.html#cb25-60"></a>                  <span class="kw">&lt;enumeratedDomain&gt;</span></span>
-<span id="cb25-61"><a href="attributelist.html#cb25-61"></a>                     <span class="kw">&lt;codeDefinition&gt;</span></span>
-<span id="cb25-62"><a href="attributelist.html#cb25-62"></a>                        <span class="kw">&lt;code&gt;</span>Agriculture<span class="kw">&lt;/code&gt;</span></span>
-<span id="cb25-63"><a href="attributelist.html#cb25-63"></a>                        <span class="kw">&lt;definition&gt;</span>Agricultural land use<span class="kw">&lt;/definition&gt;</span></span>
-<span id="cb25-64"><a href="attributelist.html#cb25-64"></a>                     <span class="kw">&lt;/codeDefinition&gt;</span></span>
-<span id="cb25-65"><a href="attributelist.html#cb25-65"></a>                     <span class="kw">&lt;codeDefinition&gt;</span></span>
-<span id="cb25-66"><a href="attributelist.html#cb25-66"></a>                        <span class="kw">&lt;code&gt;</span>Urban<span class="kw">&lt;/code&gt;</span></span>
-<span id="cb25-67"><a href="attributelist.html#cb25-67"></a>                        <span class="kw">&lt;definition&gt;</span>Urbanized area<span class="kw">&lt;/definition&gt;</span></span>
-<span id="cb25-68"><a href="attributelist.html#cb25-68"></a>                     <span class="kw">&lt;/codeDefinition&gt;</span></span>
-<span id="cb25-69"><a href="attributelist.html#cb25-69"></a>                     <span class="kw">&lt;codeDefinition&gt;</span></span>
-<span id="cb25-70"><a href="attributelist.html#cb25-70"></a>                        <span class="kw">&lt;code&gt;</span>Desert<span class="kw">&lt;/code&gt;</span></span>
-<span id="cb25-71"><a href="attributelist.html#cb25-71"></a>                        <span class="kw">&lt;definition&gt;</span>Unmodified area<span class="kw">&lt;/definition&gt;</span></span>
-<span id="cb25-72"><a href="attributelist.html#cb25-72"></a>                     <span class="kw">&lt;/codeDefinition&gt;</span></span>
-<span id="cb25-73"><a href="attributelist.html#cb25-73"></a>                     <span class="kw">&lt;codeDefinition&gt;</span></span>
-<span id="cb25-74"><a href="attributelist.html#cb25-74"></a>                        <span class="kw">&lt;code&gt;</span>Recreation<span class="kw">&lt;/code&gt;</span></span>
-<span id="cb25-75"><a href="attributelist.html#cb25-75"></a>                        <span class="kw">&lt;definition&gt;</span>Recreational land use<span class="kw">&lt;/definition&gt;</span></span>
-<span id="cb25-76"><a href="attributelist.html#cb25-76"></a>                     <span class="kw">&lt;/codeDefinition&gt;</span></span>
-<span id="cb25-77"><a href="attributelist.html#cb25-77"></a>                  <span class="kw">&lt;/enumeratedDomain&gt;</span></span>
-<span id="cb25-78"><a href="attributelist.html#cb25-78"></a>               <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
-<span id="cb25-79"><a href="attributelist.html#cb25-79"></a>            <span class="kw">&lt;/nominal&gt;</span></span>
-<span id="cb25-80"><a href="attributelist.html#cb25-80"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
-<span id="cb25-81"><a href="attributelist.html#cb25-81"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
-<span id="cb25-82"><a href="attributelist.html#cb25-82"></a>   <span class="kw">&lt;/attributeList&gt;</span></span>
-<span id="cb25-83"><a href="attributelist.html#cb25-83"></a>   <span class="kw">&lt;geometry&gt;</span>Polygon<span class="kw">&lt;/geometry&gt;</span></span>
-<span id="cb25-84"><a href="attributelist.html#cb25-84"></a>   <span class="kw">&lt;geometricObjectCount&gt;</span>78<span class="kw">&lt;/geometricObjectCount&gt;</span></span>
-<span id="cb25-85"><a href="attributelist.html#cb25-85"></a>   <span class="kw">&lt;spatialReference&gt;</span></span>
-<span id="cb25-86"><a href="attributelist.html#cb25-86"></a>      <span class="kw">&lt;horizCoordSysName&gt;</span>NAD_1927_UTM_Zone_12N<span class="kw">&lt;/horizCoordSysName&gt;</span></span>
-<span id="cb25-87"><a href="attributelist.html#cb25-87"></a>   <span class="kw">&lt;/spatialReference&gt;</span></span>
-<span id="cb25-88"><a href="attributelist.html#cb25-88"></a><span class="kw">&lt;/spatialVector&gt;</span></span></code></pre></div>
-<hr />
-<hr />
+<div class="sourceCode" id="cb26"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">&lt;spatialVector</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb26-2" title="2">   <span class="kw">&lt;entityName&gt;</span>Landuse for Ficity in 1955<span class="kw">&lt;/entityName&gt;</span></a>
+<a class="sourceLine" id="cb26-3" title="3">   <span class="kw">&lt;entityDescription&gt;</span>This GIS layer represents a reconstructed</a>
+<a class="sourceLine" id="cb26-4" title="4">      generalized landuse map for the area of current Ficity around the time</a>
+<a class="sourceLine" id="cb26-5" title="5">      period of 1955.<span class="kw">&lt;/entityDescription&gt;</span></a>
+<a class="sourceLine" id="cb26-6" title="6">   <span class="kw">&lt;physical&gt;</span></a>
+<a class="sourceLine" id="cb26-7" title="7">      <span class="kw">&lt;objectName&gt;</span>fls-20.zip<span class="kw">&lt;/objectName&gt;</span></a>
+<a class="sourceLine" id="cb26-8" title="8">      <span class="kw">&lt;dataFormat&gt;</span></a>
+<a class="sourceLine" id="cb26-9" title="9">         <span class="kw">&lt;externallyDefinedFormat&gt;</span></a>
+<a class="sourceLine" id="cb26-10" title="10">            <span class="kw">&lt;formatName&gt;</span>Shapefile<span class="kw">&lt;/formatName&gt;</span></a>
+<a class="sourceLine" id="cb26-11" title="11">         <span class="kw">&lt;/externallyDefinedFormat&gt;</span></a>
+<a class="sourceLine" id="cb26-12" title="12">      <span class="kw">&lt;/dataFormat&gt;</span></a>
+<a class="sourceLine" id="cb26-13" title="13">      <span class="kw">&lt;distribution&gt;</span></a>
+<a class="sourceLine" id="cb26-14" title="14">         <span class="kw">&lt;online&gt;</span></a>
+<a class="sourceLine" id="cb26-15" title="15">            <span class="kw">&lt;onlineDescription&gt;</span>f1s-20 Zipped Shapefile File<span class="kw">&lt;/onlineDescription&gt;</span></a>
+<a class="sourceLine" id="cb26-16" title="16">            <span class="kw">&lt;url</span><span class="ot"> function=</span><span class="st">&quot;download&quot;</span><span class="kw">&gt;</span>http://www.fsu.edu/lter/data/fls-20.zip<span class="kw">&lt;/url&gt;</span></a>
+<a class="sourceLine" id="cb26-17" title="17">         <span class="kw">&lt;/online&gt;</span></a>
+<a class="sourceLine" id="cb26-18" title="18">      <span class="kw">&lt;/distribution&gt;</span></a>
+<a class="sourceLine" id="cb26-19" title="19">   <span class="kw">&lt;/physical&gt;</span></a>
+<a class="sourceLine" id="cb26-20" title="20">   <span class="kw">&lt;attributeList</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.attributeList&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb26-21" title="21">      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.FID&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb26-22" title="22">         <span class="kw">&lt;attributeName&gt;</span>FID<span class="kw">&lt;/attributeName&gt;</span></a>
+<a class="sourceLine" id="cb26-23" title="23">         <span class="kw">&lt;attributeDefinition&gt;</span>Internal feature number.<span class="kw">&lt;/attributeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb26-24" title="24">         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>OID<span class="kw">&lt;/storageType&gt;</span></a>
+<a class="sourceLine" id="cb26-25" title="25">         <span class="kw">&lt;measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb26-26" title="26">            <span class="kw">&lt;nominal&gt;</span></a>
+<a class="sourceLine" id="cb26-27" title="27">               <span class="kw">&lt;nonNumericDomain&gt;</span></a>
+<a class="sourceLine" id="cb26-28" title="28">                  <span class="kw">&lt;textDomain&gt;</span></a>
+<a class="sourceLine" id="cb26-29" title="29">                     <span class="kw">&lt;definition&gt;</span></a>
+<a class="sourceLine" id="cb26-30" title="30">                        Sequential unique whole numbers that are automatically generated.</a>
+<a class="sourceLine" id="cb26-31" title="31">                     <span class="kw">&lt;/definition&gt;</span></a>
+<a class="sourceLine" id="cb26-32" title="32">                  <span class="kw">&lt;/textDomain&gt;</span></a>
+<a class="sourceLine" id="cb26-33" title="33">               <span class="kw">&lt;/nonNumericDomain&gt;</span></a>
+<a class="sourceLine" id="cb26-34" title="34">            <span class="kw">&lt;/nominal&gt;</span></a>
+<a class="sourceLine" id="cb26-35" title="35">         <span class="kw">&lt;/measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb26-36" title="36">      <span class="kw">&lt;/attribute&gt;</span></a>
+<a class="sourceLine" id="cb26-37" title="37">      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.Shape&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb26-38" title="38">         <span class="kw">&lt;attributeName&gt;</span>Shape<span class="kw">&lt;/attributeName&gt;</span></a>
+<a class="sourceLine" id="cb26-39" title="39">         <span class="kw">&lt;attributeDefinition&gt;</span>Feature geometry.<span class="kw">&lt;/attributeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb26-40" title="40">         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>Geometry<span class="kw">&lt;/storageType&gt;</span></a>
+<a class="sourceLine" id="cb26-41" title="41">         <span class="kw">&lt;measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb26-42" title="42">            <span class="kw">&lt;nominal&gt;</span></a>
+<a class="sourceLine" id="cb26-43" title="43">               <span class="kw">&lt;nonNumericDomain&gt;</span></a>
+<a class="sourceLine" id="cb26-44" title="44">                  <span class="kw">&lt;textDomain&gt;</span></a>
+<a class="sourceLine" id="cb26-45" title="45">                     <span class="kw">&lt;definition&gt;</span>Coordinates defining the features.<span class="kw">&lt;/definition&gt;</span></a>
+<a class="sourceLine" id="cb26-46" title="46">                  <span class="kw">&lt;/textDomain&gt;</span></a>
+<a class="sourceLine" id="cb26-47" title="47">               <span class="kw">&lt;/nonNumericDomain&gt;</span></a>
+<a class="sourceLine" id="cb26-48" title="48">            <span class="kw">&lt;/nominal&gt;</span></a>
+<a class="sourceLine" id="cb26-49" title="49">         <span class="kw">&lt;/measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb26-50" title="50">      <span class="kw">&lt;/attribute&gt;</span></a>
+<a class="sourceLine" id="cb26-51" title="51">      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.Z955&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb26-52" title="52">         <span class="kw">&lt;attributeName&gt;</span>Z955<span class="kw">&lt;/attributeName&gt;</span></a>
+<a class="sourceLine" id="cb26-53" title="53">         <span class="kw">&lt;attributeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb26-54" title="54">            This field signifies the landuse value for each polygon.</a>
+<a class="sourceLine" id="cb26-55" title="55">         <span class="kw">&lt;/attributeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb26-56" title="56">         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="kw">&gt;</span>string<span class="kw">&lt;/storageType&gt;</span></a>
+<a class="sourceLine" id="cb26-57" title="57">         <span class="kw">&lt;measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb26-58" title="58">            <span class="kw">&lt;nominal&gt;</span></a>
+<a class="sourceLine" id="cb26-59" title="59">               <span class="kw">&lt;nonNumericDomain&gt;</span></a>
+<a class="sourceLine" id="cb26-60" title="60">                  <span class="kw">&lt;enumeratedDomain&gt;</span></a>
+<a class="sourceLine" id="cb26-61" title="61">                     <span class="kw">&lt;codeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb26-62" title="62">                        <span class="kw">&lt;code&gt;</span>Agriculture<span class="kw">&lt;/code&gt;</span></a>
+<a class="sourceLine" id="cb26-63" title="63">                        <span class="kw">&lt;definition&gt;</span>Agricultural land use<span class="kw">&lt;/definition&gt;</span></a>
+<a class="sourceLine" id="cb26-64" title="64">                     <span class="kw">&lt;/codeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb26-65" title="65">                     <span class="kw">&lt;codeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb26-66" title="66">                        <span class="kw">&lt;code&gt;</span>Urban<span class="kw">&lt;/code&gt;</span></a>
+<a class="sourceLine" id="cb26-67" title="67">                        <span class="kw">&lt;definition&gt;</span>Urbanized area<span class="kw">&lt;/definition&gt;</span></a>
+<a class="sourceLine" id="cb26-68" title="68">                     <span class="kw">&lt;/codeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb26-69" title="69">                     <span class="kw">&lt;codeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb26-70" title="70">                        <span class="kw">&lt;code&gt;</span>Desert<span class="kw">&lt;/code&gt;</span></a>
+<a class="sourceLine" id="cb26-71" title="71">                        <span class="kw">&lt;definition&gt;</span>Unmodified area<span class="kw">&lt;/definition&gt;</span></a>
+<a class="sourceLine" id="cb26-72" title="72">                     <span class="kw">&lt;/codeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb26-73" title="73">                     <span class="kw">&lt;codeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb26-74" title="74">                        <span class="kw">&lt;code&gt;</span>Recreation<span class="kw">&lt;/code&gt;</span></a>
+<a class="sourceLine" id="cb26-75" title="75">                        <span class="kw">&lt;definition&gt;</span>Recreational land use<span class="kw">&lt;/definition&gt;</span></a>
+<a class="sourceLine" id="cb26-76" title="76">                     <span class="kw">&lt;/codeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb26-77" title="77">                  <span class="kw">&lt;/enumeratedDomain&gt;</span></a>
+<a class="sourceLine" id="cb26-78" title="78">               <span class="kw">&lt;/nonNumericDomain&gt;</span></a>
+<a class="sourceLine" id="cb26-79" title="79">            <span class="kw">&lt;/nominal&gt;</span></a>
+<a class="sourceLine" id="cb26-80" title="80">         <span class="kw">&lt;/measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb26-81" title="81">      <span class="kw">&lt;/attribute&gt;</span></a>
+<a class="sourceLine" id="cb26-82" title="82">   <span class="kw">&lt;/attributeList&gt;</span></a>
+<a class="sourceLine" id="cb26-83" title="83">   <span class="kw">&lt;geometry&gt;</span>Polygon<span class="kw">&lt;/geometry&gt;</span></a>
+<a class="sourceLine" id="cb26-84" title="84">   <span class="kw">&lt;geometricObjectCount&gt;</span>78<span class="kw">&lt;/geometricObjectCount&gt;</span></a>
+<a class="sourceLine" id="cb26-85" title="85">   <span class="kw">&lt;spatialReference&gt;</span></a>
+<a class="sourceLine" id="cb26-86" title="86">      <span class="kw">&lt;horizCoordSysName&gt;</span>NAD_1927_UTM_Zone_12N<span class="kw">&lt;/horizCoordSysName&gt;</span></a>
+<a class="sourceLine" id="cb26-87" title="87">   <span class="kw">&lt;/spatialReference&gt;</span></a>
+<a class="sourceLine" id="cb26-88" title="88"><span class="kw">&lt;/spatialVector&gt;</span></a></code></pre></div>
 <p>Example 23: Entity and attribute information for spatialRaster</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb26-1"><a href="attributelist.html#cb26-1"></a><span class="kw">&lt;spatialRaster</span><span class="ot"> id=</span><span class="st">&quot;fi_24k&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb26-2"><a href="attributelist.html#cb26-2"></a>   <span class="kw">&lt;entityName&gt;</span>fi_24k<span class="kw">&lt;/entityName&gt;</span></span>
-<span id="cb26-3"><a href="attributelist.html#cb26-3"></a>   <span class="kw">&lt;entityDefinition&gt;</span>Ficiticiou State 7.5 Minute Digital Elevation Model<span class="kw">&lt;/entityDefinition&gt;</span></span>
-<span id="cb26-4"><a href="attributelist.html#cb26-4"></a>   <span class="kw">&lt;physical&gt;</span></span>
-<span id="cb26-5"><a href="attributelist.html#cb26-5"></a>      <span class="kw">&lt;objectName&gt;</span>fls-30.zip<span class="kw">&lt;/objectName&gt;</span></span>
-<span id="cb26-6"><a href="attributelist.html#cb26-6"></a>      <span class="kw">&lt;dataFormat&gt;</span></span>
-<span id="cb26-7"><a href="attributelist.html#cb26-7"></a>         <span class="kw">&lt;externallyDefinedFormat&gt;</span></span>
-<span id="cb26-8"><a href="attributelist.html#cb26-8"></a>            <span class="kw">&lt;formatName&gt;</span>Esri Grid<span class="kw">&lt;/formatName&gt;</span></span>
-<span id="cb26-9"><a href="attributelist.html#cb26-9"></a>         <span class="kw">&lt;/externallyDefinedFormat&gt;</span></span>
-<span id="cb26-10"><a href="attributelist.html#cb26-10"></a>      <span class="kw">&lt;/dataFormat&gt;</span></span>
-<span id="cb26-11"><a href="attributelist.html#cb26-11"></a>      <span class="kw">&lt;distribution&gt;</span></span>
-<span id="cb26-12"><a href="attributelist.html#cb26-12"></a>         <span class="kw">&lt;online&gt;</span></span>
-<span id="cb26-13"><a href="attributelist.html#cb26-13"></a>            <span class="kw">&lt;onlineDescription&gt;</span>f1s-30 zipped raster data File<span class="kw">&lt;/onlineDescription&gt;</span></span>
-<span id="cb26-14"><a href="attributelist.html#cb26-14"></a>            <span class="kw">&lt;url</span><span class="ot"> function=</span><span class="st">&quot;download&quot;</span><span class="kw">&gt;</span>http://www.fsu.edu/lter/data/fls-30.zip<span class="kw">&lt;/url&gt;</span></span>
-<span id="cb26-15"><a href="attributelist.html#cb26-15"></a>         <span class="kw">&lt;/online&gt;</span></span>
-<span id="cb26-16"><a href="attributelist.html#cb26-16"></a>      <span class="kw">&lt;/distribution&gt;</span></span>
-<span id="cb26-17"><a href="attributelist.html#cb26-17"></a>   <span class="kw">&lt;/physical&gt;</span></span>
-<span id="cb26-18"><a href="attributelist.html#cb26-18"></a>   <span class="kw">&lt;attributeList</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.attributeList&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb26-19"><a href="attributelist.html#cb26-19"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.ObjectID&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb26-20"><a href="attributelist.html#cb26-20"></a>         <span class="kw">&lt;attributeName&gt;</span>ObjectID<span class="kw">&lt;/attributeName&gt;</span></span>
-<span id="cb26-21"><a href="attributelist.html#cb26-21"></a>         <span class="kw">&lt;attributeDefinition&gt;</span>Internal feature number.<span class="kw">&lt;/attributeDefinition&gt;</span></span>
-<span id="cb26-22"><a href="attributelist.html#cb26-22"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>OID<span class="kw">&lt;/storageType&gt;</span></span>
-<span id="cb26-23"><a href="attributelist.html#cb26-23"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
-<span id="cb26-24"><a href="attributelist.html#cb26-24"></a>            <span class="kw">&lt;nominal&gt;</span></span>
-<span id="cb26-25"><a href="attributelist.html#cb26-25"></a>               <span class="kw">&lt;nonNumericDomain&gt;</span></span>
-<span id="cb26-26"><a href="attributelist.html#cb26-26"></a>                  <span class="kw">&lt;textDomain&gt;</span></span>
-<span id="cb26-27"><a href="attributelist.html#cb26-27"></a>                     <span class="kw">&lt;definition&gt;</span></span>
-<span id="cb26-28"><a href="attributelist.html#cb26-28"></a>                        Sequential unique whole numbers that are automatically generated.</span>
-<span id="cb26-29"><a href="attributelist.html#cb26-29"></a>                     <span class="kw">&lt;/definition&gt;</span></span>
-<span id="cb26-30"><a href="attributelist.html#cb26-30"></a>                  <span class="kw">&lt;/textDomain&gt;</span></span>
-<span id="cb26-31"><a href="attributelist.html#cb26-31"></a>               <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
-<span id="cb26-32"><a href="attributelist.html#cb26-32"></a>            <span class="kw">&lt;/nominal&gt;</span></span>
-<span id="cb26-33"><a href="attributelist.html#cb26-33"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
-<span id="cb26-34"><a href="attributelist.html#cb26-34"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
-<span id="cb26-35"><a href="attributelist.html#cb26-35"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.Cell Value&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb26-36"><a href="attributelist.html#cb26-36"></a>         <span class="kw">&lt;attributeName&gt;</span>Cell Value<span class="kw">&lt;/attributeName&gt;</span></span>
-<span id="cb26-37"><a href="attributelist.html#cb26-37"></a>         <span class="kw">&lt;attributeDefinition&gt;</span>Elevation Value<span class="kw">&lt;/attributeDefinition&gt;</span></span>
-<span id="cb26-38"><a href="attributelist.html#cb26-38"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>Integer<span class="kw">&lt;/storageType&gt;</span></span>
-<span id="cb26-39"><a href="attributelist.html#cb26-39"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
-<span id="cb26-40"><a href="attributelist.html#cb26-40"></a>            <span class="kw">&lt;ratio&gt;</span></span>
-<span id="cb26-41"><a href="attributelist.html#cb26-41"></a>               <span class="kw">&lt;unit&gt;</span></span>
-<span id="cb26-42"><a href="attributelist.html#cb26-42"></a>                  <span class="kw">&lt;standardUnit&gt;</span>meter<span class="kw">&lt;/standardUnit&gt;</span></span>
-<span id="cb26-43"><a href="attributelist.html#cb26-43"></a>               <span class="kw">&lt;/unit&gt;</span></span>
-<span id="cb26-44"><a href="attributelist.html#cb26-44"></a>               <span class="kw">&lt;precision</span> <span class="kw">/&gt;</span></span>
-<span id="cb26-45"><a href="attributelist.html#cb26-45"></a>               <span class="kw">&lt;numericDomain&gt;</span></span>
-<span id="cb26-46"><a href="attributelist.html#cb26-46"></a>                  <span class="kw">&lt;numberType&gt;</span>integer<span class="kw">&lt;/numberType&gt;</span></span>
-<span id="cb26-47"><a href="attributelist.html#cb26-47"></a>                  <span class="kw">&lt;bounds&gt;</span></span>
-<span id="cb26-48"><a href="attributelist.html#cb26-48"></a>                     <span class="kw">&lt;minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>-5193.000000<span class="kw">&lt;/minimum&gt;</span></span>
-<span id="cb26-49"><a href="attributelist.html#cb26-49"></a>                     <span class="kw">&lt;maximum</span><span class="ot"> exclusive=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>14785.000000<span class="kw">&lt;/maximum&gt;</span></span>
-<span id="cb26-50"><a href="attributelist.html#cb26-50"></a>                  <span class="kw">&lt;/bounds&gt;</span></span>
-<span id="cb26-51"><a href="attributelist.html#cb26-51"></a>               <span class="kw">&lt;/numericDomain&gt;</span></span>
-<span id="cb26-52"><a href="attributelist.html#cb26-52"></a>            <span class="kw">&lt;/ratio&gt;</span></span>
-<span id="cb26-53"><a href="attributelist.html#cb26-53"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
-<span id="cb26-54"><a href="attributelist.html#cb26-54"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
-<span id="cb26-55"><a href="attributelist.html#cb26-55"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.Count&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb26-56"><a href="attributelist.html#cb26-56"></a>         <span class="kw">&lt;attributeName&gt;</span>Count<span class="kw">&lt;/attributeName&gt;</span></span>
-<span id="cb26-57"><a href="attributelist.html#cb26-57"></a>         <span class="kw">&lt;attributeDefinition&gt;</span>Count<span class="kw">&lt;/attributeDefinition&gt;</span></span>
-<span id="cb26-58"><a href="attributelist.html#cb26-58"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>Integer<span class="kw">&lt;/storageType&gt;</span></span>
-<span id="cb26-59"><a href="attributelist.html#cb26-59"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
-<span id="cb26-60"><a href="attributelist.html#cb26-60"></a>            <span class="kw">&lt;ratio&gt;</span></span>
-<span id="cb26-61"><a href="attributelist.html#cb26-61"></a>               <span class="kw">&lt;unit&gt;</span></span>
-<span id="cb26-62"><a href="attributelist.html#cb26-62"></a>                  <span class="kw">&lt;standardUnit&gt;</span>number<span class="kw">&lt;/standardUnit&gt;</span></span>
-<span id="cb26-63"><a href="attributelist.html#cb26-63"></a>               <span class="kw">&lt;/unit&gt;</span></span>
-<span id="cb26-64"><a href="attributelist.html#cb26-64"></a>               <span class="kw">&lt;precision</span> <span class="kw">/&gt;</span></span>
-<span id="cb26-65"><a href="attributelist.html#cb26-65"></a>               <span class="kw">&lt;numericDomain&gt;</span></span>
-<span id="cb26-66"><a href="attributelist.html#cb26-66"></a>                  <span class="kw">&lt;numberType&gt;</span>whole<span class="kw">&lt;/numberType&gt;</span></span>
-<span id="cb26-67"><a href="attributelist.html#cb26-67"></a>               <span class="kw">&lt;/numericDomain&gt;</span></span>
-<span id="cb26-68"><a href="attributelist.html#cb26-68"></a>            <span class="kw">&lt;/ratio&gt;</span></span>
-<span id="cb26-69"><a href="attributelist.html#cb26-69"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
-<span id="cb26-70"><a href="attributelist.html#cb26-70"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
-<span id="cb26-71"><a href="attributelist.html#cb26-71"></a>   <span class="kw">&lt;/attributeList&gt;</span></span>
-<span id="cb26-72"><a href="attributelist.html#cb26-72"></a>   <span class="kw">&lt;spatialReference&gt;</span></span>
-<span id="cb26-73"><a href="attributelist.html#cb26-73"></a>      <span class="kw">&lt;horizCoordSysName&gt;</span>NAD_1927_UTM_Zone_12N<span class="kw">&lt;/horizCoordSysName&gt;</span></span>
-<span id="cb26-74"><a href="attributelist.html#cb26-74"></a>   <span class="kw">&lt;/spatialReference&gt;</span></span>
-<span id="cb26-75"><a href="attributelist.html#cb26-75"></a>   <span class="kw">&lt;horizontalAccuracy&gt;</span>not available<span class="kw">&lt;/horizontalAccuracy&gt;</span></span>
-<span id="cb26-76"><a href="attributelist.html#cb26-76"></a>   <span class="kw">&lt;verticalAccuracy&gt;</span>not available<span class="kw">&lt;/verticalAccuracy&gt;</span></span>
-<span id="cb26-77"><a href="attributelist.html#cb26-77"></a>   <span class="kw">&lt;cellSizeXDirection&gt;</span>30.0<span class="kw">&lt;/cellSizeXDirection&gt;</span></span>
-<span id="cb26-78"><a href="attributelist.html#cb26-78"></a>   <span class="kw">&lt;cellSizeYDirection&gt;</span>30.0<span class="kw">&lt;/cellSizeYDirection&gt;</span></span>
-<span id="cb26-79"><a href="attributelist.html#cb26-79"></a>   <span class="kw">&lt;numberOfBands&gt;</span>1<span class="kw">&lt;/numberOfBands&gt;</span></span>
-<span id="cb26-80"><a href="attributelist.html#cb26-80"></a>   <span class="kw">&lt;rasterOrigin&gt;</span>Upper Left<span class="kw">&lt;/rasterOrigin&gt;</span></span>
-<span id="cb26-81"><a href="attributelist.html#cb26-81"></a>   <span class="kw">&lt;rows&gt;</span>21092<span class="kw">&lt;/rows&gt;</span></span>
-<span id="cb26-82"><a href="attributelist.html#cb26-82"></a>   <span class="kw">&lt;columns&gt;</span>18136<span class="kw">&lt;/columns&gt;</span></span>
-<span id="cb26-83"><a href="attributelist.html#cb26-83"></a>   <span class="kw">&lt;verticals&gt;</span>1<span class="kw">&lt;/verticals&gt;</span></span>
-<span id="cb26-84"><a href="attributelist.html#cb26-84"></a>   <span class="kw">&lt;cellGeometry&gt;</span>matrix<span class="kw">&lt;/cellGeometry&gt;</span></span>
-<span id="cb26-85"><a href="attributelist.html#cb26-85"></a><span class="kw">&lt;/spatialRaster&gt;</span></span></code></pre></div>
-<hr />
+<div class="sourceCode" id="cb27"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">&lt;spatialRaster</span><span class="ot"> id=</span><span class="st">&quot;fi_24k&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb27-2" title="2">   <span class="kw">&lt;entityName&gt;</span>fi_24k<span class="kw">&lt;/entityName&gt;</span></a>
+<a class="sourceLine" id="cb27-3" title="3">   <span class="kw">&lt;entityDefinition&gt;</span>Ficiticiou State 7.5 Minute Digital Elevation Model<span class="kw">&lt;/entityDefinition&gt;</span></a>
+<a class="sourceLine" id="cb27-4" title="4">   <span class="kw">&lt;physical&gt;</span></a>
+<a class="sourceLine" id="cb27-5" title="5">      <span class="kw">&lt;objectName&gt;</span>fls-30.zip<span class="kw">&lt;/objectName&gt;</span></a>
+<a class="sourceLine" id="cb27-6" title="6">      <span class="kw">&lt;dataFormat&gt;</span></a>
+<a class="sourceLine" id="cb27-7" title="7">         <span class="kw">&lt;externallyDefinedFormat&gt;</span></a>
+<a class="sourceLine" id="cb27-8" title="8">            <span class="kw">&lt;formatName&gt;</span>Esri Grid<span class="kw">&lt;/formatName&gt;</span></a>
+<a class="sourceLine" id="cb27-9" title="9">         <span class="kw">&lt;/externallyDefinedFormat&gt;</span></a>
+<a class="sourceLine" id="cb27-10" title="10">      <span class="kw">&lt;/dataFormat&gt;</span></a>
+<a class="sourceLine" id="cb27-11" title="11">      <span class="kw">&lt;distribution&gt;</span></a>
+<a class="sourceLine" id="cb27-12" title="12">         <span class="kw">&lt;online&gt;</span></a>
+<a class="sourceLine" id="cb27-13" title="13">            <span class="kw">&lt;onlineDescription&gt;</span>f1s-30 zipped raster data File<span class="kw">&lt;/onlineDescription&gt;</span></a>
+<a class="sourceLine" id="cb27-14" title="14">            <span class="kw">&lt;url</span><span class="ot"> function=</span><span class="st">&quot;download&quot;</span><span class="kw">&gt;</span>http://www.fsu.edu/lter/data/fls-30.zip<span class="kw">&lt;/url&gt;</span></a>
+<a class="sourceLine" id="cb27-15" title="15">         <span class="kw">&lt;/online&gt;</span></a>
+<a class="sourceLine" id="cb27-16" title="16">      <span class="kw">&lt;/distribution&gt;</span></a>
+<a class="sourceLine" id="cb27-17" title="17">   <span class="kw">&lt;/physical&gt;</span></a>
+<a class="sourceLine" id="cb27-18" title="18">   <span class="kw">&lt;attributeList</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.attributeList&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb27-19" title="19">      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.ObjectID&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb27-20" title="20">         <span class="kw">&lt;attributeName&gt;</span>ObjectID<span class="kw">&lt;/attributeName&gt;</span></a>
+<a class="sourceLine" id="cb27-21" title="21">         <span class="kw">&lt;attributeDefinition&gt;</span>Internal feature number.<span class="kw">&lt;/attributeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb27-22" title="22">         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>OID<span class="kw">&lt;/storageType&gt;</span></a>
+<a class="sourceLine" id="cb27-23" title="23">         <span class="kw">&lt;measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb27-24" title="24">            <span class="kw">&lt;nominal&gt;</span></a>
+<a class="sourceLine" id="cb27-25" title="25">               <span class="kw">&lt;nonNumericDomain&gt;</span></a>
+<a class="sourceLine" id="cb27-26" title="26">                  <span class="kw">&lt;textDomain&gt;</span></a>
+<a class="sourceLine" id="cb27-27" title="27">                     <span class="kw">&lt;definition&gt;</span></a>
+<a class="sourceLine" id="cb27-28" title="28">                        Sequential unique whole numbers that are automatically generated.</a>
+<a class="sourceLine" id="cb27-29" title="29">                     <span class="kw">&lt;/definition&gt;</span></a>
+<a class="sourceLine" id="cb27-30" title="30">                  <span class="kw">&lt;/textDomain&gt;</span></a>
+<a class="sourceLine" id="cb27-31" title="31">               <span class="kw">&lt;/nonNumericDomain&gt;</span></a>
+<a class="sourceLine" id="cb27-32" title="32">            <span class="kw">&lt;/nominal&gt;</span></a>
+<a class="sourceLine" id="cb27-33" title="33">         <span class="kw">&lt;/measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb27-34" title="34">      <span class="kw">&lt;/attribute&gt;</span></a>
+<a class="sourceLine" id="cb27-35" title="35">      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.Cell Value&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb27-36" title="36">         <span class="kw">&lt;attributeName&gt;</span>Cell Value<span class="kw">&lt;/attributeName&gt;</span></a>
+<a class="sourceLine" id="cb27-37" title="37">         <span class="kw">&lt;attributeDefinition&gt;</span>Elevation Value<span class="kw">&lt;/attributeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb27-38" title="38">         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>Integer<span class="kw">&lt;/storageType&gt;</span></a>
+<a class="sourceLine" id="cb27-39" title="39">         <span class="kw">&lt;measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb27-40" title="40">            <span class="kw">&lt;ratio&gt;</span></a>
+<a class="sourceLine" id="cb27-41" title="41">               <span class="kw">&lt;unit&gt;</span></a>
+<a class="sourceLine" id="cb27-42" title="42">                  <span class="kw">&lt;standardUnit&gt;</span>meter<span class="kw">&lt;/standardUnit&gt;</span></a>
+<a class="sourceLine" id="cb27-43" title="43">               <span class="kw">&lt;/unit&gt;</span></a>
+<a class="sourceLine" id="cb27-44" title="44">               <span class="kw">&lt;precision</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb27-45" title="45">               <span class="kw">&lt;numericDomain&gt;</span></a>
+<a class="sourceLine" id="cb27-46" title="46">                  <span class="kw">&lt;numberType&gt;</span>integer<span class="kw">&lt;/numberType&gt;</span></a>
+<a class="sourceLine" id="cb27-47" title="47">                  <span class="kw">&lt;bounds&gt;</span></a>
+<a class="sourceLine" id="cb27-48" title="48">                     <span class="kw">&lt;minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>-5193.000000<span class="kw">&lt;/minimum&gt;</span></a>
+<a class="sourceLine" id="cb27-49" title="49">                     <span class="kw">&lt;maximum</span><span class="ot"> exclusive=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>14785.000000<span class="kw">&lt;/maximum&gt;</span></a>
+<a class="sourceLine" id="cb27-50" title="50">                  <span class="kw">&lt;/bounds&gt;</span></a>
+<a class="sourceLine" id="cb27-51" title="51">               <span class="kw">&lt;/numericDomain&gt;</span></a>
+<a class="sourceLine" id="cb27-52" title="52">            <span class="kw">&lt;/ratio&gt;</span></a>
+<a class="sourceLine" id="cb27-53" title="53">         <span class="kw">&lt;/measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb27-54" title="54">      <span class="kw">&lt;/attribute&gt;</span></a>
+<a class="sourceLine" id="cb27-55" title="55">      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.Count&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb27-56" title="56">         <span class="kw">&lt;attributeName&gt;</span>Count<span class="kw">&lt;/attributeName&gt;</span></a>
+<a class="sourceLine" id="cb27-57" title="57">         <span class="kw">&lt;attributeDefinition&gt;</span>Count<span class="kw">&lt;/attributeDefinition&gt;</span></a>
+<a class="sourceLine" id="cb27-58" title="58">         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>Integer<span class="kw">&lt;/storageType&gt;</span></a>
+<a class="sourceLine" id="cb27-59" title="59">         <span class="kw">&lt;measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb27-60" title="60">            <span class="kw">&lt;ratio&gt;</span></a>
+<a class="sourceLine" id="cb27-61" title="61">               <span class="kw">&lt;unit&gt;</span></a>
+<a class="sourceLine" id="cb27-62" title="62">                  <span class="kw">&lt;standardUnit&gt;</span>number<span class="kw">&lt;/standardUnit&gt;</span></a>
+<a class="sourceLine" id="cb27-63" title="63">               <span class="kw">&lt;/unit&gt;</span></a>
+<a class="sourceLine" id="cb27-64" title="64">               <span class="kw">&lt;precision</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb27-65" title="65">               <span class="kw">&lt;numericDomain&gt;</span></a>
+<a class="sourceLine" id="cb27-66" title="66">                  <span class="kw">&lt;numberType&gt;</span>whole<span class="kw">&lt;/numberType&gt;</span></a>
+<a class="sourceLine" id="cb27-67" title="67">               <span class="kw">&lt;/numericDomain&gt;</span></a>
+<a class="sourceLine" id="cb27-68" title="68">            <span class="kw">&lt;/ratio&gt;</span></a>
+<a class="sourceLine" id="cb27-69" title="69">         <span class="kw">&lt;/measurementScale&gt;</span></a>
+<a class="sourceLine" id="cb27-70" title="70">      <span class="kw">&lt;/attribute&gt;</span></a>
+<a class="sourceLine" id="cb27-71" title="71">   <span class="kw">&lt;/attributeList&gt;</span></a>
+<a class="sourceLine" id="cb27-72" title="72">   <span class="kw">&lt;spatialReference&gt;</span></a>
+<a class="sourceLine" id="cb27-73" title="73">      <span class="kw">&lt;horizCoordSysName&gt;</span>NAD_1927_UTM_Zone_12N<span class="kw">&lt;/horizCoordSysName&gt;</span></a>
+<a class="sourceLine" id="cb27-74" title="74">   <span class="kw">&lt;/spatialReference&gt;</span></a>
+<a class="sourceLine" id="cb27-75" title="75">   <span class="kw">&lt;horizontalAccuracy&gt;</span>not available<span class="kw">&lt;/horizontalAccuracy&gt;</span></a>
+<a class="sourceLine" id="cb27-76" title="76">   <span class="kw">&lt;verticalAccuracy&gt;</span>not available<span class="kw">&lt;/verticalAccuracy&gt;</span></a>
+<a class="sourceLine" id="cb27-77" title="77">   <span class="kw">&lt;cellSizeXDirection&gt;</span>30.0<span class="kw">&lt;/cellSizeXDirection&gt;</span></a>
+<a class="sourceLine" id="cb27-78" title="78">   <span class="kw">&lt;cellSizeYDirection&gt;</span>30.0<span class="kw">&lt;/cellSizeYDirection&gt;</span></a>
+<a class="sourceLine" id="cb27-79" title="79">   <span class="kw">&lt;numberOfBands&gt;</span>1<span class="kw">&lt;/numberOfBands&gt;</span></a>
+<a class="sourceLine" id="cb27-80" title="80">   <span class="kw">&lt;rasterOrigin&gt;</span>Upper Left<span class="kw">&lt;/rasterOrigin&gt;</span></a>
+<a class="sourceLine" id="cb27-81" title="81">   <span class="kw">&lt;rows&gt;</span>21092<span class="kw">&lt;/rows&gt;</span></a>
+<a class="sourceLine" id="cb27-82" title="82">   <span class="kw">&lt;columns&gt;</span>18136<span class="kw">&lt;/columns&gt;</span></a>
+<a class="sourceLine" id="cb27-83" title="83">   <span class="kw">&lt;verticals&gt;</span>1<span class="kw">&lt;/verticals&gt;</span></a>
+<a class="sourceLine" id="cb27-84" title="84">   <span class="kw">&lt;cellGeometry&gt;</span>matrix<span class="kw">&lt;/cellGeometry&gt;</span></a>
+<a class="sourceLine" id="cb27-85" title="85"><span class="kw">&lt;/spatialRaster&gt;</span></a></code></pre></div>
+<p>The &lt;<strong>otherEntity</strong>&gt; data type includes the free text &lt;<strong>entityType</strong>&gt; element for naming the type of the entity. The <strong>otherEntity/physical/dataFormat/externallyDefinedFormat/formatName</strong> element stores the file format. While there is no controlled vocabulary for the content of these elements, Table 3 provides some suggestions. For other cases, consider using <a href="https://www.iana.org/assignments/media-types/media-types.xhtml">MIME types</a> for the &lt;<strong>formatName</strong>&gt;.</p>
+<p>Table 3. Entity types and format names for some &lt;<strong>otherEntity</strong>&gt; types.</p>
+<table>
+<tr>
+<th>
+Common Name
+</th>
+<th>
+Entity Type
+</th>
+<th>
+Format Name
+</th>
+</tr>
+<tr>
+<td>
+R script
+</td>
+<td>
+R script
+</td>
+<td>
+application/r
+</td>
+</tr>
+<tr>
+<td>
+R markdown
+</td>
+<td>
+R markdown
+</td>
+<td>
+text/markdown
+</td>
+</tr>
+<tr>
+<td>
+PHP script
+</td>
+<td>
+PHP script
+</td>
+<td>
+application/php
+</td>
+</tr>
+<tr>
+<td>
+JPG image
+</td>
+<td>
+photograph
+</td>
+<td>
+image/jpg
+</td>
+</tr>
+<tr>
+<td>
+PDF document
+</td>
+<td>
+document
+</td>
+<td>
+application/pdf
+</td>
+</tr>
+</table>
 
 </div>
 </div>
@@ -698,12 +760,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -718,6 +779,10 @@ gitbook.start({
 "link": null,
 "text": null
 },
+"view": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "section"
@@ -726,6 +791,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
