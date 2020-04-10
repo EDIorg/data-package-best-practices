@@ -1,0 +1,49 @@
+--- 
+title: "Best Practices for Data Package Design"
+author: "Environmental Data Initiative"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+# bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+# link-citations: yes
+description: "Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories."
+---
+
+# Best Practice Recommendations for Data Package Design {-}
+
+Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories.
+
+A *data package* is the published unit of data and metadata together. It may contain one or more *entities*, such as csv tables, GIS shape files or geodatabases, processing or modeling code, other documents (pdf, jpg, zip). 
+
+### Data File Type {-}
+
+It is recommended to use a standard file format that is likely to still be machine readable in the future. That is, preferably not a binary format that needs specialized software for interpretation. E.g., Excel spreadsheets should be archived as csv text files and Word documents as pdf. Clearly these recommendations will change and depend on community practices.
+
+### Enitites to Include in a Data Package {-}
+
+A data package should be a logical, coherent unit. This may be one data package with all data collected within one project or many data packages each containing one data table. The questions to ask are: Are all data necessary to understand each table? E.g., air temperature may be important to understand insect behaviour data. Alternatively, does it make more sense to publish each data stream separately because they can be made better discoverable with more specific metadata. E.g., Will the air temperature data be useful when combined with other air temperature data to answer a very different question.
+
+Processing code, PDF of protocols, fieldsheets, etc. may be included if they are important to understand and reuse the data.
+
+Specific recommendations for archiving [code](./code-in-edi.html), [images as data](./still-images.html), [model based data](./model-based-datasets.html).
+
+### Splitting and Lumping of Data {-}
+
+The overall goal should be to make data useful to somebody who was not involved in collecting them. Hence, a balance should be struck between too many data units or too large a data unit. E.g., most long term timeseries data should be kept combined into one file not annual increments. Unless that file becomes so large that it will difficult to handle via internet download or computing power of the user. Clearly, this is changing rapidly and no hard numbers can be given.
+
+### Data File Format {-}
+
+Most ecological data are organized in wide table format, also called matrix style, with each column being of one data type and one parameter. E.g., sampling sites, sampling date, air temperature, relative humidity, solar radiation. This organization lends itself best for documentation in the Ecological Metadata Language (EML) as each column can be described.
+
+In some cases, however, a data curator may decide to format the data in a [long table format](./key-value-pair-tables.html) (also called key-value pair tables). In this case there is a limited number of columns, one of which contains the name of the parameter while the next one contains the value for this paramter. E.g., sampling site, sampling date, parameter name, value. This format is preferable when there is some variation in which parameters are sampled at a give site and date, i.e., the matrix formated table would have many empty cells.   
+
+### Data in Other Repositories {-}
+
+It makes sense to provide cross references to data in other repositories within a data package if they become better discoverable or additional contextual data are provided. However, duplicating data without clearly referring to the original source is not recommended.
+
+Special recommendations are made for [genomics data](./genomic-and-metagenomic-data.html)
+
+### Very Large Datasets {-}
+
+Most repositories have an upper limit as to how large an archived dataset may be. The Environmental Data Initiative offers to option to store such data [off line](./large-data-sets.html), i.e., not downloadable from the data access portal. Metadata provide contact information for requesting such data.

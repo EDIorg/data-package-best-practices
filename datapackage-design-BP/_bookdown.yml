@@ -1,0 +1,15 @@
+book_filename: "datapackage-design"
+delete_merged_file: true
+output_dir: ../docs/datapackage-design
+language:
+  ui:
+   #  chapter_name: "Chapter "
+rmd_files: [
+    "index.Rmd",
+    "key_value_pair_tables.md",
+    "software_and_code.md",
+    "model_based_datasets.md",
+    "still_images.md",
+    "genomic.md",
+    "offline_data.md"
+    ]
