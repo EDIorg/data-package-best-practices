@@ -20,7 +20,7 @@ A *data package* is the published unit of data and metadata together. It may con
 
 It is recommended to use a standard file format that is likely to still be machine readable in the future. That is, preferably not a binary format that needs specialized software for interpretation. E.g., Excel spreadsheets should be archived as csv text files and Word documents as pdf. Clearly these recommendations will change and depend on community practices.
 
-### Enitites to Include in a Data Package {-}
+### Entities to Include in a Data Package {-}
 
 A data package should be a logical, coherent unit. This may be one data package with all data collected within one project or many data packages each containing one data table. The questions to ask are: Are all data necessary to understand each table? E.g., air temperature may be important to understand insect behaviour data. Alternatively, does it make more sense to publish each data stream separately because they can be made better discoverable with more specific metadata. E.g., Will the air temperature data be useful when combined with other air temperature data to answer a very different question.
 
