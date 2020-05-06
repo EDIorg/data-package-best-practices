@@ -12,6 +12,8 @@ description: "Considerations for a well designed data package including special 
 
 # Best Practice Recommendations for Data Package Design {-}
 
+Members of the working group developing these documents: S. Beaulieu, R. Brown, J. Downing, S. Elmendorf, H. Garritt, G. Gastil-Buhl, C. Gries, J. Hollingsworth, H.-Y. Hsieh, L. Kui, M. Martin, G. Maurer, A. Nguyen, J. Porter, M. Servilla, T. Whiteaker
+
 Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories.
 
 A *data package* is the published unit of data and metadata together. It may contain one or more *entities*, such as csv tables, GIS shape files or geodatabases, processing or modeling code, other documents (pdf, jpg, zip). 
