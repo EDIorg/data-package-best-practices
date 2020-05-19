@@ -48,33 +48,32 @@ The remainder of this document describes best practices in these sections:
 Do be as complete as feasible with the metadata, including creator lists, maintenance, contacts, project description, and so on, as described in EML Best Practices. Include geographic coverage, temporal coverage, and taxonomic coverage if possible so that users can locate the dataset by space, time, and taxa. Guidance for specific fields is provided below.
 
 * **Dataset title** - Follow general best practices for dataset titles. Consider using the same title as in the genomics repository if that title makes sense.
-* **Abstract **- Study description giving rise to the genomics data. Indicate that more details are available in the genomics repository, and provide a link to the repository.  You could Include links for related datasets here, e.g., for water or soil chemistry, but we recommend including such data in the same data package with the genomics data summary.
-* **Keywords **- In addition to keywords typically used by the site, use keywords that help identify this as a genomics dataset, such as:
+* **Abstract** - Study description giving rise to the genomics data. Indicate that more details are available in the genomics repository, and provide a link to the repository.  You could Include links for related datasets here, e.g., for water or soil chemistry, but we recommend including such data in the same data package with the genomics data summary.
+* **Keywords** - In addition to keywords typically used by the site, use keywords that help identify this as a genomics dataset, such as:
     *   genomics
     *   metagenomics
     *   target gene or subfragment (e.g. 16S rRNA, 18S rRNA, nif, amoA, rpo, ITS)
     *   the sequencing technique (e.g., Sanger, pyrosequencing, ABI-solid)
     *   Consider using keywords that the investigator supplied on genomics data submission templates, such as [MIxS templates](https://press3.mcs.anl.gov/gensc/mixs/).
     *   the genomics repository name
-    Genomics data with ancillary data, regardless of where they are archived, include relevant keywords such as:
-    *   nitrogen
-    *   soil moisture
-    Derived data products, include relevant keyword such as
-    *   OTU
-    *   population
-    *   community
-* **Dataset Methods **- Describe sampling and sequencing methods here.  Describe methods for collection and processing of ancillary data as appropriate.
-* **Literature **- Take advantage of EML 2.2 capabilities for citing publications to reference papers associated with the genomics data. 
+    *   If the data package includes a summary table of what's available at a genomics repository, include the keyword "data inventory" as per the best practices for data linked at other repositories.
+    *   For genomics data with ancillary data, regardless of where they are archived, include relevant keywords such as:
+        *   nitrogen
+        *   soil moisture
+    *   For derived data products, include relevant keyword such as
+        *   OTU
+        *   population
+        *   community
+* **Dataset Methods** - Describe sampling and sequencing methods here.  Describe methods for collection and processing of ancillary data as appropriate.
+* **Literature** - Take advantage of EML 2.2 capabilities for citing publications to reference papers associated with the genomics data. 
 
 ### Genomics Data Summary {#genomics-data-summary}
 
 Every genomics dataset should contain at least one table with a summary or index of what is stored in a genomics repository. This enables all data from a particular genomics dataset to be discovered. Below are suggested attributes for this data table. Some attributes may not be appropriate for all datasets, and additional attributes could be provided (e.g., from MIxS templates) if available. Note that the granularity of data depends upon which database link is used for accession number from the genomics data repository. For example, in NCBI, there are accession numbers for a project, samples within the project, and sequence datasets from a given sample. The information manager should work with the genomics researcher to determine for which level of granularity accession numbers should be provided in related data packages in EDI.
 
 ```{r echo=FALSE}
-
 df = read.csv('genomic_table.csv')
 knitr::kable(df)
-
 ```
 
 ### Genomics Data with Ancillary Data {#genomics-data-with-ancillary-data}
