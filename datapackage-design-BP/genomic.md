@@ -48,8 +48,8 @@ The remainder of this document describes best practices in these sections:
 Do be as complete as feasible with the metadata, including creator lists, maintenance, contacts, project description, and so on, as described in EML Best Practices. Include geographic coverage, temporal coverage, and taxonomic coverage if possible so that users can locate the dataset by space, time, and taxa. Guidance for specific fields is provided below.
 
 * **Dataset title** - Follow general best practices for dataset titles. Consider using the same title as in the genomics repository if that title makes sense.
-* **Abstract **- Study description giving rise to the genomics data. Indicate that more details are available in the genomics repository, and provide a link to the repository.  You could Include links for related datasets here, e.g., for water or soil chemistry, but we recommend including such data in the same data package with the genomics data summary.
-* **Keywords **- In addition to keywords typically used by the site, use keywords that help identify this as a genomics dataset, such as:
+* **Abstract** - Study description giving rise to the genomics data. Indicate that more details are available in the genomics repository, and provide a link to the repository.  You could Include links for related datasets here, e.g., for water or soil chemistry, but we recommend including such data in the same data package with the genomics data summary.
+* **Keywords** - In addition to keywords typically used by the site, use keywords that help identify this as a genomics dataset, such as:
     *   genomics
     *   metagenomics
     *   target gene or subfragment (e.g. 16S rRNA, 18S rRNA, nif, amoA, rpo, ITS)
@@ -63,8 +63,8 @@ Do be as complete as feasible with the metadata, including creator lists, mainte
     *   OTU
     *   population
     *   community
-* **Dataset Methods **- Describe sampling and sequencing methods here.  Describe methods for collection and processing of ancillary data as appropriate.
-* **Literature **- Take advantage of EML 2.2 capabilities for citing publications to reference papers associated with the genomics data. 
+* **Dataset Methods** - Describe sampling and sequencing methods here.  Describe methods for collection and processing of ancillary data as appropriate.
+* **Literature** - Take advantage of EML 2.2 capabilities for citing publications to reference papers associated with the genomics data. 
 
 ### Genomics Data Summary {#genomics-data-summary}
 
