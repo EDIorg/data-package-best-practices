@@ -1,6 +1,6 @@
 # Code in EDI
 
-Authors: An Nguyen, Tim Whiteaker
+Contributors: An Nguyen, Tim Whiteaker
 
 ## Introduction
 

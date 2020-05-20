@@ -1,6 +1,6 @@
 # Still Images
 
-Authors: Gastil Gastil-Buhl, Corinna Gries, Tim Whiteaker, Li Kui, Jason Downing, Greg Maurer, Renée Brown, Mark Servilla, Stace Beaulieu, Mary Martin, and An Nguyen
+Contributors: Gastil Gastil-Buhl, Corinna Gries, Tim Whiteaker, Li Kui, Jason Downing, Greg Maurer, Renée Brown, Mark Servilla, Stace Beaulieu, Mary Martin, and An Nguyen
 
 ## Introduction {#introduction}
 

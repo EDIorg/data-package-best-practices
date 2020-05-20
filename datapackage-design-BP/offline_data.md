@@ -1,6 +1,6 @@
 # Large Data Sets
 
-Authors: Margaret O’Brien, Corinna Gries
+Contributors: Margaret O’Brien, Corinna Gries, Mark Servilla
 
 ## Introduction
 

@@ -1,6 +1,6 @@
 # Genomic and Metagenomic Data
 
-Authors: Hap Garritt, Tim Whiteaker, Sarah Elmendorf, An Nguyen, Gastil Gastil-Buhl, Renée Brown, Corinna Gries, and Li Kui
+Contributors: Hap Garritt, Tim Whiteaker, Sarah Elmendorf, An Nguyen, Gastil Gastil-Buhl, Renée Brown, Corinna Gries, and Li Kui
 
 ## Introduction {#introduction}
 
