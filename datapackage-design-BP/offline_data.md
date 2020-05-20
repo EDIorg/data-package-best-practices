@@ -21,7 +21,7 @@ Standard practice is to handle data entities (both upload and download) via the 
 ### Data package
 
 *   The external hard drive should contain at least two entities: the data (which will be offline) and an inventory or manifest that describe the contents of the external hard drive.
-*   Content of the manifest (inventory of holdings) would be dictated by the type of data entity. The **manifest will be on an online entity** so that potential requestors can evaluate the offline resource before requesting it.
+*   Content of the manifest (inventory of holdings) would be dictated by the type of data entity. The **manifest will be available as an online entity** (through the EDI Data Portal) so that potential requestors can evaluate the offline resource before requesting it.
 *  Suggested columns are:
     *   Filename(s)
     *   Format (netCDF, tabular csv, etc.)
