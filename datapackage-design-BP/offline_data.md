@@ -17,6 +17,18 @@ Standard practice is to handle data entities (both upload and download) via the 
 
 *   Add data to external drive in native (non-compressed, non-tarred, non-zipped) format, deliver to EDI (e.g., by physical mail).
 *   EDI will store three copies, one external hard drive each in New Mexico and in Wisconsin, one copy in general EDI backup cloud storage.
+*   Please mail one copy each to:
+
+Attn: Mark Servilla
+UNM Biology, Castetter Hall 1480
+MSC03-2020, 219 Yale Blvd NE
+Albuquerque, NM 87131-0001
+
+Attn: Corinna Gries
+University of Wisconsin
+Center for Limnology
+680 North Park Street
+Madison WI 53706-1413
 
 ### Data package
 
