@@ -40,7 +40,7 @@ The image catalog is a required CSV data table with meta information for each im
 *   (required) Filename of each image or zip archive. If each image is described a relative path (directory structure) of the image including file extension, e.g., IMG_1001.jpg or 2018/SITE3/IMG1001.jpg should be included. Within this attribute in the image catalog, each value should be unique.
 *   (optional) Link/URL to download image if the image is available on a different system.
 *   (optional) Creator
-*   (optional) Datetime: Date and time associated with the image, in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations), e.g., 2007-04-05T12:30-02:00Z. Use the date and time that is important to the end user's interpretation of the image.
+*   (optional) Datetime: Date and time associated with the image, in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations), e.g., 2007-04-05T12:30-02:00. Use the date and time that is important to the end user's interpretation of the image.
 *   (optional) Location: Latitude and longitude in decimal degrees, site name, transect name, altitude, depth, habitat etc.
 *   (optional) all other conditions/descriptions that will help identify an image for use within the collection. Be consistent, use a controlled vocabulary for these fields, so that a user can search on them. Examples are: weather conditions, organism name, etc.
 *   (optional) Camera/instrument characteristics: model, settings, settings of a microscope
