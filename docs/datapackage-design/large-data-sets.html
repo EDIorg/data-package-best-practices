@@ -24,7 +24,7 @@
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2020-05-22" />
+<meta name="date" content="2020-06-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="genomic-and-metagenomic-data.html"/>
-
+<link rel="next" href="data-in-other-repositories-1.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -69,7 +69,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(title);
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -218,6 +218,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="large-data-sets.html"><a href="large-data-sets.html#potential-issues"><i class="fa fa-check"></i><b>6.4</b> Potential Issues</a></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html"><i class="fa fa-check"></i><b>7</b> Data in Other Repositories</a><ul>
+<li class="chapter" data-level="7.1" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#introduction-4"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#considerations-for-creating-linked-repository-records"><i class="fa fa-check"></i><b>7.2</b> Considerations for creating linked repository records</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#cases-supporting-linked-datasets"><i class="fa fa-check"></i><b>7.2.1</b> Cases supporting linked datasets</a></li>
+<li class="chapter" data-level="7.2.2" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#when-to-avoid-linked-datasets"><i class="fa fa-check"></i><b>7.2.2</b> When to avoid linked datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#recommendations-for-data-packages-4"><i class="fa fa-check"></i><b>7.3</b> Recommendations for Data Packages</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#package-metadata-1"><i class="fa fa-check"></i><b>7.3.1</b> Package Metadata</a></li>
+<li class="chapter" data-level="7.3.2" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#contents-of-the-manifest-datatable-entity"><i class="fa fa-check"></i><b>7.3.2</b> Contents of the manifest dataTable entity</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#example-data-packages"><i class="fa fa-check"></i><b>7.4</b> Example data packages</a></li>
+</ul></li>
 <li class="divider"></li>
 <ul>
     <li><h4><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></h4></li>
@@ -245,7 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Contributors: Margaret O’Brien, Corinna Gries, Mark Servilla</p>
 <div id="introduction-3" class="section level2">
 <h2><span class="header-section-number">6.1</span> Introduction</h2>
-<p>Data entities are kept offline when they are too large to be handled easily by the HTTP protocol, are expected to be rarely requested, and can be mailed on an external drive. If you suspect your data fall into this category, contact EDI for advice (<a href="mailto:support@environmentaldatainitiative.org" class="email">support@environmentaldatainitiative.org</a>). Below are recommendations for the EDI repository’s handling of data packages that have an offline component.</p>
+<p>Data entities are kept offline when they are too large to be handled easily by the HTTP protocol, are expected to be rarely requested, and can be mailed on an external drive. If you suspect your data fall into this category, contact EDI for advice (<a href="mailto:support@environmentaldatainitiative.org">support@environmentaldatainitiative.org</a>). Below are recommendations for the EDI repository’s handling of data packages that have an offline component.</p>
 <div id="background-2" class="section level3">
 <h3><span class="header-section-number">6.1.1</span> Background</h3>
 <p>Standard practice is to handle data entities (both upload and download) via the HTTP protocol, using a URL. However, for very large datasets HTTP can fail due to physical limits. The limit for “too large” is somewhat subjective; EDI’s current limit for datasets that are “too large for HTTP” is 100GB (all data and metadata).</p>
@@ -257,8 +269,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">6.2.1</span> Physical Storage</h3>
 <ul>
 <li><p>The use of a Solid-state Drive (SSD) is strongly recommended for all offline data storage. The SSD should be formatted using one of the following file systems: 1) exFAT, 2) NTFS, or 3) ext4. Each of these file systems can accommodate individual file sizes greater than 1TB.</p></li>
-<li><p>Add data to external drive in native (non-compressed, non-tarred, non-zipped) format, deliver to EDI (e.g., by physical mail).</p></li>
-<li><p>EDI will store three copies, one external hard drive each in New Mexico and in Wisconsin, one copy in general EDI backup cloud storage.</p></li>
+<li>Add data to external drive in native (non-compressed, non-tarred, non-zipped) format, deliver to EDI (e.g., by physical mail).</li>
+<li>EDI will store three copies, one external hard drive each in New Mexico and in Wisconsin, one copy in general EDI backup cloud storage.</li>
 <li><p>Please mail one copy each to:</p></li>
 </ul>
 <p>Attn: Mark Servilla
@@ -295,7 +307,7 @@ Madison WI 53706-1413</p>
 <ul>
 <li>Abstract: describe the collection generally. If individual files require specific software to read, provide the name of that software.</li>
 <li>Creators</li>
-<li>Contact (will be responsible for sending out copies as requested.) positionName: EDI Repository Manager Email: <a href="mailto:support@environmentaldatainitiative.org" class="email">support@environmentaldatainitiative.org</a></li>
+<li>Contact (will be responsible for sending out copies as requested.) positionName: EDI Repository Manager Email: <a href="mailto:support@environmentaldatainitiative.org">support@environmentaldatainitiative.org</a></li>
 <li>Methods - detailed collection/generation methods for the offline data entities. Detailed information for re-using the data. (May instead be included in the manifest table if different for different offline files.)</li>
 <li>Data Entities
 <ul>
@@ -352,20 +364,20 @@ Instead of a data URL, you will have an offline distribution node. The name of a
 </div>
 <div id="sample_xml_offline" class="section level4">
 <h4><span class="header-section-number">6.2.4.2</span> Sample XML, offline entity</h4>
-<div class="sourceCode" id="cb7"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb7-1" title="1"></a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="kw">&lt;physical&gt;</span></a>
-<a class="sourceLine" id="cb7-3" title="3">  <span class="kw">&lt;objectName&gt;</span>mainl_2005acc.zip<span class="kw">&lt;/objectName&gt;</span></a>
-<a class="sourceLine" id="cb7-4" title="4">  <span class="kw">&lt;dataFormat&gt;</span></a>
-<a class="sourceLine" id="cb7-5" title="5">    <span class="kw">&lt;externallyDefinedFormat&gt;</span></a>
-<a class="sourceLine" id="cb7-6" title="6">      <span class="kw">&lt;formatName&gt;</span>netCDF file<span class="kw">&lt;/formatName&gt;</span></a>
-<a class="sourceLine" id="cb7-7" title="7">    <span class="kw">&lt;/externallyDefinedFormat&gt;</span></a>
-<a class="sourceLine" id="cb7-8" title="8">  <span class="kw">&lt;/dataFormat&gt;</span></a>
-<a class="sourceLine" id="cb7-9" title="9">  <span class="kw">&lt;distribution&gt;</span></a>
-<a class="sourceLine" id="cb7-10" title="10">    <span class="kw">&lt;offline&gt;</span></a>
-<a class="sourceLine" id="cb7-11" title="11">      <span class="kw">&lt;mediumName&gt;</span>External drive<span class="kw">&lt;/mediumName&gt;</span></a>
-<a class="sourceLine" id="cb7-12" title="12">    <span class="kw">&lt;/offline&gt;</span></a>
-<a class="sourceLine" id="cb7-13" title="13">  <span class="kw">&lt;/distribution&gt;</span></a>
-<a class="sourceLine" id="cb7-14" title="14"><span class="kw">&lt;/physical&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb7-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">&lt;physical&gt;</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">  <span class="kw">&lt;objectName&gt;</span>mainl_2005acc.zip<span class="kw">&lt;/objectName&gt;</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">  <span class="kw">&lt;dataFormat&gt;</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">    <span class="kw">&lt;externallyDefinedFormat&gt;</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">      <span class="kw">&lt;formatName&gt;</span>netCDF file<span class="kw">&lt;/formatName&gt;</span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">    <span class="kw">&lt;/externallyDefinedFormat&gt;</span></a>
+<a class="sourceLine" id="cb7-8" data-line-number="8">  <span class="kw">&lt;/dataFormat&gt;</span></a>
+<a class="sourceLine" id="cb7-9" data-line-number="9">  <span class="kw">&lt;distribution&gt;</span></a>
+<a class="sourceLine" id="cb7-10" data-line-number="10">    <span class="kw">&lt;offline&gt;</span></a>
+<a class="sourceLine" id="cb7-11" data-line-number="11">      <span class="kw">&lt;mediumName&gt;</span>External drive<span class="kw">&lt;/mediumName&gt;</span></a>
+<a class="sourceLine" id="cb7-12" data-line-number="12">    <span class="kw">&lt;/offline&gt;</span></a>
+<a class="sourceLine" id="cb7-13" data-line-number="13">  <span class="kw">&lt;/distribution&gt;</span></a>
+<a class="sourceLine" id="cb7-14" data-line-number="14"><span class="kw">&lt;/physical&gt;</span></a></code></pre></div>
 </div>
 </div>
 </div>
@@ -373,7 +385,7 @@ Instead of a data URL, you will have an offline distribution node. The name of a
 <h2><span class="header-section-number">6.3</span> References</h2>
 <div id="eml-documentation" class="section level3">
 <h3><span class="header-section-number">6.3.1</span> EML documentation</h3>
-<p><a href="https://eml.ecoinformatics.org/schema/index.html">https://eml.ecoinformatics.org/schema/index.html</a></p>
+<p><a href="https://eml.ecoinformatics.org/schema/index.html" class="uri">https://eml.ecoinformatics.org/schema/index.html</a></p>
 <p>Look for the PhysicalDistributionType</p>
 </div>
 </div>
@@ -391,8 +403,8 @@ Instead of a data URL, you will have an offline distribution node. The name of a
           </div>
         </div>
       </div>
-<a href="genomic-and-metagenomic-data.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="genomic-and-metagenomic-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-in-other-repositories-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -24,7 +24,7 @@
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2020-05-22" />
+<meta name="date" content="2020-06-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -69,7 +69,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(title);
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -218,6 +218,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="large-data-sets.html"><a href="large-data-sets.html#potential-issues"><i class="fa fa-check"></i><b>6.4</b> Potential Issues</a></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html"><i class="fa fa-check"></i><b>7</b> Data in Other Repositories</a><ul>
+<li class="chapter" data-level="7.1" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#introduction-4"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#considerations-for-creating-linked-repository-records"><i class="fa fa-check"></i><b>7.2</b> Considerations for creating linked repository records</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#cases-supporting-linked-datasets"><i class="fa fa-check"></i><b>7.2.1</b> Cases supporting linked datasets</a></li>
+<li class="chapter" data-level="7.2.2" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#when-to-avoid-linked-datasets"><i class="fa fa-check"></i><b>7.2.2</b> When to avoid linked datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#recommendations-for-data-packages-4"><i class="fa fa-check"></i><b>7.3</b> Recommendations for Data Packages</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#package-metadata-1"><i class="fa fa-check"></i><b>7.3.1</b> Package Metadata</a></li>
+<li class="chapter" data-level="7.3.2" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#contents-of-the-manifest-datatable-entity"><i class="fa fa-check"></i><b>7.3.2</b> Contents of the manifest dataTable entity</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#example-data-packages"><i class="fa fa-check"></i><b>7.4</b> Example data packages</a></li>
+</ul></li>
 <li class="divider"></li>
 <ul>
     <li><h4><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></h4></li>
@@ -251,7 +263,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">5.1.1</span> Background</h3>
 <p>Genomic data refers to the complete genetic information (either DNA or RNA) of an organism. Metagenomic data refers to the study of genomes recovered from environmental samples (water, soils etc.), i.e., genomes from multiple organisms. The sequence data consists of the order and arrangement of DNA bases (Adenine (A), Cytosine (C), Guanine (G), Thymine (T)) associated with individual species or multiple organisms from environmental samples.</p>
 <p>Genomic and metagenomic sequence datasets can be very large, include many sequence runs and typically are stored in associated community repositories that include specialized tools for searching, accessing, and analyzing (e.g., BLAST). Thus it is preferable that a specialized sequence database be the primary archive for the sequences themselves, rather than a generalist repository such as the <a href="https://environmentaldatainitiative.org/">Environmental Data Initiative</a> (EDI). Sequence repositories assign unique identifiers to projects, samples and/or single sequences, often called accession numbers, which can be used to locate sequence data.</p>
-<p>There are numerous genomic databases. The investigator is typically responsible for sequence data submission to their repository of choice and most are familiar with the data submission process as it is often required for subsequent manuscript publication. Therefore, selection of a genomic repository and submission of genomic data to a genomic repository is outside the scope of this document, although the recommended data repositories for nucleic acid sequence data for the journal Scientific Data may provide some useful guidance (<a href="https://www.nature.com/sdata/policies/repositories#nuc">https://www.nature.com/sdata/policies/repositories#nuc</a>). The key point here is that the genomic researcher should be in communication with the information manager about where data have been submitted including accession numbers and metadata important for discovery.</p>
+<p>There are numerous genomic databases. The investigator is typically responsible for sequence data submission to their repository of choice and most are familiar with the data submission process as it is often required for subsequent manuscript publication. Therefore, selection of a genomic repository and submission of genomic data to a genomic repository is outside the scope of this document, although the recommended data repositories for nucleic acid sequence data for the journal Scientific Data may provide some useful guidance (<a href="https://www.nature.com/sdata/policies/repositories#nuc" class="uri">https://www.nature.com/sdata/policies/repositories#nuc</a>). The key point here is that the genomic researcher should be in communication with the information manager about where data have been submitted including accession numbers and metadata important for discovery.</p>
 <p>This document discusses best practices for making these sequence data discoverable in the data repository (EDI) that holds related environmental measurements and in the context of a larger research site in general and in particular, when these additional measurements (of biochemistry, environmental conditions) were taken on the same samples that have been used for genetic analysis. Note that each genomic repository may have its own mechanism for reverse linking to such contextual data in EDI, and these mechanisms are beyond the scope of this document.</p>
 <p>Furthermore, a distinction should be made between raw/original sequence data and derived products such as metagenome-assembled genomes (MAGS) and operational taxonomic units (OTUs), which are dependent upon algorithms/post processing of raw data. These data products (frequently a community analysis) need to be archived in EDI.</p>
 </div>
@@ -349,7 +361,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 <tr class="even">
 <td align="left">Accession_link</td>
-<td align="left">Accession number based URL for the dataset in the genomics repository, e.g., <a href="https://www.ncbi.nlm.nih.gov/nuccore/AY741555">https://www.ncbi.nlm.nih.gov/nuccore/AY741555</a>. <br> If providing a range of accession numbers, you may have to be creative, for example, by providing a search URL that will return the desired list, e.g., <a href="https://www.ncbi.nlm.nih.gov/popset/?term=AY741555">https://www.ncbi.nlm.nih.gov/popset/?term=AY741555</a>. <br>Recommendation is to link to the widest level of granularity for which additional data useful to interpretation are ONLY archived on EDI. As an example, if an OTU table which is archived on EDI provides taxonomic identifications for many samples, it would be most useful for an end user if that table on EDI also contained the corresponding BioSample number from NCBI. However, if there are no derived products on EDI that exist on a per sample basis, then linking to the larger BioProject would be sufficient, because NCBI provides the child BioSample hierarchy under BioProject that will allow a user to discover all the data.</td>
+<td align="left">Accession number based URL for the dataset in the genomics repository, e.g., <a href="https://www.ncbi.nlm.nih.gov/nuccore/AY741555" class="uri">https://www.ncbi.nlm.nih.gov/nuccore/AY741555</a>. <br> If providing a range of accession numbers, you may have to be creative, for example, by providing a search URL that will return the desired list, e.g., <a href="https://www.ncbi.nlm.nih.gov/popset/?term=AY741555" class="uri">https://www.ncbi.nlm.nih.gov/popset/?term=AY741555</a>. <br>Recommendation is to link to the widest level of granularity for which additional data useful to interpretation are ONLY archived on EDI. As an example, if an OTU table which is archived on EDI provides taxonomic identifications for many samples, it would be most useful for an end user if that table on EDI also contained the corresponding BioSample number from NCBI. However, if there are no derived products on EDI that exist on a per sample basis, then linking to the larger BioProject would be sufficient, because NCBI provides the child BioSample hierarchy under BioProject that will allow a user to discover all the data.</td>
 </tr>
 <tr class="odd">
 <td align="left">seq_method</td>
@@ -361,15 +373,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 <tr class="odd">
 <td align="left">env_biome</td>
-<td align="left">Biomes are defined based on factors such as plant structures, leaf types, plant spacing, and other factors like climate. Biome should be treated as the descriptor of the broad ecological context of a sample. Examples include: estuarine biome, marine coral reef biome, temperate deciduous broadleaf forest, or subtropical desert biome. EnvO (v 2013-06-14) terms can be found via the link: <a href="www.environmentontology.org/Browse-EnvO">www.environmentontology.org/Browse-EnvO</a> by searching for <em>biome</em>. This attribute is used in MIxS templates.</td>
+<td align="left">Biomes are defined based on factors such as plant structures, leaf types, plant spacing, and other factors like climate. Biome should be treated as the descriptor of the broad ecological context of a sample. Examples include: estuarine biome, marine coral reef biome, temperate deciduous broadleaf forest, or subtropical desert biome. EnvO (v 2013-06-14) terms can be found via the link: <a href="www.environmentontology.org/Browse-EnvO" class="uri">www.environmentontology.org/Browse-EnvO</a> by searching for <em>biome</em>. This attribute is used in MIxS templates.</td>
 </tr>
 <tr class="even">
 <td align="left">env_feature</td>
-<td align="left">Environmental feature level includes geographic environmental features. Compared to biome, feature is a descriptor of the more local environment. Examples include: harbor, cliff, or lake. EnvO (v 2013-06-14) terms can be found via the link: <a href="www.environmentontology.org/Browse-EnvO">www.environmentontology.org/Browse-EnvO</a> by searching for <em>environmental feature</em>. This attribute is used in MIxS templates.</td>
+<td align="left">Environmental feature level includes geographic environmental features. Compared to biome, feature is a descriptor of the more local environment. Examples include: harbor, cliff, or lake. EnvO (v 2013-06-14) terms can be found via the link: <a href="www.environmentontology.org/Browse-EnvO" class="uri">www.environmentontology.org/Browse-EnvO</a> by searching for <em>environmental feature</em>. This attribute is used in MIxS templates.</td>
 </tr>
 <tr class="odd">
 <td align="left">env_material</td>
-<td align="left">The environmental material displaced by the sample, or material in which a sample was embedded, prior to the sampling event. Environmental material terms are generally mass nouns. Examples include: alluvial sediment or coastal sea water. EnvO (v 2013-06-14) terms can be found via the link: <a href="www.environmentontology.org/Browse-EnvO">www.environmentontology.org/Browse-EnvO</a> by searching for <em>environmental material</em>. This attribute is used in MIxS templates.</td>
+<td align="left">The environmental material displaced by the sample, or material in which a sample was embedded, prior to the sampling event. Environmental material terms are generally mass nouns. Examples include: alluvial sediment or coastal sea water. EnvO (v 2013-06-14) terms can be found via the link: <a href="www.environmentontology.org/Browse-EnvO" class="uri">www.environmentontology.org/Browse-EnvO</a> by searching for <em>environmental material</em>. This attribute is used in MIxS templates.</td>
 </tr>
 <tr class="even">
 <td align="left">Taxon_description</td>
