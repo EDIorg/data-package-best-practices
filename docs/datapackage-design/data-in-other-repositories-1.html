@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Still Images | Best Practices for Data Package Design</title>
+  <title>7 Data in Other Repositories | Best Practices for Data Package Design</title>
   <meta name="description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Still Images | Best Practices for Data Package Design" />
+  <meta property="og:title" content="7 Data in Other Repositories | Best Practices for Data Package Design" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Still Images | Best Practices for Data Package Design" />
+  <meta name="twitter:title" content="7 Data in Other Repositories | Best Practices for Data Package Design" />
   
   <meta name="twitter:description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="model-based-datasets.html"/>
-<link rel="next" href="genomic-and-metagenomic-data.html"/>
+<link rel="prev" href="large-data-sets.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -252,66 +252,156 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="still-images" class="section level1">
-<h1><span class="header-section-number">4</span> Still Images</h1>
-<p>Contributors: Gastil Gastil-Buhl, Corinna Gries, Tim Whiteaker, Li Kui, Jason Downing, Greg Maurer, Renée Brown, Mark Servilla, Stace Beaulieu, Mary Martin, and An Nguyen</p>
-<div id="introduction" class="section level2">
-<h2><span class="header-section-number">4.1</span> Introduction</h2>
-<p>This document describes best practices for archiving still images, such as images that are taken and analyzed for a certain measurement, including but not limited to abundance, presence/absence, and coverage following the definition in the <a href="http://purl.obolibrary.org/obo/IAO_0000101">OBO ontology</a> for ‘image’: “An image is an affine projection to a two dimensional surface, of measurements of some quality of an entity or entities repeated at regular intervals across a spatial range, where the measurements are represented as color and luminosity on the projected surface.” Examples include photos of sea ice taken from an automated camera station, images taken by plankton imaging systems, and images taken by an unmanned vehicle (underwater or aerial) for the above purpose. This best practice does not cover images that fall under the geospatial raster category such as satellite imagery, nor does it cover images already well handled in other systems, e.g., natural history specimen images, phenocam images.</p>
-<p>This document was written for the intended audience of a Long Term Ecological Research (LTER) information manager (IM), though it is applicable to anyone handling image data in the context of a larger ecological research program. We assume that the target archive is designed to handle ecological data, and that a given archive package will include metadata written in Ecological Metadata Language (EML) format. We refer to the Environmental Data Initiative (EDI) as an example archive. The same practices could be applied to other similar repositories.</p>
-<p>If large amounts of images (&gt;100GB in total) are to be archived, please coordinate with EDI before uploading.</p>
-</div>
-<div id="recommendations-for-data-packages" class="section level2">
-<h2><span class="header-section-number">4.2</span> Recommendations for data packages</h2>
-<p>A still image data package includes the following:</p>
+<div id="data-in-other-repositories-1" class="section level1">
+<h1><span class="header-section-number">7</span> Data in Other Repositories</h1>
+<p>Contributors: Greg Maurer, Margaret O’Brien, Corinna Gries, Tim Whiteaker, Sarah Elmendorf</p>
+<div id="introduction-4" class="section level2">
+<h2><span class="header-section-number">7.1</span> Introduction</h2>
+<p>A wide variety of data repositories are available to ecologists for publishing their data. The choice of where to publish a dataset is determined by many factors. The funding agency or a journal may require a certain repository (e.g., NSF BCO-DMO, NSF ADC, USDA ADC, DOE ESS-DIVE); the research subject may be best supported by a very specialized repository (e.g., AmeriFlux, GenBank); or the data were originally submitted to a general purpose repository with minimal metadata requirements (e.g., DRYAD, Figshare, Zenodo). To enhance data discoverability and interoperability, users and data managers may find it helpful to create additional repository records that are linked to these published datasets.</p>
+<p>These concepts must be understood to clarify this best practices document:</p>
 <ul>
-<li><a href="still-images.html#recommendations-for-metadata">EML Metadata</a></li>
-<li>a CSV data table with meta information for each image, serving as an <a href="still-images.html#image-catalog">image catalog</a></li>
-<li>(optional) one or more image files or one or more zip files of the images as ‘otherEntity’</li>
-<li>(optional) data tables with information <a href="still-images.html#data-extracted-from-images">extracted from the images</a></li>
-<li>(optional) data tables with other environmental information measured during image acquisition</li>
+<li><p>A <strong>dataset</strong> consists of a data file, or files, containing named variables (say “Soil_T_10cm”) with assigned values (the temperature numbers themselves) AND the accompanying metadata describing attributes of the data and other information.</p></li>
+<li><p>A <strong>duplicate dataset</strong> contains data and/or metadata that are identical to those in another public data repository.</p></li>
+<li><p>A <strong>linked dataset</strong> contains metadata, but the only data present are links to the unique identifier(s) of data held in another repository.</p></li>
 </ul>
-<p>An image data package may contain image files individually (small numbers, up to ~10) or bundled as a zip archive. The decision of how to bundle images into zip archives and then into data packages should be guided by the overall goal of making image data usable for the intended purpose of the images. In most cases this involves finding specific images by, e.g., time or location of acquisition or some other aspect of interest. Hence, a balance has to be achieved between packages that are either too large or too numerous to be handled by a user. In addition, the effort of documenting images (each individually or in groups) has to be taken into account. The same decisions need to be applied within a data package in the design of zip archives. Images may be grouped by space and/or time. E.g., a stationary camera’s output may be archived in annual data packages, each of which may contain monthly zip files if the number of images is large. A moving camera’s output may also be archived in annual data packages, but individual zip files may hold all images for one transect. Another consideration is the timing of archiving. One should strive for archiving a fully processed group of images when no more changes or updates are expected due to the large volume to be handled repeatedly for each update.</p>
-<div id="recommendations-for-metadata" class="section level3">
-<h3><span class="header-section-number">4.2.1</span> Recommendations for Metadata</h3>
-<p>Metadata are provided at two levels: in the EML file and in the csv file serving as an image catalog. Of course, all image data packages need the good discovery level metadata in EML (who, what, where, when, how, why). The detail provided on the level of the included csv image catalog (see below) should be guided by the same principles as stated above: to enable optimal usability of the images. E.g., images from a stationary camera need latitude and longitude only in the EML file not for every image. By contrast, images from a moving camera may need that information for every image or at least for every site/quadrat/transect.</p>
-<p>In addition to keywords describing the general purpose of the images (e.g., ice phenology, community composition, richness, etc.) it is recommended to include the keyword: Image with the semantic annotation from OBO:</p>
-<blockquote>
-<p><strong>Term IRI:</strong> <a href="http://purl.obolibrary.org/obo/IAO_0000101" class="uri">http://purl.obolibrary.org/obo/IAO_0000101</a>**</p>
-<p><strong>Definition:</strong> An image is an affine projection to a two dimensional surface, of measurements of some quality of an entity or entities repeated at regular intervals across a spatial range, where the measurements are represented as color and luminosity on the projected surface.</p>
-</blockquote>
+<p>For the purposes of this document, all three dataset types above are published in online research data repositories and are assigned unique digital identifiers (DOIs).</p>
+<p>This document discusses reasons for creating additional repository records for a published dataset, i.e., linked datasets pointing to other repositories, and recommendations of how to develop such records. It was written for the intended audience of a Long Term Ecological Research (LTER) information manager (IM), though it is applicable to anyone handling data in the context of a larger ecological research program. EDI is used as the representative data repository in this document. The same practices could be applied to other similar repositories.</p>
 </div>
-<div id="image-catalog" class="section level3">
-<h3><span class="header-section-number">4.2.2</span> Image Catalog</h3>
-<p>The image catalog is a required CSV data table with meta information for each image or each zip archive of a group of images. Each row in the catalog represents a single image or zip archive of a group of images. At a minimum, the table includes an attribute for the image/zip filename and additional attributes if other essential information varies per image/zip. Additional attributes may include essential information on the camera, date, time, creator, location, the image, the subject</p>
+<div id="considerations-for-creating-linked-repository-records" class="section level2">
+<h2><span class="header-section-number">7.2</span> Considerations for creating linked repository records</h2>
+<p>Data managers and users have several reasons to consider creating linked datasets, i.e. additional repository records linked to a published dataset. For the LTER IM, this practice involves creating a new data package in the EDI repository that links to data already published in another (non-EDI) repository. However, care should be taken to <strong>avoid duplicating the same data in multiple repositories</strong>. The practice of duplicating research data in multiple repositories is discouraged because a) this creates a burden of maintaining multiple datasets to avoid divergence between them, and b) it creates confusion for data re-users who may be led to download the same data multiple times.</p>
+<p>There are clear cases in which creating linked datasets offers benefits to data managers and users. There are also cases in which this practice should be avoided. Both types of cases are described in the sections below, but there are situations in which the pros and cons of this practice will need to be weighed. Experience with data user behavior and support is paramount for such decisions and may be made differently by different research groups.</p>
+<div id="cases-supporting-linked-datasets" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> Cases supporting linked datasets</h3>
 <ul>
-<li>(required) Filename of each image or zip archive. If each image is described a relative path (directory structure) of the image including file extension, e.g., IMG_1001.jpg or 2018/SITE3/IMG1001.jpg should be included. Within this attribute in the image catalog, each value should be unique.</li>
-<li>(optional) Link/URL to download image if the image is available on a different system.</li>
-<li>(optional) Creator</li>
-<li>(optional) Datetime: Date and time associated with the image, in <a href="https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations">ISO 8601 format</a>, e.g., 2007-04-05T12:30-02:00. Use the date and time that is important to the end user’s interpretation of the image.</li>
-<li>(optional) Location: Latitude and longitude in decimal degrees, site name, transect name, altitude, depth, habitat etc.</li>
-<li>(optional) all other conditions/descriptions that will help identify an image for use within the collection. Be consistent, use a controlled vocabulary for these fields, so that a user can search on them. Examples are: weather conditions, organism name, etc.</li>
-<li>(optional) Camera/instrument characteristics: model, settings, settings of a microscope</li>
-<li>(optional) Image characteristics: angle, distance, scale for pixel, resolution, magnification</li>
+<li><p><strong>Requirements dictate multiple repositories:</strong> Large research projects or sites are frequently funded by different agencies and programs. Data collection may be supported by several such funding streams and, hence, fall in the purview of more than one requirement for data being archived in a particular repository. In some cases, data repositories already accommodate such requirements by linking or replicating data appropriately. Best examples are LTER data in EDI, NSF BCO-DMO and NSF ADC.</p></li>
+<li><p><strong>Improved discoverability:</strong> Data from a large research project or sites become better discoverable when published and, hence, discoverable within the same repository. This practice also puts the data into the larger context of all research and ancillary data at that location aiding in interpretation and analysis. It, furthermore, allows the site to easily build a more complete data catalog for reporting or other administrative purposes without having to pull data citations from different sources. By the same token, the same type of data from disparate projects or sites may be more discoverable and easier to integrate when stored in a specialized repository focused on a particular type of data. For instance, specialized data repositories can enforce data formatting or quality standards and require metadata elements that enhance search, discovery and reuse of particular types of data across projects in a way that is not possible using a generalized metadata form (EML) and repository (EDI).</p></li>
+<li><p><strong>Adding important metadata</strong>: If data were originally submitted to a general purpose repository with minimal metadata requirements (e.g., Dublin core) additional metadata (e.g., EML) may be needed for discoverability, reusability and integration. By creating a new repository record linked to the published dataset, richer and more useful metadata can be added and utilized.</p></li>
+<li><p><strong>Derived data products:</strong> In many cases raw data are best handled in a specialized repository, but derived data products based on those raw data are, or should be, published in a different repository. For example, genomics data such as raw sequencing data are best archived in a specialized repository like <a href="https://www.ncbi.nlm.nih.gov/"><span class="underline">NCBI GenBank</span></a>, but derived products such as trait data or diversity metrics would be most useful in EDI (see <a href="https://ediorg.github.io/data-package-best-practices/datapackage-design/genomic-and-metagenomic-data.html"><span class="underline">the Genomics best practices document</span></a> for more). The same principles apply whenever a project or researcher has developed specialized procedures to process raw data or compute aggregations that are more appropriate for most users. In these cases it is important to maintain links between the derived data and the raw data when they are in separate repositories.</p></li>
 </ul>
 </div>
-<div id="data-extracted-from-images" class="section level3">
-<h3><span class="header-section-number">4.2.3</span> Data Extracted from Images</h3>
-<p>For data tables with information extracted from images (e.g., species abundance or coverage, or measurements that are made from image processing), whether included in the image data package or in a separate package, provide information to enable a user to locate the image from which a data value was extracted. This likely means including image filenames as a data column, or some other unique identifier or link if filenames cannot be used for this purpose. Or, if a given data row is derived from more than one image, consider including a cross reference table relating images to data rows.</p>
-</div>
-</div>
-<div id="resources-2" class="section level2">
-<h2><span class="header-section-number">4.3</span> Resources</h2>
-<div id="examples-in-edi" class="section level3">
-<h3><span class="header-section-number">4.3.1</span> Examples in EDI</h3>
+<div id="when-to-avoid-linked-datasets" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> When to avoid linked datasets</h3>
 <ul>
-<li><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&amp;identifier=210011005" class="uri">https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&amp;identifier=210011005</a></li>
-<li><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcm.2016.2" class="uri">https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcm.2016.2</a></li>
-<li><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-mcr&amp;identifier=5006" class="uri">https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-mcr&amp;identifier=5006</a></li>
-<li><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-mcr&amp;identifier=5013" class="uri">https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-mcr&amp;identifier=5013</a></li>
+<li><p><strong>Site- or Project-relevant data from outside research groups or agencies:</strong> Although it may help with some aspects of data discovery it is generally not recommended to create linked datasets (or duplicates) for data collected and managed by entirely different research groups or agencies. <strong><em>In these cases, however, it is recommended to place a pointer to such repositories on a project website.</em></strong></p></li>
+<li><p><strong>Linking between repositories that are DataONE member nodes</strong>: The DataONE aggregator provides access to earth data held in numerous repositories through a unified interface. It is not recommended to duplicate this functionality by creating additional links between repositories.</p></li>
 </ul>
+</div>
+</div>
+<div id="recommendations-for-data-packages-4" class="section level2">
+<h2><span class="header-section-number">7.3</span> Recommendations for Data Packages</h2>
+<p>When the decision is made that a dataset needs to be accessible in more than one repository the following considerations should guide the process:</p>
+<ul>
+<li><p>The metadata need to clearly state the original location of the data</p></li>
+<li><p>Assigning more than one unique identifier (e.g., DOI) to the same data can create confusion when data is cited. Thus, the DOI of the data itself should be clearly stated in the linked data package.</p></li>
+<li><p>The original repository should receive appropriate credit</p></li>
+<li><p>One data package that functions as an inventory of data in other repositories for a site is an option, but will not improve discoverability of single datasets.</p></li>
+</ul>
+<p>In EDI, the linked data package can be assembled using standard practices and EML metadata elements, but the included data entities must clearly lead the data user to files held in outside repositories. In addition, the package metadata should communicate the essential elements needed for data discovery (subject matter, authors, location, time-frame, etc.) and a brief description of how the data may be accessed and re-used via the outside repository. Metadata elements to be created in EML, and contents of the included data entities are described below.</p>
+<div id="package-metadata-1" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> Package Metadata</h3>
+<p>The EML metadata that will accompany the data package in EDI must contain the essential information for users to discover and use the data at the outside data repositories.</p>
+<ul>
+<li><p><strong>Abstract:</strong> Describe the collection generally. Since the actual data are held elsewhere, be sure to describe the location of the data being linked to. Also provide sufficient information for users to find and re-use the data entities at the outside data repository.</p></li>
+<li><p><strong>Creators</strong></p></li>
+<li><p><strong>Contacts</strong></p></li>
+<li><p><strong>Methods:</strong> Collection/generation methods for the data entities at the linked repository. If the methods are well-described at the outside repository being linked to, this element can simply refer users there. In addition, instructions for data access at the linked data repository should be provided.</p></li>
+<li><p><strong>Geographic description</strong> and <strong>coordinates</strong>: At a minimum these elements should define a bounding box that will make the data package discoverable through EDI, DataOne, or other geographic search interfaces. Additional coordinates can be given in the manifest entity below.</p></li>
+<li><p><strong>Keywords:</strong> If this is an inventory rather than a single dataset duplication held at a different repository, include the keyword &quot;data inventory&quot; and thematic keywords that describe the data entities in the other repository.</p></li>
+<li><p><strong>Data Entity:</strong> This is most likely a simple tabular manifest (inventory of holdings) that describes the data entities held in another data repository (or repositories). This should be a <a href="https://eml.ecoinformatics.org/schema/eml-dataTable_xsd.html#eml-dataTable.xsd"><span class="underline">dataTable</span></a> entity, described as you would for any dataTable with regular column descriptions. In rare cases the data themselves may be duplicated, though this is only recommended if additional metadata must be added to interpret or enrich the data.</p></li>
+</ul>
+</div>
+<div id="contents-of-the-manifest-datatable-entity" class="section level3">
+<h3><span class="header-section-number">7.3.2</span> Contents of the manifest dataTable entity</h3>
+<ul>
+<li><p>Any data package that links to data held in an outside repository should contain at least one data entity: a manifest (inventory) of data holdings at a linked repository(ies). The manifest should be written in a tabular data format (such as a .csv) that can be described as a dataTable entity in EML. For the specific case of genomics data see <a href="https://ediorg.github.io/data-package-best-practices/datapackage-design/genomic-and-metagenomic-data.html"><span class="underline">here</span></a>.</p></li>
+<li><p>For each outside data holding, the manifest (dataTable entity) should have a row that includes persistent links such as DOIs to any data entities at the linked repository, relevant package identifiers, and descriptors for the data entity. The complete content of the manifest (inventory of holdings) would be dictated by the structure of the linked repository and the type of data entities there. Suggested columns are:</p></li>
+</ul>
+<p><strong>Table 1:</strong> Required columns in the manifest entity.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Filename(s)</td>
+<td align="left">Filename at the repository being linked to</td>
+</tr>
+<tr class="even">
+<td align="left">Format</td>
+<td align="left">File format of above</td>
+</tr>
+<tr class="odd">
+<td align="left">Title/description</td>
+<td align="left">Title and/or brief description of the data resource</td>
+</tr>
+<tr class="even">
+<td align="left">External package/entity ID</td>
+<td align="left">Unique identifier at the repository being linked to.</td>
+</tr>
+<tr class="odd">
+<td align="left">Publication_DOI</td>
+<td align="left">DOI of of data published at the repository being linked to</td>
+</tr>
+<tr class="even">
+<td align="left">Repository_URL</td>
+<td align="left">URL of the repository being linked to</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 2:</strong> Optional columns in the manifest entity. These may be included in the manifest when needed to describe multiple data entities.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Column name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Latitude</td>
+<td align="left">Latitude in decimal degrees, WGS84 datum, associated with the data resource. For bounding boxes, use North_latitude and South_latitude columns.</td>
+</tr>
+<tr class="even">
+<td align="left">Longitude</td>
+<td align="left">Longitude in decimal degrees, WGS84 datum, associated with the data resource. For bounding boxes, use East_longitude and West_longitude columns.</td>
+</tr>
+<tr class="odd">
+<td align="left">Start_datetime</td>
+<td align="left">Starting datetime of the linked data file</td>
+</tr>
+<tr class="even">
+<td align="left">End_datetime</td>
+<td align="left">Ending datetime of the linked data file (NA if data collection is ongoing)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="example-data-packages" class="section level2">
+<h2><span class="header-section-number">7.4</span> Example data packages</h2>
+<p>Each of the EDI packages below contain dataTable entities with links to outside repositories. These dataTables serve as the manifests (inventory) for the externally-held data described in the rest of the metadata.</p>
+<p><strong>Table 3.</strong> Linked-repository packages at EDI</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Title</th>
+<th align="left">Description</th>
+<th align="left">EDI packageID</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Mass and energy fluxes from the US-Jo2 AmeriFlux eddy covariance tower in Tromble Weir experimental watershed at the Jornada Basin LTER site, 2010-ongoing</td>
+<td align="left">This data package links to eddy covariance data from a Jornada Basin LTER tower. The data are held at the AmeriFlux data repository (<a href="https://ameriflux.lbl.gov"><span class="underline">https://ameriflux.lbl.gov</span></a>)</td>
+<td align="left"><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&amp;identifier=210338005"><span class="underline">knb-lter-jrn.210338005</span></a></td>
+</tr>
+</tbody>
+</table>
 
-</div>
 </div>
 </div>
             </section>
@@ -319,8 +409,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="model-based-datasets.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="genomic-and-metagenomic-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="large-data-sets.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

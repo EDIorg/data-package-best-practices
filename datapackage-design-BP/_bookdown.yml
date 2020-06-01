@@ -11,5 +11,6 @@ rmd_files: [
     "model_based_datasets.md",
     "still_images.md",
     "genomic.md",
-    "offline_data.md"
+    "offline_data.md",
+    "in_other_repositories.md"
     ]
