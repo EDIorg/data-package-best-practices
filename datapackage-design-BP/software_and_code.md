@@ -186,7 +186,7 @@ In the dataset methods/methodStep/description element, include verbal descriptio
 
 **The EML dataSource element**
 
-Nested under methods/methodStep, dataSource elements describe other data packages that serve as source for the current package. dataSource looks like a mini-EML tree describing the source data. Example: [ecocomDP packages](https://portal.edirepository.org/nis/simpleSearch) list the original packages under dataSource. dataSource does not describe relationships between entities in the same package, and as far as we know there is no explicit way in EML to do so. 
+Nested under methods/methodStep, dataSource elements describe other data packages that serve as source for the current package. dataSource looks like a mini-EML tree describing the source data. Example: [ecocomDP packages](http://portal.edirepository.org/nis/simpleSearch?defType=edismax&q=ecocomDP&fq=-scope:ecotrends&fq=-scope:lter-landsat*&fl=id,packageid,title,author,organization,pubdate,coordinates&debug=false) list the original packages under dataSource. dataSource does not describe relationships between entities in the same package, and as far as we know there is no explicit way in EML to do so. 
 
 **ProvONE**
 
