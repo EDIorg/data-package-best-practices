@@ -1,25 +1,39 @@
 # Large Data Sets
 
-Authors: Margaret O’Brien, Corinna Gries
+Contributors: Margaret O’Brien, Corinna Gries, Mark Servilla
 
 ## Introduction
 
 Data entities are kept offline when they are too large to be handled easily by the HTTP protocol, are expected to be rarely requested, and can be mailed on an external drive.  If you suspect your data fall into this category, contact EDI for advice (support@environmentaldatainitiative.org). Below are recommendations for the EDI repository's handling of data packages that have an offline component.
 
 ### Background
-Standard practice is to handle data entities (both upload and download) via the HTTP protocol, using a URL. However, for very large datasets HTTP can fail due to physical limits. The limit for “too large” is somewhat subjective; EDI's current limit for datasets that are “too large for HTTP” is 100 gb (all data and metadata). 
+Standard practice is to handle data entities (both upload and download) via the HTTP protocol, using a URL. However, for very large datasets HTTP can fail due to physical limits. The limit for “too large” is somewhat subjective; EDI's current limit for datasets that are “too large for HTTP” is 100GB (all data and metadata). 
 
 ## Recommendations for data packages
 
 ### Physical Storage
 
+* The use of a Solid-state Drive (SSD) is strongly recommended for all offline data storage. The SSD should be formatted using one of the following file systems: 1) exFAT, 2) NTFS, or 3) ext4. Each of these file systems can accommodate individual file sizes greater than 1TB.
+
 *   Add data to external drive in native (non-compressed, non-tarred, non-zipped) format, deliver to EDI (e.g., by physical mail).
 *   EDI will store three copies, one external hard drive each in New Mexico and in Wisconsin, one copy in general EDI backup cloud storage.
+*   Please mail one copy each to:
+
+Attn: Mark Servilla
+UNM Biology, Castetter Hall 1480
+MSC03-2020, 219 Yale Blvd NE
+Albuquerque, NM 87131-0001
+
+Attn: Corinna Gries
+University of Wisconsin
+Center for Limnology
+680 North Park Street
+Madison WI 53706-1413
 
 ### Data package
 
-*   The hard drive should contain at least two entities: the data (which will be offline) and an inventory or manifest of holdings of that entity.
-*   Content of the manifest (inventory of holdings) would be dictated by the type of data entity. The **manifest will be on anline entity** so that potential requestors can evaluate the offline resource before requesting it.
+*   The external hard drive should contain at least two entities: the data (which will be offline) and an inventory or manifest that describe the contents of the external hard drive.
+*   Content of the manifest (inventory of holdings) would be dictated by the type of data entity. The **manifest will be available as an online entity** (through the EDI Data Portal) so that potential requestors can evaluate the offline resource before requesting it.
 *  Suggested columns are:
     *   Filename(s)
     *   Format (netCDF, tabular csv, etc.)
@@ -112,11 +126,9 @@ Look for the PhysicalDistributionType
 
 ## Potential Issues
 
-- ssd formatting (eventually, whatever we use, it will become unusable).
+- SSD formatting (eventually, whatever we use, it will become unusable).
 
-- Even with cloud storage, eventually a binary format will become unusable
-
-
+- Even with cloud storage, eventually a binary format will become unusable.
 
 
 

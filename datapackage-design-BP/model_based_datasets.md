@@ -1,6 +1,6 @@
 # Model Based Datasets
 
-Authors: An Nguyen, Tim Whiteaker, Corinna Gries
+Contributors: An Nguyen, Tim Whiteaker, Corinna Gries
 
 ## Introduction
 
