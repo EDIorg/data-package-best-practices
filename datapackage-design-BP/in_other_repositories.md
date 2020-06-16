@@ -54,7 +54,7 @@ When the decision is made that a dataset needs to be accessible in more than one
 
 -   The original repository should receive appropriate credit
 
--   One data package that functions as an inventory of data in other repositories for a site is an option, but will not improve discoverability of single datasets.
+-   To improve discoverability of single datasets, do not create one data package that functions as an inventory of all data in other repositories for a site. Instead create separate packages for each remotely linked dataset, or for groups of remotely linked datasets that would logically be used together (i.e. as datasets are normally grouped into a single package).
 
 In EDI, the linked data package can be assembled using standard practices and EML metadata elements, but the included data entities must clearly lead the data user to files held in outside repositories. In addition, the package metadata should communicate the essential elements needed for data discovery (subject matter, authors, location, time-frame, etc.) and a brief description of how the data may be accessed and re-used via the outside repository. Metadata elements to be created in EML, and contents of the included data entities are described below.
 
@@ -72,7 +72,7 @@ The EML metadata that will accompany the data package in EDI must contain the es
 
 -   **Geographic description** and **coordinates**: At a minimum these elements should define a bounding box that will make the data package discoverable through EDI, DataOne, or other geographic search interfaces. Additional coordinates can be given in the manifest entity below.
 
--   **Keywords:** If this is an inventory rather than a single dataset duplication held at a different repository, include the keyword \"data inventory\" and thematic keywords that describe the data entities in the other repository.
+-   **Keywords:** Since linked datasets serve as an inventory of data held at a different repository, include the keyword \"data inventory\" and thematic keywords that describe the data entities in the other repository.
 
 -   **Data Entity:** This is most likely a simple tabular manifest (inventory of holdings) that describes the data entities held in another data repository (or repositories). This should be a [[dataTable]{.underline}](https://eml.ecoinformatics.org/schema/eml-dataTable_xsd.html#eml-dataTable.xsd) entity, described as you would for any dataTable with regular column descriptions. In rare cases the data themselves may be duplicated, though this is only recommended if additional metadata must be added to interpret or enrich the data.
 
