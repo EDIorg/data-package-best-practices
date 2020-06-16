@@ -18,7 +18,7 @@ These concepts must be understood to clarify this best practices document:
 
 -   A **linked dataset or data package** contains metadata, but the only data present are links to the unique identifier(s) of data held in another repository.
 
-For the purposes of this document, all four dataset types above are published as records in online research data repositories and are assigned unique digital identifiers (DOIs).
+For the purposes of this document, all four dataset types above are published as records in online research data repositories and are assigned unique digital identifiers (DOIs). **Data users should always cite the DOI (or other identifier) that resolves to the repository holding the original data.**
 
 This document discusses reasons for creating additional repository records for a published dataset, i.e., linked datasets pointing to other repositories, and provides recommendations on how to develop such records. It was written for the intended audience of a Long Term Ecological Research (LTER) information manager (IM), though it is applicable to anyone handling data in the context of a larger ecological research program. EDI is used as the representative data repository in this document. The same practices could be applied to other similar repositories.
 
@@ -50,11 +50,11 @@ Recommendations for creating linked datasets
 
 When the decision is made that a dataset needs to be accessible in more than one repository the following considerations should guide the process:
 
--   The metadata need to clearly state the original location of the data
+-   The metadata, preferably in the abstract or another obvious location, must clearly state the original location of the data, how to access it, and identify the correct data citation to use.
 
 -   Assigning more than one unique identifier (e.g., DOI) to the same data can create confusion when data is cited. Thus, the DOI of the data itself should be clearly stated in the metadata of the linked dataset with instructions on which DOI to cite.
 
--   The original repository should receive appropriate credit
+-   The original repository should receive appropriate credit.
 
 -   To improve discoverability of single datasets, do not create linked datasets that function solely as an inventory of all data in other repositories for a site or project. Instead create a separate dataset linked to each remote dataset in the outside repository, or a dataset linked to a group of remote datasets that would logically be used together (i.e. as data entities are normally grouped into a single EDI data package).
 
@@ -62,15 +62,15 @@ In EDI, the linked data package can be assembled using standard practices and EM
 
 ### EDI data package metadata 
 
-The EML metadata that will accompany an EDI data package must contain the essential information for users to discover and use the data at the outside data repositories.
+The EML metadata that accompanies a linked EDI data package must contain the essential information for users to discover and use the data at the outside data repository. Suggested EML elements and their contents are described below.
 
--   **Abstract:** Describe the collection generally. Since the actual data are held elsewhere, be sure to describe the location of the data being linked to. Also provide sufficient information for users to find, re-use, and cite the data entities at the outside data repository.
+-   **Abstract:** Describe the key features of the data package. For linked data packages, clearly state that the data are located in an outside repository and direct the user to the correct data citation. Describe the outside dataset in sufficient detail that users can determine whether this data is fit for their use, and instruct them on how to find, re-use, and cite the data held in another repository.
 
 -   **Creators**
 
 -   **Contacts**
 
--   **Methods:** Collection/generation methods for the data entities at the outside repository that is being linked to. If the methods are well-described at the outside repository, this element can simply refer users there. In addition, instructions for access to, and proper citation of, the data entities at the outside repository should be provided.
+-   **Methods:** Collection/generation methods for the data entities at the outside repository that is being linked to. If the methods are well-described at the outside repository, this element can simply refer users there. In addition, detailed instructions on how to access and cite the data entities at the outside repository should be provided if the briefer abstract is not sufficiently detailed.
 
 -   **Geographic description** and **coordinates**: At a minimum these elements should define a bounding box that will make the data package discoverable through EDI, DataOne, or other geographic search interfaces. Additional coordinates can be given in the manifest entity below.
 
@@ -107,7 +107,7 @@ The manifest table must have a row for each outside dataset (or file) being link
 Example data packages
 ---------------------
 
-Each of the EDI data packages below contain dataTable entities with links to data in outside repositories. These dataTables serve as the manifests (inventories) for the datasets held in outside respositories, as described in the rest of the metadata. The EML abstract and methods element give detailed access and citation instructions.
+Each of the EDI data packages below contain dataTable entities with links to data in outside repositories. These dataTables serve as the manifests (inventories) for the datasets held in outside repositories, as described in the rest of the metadata. The EML abstract and methods element give detailed access and citation instructions.
 
 **Table 3.** Linked data packages at EDI that provide examples of the best practices in this document.
 
