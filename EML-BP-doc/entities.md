@@ -112,11 +112,11 @@ filename of a file in a file system or that is accessible on the
 network.
 
 <**externallyDefinedFormat**> For data entities in prescribed formats
-(e.g., NetCDF, KML, Excel), name that format here. It is recommended
-that where possible, formats follow mime type (e.g., "image/jpeg").
+(e.g., NetCDF, KML, Excel), name that format in **externallyDefinedFormat/formatName**.
+It is recommended that where possible, formats are drawn from formatNames in
+[DataONE's objectFormaList](https://github.com/DataONEorg/object-formats).
 Descriptions that are software-specific should include manufacturer,
-program, and version, e.g. "Microsoft Excel 2003". A KML file of
-sampling locations can be declared here as either "KML" or "KMZ".
+program, and version, e.g., "Microsoft Excel OpenXML".
 
 <**distribution**> provides information on how the resource is
 distributed, and the contents of this tree was generally covered at the
@@ -564,7 +564,7 @@ Example 22: Entity and attribute information for spatialVector
       <objectName>fls-20.zip</objectName>
       <dataFormat>
          <externallyDefinedFormat>
-            <formatName>Shapefile</formatName>
+            <formatName>Esri Shapefile (zipped)</formatName>
          </externallyDefinedFormat>
       </dataFormat>
       <distribution>
@@ -657,7 +657,7 @@ Example 23: Entity and attribute information for spatialRaster
       <objectName>fls-30.zip</objectName>
       <dataFormat>
          <externallyDefinedFormat>
-            <formatName>Esri Grid</formatName>
+            <formatName>Esri binary grid</formatName>
          </externallyDefinedFormat>
       </dataFormat>
       <distribution>
@@ -737,7 +737,9 @@ Example 23: Entity and attribute information for spatialRaster
 </spatialRaster>
 ```
 
-The <**otherEntity**> data type includes the free text <**entityType**> element for naming the type of the entity.  The **otherEntity/physical/dataFormat/externallyDefinedFormat/formatName** element stores the file format. While there is no controlled vocabulary for the content of these elements, Table 3 provides some suggestions. For other cases, consider using [MIME types](https://www.iana.org/assignments/media-types/media-types.xhtml) for the <**formatName**>. 
+The <**otherEntity**> data type includes the free text <**entityType**> element for naming the type of the entity.
+The **otherEntity/physical/dataFormat/externallyDefinedFormat/formatName** element stores the file format.
+While there is no controlled vocabulary for the content of these elements, format names can be drawn from [DataONE's objectFormaList](https://github.com/DataONEorg/object-formats).  Table 3 provides suggestions for some common other entity formats.
 
 Table 3. Entity types and format names for some <**otherEntity**> types.
 
@@ -749,27 +751,27 @@ Table 3. Entity types and format names for some <**otherEntity**> types.
   </tr>
   <tr>
     <td>R script</td>
-    <td>R script</td>
-    <td>application/r</td>
+    <td>script</td>
+    <td>R programming language script</td>
   </tr>
   <tr>
     <td>R markdown</td>
-    <td>R markdown</td>
-    <td>text/markdown</td>
+    <td>script</td>
+    <td>R Markdown file</td>
   </tr>
   <tr>
     <td>PHP script</td>
-    <td>PHP script</td>
+    <td>script</td>
     <td>application/php</td>
   </tr>
   <tr>
-    <td>JPG image</td>
+    <td>JPEG image</td>
     <td>photograph</td>
-    <td>image/jpg</td>
+    <td>JPEG</td>
   </tr>
   <tr>
     <td>PDF document</td>
     <td>document</td>
-    <td>application/pdf</td>
+    <td>Portable Document Format</td>
   </tr>
 </table>
