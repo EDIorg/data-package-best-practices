@@ -1,6 +1,6 @@
 # data-package-best-practices
 
-This repository was initiated in late 2019, after EML 2.2 release.  It holds best practices recommendations related to data packages, written by the community of data managers who contributed to the EDI repository. The public-facing view is organized as gitbooks, which are copied over from the draft area *when ready* (ie, edits to pages do not automatically become public). Individual gitbooks can be versioned and archived as PDFs.
+This repository was initiated in late 2019, after EML 2.2 release.  It holds best practices recommendations related to data packages, written by the community of data managers who contributed to the EDI repository. The public-facing view is organized as gitbooks, which are comitted from a local checkout *when ready* (ie, edits to pages do not automatically become public). Individual gitbooks can be versioned and archived as PDFs.
 
 
 ## Background
@@ -30,7 +30,7 @@ There are several axes of organization anticipated, below, with examples. All ar
   - meteorology/hydrology data
   - genomics and metagenomics
   
-- Challenging data types, organized by acquisition method or platform (multiple scientific domains) 
+- General "Data Package Design", including challenging data types, organized by acquisition method or platform (multiple scientific domains) 
   - offline data
   - key-value pair tables (long vs. wide)
   - model output
