@@ -114,7 +114,7 @@ network.
 <**externallyDefinedFormat**> For data entities in prescribed formats
 (e.g., NetCDF, KML, Excel), name that format in **externallyDefinedFormat/formatName**.
 It is recommended that where possible, formats are drawn from formatNames in
-[DataONE's objectFormaList](https://github.com/DataONEorg/object-formats).
+[DataONE's objectFormaList](https://cn.dataone.org/cn/v2/formats).
 Descriptions that are software-specific should include manufacturer,
 program, and version, e.g., "Microsoft Excel OpenXML".
 
@@ -739,7 +739,7 @@ Example 23: Entity and attribute information for spatialRaster
 
 The <**otherEntity**> data type includes the free text <**entityType**> element for naming the type of the entity.
 The **otherEntity/physical/dataFormat/externallyDefinedFormat/formatName** element stores the file format.
-While there is no controlled vocabulary for the content of these elements, format names can be drawn from [DataONE's objectFormaList](https://github.com/DataONEorg/object-formats).  Table 3 provides suggestions for some common other entity formats.
+While there is no controlled vocabulary for the content of these elements, format names can be drawn from [DataONE's objectFormaList](https://cn.dataone.org/cn/v2/formats).  Table 3 provides suggestions for some common other entity formats.
 
 Table 3. Entity types and format names for some <**otherEntity**> types.
 
