@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Spatial Data | Best Practices for Data Package Design</title>
+  <meta name="description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Spatial Data | Best Practices for Data Package Design" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Spatial Data | Best Practices for Data Package Design" />
+  
+  <meta name="twitter:description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
+  
+
+<meta name="author" content="Environmental Data Initiative" />
+
+
+<meta name="date" content="2021-02-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="images-and-documents-as-data.html"/>
+<link rel="next" href="data-gathered-with-small-moving-platforms.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><h4><a class="brand" href="/data-package-best-practices/">Data Package Best Practices</a></h4></li>
+<ul>
+  <li><a href="/data-package-best-practices/EMLmetadata/">EML Metadata</a></li>
+  <li><a href="/data-package-best-practices/datapackage-design/">Data Package Design</a></li>
+  <li><a href="/data-package-best-practices/scientific_domain/">Data Products for Synthesis Research</a></li>
+</ul> 
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Data Package Design for Special Cases</a></li>
+<li class="chapter" data-level="1" data-path="code.html"><a href="code.html"><i class="fa fa-check"></i><b>1</b> Code</a><ul>
+<li class="chapter" data-level="1.1" data-path="code.html"><a href="code.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
+<li class="chapter" data-level="1.2" data-path="code.html"><a href="code.html#recommendations-for-data-packages"><i class="fa fa-check"></i><b>1.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="code.html"><a href="code.html#considerations-for-archiving-software-or-code"><i class="fa fa-check"></i><b>1.2.1</b> Considerations for archiving software or code</a></li>
+<li class="chapter" data-level="1.2.2" data-path="code.html"><a href="code.html#documenting-softwarecode"><i class="fa fa-check"></i><b>1.2.2</b> Documenting software/code</a></li>
+<li class="chapter" data-level="1.2.3" data-path="code.html"><a href="code.html#linking-code-and-data"><i class="fa fa-check"></i><b>1.2.3</b> Linking code and data</a></li>
+<li class="chapter" data-level="1.2.4" data-path="code.html"><a href="code.html#external-software"><i class="fa fa-check"></i><b>1.2.4</b> External software</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="code.html"><a href="code.html#resources"><i class="fa fa-check"></i><b>1.3</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="model-based-datasets.html"><a href="model-based-datasets.html"><i class="fa fa-check"></i><b>2</b> Model-Based Datasets</a><ul>
+<li class="chapter" data-level="2.1" data-path="model-based-datasets.html"><a href="model-based-datasets.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="model-based-datasets.html"><a href="model-based-datasets.html#recommendations-for-data-packages-1"><i class="fa fa-check"></i><b>2.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="model-based-datasets.html"><a href="model-based-datasets.html#referencing-models-in-eml"><i class="fa fa-check"></i><b>2.2.1</b> Referencing models in EML</a></li>
+<li class="chapter" data-level="2.2.2" data-path="model-based-datasets.html"><a href="model-based-datasets.html#model-input-and-output-data"><i class="fa fa-check"></i><b>2.2.2</b> Model input and output data</a></li>
+<li class="chapter" data-level="2.2.3" data-path="model-based-datasets.html"><a href="model-based-datasets.html#model-parameters"><i class="fa fa-check"></i><b>2.2.3</b> Model parameters</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="model-based-datasets.html"><a href="model-based-datasets.html#example-data-packages-in-edi"><i class="fa fa-check"></i><b>2.3</b> Example data packages in EDI</a></li>
+<li class="chapter" data-level="2.4" data-path="model-based-datasets.html"><a href="model-based-datasets.html#resources-1"><i class="fa fa-check"></i><b>2.4</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html"><i class="fa fa-check"></i><b>3</b> Images and Documents as Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#recommendations-for-data-packages-2"><i class="fa fa-check"></i><b>3.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#reasons-to-archive-documents-as-data"><i class="fa fa-check"></i><b>3.2.1</b> Reasons to archive documents as data</a></li>
+<li class="chapter" data-level="3.2.2" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#considerations-for-data-package-structure"><i class="fa fa-check"></i><b>3.2.2</b> Considerations for data package structure</a></li>
+<li class="chapter" data-level="3.2.3" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#documenting-data-packages"><i class="fa fa-check"></i><b>3.2.3</b> Documenting data packages</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#example-data-packages-in-edi-1"><i class="fa fa-check"></i><b>3.3</b> Example data packages in EDI</a></li>
+<li class="chapter" data-level="3.4" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#resources-2"><i class="fa fa-check"></i><b>3.4</b> Resources</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#considerations-for-digitizing-documents"><i class="fa fa-check"></i><b>3.4.1</b> Considerations for digitizing documents</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="spatial-data.html"><a href="spatial-data.html"><i class="fa fa-check"></i><b>4</b> Spatial Data</a><ul>
+<li class="chapter" data-level="4.1" data-path="spatial-data.html"><a href="spatial-data.html#introduction-3"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="spatial-data.html"><a href="spatial-data.html#recommendations-for-data-packages-3"><i class="fa fa-check"></i><b>4.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="spatial-data.html"><a href="spatial-data.html#considerations-for-archiving-spatial-data"><i class="fa fa-check"></i><b>4.2.1</b> Considerations for archiving spatial data</a></li>
+<li class="chapter" data-level="4.2.2" data-path="spatial-data.html"><a href="spatial-data.html#documenting-spatial-data-packages"><i class="fa fa-check"></i><b>4.2.2</b> Documenting spatial data packages</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html"><i class="fa fa-check"></i><b>5</b> Data Gathered with Small Moving Platforms</a><ul>
+<li class="chapter" data-level="5.1" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#introduction-4"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#recommendations-for-data-packages-4"><i class="fa fa-check"></i><b>5.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#metadata-for-moving-platform-data-packages-at-edi"><i class="fa fa-check"></i><b>5.2.1</b> Metadata for moving platform data packages at EDI</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#examples-and-additional-metadata-guidance"><i class="fa fa-check"></i><b>5.2.2</b> Examples and additional metadata guidance</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#resources-3"><i class="fa fa-check"></i><b>5.3</b> Resources</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#tips-and-tricks"><i class="fa fa-check"></i><b>5.3.1</b> Tips and Tricks</a></li>
+<li class="chapter" data-level="5.3.2" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#semantic-annotation"><i class="fa fa-check"></i><b>5.3.2</b> Semantic Annotation</a></li>
+<li class="chapter" data-level="5.3.3" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#references"><i class="fa fa-check"></i><b>5.3.3</b> References</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html"><i class="fa fa-check"></i><b>6</b> Data in Other Repositories</a><ul>
+<li class="chapter" data-level="6.1" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#introduction-5"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#recommendations-for-data-packages-5"><i class="fa fa-check"></i><b>6.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#considerations-for-creating-linked-data"><i class="fa fa-check"></i><b>6.2.1</b> Considerations for creating linked data</a></li>
+<li class="chapter" data-level="6.2.2" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#general-metadata-for-linked-data-packages-in-edi"><i class="fa fa-check"></i><b>6.2.2</b> General metadata for linked data packages in EDI</a></li>
+<li class="chapter" data-level="6.2.3" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#common-use-cases-and-their-structure-in-edi"><i class="fa fa-check"></i><b>6.2.3</b> Common use cases and their structure in EDI</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#nucleotide-sequence-and-genomic-data"><i class="fa fa-check"></i><b>6.3</b> Nucleotide sequence and genomic data</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#recommendations-for-sequencing-or-genomic-datasets"><i class="fa fa-check"></i><b>6.3.1</b> Recommendations for sequencing or genomic datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#example-data-packages-in-edi-2"><i class="fa fa-check"></i><b>6.4</b> Example data packages in EDI</a></li>
+<li class="chapter" data-level="6.5" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#appendix-tips-and-repository-information"><i class="fa fa-check"></i><b>6.5</b> Appendix: Tips and repository information</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#sequence-and-genomic-repository-information"><i class="fa fa-check"></i><b>6.5.1</b> Sequence and genomic repository information</a></li>
+<li class="chapter" data-level="6.5.2" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#tips-for-locating-metadata-in-sequence-and-genomic-data-repositories"><i class="fa fa-check"></i><b>6.5.2</b> Tips for locating metadata in sequence and genomic data repositories</a></li>
+<li class="chapter" data-level="6.5.3" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#darwin-core-standard-for-sequence-data"><i class="fa fa-check"></i><b>6.5.3</b> Darwin Core standard for sequence data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="large-data-sets.html"><a href="large-data-sets.html"><i class="fa fa-check"></i><b>7</b> Large Data Sets</a><ul>
+<li class="chapter" data-level="7.1" data-path="large-data-sets.html"><a href="large-data-sets.html#introduction-6"><i class="fa fa-check"></i><b>7.1</b> Introduction</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="large-data-sets.html"><a href="large-data-sets.html#background"><i class="fa fa-check"></i><b>7.1.1</b> Background</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="large-data-sets.html"><a href="large-data-sets.html#recommendations-for-data-packages-6"><i class="fa fa-check"></i><b>7.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="large-data-sets.html"><a href="large-data-sets.html#physical-storage"><i class="fa fa-check"></i><b>7.2.1</b> Physical Storage</a></li>
+<li class="chapter" data-level="7.2.2" data-path="large-data-sets.html"><a href="large-data-sets.html#data-package"><i class="fa fa-check"></i><b>7.2.2</b> Data package</a></li>
+<li class="chapter" data-level="7.2.3" data-path="large-data-sets.html"><a href="large-data-sets.html#package-metadata"><i class="fa fa-check"></i><b>7.2.3</b> Package Metadata</a></li>
+<li class="chapter" data-level="7.2.4" data-path="large-data-sets.html"><a href="large-data-sets.html#eml"><i class="fa fa-check"></i><b>7.2.4</b> EML</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="large-data-sets.html"><a href="large-data-sets.html#references-1"><i class="fa fa-check"></i><b>7.3</b> References</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="large-data-sets.html"><a href="large-data-sets.html#eml-documentation"><i class="fa fa-check"></i><b>7.3.1</b> EML documentation</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="large-data-sets.html"><a href="large-data-sets.html#potential-issues"><i class="fa fa-check"></i><b>7.4</b> Potential Issues</a></li>
+</ul></li>
+<li class="divider"></li>
+<ul>
+    <li><h4><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></h4></li>
+    <li><img class="img-responsive center-block" src="../../data-package-best-practices/images/EDI-logo-svg-240.png" alt="EDI Logo" height="90" width="90"/><li>
+</ul>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Best Practices for Data Package Design</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="spatial-data" class="section level1">
+<h1><span class="header-section-number">4</span> Spatial Data</h1>
+<p>Contributors: Tim Whiteaker, John Porter, Mary Martin</p>
+<div id="introduction-3" class="section level2">
+<h2><span class="header-section-number">4.1</span> Introduction</h2>
+<p>This document/chapter contains recommendations on data package structure and metadata for spatial datasets. Over the timeline of Long Term Ecological Research (LTER) Network?s use of the Ecological Metadata Language (EML), both spatial data formats and data curation options have evolved. In this document, focus on best practices that can be widely adopted with the goal of enhancing data discoverability and usability, and the understanding that there are multiple solutions to creating these data packages.</p>
+</div>
+<div id="recommendations-for-data-packages-3" class="section level2">
+<h2><span class="header-section-number">4.2</span> Recommendations for data packages</h2>
+<div id="considerations-for-archiving-spatial-data" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Considerations for archiving spatial data</h3>
+<div id="data-formats" class="section level4">
+<h4><span class="header-section-number">4.2.1.1</span> Data formats</h4>
+<p>To maximize reuse, avoid proprietary formats. The formats listed below can be read or imported by most mainstream GIS programs or with code using libraries such as GDAL.</p>
+<p>Strongly recommended formats:</p>
+<ul>
+<li><strong>GeoTIFF</strong> - An open format for storing spatial raster data and metadata in a TIFF file.</li>
+<li><strong>GeoPackage </strong>- A standard format from the Open Geospatial Consortium (OGC) for storing vector and raster data in a SQLite database file.</li>
+</ul>
+<p>Some other formats to consider are listed below.</p>
+<ul>
+<li><strong>KML/KMZ </strong>- Keyhole Markup Language (KML) file and its zipped version for storing vector data. This format was popularized by Google Earth and is now an OGC standard. KML is best visualized in Google software and may not render as well in other GIS software.</li>
+<li><strong>GeoJSON </strong>- A format for storing vector data as text in JavaScript Object Notation (JSON). GeoJSON data are limited to the WGS84 coordinate system.</li>
+<li><strong>netCDF/HDF5</strong> - binary formats originally designed for storing multidimensional arrays of spatial data typically organized onto a grid, but which now can accommodate vector data following the NetCDF Climate and Forecast Conventions (version 1.8 or higher).</li>
+</ul>
+<p>A couple of Esri formats are worth mentioning and are listed below.</p>
+<ul>
+<li><strong>File geodatabase </strong>- One of Esri’s formats for storing vector and raster information. Several feature classes and rasters can be stored in this folder and file based structure. GDAL’s OpenFileGDB driver enables non-Esri software to view at least the data layers in a file geodatabase, but usage of more advanced file geodatabase components such as topology rules or geometric networks may not be available outside of Esri software. Field types may not be imported correctly either. Export to GeoPackage instead, unless geodatabase is the only format that supports the advanced representation of your GIS data. Just know that you limit potential reuse of your data if you use this format.</li>
+<li><strong>Shapefile </strong>- A legacy format for vector data which is widely supported. Be aware of <a href="https://en.wikipedia.org/wiki/Shapefile#Limitations">shapefile limitations</a> when considering this format. A shapefile consists of several individual files; include them as a single zip file in the data package. If the package has more than one shapefile, create a separate zip file for each shapefile.</li>
+</ul>
+<p>Although other open formats exist, their implementation in popular GIS software may be less common. If a proprietary format must be used to capture the full meaning of the data, consider also including a version of the data in an open format such as a simple data table along with metadata explaining its limitations in that format, or instructions on how to utilize the proprietary format. For example, an Esri layer package could be used when including recommended symbols for drawing vector features in a GIS is desired, in which case one could note that the vector data can be extracted by treating the layer package as a zip file.</p>
+<p>Formats that are composed of more than one file, such as shapefiles, should be zipped. Include one dataset per zip file. For example, if you have 10 shapefiles, you would create 10 zip files.</p>
+</div>
+</div>
+<div id="documenting-spatial-data-packages" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Documenting spatial data packages</h3>
+<div id="document-as-spatialraster-vector-vs.-otherentity-in-eml" class="section level4">
+<h4><span class="header-section-number">4.2.2.1</span> Document as spatial[Raster, Vector] vs. otherEntity in EML</h4>
+<p>There is a noticeable divergence in EDI spatial data packages, specifically, in the use of otherEntity vs spatial[Raster,Vector]. Here we discuss pros and cons of why one might choose to document spatial data with one type of EML entity over another. Either method is acceptable, and we recommend using spatial[Raster,Vector] when feasible. The documentation that follows provides best practices that will maximize discoverability and useability of spatial data, regardless of the entity type used.</p>
+</div>
+<div id="otherentity" class="section level4">
+<h4><span class="header-section-number">4.2.2.2</span> <a href="https://eml.ecoinformatics.org/schema/eml-dataset_xsd.html#DatasetType_otherEntity">otherEntity</a></h4>
+<ul>
+<li>Pros
+<ul>
+<li>EML preparation is simpler than with the spatial EML types</li>
+<li>Allows aggregated data structures (e.g., file geodatabases)</li>
+</ul></li>
+<li>Cons
+<ul>
+<li>Spatial data stored as &lt;otherEntity&gt; might be harder to discover because it may be difficult to determine if data in an &lt;otherEntity&gt; is spatial data or some other type when searching or browsing</li>
+<li>There is currently no controlled keywording to identify spatial data files that are included as otherEntity in EML</li>
+<li>Tabular attributes of geometric entities may not be described in detail</li>
+<li>Units (latitude/longitude vs meters vs feet) and projections may not be identified</li>
+</ul></li>
+</ul>
+</div>
+<div id="spatialrastervector" class="section level4">
+<h4><span class="header-section-number">4.2.2.3</span> spatial[<a href="https://eml.ecoinformatics.org/schema/eml-dataset_xsd.html#DatasetType_spatialRaster">Raster</a>,<a href="https://eml.ecoinformatics.org/schema/eml-dataset_xsd.html#DatasetType_spatialVector">Vector</a>]</h4>
+<ul>
+<li>Pros
+<ul>
+<li>EML more fully describes vector attributes</li>
+<li>There is a well documented path from Esri metadata to EML</li>
+<li>An EML metadata search (on EDI or elsewhere) clearly identifies these as spatial datasets through the use of spatialRaster or spatialVector entities</li>
+<li>LTER has built applications based on spatial[Raster,Vector] entities</li>
+</ul></li>
+<li>Cons
+<ul>
+<li>Data may not originate in ArcGIS, requiring a custom workflow to generate spatial entity EML</li>
+<li>Spatial[Raster,Vector] can?t describe multi-layer aggregates of GIS data (e.g., geodatabases containing multiple feature classes)</li>
+</ul></li>
+</ul>
+</div>
+<div id="keywords" class="section level4">
+<h4><span class="header-section-number">4.2.2.4</span> Keywords</h4>
+<p>Clearly identifying a dataset as spatial in nature is important to discoverability. This can be achieved by the use of keywords in the EML keyword elements as well as in the title/abstract and methods where appropriate. Keywords frequently searched include: GIS, geographic information system, spatial data, plus the more specific format names like shapefile, geoTIFF etc. Consider including as appropriate.</p>
+<p>Do include the keywords <strong>spatial vector </strong>and <strong>spatial raster </strong>as appropriate for your data. These keywords should be used especially if the data are archived as otherEntity.</p>
+<p>You may also include keywords that describe broad spatial data layers, e.g., digital elevation model, elevation, boundary, land use, land cover, census, parcel, imagery, as well as keywords that describe the specifics associated with a broad spatial data layer, e.g., land cover types such as water and vegetation types, land use types such as urban and forest, and so on.</p>
+</div>
+<div id="gis-software-compatible-metadata" class="section level4">
+<h4><span class="header-section-number">4.2.2.5</span> GIS software compatible metadata</h4>
+<p>GIS platforms will not ingest EML metadata. If your GIS software creates its own metadata file specific to that software, then it may be included as otherEntity. Be sure to populate this metadata, for example with descriptions and units for attributes in vector data or raster attribute tables. However, metadata in the standard ISO 19115 or CSDGM format to enable the metadata to be read by other GIS software is more useful.</p>
+</div>
+<div id="attribute-and-coordinate-system-detail-for-otherentity" class="section level4">
+<h4><span class="header-section-number">4.2.2.6</span> Attribute and coordinate system detail for otherEntity</h4>
+<p>While the GIS software compatible metadata included in the package typically describes attributes and coordinate systems of the data, such descriptions should also be included in the EML metadata to help users determine fit for use prior to data download. The EML spatialVector and spatialRaster types include elements for this purpose. EML otherEntity can also include attribute descriptions; however, inclusion of attributes in this more generic element may not be as common, and the element does not formally support a description of coordinate systems.</p>
+<p>When using <a href="https://eml.ecoinformatics.org/schema/eml-dataset_xsd.html#DatasetType_otherEntity">otherEntity</a> instead of spatialVector or spatialRaster, include coordinate system details in the otherEntity/entityDescription element. If not including a description of attributes in the otherEntity/attributeList element, at least include a summary description of attributes in otherEntity/entityDescription. If the spatial dataset and its associated metadata files are the only items in the data package, then you can include these descriptions in higher level EML elements such as the dataset abstract in addition to or in place of descriptions at the entity level.</p>
+</div>
+<div id="standardized-content-for-formats-and-entity-types" class="section level4">
+<h4><span class="header-section-number">4.2.2.7</span> Standardized content for formats and entity types</h4>
+<p>In EML physical/dataFormat/externallyDefinedFormat, include a <strong>formatName </strong>indicating the spatial data file format. We recommend using format names from the <a href="https://cn.dataone.org/cn/v2/formats">DataONE format list</a> when possible. Some spatial items from that list are shown below. Always check the list for the most up-to-date version of these names.</p>
+<ul>
+<li>Esri Shapefile (zipped)</li>
+<li>Google Earth Keyhole Markup Language (KML)</li>
+<li>Google Earth Keyhole Markup Language (KML) Compressed archive</li>
+<li>Network Common Data Format, version 4</li>
+<li>Hierarchical Data Format version 5 (HDF5)</li>
+<li>GeoTIFF</li>
+<li>GeoPackage Encoding Standard (OGC) Format Family</li>
+<li>Esri File Geodatabase (zipped)</li>
+<li>GeoJSON, version RFC 7946</li>
+</ul>
+<p>If your format is not included in the DataONE list, consider submitting an issue to that GitHub repository’s issue tracker so that the format can be added.</p>
+<p>EML <strong>formatVersion</strong>, a sibling of formatName can be used to indicate the format version as in the example EML snippet below.</p>
+<pre><code>&lt;externallyDefinedFormat&gt;
+  &lt;formatName&gt;Network Common Data Format, version 4&lt;/formatName&gt;
+  &lt;formatVersion&gt;netCDF-4 classic&lt;/formatVersion&gt;
+&lt;/externallyDefinedFormat&gt;</code></pre>
+<p>For otherEntity, when populating the <strong>entityType </strong>element, use <strong>spatial raster</strong> or <strong>spatial vector </strong>as appropriate.</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="images-and-documents-as-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-gathered-with-small-moving-platforms.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

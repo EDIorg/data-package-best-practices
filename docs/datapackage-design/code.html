@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Code | Best Practices for Data Package Design</title>
+  <meta name="description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Code | Best Practices for Data Package Design" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Code | Best Practices for Data Package Design" />
+  
+  <meta name="twitter:description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
+  
+
+<meta name="author" content="Environmental Data Initiative" />
+
+
+<meta name="date" content="2021-02-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="model-based-datasets.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><h4><a class="brand" href="/data-package-best-practices/">Data Package Best Practices</a></h4></li>
+<ul>
+  <li><a href="/data-package-best-practices/EMLmetadata/">EML Metadata</a></li>
+  <li><a href="/data-package-best-practices/datapackage-design/">Data Package Design</a></li>
+  <li><a href="/data-package-best-practices/scientific_domain/">Data Products for Synthesis Research</a></li>
+</ul> 
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Data Package Design for Special Cases</a></li>
+<li class="chapter" data-level="1" data-path="code.html"><a href="code.html"><i class="fa fa-check"></i><b>1</b> Code</a><ul>
+<li class="chapter" data-level="1.1" data-path="code.html"><a href="code.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
+<li class="chapter" data-level="1.2" data-path="code.html"><a href="code.html#recommendations-for-data-packages"><i class="fa fa-check"></i><b>1.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="code.html"><a href="code.html#considerations-for-archiving-software-or-code"><i class="fa fa-check"></i><b>1.2.1</b> Considerations for archiving software or code</a></li>
+<li class="chapter" data-level="1.2.2" data-path="code.html"><a href="code.html#documenting-softwarecode"><i class="fa fa-check"></i><b>1.2.2</b> Documenting software/code</a></li>
+<li class="chapter" data-level="1.2.3" data-path="code.html"><a href="code.html#linking-code-and-data"><i class="fa fa-check"></i><b>1.2.3</b> Linking code and data</a></li>
+<li class="chapter" data-level="1.2.4" data-path="code.html"><a href="code.html#external-software"><i class="fa fa-check"></i><b>1.2.4</b> External software</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="code.html"><a href="code.html#resources"><i class="fa fa-check"></i><b>1.3</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="model-based-datasets.html"><a href="model-based-datasets.html"><i class="fa fa-check"></i><b>2</b> Model-Based Datasets</a><ul>
+<li class="chapter" data-level="2.1" data-path="model-based-datasets.html"><a href="model-based-datasets.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="model-based-datasets.html"><a href="model-based-datasets.html#recommendations-for-data-packages-1"><i class="fa fa-check"></i><b>2.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="model-based-datasets.html"><a href="model-based-datasets.html#referencing-models-in-eml"><i class="fa fa-check"></i><b>2.2.1</b> Referencing models in EML</a></li>
+<li class="chapter" data-level="2.2.2" data-path="model-based-datasets.html"><a href="model-based-datasets.html#model-input-and-output-data"><i class="fa fa-check"></i><b>2.2.2</b> Model input and output data</a></li>
+<li class="chapter" data-level="2.2.3" data-path="model-based-datasets.html"><a href="model-based-datasets.html#model-parameters"><i class="fa fa-check"></i><b>2.2.3</b> Model parameters</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="model-based-datasets.html"><a href="model-based-datasets.html#example-data-packages-in-edi"><i class="fa fa-check"></i><b>2.3</b> Example data packages in EDI</a></li>
+<li class="chapter" data-level="2.4" data-path="model-based-datasets.html"><a href="model-based-datasets.html#resources-1"><i class="fa fa-check"></i><b>2.4</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html"><i class="fa fa-check"></i><b>3</b> Images and Documents as Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#recommendations-for-data-packages-2"><i class="fa fa-check"></i><b>3.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#reasons-to-archive-documents-as-data"><i class="fa fa-check"></i><b>3.2.1</b> Reasons to archive documents as data</a></li>
+<li class="chapter" data-level="3.2.2" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#considerations-for-data-package-structure"><i class="fa fa-check"></i><b>3.2.2</b> Considerations for data package structure</a></li>
+<li class="chapter" data-level="3.2.3" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#documenting-data-packages"><i class="fa fa-check"></i><b>3.2.3</b> Documenting data packages</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#example-data-packages-in-edi-1"><i class="fa fa-check"></i><b>3.3</b> Example data packages in EDI</a></li>
+<li class="chapter" data-level="3.4" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#resources-2"><i class="fa fa-check"></i><b>3.4</b> Resources</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#considerations-for-digitizing-documents"><i class="fa fa-check"></i><b>3.4.1</b> Considerations for digitizing documents</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="spatial-data.html"><a href="spatial-data.html"><i class="fa fa-check"></i><b>4</b> Spatial Data</a><ul>
+<li class="chapter" data-level="4.1" data-path="spatial-data.html"><a href="spatial-data.html#introduction-3"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="spatial-data.html"><a href="spatial-data.html#recommendations-for-data-packages-3"><i class="fa fa-check"></i><b>4.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="spatial-data.html"><a href="spatial-data.html#considerations-for-archiving-spatial-data"><i class="fa fa-check"></i><b>4.2.1</b> Considerations for archiving spatial data</a></li>
+<li class="chapter" data-level="4.2.2" data-path="spatial-data.html"><a href="spatial-data.html#documenting-spatial-data-packages"><i class="fa fa-check"></i><b>4.2.2</b> Documenting spatial data packages</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html"><i class="fa fa-check"></i><b>5</b> Data Gathered with Small Moving Platforms</a><ul>
+<li class="chapter" data-level="5.1" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#introduction-4"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#recommendations-for-data-packages-4"><i class="fa fa-check"></i><b>5.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#metadata-for-moving-platform-data-packages-at-edi"><i class="fa fa-check"></i><b>5.2.1</b> Metadata for moving platform data packages at EDI</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#examples-and-additional-metadata-guidance"><i class="fa fa-check"></i><b>5.2.2</b> Examples and additional metadata guidance</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#resources-3"><i class="fa fa-check"></i><b>5.3</b> Resources</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#tips-and-tricks"><i class="fa fa-check"></i><b>5.3.1</b> Tips and Tricks</a></li>
+<li class="chapter" data-level="5.3.2" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#semantic-annotation"><i class="fa fa-check"></i><b>5.3.2</b> Semantic Annotation</a></li>
+<li class="chapter" data-level="5.3.3" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#references"><i class="fa fa-check"></i><b>5.3.3</b> References</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html"><i class="fa fa-check"></i><b>6</b> Data in Other Repositories</a><ul>
+<li class="chapter" data-level="6.1" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#introduction-5"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#recommendations-for-data-packages-5"><i class="fa fa-check"></i><b>6.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#considerations-for-creating-linked-data"><i class="fa fa-check"></i><b>6.2.1</b> Considerations for creating linked data</a></li>
+<li class="chapter" data-level="6.2.2" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#general-metadata-for-linked-data-packages-in-edi"><i class="fa fa-check"></i><b>6.2.2</b> General metadata for linked data packages in EDI</a></li>
+<li class="chapter" data-level="6.2.3" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#common-use-cases-and-their-structure-in-edi"><i class="fa fa-check"></i><b>6.2.3</b> Common use cases and their structure in EDI</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#nucleotide-sequence-and-genomic-data"><i class="fa fa-check"></i><b>6.3</b> Nucleotide sequence and genomic data</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#recommendations-for-sequencing-or-genomic-datasets"><i class="fa fa-check"></i><b>6.3.1</b> Recommendations for sequencing or genomic datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#example-data-packages-in-edi-2"><i class="fa fa-check"></i><b>6.4</b> Example data packages in EDI</a></li>
+<li class="chapter" data-level="6.5" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#appendix-tips-and-repository-information"><i class="fa fa-check"></i><b>6.5</b> Appendix: Tips and repository information</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#sequence-and-genomic-repository-information"><i class="fa fa-check"></i><b>6.5.1</b> Sequence and genomic repository information</a></li>
+<li class="chapter" data-level="6.5.2" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#tips-for-locating-metadata-in-sequence-and-genomic-data-repositories"><i class="fa fa-check"></i><b>6.5.2</b> Tips for locating metadata in sequence and genomic data repositories</a></li>
+<li class="chapter" data-level="6.5.3" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#darwin-core-standard-for-sequence-data"><i class="fa fa-check"></i><b>6.5.3</b> Darwin Core standard for sequence data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="large-data-sets.html"><a href="large-data-sets.html"><i class="fa fa-check"></i><b>7</b> Large Data Sets</a><ul>
+<li class="chapter" data-level="7.1" data-path="large-data-sets.html"><a href="large-data-sets.html#introduction-6"><i class="fa fa-check"></i><b>7.1</b> Introduction</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="large-data-sets.html"><a href="large-data-sets.html#background"><i class="fa fa-check"></i><b>7.1.1</b> Background</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="large-data-sets.html"><a href="large-data-sets.html#recommendations-for-data-packages-6"><i class="fa fa-check"></i><b>7.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="large-data-sets.html"><a href="large-data-sets.html#physical-storage"><i class="fa fa-check"></i><b>7.2.1</b> Physical Storage</a></li>
+<li class="chapter" data-level="7.2.2" data-path="large-data-sets.html"><a href="large-data-sets.html#data-package"><i class="fa fa-check"></i><b>7.2.2</b> Data package</a></li>
+<li class="chapter" data-level="7.2.3" data-path="large-data-sets.html"><a href="large-data-sets.html#package-metadata"><i class="fa fa-check"></i><b>7.2.3</b> Package Metadata</a></li>
+<li class="chapter" data-level="7.2.4" data-path="large-data-sets.html"><a href="large-data-sets.html#eml"><i class="fa fa-check"></i><b>7.2.4</b> EML</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="large-data-sets.html"><a href="large-data-sets.html#references-1"><i class="fa fa-check"></i><b>7.3</b> References</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="large-data-sets.html"><a href="large-data-sets.html#eml-documentation"><i class="fa fa-check"></i><b>7.3.1</b> EML documentation</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="large-data-sets.html"><a href="large-data-sets.html#potential-issues"><i class="fa fa-check"></i><b>7.4</b> Potential Issues</a></li>
+</ul></li>
+<li class="divider"></li>
+<ul>
+    <li><h4><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></h4></li>
+    <li><img class="img-responsive center-block" src="../../data-package-best-practices/images/EDI-logo-svg-240.png" alt="EDI Logo" height="90" width="90"/><li>
+</ul>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Best Practices for Data Package Design</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="code" class="section level1">
+<h1><span class="header-section-number">1</span> Code</h1>
+<p>Contributors: An T. Nguyen, Tim Whiteaker</p>
+<div id="introduction" class="section level2">
+<h2><span class="header-section-number">1.1</span> Introduction</h2>
+<p>This document describes best practices for archiving software, code, or scripts, such as a simulation model, data visualization package, or data manipulation scripts. The intention of these recommendations is to make research based on modeling or software more transparent rather than achieve exact reproducibility, i.e., provide sufficient documentation so that a knowledgeable person can understand algorithms, programming decisions, and their ramifications for the results, rather than run the model and obtain the same results.</p>
+<p>Examples of candidate archives for code include <a href="https://www.comses.net/">CoMSES Net</a>, which focuses on sharing models related to social and ecological sciences, and <a href="https://zenodo.org/">Zenodo</a>, a popular DOI-minting all-purpose repository, that can conveniently archive a specific version of <a href="https://guides.github.com/activities/citable-code/">code in a GitHub repository</a>. Alternatively, code may be archived in the EDI repository, either by itself or as part of a data package. The best practices in this document cover both archiving code in EDI and referencing code archived elsewhere.</p>
+<p>While metadata for software may be described in detail using the EML &lt;<strong>software</strong>&gt; tree, there exists a project called <a href="https://codemeta.github.io/index.html">CodeMeta</a> which is specifically designed for software metadata. Therefore, one of the key recommendations in this document is to include a CodeMeta file when archiving software or code in EDI.</p>
+</div>
+<div id="recommendations-for-data-packages" class="section level2">
+<h2><span class="header-section-number">1.2</span> Recommendations for data packages</h2>
+<div id="considerations-for-archiving-software-or-code" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Considerations for archiving software or code</h3>
+<ul>
+<li>If it is a model and/or a model-based dataset, please see the <a href="model-based-datasets.html">best practices for archiving model-based datasets</a>.</li>
+<li>How likely is it that the code will be well maintained into the future? For example, code packages submitted to established code repositories may stay there only while they comply with all testing requirements and may be removed if not well maintained (e.g., the R package repository CRAN). If that commitment to code maintenance is unlikely, such a package should be archived in a repository without maintenance requirements.</li>
+<li>Should the code be archived as a separate package or with the data?
+<ul>
+<li>If the code is used to generate several independent datasets it should be archived as a separate package.</li>
+<li>The software authors wishing to place it under a different license from that of the associated data, or to obtain a DOI for only the code, may be reasons to separate code and data packages.</li>
+<li>If deciding to package code separately, it may be archived on EDI or another repository. If archiving code outside of EDI, see section 2.2.4 for instructions on how to reference that code from related data packages in EDI.</li>
+<li>In most other cases, it is recommended to archive code and data together for context.</li>
+</ul></li>
+<li>Large community software packages are usually maintained and available elsewhere. However, they may undergo significant updates and it may make sense to archive the code of a certain version with the data for transparency reasons. Consider whether prior versions of a software package are available wherever that software is distributed.</li>
+<li>When choosing a repository for the code, consider the ease of the archiving process and how well the code can be described. For example, Zenodo offers an easy pathway to archive code that is currently in GitHub, though metadata requirements are very light. Following the best practices described herein, you would create a CodeMeta file if you were going to archive with EDI. This is more rigorous than Zenodo, but then your code is better described, and in a machine-readable way.</li>
+</ul>
+</div>
+<div id="documenting-softwarecode" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> Documenting software/code</h3>
+<p>When describing the code with EML, include the code as an otherEntity in a data package. Although a well documented human readable text format of the code is preferred, in case of multiple scripts, and/or where directory structure is important, a zip archive may be used. For the formatName and entityType elements in EML, we recommend using format names from the <a href="https://cn.dataone.org/cn/v2/formats">DataONE format list</a> when possible. Some format names are included in examples below. Always check the list for the most up-to-date version of these names.</p>
+<p>Example 1: EML otherEntity snippet for a script file.</p>
+<pre><code>&lt;otherEntity&gt;
+   &lt;entityName&gt;R script to process CTD data&lt;/entityName&gt;
+   &lt;entityDescription&gt;Annotated RMarkdown script to process, calibrate, and flag raw CTD data.&lt;/entityDescription&gt;
+   &lt;physical&gt;
+      &lt;objectName&gt;BLE_LTER_CTD_QAQC.Rmd&lt;/objectName&gt;
+      &lt;size unit=&quot;byte&quot;&gt;9674&lt;/size&gt;
+      &lt;authentication method=&quot;MD5&quot;&gt;8547b7a63fcf6c1f0913a5bd7549d9d1&lt;/authentication&gt;
+      &lt;dataFormat&gt;
+         &lt;externallyDefinedFormat&gt;
+            &lt;formatName&gt;R Markdown file&lt;/formatName&gt;
+         &lt;/externallyDefinedFormat&gt;
+      &lt;/dataFormat&gt;
+   &lt;/physical&gt;
+   &lt;entityType&gt;script&lt;/entityType&gt;
+&lt;/otherEntity&gt;</code></pre>
+<div id="software-license" class="section level4">
+<h4><span class="header-section-number">1.2.2.1</span> Software License</h4>
+<p>It is important to include a use license to make it clear how others can use your work. We recommend the <a href="https://creativecommons.org/share-your-work/public-domain/cc0/">Creative Commons “no copyright reserved” (CC0)</a> license, which places the software in the public domain and makes it easiest for end users to adapt and use your work. If a more restrictive license is required, we recommend the <a href="https://directory.fsf.org/wiki/License:Apache-2.0">Apache License, Version 2.0</a> license, a permissive license that allows others to reuse, modify, and redistribute your software.</p>
+<p>If a mix of data and code needs to be archived, and they each fall under different licenses, then separating them into different packages is advisable to eliminate ambiguity on which license applies to which portion of a data package. When a license other than a public domain dedication is used, then in addition to specifying the license in the metadata (see the “intellectualRights” element in EML), consider including a copy of the license at the beginning of the code files themselves so that the license is readily apparent to end users who peruse the code.</p>
+</div>
+<div id="codemeta" class="section level4">
+<h4><span class="header-section-number">1.2.2.2</span> CodeMeta</h4>
+<p>Include a CodeMeta JSON file for all code that is archived in EDI. The CodeMeta file should be named “codemeta.json” and listed as an EML otherEntity. The formatName should be “JavaScript Object Notation (JSON) file”, the entityType should be “metadata”, and the entityDescription should indicate that this is a CodeMeta file for a given software or script in the data package.</p>
+<p>For unnamed projects, e.g., one-off scripts for data processing, analysis, and/or visualisation, a CodeMeta file might appear to be overkill; however, CodeMeta files are simple to generate, and we recommend the below bare minimum. If there are multiple scripts each in their own otherEntity tag, we recommend aggregating information about them into one codemeta.json.</p>
+<p>Example 2: Minimum recommended codemeta.json example for unnamed projects.</p>
+<pre><code>{
+   &quot;@context&quot;: [&quot;https://doi.org/10.5063/schema/codemeta-2.0&quot;,
+      &quot;http://schema.org&quot;
+   ],
+   &quot;@type&quot;: &quot;SoftwareSourceCode&quot;,
+   &quot;description&quot;: &quot;RMarkdown script to calibrate and flag raw CTD data.&quot;,
+   &quot;author&quot;: {
+      &quot;@type&quot;: &quot;Person&quot;,
+      &quot;givenName&quot;: &quot;Christina&quot;,
+      &quot;familyName&quot;: &quot;Bonsell&quot;,
+      &quot;email&quot;: &quot;cbonsell@utexas.edu&quot;,
+      &quot;@id&quot;: &quot;https://orcid.org/0000-0002-8564-0618&quot;
+   },
+   &quot;keywords&quot;: [&quot;calibration&quot;, &quot;CTD&quot;, &quot;RMarkdown&quot;],
+   &quot;license&quot;: &quot;https://unlicense.org/&quot;,
+   &quot;dateCreated&quot;: &quot;2013-10-19&quot;,
+   &quot;programmingLanguage&quot;: {
+      &quot;@type&quot;: &quot;ComputerLanguage&quot;,
+      &quot;name&quot;: &quot;R&quot;,
+      &quot;version&quot;: &quot;3.6.2&quot;,
+      &quot;url&quot;: &quot;https://r-project.org&quot;
+   }
+}</code></pre>
+<p>Example 3: sample otherEntity metadata for example 2â€™s codemeta.json.</p>
+<pre><code>&lt;otherEntity&gt;
+   &lt;entityName&gt;CodeMeta file for BLE_LTER_CTD_QAQC.Rmd&lt;/entityName&gt;
+   &lt;entityDescription&gt;CodeMeta file for annotated RMarkdown script to process, calibrate, and flag raw CTD data.&lt;/entityDescription&gt;
+   &lt;physical&gt;
+      &lt;objectName&gt;codemeta.json&lt;/objectName&gt;
+      &lt;size unit=&quot;byte&quot;&gt;702&lt;/size&gt;
+      &lt;authentication method=&quot;MD5&quot;&gt;8547b7a63abc6c1f0913a5bd7549d9d1&lt;/authentication&gt;
+      &lt;dataFormat&gt;
+         &lt;externallyDefinedFormat&gt;
+            &lt;formatName&gt;application/json&lt;/formatName&gt;
+         &lt;/externallyDefinedFormat&gt;
+      &lt;/dataFormat&gt;
+   &lt;/physical&gt;
+   &lt;entityType&gt;CodeMeta&lt;/entityType&gt;
+&lt;/otherEntity&gt;</code></pre>
+<p>For named projects, also include the software name, and the version if applicable. The example below shows some additional metadata you can include. See also the more complete <a href="https://docs.ropensci.org/codemetar/articles/codemeta-intro.html">codemetar example</a> and the available <a href="https://codemeta.github.io/terms/">CodeMeta terms</a>.</p>
+<p>Example 4: A more complete CodeMeta example for named projects. Example taken from the CodeMeta project Github with edits for brevity.</p>
+<pre><code>{
+   &quot;@context&quot;: [&quot;https://doi.org/10.5063/schema/codemeta-2.0&quot;,
+      &quot;http://schema.org&quot;
+   ],
+   &quot;@type&quot;: &quot;SoftwareSourceCode&quot;,
+   &quot;name&quot;: &quot;codemetar: Generate &#39;CodeMeta&#39; Metadata for R Packages&quot;,
+   &quot;description&quot;: &quot;A JSON-LD format for software metadata&quot;,
+   &quot;author&quot;: [{
+         &quot;@type&quot;: &quot;Person&quot;,
+         &quot;givenName&quot;: &quot;Carl&quot;,
+         &quot;familyName&quot;: &quot;Boettiger&quot;,
+         &quot;email&quot;: &quot;cboettig@gmail.com&quot;,
+         &quot;@id&quot;: &quot;https://orcid.org/0000-0002-1642-628X&quot;
+      },
+      {
+         &quot;@type&quot;: &quot;Person&quot;,
+         &quot;givenName&quot;: &quot;MaÃ«lle&quot;,
+         &quot;familyName&quot;: &quot;Salmon&quot;,
+         &quot;@id&quot;: &quot;https://orcid.org/0000-0002-2815-0399&quot;
+      }
+   ],
+   &quot;codeRepository&quot;: &quot;https://github.com/ropensci/codemetar&quot;,
+   &quot;dateCreated&quot;: &quot;2013-10-19&quot;,
+   &quot;license&quot;: &quot;https://spdx.org/licenses/GPL-3.0&quot;,
+   &quot;version&quot;: &quot;0.1.8&quot;,
+   &quot;programmingLanguage&quot;: {
+      &quot;@type&quot;: &quot;ComputerLanguage&quot;,
+      &quot;name&quot;: &quot;R&quot;,
+      &quot;version&quot;: &quot;3.5.3&quot;,
+      &quot;url&quot;: &quot;https://r-project.org&quot;
+   },
+   &quot;softwareRequirements&quot;: [{
+         &quot;@type&quot;: &quot;SoftwareApplication&quot;,
+         &quot;identifier&quot;: &quot;R&quot;,
+         &quot;name&quot;: &quot;R&quot;,
+         &quot;version&quot;: &quot;&gt;= 3.0.0&quot;
+      },
+      {
+         &quot;@type&quot;: &quot;SoftwareApplication&quot;,
+         &quot;identifier&quot;: &quot;git2r&quot;,
+         &quot;name&quot;: &quot;git2r&quot;,
+         &quot;provider&quot;: {
+            &quot;@id&quot;: &quot;https://cran.r-project.org&quot;,
+            &quot;@type&quot;: &quot;Organization&quot;,
+            &quot;name&quot;: &quot;Comprehensive R Archive Network (CRAN)&quot;,
+            &quot;url&quot;: &quot;https://cran.r-project.org&quot;
+         }
+      }
+   ],
+   &quot;keywords&quot;: [&quot;metadata&quot;, &quot;codemeta&quot;, &quot;ropensci&quot;]
+}</code></pre>
+</div>
+<div id="metadata-to-enable-reproducibility" class="section level4">
+<h4><span class="header-section-number">1.2.2.3</span> Metadata to enable reproducibility</h4>
+<p>When archiving software, we strongly recommend including a user guide with installation and usage instructions if such would not already be apparent to the typical user. Take into account that the user might not have access to certain inputs that the software/scripts require. Include when feasible at least some example data, and configure the script so that it is ready to run with the example data.</p>
+<p>Aside from the software/code itself and its dependencies, other pieces of information may be important should a user wish to reproduce results, such as the operating system and version and the system locale. Include this information in the data packageâ€™s methods/methodStep/description. For certain tools, there are ways to easily generate this information, e.g., a call to sessionInfo() in the R console. If the system outputs this information in a standardly formatted plain text file, that might be included as an otherEntity.</p>
+</div>
+</div>
+<div id="linking-code-and-data" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> Linking code and data</h3>
+<p>There are a few solutions for providing explicit machine-readable linkages between different entities/packages (the distinction between code/data doesnâ€™t matter too much here). For most cases we recommend the simplest approach, which is to use the methods/methodStep/description element of EML. More advanced users may wish to utilize the other solutions described herein.</p>
+<div id="descriptive-approach" class="section level4">
+<h4><span class="header-section-number">1.2.3.1</span> Descriptive approach</h4>
+<p>In the dataset methods/methodStep/description element, include verbal descriptions such as “results.csv was derived from raw_data.csv using script.R” and repeat for all entities. If code and data reside in different packages, be sure to specify that.</p>
+</div>
+<div id="the-eml-datasource-element" class="section level4">
+<h4><span class="header-section-number">1.2.3.2</span> The EML dataSource element</h4>
+<p>Nested under methods/methodStep, dataSource elements describe other data packages that serve as source for the current package. dataSource looks like a mini-EML tree describing the source data. Example: <a href="http://portal.edirepository.org/nis/simpleSearch?defType=edismax&amp;q=ecocomDP&amp;fq=-scope:ecotrends&amp;fq=-scope:lter-landsat*&amp;fl=id,packageid,title,author,organization,pubdate,coordinates&amp;debug=false">ecocomDP packages</a> list the original packages under dataSource. dataSource does not describe relationships between entities in the same package, and as far as we know there is no explicit way in EML to do so.</p>
+</div>
+<div id="provone" class="section level4">
+<h4><span class="header-section-number">1.2.3.3</span> ProvONE</h4>
+<p><a href="http://jenkins-1.dataone.org/jenkins/view/Documentation%20Projects/job/ProvONE-Documentation-trunk/ws/provenance/ProvONE/v1/provone.html">ProvONE</a> is a model developed by DataONE affiliates for provenance or denoting relationships between data entities. Each package on DataONE is described by a science metadata document (e.g., EML, ISO, FGDC) and a resource map document following ProvONE. The resource map powers a nice display of data relationships (see <a href="https://arcticdata.io/catalog/view/doi%3A10.18739%2FA2556Q">this package on the Arctic Data Center</a>). This handles both relationships between entities in the same package and entities residing in different packages. However, note that EDI currently does not utilize this model.</p>
+</div>
+</div>
+<div id="external-software" class="section level3">
+<h3><span class="header-section-number">1.2.4</span> External software</h3>
+<p>Large community-backed tools or proprietary software such as ArcGIS Pro or Microsoft Excel do not need to be archived. However, if they have had any impact on the final data (e.g., ArcGIS Pro was used to modify spatial rasters), the EML methods section should describe the routines performed. Within the data package, indicate linkage to external software as follows.</p>
+<ul>
+<li>Briefly describe the software/code and its relationship to the data in EMLâ€™s methods/methodStep/description element.</li>
+<li>Names of all software used. Include both the common acronym and the full spelling.</li>
+<li>The URL(s) to all models/software used. Stable, persistent URLs pointing to exact version(s) are preferable, rather than generic links such as a project homepage. If the archived model has a DOI, then include a full citation to the model in the methods/methodStep/description text. The exception to this is when referencing tools such as Excel that have achieved global household name status.</li>
+<li>Broadly, the system setup used, if relevant.</li>
+<li>Information on exact versions for all code used (including dependencies). This is important, e.g., ArcGIS Pro 2.4.1 is very different from ArcGIS for Desktop 10.7.1. Different systems have methods to easily generate this information, e.g. a call to sessionInfo() in the R console.</li>
+<li>Consider, if applicable, to archive the “runfile” as its own data entity within the data package, i.e., the script(s) that sets parameters and/or calls on functions imported from external software.</li>
+</ul>
+<p>Example 5: EML method description referring to external software.</p>
+<pre><code>&lt;methods&gt;
+   &lt;methodStep&gt;
+      &lt;description&gt;
+         &lt;para&gt;           
+            The seagrass coverage raster was created in ArcGIS Pro (version
+            2.4.3, by Esri) using the IDW geoprocessing tool on
+            sampling_points.csv with a power of 2 and the nearest
+            12 points.
+         &lt;/para&gt;
+         &lt;para&gt;
+            The raster was then refined using the seagrass-refiner package
+            with the auto-refine option checked (Smith, 2017).
+         &lt;/para&gt;
+         &lt;para&gt;
+            Smith, J. (2017). seagrass-refiner: a package that does the cool
+            seagrass stuff, Version 1.2, Zenodo.  https://doi.org/this-is/a-fake-doi,
+            2017.
+         &lt;/para&gt;
+      &lt;/description&gt;
+   &lt;/methodStep&gt;
+&lt;/methods&gt;</code></pre>
+</div>
+</div>
+<div id="resources" class="section level2">
+<h2><span class="header-section-number">1.3</span> Resources</h2>
+<p><a href="https://codemeta.github.io/">CodeMeta</a> website</p>
+<p><a href="https://codemeta.github.io/crosswalk/">CodeMeta crosswalks</a> for a number of popular software</p>
+<p><a href="https://codemeta.github.io/terms/">CodeMeta terms</a> you can use for describing software</p>
+<p>A description of some <a href="https://opensource.org/licenses">software licenses</a></p>
+<p><a href="model-based-datasets.html">Best practices document to archiving model-based datasets</a></p>
+<p><a href="http://jenkins-1.dataone.org/jenkins/view/Documentation%20Projects/job/ProvONE-Documentation-trunk/ws/provenance/ProvONE/v1/provone.html">ProvONE documentation</a></p>
+<p><a href="https://www.w3.org/TR/prov-o/">W3C PROV-O documentation</a></p>
+<p><a href="https://docs.google.com/document/d/1JeznivTDubi0ZX_lsO50eCUl-8zxSiz_xq5SsBRwbuw/edit">Licensing software as part of an EDI data package</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="model-based-datasets.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
