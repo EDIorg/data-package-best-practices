@@ -19,21 +19,21 @@ This website contains current \"Best Practice\" recommendations for ecological a
 To participate in the "Best Practices for Data Packages" project, see "[About this site](about/about-this-website.html)".
 
 
-## EML Metadata Concepts
+## [EML Metadata Concepts](EMLmetadata/index.html)
 The recommendations for EML metadata apply to all data packages. This section subsumes V3 of the static PDF document "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)," last updated in 2017. The entire most recent (versioned, citable) release will be made available as a PDF. 
 
 
  **[Best Practices for Dataset Metadata in Ecological Metadata Language (EML)](EMLmetadata/index.html)**
   
   
-## Data Package Design
+## [Data Package Design](datapackage-design/index.html)
 Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories. 
 
 
 **[Recommendations for data package design](datapackage-design/index.html)**
 
 
-## Data Products for Synthesis Research
+## [Data Products for Synthesis Research](scientific_domain/index.html)
 Recommendations for community developed data products. The data packages are derived from raw data and reformatted to meet certain data harmonization standards. Many of these data products have extensive related code bases, which recommendations can take into account and link to. 
 
 
