@@ -7,7 +7,8 @@ Contributors: Margaret O’Brien, Corinna Gries, Mark Servilla
 Data entities are kept offline when they are too large to be handled easily by the HTTP protocol, are expected to be rarely requested, and can be mailed on an external drive.  If you suspect your data fall into this category, contact EDI for advice (support@environmentaldatainitiative.org). Below are recommendations for the EDI repository's handling of data packages that have an offline component.
 
 ### Background
-Standard practice is to handle data entities (both upload and download) via the HTTP protocol, using a URL. However, for very large datasets HTTP can fail due to physical limits. The limit for “too large” is somewhat subjective; EDI's current limit for datasets that are “too large for HTTP” is 100GB (all data and metadata). 
+
+Standard practice is to handle data entities (both upload and download) via the HTTP protocol, using a URL. However, for very large datasets HTTP can fail due to physical limits. The limit for “too large” is somewhat subjective; EDI's current limit for datasets that are “too large for HTTP” is 100GB (all data and metadata).
 
 ## Recommendations for data packages
 
@@ -15,9 +16,9 @@ Standard practice is to handle data entities (both upload and download) via the 
 
 * The use of a Solid-state Drive (SSD) is strongly recommended for all offline data storage. The SSD should be formatted using one of the following file systems: 1) exFAT, 2) NTFS, or 3) ext4. Each of these file systems can accommodate individual file sizes greater than 1TB.
 
-*   Add data to external drive in native (non-compressed, non-tarred, non-zipped) format, deliver to EDI (e.g., by physical mail).
-*   EDI will store three copies, one external hard drive each in New Mexico and in Wisconsin, one copy in general EDI backup cloud storage.
-*   Please mail one copy each to:
+* Add data to external drive in native (non-compressed, non-tarred, non-zipped) format, deliver to EDI (e.g., by physical mail).
+* EDI will store three copies, one external hard drive each in New Mexico and in Wisconsin, one copy in general EDI backup cloud storage.
+* Please mail one copy each to:
 
 Attn: Mark Servilla
 UNM Biology, Castetter Hall 1480
@@ -32,45 +33,42 @@ Madison WI 53706-1413
 
 ### Data package
 
-*   The external hard drive should contain at least two entities: the data (which will be offline) and an inventory or manifest that describe the contents of the external hard drive.
-*   Content of the manifest (inventory of holdings) would be dictated by the type of data entity. The **manifest will be available as an online entity** (through the EDI Data Portal) so that potential requestors can evaluate the offline resource before requesting it.
-*  Suggested columns are:
-    *   Filename(s)
-    *   Format (netCDF, tabular csv, etc.)
-    *   Start_datetime
-    *   End_datetime
-    *   Location_lat
-    *   Location_lon
-    *   (other params the PIs may feel are essential)
-    *   Checksum
+* The external hard drive should contain at least two entities: the data (which will be offline) and an inventory or manifest that describe the contents of the external hard drive.
+* Content of the manifest (inventory of holdings) would be dictated by the type of data entity. The **manifest will be available as an online entity** (through the EDI Data Portal) so that potential requestors can evaluate the offline resource before requesting it.
+* Suggested columns are:
+  * Filename(s)
+  * Format (netCDF, tabular csv, etc.)
+  * Start_datetime
+  * End_datetime
+  * Location_lat
+  * Location_lon
+  * (other params the PIs may feel are essential)
+  * Checksum
 
-### Package Metadata 
+### Package Metadata
 
 (in EDI metadata template and converted to EML - generally, as for any data package)
 
-*   Abstract: describe the collection generally. If individual files require specific software to read, provide the name of that software.
-*   Creators
-*   Contact (will be responsible for sending out copies as requested.) positionName: EDI Repository Manager Email: support@environmentaldatainitiative.org
-*   Methods - detailed collection/generation methods for the offline data entities. Detailed information for re-using the data. (May instead be included in the manifest table if different for different offline files.)
-*   Data Entities
-    * Offline Entity: 
-        *   Describe as you would for an online resource. Restate the software needed to read the individual files if this is important to a user. See [Table 1](#table_1) and [Sample XML](#sample_xml_offline).
-    * Manifest (inventory of the offline holdings)
-        *    Column descriptions as for any data table
+* Abstract: describe the collection generally. If individual files require specific software to read, provide the name of that software.
+* Creators
+* Contact (will be responsible for sending out copies as requested.) positionName: EDI Repository Manager Email: support@environmentaldatainitiative.org
+* Methods - detailed collection/generation methods for the offline data entities. Detailed information for re-using the data. (May instead be included in the manifest table if different for different offline files.)
+* Data Entities
+  * Offline Entity:
+    * Describe as you would for an online resource. Restate the software needed to read the individual files if this is important to a user. See [Table 1](#table_1) and [Sample XML](#sample_xml_offline).
+  * Manifest (inventory of the offline holdings)
+    * Column descriptions as for any data table
 
 ### EML
 
 In addition to basic resource-level metadata, at least two entities should be described:
 
-
-*   Manifest (inventory) should be a tableEntity: will be the online entity and described as all 
-*   Offline entity: 
-    *   Fill out high-level fields as for an online resource. Restate the software needed to read the individual files if this is important to a user. 
-    *   Distribution node will be `offline` (See Table 1, code block)
-
+* Manifest (inventory) should be a tableEntity: will be the online entity and described as all
+* Offline entity:
+  * Fill out high-level fields as for an online resource. Restate the software needed to read the individual files if this is important to a user.
+  * Distribution node will be `offline` (See Table 1, code block)
 
 #### Table 1. Three required fields for an offline distribution  {#table_1}
-
 
 <table>
   <tr>
@@ -93,7 +91,6 @@ In addition to basic resource-level metadata, at least two entities should be de
   </tr>
 </table>
 
-
 #### Sample XML, offline entity   {#sample_xml_offline}
 
 ```xml
@@ -114,9 +111,7 @@ In addition to basic resource-level metadata, at least two entities should be de
 
 ```
 
-
-##  References
-
+## References
 
 ### EML documentation
 
@@ -126,10 +121,5 @@ Look for the PhysicalDistributionType
 
 ## Potential Issues
 
-- SSD formatting (eventually, whatever we use, it will become unusable).
-
-- Even with cloud storage, eventually a binary format will become unusable.
-
-
-
-
+* SSD formatting (eventually, whatever we use, it will become unusable).
+* Even with cloud storage, eventually a binary format will become unusable.
