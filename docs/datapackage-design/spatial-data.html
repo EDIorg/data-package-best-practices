@@ -24,7 +24,7 @@
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2021-02-24" />
+<meta name="date" content="2021-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -259,18 +259,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Strongly recommended formats:</p>
 <ul>
 <li><strong>GeoTIFF</strong> - An open format for storing spatial raster data and metadata in a TIFF file.</li>
-<li><strong>GeoPackage </strong>- A standard format from the Open Geospatial Consortium (OGC) for storing vector and raster data in a SQLite database file.</li>
+<li><strong>GeoPackage</strong> - A standard format from the Open Geospatial Consortium (OGC) for storing vector and raster data in a SQLite database file.</li>
 </ul>
 <p>Some other formats to consider are listed below.</p>
 <ul>
-<li><strong>KML/KMZ </strong>- Keyhole Markup Language (KML) file and its zipped version for storing vector data. This format was popularized by Google Earth and is now an OGC standard. KML is best visualized in Google software and may not render as well in other GIS software.</li>
-<li><strong>GeoJSON </strong>- A format for storing vector data as text in JavaScript Object Notation (JSON). GeoJSON data are limited to the WGS84 coordinate system.</li>
+<li><strong>KML/KMZ</strong> - Keyhole Markup Language (KML) file and its zipped version for storing vector data. This format was popularized by Google Earth and is now an OGC standard. KML is best visualized in Google software and may not render as well in other GIS software.</li>
+<li><strong>GeoJSON</strong> - A format for storing vector data as text in JavaScript Object Notation (JSON). GeoJSON data are limited to the WGS84 coordinate system.</li>
 <li><strong>netCDF/HDF5</strong> - binary formats originally designed for storing multidimensional arrays of spatial data typically organized onto a grid, but which now can accommodate vector data following the NetCDF Climate and Forecast Conventions (version 1.8 or higher).</li>
 </ul>
 <p>A couple of Esri formats are worth mentioning and are listed below.</p>
 <ul>
-<li><strong>File geodatabase </strong>- One of Esri’s formats for storing vector and raster information. Several feature classes and rasters can be stored in this folder and file based structure. GDAL’s OpenFileGDB driver enables non-Esri software to view at least the data layers in a file geodatabase, but usage of more advanced file geodatabase components such as topology rules or geometric networks may not be available outside of Esri software. Field types may not be imported correctly either. Export to GeoPackage instead, unless geodatabase is the only format that supports the advanced representation of your GIS data. Just know that you limit potential reuse of your data if you use this format.</li>
-<li><strong>Shapefile </strong>- A legacy format for vector data which is widely supported. Be aware of <a href="https://en.wikipedia.org/wiki/Shapefile#Limitations">shapefile limitations</a> when considering this format. A shapefile consists of several individual files; include them as a single zip file in the data package. If the package has more than one shapefile, create a separate zip file for each shapefile.</li>
+<li><strong>File geodatabase</strong> - One of Esri’s formats for storing vector and raster information. Several feature classes and rasters can be stored in this folder and file based structure. GDAL’s OpenFileGDB driver enables non-Esri software to view at least the data layers in a file geodatabase, but usage of more advanced file geodatabase components such as topology rules or geometric networks may not be available outside of Esri software. Field types may not be imported correctly either. Export to GeoPackage instead, unless geodatabase is the only format that supports the advanced representation of your GIS data. Just know that you limit potential reuse of your data if you use this format.</li>
+<li><strong>Shapefile</strong> - A legacy format for vector data which is widely supported. Be aware of <a href="https://en.wikipedia.org/wiki/Shapefile#Limitations">shapefile limitations</a> when considering this format. A shapefile consists of several individual files; include them as a single zip file in the data package. If the package has more than one shapefile, create a separate zip file for each shapefile.</li>
 </ul>
 <p>Although other open formats exist, their implementation in popular GIS software may be less common. If a proprietary format must be used to capture the full meaning of the data, consider also including a version of the data in an open format such as a simple data table along with metadata explaining its limitations in that format, or instructions on how to utilize the proprietary format. For example, an Esri layer package could be used when including recommended symbols for drawing vector features in a GIS is desired, in which case one could note that the vector data can be extracted by treating the layer package as a zip file.</p>
 <p>Formats that are composed of more than one file, such as shapefiles, should be zipped. Include one dataset per zip file. For example, if you have 10 shapefiles, you would create 10 zip files.</p>
@@ -319,7 +319,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="keywords" class="section level4">
 <h4><span class="header-section-number">4.2.2.4</span> Keywords</h4>
 <p>Clearly identifying a dataset as spatial in nature is important to discoverability. This can be achieved by the use of keywords in the EML keyword elements as well as in the title/abstract and methods where appropriate. Keywords frequently searched include: GIS, geographic information system, spatial data, plus the more specific format names like shapefile, geoTIFF etc. Consider including as appropriate.</p>
-<p>Do include the keywords <strong>spatial vector </strong>and <strong>spatial raster </strong>as appropriate for your data. These keywords should be used especially if the data are archived as otherEntity.</p>
+<p>Do include the keywords <strong>spatial vector</strong> and <strong>spatial raster</strong> as appropriate for your data. These keywords should be used especially if the data are archived as otherEntity.</p>
 <p>You may also include keywords that describe broad spatial data layers, e.g., digital elevation model, elevation, boundary, land use, land cover, census, parcel, imagery, as well as keywords that describe the specifics associated with a broad spatial data layer, e.g., land cover types such as water and vegetation types, land use types such as urban and forest, and so on.</p>
 </div>
 <div id="gis-software-compatible-metadata" class="section level4">
@@ -333,7 +333,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="standardized-content-for-formats-and-entity-types" class="section level4">
 <h4><span class="header-section-number">4.2.2.7</span> Standardized content for formats and entity types</h4>
-<p>In EML physical/dataFormat/externallyDefinedFormat, include a <strong>formatName </strong>indicating the spatial data file format. We recommend using format names from the <a href="https://cn.dataone.org/cn/v2/formats">DataONE format list</a> when possible. Some spatial items from that list are shown below. Always check the list for the most up-to-date version of these names.</p>
+<p>In EML physical/dataFormat/externallyDefinedFormat, include a <strong>formatName</strong> indicating the spatial data file format. We recommend using format names from the <a href="https://cn.dataone.org/cn/v2/formats">DataONE format list</a> when possible. Some spatial items from that list are shown below. Always check the list for the most up-to-date version of these names.</p>
 <ul>
 <li>Esri Shapefile (zipped)</li>
 <li>Google Earth Keyhole Markup Language (KML)</li>
@@ -347,11 +347,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>If your format is not included in the DataONE list, consider submitting an issue to that GitHub repository’s issue tracker so that the format can be added.</p>
 <p>EML <strong>formatVersion</strong>, a sibling of formatName can be used to indicate the format version as in the example EML snippet below.</p>
-<pre><code>&lt;externallyDefinedFormat&gt;
-  &lt;formatName&gt;Network Common Data Format, version 4&lt;/formatName&gt;
-  &lt;formatVersion&gt;netCDF-4 classic&lt;/formatVersion&gt;
-&lt;/externallyDefinedFormat&gt;</code></pre>
-<p>For otherEntity, when populating the <strong>entityType </strong>element, use <strong>spatial raster</strong> or <strong>spatial vector </strong>as appropriate.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">&lt;externallyDefinedFormat&gt;</span></a>
+<a class="sourceLine" id="cb8-2" title="2">  <span class="kw">&lt;formatName&gt;</span>Network Common Data Format, version 4<span class="kw">&lt;/formatName&gt;</span></a>
+<a class="sourceLine" id="cb8-3" title="3">  <span class="kw">&lt;formatVersion&gt;</span>netCDF-4 classic<span class="kw">&lt;/formatVersion&gt;</span></a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="kw">&lt;/externallyDefinedFormat&gt;</span></a></code></pre></div>
+<p>For otherEntity, when populating the <strong>entityType</strong> element, use <strong>spatial raster</strong> or <strong>spatial vector</strong> as appropriate.</p>
 
 </div>
 </div>

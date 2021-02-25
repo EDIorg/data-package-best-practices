@@ -24,7 +24,7 @@
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2021-02-24" />
+<meta name="date" content="2021-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -253,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.2</span> Recommendations for data packages</h2>
 <div id="considerations-for-creating-linked-data" class="section level3">
 <h3><span class="header-section-number">6.2.1</span> Considerations for creating linked data</h3>
-<p>In practice, links to data in other repositories can be achieved using metadata only, by including a data inventory file, or, although not recommended, by duplicating the data in the new repository record. <strong>Generally, duplicating data in multiple repositories is not recommended because it creates two problems. </strong>First, it is a burden to maintain multiple copies of a dataset and avoid divergence between them. Second, it can create confusion for data re-users who may download or cite the same data multiple times. Care must be taken to clearly identify such duplications for data users when they are created. Whenever linked datasets are created, it is strongly recommended that both repositories are aligned with FAIR data principles, <a href="https://doi.org/10.1038/sdata.2016.18">outlined here</a>, so that users have unfettered access to all data and metadata.</p>
+<p>In practice, links to data in other repositories can be achieved using metadata only, by including a data inventory file, or, although not recommended, by duplicating the data in the new repository record. <strong>Generally, duplicating data in multiple repositories is not recommended because it creates two problems.</strong> First, it is a burden to maintain multiple copies of a dataset and avoid divergence between them. Second, it can create confusion for data re-users who may download or cite the same data multiple times. Care must be taken to clearly identify such duplications for data users when they are created. Whenever linked datasets are created, it is strongly recommended that both repositories are aligned with FAIR data principles, <a href="https://doi.org/10.1038/sdata.2016.18">outlined here</a>, so that users have unfettered access to all data and metadata.</p>
 <p>In addition to these considerations, there are a number of reasons to create a new repository record that is linked to data in other repositories. Each of these reasons, which are outlined below, has pros and cons that will need to be weighed from the different perspectives of the data user, data provider and research project management requirements.</p>
 <ul>
 <li><strong>Requirements dictate multiple repositories:</strong> Large research projects or sites are frequently funded by different agencies and programs. Data collection may be supported by several such funding streams and, hence, fall in the purview of more than one requirement to archive data in a particular repository. In some cases, data repositories already accommodate such requirements by linking or replicating data appropriately. Examples of this are LTER data in EDI, NSF BCO-DMO and NSF ADC.</li>
@@ -409,33 +409,33 @@ DOI of publication providing in-depth context for data
 <li>The EDI portal interface provides <a href="https://portal.edirepository.org/nis/provenanceGenerator.jsp">automatic generation of provenance metadata</a> EML snippets for datasets in EDI. The <a href="https://github.com/EDIorg/emlAssemblyLine">EMLassemblyline</a> and <a href="https://github.com/BLE-LTER/MetaEgress">MetaEgress</a> (in connection with <a href="https://github.com/lter/LTER-core-metabase">LTER-core-metabase</a>) R packages for EML creation will also generate provenance metadata.</li>
 </ul>
 <p>Example 1: EML snippet with a data provenance methodStep:</p>
-<pre><code>&lt;methodStep&gt;
-   &lt;description&gt;
-      &lt;para&gt;This methodStep contains data provenance information as specified in the LTER EML Best Practices. Each dataSource element here lists entity-specific information and links to source data used in the creation of this derivative data package.&lt;/para&gt;
-   &lt;/description&gt;
-   &lt;dataSource&gt;
-      &lt;title&gt;Source dataset title&lt;/title&gt;
-      &lt;creator&gt;
-         &lt;individualName&gt;
-            &lt;givenName&gt;first name&lt;/givenName&gt;
-            &lt;surName&gt;last name&lt;/surName&gt;
-         &lt;/individualName&gt;
-         &lt;organizationName&gt;organization name&lt;/organizationName&gt;
-         &lt;electronicMailAddress&gt;email@some.edu&lt;/electronicMailAddress&gt;
-      &lt;/creator&gt;
-      &lt;distribution&gt;
-         &lt;online&gt;
-            &lt;onlineDescription&gt;This is a link to an external online data resource (describe resource and repository location).&lt;/onlineDescription&gt;
-            &lt;url function=&quot;information&quot;&gt;https://pasta.lternet.edu/package/metadata/eml/knb-lter-ntl/80/2&lt;/url&gt;
-         &lt;/online&gt;
-      &lt;/distribution&gt;
-      &lt;contact&gt;
-         &lt;positionName&gt;Information Manager&lt;/positionName&gt;
-         &lt;organizationName&gt;organization name&lt;/organizationName&gt;
-         &lt;electronicMailAddress&gt;infomgr@some.edu&lt;/electronicMailAddress&gt;
-      &lt;/contact&gt;
-   &lt;/dataSource&gt;
-&lt;/methodStep&gt;</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">&lt;methodStep&gt;</span></a>
+<a class="sourceLine" id="cb9-2" title="2">   <span class="kw">&lt;description&gt;</span></a>
+<a class="sourceLine" id="cb9-3" title="3">      <span class="kw">&lt;para&gt;</span>This methodStep contains data provenance information as specified in the LTER EML Best Practices. Each dataSource element here lists entity-specific information and links to source data used in the creation of this derivative data package.<span class="kw">&lt;/para&gt;</span></a>
+<a class="sourceLine" id="cb9-4" title="4">   <span class="kw">&lt;/description&gt;</span></a>
+<a class="sourceLine" id="cb9-5" title="5">   <span class="kw">&lt;dataSource&gt;</span></a>
+<a class="sourceLine" id="cb9-6" title="6">      <span class="kw">&lt;title&gt;</span>Source dataset title<span class="kw">&lt;/title&gt;</span></a>
+<a class="sourceLine" id="cb9-7" title="7">      <span class="kw">&lt;creator&gt;</span></a>
+<a class="sourceLine" id="cb9-8" title="8">         <span class="kw">&lt;individualName&gt;</span></a>
+<a class="sourceLine" id="cb9-9" title="9">            <span class="kw">&lt;givenName&gt;</span>first name<span class="kw">&lt;/givenName&gt;</span></a>
+<a class="sourceLine" id="cb9-10" title="10">            <span class="kw">&lt;surName&gt;</span>last name<span class="kw">&lt;/surName&gt;</span></a>
+<a class="sourceLine" id="cb9-11" title="11">         <span class="kw">&lt;/individualName&gt;</span></a>
+<a class="sourceLine" id="cb9-12" title="12">         <span class="kw">&lt;organizationName&gt;</span>organization name<span class="kw">&lt;/organizationName&gt;</span></a>
+<a class="sourceLine" id="cb9-13" title="13">         <span class="kw">&lt;electronicMailAddress&gt;</span>email@some.edu<span class="kw">&lt;/electronicMailAddress&gt;</span></a>
+<a class="sourceLine" id="cb9-14" title="14">      <span class="kw">&lt;/creator&gt;</span></a>
+<a class="sourceLine" id="cb9-15" title="15">      <span class="kw">&lt;distribution&gt;</span></a>
+<a class="sourceLine" id="cb9-16" title="16">         <span class="kw">&lt;online&gt;</span></a>
+<a class="sourceLine" id="cb9-17" title="17">            <span class="kw">&lt;onlineDescription&gt;</span>This is a link to an external online data resource (describe resource and repository location).<span class="kw">&lt;/onlineDescription&gt;</span></a>
+<a class="sourceLine" id="cb9-18" title="18">            <span class="kw">&lt;url</span><span class="ot"> function=</span><span class="st">&quot;information&quot;</span><span class="kw">&gt;</span>https://pasta.lternet.edu/package/metadata/eml/knb-lter-ntl/80/2<span class="kw">&lt;/url&gt;</span></a>
+<a class="sourceLine" id="cb9-19" title="19">         <span class="kw">&lt;/online&gt;</span></a>
+<a class="sourceLine" id="cb9-20" title="20">      <span class="kw">&lt;/distribution&gt;</span></a>
+<a class="sourceLine" id="cb9-21" title="21">      <span class="kw">&lt;contact&gt;</span></a>
+<a class="sourceLine" id="cb9-22" title="22">         <span class="kw">&lt;positionName&gt;</span>Information Manager<span class="kw">&lt;/positionName&gt;</span></a>
+<a class="sourceLine" id="cb9-23" title="23">         <span class="kw">&lt;organizationName&gt;</span>organization name<span class="kw">&lt;/organizationName&gt;</span></a>
+<a class="sourceLine" id="cb9-24" title="24">         <span class="kw">&lt;electronicMailAddress&gt;</span>infomgr@some.edu<span class="kw">&lt;/electronicMailAddress&gt;</span></a>
+<a class="sourceLine" id="cb9-25" title="25">      <span class="kw">&lt;/contact&gt;</span></a>
+<a class="sourceLine" id="cb9-26" title="26">   <span class="kw">&lt;/dataSource&gt;</span></a>
+<a class="sourceLine" id="cb9-27" title="27"><span class="kw">&lt;/methodStep&gt;</span></a></code></pre></div>
 </div>
 </div>
 <div id="nucleotide-sequence-and-genomic-data" class="section level2">
@@ -456,12 +456,12 @@ DOI of publication providing in-depth context for data
 <li>Descriptors of derived data products (‘OTU’, ‘functional annotation’, ‘population’)</li>
 </ol>
 <p><strong>Inventory tables</strong> are of central importance to datasets that index data resources in a sequencing or genomics repository. It is recommended that this inventory should have the columns described in Table 5.1. Note that the unique identifiers included will depend on the granularity of the links to the outside repository. For example, in NCBI, there are accession numbers and URLs for a project, samples within the project, and sequence datasets from a given sample.</p>
+<p><strong>External unique ID and URL:</strong> For NCBI GenBank this would be the accession number for a collection. For most sequence and genomic datasets an access URL would include an accession number (e.g. <a href="https://www.ncbi.nlm.nih.gov/nuccore/AY741555">https://www.ncbi.nlm.nih.gov/nuccore/AY741555</a>). Referring to a range of accession numbers, may involve providing a search URL that will return the desired list, e.g. (<a href="https://www.ncbi.nlm.nih.gov/popset/?term=AY741555">https://www.ncbi.nlm.nih.gov/popset/?term=AY741555</a>). The recommendation is to link to the widest level of sequence or genomic granularity that is useful to interpret data being archived in the new dataset.
+The following are suggestions for additional contextual columns in the inventory table. This information is generally associated with the data in the genomics repository and should only be duplicated if deemed useful for reuse, or if missing in the original data.</p>
 <ul>
-<li><p><strong>External unique ID and URL:</strong> For NCBI GenBank this would be the accession number for a collection. For most sequence and genomic datasets an access URL would include an accession number (e.g. <a href="https://www.ncbi.nlm.nih.gov/nuccore/AY741555">https://www.ncbi.nlm.nih.gov/nuccore/AY741555</a>). Referring to a range of accession numbers, may involve providing a search URL that will return the desired list, e.g. (<a href="https://www.ncbi.nlm.nih.gov/popset/?term=AY741555">https://www.ncbi.nlm.nih.gov/popset/?term=AY741555</a>). The recommendation is to link to the widest level of sequence or genomic granularity that is useful to interpret data being archived in the new dataset.
-The following are suggestions for additional contextual columns in the inventory table. This information is generally associated with the data in the genomics repository and should only be duplicated if deemed useful for reuse, or if missing in the original data.</p></li>
-<li><p><strong>Sequencing method</strong>: the name of the sequencing method used; e.g., Sanger, pyrosequencing, ABI-solid. This attribute is used in MIxS templates, where it is called seq_meth.</p></li>
-<li><p><strong>Environment (biome, feature, or material) descriptors</strong>: These are descriptors of the environmental context and are standardized by the genomics community in the <a href="https://press3.mcs.anl.gov/gensc/mixs/">MixS templates</a> and <a href="www.environmentontology.org/Browse-EnvO">EnvO</a>.</p></li>
-<li><p><strong>Taxon description</strong>: If applicable, e.g., Binomial name, or taxonomic group</p></li>
+<li><strong>Sequencing method</strong>: the name of the sequencing method used; e.g., Sanger, pyrosequencing, ABI-solid. This attribute is used in MIxS templates, where it is called seq_meth.</li>
+<li><strong>Environment (biome, feature, or material) descriptors</strong>: These are descriptors of the environmental context and are standardized by the genomics community in the <a href="https://press3.mcs.anl.gov/gensc/mixs/">MixS templates</a> and <a href="www.environmentontology.org/Browse-EnvO">EnvO</a>.</li>
+<li><strong>Taxon description</strong>: If applicable, e.g., Binomial name, or taxonomic group</li>
 </ul>
 <p>Data packages of metadata and inventory tables will aid in discovering genomic data within an ecological data repository (EDI) and will aid in clarifying the context in which they were collected. Most use cases, however, employ this inventory table to link specific genetic data to derived data. Such products frequently are community or population metrics where species, OTUs or traits have been determined from the sequence data.</p>
 </div>
@@ -551,7 +551,7 @@ This data package links to genomic data in NCBI, and includes additional data fr
 <li><a href="http://www.ddbj.nig.ac.jp/">DNA DataBank of Japan (DDBJ)</a> - list of various databases with search capabilities. See also <a href="https://www.ddbj.nig.ac.jp/submission-e.html">Submissions</a>.</li>
 <li><a href="http://www.ebi.ac.uk/ena/">European Nucleotide Archive (ENA)</a> - list of various databases with search capabilities. See also <a href="https://www.ebi.ac.uk/ena/submit">Submit and update</a>.</li>
 <li><a href="https://img.jgi.doe.gov/">Integrated Microbial Genomes &amp; Microbiomes (IMG/M) system</a> from the Joint Genome Institute</li>
-<li><a href="http://www.mg-rast.org/mgmain.html?mgpage=downloadintro">MG-RAST</a> (technically an analysis pipeline not a primary repository, but replicates to primary repositories)<span style="text-decoration:underline;"> </span>Replicates to the European Bioinformatics Institute (EMBL-EBI), which in turn replicates to the NCBI Sequence Read Archive (such that data submitted on MG-RAST will automatically appear on all three).</li>
+<li><a href="http://www.mg-rast.org/mgmain.html?mgpage=downloadintro">MG-RAST</a> (technically an analysis pipeline not a primary repository, but replicates to primary repositories) Replicates to the European Bioinformatics Institute (EMBL-EBI), which in turn replicates to the NCBI Sequence Read Archive (such that data submitted on MG-RAST will automatically appear on all three).</li>
 <li><a href="http://www.barcodinglife.com/">Barcode of Life DataSystems (BOLD)</a> DNA barcoding is a taxonomic method that uses one or more standardized short genetic markers in an organism’s DNA to identify it as belonging to a particular species. Through this method unknown DNA samples are identified to registered species based on comparison to a reference library. The Centre for Biodiversity Genomics in Canada maintains the BOLD public data portal, a cloud-based data storage and analysis platform.</li>
 </ul>
 </div>

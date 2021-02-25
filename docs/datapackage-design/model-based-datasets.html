@@ -24,7 +24,7 @@
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2021-02-24" />
+<meta name="date" content="2021-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -262,33 +262,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">2.2.1</span> Referencing models in EML</h3>
 <p>For data packages related to a model, whether the model is archived within the same data package or not, indicate linkage to the model in EML following the <a href="code.html">best practices for archiving code</a> (see the section on linking code and data).</p>
 <p>Example 1: EML snippet relating data to models via the method description:</p>
-<pre><code>&lt;methodStep&gt;
-   &lt;description&gt;
-      &lt;para&gt;This methodStep contains data provenance information as specified in the LTER EML Best Practices. Each dataSource element here lists entity-specific information and links to source data used in the creation of this derivative data package.&lt;/para&gt;
-   &lt;/description&gt;
-   &lt;dataSource&gt;
-      &lt;title&gt;Source dataset title&lt;/title&gt;
-      &lt;creator&gt;
-         &lt;individualName&gt;
-            &lt;givenName&gt;first name&lt;/givenName&gt;
-            &lt;surName&gt;last name&lt;/surName&gt;
-         &lt;/individualName&gt;
-         &lt;organizationName&gt;organization name&lt;/organizationName&gt;
-         &lt;electronicMailAddress&gt;email@some.edu&lt;/electronicMailAddress&gt;
-      &lt;/creator&gt;
-      &lt;distribution&gt;
-         &lt;online&gt;
-            &lt;onlineDescription&gt;This is a link to an external online data resource (describe resource and repository location).&lt;/onlineDescription&gt;
-            &lt;url function=&quot;information&quot;&gt;https://pasta.lternet.edu/package/metadata/eml/knb-lter-ntl/80/2&lt;/url&gt;
-         &lt;/online&gt;
-      &lt;/distribution&gt;
-      &lt;contact&gt;
-         &lt;positionName&gt;Information Manager&lt;/positionName&gt;
-         &lt;organizationName&gt;organization name&lt;/organizationName&gt;
-         &lt;electronicMailAddress&gt;infomgr@some.edu&lt;/electronicMailAddress&gt;
-      &lt;/contact&gt;
-   &lt;/dataSource&gt;
-&lt;/methodStep&gt;</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;methodStep&gt;</span></a>
+<a class="sourceLine" id="cb6-2" title="2">   <span class="kw">&lt;description&gt;</span></a>
+<a class="sourceLine" id="cb6-3" title="3">      <span class="kw">&lt;para&gt;</span>This methodStep contains data provenance information as specified in the LTER EML Best Practices. Each dataSource element here lists entity-specific information and links to source data used in the creation of this derivative data package.<span class="kw">&lt;/para&gt;</span></a>
+<a class="sourceLine" id="cb6-4" title="4">   <span class="kw">&lt;/description&gt;</span></a>
+<a class="sourceLine" id="cb6-5" title="5">   <span class="kw">&lt;dataSource&gt;</span></a>
+<a class="sourceLine" id="cb6-6" title="6">      <span class="kw">&lt;title&gt;</span>Source dataset title<span class="kw">&lt;/title&gt;</span></a>
+<a class="sourceLine" id="cb6-7" title="7">      <span class="kw">&lt;creator&gt;</span></a>
+<a class="sourceLine" id="cb6-8" title="8">         <span class="kw">&lt;individualName&gt;</span></a>
+<a class="sourceLine" id="cb6-9" title="9">            <span class="kw">&lt;givenName&gt;</span>first name<span class="kw">&lt;/givenName&gt;</span></a>
+<a class="sourceLine" id="cb6-10" title="10">            <span class="kw">&lt;surName&gt;</span>last name<span class="kw">&lt;/surName&gt;</span></a>
+<a class="sourceLine" id="cb6-11" title="11">         <span class="kw">&lt;/individualName&gt;</span></a>
+<a class="sourceLine" id="cb6-12" title="12">         <span class="kw">&lt;organizationName&gt;</span>organization name<span class="kw">&lt;/organizationName&gt;</span></a>
+<a class="sourceLine" id="cb6-13" title="13">         <span class="kw">&lt;electronicMailAddress&gt;</span>email@some.edu<span class="kw">&lt;/electronicMailAddress&gt;</span></a>
+<a class="sourceLine" id="cb6-14" title="14">      <span class="kw">&lt;/creator&gt;</span></a>
+<a class="sourceLine" id="cb6-15" title="15">      <span class="kw">&lt;distribution&gt;</span></a>
+<a class="sourceLine" id="cb6-16" title="16">         <span class="kw">&lt;online&gt;</span></a>
+<a class="sourceLine" id="cb6-17" title="17">            <span class="kw">&lt;onlineDescription&gt;</span>This is a link to an external online data resource (describe resource and repository location).<span class="kw">&lt;/onlineDescription&gt;</span></a>
+<a class="sourceLine" id="cb6-18" title="18">            <span class="kw">&lt;url</span><span class="ot"> function=</span><span class="st">&quot;information&quot;</span><span class="kw">&gt;</span>https://pasta.lternet.edu/package/metadata/eml/knb-lter-ntl/80/2<span class="kw">&lt;/url&gt;</span></a>
+<a class="sourceLine" id="cb6-19" title="19">         <span class="kw">&lt;/online&gt;</span></a>
+<a class="sourceLine" id="cb6-20" title="20">      <span class="kw">&lt;/distribution&gt;</span></a>
+<a class="sourceLine" id="cb6-21" title="21">      <span class="kw">&lt;contact&gt;</span></a>
+<a class="sourceLine" id="cb6-22" title="22">         <span class="kw">&lt;positionName&gt;</span>Information Manager<span class="kw">&lt;/positionName&gt;</span></a>
+<a class="sourceLine" id="cb6-23" title="23">         <span class="kw">&lt;organizationName&gt;</span>organization name<span class="kw">&lt;/organizationName&gt;</span></a>
+<a class="sourceLine" id="cb6-24" title="24">         <span class="kw">&lt;electronicMailAddress&gt;</span>infomgr@some.edu<span class="kw">&lt;/electronicMailAddress&gt;</span></a>
+<a class="sourceLine" id="cb6-25" title="25">      <span class="kw">&lt;/contact&gt;</span></a>
+<a class="sourceLine" id="cb6-26" title="26">   <span class="kw">&lt;/dataSource&gt;</span></a>
+<a class="sourceLine" id="cb6-27" title="27"><span class="kw">&lt;/methodStep&gt;</span></a></code></pre></div>
 <div id="model-code" class="section level4">
 <h4><span class="header-section-number">2.2.1.1</span> Model code</h4>
 <p>The model used to produce certain data needs to be well documented and linked from the resulting data product(s). However, it is not always easy to decide where and how to archive the code, and whether or not in conjunction with the data product(s). We outline in sections below three common code archiving options.</p>
