@@ -2,7 +2,6 @@
 
 Contributors: An T. Nguyen, Tim Whiteaker, Corinna Gries
 
-
 ## Introduction
 
 This document includes recommendations for archiving data packages composed of model-based datasets. These datasets may include the model code itself, input data, model parameter settings, and output data.
@@ -13,15 +12,9 @@ The intention of these recommendations is to make research based on modeling mor
 
 It is not always easy to determine who among project personnel (IMs, scientists, programmers) is responsible for the different components of a model-based dataset. This is best decided on a case-by-case basis. A common division is that the code authors annotate the code, and the IM handles the archiving and linkage to data product(s); partially except in cases of large community models.
 
-
 ## Recommendations for data packages
 
-
 ![Figure 1: Flowchart for considering archival paths for various model components.](../images/model_datasets.png "model data management flowchart")
-
-
-
-
 
 ### Referencing models in EML
 
@@ -29,8 +22,7 @@ For data packages related to a model, whether the model is archived within the s
 
 Example 1: EML snippet relating data to models via the method description:
 
-
-```
+```xml
 <methodStep>
    <description>
       <para>This methodStep contains data provenance information as specified in the LTER EML Best Practices. Each dataSource element here lists entity-specific information and links to source data used in the creation of this derivative data package.</para>
@@ -60,8 +52,6 @@ Example 1: EML snippet relating data to models via the method description:
 </methodStep>
 ```
 
-
-
 #### Model code
 
 The model used to produce certain data needs to be well documented and linked from the resulting data product(s). However, it is not always easy to decide where and how to archive the code, and whether or not in conjunction with the data product(s). We outline in sections below three common code archiving options.
@@ -70,25 +60,21 @@ Note that these scenarios (model code archived with data, or standalone in EDI, 
 
 To decide between archiving options, consider the questions listed in [best practices for publishing code](code.html).
 
-
 #### Model code and data in the same package
 
 The goal of this practice is to ensure transparency of the data, and it applies to one-off models developed for the associated data, or occasionally to larger code bases for the reasons outlined in [best practices for archiving code](code.html). Include the code as a dataset/otherEntity. Additionally, it is recommended to include a CodeMeta file, which can also be handled and documented in EML as dataset/otherEntity. CodeMeta is a metadata standard for software and code compatible with schema.org. Refer to [best practices for archiving code](code.html) for how to document the code and create CodeMeta.
-
 
 #### Model code as standalone package
 
 If the model has been used to generate several datasets, i.e., is more widely applicable, it can be archived as its own package in EDI and assigned a DOI. Include the code as a dataset/otherEntity. Additionally, it is recommended to include a CodeMeta JSON-LD file, which can also be handled and documented in EML as dataset/otherEntity. CodeMeta is a metadata standard for software and code compatible with schema.org. Refer to [best practices for archiving code](code.html) for how to document the code and create CodeMeta.
 
-
 #### Model code archived/maintained elsewhere
 
 This might include complex community models/software maintained by many people, published and actively maintained R/Python packages, etc., or simply code archived in another repository such as [CoMSES Net](https://www.comses.net/).   It may sometimes be advisable to archive a copy of the model code with the data, even if it appears to be maintained elsewhere. See recommendations above for referencing models in EML.
 
-
 ### Model input and output data
 
-These are considered data entities, which should be handled according to EML best practices for corresponding data types. However, if the resulting datasets are very large, one may consider if input/output from all individual model runs need to be archived. Are there specific model run results that are more useful for non-modelers? For example: results from model runs leading to a journal publication. 
+These are considered data entities, which should be handled according to EML best practices for corresponding data types. However, if the resulting datasets are very large, one may consider if input/output from all individual model runs need to be archived. Are there specific model run results that are more useful for non-modelers? For example: results from model runs leading to a journal publication.
 
 Very large model inputs/outputs may need to be archived offline. Refer to [best practices for offline data](large-data-sets.html).
 
@@ -98,16 +84,13 @@ The [EarthCube Research Coordination Network, "What About Model Data?" group](ht
 
 Researchers at the Department of Energyâ€™s Environmental Systems Science are also working on assessing model archiving needs. In [this preprint](https://eartharxiv.org/repository/view/260/), Simmonds et al. 2020 discuss feedback from communications with modellers and propose preliminary solutions. With regards to input/output data, their feedback indicates two opposite opinions: some feel the whole gamut of raw to aggregated outputs needs to be archived, while others advocate for only high-level outputs corresponding to publication figures. They also found that spin-up simulations were not considered a high priority for archiving. See section 2.3 What is worth archiving and for how long does it remain useful?
 
-
 ### Model parameters
 
 Include model parameters whenever applicable. If code/input/output from multiple model runs are archived, make sure to archive all corresponding sets of parameters, and be explicit in linking the different components together.
 
 Consider archiving model parameter files as their own data object(s) in both their native format and as a text (non-binary) version. If the 'runfile' will be archived, consider including the parameters within that file with appropriate annotations.
 
-
 ## Example data packages in EDI
-
 
 <table>
   <tr>
@@ -137,19 +120,17 @@ Consider archiving model parameter files as their own data object(s) in both the
   <tr>
    <td><em>Lake thermal structure drives inter-annual variability in summer anoxia dynamics in a eutrophic lake over 37 years</em>
    </td>
-   <td>Dataset to run a 37-year simulation (1979-2015) of the Lake Mendota lake ecosystem using the vertical 1D GLM-AED2 model. 
+   <td>Dataset to run a 37-year simulation (1979-2015) of the Lake Mendota lake ecosystem using the vertical 1D GLM-AED2 model.
    </td>
    <td><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-ntl&identifier=396">knb-lter-ntl.396.1</a>
    </td>
   </tr>
 </table>
 
-
-
 ## Resources
 
 Janssen, Marco A., Lilian Na'ia Alessa, Michael Barton, Sean Bergin and Allen Lee (2008). â€˜Towards a Community Framework for Agent-Based Modellingâ€™. Journal of Artificial Societies and Social Simulation 11(2)6 [http://jasss.soc.surrey.ac.uk/11/2/6.html](http://jasss.soc.surrey.ac.uk/11/2/6.html).
 
-Simmonds, Maegen, William J. Riley, Shreyas Cholia, and Charuleka Varadharajan (2020). 'Addressing Model Data Archiving Needs for the Department of Energyâ€™s Environmental Systems Science Community'. EarthArXiv (preprint). [https://doi.org/10.31223/osf.io/acdk4](https://doi.org/10.31223/osf.io/acdk4). 
+Simmonds, Maegen, William J. Riley, Shreyas Cholia, and Charuleka Varadharajan (2020). 'Addressing Model Data Archiving Needs for the Department of Energyâ€™s Environmental Systems Science Community'. EarthArXiv (preprint). [https://doi.org/10.31223/osf.io/acdk4](https://doi.org/10.31223/osf.io/acdk4).
 
 See sections 2.3 What is worth archiving and for how long does it remain useful?, discussed above, plus 2.4 Model data archiving protocol, where the authors argue for better standardized reporting format for model data, e.g., top-level metadata and directory structure at a minimum. Section 4.1 Developing Model Data Archiving Guidelines proposes an organization scheme for model data.  
