@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Model Based Datasets | Best Practices for Data Package Design</title>
+  <title>2 Model-Based Datasets | Best Practices for Data Package Design</title>
   <meta name="description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Model Based Datasets | Best Practices for Data Package Design" />
+  <meta property="og:title" content="2 Model-Based Datasets | Best Practices for Data Package Design" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Model Based Datasets | Best Practices for Data Package Design" />
+  <meta name="twitter:title" content="2 Model-Based Datasets | Best Practices for Data Package Design" />
   
   <meta name="twitter:description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
   
@@ -24,15 +24,15 @@
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2020-06-16" />
+<meta name="date" content="2021-02-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="code-in-edi.html"/>
-<link rel="next" href="still-images.html"/>
+<link rel="prev" href="code.html"/>
+<link rel="next" href="images-and-documents-as-data.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -69,7 +69,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -136,99 +136,89 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul> 
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Best Practice Recommendations for Data Package Design</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#data-file-type"><i class="fa fa-check"></i>Data File Type</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#entities-to-include-in-a-data-package"><i class="fa fa-check"></i>Entities to Include in a Data Package</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#splitting-and-lumping-of-data"><i class="fa fa-check"></i>Splitting and Lumping of Data</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#data-file-format"><i class="fa fa-check"></i>Data File Format</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#data-in-other-repositories"><i class="fa fa-check"></i>Data in Other Repositories</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#very-large-datasets"><i class="fa fa-check"></i>Very Large Datasets</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Data Package Design for Special Cases</a></li>
+<li class="chapter" data-level="1" data-path="code.html"><a href="code.html"><i class="fa fa-check"></i><b>1</b> Code</a><ul>
+<li class="chapter" data-level="1.1" data-path="code.html"><a href="code.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
+<li class="chapter" data-level="1.2" data-path="code.html"><a href="code.html#recommendations-for-data-packages"><i class="fa fa-check"></i><b>1.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="code.html"><a href="code.html#considerations-for-archiving-software-or-code"><i class="fa fa-check"></i><b>1.2.1</b> Considerations for archiving software or code</a></li>
+<li class="chapter" data-level="1.2.2" data-path="code.html"><a href="code.html#documenting-softwarecode"><i class="fa fa-check"></i><b>1.2.2</b> Documenting software/code</a></li>
+<li class="chapter" data-level="1.2.3" data-path="code.html"><a href="code.html#linking-code-and-data"><i class="fa fa-check"></i><b>1.2.3</b> Linking code and data</a></li>
+<li class="chapter" data-level="1.2.4" data-path="code.html"><a href="code.html#external-software"><i class="fa fa-check"></i><b>1.2.4</b> External software</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html"><i class="fa fa-check"></i><b>1</b> Key-Value Pair Tables</a><ul>
-<li class="chapter" data-level="1.1" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
-<li class="chapter" data-level="1.2" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#recommendations-for-data-packages"><i class="fa fa-check"></i><b>1.2</b> Recommendations for data packages</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#biodiversity-data"><i class="fa fa-check"></i><b>1.2.1</b> Biodiversity data</a></li>
-<li class="chapter" data-level="1.2.2" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#sensor-data"><i class="fa fa-check"></i><b>1.2.2</b> Sensor data</a></li>
+<li class="chapter" data-level="1.3" data-path="code.html"><a href="code.html#resources"><i class="fa fa-check"></i><b>1.3</b> Resources</a></li>
 </ul></li>
+<li class="chapter" data-level="2" data-path="model-based-datasets.html"><a href="model-based-datasets.html"><i class="fa fa-check"></i><b>2</b> Model-Based Datasets</a><ul>
+<li class="chapter" data-level="2.1" data-path="model-based-datasets.html"><a href="model-based-datasets.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="model-based-datasets.html"><a href="model-based-datasets.html#recommendations-for-data-packages-1"><i class="fa fa-check"></i><b>2.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="model-based-datasets.html"><a href="model-based-datasets.html#referencing-models-in-eml"><i class="fa fa-check"></i><b>2.2.1</b> Referencing models in EML</a></li>
+<li class="chapter" data-level="2.2.2" data-path="model-based-datasets.html"><a href="model-based-datasets.html#model-input-and-output-data"><i class="fa fa-check"></i><b>2.2.2</b> Model input and output data</a></li>
+<li class="chapter" data-level="2.2.3" data-path="model-based-datasets.html"><a href="model-based-datasets.html#model-parameters"><i class="fa fa-check"></i><b>2.2.3</b> Model parameters</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="code-in-edi.html"><a href="code-in-edi.html"><i class="fa fa-check"></i><b>2</b> Code in EDI</a><ul>
-<li class="chapter" data-level="2.1" data-path="code-in-edi.html"><a href="code-in-edi.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="code-in-edi.html"><a href="code-in-edi.html#background"><i class="fa fa-check"></i><b>2.1.1</b> Background</a></li>
+<li class="chapter" data-level="2.3" data-path="model-based-datasets.html"><a href="model-based-datasets.html#example-data-packages-in-edi"><i class="fa fa-check"></i><b>2.3</b> Example data packages in EDI</a></li>
+<li class="chapter" data-level="2.4" data-path="model-based-datasets.html"><a href="model-based-datasets.html#resources-1"><i class="fa fa-check"></i><b>2.4</b> Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="code-in-edi.html"><a href="code-in-edi.html#recommendations-for-data-packages-1"><i class="fa fa-check"></i><b>2.2</b> Recommendations for data packages</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="code-in-edi.html"><a href="code-in-edi.html#softwarecode-in-edi"><i class="fa fa-check"></i><b>2.2.1</b> Software/code in EDI</a></li>
-<li class="chapter" data-level="2.2.2" data-path="code-in-edi.html"><a href="code-in-edi.html#documenting-softwarecode"><i class="fa fa-check"></i><b>2.2.2</b> Documenting software/code</a></li>
-<li class="chapter" data-level="2.2.3" data-path="code-in-edi.html"><a href="code-in-edi.html#linking-between-code-and-data"><i class="fa fa-check"></i><b>2.2.3</b> Linking between code and data</a></li>
-<li class="chapter" data-level="2.2.4" data-path="code-in-edi.html"><a href="code-in-edi.html#external-software"><i class="fa fa-check"></i><b>2.2.4</b> External software</a></li>
+<li class="chapter" data-level="3" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html"><i class="fa fa-check"></i><b>3</b> Images and Documents as Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#recommendations-for-data-packages-2"><i class="fa fa-check"></i><b>3.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#reasons-to-archive-documents-as-data"><i class="fa fa-check"></i><b>3.2.1</b> Reasons to archive documents as data</a></li>
+<li class="chapter" data-level="3.2.2" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#considerations-for-data-package-structure"><i class="fa fa-check"></i><b>3.2.2</b> Considerations for data package structure</a></li>
+<li class="chapter" data-level="3.2.3" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#documenting-data-packages"><i class="fa fa-check"></i><b>3.2.3</b> Documenting data packages</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="code-in-edi.html"><a href="code-in-edi.html#resources"><i class="fa fa-check"></i><b>2.3</b> Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="model-based-datasets.html"><a href="model-based-datasets.html"><i class="fa fa-check"></i><b>3</b> Model Based Datasets</a><ul>
-<li class="chapter" data-level="3.1" data-path="model-based-datasets.html"><a href="model-based-datasets.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="model-based-datasets.html"><a href="model-based-datasets.html#background-1"><i class="fa fa-check"></i><b>3.1.1</b> Background</a></li>
-</ul></li>
-<li class="chapter" data-level="3.2" data-path="model-based-datasets.html"><a href="model-based-datasets.html#recommendations-for-data-packages-2"><i class="fa fa-check"></i><b>3.2</b> Recommendations for data packages</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="model-based-datasets.html"><a href="model-based-datasets.html#referencing-models-in-eml"><i class="fa fa-check"></i><b>3.2.1</b> Referencing models in EML</a></li>
-<li class="chapter" data-level="3.2.2" data-path="model-based-datasets.html"><a href="model-based-datasets.html#model-code"><i class="fa fa-check"></i><b>3.2.2</b> Model code</a></li>
-<li class="chapter" data-level="3.2.3" data-path="model-based-datasets.html"><a href="model-based-datasets.html#model-input-and-output-data"><i class="fa fa-check"></i><b>3.2.3</b> Model input and output data</a></li>
-<li class="chapter" data-level="3.2.4" data-path="model-based-datasets.html"><a href="model-based-datasets.html#model-parameters"><i class="fa fa-check"></i><b>3.2.4</b> Model parameters</a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="model-based-datasets.html"><a href="model-based-datasets.html#resources-1"><i class="fa fa-check"></i><b>3.3</b> Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="still-images.html"><a href="still-images.html"><i class="fa fa-check"></i><b>4</b> Still Images</a><ul>
-<li class="chapter" data-level="4.1" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
-<li class="chapter" data-level="4.2" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#recommendations-for-data-packages"><i class="fa fa-check"></i><b>4.2</b> Recommendations for data packages</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="still-images.html"><a href="still-images.html#recommendations-for-metadata"><i class="fa fa-check"></i><b>4.2.1</b> Recommendations for Metadata</a></li>
-<li class="chapter" data-level="4.2.2" data-path="still-images.html"><a href="still-images.html#image-catalog"><i class="fa fa-check"></i><b>4.2.2</b> Image Catalog</a></li>
-<li class="chapter" data-level="4.2.3" data-path="still-images.html"><a href="still-images.html#data-extracted-from-images"><i class="fa fa-check"></i><b>4.2.3</b> Data Extracted from Images</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="still-images.html"><a href="still-images.html#resources-2"><i class="fa fa-check"></i><b>4.3</b> Resources</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="still-images.html"><a href="still-images.html#examples-in-edi"><i class="fa fa-check"></i><b>4.3.1</b> Examples in EDI</a></li>
+<li class="chapter" data-level="3.3" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#example-data-packages-in-edi-1"><i class="fa fa-check"></i><b>3.3</b> Example data packages in EDI</a></li>
+<li class="chapter" data-level="3.4" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#resources-2"><i class="fa fa-check"></i><b>3.4</b> Resources</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#considerations-for-digitizing-documents"><i class="fa fa-check"></i><b>3.4.1</b> Considerations for digitizing documents</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html"><i class="fa fa-check"></i><b>5</b> Genomic and Metagenomic Data</a><ul>
-<li class="chapter" data-level="5.1" data-path="key-value-pair-tables.html"><a href="key-value-pair-tables.html#introduction"><i class="fa fa-check"></i><b>5.1</b> Introduction</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="code-in-edi.html"><a href="code-in-edi.html#background"><i class="fa fa-check"></i><b>5.1.1</b> Background</a></li>
-<li class="chapter" data-level="5.1.2" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#types-of-genomics-datasets-commonly-encountered"><i class="fa fa-check"></i><b>5.1.2</b> Types of Genomics Datasets Commonly Encountered</a></li>
-</ul></li>
-<li class="chapter" data-level="5.2" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#recommendations-for-datasets"><i class="fa fa-check"></i><b>5.2</b> Recommendations for Datasets</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#metadata-for-all-genomics-datasets-archived-in-edi"><i class="fa fa-check"></i><b>5.2.1</b> Metadata for All Genomics Datasets Archived in EDI</a></li>
-<li class="chapter" data-level="5.2.2" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#genomics-data-summary"><i class="fa fa-check"></i><b>5.2.2</b> Genomics Data Summary</a></li>
-<li class="chapter" data-level="5.2.3" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#genomics-data-with-ancillary-data"><i class="fa fa-check"></i><b>5.2.3</b> Genomics Data with Ancillary Data</a></li>
-<li class="chapter" data-level="5.2.4" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#derived-data-products"><i class="fa fa-check"></i><b>5.2.4</b> Derived data products</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="code-in-edi.html"><a href="code-in-edi.html#resources"><i class="fa fa-check"></i><b>5.3</b> Resources</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#tips-for-locating-metadata"><i class="fa fa-check"></i><b>5.3.1</b> Tips for locating metadata</a></li>
-<li class="chapter" data-level="5.3.2" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#links-to-various-repositories"><i class="fa fa-check"></i><b>5.3.2</b> Links to various repositories</a></li>
-<li class="chapter" data-level="5.3.3" data-path="genomic-and-metagenomic-data.html"><a href="genomic-and-metagenomic-data.html#related-best-practices-and-templates"><i class="fa fa-check"></i><b>5.3.3</b> Related Best Practices and Templates</a></li>
+<li class="chapter" data-level="4" data-path="spatial-data.html"><a href="spatial-data.html"><i class="fa fa-check"></i><b>4</b> Spatial Data</a><ul>
+<li class="chapter" data-level="4.1" data-path="spatial-data.html"><a href="spatial-data.html#introduction-3"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="spatial-data.html"><a href="spatial-data.html#recommendations-for-data-packages-3"><i class="fa fa-check"></i><b>4.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="spatial-data.html"><a href="spatial-data.html#considerations-for-archiving-spatial-data"><i class="fa fa-check"></i><b>4.2.1</b> Considerations for archiving spatial data</a></li>
+<li class="chapter" data-level="4.2.2" data-path="spatial-data.html"><a href="spatial-data.html#documenting-spatial-data-packages"><i class="fa fa-check"></i><b>4.2.2</b> Documenting spatial data packages</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="large-data-sets.html"><a href="large-data-sets.html"><i class="fa fa-check"></i><b>6</b> Large Data Sets</a><ul>
-<li class="chapter" data-level="6.1" data-path="large-data-sets.html"><a href="large-data-sets.html#introduction-3"><i class="fa fa-check"></i><b>6.1</b> Introduction</a><ul>
-<li class="chapter" data-level="6.1.1" data-path="large-data-sets.html"><a href="large-data-sets.html#background-2"><i class="fa fa-check"></i><b>6.1.1</b> Background</a></li>
+<li class="chapter" data-level="5" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html"><i class="fa fa-check"></i><b>5</b> Data Gathered with Small Moving Platforms</a><ul>
+<li class="chapter" data-level="5.1" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#introduction-4"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#recommendations-for-data-packages-4"><i class="fa fa-check"></i><b>5.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#metadata-for-moving-platform-data-packages-at-edi"><i class="fa fa-check"></i><b>5.2.1</b> Metadata for moving platform data packages at EDI</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#examples-and-additional-metadata-guidance"><i class="fa fa-check"></i><b>5.2.2</b> Examples and additional metadata guidance</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="large-data-sets.html"><a href="large-data-sets.html#recommendations-for-data-packages-3"><i class="fa fa-check"></i><b>6.2</b> Recommendations for data packages</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="large-data-sets.html"><a href="large-data-sets.html#physical-storage"><i class="fa fa-check"></i><b>6.2.1</b> Physical Storage</a></li>
-<li class="chapter" data-level="6.2.2" data-path="large-data-sets.html"><a href="large-data-sets.html#data-package"><i class="fa fa-check"></i><b>6.2.2</b> Data package</a></li>
-<li class="chapter" data-level="6.2.3" data-path="large-data-sets.html"><a href="large-data-sets.html#package-metadata"><i class="fa fa-check"></i><b>6.2.3</b> Package Metadata</a></li>
-<li class="chapter" data-level="6.2.4" data-path="large-data-sets.html"><a href="large-data-sets.html#eml"><i class="fa fa-check"></i><b>6.2.4</b> EML</a></li>
+<li class="chapter" data-level="5.3" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#resources-3"><i class="fa fa-check"></i><b>5.3</b> Resources</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#tips-and-tricks"><i class="fa fa-check"></i><b>5.3.1</b> Tips and Tricks</a></li>
+<li class="chapter" data-level="5.3.2" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#semantic-annotation"><i class="fa fa-check"></i><b>5.3.2</b> Semantic Annotation</a></li>
+<li class="chapter" data-level="5.3.3" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#references"><i class="fa fa-check"></i><b>5.3.3</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="large-data-sets.html"><a href="large-data-sets.html#references"><i class="fa fa-check"></i><b>6.3</b> References</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="large-data-sets.html"><a href="large-data-sets.html#eml-documentation"><i class="fa fa-check"></i><b>6.3.1</b> EML documentation</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="large-data-sets.html"><a href="large-data-sets.html#potential-issues"><i class="fa fa-check"></i><b>6.4</b> Potential Issues</a></li>
+<li class="chapter" data-level="6" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html"><i class="fa fa-check"></i><b>6</b> Data in Other Repositories</a><ul>
+<li class="chapter" data-level="6.1" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#introduction-5"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#recommendations-for-data-packages-5"><i class="fa fa-check"></i><b>6.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#considerations-for-creating-linked-data"><i class="fa fa-check"></i><b>6.2.1</b> Considerations for creating linked data</a></li>
+<li class="chapter" data-level="6.2.2" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#general-metadata-for-linked-data-packages-in-edi"><i class="fa fa-check"></i><b>6.2.2</b> General metadata for linked data packages in EDI</a></li>
+<li class="chapter" data-level="6.2.3" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#common-use-cases-and-their-structure-in-edi"><i class="fa fa-check"></i><b>6.2.3</b> Common use cases and their structure in EDI</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html"><i class="fa fa-check"></i><b>7</b> Data in Other Repositories</a><ul>
-<li class="chapter" data-level="7.1" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#introduction-4"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
-<li class="chapter" data-level="7.2" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#considerations-for-creating-linked-datasets"><i class="fa fa-check"></i><b>7.2</b> Considerations for creating linked datasets</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#cases-supporting-linked-datasets"><i class="fa fa-check"></i><b>7.2.1</b> Cases supporting linked datasets</a></li>
-<li class="chapter" data-level="7.2.2" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#when-to-avoid-linked-datasets"><i class="fa fa-check"></i><b>7.2.2</b> When to avoid linked datasets</a></li>
+<li class="chapter" data-level="6.3" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#nucleotide-sequence-and-genomic-data"><i class="fa fa-check"></i><b>6.3</b> Nucleotide sequence and genomic data</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#recommendations-for-sequencing-or-genomic-datasets"><i class="fa fa-check"></i><b>6.3.1</b> Recommendations for sequencing or genomic datasets</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#recommendations-for-creating-linked-datasets"><i class="fa fa-check"></i><b>7.3</b> Recommendations for creating linked datasets</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#edi-data-package-metadata"><i class="fa fa-check"></i><b>7.3.1</b> EDI data package metadata</a></li>
-<li class="chapter" data-level="7.3.2" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#the-manifest-file-datatable-entity-in-eml"><i class="fa fa-check"></i><b>7.3.2</b> The manifest file (dataTable entity in EML)</a></li>
+<li class="chapter" data-level="6.4" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#example-data-packages-in-edi-2"><i class="fa fa-check"></i><b>6.4</b> Example data packages in EDI</a></li>
+<li class="chapter" data-level="6.5" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#appendix-tips-and-repository-information"><i class="fa fa-check"></i><b>6.5</b> Appendix: Tips and repository information</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#sequence-and-genomic-repository-information"><i class="fa fa-check"></i><b>6.5.1</b> Sequence and genomic repository information</a></li>
+<li class="chapter" data-level="6.5.2" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#tips-for-locating-metadata-in-sequence-and-genomic-data-repositories"><i class="fa fa-check"></i><b>6.5.2</b> Tips for locating metadata in sequence and genomic data repositories</a></li>
+<li class="chapter" data-level="6.5.3" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#darwin-core-standard-for-sequence-data"><i class="fa fa-check"></i><b>6.5.3</b> Darwin Core standard for sequence data</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="data-in-other-repositories-1.html"><a href="data-in-other-repositories-1.html#example-data-packages"><i class="fa fa-check"></i><b>7.4</b> Example data packages</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="large-data-sets.html"><a href="large-data-sets.html"><i class="fa fa-check"></i><b>7</b> Large Data Sets</a><ul>
+<li class="chapter" data-level="7.1" data-path="large-data-sets.html"><a href="large-data-sets.html#introduction-6"><i class="fa fa-check"></i><b>7.1</b> Introduction</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="large-data-sets.html"><a href="large-data-sets.html#background"><i class="fa fa-check"></i><b>7.1.1</b> Background</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="large-data-sets.html"><a href="large-data-sets.html#recommendations-for-data-packages-6"><i class="fa fa-check"></i><b>7.2</b> Recommendations for data packages</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="large-data-sets.html"><a href="large-data-sets.html#physical-storage"><i class="fa fa-check"></i><b>7.2.1</b> Physical Storage</a></li>
+<li class="chapter" data-level="7.2.2" data-path="large-data-sets.html"><a href="large-data-sets.html#data-package"><i class="fa fa-check"></i><b>7.2.2</b> Data package</a></li>
+<li class="chapter" data-level="7.2.3" data-path="large-data-sets.html"><a href="large-data-sets.html#package-metadata"><i class="fa fa-check"></i><b>7.2.3</b> Package Metadata</a></li>
+<li class="chapter" data-level="7.2.4" data-path="large-data-sets.html"><a href="large-data-sets.html#eml"><i class="fa fa-check"></i><b>7.2.4</b> EML</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="large-data-sets.html"><a href="large-data-sets.html#references-1"><i class="fa fa-check"></i><b>7.3</b> References</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="large-data-sets.html"><a href="large-data-sets.html#eml-documentation"><i class="fa fa-check"></i><b>7.3.1</b> EML documentation</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="large-data-sets.html"><a href="large-data-sets.html#potential-issues"><i class="fa fa-check"></i><b>7.4</b> Potential Issues</a></li>
 </ul></li>
 <li class="divider"></li>
 <ul>
@@ -253,87 +243,139 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="model-based-datasets" class="section level1">
-<h1><span class="header-section-number">3</span> Model Based Datasets</h1>
-<p>Contributors: An Nguyen, Tim Whiteaker, Corinna Gries</p>
-<div id="introduction-2" class="section level2">
-<h2><span class="header-section-number">3.1</span> Introduction</h2>
-<p>This document includes recommendations for archiving data packages comprised of model based datasets. These datasets may include the model code itself, input data, model parameter settings, and output data. This document was written for the intended audience of a Long Term Ecological Research (LTER) information manager (IM), though it is applicable to anyone handling model data in the context of a larger ecological research program.</p>
-<div id="background-1" class="section level3">
-<h3><span class="header-section-number">3.1.1</span> Background</h3>
-<p>The range of cases for model based datasets includes small one-off model code specific to one research question, through various code packages which are maintained in community repositories as long as they meet requirements (e.g., CRAN for R packages), to large community models maintained by groups of programmers and users.</p>
+<h1><span class="header-section-number">2</span> Model-Based Datasets</h1>
+<p>Contributors: An T. Nguyen, Tim Whiteaker, Corinna Gries</p>
+<div id="introduction-1" class="section level2">
+<h2><span class="header-section-number">2.1</span> Introduction</h2>
+<p>This document includes recommendations for archiving data packages composed of model-based datasets. These datasets may include the model code itself, input data, model parameter settings, and output data.</p>
+<p>The range of cases for model-based datasets includes small one-off model code specific to one research question, through various code packages which are maintained in community repositories as long as they meet requirements (e.g., CRAN for R packages), to large community models maintained by groups of programmers and users.</p>
 <p>The intention of these recommendations is to make research based on modeling more transparent rather than achieve exact reproducibility, i.e., provide sufficient documentation so that a knowledgeable person can understand algorithms, programming decisions, and their ramifications for the results, rather than run the model and obtain the same results.</p>
-<p>It is not always easy to determine who among project personnel (IMs, scientists, programmers) is responsible for the different components of a model based dataset. This is best decided on a case-by-case basis. A common division is that the code authors annotate the code, and the IM handles the archiving and linkage to data product(s); partially except in cases of large community models (see section 2.3).</p>
-<p>The Environmental Data Initiative (EDI) is used as the representative data repository, however, the same practices could be applied to other similar repositories. A distinction is made between primarily data-oriented repositories (e.g., EDI), and specialized code repositories.</p>
+<p>It is not always easy to determine who among project personnel (IMs, scientists, programmers) is responsible for the different components of a model-based dataset. This is best decided on a case-by-case basis. A common division is that the code authors annotate the code, and the IM handles the archiving and linkage to data product(s); partially except in cases of large community models.</p>
 </div>
+<div id="recommendations-for-data-packages-1" class="section level2">
+<h2><span class="header-section-number">2.2</span> Recommendations for data packages</h2>
+<div class="figure">
+<img src="../images/model_datasets.png" title="model data management flowchart" alt="Figure 1: Flowchart for considering archival paths for various model components." />
+<p class="caption">Figure 1: Flowchart for considering archival paths for various model components.</p>
 </div>
-<div id="recommendations-for-data-packages-2" class="section level2">
-<h2><span class="header-section-number">3.2</span> Recommendations for data packages</h2>
 <div id="referencing-models-in-eml" class="section level3">
-<h3><span class="header-section-number">3.2.1</span> Referencing models in EML</h3>
-<p>For data packages related to a model, whether the model is archived within the same data package or not, indicate linkage to the model in EML following <a href="./code-in-edi.html">Best practices for archiving software/code</a> (section 1.2 and 2 in that document).</p>
-<p>Example EML snippet relating data to models via the method description:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">&lt;methods&gt;</span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">  <span class="kw">&lt;methodStep&gt;</span></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3">    <span class="kw">&lt;description&gt;</span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">      <span class="kw">&lt;para&gt;</span>           </a>
-<a class="sourceLine" id="cb6-5" data-line-number="5">         The seagrass coverage raster was created in ArcGIS Pro (version</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6">         2.4.3, by Esri) using the IDW geoprocessing tool on</a>
-<a class="sourceLine" id="cb6-7" data-line-number="7">         sampling_points.csv with a power of 2 and the nearest</a>
-<a class="sourceLine" id="cb6-8" data-line-number="8">         12 points.</a>
-<a class="sourceLine" id="cb6-9" data-line-number="9">      <span class="kw">&lt;/para&gt;</span></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10">      <span class="kw">&lt;para&gt;</span></a>
-<a class="sourceLine" id="cb6-11" data-line-number="11">         The raster was then refined using the seagrass-refiner model</a>
-<a class="sourceLine" id="cb6-12" data-line-number="12">         with the auto-refine option checked (Smith, 2017).</a>
-<a class="sourceLine" id="cb6-13" data-line-number="13">      <span class="kw">&lt;/para&gt;</span></a>
-<a class="sourceLine" id="cb6-14" data-line-number="14">      <span class="kw">&lt;para&gt;</span></a>
-<a class="sourceLine" id="cb6-15" data-line-number="15">         Smith, J. (2017). seagrass-refiner: a package that does the cool</a>
-<a class="sourceLine" id="cb6-16" data-line-number="16">         seagrass stuff. Version 1.2.  https://doi.org/this-is/a-fake-doi,</a>
-<a class="sourceLine" id="cb6-17" data-line-number="17">         2017.</a>
-<a class="sourceLine" id="cb6-18" data-line-number="18">      <span class="kw">&lt;/para&gt;</span></a>
-<a class="sourceLine" id="cb6-19" data-line-number="19">    <span class="kw">&lt;/description&gt;</span></a>
-<a class="sourceLine" id="cb6-20" data-line-number="20">  <span class="kw">&lt;/methodStep&gt;</span></a>
-<a class="sourceLine" id="cb6-21" data-line-number="21"><span class="kw">&lt;/methods&gt;</span></a></code></pre></div>
-</div>
-<div id="model-code" class="section level3">
-<h3><span class="header-section-number">3.2.2</span> Model code</h3>
+<h3><span class="header-section-number">2.2.1</span> Referencing models in EML</h3>
+<p>For data packages related to a model, whether the model is archived within the same data package or not, indicate linkage to the model in EML following the <a href="code.html">best practices for archiving code</a> (see the section on linking code and data).</p>
+<p>Example 1: EML snippet relating data to models via the method description:</p>
+<pre><code>&lt;methodStep&gt;
+   &lt;description&gt;
+      &lt;para&gt;This methodStep contains data provenance information as specified in the LTER EML Best Practices. Each dataSource element here lists entity-specific information and links to source data used in the creation of this derivative data package.&lt;/para&gt;
+   &lt;/description&gt;
+   &lt;dataSource&gt;
+      &lt;title&gt;Source dataset title&lt;/title&gt;
+      &lt;creator&gt;
+         &lt;individualName&gt;
+            &lt;givenName&gt;first name&lt;/givenName&gt;
+            &lt;surName&gt;last name&lt;/surName&gt;
+         &lt;/individualName&gt;
+         &lt;organizationName&gt;organization name&lt;/organizationName&gt;
+         &lt;electronicMailAddress&gt;email@some.edu&lt;/electronicMailAddress&gt;
+      &lt;/creator&gt;
+      &lt;distribution&gt;
+         &lt;online&gt;
+            &lt;onlineDescription&gt;This is a link to an external online data resource (describe resource and repository location).&lt;/onlineDescription&gt;
+            &lt;url function=&quot;information&quot;&gt;https://pasta.lternet.edu/package/metadata/eml/knb-lter-ntl/80/2&lt;/url&gt;
+         &lt;/online&gt;
+      &lt;/distribution&gt;
+      &lt;contact&gt;
+         &lt;positionName&gt;Information Manager&lt;/positionName&gt;
+         &lt;organizationName&gt;organization name&lt;/organizationName&gt;
+         &lt;electronicMailAddress&gt;infomgr@some.edu&lt;/electronicMailAddress&gt;
+      &lt;/contact&gt;
+   &lt;/dataSource&gt;
+&lt;/methodStep&gt;</code></pre>
+<div id="model-code" class="section level4">
+<h4><span class="header-section-number">2.2.1.1</span> Model code</h4>
 <p>The model used to produce certain data needs to be well documented and linked from the resulting data product(s). However, it is not always easy to decide where and how to archive the code, and whether or not in conjunction with the data product(s). We outline in sections below three common code archiving options.</p>
 <p>Note that these scenarios (model code archived with data, or standalone in EDI, or elsewhere) are not mutually exclusive. Any project that involves code might make use of both established and custom software hosted on many different platforms, and might use some or all archiving options.</p>
-<p>To decide between archiving options, consider the questions listed in <a href="./code-in-edi.html">best practices for publishing software/code</a> (see section 1).</p>
+<p>To decide between archiving options, consider the questions listed in <a href="code.html">best practices for publishing code</a>.</p>
+</div>
 <div id="model-code-and-data-in-the-same-package" class="section level4">
-<h4><span class="header-section-number">3.2.2.1</span> Model code and data in the same package</h4>
-<p>The goal of this practice is to ensure complete transparency of the data, and it applies to one-off models developed for the associated data, or occasionally to larger code bases for the reasons outlined <a href="./code-in-edi.html">best practices for publishing software/code</a> (see section 1). Include the code as a dataset/otherEntity. Additionally, it is recommended to include a CodeMeta JSON-LD file, which can also be handled and documented in EML as dataset/otherEntity. CodeMeta is a metadata standard for software and code compatible with schema.org. Refer to <a href="./code-in-edi.html">best practices for publishing software</a> for how to document the code and create CodeMeta.</p>
+<h4><span class="header-section-number">2.2.1.2</span> Model code and data in the same package</h4>
+<p>The goal of this practice is to ensure transparency of the data, and it applies to one-off models developed for the associated data, or occasionally to larger code bases for the reasons outlined in <a href="code.html">best practices for archiving code</a>. Include the code as a dataset/otherEntity. Additionally, it is recommended to include a CodeMeta file, which can also be handled and documented in EML as dataset/otherEntity. CodeMeta is a metadata standard for software and code compatible with schema.org. Refer to <a href="code.html">best practices for archiving code</a> for how to document the code and create CodeMeta.</p>
 </div>
 <div id="model-code-as-standalone-package" class="section level4">
-<h4><span class="header-section-number">3.2.2.2</span> Model code as standalone package</h4>
-<p>If the model has been used to generate several datasets, i.e., is more widely applicable, it can be archived as its own package in EDI and assigned a DOI. Include the code as a dataset/otherEntity. Additionally, it is recommended to include a CodeMeta JSON-LD file, which can also be handled and documented in EML as dataset/otherEntity. CodeMeta is a metadata standard for software and code compatible with schema.org. Refer to <a href="./code-in-edi.html">best practices for publishing software</a> for how to document the code and create CodeMeta.</p>
-<p>Consider including a list of derived data product(s) and their DOIs, ideally in the abstract of the EDI model package. This might lead to a chicken-and-egg issue, in which case we recommend publishing the model first, then including its DOI in the associated data packages(s). Then the IM might choose to take an extra step and push a revision to the model package to include the data DOIs.</p>
+<h4><span class="header-section-number">2.2.1.3</span> Model code as standalone package</h4>
+<p>If the model has been used to generate several datasets, i.e., is more widely applicable, it can be archived as its own package in EDI and assigned a DOI. Include the code as a dataset/otherEntity. Additionally, it is recommended to include a CodeMeta JSON-LD file, which can also be handled and documented in EML as dataset/otherEntity. CodeMeta is a metadata standard for software and code compatible with schema.org. Refer to <a href="code.html">best practices for archiving code</a> for how to document the code and create CodeMeta.</p>
 </div>
 <div id="model-code-archivedmaintained-elsewhere" class="section level4">
-<h4><span class="header-section-number">3.2.2.3</span> Model code archived/maintained elsewhere</h4>
-<p>This might include complex community models/software maintained by many people, published and actively maintained R/Python packages, etc. It may sometimes be advisable to archive a copy of the model code with the data, even if it appears to be maintained elsewhere. Refer to section 1 above to establish linkage from/to data products.</p>
+<h4><span class="header-section-number">2.2.1.4</span> Model code archived/maintained elsewhere</h4>
+<p>This might include complex community models/software maintained by many people, published and actively maintained R/Python packages, etc., or simply code archived in another repository such as <a href="https://www.comses.net/">CoMSES Net</a>. It may sometimes be advisable to archive a copy of the model code with the data, even if it appears to be maintained elsewhere. See recommendations above for referencing models in EML.</p>
 </div>
 </div>
 <div id="model-input-and-output-data" class="section level3">
-<h3><span class="header-section-number">3.2.3</span> Model input and output data</h3>
+<h3><span class="header-section-number">2.2.2</span> Model input and output data</h3>
 <p>These are considered data entities, which should be handled according to EML best practices for corresponding data types. However, if the resulting datasets are very large, one may consider if input/output from all individual model runs need to be archived. Are there specific model run results that are more useful for non-modelers? For example: results from model runs leading to a journal publication.</p>
-<p>Very large model inputs/outputs may need to be archived offline. Refer to <a href="./large-data-sets.html">best practices for offline data</a>.</p>
+<p>Very large model inputs/outputs may need to be archived offline. Refer to <a href="large-data-sets.html">best practices for offline data</a>.</p>
 <p>If the model requires a specific folder structure, you can zip model input files within the package to preserve that folder structure. A disadvantage of this approach is that you cannot elegantly describe each file with EML.</p>
+<p>The <a href="https://modeldatarcn.github.io/#project-description">EarthCube Research Coordination Network, “What About Model Data?” group</a> is working on a rubric to help you determine how much model output data to save, based on assorted criteria on reproducibility/value of the data. Learn more about that group and their rubric on their <a href="https://modeldatarcn.github.io/">Model Data RCN website</a>.</p>
+<p>Researchers at the Department of Energyâ€™s Environmental Systems Science are also working on assessing model archiving needs. In <a href="https://eartharxiv.org/repository/view/260/">this preprint</a>, Simmonds et al. 2020 discuss feedback from communications with modellers and propose preliminary solutions. With regards to input/output data, their feedback indicates two opposite opinions: some feel the whole gamut of raw to aggregated outputs needs to be archived, while others advocate for only high-level outputs corresponding to publication figures. They also found that spin-up simulations were not considered a high priority for archiving. See section 2.3 What is worth archiving and for how long does it remain useful?</p>
 </div>
 <div id="model-parameters" class="section level3">
-<h3><span class="header-section-number">3.2.4</span> Model parameters</h3>
+<h3><span class="header-section-number">2.2.3</span> Model parameters</h3>
 <p>Include model parameters whenever applicable. If code/input/output from multiple model runs are archived, make sure to archive all corresponding sets of parameters, and be explicit in linking the different components together.</p>
-<p>Consider archiving model parameter files as their own data object(s) in both their native format and as a text (non-binary) version. If the “runfile” will be archived, consider including the parameters within that file with appropriate annotations.</p>
+<p>Consider archiving model parameter files as their own data object(s) in both their native format and as a text (non-binary) version. If the ‘runfile’ will be archived, consider including the parameters within that file with appropriate annotations.</p>
 </div>
+</div>
+<div id="example-data-packages-in-edi" class="section level2">
+<h2><span class="header-section-number">2.3</span> Example data packages in EDI</h2>
+<table>
+<tr>
+<td>
+<strong>Dataset Title</strong>
+</td>
+<td>
+<strong>Description</strong>
+</td>
+<td>
+<strong>EDI Package ID</strong>
+</td>
+</tr>
+<tr>
+<td>
+<em>North Temperate Lakes LTER General Lake Model Parameter Set for Lake Mendota, Summer 2016 Calibration</em>
+</td>
+<td>
+Parameters for specific GLM runs. GLM is a large community model, not managed and archived in EDI
+</td>
+<td>
+<a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-ntl.348.2">knb-lter-ntl.348.2</a>
+</td>
+</tr>
+<tr>
+<td>
+<em>SBC LTER: Regional Oceanic Modeling System (ROMS) Setup Files, Code, and Lagrangian Model Setup Files</em>
+</td>
+<td>
+All the necessary code, grid, forcing, initial, and boundary condition files for running the UCLA version of the Regional Oceanic Modeling System (ROMS) for the Santa Barbara Channel
+</td>
+<td>
+<a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=126">knb-lter-sbc.126.1</a>
+</td>
+</tr>
+<tr>
+<td>
+<em>Lake thermal structure drives inter-annual variability in summer anoxia dynamics in a eutrophic lake over 37 years</em>
+</td>
+<td>
+Dataset to run a 37-year simulation (1979-2015) of the Lake Mendota lake ecosystem using the vertical 1D GLM-AED2 model.
+</td>
+<td>
+<a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-ntl&identifier=396">knb-lter-ntl.396.1</a>
+</td>
+</tr>
+</table>
 </div>
 <div id="resources-1" class="section level2">
-<h2><span class="header-section-number">3.3</span> Resources</h2>
-<p>Example model data packages already in EDI illustrative of different approaches:</p>
-<ul>
-<li>NTL LTER: General Lake Model (GLM) applied to Lake Mendota. <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-ntl.348.2">EDI Portal.</a> Parameters only.</li>
-<li>SBC LTER: Regional Ocean Modeling System (ROMS) applied to the California coast. <a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&amp;identifier=126">EDI Portal</a>. Inputs, code, parameters, outputs all zipped in one large file with presumably appropriate directory structure.</li>
-</ul>
-<p><a href="./large-data-sets.html">Best practices for large datsets handled offline</a></p>
-<p><a href="./code-in-edi.html">Best practices for publishing software</a></p>
+<h2><span class="header-section-number">2.4</span> Resources</h2>
+<p>Janssen, Marco A., Lilian Na’ia Alessa, Michael Barton, Sean Bergin and Allen Lee (2008). â€˜Towards a Community Framework for Agent-Based Modellingâ€™. Journal of Artificial Societies and Social Simulation 11(2)6 <a href="http://jasss.soc.surrey.ac.uk/11/2/6.html">http://jasss.soc.surrey.ac.uk/11/2/6.html</a>.</p>
+<p>Simmonds, Maegen, William J. Riley, Shreyas Cholia, and Charuleka Varadharajan (2020). ‘Addressing Model Data Archiving Needs for the Department of Energyâ€™s Environmental Systems Science Community’. EarthArXiv (preprint). <a href="https://doi.org/10.31223/osf.io/acdk4">https://doi.org/10.31223/osf.io/acdk4</a>.</p>
+<p>See sections 2.3 What is worth archiving and for how long does it remain useful?, discussed above, plus 2.4 Model data archiving protocol, where the authors argue for better standardized reporting format for model data, e.g., top-level metadata and directory structure at a minimum. Section 4.1 Developing Model Data Archiving Guidelines proposes an organization scheme for model data.</p>
 
 </div>
 </div>
@@ -342,8 +384,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="code-in-edi.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="still-images.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="code.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="images-and-documents-as-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

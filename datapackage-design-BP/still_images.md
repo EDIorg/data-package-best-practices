@@ -1,60 +1,212 @@
-# Still Images
+# Images and Documents as Data
 
-Contributors: Gastil Gastil-Buhl, Corinna Gries, Tim Whiteaker, Li Kui, Jason Downing, Greg Maurer, Renée Brown, Mark Servilla, Stace Beaulieu, Mary Martin, and An Nguyen
+Contributors: Renee F. Brown (lead), Stace Beaulieu, Sarah Elmendorf, Gastil Gastil-Buhl, Corinna Gries, Li Kui, Mary Martin, Greg Maurer, John Porter, Tim Whiteaker
 
-## Introduction {#introduction}
 
-This document describes best practices for archiving still images, such as images that are taken and analyzed for a certain measurement, including but not limited to abundance, presence/absence, and coverage following the definition in the [OBO ontology](http://purl.obolibrary.org/obo/IAO_0000101) for ‘image’:  “An image is an affine projection to a two dimensional surface, of measurements of some quality of an entity or entities repeated at regular intervals across a spatial range, where the measurements are represented as color and luminosity on the projected surface.” Examples include photos of sea ice taken from an automated camera station, images taken by plankton imaging systems, and images taken by an unmanned vehicle (underwater or aerial) for the above purpose. This best practice does not cover images that fall under the geospatial raster category such as satellite imagery, nor does it cover images already well handled in other systems, e.g., natural history specimen images, phenocam images. 
+## Introduction
 
-This document was written for the intended audience of a Long Term Ecological Research (LTER) information manager (IM), though it is applicable to anyone handling image data in the context of a larger ecological research program. We assume that the target archive is designed to handle ecological data, and that a given archive package will include metadata written in Ecological Metadata Language (EML) format. We refer to the Environmental Data Initiative (EDI) as an example archive. The same practices could be applied to other similar repositories.
+This chapter describes best practices for archiving images and other documents as data. The [Environment Ontology (ENVO)](http://purl.obolibrary.org/obo/IAO_0000101) defines a document as '_a collection of information content entities intended to be understood together as a whole_.' Common examples include still images, audio and/or video multimedia files, field notebooks, written interview notes or transcribed oral accounts, historical document collections, and 'paper' maps (non-digitized maps). For images that are already handled by specialized repositories (e.g., phenocam images, specimen images) refer to [Data in Other Repositories](data-in-other-repositories.html), for additional information on how to handle images from uncrewed (underwater or aerial) vehicles refer to [Data Gathered with Small Moving Platforms](data-gathered-with-small-moving-platforms.html), and for geospatial imagery refer to [Spatial Data](spatial-data.html).
 
-If large amounts of images (>100GB in total) are to be archived, please coordinate with EDI before uploading.
 
-## Recommendations for data packages {#recommendations-for-data-packages}
+## Recommendations for data packages
 
-A still image data package includes the following:
 
-*   [EML Metadata](#recommendations-for-metadata)
-*   a CSV data table with meta information for each image, serving as an [image catalog](#image-catalog)
-*   (optional) one or more image files or one or more zip files of the images as ‘otherEntity’
-*   (optional) data tables with information [extracted from the images](#data-extracted-from-images)
-*   (optional) data tables with other environmental information measured during image acquisition
+### Reasons to archive documents as data 
 
-An image data package may contain image files individually (small numbers, up to ~10) or bundled as a zip archive. The decision of how to bundle images into zip archives and then into data packages should be guided by the overall goal of making image data usable for the intended purpose of the images. In most cases this involves finding specific images by, e.g., time or location of acquisition or some other aspect of interest. Hence, a balance has to be achieved between packages that are either too large or too numerous to be handled by a user. In addition, the effort of documenting images (each individually or in groups) has to be taken into account. The same decisions need to be applied within a data package in the design of zip archives. Images may be grouped by space and/or time. E.g., a stationary camera’s output may be archived in annual data packages, each of which may contain monthly zip files if the number of images is large. A moving camera’s output may also be archived in annual data packages, but individual zip files may hold all images for one transect. Another consideration is the timing of archiving. One should strive for archiving a fully processed group of images when no more changes or updates are expected due to the large volume to be handled repeatedly for each update.
 
-### Recommendations for Metadata {#recommendations-for-metadata}
 
-Metadata are provided at two levels: in the EML file and in the csv file serving as an image catalog. Of course, all image data packages need the good discovery level metadata in EML (who, what, where, when, how, why). The detail provided on the level of the included csv image catalog (see below) should be guided by the same principles as stated above: to enable optimal usability of the images. E.g., images from a stationary camera need latitude and longitude only in the EML file not for every image. By contrast, images from a moving camera may need that information for every image or at least for every site/quadrat/transect.
+*   **Enhance the credibility of associated datasets.** Many document types (field notes, still images, etc.) often provide additional metadata that cannot easily be encapsulated in the associated dataset(s) or were not considered important at the time of transcription. As such, these documents may provide opportunities to rectify transcription errors, retrospectively provide explanations of unusual data, and/or include additional observational or measured data, such as opportunistic measurements or calibration parameters.
+*   **Provide opportunities for new analyses.** New analytical methods may be employed on archived documents (especially still images) or documents that were never archived previously because the cost-to-benefit ratio was considered too high (e.g., pilot projects).
+*   **Improve ease of access. **In distributed projects, access to original and/or 'hard-copy' documents may be limited to a particular institution or subset of people. By digitally archiving these documents in a data repository, the data become more findable, accessible, interoperable, and reusable (FAIR).
 
-In addition to keywords describing the general purpose of the images (e.g., ice phenology, community composition, richness, etc.) it is recommended to include the keyword: Image with the semantic annotation from OBO:
 
->**Term IRI:** [http://purl.obolibrary.org/obo/IAO_0000101](http://purl.obolibrary.org/obo/IAO_0000101)**
->
->**Definition:** An image is an affine projection to a two dimensional surface, of measurements of some quality of an entity or entities repeated at regular intervals across a spatial range, where the measurements are represented as color and luminosity on the projected surface.
->
+### Considerations for data package structure
 
-### Image Catalog {#image-catalog}
 
-The image catalog is a required CSV data table with meta information for each image or each zip archive of a group of images. Each row in the catalog represents a single image or zip archive of a group of images. At a minimum, the table includes an attribute for the image/zip filename and additional attributes if other essential  information varies per image/zip. Additional attributes may include essential information on the camera, date, time, creator, location, the image, the subject
 
-*   (required) Filename of each image or zip archive. If each image is described a relative path (directory structure) of the image including file extension, e.g., IMG_1001.jpg or 2018/SITE3/IMG1001.jpg should be included. Within this attribute in the image catalog, each value should be unique.
-*   (optional) Link/URL to download image if the image is available on a different system.
-*   (optional) Creator
-*   (optional) Datetime: Date and time associated with the image, in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations), e.g., 2007-04-05T12:30-02:00. Use the date and time that is important to the end user's interpretation of the image.
-*   (optional) Location: Latitude and longitude in decimal degrees, site name, transect name, altitude, depth, habitat etc.
-*   (optional) all other conditions/descriptions that will help identify an image for use within the collection. Be consistent, use a controlled vocabulary for these fields, so that a user can search on them. Examples are: weather conditions, organism name, etc.
-*   (optional) Camera/instrument characteristics: model, settings, settings of a microscope
-*   (optional) Image characteristics: angle, distance, scale for pixel, resolution, magnification
+*   **Balance file size and number of files.** A data package may contain document files individually or bundled as a compressed archive (e.g., zip). The decision of how to bundle documents into compressed archives and then into data packages should be guided by the overall goal of making data usable for the intended purpose of the documents. In most cases, this would involve finding specific documents by, for example, the date or location of the acquisition, or some other aspect of interest. In addition, the effort of documenting documents (each individually vs. in groups) has to be taken into account. Also see [Large Data Sets](large-data-sets.html).
+*   **Document grouping.** Data packages, or compressed archives within data packages, may be grouped spatially (e.g., by location) and/or temporally (e.g., by date, season, or year). For example, data outputs from a stationary camera may be archived in annual data packages, each containing monthly compressed archives if the number of images is large. While moving camera outputs may also be archived annually, these data packages may instead include compressed archives containing all still images for a single location.
+*   **Document naming.** To maximize searchability, document names should be unique and meaningful for a data reuser. It is recommended that individual documents be named according to their content, and compressed archives include date, location, and other relevant information in the filename.
+*   **Data inventory table.** An inventory table providing the structure and organization of the included document entities or groups of documents (see Table 4.1) is recommended, especially for larger collections of documents within a data package. The inventory table serves as an additional source of metadata and may also be used to link specific documents to additional information.
+*   **Archival frequency. **One should strive for archiving a fully processed group of documents when no more updates are expected (e.g., after a field season or annually) due to the large volume of documents to be handled repeatedly for each update.
+*   **Linking to related data packages.** In the case where the documents are useful to understanding another data package and vice versa (e.g., met station visitation logs and met station time series data), it is recommended to link the complementary data package in the methods section of both datasets. Alternatively, include the document(s) or compressed archive(s) in the existing dataset as otherEntity, as described in the next section.
 
-### Data Extracted from Images {#data-extracted-from-images}
 
-For data tables with information extracted from images (e.g., species abundance or coverage, or measurements that are made from image processing), whether included in the image data package or in a separate package, provide information to enable a user to locate the image from which a data value was extracted. This likely means including image filenames as a data column, or some other unique identifier or link if filenames cannot be used for this purpose.  Or, if a given data row is derived from more than one image, consider including a cross reference table relating images to data rows.
+### Documenting data packages 
+
+
+#### Ecological Metadata Language
+
+All data packages require good discovery-level metadata in Ecological Metadata Language (EML), which should be assembled using standard documented best practices. Documents (including compressed archives) should be included as otherEntity in the data package (e.g., see Example 4.1). Refer to the most recent version of EML Best Practices ([currently v3](https://environmentaldatainitiative.files.wordpress.com/2017/11/emlbestpractices-v3.pdf)) for guidance regarding the formatName and entityType EML elements. If a format for your document type is not covered, it is recommended to use the appropriate [MIME type](https://github.com/DataONEorg/object-formats), if available.
+
+Example 1: EML otherEntity snippet for a pdf file
+
+
+```
+<otherEntity>
+   <entityName>site date</entityName>
+   <entityDescription>Field notes at site and date.</entityDescription>
+   <physical>
+      <objectName>site_date.pdf</objectName>
+      <size unit="byte">9674</size>
+      <authentication method="MD5">8547b7a63fcf6c1f0913a5bd7549d9d1</authentication>
+      <dataFormat>
+         <externallyDefinedFormat>
+            <formatName>Portable Document Format</formatName>
+         </externallyDefinedFormat>
+      </dataFormat>
+   </physical>
+   <entityType>application/pdf</entityType>
+</otherEntity>
+```
+
+
+The EML metadata should also include appropriate keywords describing the general purpose of the document or compressed archive (e.g., ice phenology, community composition, stream hydrology, etc.). For example, for still images, it is recommended to include keyword: image with the semantic annotation from the Information Artifact Ontology (IAO) :
+
+
+    **Term IRI:** [http://purl.obolibrary.org/obo/IAO_0000101](http://purl.obolibrary.org/obo/IAO_0000101)
+
+
+    **Definition:** An image is an affine projection to a two dimensional surface, of measurements of some quality of an entity or entities repeated at regular intervals across a spatial range, where the measurements are represented as color and luminosity on the projected surface.
+
+Note, IAO includes at least one subcategory for image (e.g., [photograph](http://www.ontobee.org/ontology/IAO?iri=http://purl.obolibrary.org/obo/IAO_0000185)). It is recommended the most specific applicable concept be used.
+
+
+#### Data Inventory Table
+
+We recommend that an additional level of metadata be provided through a data inventory table that effectively serves as a document catalog (see Table 4.1). The detail provided in this table should be guided by the same principles as stated above -- to enable optimal usability of the documents. For example, still images from a stationary camera require latitude and longitude only in the EML file, not for each individual image. However, images from a moving camera may need that information for every image, or at least for every location (e.g., site, quadrat, transect). Additionally, Exif metadata from photographic images may be programmatically extracted to supplement the inventory table (refer to the _Tips and Tricks_ section of [Data Gathered with Small Moving Platforms](data-gathered-with-Small-moving-platforms.html)). 
+
+The data inventory table should be structured such that each column represents a particular attribute, described in EML as a [dataTable](https://eml.ecoinformatics.org/schema/eml-dataTable_xsd.html#eml-dataTable.xsd) entity, and each row represents an individual document or a compressed archive of a group of documents. At minimum, the table should include an attribute for the document/archive filename, as well as any other essential attributes that vary per each document/archive. Additional attributes may include information on the date and/or time, but for this information to be useful, be consistent and use a controlled vocabulary for these fields so that a user can effectively search on them.
+
+Table 1: Data inventory table structure.
+
+
+<table>
+  <tr>
+   <td><strong>Column</strong>
+   </td>
+   <td><strong>Attribute Description</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Filename
+   </td>
+   <td>Filename of each document or compressed archive, including file extension (e.g., 'site_date.jpg'). For compressed archives, include the relative path of the document, with respect to the uncompressed directory structure (e.g., '2018/SITE3/quadrat4.jpg').
+   </td>
+  </tr>
+  <tr>
+   <td>Link/URL/URI
+   </td>
+   <td>Link to download a document if it is available on a different system (also see <a href="data-in-other-repositories.html">Data in Other Repositories</a>). Persistent identifiers are recommended, if available.
+   </td>
+  </tr>
+  <tr>
+   <td>Creator(s)
+   </td>
+   <td>Name(s) of the creator(s) of the original document (e.g., photographer, field technician, interviewer). Multiple creators should be entered into a single cell using the pipe delimiter. 
+   </td>
+  </tr>
+  <tr>
+   <td>Datetime
+   </td>
+   <td>Date (and time) associated with the document, in <a href="https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations">ISO 8601 format</a> (e.g., 2007-04-05T12:30-02:00).
+   </td>
+  </tr>
+  <tr>
+   <td>Project specific datetime attributes
+   </td>
+   <td>One or more appropriately labeled columns containing project specific date and time information for easier search and retrieval of documents (e.g., year, season, campaign).
+   </td>
+  </tr>
+  <tr>
+   <td>Location
+   </td>
+   <td>One or more location columns as appropriate, such as latitude and longitude in decimal degrees, site name, transect name, altitude, depth, habitat, etc.
+   </td>
+  </tr>
+  <tr>
+   <td>Document specific attributes
+   </td>
+   <td>One or more columns as appropriate to the document type, such as weather conditions, organism name, instrument type, etc.
+   </td>
+  </tr>
+</table>
+
+
+
+## Example data packages in EDI
+
+Each of the Environmental Data Initiative (EDI) data packages listed below include images or other documents as data. Some of these packages contain data inventory tables (as dataTable entities) described in the EML metadata. 
+
+Table 2: Data packages in EDI providing examples of best practices from this document_._
+
+
+<table>
+  <tr>
+   <td><strong>Dataset Title</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+   <td><strong>EDI Package ID</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><em>Annual ground-based photographs taken at 15 net primary production (NPP) study sites at Jornada Basin LTER, 1996-ongoing</em>
+   </td>
+   <td>Compressed archives of images grouped by year. Includes data inventory file.
+   </td>
+   <td><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&identifier=210011005">knb-lter-jrn.210011005.105</a>
+   </td>
+  </tr>
+  <tr>
+   <td><em>McMurdo Dry Valleys LTER: Landscape Albedo in Taylor Valley, Antarctica from 2015 to 2019</em>
+   </td>
+   <td>Compressed archives of aerial images, grouped by flight date, and associated reflectance data.
+   </td>
+   <td><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcm.2016.2">knb-lter-mcm.2016.2</a>
+   </td>
+  </tr>
+  <tr>
+   <td><em>MCR LTER: Coral Reef: Computer Vision: Multi-annotator Comparison of Coral Photo Quadrat Analysis</em>
+   </td>
+   <td>5090 coral reef survey images, and 251,988 random-point annotations by coral ecology experts.
+   </td>
+   <td><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-mcr&identifier=5013">knb-lter-mcr.5013.3</a>
+   </td>
+  </tr>
+  <tr>
+   <td><em>Abundance and biovolume of taxonomically-resolved phytoplankton and microzooplankton imaged continuously underway with an Imaging FlowCytobot along the NES-LTER Transect in winter 2018</em>
+   </td>
+   <td>144,281 images from a plankton imaging system with annotations and extracted size data.
+   </td>
+   <td><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-nes.9.1">knb-lter-nes.9.1</a>
+   </td>
+  </tr>
+  <tr>
+   <td><em>Calling activity of Birds in the White Mountain National Forest: Audio Recordings (2016 and 2018)</em>
+   </td>
+   <td>Compressed archive containing 410 audio files in wav format. Includes data inventory table.
+   </td>
+   <td><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-hbr&identifier=268&revision=1">knb-lter-hbr.268.1</a>
+   </td>
+  </tr>
+</table>
+
+
 
 ## Resources
 
-### Examples in EDI {#examples-in-edi}
 
-*   [https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&identifier=210011005](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&identifier=210011005)
-*   [https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcm.2016.2](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcm.2016.2)
-*   [https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-mcr&identifier=5006](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-mcr&identifier=5006)
-*   [https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-mcr&identifier=5013](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-mcr&identifier=5013)
+### Considerations for digitizing documents
+
+Following are some general considerations and recommendations for digitizing paper or other 'hard-copy' documents for archival. This is not meant to be an exhaustive list. For further and more detailed information, please refer to the U.S. National Archives and Records Administration (NARA)â€™s _[Technical Guidelines for Digitizing Archival Materials for Electronic Access](https://www.archives.gov/files/preservation/technical/guidelines.pdf)_.
+
+
+
+*   **Effort.** The decision to digitize documents, as well as the digitization method, involves trade-offs in the accessibility and ease of using particular hardware and/or software technologies, the quality of the digitization, and the overall effort spent. Digitization efforts may be significant, for example, when dealing with a large number of documents requiring meaningful file names, text recognition, and/or high resolution for improved accessibility.
+*   **Equipment.** Instruments for digitizing hard-copy documents range from high resolution scanners (less accessible, less user-friendly, more expensive, better quality) to smartphone cameras (ubiquitous, easy-to-use, lower quality). For example, taking a smartphone image in the field may be utilized for quick and easy digitization of field notes.
+*   **Document resolution and file size.** This is an important consideration that should be guided by the content and purpose of the document. Detailed paper maps should probably be scanned at high resolution and large file size, while field sheets may not need as much detail.
+*   **Optical Character Recognition (OCR):** When digitizing documents that include text, we recommend using scanning or other software with OCR capabilities (e.g., Adobe, ABBYY, Tesseract) to convert the text into machine readable characters so that the documents are searchable and thus, more usable. OCR does not work well for handwritten text, older fonts, or documents with busy backgrounds (speckled, dirty, faded, etc.).
+*   **Sensitive Information and Human Subjects:** Regardless of the digitization method, one should be mindful of sensitive information that shouldnâ€™t be archived or otherwise redacted (e.g., photographs of human subjects, field notebooks containing personal messages, gate combinations, and/or telephone numbers). In all cases in which human subjects are involved, Institutional Review Board (IRB) restrictions must be heeded. A signed IRB consent form for the associated research project represents a contract between researcher and human subject. It is important to note that IRB restrictions can differ among research studies within the same project. For further information, see the [EDI Data Initiative Data Policy](https://environmentaldatainitiative.org/edi-data-policy-2/#Sensitive%20data). 
+
+While transcription is a digitization method that can be performed on certain types of documents (e.g., audio/video recordings, field notebooks) and can enhance search capabilities, transcript generation requires substantially more effort than other digitization methods, and is prone to error. Moreover, in the case where the original documents contain drawings, transcripts may be incomplete or otherwise inaccurate. _Thus, we recommend digitizing documents by other means, using the considerations described above._

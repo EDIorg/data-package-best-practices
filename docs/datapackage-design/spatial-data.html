@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Best Practices for Data Package Design</title>
+  <title>4 Spatial Data | Best Practices for Data Package Design</title>
   <meta name="description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Best Practices for Data Package Design" />
+  <meta property="og:title" content="4 Spatial Data | Best Practices for Data Package Design" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Best Practices for Data Package Design" />
+  <meta name="twitter:title" content="4 Spatial Data | Best Practices for Data Package Design" />
   
   <meta name="twitter:description" content="Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="code.html"/>
+<link rel="prev" href="images-and-documents-as-data.html"/>
+<link rel="next" href="data-gathered-with-small-moving-platforms.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -242,37 +242,128 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Best Practices for Data Package Design</h1>
-<p class="author"><em>Environmental Data Initiative</em></p>
-<p class="date"><em>2021-02-24</em></p>
+<div id="spatial-data" class="section level1">
+<h1><span class="header-section-number">4</span> Spatial Data</h1>
+<p>Contributors: Tim Whiteaker, John Porter, Mary Martin</p>
+<div id="introduction-3" class="section level2">
+<h2><span class="header-section-number">4.1</span> Introduction</h2>
+<p>This document/chapter contains recommendations on data package structure and metadata for spatial datasets. Over the timeline of Long Term Ecological Research (LTER) Network?s use of the Ecological Metadata Language (EML), both spatial data formats and data curation options have evolved. In this document, focus on best practices that can be widely adopted with the goal of enhancing data discoverability and usability, and the understanding that there are multiple solutions to creating these data packages.</p>
 </div>
-<div id="data-package-design-for-special-cases" class="section level1 unnumbered">
-<h1>Data Package Design for Special Cases</h1>
-<p>Members of the working group developing these documents: S. Beaulieu, R. Brown, J. Downing, S. Elmendorf, H. Garritt, G. Gastil-Buhl, C. Gries, J. Hollingsworth, H.-Y. Hsieh, L. Kui, M. Martin, G. Maurer, A. Nguyen, J. Porter, A. Sapp, M. Servilla, T. Whiteaker</p>
-<p>In these documents we consider special cases for archiving research data based on their data type, format, or acquisition method, and recommend practices that ensure optimal re-usability of the data. Most recommendations here are aimed at improving documentation of data acquisition and processing to avoid misinterpretation. This includes the recommendation to publish raw data and/or processing code along with the data products. Others are aimed at usability in terms of data size/volume, or connecting related data. Some recommendations involve including a metadata document formatted according to a new and emerging standard (e.g., codeMeta) or a data inventory table. Data inventory tables can cross the line between metadata and data and are intended to improve discoverability and navigation of archived data.</p>
-<p>The intended audience for these best practice recommendations is the ecological research information manager (IM) community, and they are applicable to anyone operating in the context of an ecological research program. We assume that the target data repository is designed to handle ecological data, and that a given archive package will include metadata encoded in a community standard. This document references elements of the <a href="https://eml.ecoinformatics.org/">EML metadata standard</a>, but many aspects would similarly apply to other metadata standards and these documents should be considered in the larger context of applicable metadata standard best practices. We refer to the Environmental Data Initiative (<a href="https://portal.edirepository.org">EDI</a>) as an example data repository, though the same practices could be applied to other similar repositories.</p>
-<p>Throughout the chapters we use the term <em>data package</em> to refer to a published unit of data and metadata together, which is the convention at the EDI repository. At other data repositories, equivalent terms for a data package, such as <em>dataset</em>, may be used. A data package may contain one or more <em>entities</em>, such as csv tables, spatial data, processing or modeling code, and other documents (pdf, jpg, zip). A basic discussion of data package design can be found as <a href="https://environmentaldatainitiative.org/five-phases-of-data-publishing/phase-1/">EDI’s first phase of data publishing documentation</a> and in the <a href="https://environmentaldatainitiative.files.wordpress.com/2017/11/emlbestpractices-v3.pdf">LTER Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</a>.</p>
-<p>Generally, we recommend archiving entities using standard file formats that are likely to be machine readable in the future. Exceptions to this may exist where the community standard for processing particular data types relies on specialized file formats (binary, closed specification, etc.) or proprietary software. In these cases, it may be appropriate to archive specialized file types and/or a copy that has been parsed into a format (e.g. ascii) that does not require proprietary software.</p>
-<p><strong>Table of contents</strong></p>
+<div id="recommendations-for-data-packages-3" class="section level2">
+<h2><span class="header-section-number">4.2</span> Recommendations for data packages</h2>
+<div id="considerations-for-archiving-spatial-data" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Considerations for archiving spatial data</h3>
+<div id="data-formats" class="section level4">
+<h4><span class="header-section-number">4.2.1.1</span> Data formats</h4>
+<p>To maximize reuse, avoid proprietary formats. The formats listed below can be read or imported by most mainstream GIS programs or with code using libraries such as GDAL.</p>
+<p>Strongly recommended formats:</p>
 <ul>
-<li><a href="./code.html">Processing code</a></li>
-<li><a href="./model-based-datasets.html">Modeling datasets</a></li>
-<li><a href="./images-and-documents-as-data.html">Images and documents</a></li>
-<li><a href="./spatial-data.html">Spatial data</a></li>
-<li><a href="./data-gathered-with-small-moving-platforms.html">Data gathered with small, moving platforms</a></li>
-<li><a href="./data-in-other-repositories.html">Provenance and data in other repositories</a></li>
-<li><a href="./large-data-sets.html">Very large datasets</a></li>
+<li><strong>GeoTIFF</strong> - An open format for storing spatial raster data and metadata in a TIFF file.</li>
+<li><strong>GeoPackage </strong>- A standard format from the Open Geospatial Consortium (OGC) for storing vector and raster data in a SQLite database file.</li>
 </ul>
+<p>Some other formats to consider are listed below.</p>
+<ul>
+<li><strong>KML/KMZ </strong>- Keyhole Markup Language (KML) file and its zipped version for storing vector data. This format was popularized by Google Earth and is now an OGC standard. KML is best visualized in Google software and may not render as well in other GIS software.</li>
+<li><strong>GeoJSON </strong>- A format for storing vector data as text in JavaScript Object Notation (JSON). GeoJSON data are limited to the WGS84 coordinate system.</li>
+<li><strong>netCDF/HDF5</strong> - binary formats originally designed for storing multidimensional arrays of spatial data typically organized onto a grid, but which now can accommodate vector data following the NetCDF Climate and Forecast Conventions (version 1.8 or higher).</li>
+</ul>
+<p>A couple of Esri formats are worth mentioning and are listed below.</p>
+<ul>
+<li><strong>File geodatabase </strong>- One of Esri’s formats for storing vector and raster information. Several feature classes and rasters can be stored in this folder and file based structure. GDAL’s OpenFileGDB driver enables non-Esri software to view at least the data layers in a file geodatabase, but usage of more advanced file geodatabase components such as topology rules or geometric networks may not be available outside of Esri software. Field types may not be imported correctly either. Export to GeoPackage instead, unless geodatabase is the only format that supports the advanced representation of your GIS data. Just know that you limit potential reuse of your data if you use this format.</li>
+<li><strong>Shapefile </strong>- A legacy format for vector data which is widely supported. Be aware of <a href="https://en.wikipedia.org/wiki/Shapefile#Limitations">shapefile limitations</a> when considering this format. A shapefile consists of several individual files; include them as a single zip file in the data package. If the package has more than one shapefile, create a separate zip file for each shapefile.</li>
+</ul>
+<p>Although other open formats exist, their implementation in popular GIS software may be less common. If a proprietary format must be used to capture the full meaning of the data, consider also including a version of the data in an open format such as a simple data table along with metadata explaining its limitations in that format, or instructions on how to utilize the proprietary format. For example, an Esri layer package could be used when including recommended symbols for drawing vector features in a GIS is desired, in which case one could note that the vector data can be extracted by treating the layer package as a zip file.</p>
+<p>Formats that are composed of more than one file, such as shapefiles, should be zipped. Include one dataset per zip file. For example, if you have 10 shapefiles, you would create 10 zip files.</p>
+</div>
+</div>
+<div id="documenting-spatial-data-packages" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Documenting spatial data packages</h3>
+<div id="document-as-spatialraster-vector-vs.-otherentity-in-eml" class="section level4">
+<h4><span class="header-section-number">4.2.2.1</span> Document as spatial[Raster, Vector] vs. otherEntity in EML</h4>
+<p>There is a noticeable divergence in EDI spatial data packages, specifically, in the use of otherEntity vs spatial[Raster,Vector]. Here we discuss pros and cons of why one might choose to document spatial data with one type of EML entity over another. Either method is acceptable, and we recommend using spatial[Raster,Vector] when feasible. The documentation that follows provides best practices that will maximize discoverability and useability of spatial data, regardless of the entity type used.</p>
+</div>
+<div id="otherentity" class="section level4">
+<h4><span class="header-section-number">4.2.2.2</span> <a href="https://eml.ecoinformatics.org/schema/eml-dataset_xsd.html#DatasetType_otherEntity">otherEntity</a></h4>
+<ul>
+<li>Pros
+<ul>
+<li>EML preparation is simpler than with the spatial EML types</li>
+<li>Allows aggregated data structures (e.g., file geodatabases)</li>
+</ul></li>
+<li>Cons
+<ul>
+<li>Spatial data stored as &lt;otherEntity&gt; might be harder to discover because it may be difficult to determine if data in an &lt;otherEntity&gt; is spatial data or some other type when searching or browsing</li>
+<li>There is currently no controlled keywording to identify spatial data files that are included as otherEntity in EML</li>
+<li>Tabular attributes of geometric entities may not be described in detail</li>
+<li>Units (latitude/longitude vs meters vs feet) and projections may not be identified</li>
+</ul></li>
+</ul>
+</div>
+<div id="spatialrastervector" class="section level4">
+<h4><span class="header-section-number">4.2.2.3</span> spatial[<a href="https://eml.ecoinformatics.org/schema/eml-dataset_xsd.html#DatasetType_spatialRaster">Raster</a>,<a href="https://eml.ecoinformatics.org/schema/eml-dataset_xsd.html#DatasetType_spatialVector">Vector</a>]</h4>
+<ul>
+<li>Pros
+<ul>
+<li>EML more fully describes vector attributes</li>
+<li>There is a well documented path from Esri metadata to EML</li>
+<li>An EML metadata search (on EDI or elsewhere) clearly identifies these as spatial datasets through the use of spatialRaster or spatialVector entities</li>
+<li>LTER has built applications based on spatial[Raster,Vector] entities</li>
+</ul></li>
+<li>Cons
+<ul>
+<li>Data may not originate in ArcGIS, requiring a custom workflow to generate spatial entity EML</li>
+<li>Spatial[Raster,Vector] can?t describe multi-layer aggregates of GIS data (e.g., geodatabases containing multiple feature classes)</li>
+</ul></li>
+</ul>
+</div>
+<div id="keywords" class="section level4">
+<h4><span class="header-section-number">4.2.2.4</span> Keywords</h4>
+<p>Clearly identifying a dataset as spatial in nature is important to discoverability. This can be achieved by the use of keywords in the EML keyword elements as well as in the title/abstract and methods where appropriate. Keywords frequently searched include: GIS, geographic information system, spatial data, plus the more specific format names like shapefile, geoTIFF etc. Consider including as appropriate.</p>
+<p>Do include the keywords <strong>spatial vector </strong>and <strong>spatial raster </strong>as appropriate for your data. These keywords should be used especially if the data are archived as otherEntity.</p>
+<p>You may also include keywords that describe broad spatial data layers, e.g., digital elevation model, elevation, boundary, land use, land cover, census, parcel, imagery, as well as keywords that describe the specifics associated with a broad spatial data layer, e.g., land cover types such as water and vegetation types, land use types such as urban and forest, and so on.</p>
+</div>
+<div id="gis-software-compatible-metadata" class="section level4">
+<h4><span class="header-section-number">4.2.2.5</span> GIS software compatible metadata</h4>
+<p>GIS platforms will not ingest EML metadata. If your GIS software creates its own metadata file specific to that software, then it may be included as otherEntity. Be sure to populate this metadata, for example with descriptions and units for attributes in vector data or raster attribute tables. However, metadata in the standard ISO 19115 or CSDGM format to enable the metadata to be read by other GIS software is more useful.</p>
+</div>
+<div id="attribute-and-coordinate-system-detail-for-otherentity" class="section level4">
+<h4><span class="header-section-number">4.2.2.6</span> Attribute and coordinate system detail for otherEntity</h4>
+<p>While the GIS software compatible metadata included in the package typically describes attributes and coordinate systems of the data, such descriptions should also be included in the EML metadata to help users determine fit for use prior to data download. The EML spatialVector and spatialRaster types include elements for this purpose. EML otherEntity can also include attribute descriptions; however, inclusion of attributes in this more generic element may not be as common, and the element does not formally support a description of coordinate systems.</p>
+<p>When using <a href="https://eml.ecoinformatics.org/schema/eml-dataset_xsd.html#DatasetType_otherEntity">otherEntity</a> instead of spatialVector or spatialRaster, include coordinate system details in the otherEntity/entityDescription element. If not including a description of attributes in the otherEntity/attributeList element, at least include a summary description of attributes in otherEntity/entityDescription. If the spatial dataset and its associated metadata files are the only items in the data package, then you can include these descriptions in higher level EML elements such as the dataset abstract in addition to or in place of descriptions at the entity level.</p>
+</div>
+<div id="standardized-content-for-formats-and-entity-types" class="section level4">
+<h4><span class="header-section-number">4.2.2.7</span> Standardized content for formats and entity types</h4>
+<p>In EML physical/dataFormat/externallyDefinedFormat, include a <strong>formatName </strong>indicating the spatial data file format. We recommend using format names from the <a href="https://cn.dataone.org/cn/v2/formats">DataONE format list</a> when possible. Some spatial items from that list are shown below. Always check the list for the most up-to-date version of these names.</p>
+<ul>
+<li>Esri Shapefile (zipped)</li>
+<li>Google Earth Keyhole Markup Language (KML)</li>
+<li>Google Earth Keyhole Markup Language (KML) Compressed archive</li>
+<li>Network Common Data Format, version 4</li>
+<li>Hierarchical Data Format version 5 (HDF5)</li>
+<li>GeoTIFF</li>
+<li>GeoPackage Encoding Standard (OGC) Format Family</li>
+<li>Esri File Geodatabase (zipped)</li>
+<li>GeoJSON, version RFC 7946</li>
+</ul>
+<p>If your format is not included in the DataONE list, consider submitting an issue to that GitHub repository’s issue tracker so that the format can be added.</p>
+<p>EML <strong>formatVersion</strong>, a sibling of formatName can be used to indicate the format version as in the example EML snippet below.</p>
+<pre><code>&lt;externallyDefinedFormat&gt;
+  &lt;formatName&gt;Network Common Data Format, version 4&lt;/formatName&gt;
+  &lt;formatVersion&gt;netCDF-4 classic&lt;/formatVersion&gt;
+&lt;/externallyDefinedFormat&gt;</code></pre>
+<p>For otherEntity, when populating the <strong>entityType </strong>element, use <strong>spatial raster</strong> or <strong>spatial vector </strong>as appropriate.</p>
 
+</div>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="code.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="images-and-documents-as-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-gathered-with-small-moving-platforms.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

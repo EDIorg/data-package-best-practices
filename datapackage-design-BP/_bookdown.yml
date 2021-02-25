@@ -6,11 +6,11 @@ language:
    #  chapter_name: "Chapter "
 rmd_files: [
     "index.Rmd",
-    "key_value_pair_tables.md",
     "software_and_code.md",
     "model_based_datasets.md",
     "still_images.md",
-    "genomic.md",
-    "offline_data.md",
-    "in_other_repositories.md"
+    "spatial_data.md",
+    "small_platforms.md",
+    "in_other_repositories.md",
+    "offline_data.md"
     ]
