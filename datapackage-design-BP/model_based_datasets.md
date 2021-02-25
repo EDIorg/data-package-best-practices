@@ -30,7 +30,7 @@ For data packages related to a model, whether the model is archived within the s
 Example 1: EML snippet relating data to models via the method description:
 
 
-```
+```xml
 <methodStep>
    <description>
       <para>This methodStep contains data provenance information as specified in the LTER EML Best Practices. Each dataSource element here lists entity-specific information and links to source data used in the creation of this derivative data package.</para>

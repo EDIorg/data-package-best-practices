@@ -42,7 +42,7 @@ All data packages require good discovery-level metadata in Ecological Metadata L
 Example 1: EML otherEntity snippet for a pdf file
 
 
-```
+```xml
 <otherEntity>
    <entityName>site date</entityName>
    <entityDescription>Field notes at site and date.</entityDescription>

@@ -123,7 +123,7 @@ If your format is not included in the DataONE list, consider submitting an issue
 EML **formatVersion**, a sibling of formatName can be used to indicate the format version as in the example EML snippet below.
 
 
-```
+```xml
 <externallyDefinedFormat>
   <formatName>Network Common Data Format, version 4</formatName>
   <formatVersion>netCDF-4 classic</formatVersion>

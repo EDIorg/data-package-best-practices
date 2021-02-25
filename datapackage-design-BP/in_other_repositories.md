@@ -165,7 +165,7 @@ Table 2: Examples of additional contextual columns in the data inventory table.
 Example 1: EML snippet with a data provenance methodStep:
 
 
-```
+```xml
 <methodStep>
    <description>
       <para>This methodStep contains data provenance information as specified in the LTER EML Best Practices. Each dataSource element here lists entity-specific information and links to source data used in the creation of this derivative data package.</para>

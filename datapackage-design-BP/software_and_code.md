@@ -37,7 +37,7 @@ When describing the code with EML, include the code as an otherEntity in a data 
 Example 1: EML otherEntity snippet for a script file.
 
 
-```
+```xml
 <otherEntity>
    <entityName>R script to process CTD data</entityName>
    <entityDescription>Annotated RMarkdown script to process, calibrate, and flag raw CTD data.</entityDescription>
@@ -73,7 +73,7 @@ For unnamed projects, e.g., one-off scripts for data processing, analysis, and/o
 Example 2: Minimum recommended codemeta.json example for unnamed projects.
 
 
-```
+```json
 {
    "@context": ["https://doi.org/10.5063/schema/codemeta-2.0",
       "http://schema.org"
@@ -103,7 +103,7 @@ Example 2: Minimum recommended codemeta.json example for unnamed projects.
 Example 3: sample otherEntity metadata for example 2â€™s codemeta.json.
 
 
-```
+```xml
 <otherEntity>
    <entityName>CodeMeta file for BLE_LTER_CTD_QAQC.Rmd</entityName>
    <entityDescription>CodeMeta file for annotated RMarkdown script to process, calibrate, and flag raw CTD data.</entityDescription>
@@ -127,7 +127,7 @@ For named projects, also include the software name, and the version if applicabl
 Example 4: A more complete CodeMeta example for named projects. Example taken from the CodeMeta project Github with edits for brevity.
 
 
-```
+```json
 {
    "@context": ["https://doi.org/10.5063/schema/codemeta-2.0",
       "http://schema.org"
@@ -226,7 +226,7 @@ Large community-backed tools or proprietary software such as ArcGIS Pro or Micro
 Example 5: EML method description referring to external software.
 
 
-```
+```xml
 <methods>
    <methodStep>
       <description>
