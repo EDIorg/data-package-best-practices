@@ -1,6 +1,7 @@
 # Ecological community surveys
 
-DRAFT DRAFT DRAFT
+<!-- DRAFT DRAFT DRAFT
+-->
 
 ## Introduction
 We know from experience that primary research data sets cannot be easily reused until all data are completely understood. Community survey data in particular, can be highly complex, often with location-specific methods.  Some general principles can be summarized from:
@@ -56,7 +57,8 @@ Temporal sampling regime is consistent
         *   YYYY, vs YYYY-MM-DD
 *   **Not useable**: date and time columns are not typed in EML as dateTimes (i.e, typed as strings, as below) 
 
-![alt_text](images/DPBP-community-surveys0.png "image_tooltip")
+<!-- ![alt_text](images/DPBP-community-surveys0.png "image_tooltip")
+-->
 
 Synthesis efforts may be able to circumvent the lack of true dates by dropping records (and elevate a "not useable" dataset to "marginal")
 
