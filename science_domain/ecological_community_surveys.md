@@ -1,7 +1,7 @@
 # Ecological community surveys
 
-<!-- DRAFT DRAFT DRAFT
--->
+DRAFT DRAFT DRAFT
+
 
 ## Introduction
 We know from experience that primary research data sets cannot be easily reused until all data are completely understood. Community survey data in particular, can be highly complex, often with location-specific methods.  Some general principles can be summarized from:
