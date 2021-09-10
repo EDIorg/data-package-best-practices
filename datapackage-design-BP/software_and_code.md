@@ -229,6 +229,8 @@ Example 5: EML method description referring to external software.
 
 [CodeMeta](https://codemeta.github.io/) website
 
+[CodeMeta generator](https://codemeta.github.io/codemeta-generator/) for creating CodeMeta
+
 [CodeMeta crosswalks](https://codemeta.github.io/crosswalk/) for a number of popular software
 
 [CodeMeta terms](https://codemeta.github.io/terms/) you can use for describing software
