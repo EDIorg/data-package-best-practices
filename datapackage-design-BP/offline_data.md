@@ -31,6 +31,17 @@ Center for Limnology
 680 North Park Street
 Madison WI 53706-1413
 
+### Access
+
+* Send a storage device and return envelope with prepaid postage to:
+
+Attn: Mark Servilla
+UNM Biology, Castetter Hall 1480
+MSC03-2020, 219 Yale Blvd NE
+Albuquerque, NM 87131-0001
+
+and a copy of the data will be returned.
+
 ### Data package
 
 * The external hard drive should contain at least two entities: the data (which will be offline) and an inventory or manifest that describe the contents of the external hard drive.
