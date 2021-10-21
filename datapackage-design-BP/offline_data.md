@@ -62,7 +62,13 @@ and a copy of the data will be returned.
 
 * Abstract: describe the collection generally. If individual files require specific software to read, provide the name of that software.
 * Creators
-* Contact (will be responsible for sending out copies as requested.) positionName: EDI Repository Manager Email: support@environmentaldatainitiative.org
+* Contact - The first listed contact is responsible for sending out copies as requested and is typically the EDI repository manager:
+```xml
+<contact>
+  <organizationName>Environmental Data Initiative</organizationName>
+  <electronicMailAddress>support@environmentaldatainitiative.org</electronicMailAddress>
+</contact>
+```
 * Methods - detailed collection/generation methods for the offline data entities. Detailed information for re-using the data. (May instead be included in the manifest table if different for different offline files.)
 * Data Entities
   * Offline Entity:
