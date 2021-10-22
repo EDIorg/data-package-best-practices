@@ -33,14 +33,13 @@ Madison WI 53706-1413
 
 ### Access
 
-* Send a storage device and return envelope with prepaid postage to:
+To receive offline data, send a request to support@environmentaldatainitiative.org listing the data package(s) of interest and we'll determine the best mode of delivery. If technically feasible, we will stage data on an internet accessible host and will send you a URL when the data are ready for download. Otherwise, data will be sent on physical media. To receive data on physical media, you will be required to send a storage device of adequate volume to:
 
 Attn: Mark Servilla
-UNM Biology, Castetter Hall 1480
-MSC03-2020, 219 Yale Blvd NE
-Albuquerque, NM 87131-0001
+UNM Biology, Castetter Hall 1480 MSC03-2020
+219 Yale Blvd NE Albuquerque, NM 87131-0001
 
-and a copy of the data will be returned.
+We will utilize a delivery service of your choice, however, you will be responsible for all shipping arrangements and fees, including pre-arranging return delivery.
 
 ### Data package
 
