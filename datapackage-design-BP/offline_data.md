@@ -33,14 +33,13 @@ Madison WI 53706-1413
 
 ### Access
 
-* Send a storage device and return envelope with prepaid postage to:
+To receive offline data, send a request to support@environmentaldatainitiative.org listing the data package(s) of interest and we'll determine the best mode of delivery. If technically feasible, we will stage data on an internet accessible host and will send you a URL when the data are ready for download. Otherwise, data will be sent on physical media. To receive data on physical media, you will be required to send a storage device of adequate volume to:
 
 Attn: Mark Servilla
-UNM Biology, Castetter Hall 1480
-MSC03-2020, 219 Yale Blvd NE
-Albuquerque, NM 87131-0001
+UNM Biology, Castetter Hall 1480 MSC03-2020
+219 Yale Blvd NE Albuquerque, NM 87131-0001
 
-and a copy of the data will be returned.
+We will utilize a delivery service of your choice, however, you will be responsible for all shipping arrangements and fees, including pre-arranging return delivery.
 
 ### Data package
 
@@ -62,7 +61,13 @@ and a copy of the data will be returned.
 
 * Abstract: describe the collection generally. If individual files require specific software to read, provide the name of that software.
 * Creators
-* Contact (will be responsible for sending out copies as requested.) positionName: EDI Repository Manager Email: support@environmentaldatainitiative.org
+* Contact - The first listed contact is responsible for sending out copies as requested and is typically the EDI repository manager:
+```xml
+<contact>
+  <organizationName>Environmental Data Initiative</organizationName>
+  <electronicMailAddress>support@environmentaldatainitiative.org</electronicMailAddress>
+</contact>
+```
 * Methods - detailed collection/generation methods for the offline data entities. Detailed information for re-using the data. (May instead be included in the manifest table if different for different offline files.)
 * Data Entities
   * Offline Entity:
