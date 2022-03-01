@@ -2,6 +2,8 @@ This is a refactored version of the EDI Data Package Best Practices documentatio
 
 To view the rendered version: https://kzollove.github.io/data-package-best-practices/
 
+Please feel free to comment on this refactored version by opening a repo issue
+
 Everything below is from the original README:
 
 # data-package-best-practices
