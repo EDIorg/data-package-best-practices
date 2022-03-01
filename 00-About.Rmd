@@ -1,20 +1,20 @@
 # About This Site {-}
 
-## General
+### General {.unlisted .unnumbered}
 - Git repository: https://github.com/EDIorg/data-package-best-practices
 - All pages can be edited in  markdown
     - Served as gh-pages (from the docs dir)
 - Contributions can be from many (via fork and pull request), moderated by a committee
 
-### Section organization
-#### Index section 
+#### Section organization
+##### Index section 
 - A very few pages of introductory material (including this page) and a navigation menu 
 - Based on a fork of http://bruth.github.io/jekyll-docs-template/
 - Changes (after pushed to github) are public immediately
 
 <img src="{{ site.baseurl }}/images/DPBP_layout.png" alt="DPBP layout" width="800px"/>
 
-#### Best Practice sections 
+##### Best Practice sections 
 - Composed of multiple sections, each composed of multiple pages and moderated by the appropriate committee
 - Each section is generated as a separate "book", with **R-bookdown** (a wrapper for pandoc, in R)
 - Edited pages do not become public until the book is rebuilt
@@ -23,10 +23,10 @@
     - PDFs can be generated as needed for citable versions 
         - e.g., "Best Practices for EML metadata, V 4", anticipated in early 2020
 
-## Instructions
-### Index section
+### Instructions {.unlisted .unnumbered}
+#### Index section
 
-#### How to add new pages to the Index section 
+##### How to add new pages to the Index section 
 1. Fork the repository
 1. Add a file to the `/docs/_posts` directory. Since the template is blog-based, we follow the convention `YYYY-MM-DD-name-of-post.md`
     1. Option 1: do it manually and include the necessary front matter. Take a look at the source for this page to see how it works
@@ -34,7 +34,7 @@
   `bash-3.2$ ./bin/jekyll-page "About This Website" about` 
 
 
-#### How to Link
+##### How to Link
 Files are in markdown, which means you can include HTML. Use site tokens whenever possible. See [Markdown Basics](tut/markdown-basics.html) for more info.
 
 - link to a file: 
@@ -52,7 +52,7 @@ Menu navigation is controlled by categories, labeled in the `_config.yml` and as
 See the `_config.yml` for the navigation sections (and other site-wide material, like tokens)
 
 
-### BP sections: 
+#### BP sections: 
 
 The major sections of this site are written in **Markdown**, and transformed to HTML with the **R bookdown** package. 
 

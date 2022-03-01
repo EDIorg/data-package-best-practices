@@ -1,12 +1,15 @@
 bookdown::gitbook:
   css: style.css
+  number_sections: false
   config:
     toc:
+      collapse: section
       before: |
-        <li><a href="./">A Minimal Book Example</a></li>
+        <li><a href="./">EDI Data Package Best Practices</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
+        <li><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></li>
+        <li><img class="img-responsive center-block" src="../../data-package-best-practices/images/EDI-logo-svg-240.png" alt="EDI Logo" height="90" width="90"/><li>
+    edit: https://github.com/EDIorg/data-package-best-practices/edit/master/%s
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:

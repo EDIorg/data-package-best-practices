@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>methods | Data Package Best Practices</title>
+  <meta name="description" content="<p>Best practice recommendations for data packages, described by
+Ecological Metadata Language (EML).</p>" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="methods | Data Package Best Practices" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
+Ecological Metadata Language (EML).</p>" />
+  <meta name="github-repo" content="EDIorg/data-package-best-practices" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="methods | Data Package Best Practices" />
+  
+  <meta name="twitter:description" content="<p>Best practice recommendations for data packages, described by
+Ecological Metadata Language (EML).</p>" />
+  
+
+<meta name="author" content="Environmental Data Initiative" />
+
+
+<meta name="date" content="2022-03-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="maintenance.html"/>
+<link rel="next" href="project.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">EDI Data Package Best Practices</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
+<li class="chapter" data-level="" data-path="eml-best-practices.html"><a href="eml-best-practices.html"><i class="fa fa-check"></i>EML Best Practices</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html"><i class="fa fa-check"></i>Conventions and Definitions</a>
+<ul>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#audience"><i class="fa fa-check"></i>Audience</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#fonts-and-typeface"><i class="fa fa-check"></i>Fonts and typeface</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#definitions"><i class="fa fa-check"></i>Definitions</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#other-eml-resources"><i class="fa fa-check"></i>Other EML Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html"><i class="fa fa-check"></i>General Recommendations</a>
+<ul>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html#metadata-distribution"><i class="fa fa-check"></i>Metadata Distribution</a></li>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html#data-package-identifiers"><i class="fa fa-check"></i>Data Package Identifiers</a></li>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html#high-priority-elements"><i class="fa fa-check"></i>High-priority Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html"><i class="fa fa-check"></i>The root element: &lt;eml:eml&gt;</a>
+<ul>
+<li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#schemalocation-xml-attribute"><i class="fa fa-check"></i>@schemaLocation (XML attribute)</a></li>
+<li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#packageid-xml-attribute"><i class="fa fa-check"></i>@packageId (XML attribute)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html"><i class="fa fa-check"></i>Top Level Elements</a></li>
+<li class="chapter" data-level="" data-path="title-dataset.html"><a href="title-dataset.html"><i class="fa fa-check"></i>title (dataset)</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html"><i class="fa fa-check"></i>People and Organizations (Parties)</a>
+<ul>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#userid"><i class="fa fa-check"></i>userId</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#creator"><i class="fa fa-check"></i>creator</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#metadataprovider"><i class="fa fa-check"></i>metadataProvider</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#associatedparty"><i class="fa fa-check"></i>associatedParty</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#contact"><i class="fa fa-check"></i>contact</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#publisher"><i class="fa fa-check"></i>publisher</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pubdate.html"><a href="pubdate.html"><i class="fa fa-check"></i>pubDate</a></li>
+<li class="chapter" data-level="" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i>abstract</a></li>
+<li class="chapter" data-level="" data-path="keywordset-and-keyword.html"><a href="keywordset-and-keyword.html"><i class="fa fa-check"></i>keywordSet and keyword</a></li>
+<li class="chapter" data-level="" data-path="intellectualrights.html"><a href="intellectualrights.html"><i class="fa fa-check"></i>intellectualRights</a></li>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html"><i class="fa fa-check"></i>distribution</a>
+<ul>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html#dataset-level"><i class="fa fa-check"></i>Dataset level</a></li>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html#entity-level"><i class="fa fa-check"></i>Entity level</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html"><i class="fa fa-check"></i>coverage</a>
+<ul>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html#geographiccoverage"><i class="fa fa-check"></i>geographicCoverage</a></li>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html#temporalcoverage"><i class="fa fa-check"></i>temporalCoverage</a></li>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html#taxonomiccoverage"><i class="fa fa-check"></i>taxonomicCoverage</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="maintenance.html"><a href="maintenance.html"><i class="fa fa-check"></i>maintenance</a></li>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i>methods</a>
+<ul>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html#methodstep"><i class="fa fa-check"></i>methodStep</a></li>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html#sampling"><i class="fa fa-check"></i>sampling</a></li>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html#qualitycontrol"><i class="fa fa-check"></i>qualityControl</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i>project</a></li>
+<li class="chapter" data-level="" data-path="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html"><i class="fa fa-check"></i>[entity] = dataTable, spatialRaster, spatialVector, storedProcedure, view, otherEntity</a></li>
+<li class="chapter" data-level="" data-path="attributelist.html"><a href="attributelist.html"><i class="fa fa-check"></i>attributeList</a></li>
+<li class="chapter" data-level="" data-path="constraint.html"><a href="constraint.html"><i class="fa fa-check"></i>constraint</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-package-design-for-special-cases.html"><a href="data-package-design-for-special-cases.html"><i class="fa fa-check"></i>Data Package Design for Special Cases</a>
+<ul>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html"><i class="fa fa-check"></i>Code</a>
+<ul>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html#recommendations-for-data-packages"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html"><i class="fa fa-check"></i>Model-Based Datasets</a>
+<ul>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#recommendations-for-data-packages-1"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#example-data-packages-in-edi"><i class="fa fa-check"></i>Example data packages in EDI</a></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html"><i class="fa fa-check"></i>Images and Documents as Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#introduction-3"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#recommendations-for-data-packages-2"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#example-data-packages-in-edi-1"><i class="fa fa-check"></i>Example data packages in EDI</a></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="spatial-data.html"><a href="spatial-data.html"><i class="fa fa-check"></i>Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="spatial-data.html"><a href="spatial-data.html#introduction-4"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="spatial-data.html"><a href="spatial-data.html#recommendations-for-data-packages-3"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html"><i class="fa fa-check"></i>Data Gathered with Small Moving Platforms</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#introduction-5"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#recommendations-for-data-packages-4"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html"><i class="fa fa-check"></i>Data in Other Repositories</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#introduction-6"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#recommendations-for-data-packages-5"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#nucleotide-sequence-and-genomic-data"><i class="fa fa-check"></i>Nucleotide sequence and genomic data</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#example-data-packages-in-edi-2"><i class="fa fa-check"></i>Example data packages in EDI</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#appendix-tips-and-repository-information"><i class="fa fa-check"></i>Appendix: Tips and repository information</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html"><i class="fa fa-check"></i>Large Data Sets</a>
+<ul>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#introduction-7"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#recommendations-for-data-packages-6"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#references-1"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#potential-issues"><i class="fa fa-check"></i>Potential Issues</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="scientific-domain.html"><a href="scientific-domain.html"><i class="fa fa-check"></i>Scientific Domain</a>
+<ul>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html"><i class="fa fa-check"></i>Ecological community surveys</a>
+<ul>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#introduction-8"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#authors"><i class="fa fa-check"></i>Authors</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#anticipated-use-cases"><i class="fa fa-check"></i>Anticipated use cases</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#definitions-and-conventions"><i class="fa fa-check"></i>Definitions and conventions</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#recommendations-for-datasets"><i class="fa fa-check"></i>Recommendations for datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="meteorology-and-hydrology-data.html"><a href="meteorology-and-hydrology-data.html"><i class="fa fa-check"></i>Meteorology and Hydrology data</a>
+<ul>
+<li class="chapter" data-level="" data-path="meteorology-and-hydrology-data.html"><a href="meteorology-and-hydrology-data.html#introduction-9"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="meteorology-and-hydrology-data.html"><a href="meteorology-and-hydrology-data.html#recommendations-for-datasets-1"><i class="fa fa-check"></i>Recommendations for datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="soil-carbon.html"><a href="soil-carbon.html"><i class="fa fa-check"></i>Soil Carbon</a>
+<ul>
+<li class="chapter" data-level="" data-path="soil-carbon.html"><a href="soil-carbon.html#introduction-10"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="soil-carbon.html"><a href="soil-carbon.html#recommendations-for-datasets-2"><i class="fa fa-check"></i>Recommendations for datasets</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<ul>
+    <li><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></li>
+    <li><img class="img-responsive center-block" src="../../data-package-best-practices/images/EDI-logo-svg-240.png" alt="EDI Logo" height="90" width="90"/><li>
+</ul>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Package Best Practices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="methods" class="section level2 unnumbered">
+<h2>methods</h2>
+<p>This element is found at these locations (XPath):<br />
+<strong>/eml:eml/dataset/methods</strong><br />
+<strong>/eml:eml/dataset/[entity]/methods</strong><br />
+<strong>/eml:eml/dataset/[entity]/attributeList/attribute/methods</strong></p>
+<p><strong>General Information</strong>: In early EML versions, both
+“&lt;<strong>method</strong>&gt;” and “&lt;<strong>methods</strong>&gt;” elements were found, which
+caused confusion. In EML 2.1.0, the elements were standardized to
+“&lt;<strong>methods</strong>&gt;.”</p>
+<p>The &lt;<strong>methods&gt;</strong> tree appears at the dataset, entity, and attribute
+levels, and content is generally regarded as human readable, not
+machine-readable. As a ‘rule of thumb,’ methods are <em>descriptive</em>, and
+protocols are <em>prescriptive</em>, i.e. the methods describe what was done
+when collecting data, and protocols are a set of procedures or
+prescribed actions. A method often includes or follows a particular
+protocol. As a minimum, a reference to an external protocol should be
+given at the dataset level. However, detailed, text methods at this are
+preferable so that their content can be perused in a browser or indexed
+for searching. If further refinement is needed, methods can be defined
+for individual data entities or even individual &lt;<strong>attribute</strong>&gt;,
+although these may not be not indexed. The scope of the method defined
+can be tailored to match the EML document level where it is applied. For
+example, methods at the dataset level describe the study, for a
+&lt;<strong>dataTable</strong>&gt; methods might include pre-/post-processing steps, and
+at the attribute level, quality control. The use of methods refinement
+varies and keeping all methods in one place and at one level (dataset)
+is simpler to manage. Since they are mostly for human consumption, one
+detailed description of all steps taken at the dataset level is
+frequently sufficient and more user friendly.</p>
+<p>A description of methods contains the elements &lt;<strong>methodStep</strong>&gt;,
+&lt;<strong>sampling</strong>&gt;, and/or &lt;<strong>qualityControl</strong>&gt;.</p>
+<div id="methodstep" class="section level3">
+<h3>methodStep</h3>
+<p>At least one &lt;<strong>methodStep</strong>&gt; is required under &lt;<strong>methods</strong>&gt;, and
+each step is a logical portion of the methods, for example, field, lab
+and statistical. All textual methods descriptions belong here, using
+&lt;<strong>description</strong>&gt; and TextType tags.</p>
+<p>At a minimum, to describe an external document two tags can be used:
+&lt;<strong>citation</strong>&gt; for a referral to a published document or paper, or
+&lt;<strong>protocol</strong>&gt;. At a minimum, the &lt;<strong>protocol</strong>&gt; requires
+&lt;<strong>title</strong>&gt;, &lt;<strong>creator</strong>&gt; and &lt;<strong>distribution</strong>&gt; tags, where the
+&lt;<strong>distribution</strong>&gt; tree may be used to refer to an online document;
+see the recommendations above for using that tree. Alternatively, the
+entire protocol may be written into EML under protocol/methodStep.</p>
+<div id="instrumentation" class="section level4">
+<h4>instrumentation</h4>
+<p><strong>The</strong> &lt;<strong>instrumentation&gt;</strong> tag should contain a full description of
+the instruments used, including manufacturer, model, calibration dates
+and accuracy. Changes in instrumentation and dates of changes should be
+mentioned earlier under the &lt;<strong>description</strong>&gt;.</p>
+</div>
+<div id="datasource" class="section level4">
+<h4>dataSource</h4>
+<p>The optional &lt;<strong>dataSource</strong>&gt; tag is for nesting an EML dataset that
+is input to a &lt;<strong>methodStep</strong>&gt; of the data being described, e.g.,
+calibration information for an instrument or input parameters for a
+model. It also may hold the source (provenance) data when describing a
+derived dataset.</p>
+<p><em>Context Note: The</em> &lt;<strong>dataSource</strong>&gt; <em>element is used by the EDI
+repository’s provenance tracking system for linking between derived and
+source data packages. For more information, see additional data
+repository resources from EDI.</em></p>
+</div>
+</div>
+<div id="sampling" class="section level3">
+<h3>sampling</h3>
+<p>This optional tree can contain valuable and very specific information
+about the study site, coverage and frequency in addition to that listed
+at other levels.</p>
+<p>&lt;<strong>studyExtent</strong>&gt; provides specific information about the temporal and
+geographic extent of the study such as domains of interest in addition
+to geographic, temporal, and taxonomic coverage of the study site.
+&lt;<strong>studyExtent</strong>&gt; can be a surrogate for the
+&lt;<strong>studyAreaDescription</strong>&gt; under &lt;<strong>project</strong>&gt;. Descriptions can be
+either as a simple text using &lt;<strong>description</strong>&gt; or by including
+detailed temporal or geographic &lt;<strong>coverage</strong>&gt; elements describing
+discrete time periods sampled or multiple sub-regions sampled within the
+overall geographic bounding box that was described at the dataset level.</p>
+<p><em>Context Note: In the past, LTER requested that individual sampling
+locations be listed here (under <strong>studyExtent/spatialSamplingUnits</strong>),
+and some LTER sites may have applications that specifically use that
+XPath. However, in general use, the dataset-level geographicCoverage
+elements are more practical. See EDI “Other Resources,” for more
+information about how indexers typically handle EML.</em></p>
+<p>&lt;<strong>samplingDescription</strong>&gt; a text based version, similar to the
+sampling methods section in a journal article.</p>
+</div>
+<div id="qualitycontrol" class="section level3">
+<h3>qualityControl</h3>
+<p>Like other trees under &lt;<strong>methods</strong>&gt;, &lt;<strong>qualityControl</strong>&gt; can be
+used at the dataset, entity or attribute level, whichever is
+appropriate. At its most basic, use the &lt;<strong>description</strong>&gt; element.
+Tags are also available for a &lt;<strong>citation</strong>&gt; or &lt;<strong>protocol</strong>&gt;.</p>
+<p>Example 17: methods</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb18-1"><a href="methods.html#cb18-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">methods</span>&gt;</span>
+<span id="cb18-2"><a href="methods.html#cb18-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">methodStep</span>&gt;</span>
+<span id="cb18-3"><a href="methods.html#cb18-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">description</span>&gt;</span>
+<span id="cb18-4"><a href="methods.html#cb18-4" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">section</span>&gt;</span>
+<span id="cb18-5"><a href="methods.html#cb18-5" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">title</span>&gt;</span>
+<span id="cb18-6"><a href="methods.html#cb18-6" aria-hidden="true" tabindex="-1"></a>               Pitfall trap sampling for ground arthropod biodiversity monitoring</span>
+<span id="cb18-7"><a href="methods.html#cb18-7" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">title</span>&gt;</span>
+<span id="cb18-8"><a href="methods.html#cb18-8" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">para</span>&gt;Supplies used: pitfall traps (P-16 plastic Solo cups with</span>
+<span id="cb18-9"><a href="methods.html#cb18-9" aria-hidden="true" tabindex="-1"></a>               lids) metal spades and large bulb planters (to dig holes in which to</span>
+<span id="cb18-10"><a href="methods.html#cb18-10" aria-hidden="true" tabindex="-1"></a>               put traps) 70% ethanol (to preserve specimens) Qorpak glass jars with</span>
+<span id="cb18-11"><a href="methods.html#cb18-11" aria-hidden="true" tabindex="-1"></a>               lids from the VWR Corporation, 120ml (4oz), cap size 58-400 (comes</span>
+<span id="cb18-12"><a href="methods.html#cb18-12" aria-hidden="true" tabindex="-1"></a>               included), Qorpak no. 7743C, VWR catalog no. 16195-703.&lt;/<span class="kw">para</span>&gt;</span>
+<span id="cb18-13"><a href="methods.html#cb18-13" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">para</span>&gt;Between 10 and 21 traps are placed at each site in siutable</span>
+<span id="cb18-14"><a href="methods.html#cb18-14" aria-hidden="true" tabindex="-1"></a>               location.&lt;/<span class="kw">para</span>&gt;</span>
+<span id="cb18-15"><a href="methods.html#cb18-15" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">para</span>&gt;All trapped taxa counted and measured (body length), most taxa</span>
+<span id="cb18-16"><a href="methods.html#cb18-16" aria-hidden="true" tabindex="-1"></a>               identified to Family, ants to Genus&lt;/<span class="kw">para</span>&gt;</span>
+<span id="cb18-17"><a href="methods.html#cb18-17" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">section</span>&gt;</span>
+<span id="cb18-18"><a href="methods.html#cb18-18" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">description</span>&gt;</span>
+<span id="cb18-19"><a href="methods.html#cb18-19" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">instrumentation</span>&gt;SBE MicroCAT 37-SM (S/N 1790); manufacturer:</span>
+<span id="cb18-20"><a href="methods.html#cb18-20" aria-hidden="true" tabindex="-1"></a>         Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Conductivity</span>
+<span id="cb18-21"><a href="methods.html#cb18-21" aria-hidden="true" tabindex="-1"></a>         (accuracy: 0.0003 S/m, readability: 0.00001 S/m, range: 0 to 7 S/m);</span>
+<span id="cb18-22"><a href="methods.html#cb18-22" aria-hidden="true" tabindex="-1"></a>         last calibration: Feb 28, 2001&lt;/<span class="kw">instrumentation</span>&gt;</span>
+<span id="cb18-23"><a href="methods.html#cb18-23" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">instrumentation</span>&gt;SBE MicroCAT 37-SM (S/N 1790); manufacturer:</span>
+<span id="cb18-24"><a href="methods.html#cb18-24" aria-hidden="true" tabindex="-1"></a>         Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Pressure</span>
+<span id="cb18-25"><a href="methods.html#cb18-25" aria-hidden="true" tabindex="-1"></a>         (water) (accuracy: 0.2m, readability: 0.0004m, range: 0 to 20m); last</span>
+<span id="cb18-26"><a href="methods.html#cb18-26" aria-hidden="true" tabindex="-1"></a>         calibration: Feb 28, 2001&lt;/<span class="kw">instrumentation</span>&gt;</span>
+<span id="cb18-27"><a href="methods.html#cb18-27" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">instrumentation</span>&gt;SBE MicroCAT 37-SM (S/N 1790); manufacturer:</span>
+<span id="cb18-28"><a href="methods.html#cb18-28" aria-hidden="true" tabindex="-1"></a>         Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Temperature</span>
+<span id="cb18-29"><a href="methods.html#cb18-29" aria-hidden="true" tabindex="-1"></a>         (water) (accuracy: 0.002°C, readability: 0.0001°C, range: -5 to 35°C);</span>
+<span id="cb18-30"><a href="methods.html#cb18-30" aria-hidden="true" tabindex="-1"></a>         last calibration: Feb 28, 2001&lt;/<span class="kw">instrumentation</span>&gt;</span>
+<span id="cb18-31"><a href="methods.html#cb18-31" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">methodStep</span>&gt;</span>
+<span id="cb18-32"><a href="methods.html#cb18-32" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">sampling</span>&gt;</span>
+<span id="cb18-33"><a href="methods.html#cb18-33" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">studyExtent</span>&gt;</span>
+<span id="cb18-34"><a href="methods.html#cb18-34" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">description</span>&gt;</span>
+<span id="cb18-35"><a href="methods.html#cb18-35" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">para</span>&gt;Arthropod pit fall traps are placed in three different</span>
+<span id="cb18-36"><a href="methods.html#cb18-36" aria-hidden="true" tabindex="-1"></a>               locations four times a year&lt;/<span class="kw">para</span>&gt;</span>
+<span id="cb18-37"><a href="methods.html#cb18-37" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">description</span>&gt;</span>
+<span id="cb18-38"><a href="methods.html#cb18-38" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">studyExtent</span>&gt;</span>
+<span id="cb18-39"><a href="methods.html#cb18-39" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">samplingDescription</span>&gt;</span>
+<span id="cb18-40"><a href="methods.html#cb18-40" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">para</span>&gt;Six traps were set in a transect at each location.&lt;/<span class="kw">para</span>&gt;</span>
+<span id="cb18-41"><a href="methods.html#cb18-41" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">samplingDescription</span>&gt;</span>
+<span id="cb18-42"><a href="methods.html#cb18-42" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">spatialSamplingUnits</span>&gt;</span>
+<span id="cb18-43"><a href="methods.html#cb18-43" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">coverage</span>&gt;</span>
+<span id="cb18-44"><a href="methods.html#cb18-44" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">geographicDescription</span>&gt;site number 1&lt;/<span class="kw">geographicDescription</span>&gt;</span>
+<span id="cb18-45"><a href="methods.html#cb18-45" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">boundingCoordinates</span>&gt;</span>
+<span id="cb18-46"><a href="methods.html#cb18-46" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">westBoundingCoordinate</span>&gt;-112.234566&lt;/<span class="kw">westBoundingCoordinate</span>&gt;</span>
+<span id="cb18-47"><a href="methods.html#cb18-47" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">eastBoundingCoordinate</span>&gt;-112.234566&lt;/<span class="kw">eastBoundingCoordinate</span>&gt;</span>
+<span id="cb18-48"><a href="methods.html#cb18-48" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">northBoundingCoordinate</span>&gt;33.534566&lt;/<span class="kw">northBoundingCoordinate</span>&gt;</span>
+<span id="cb18-49"><a href="methods.html#cb18-49" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">southBoundingCoordinate</span>&gt;33.534566&lt;/<span class="kw">southBoundingCoordinate</span>&gt;</span>
+<span id="cb18-50"><a href="methods.html#cb18-50" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">boundingCoordinates</span>&gt;</span>
+<span id="cb18-51"><a href="methods.html#cb18-51" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">coverage</span>&gt;</span>
+<span id="cb18-52"><a href="methods.html#cb18-52" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">coverage</span>&gt;</span>
+<span id="cb18-53"><a href="methods.html#cb18-53" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">geographicDescription</span>&gt;site number 2&lt;/<span class="kw">geographicDescription</span>&gt;</span>
+<span id="cb18-54"><a href="methods.html#cb18-54" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">boundingCoordinates</span>&gt;</span>
+<span id="cb18-55"><a href="methods.html#cb18-55" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">westBoundingCoordinate</span>&gt;-111.745677&lt;/<span class="kw">westBoundingCoordinate</span>&gt;</span>
+<span id="cb18-56"><a href="methods.html#cb18-56" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">eastBoundingCoordinate</span>&gt;-111.745677&lt;/<span class="kw">eastBoundingCoordinate</span>&gt;</span>
+<span id="cb18-57"><a href="methods.html#cb18-57" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">northBoundingCoordinate</span>&gt;33.64577&lt;/<span class="kw">northBoundingCoordinate</span>&gt;</span>
+<span id="cb18-58"><a href="methods.html#cb18-58" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">southBoundingCoordinate</span>&gt;33.64577&lt;/<span class="kw">southBoundingCoordinate</span>&gt;</span>
+<span id="cb18-59"><a href="methods.html#cb18-59" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">boundingCoordinates</span>&gt;</span>
+<span id="cb18-60"><a href="methods.html#cb18-60" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">coverage</span>&gt;</span>
+<span id="cb18-61"><a href="methods.html#cb18-61" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">coverage</span>&gt;</span>
+<span id="cb18-62"><a href="methods.html#cb18-62" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">geographicDescription</span>&gt;site number 3&lt;/<span class="kw">geographicDescription</span>&gt;</span>
+<span id="cb18-63"><a href="methods.html#cb18-63" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">boundingCoordinates</span>&gt;</span>
+<span id="cb18-64"><a href="methods.html#cb18-64" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">westBoundingCoordinate</span>&gt;-112.167899&lt;/<span class="kw">westBoundingCoordinate</span>&gt;</span>
+<span id="cb18-65"><a href="methods.html#cb18-65" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">eastBoundingCoordinate</span>&gt;-112.16799&lt;/<span class="kw">eastBoundingCoordinate</span>&gt;</span>
+<span id="cb18-66"><a href="methods.html#cb18-66" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">northBoundingCoordinate</span>&gt;33.76799&lt;/<span class="kw">northBoundingCoordinate</span>&gt;</span>
+<span id="cb18-67"><a href="methods.html#cb18-67" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">southBoundingCoordinate</span>&gt;33.76799&lt;/<span class="kw">southBoundingCoordinate</span>&gt;</span>
+<span id="cb18-68"><a href="methods.html#cb18-68" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">boundingCoordinates</span>&gt;</span>
+<span id="cb18-69"><a href="methods.html#cb18-69" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">coverage</span>&gt;</span>
+<span id="cb18-70"><a href="methods.html#cb18-70" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">spatialSamplingUnits</span>&gt;</span>
+<span id="cb18-71"><a href="methods.html#cb18-71" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">sampling</span>&gt;</span>
+<span id="cb18-72"><a href="methods.html#cb18-72" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">qualityControl</span>&gt;</span>
+<span id="cb18-73"><a href="methods.html#cb18-73" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">description</span>&gt;</span>
+<span id="cb18-74"><a href="methods.html#cb18-74" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">para</span>&gt;All specimens are archived for future reference. Quality</span>
+<span id="cb18-75"><a href="methods.html#cb18-75" aria-hidden="true" tabindex="-1"></a>            control during data entry is achieved with standard database</span>
+<span id="cb18-76"><a href="methods.html#cb18-76" aria-hidden="true" tabindex="-1"></a>            techniques of pulldowns that prevent typos and constraints. Scientists</span>
+<span id="cb18-77"><a href="methods.html#cb18-77" aria-hidden="true" tabindex="-1"></a>            inspect standard data summary statistics after data entry.&lt;/<span class="kw">para</span>&gt;</span>
+<span id="cb18-78"><a href="methods.html#cb18-78" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">description</span>&gt;</span>
+<span id="cb18-79"><a href="methods.html#cb18-79" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">qualityControl</span>&gt;</span>
+<span id="cb18-80"><a href="methods.html#cb18-80" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">methods</span>&gt;</span></code></pre></div>
+<p>Example 18: methods, with dataSource</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb19-1"><a href="methods.html#cb19-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">methods</span>&gt;</span>
+<span id="cb19-2"><a href="methods.html#cb19-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">methodStep</span>&gt;</span>
+<span id="cb19-3"><a href="methods.html#cb19-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">description</span>&gt;</span>
+<span id="cb19-4"><a href="methods.html#cb19-4" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">section</span>&gt;</span>
+<span id="cb19-5"><a href="methods.html#cb19-5" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">para</span>&gt;We utilize NPP data collected from 1906 to 2006 from the ONL</span>
+<span id="cb19-6"><a href="methods.html#cb19-6" aria-hidden="true" tabindex="-1"></a>               LTER site. The ONL NPP data unit definition is kg/m\^2/yr. This unit</span>
+<span id="cb19-7"><a href="methods.html#cb19-7" aria-hidden="true" tabindex="-1"></a>               does not require conversion.&lt;/<span class="kw">para</span>&gt;</span>
+<span id="cb19-8"><a href="methods.html#cb19-8" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">section</span>&gt;</span>
+<span id="cb19-9"><a href="methods.html#cb19-9" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">description</span>&gt;</span>
+<span id="cb19-10"><a href="methods.html#cb19-10" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">dataSource</span>&gt;</span>
+<span id="cb19-11"><a href="methods.html#cb19-11" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">title</span>&gt;NPP data from ONL 1906 to 2006&lt;/<span class="kw">title</span>&gt;</span>
+<span id="cb19-12"><a href="methods.html#cb19-12" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">creator</span>&gt;</span>
+<span id="cb19-13"><a href="methods.html#cb19-13" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">organizationName</span>&gt;ONL LTER&lt;/<span class="kw">organizationName</span>&gt;</span>
+<span id="cb19-14"><a href="methods.html#cb19-14" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">creator</span>&gt;</span>
+<span id="cb19-15"><a href="methods.html#cb19-15" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">distribution</span>&gt;</span>
+<span id="cb19-16"><a href="methods.html#cb19-16" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">online</span>&gt;</span>
+<span id="cb19-17"><a href="methods.html#cb19-17" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">url</span>&gt;http://metacat.lternet.edu/knb/metacat/knb-lter-onl.23.1&lt;/<span class="kw">url</span>&gt;</span>
+<span id="cb19-18"><a href="methods.html#cb19-18" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">online</span>&gt;</span>
+<span id="cb19-19"><a href="methods.html#cb19-19" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">distribution</span>&gt;</span>
+<span id="cb19-20"><a href="methods.html#cb19-20" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">contact</span>&gt;</span>
+<span id="cb19-21"><a href="methods.html#cb19-21" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">organizationName</span>&gt;ONL LTER&lt;/<span class="kw">organizationName</span>&gt;</span>
+<span id="cb19-22"><a href="methods.html#cb19-22" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">positionName</span>&gt;ONL Information Manager&lt;/<span class="kw">positionName</span>&gt;</span>
+<span id="cb19-23"><a href="methods.html#cb19-23" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">electronicMailAddress</span>&gt;im@onl.lternet.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
+<span id="cb19-24"><a href="methods.html#cb19-24" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">contact</span>&gt;</span>
+<span id="cb19-25"><a href="methods.html#cb19-25" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">dataSource</span>&gt;</span>
+<span id="cb19-26"><a href="methods.html#cb19-26" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">methodStep</span>&gt;</span>
+<span id="cb19-27"><a href="methods.html#cb19-27" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">methods</span>&gt;</span></code></pre></div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="maintenance.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="project.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/EDIorg/data-package-best-practices/edit/master/01-eml-metadata.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

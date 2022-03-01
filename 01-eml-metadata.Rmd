@@ -1,4 +1,4 @@
-# EML Best Practices {-}
+# EML Best Practices
 
 This document contains current 'Best Practice' recommendations for EML content for metadata related to ecological and environmental data. It is intended to augment the EML schema documentation [@EML_2019] for a less-technical audience. This is one component of several resources available to EML preparers. These recommendations are directed towards the following goals:
 
@@ -6,8 +6,7 @@ This document contains current 'Best Practice' recommendations for EML content f
 - Minimize heterogeneity of EML documents to simplify development and re-use of software built to ingest it
 - Maximize interoperability of EML documents to facilitate data synthesis
 
-
-# Introduction
+## Introduction {-}
 
 EML Best Practice recommendations have evolved over time. The most active contributors have been members of the LTER Information Managers Committee in multiple working groups and workshops. EML has been widely used for several years with multiple applications written against it, and the community has had the opportunity to observe the consequences of many content patterns. As much as possible, recommendations have been aligned with those experiences, as well as with the capability of data contributors.
 
@@ -42,10 +41,10 @@ Contributors, including LTER EML Best Practices Working Groups and workshops in 
 - Yang Xia
 
 
-# Conventions and Definitions
+## Conventions and Definitions {-}
 
 
-## Audience
+### Audience
 
 This document is intended for data managers. It assumes that readers are familiar with
 
@@ -54,7 +53,7 @@ This document is intended for data managers. It assumes that readers are familia
 - the process for contributing data to a repository. If you reached this
   document from a repository's help-page, contact them for more information.
 
-## Fonts and typeface
+### Fonts and typeface
 
 Numbered examples of EML nodes are in fixed-width font:
 
@@ -77,7 +76,7 @@ _Context notes: Recommendations for EML usage in a specific context are
 called "context notes", and are placed in separate paragraphs, in
 italic._
 
-## Definitions
+### Definitions
 
 <dl>
   <dt>EML preparer</dt>
@@ -96,25 +95,25 @@ This is generally the unit housed in repositories. We use this term to
 avoid confusion with the EML element "<b>dataset</b>".</dd>
 </dl>
 
-## Other EML Resources
+### Other EML Resources
 
 Some sections refer to further information or tools. These can be found
 on the EDI website, under "Resources and How To...", at
 [https://environmentaldatarepository.org](https://environmentaldatarepository.org)
 
-# General Recommendations
+## General Recommendations {-}
 
 Following are general best practices for handling EML dataset metadata:
 
-## Metadata Distribution
+### Metadata Distribution
 
 Do not publicly distribute EML documents containing elements with incorrect information, e.g., as a workaround for missing metadata or to meet validation requirements. Pre-publication drafts, or EML produced for demonstration or testing purposes should be clearly identified as such and not contributed to public archives, because these are passed on to large-scale clearinghouses. For previews of drafts or handling test and demonstration data packages, consult your repository to learn about options.
 
-## Data Package Identifiers
+### Data Package Identifiers
 
 Metadata and data set versioning are controlled by the contributor, and so identifiers are tied to local systems. Many repository systems that accept EML-described data support principles of immutable metadata and data entity versioning. EML has elements to contain package identifiers, although these may also be assigned externally. It is the responsibility of the submitters to understand the practices of their intended repository when using identifiers.
 
-## High-priority Elements
+### High-priority Elements
 
 - To support locating data by time, geographic location, and   taxonomically, metadata should provide as much information as   possible for the data package, in the three <**coverage**>;   elements:
   - <**temporalCoverage**>; (when),
@@ -126,7 +125,7 @@ Metadata and data set versioning are controlled by the contributor, and so ident
   - <**protocols**>, and
   - <**intellectualRights**> elements.
 
-# The root element: \<eml:eml> {#Root_element}
+## The root element: \<eml:eml> {#Root_element .unnumbered}
 
 This element is the root element in all EML documents. The XPath
 notation is:
@@ -135,7 +134,7 @@ notation is:
 The root element holds two important parts, both of which are optional,
 but recommended.
 
-## \@schemaLocation (XML attribute)
+### \@schemaLocation (XML attribute)
 
 This attribute is this location (XPath):  
 **/eml:eml/\@schemaLocation**
@@ -148,7 +147,7 @@ schema that their metadata document should adhere to. This way, they can
 validate their own work in progress, e.g., through an XML editor like
 OxygenXML.
 
-## \@packageId (XML attribute)
+### \@packageId (XML attribute)
 
 This attribute is found at this location (XPath):  
 **/eml:eml/\@packageId**
@@ -181,7 +180,7 @@ Example 1: attributes packageId, id, system, and scope
 ```
 
 
-# Top Level Elements
+## Top Level Elements {-}
 
 An EML **dataset** is composed of up to three elements under the root
 element (<**eml:eml**>):
@@ -191,7 +190,7 @@ element (<**eml:eml**>):
 <**additionalMetadata**>More information: [additionalMetadata](#additionalMetadata)
 
 
-# title (dataset)
+## title (dataset) {-}
 
 The dataset title element is found at this location (XPath):  
 **/eml:eml/ dataset/title**  
@@ -213,7 +212,7 @@ Example 3: dataset, alternateIdentifier, shortName, title
 ```
 
 
-# People and Organizations (Parties)
+## People and Organizations (Parties) {-}
 
 People and organizations are all described using a "ResponsibleParty"
 group of elements, which is found at these locations (XPath):  
@@ -249,7 +248,7 @@ organizations, so <**address**>, <**phone**>, and <**onlineURL**>
 elements should be included for them. In the examples, these elements
 are included for completeness.
 
-## userId
+### userId
 
 This element is found at this location (XPath):  
 **/eml:eml/dataset/creator/userId**  
@@ -330,7 +329,7 @@ Example 4: creator
 </creator>
 ```
 
-## creator
+### creator
 
 This element is found at this location (XPath):  
 **/eml:eml/dataset/creator**
@@ -348,7 +347,7 @@ frequently default to searches using PI's last name. Therefore it is a
 reasonable practice to include more creators rather than fewer, even if
 it blurs the credit for long-term data.
 
-## metadataProvider
+### metadataProvider
 
 This element is found at this location (XPath):  
 **/eml:eml/dataset/metadataProvider**
@@ -384,7 +383,7 @@ Example 5: metadataProvider
 </metadataProvider>
 ```
 
-## associatedParty
+### associatedParty
 
 This element is found at this location (XPath):  
 **/eml:eml/dataset/associatedParty**
@@ -422,7 +421,7 @@ Example 6: associatedParty
 </associatedParty>
 ```
 
-## contact
+### contact
 
 This element is found at this location (XPath):  
 **/eml:eml/dataset/contact**
@@ -459,7 +458,7 @@ Example 7: contact
 </contact>
 ```
 
-## publisher
+### publisher
 
 This element is found at this location (XPath):  
 **/eml:eml/dataset/publisher**
@@ -482,7 +481,7 @@ Example 8: publisher
 
 
 
-# pubDate
+## pubDate {-}
 
 This element is found at this location (XPath):  
 **/eml:eml/dataset/pubDate**
@@ -499,7 +498,7 @@ are to enhance discovery.
 
 
 
-# abstract
+## abstract {-}
 
 This element is found at these locations (XPath):  
 **/eml:eml/dataset/abstract**  
@@ -519,7 +518,7 @@ nitrate, phosphate, calcium, etc.), in combination with the parameters
 that seem most relevant for searches.
 
 
-# keywordSet and keyword
+## keywordSet and keyword {-}
 
 This element is found at these locations (XPath):  
 **/eml:eml/dataset/keywordSet**  
@@ -580,7 +579,7 @@ Example 9: pubDate, abstract,keywordSet, keyword
 </keywordSet>
 ```
 
-# intellectualRights
+## intellectualRights {-}
 
 This element is found at this location (XPath):  
 **/eml:eml/dataset/intellectualRights**
@@ -622,7 +621,7 @@ Example 10: intellectualRights
 </intellectualRights>
 ```
 
-# distribution
+## distribution {-}
 
 This element is found at these locations (XPath):  
 **/eml:eml/dataset/distribution**  
@@ -631,7 +630,7 @@ This element is found at these locations (XPath):
 The <**distribution**> element can appear at both the dataset and
 entity levels. 
 
-## Dataset level
+### Dataset level
 At the dataset level, the `<distribution>` element should be used for information only, 
 because it applies to the entire package, not only to one entity.
 
@@ -650,7 +649,7 @@ Example 11a: distribution at the dataset level
 </distribution>
 ```
 
-## Entity level
+### Entity level
 The entity-level `<distribution>` element contains information on how that
 specific data entity (e.g., data table) can be accessed. The <**distribution**> element
 has one of three children for describing the location of the resource:
@@ -720,7 +719,7 @@ Example 11b: distribution at the data entity level
 </dataTable>
 ```
 
-# coverage
+## coverage {-}
 
 This element is found at these locations (XPath):  
 **/eml:eml/dataset/coverage**  
@@ -742,7 +741,7 @@ coverage in terms of space, taxonomy, and time,
 enables advanced searches and understanding. Because they appear at many
 XPaths, there are many options for how coverage elements can be used.
 
-## geographicCoverage
+### geographicCoverage
 
 **General Information**: The <**geographicCoverage**>
 element describes locations of research sites and areas related to the
@@ -879,7 +878,7 @@ GIS shape files, Keyhole Markup Language (KML or KMZ), or EML spatial
 modules can be included as data entities (see additional resources for
 different data file types at EDI).
 
-## temporalCoverage
+### temporalCoverage
 
 The <**temporalCoverage**> element represents the period of time the
 data were collected, not the year the study was conducted if it uses
@@ -922,7 +921,7 @@ Example 14: temporalCoverage
 ```
 
 
-## taxonomicCoverage
+### taxonomicCoverage
 
 The <**taxonomicCoverage**> element should be used to document
 taxonomic information for all organisms relevant to the study. The
@@ -1053,7 +1052,7 @@ Example 15: taxonomicCoverage
 ```
 
 
-# maintenance
+## maintenance {-}
 
 This element is found at these locations (XPath):  
 **eml:eml/dataset/maintenance**
@@ -1076,7 +1075,7 @@ Example 16: maintenance
 </maintenance>
 ```
 
-# methods
+## methods {-}
 
 This element is found at these locations (XPath):  
 **/eml:eml/dataset/methods**  
@@ -1112,7 +1111,7 @@ frequently sufficient and more user friendly.
 A description of methods contains the elements <**methodStep**>,
 <**sampling**>, and/or <**qualityControl**>.
 
-## methodStep
+### methodStep
 
 At least one <**methodStep**> is required under <**methods**>, and
 each step is a logical portion of the methods, for example, field, lab
@@ -1127,14 +1126,14 @@ At a minimum, to describe an external document two tags can be used:
 see the recommendations above for using that tree. Alternatively, the
 entire protocol may be written into EML under protocol/methodStep.
 
-### instrumentation
+#### instrumentation
 
 **The** <**instrumentation>** tag should contain a full description of
 the instruments used, including manufacturer, model, calibration dates
 and accuracy. Changes in instrumentation and dates of changes should be
 mentioned earlier under the <**description**>.
 
-### dataSource
+#### dataSource
 
 The optional <**dataSource**> tag is for nesting an EML dataset that
 is input to a <**methodStep**> of the data being described, e.g.,
@@ -1147,7 +1146,7 @@ repository's provenance tracking system for linking between derived and
 source data packages. For more information, see additional data
 repository resources from EDI._
 
-## sampling
+### sampling
 
 This optional tree can contain valuable and very specific information
 about the study site, coverage and frequency in addition to that listed
@@ -1173,7 +1172,7 @@ information about how indexers typically handle EML._
 <**samplingDescription**> a text based version, similar to the
 sampling methods section in a journal article.
 
-## qualityControl
+### qualityControl
 
 Like other trees under <**methods**>, <**qualityControl**> can be
 used at the dataset, entity or attribute level, whichever is
@@ -1301,7 +1300,7 @@ Example 18: methods, with dataSource
 ```
 
 
-# project
+## project {-}
 
 This element is found at this location (XPath):  
 **/eml:eml/dataset/project**
@@ -1384,7 +1383,7 @@ Example 19: project
 </project>
 ```
 
-# [entity] = dataTable, spatialRaster, spatialVector, storedProcedure, view, otherEntity
+## [entity] = dataTable, spatialRaster, spatialVector, storedProcedure, view, otherEntity {-}
 
 This element is found at this location (XPath):  
 **/eml:eml/dataset/dataTable**  
@@ -1641,7 +1640,7 @@ Table 2. Elements specific to each of the six entity types.
   </tr>
 </table>
 ```
-# attributeList
+## attributeList {-}
 
 This element tree is found at (XPath):  
 **/eml:eml/dataset/dataTable/attributeList**  
@@ -1687,7 +1686,7 @@ are drawn for the attribute. EML's attribute-unit model is described in
 detail; see "Other Resources". One of the 5 scale types must be used:
 nominal, ordinal, interval, ratio, or dateTime, as follows:
 
-#### Non-numeric types:
+##### Non-numeric types:
 
 The <**nominal**> scale is used to represent named categories. Values are
 assigned to distinguish them from other observations. This would include
@@ -1708,7 +1707,7 @@ explanations. For <**textDomain**> an optional pattern may describe
 the text, e.g., a US telephone number can be described by the format
 "\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d".
 
-#### Numeric types:
+##### Numeric types:
 
 <**interval**> measurements are ordinal, but in addition, use
 equal-sized units on a scale between values. Because the units are equal
@@ -2163,7 +2162,7 @@ Table 3. Entity types and format names for some <**otherEntity**> types.
 ```
 
 
-# constraint
+## constraint {-}
 
 This element tree is found at (XPath):  
 **/eml:eml/dataset/dataTable/constraint**  
@@ -2234,4 +2233,4 @@ Example 24: constraint
    </foreignKey>
 </constraint>
 ```
-```r if (knitr::is_html_output()) '# References {-}'```
+```r if (knitr::is_html_output()) '## References {-}'```

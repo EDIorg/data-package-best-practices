@@ -1,38 +1,38 @@
-# Scientific Domain {-}
+# Scientific Domain
 
 This document contains current recommendations for data packages from specific scientific domains. Not all domains are covered.
 See navigation menu.
 
-# Ecological community surveys
+## Ecological community surveys
 
 DRAFT DRAFT DRAFT
 
 
-## Introduction
+### Introduction
 We know from experience that primary research data sets cannot be easily reused until all data are completely understood. Community survey data in particular, can be highly complex, often with location-specific methods.  Some general principles can be summarized from:
 
 - synthesis scientists working with this type of data
 - lessons learned from harmonization of primary data, e.g., EDI's `ecocomDP` project.
 
-## Authors
+### Authors
 - Margaret O'Brien (https://orcid.org/0000-0002-1693-8322)
 - ecocomDP working group: https://environmentaldatainitiative.org/dataset-design/data-package-design-for-community-survey-data/
 
-## Anticipated use cases
+### Anticipated use cases
 
-### Synthesis
+#### Synthesis
 Synthesis requires that primary research data sets be understood and combined into a similar format. EDI has examined the needs of synthesis scientists using community survey data, and that feedback is incorporated here. 
 
-### Harmonization
+#### Harmonization
 Although a prescribed format would make data easily reused, the complexity of community surveys generally means that a prescribed format cannot be imposed on research studies. Therefore, EDI is harmonizing this data type in a workflow framework, and the lessons learned from examining raw data are included here. For more information on EDI's harmonization of community survey data, see: 
 - https://github.com/EDIorg/ecocomDP
 - https://environmentaldatainitiative.org/dataset-design/data-package-design-for-community-survey-data/
 
-### External applications
+#### External applications
 Community survey data are of great interest to the broader biodiversity community, particularly through their support for portals such as GBIF, and the use of the Darwin Core Vocabulary. Harmonization is the first step in this process.
 
 
-## Definitions and conventions
+### Definitions and conventions
 The recommendations and examples below are organized according to how easily the data are reused. In all cases **Best** is preferred, and recommended. **Marginal** and **not useable** may overlap in some situations.
 - **Best**: Data are easily understood (do not require manual handling or further investigation)
 - **OK**: Some manual, custom or specialized handling required
@@ -41,9 +41,9 @@ The recommendations and examples below are organized according to how easily the
 
 
 
-## Recommendations for datasets
+### Recommendations for datasets
 
-### Sampling methods
+#### Sampling methods
 Methods are generally text metadata
 *   **Best**
     * explanation of the sampling strategy. 
@@ -53,7 +53,7 @@ Methods are generally text metadata
 *   **Marginal/not usable**
     * no description of methods  
 
-### Dates
+#### Dates
 Temporal sampling regime is consistent 
 
 *   **Best**: A column for dateTime is in the entity, and its format is consistent throughout 
@@ -74,7 +74,7 @@ Synthesis efforts may be able to circumvent the lack of true dates by dropping r
 *
 
 
-### Locations 
+#### Locations 
 Should be complete, with latitude and longitude
 
 *   **Best**: Columns for digital lat/lon
@@ -87,7 +87,7 @@ Should be complete, with latitude and longitude
 *   **Not useable**: sites codes without lat/lon
 
 
-### Site nesting
+#### Site nesting
 Sampling site nesting can be understood
 
 *   **Best**: subsites are labeled
@@ -97,7 +97,7 @@ Sampling site nesting can be understood
 * 
 
 
-### Taxa
+#### Taxa
 Taxa can be resolved 
 
 *   **Best**: Taxon codes in the entity itself, assigned at source by those familiar with these taxonomic groups
@@ -108,7 +108,7 @@ Taxa can be resolved
         * example (*if all they had included was the column called “sp_code”):  [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33)      
 
 
-###  Table column names
+####  Table column names
 Metadata can be matched to entity column
 
 *   **Best**: attributeName exactly matches column header  
@@ -123,7 +123,7 @@ This feature has come up in other discussions. The EML metadata asserts what the
 *the ECC currently checks that number of columns and their typing match (within the limits of an RDB). For attributeNames, It shows you the first line of the table for manual comparison (an info check).*
 
 
-### Table linkages
+#### Table linkages
 Foreign Key linkages are clear 
 
 *   **Best**: EML constraint included, with referential integrity 
@@ -135,28 +135,28 @@ Foreign Key linkages are clear
 
 Table linkages are most important for harmonization; synthesis efforts may be able to circumvent issues (and elevate a "not useable" dataset to "marginal") by dropping records without referents in key fields.
 
-# Meteorology and Hydrology data
+## Meteorology and Hydrology data
 
-## Introduction
+### Introduction
 This is a summary page. it should have links out for details.
 
 
-### Synthesis use
+#### Synthesis use
 para here about CUAHSI, with link to that project.
 
-## Recommendations for datasets
+### Recommendations for datasets
 summary here.
 
-# Soil Carbon
+## Soil Carbon
 
-## Introduction
+### Introduction
 Page desribing BPs for data packages about soil carbon. it will probably have links out for details.
 
 
-### Synthesis use
+#### Synthesis use
 para here about current synthesis use, eg, Weider WG.
 
-## Recommendations for datasets
+### Recommendations for datasets
 summary here.
 
 
