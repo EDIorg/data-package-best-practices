@@ -1,1 +1,0 @@
-../_posts/2019-11-20-what-is-a-best-practice.md

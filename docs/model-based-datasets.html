@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Model-Based Datasets | Data Package Best Practices</title>
+  <meta name="description" content="<p>Best practice recommendations for data packages, described by
+Ecological Metadata Language (EML).</p>" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Model-Based Datasets | Data Package Best Practices" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
+Ecological Metadata Language (EML).</p>" />
+  <meta name="github-repo" content="EDIorg/data-package-best-practices" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Model-Based Datasets | Data Package Best Practices" />
+  
+  <meta name="twitter:description" content="<p>Best practice recommendations for data packages, described by
+Ecological Metadata Language (EML).</p>" />
+  
+
+<meta name="author" content="Environmental Data Initiative" />
+
+
+<meta name="date" content="2022-03-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="code.html"/>
+<link rel="next" href="images-and-documents-as-data.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">EDI Data Package Best Practices</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
+<li class="chapter" data-level="" data-path="eml-best-practices.html"><a href="eml-best-practices.html"><i class="fa fa-check"></i>EML Best Practices</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html"><i class="fa fa-check"></i>Conventions and Definitions</a>
+<ul>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#audience"><i class="fa fa-check"></i>Audience</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#fonts-and-typeface"><i class="fa fa-check"></i>Fonts and typeface</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#definitions"><i class="fa fa-check"></i>Definitions</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#other-eml-resources"><i class="fa fa-check"></i>Other EML Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html"><i class="fa fa-check"></i>General Recommendations</a>
+<ul>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html#metadata-distribution"><i class="fa fa-check"></i>Metadata Distribution</a></li>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html#data-package-identifiers"><i class="fa fa-check"></i>Data Package Identifiers</a></li>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html#high-priority-elements"><i class="fa fa-check"></i>High-priority Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html"><i class="fa fa-check"></i>The root element: &lt;eml:eml&gt;</a>
+<ul>
+<li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#schemalocation-xml-attribute"><i class="fa fa-check"></i>@schemaLocation (XML attribute)</a></li>
+<li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#packageid-xml-attribute"><i class="fa fa-check"></i>@packageId (XML attribute)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html"><i class="fa fa-check"></i>Top Level Elements</a></li>
+<li class="chapter" data-level="" data-path="title-dataset.html"><a href="title-dataset.html"><i class="fa fa-check"></i>title (dataset)</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html"><i class="fa fa-check"></i>People and Organizations (Parties)</a>
+<ul>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#userid"><i class="fa fa-check"></i>userId</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#creator"><i class="fa fa-check"></i>creator</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#metadataprovider"><i class="fa fa-check"></i>metadataProvider</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#associatedparty"><i class="fa fa-check"></i>associatedParty</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#contact"><i class="fa fa-check"></i>contact</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#publisher"><i class="fa fa-check"></i>publisher</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pubdate.html"><a href="pubdate.html"><i class="fa fa-check"></i>pubDate</a></li>
+<li class="chapter" data-level="" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i>abstract</a></li>
+<li class="chapter" data-level="" data-path="keywordset-and-keyword.html"><a href="keywordset-and-keyword.html"><i class="fa fa-check"></i>keywordSet and keyword</a></li>
+<li class="chapter" data-level="" data-path="intellectualrights.html"><a href="intellectualrights.html"><i class="fa fa-check"></i>intellectualRights</a></li>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html"><i class="fa fa-check"></i>distribution</a>
+<ul>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html#dataset-level"><i class="fa fa-check"></i>Dataset level</a></li>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html#entity-level"><i class="fa fa-check"></i>Entity level</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html"><i class="fa fa-check"></i>coverage</a>
+<ul>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html#geographiccoverage"><i class="fa fa-check"></i>geographicCoverage</a></li>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html#temporalcoverage"><i class="fa fa-check"></i>temporalCoverage</a></li>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html#taxonomiccoverage"><i class="fa fa-check"></i>taxonomicCoverage</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="maintenance.html"><a href="maintenance.html"><i class="fa fa-check"></i>maintenance</a></li>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i>methods</a>
+<ul>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html#methodstep"><i class="fa fa-check"></i>methodStep</a></li>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html#sampling"><i class="fa fa-check"></i>sampling</a></li>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html#qualitycontrol"><i class="fa fa-check"></i>qualityControl</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i>project</a></li>
+<li class="chapter" data-level="" data-path="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html"><i class="fa fa-check"></i>[entity] = dataTable, spatialRaster, spatialVector, storedProcedure, view, otherEntity</a></li>
+<li class="chapter" data-level="" data-path="attributelist.html"><a href="attributelist.html"><i class="fa fa-check"></i>attributeList</a></li>
+<li class="chapter" data-level="" data-path="constraint.html"><a href="constraint.html"><i class="fa fa-check"></i>constraint</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-package-design-for-special-cases.html"><a href="data-package-design-for-special-cases.html"><i class="fa fa-check"></i>Data Package Design for Special Cases</a>
+<ul>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html"><i class="fa fa-check"></i>Code</a>
+<ul>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html#recommendations-for-data-packages"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html"><i class="fa fa-check"></i>Model-Based Datasets</a>
+<ul>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#recommendations-for-data-packages-1"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#example-data-packages-in-edi"><i class="fa fa-check"></i>Example data packages in EDI</a></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html"><i class="fa fa-check"></i>Images and Documents as Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#introduction-3"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#recommendations-for-data-packages-2"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#example-data-packages-in-edi-1"><i class="fa fa-check"></i>Example data packages in EDI</a></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="spatial-data.html"><a href="spatial-data.html"><i class="fa fa-check"></i>Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="spatial-data.html"><a href="spatial-data.html#introduction-4"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="spatial-data.html"><a href="spatial-data.html#recommendations-for-data-packages-3"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html"><i class="fa fa-check"></i>Data Gathered with Small Moving Platforms</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#introduction-5"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#recommendations-for-data-packages-4"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html"><i class="fa fa-check"></i>Data in Other Repositories</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#introduction-6"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#recommendations-for-data-packages-5"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#nucleotide-sequence-and-genomic-data"><i class="fa fa-check"></i>Nucleotide sequence and genomic data</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#example-data-packages-in-edi-2"><i class="fa fa-check"></i>Example data packages in EDI</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#appendix-tips-and-repository-information"><i class="fa fa-check"></i>Appendix: Tips and repository information</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html"><i class="fa fa-check"></i>Large Data Sets</a>
+<ul>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#introduction-7"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#recommendations-for-data-packages-6"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#references-1"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#potential-issues"><i class="fa fa-check"></i>Potential Issues</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="scientific-domain.html"><a href="scientific-domain.html"><i class="fa fa-check"></i>Scientific Domain</a>
+<ul>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html"><i class="fa fa-check"></i>Ecological community surveys</a>
+<ul>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#introduction-8"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#authors"><i class="fa fa-check"></i>Authors</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#anticipated-use-cases"><i class="fa fa-check"></i>Anticipated use cases</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#definitions-and-conventions"><i class="fa fa-check"></i>Definitions and conventions</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#recommendations-for-datasets"><i class="fa fa-check"></i>Recommendations for datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="meteorology-and-hydrology-data.html"><a href="meteorology-and-hydrology-data.html"><i class="fa fa-check"></i>Meteorology and Hydrology data</a>
+<ul>
+<li class="chapter" data-level="" data-path="meteorology-and-hydrology-data.html"><a href="meteorology-and-hydrology-data.html#introduction-9"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="meteorology-and-hydrology-data.html"><a href="meteorology-and-hydrology-data.html#recommendations-for-datasets-1"><i class="fa fa-check"></i>Recommendations for datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="soil-carbon.html"><a href="soil-carbon.html"><i class="fa fa-check"></i>Soil Carbon</a>
+<ul>
+<li class="chapter" data-level="" data-path="soil-carbon.html"><a href="soil-carbon.html#introduction-10"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="soil-carbon.html"><a href="soil-carbon.html#recommendations-for-datasets-2"><i class="fa fa-check"></i>Recommendations for datasets</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></li>
+<li style="margin-left:10px;"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/><li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Package Best Practices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="model-based-datasets" class="section level2">
+<h2>Model-Based Datasets</h2>
+<p>Contributors: An T. Nguyen, Tim Whiteaker, Corinna Gries</p>
+<div id="introduction-2" class="section level3">
+<h3>Introduction</h3>
+<p>This document includes recommendations for archiving data packages composed of model-based datasets. These datasets may include the model code itself, input data, model parameter settings, and output data.</p>
+<p>The range of cases for model-based datasets includes small one-off model code specific to one research question, through various code packages which are maintained in community repositories as long as they meet requirements (e.g., CRAN for R packages), to large community models maintained by groups of programmers and users.</p>
+<p>The intention of these recommendations is to make research based on modeling more transparent rather than achieve exact reproducibility, i.e., provide sufficient documentation so that a knowledgeable person can understand algorithms, programming decisions, and their ramifications for the results, rather than run the model and obtain the same results.</p>
+<p>It is not always easy to determine who among project personnel (IMs, scientists, programmers) is responsible for the different components of a model-based dataset. This is best decided on a case-by-case basis. A common division is that the code authors annotate the code, and the IM handles the archiving and linkage to data product(s); partially except in cases of large community models.</p>
+</div>
+<div id="recommendations-for-data-packages-1" class="section level3">
+<h3>Recommendations for data packages</h3>
+<div class="figure">
+<img src="../images/model_datasets.png" title="model data management flowchart" alt="" />
+<p class="caption">Figure 1: Flowchart for considering archival paths for various model components.</p>
+</div>
+<div id="referencing-models-in-eml" class="section level4">
+<h4>Referencing models in EML</h4>
+<p>For data packages related to a model, whether the model is archived within the same data package or not, indicate linkage to the model in EML following the <a href="code.html">best practices for archiving code</a> (see the section on linking code and data).</p>
+<p>Example 1: EML snippet relating data to models via the method description:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb31-1"><a href="model-based-datasets.html#cb31-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">methodStep</span>&gt;</span>
+<span id="cb31-2"><a href="model-based-datasets.html#cb31-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">description</span>&gt;</span>
+<span id="cb31-3"><a href="model-based-datasets.html#cb31-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">para</span>&gt;This methodStep contains data provenance information as specified in the LTER EML Best Practices. Each dataSource element here lists entity-specific information and links to source data used in the creation of this derivative data package.&lt;/<span class="kw">para</span>&gt;</span>
+<span id="cb31-4"><a href="model-based-datasets.html#cb31-4" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">description</span>&gt;</span>
+<span id="cb31-5"><a href="model-based-datasets.html#cb31-5" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">dataSource</span>&gt;</span>
+<span id="cb31-6"><a href="model-based-datasets.html#cb31-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">title</span>&gt;Source dataset title&lt;/<span class="kw">title</span>&gt;</span>
+<span id="cb31-7"><a href="model-based-datasets.html#cb31-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">creator</span>&gt;</span>
+<span id="cb31-8"><a href="model-based-datasets.html#cb31-8" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">individualName</span>&gt;</span>
+<span id="cb31-9"><a href="model-based-datasets.html#cb31-9" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">givenName</span>&gt;first name&lt;/<span class="kw">givenName</span>&gt;</span>
+<span id="cb31-10"><a href="model-based-datasets.html#cb31-10" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">surName</span>&gt;last name&lt;/<span class="kw">surName</span>&gt;</span>
+<span id="cb31-11"><a href="model-based-datasets.html#cb31-11" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">individualName</span>&gt;</span>
+<span id="cb31-12"><a href="model-based-datasets.html#cb31-12" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">organizationName</span>&gt;organization name&lt;/<span class="kw">organizationName</span>&gt;</span>
+<span id="cb31-13"><a href="model-based-datasets.html#cb31-13" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">electronicMailAddress</span>&gt;email@some.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
+<span id="cb31-14"><a href="model-based-datasets.html#cb31-14" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">creator</span>&gt;</span>
+<span id="cb31-15"><a href="model-based-datasets.html#cb31-15" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">distribution</span>&gt;</span>
+<span id="cb31-16"><a href="model-based-datasets.html#cb31-16" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">online</span>&gt;</span>
+<span id="cb31-17"><a href="model-based-datasets.html#cb31-17" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">onlineDescription</span>&gt;This is a link to an external online data resource (describe resource and repository location).&lt;/<span class="kw">onlineDescription</span>&gt;</span>
+<span id="cb31-18"><a href="model-based-datasets.html#cb31-18" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">&quot;information&quot;</span>&gt;https://pasta.lternet.edu/package/metadata/eml/knb-lter-ntl/80/2&lt;/<span class="kw">url</span>&gt;</span>
+<span id="cb31-19"><a href="model-based-datasets.html#cb31-19" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">online</span>&gt;</span>
+<span id="cb31-20"><a href="model-based-datasets.html#cb31-20" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">distribution</span>&gt;</span>
+<span id="cb31-21"><a href="model-based-datasets.html#cb31-21" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">contact</span>&gt;</span>
+<span id="cb31-22"><a href="model-based-datasets.html#cb31-22" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">positionName</span>&gt;Information Manager&lt;/<span class="kw">positionName</span>&gt;</span>
+<span id="cb31-23"><a href="model-based-datasets.html#cb31-23" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">organizationName</span>&gt;organization name&lt;/<span class="kw">organizationName</span>&gt;</span>
+<span id="cb31-24"><a href="model-based-datasets.html#cb31-24" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">electronicMailAddress</span>&gt;infomgr@some.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
+<span id="cb31-25"><a href="model-based-datasets.html#cb31-25" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">contact</span>&gt;</span>
+<span id="cb31-26"><a href="model-based-datasets.html#cb31-26" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">dataSource</span>&gt;</span>
+<span id="cb31-27"><a href="model-based-datasets.html#cb31-27" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">methodStep</span>&gt;</span></code></pre></div>
+<div id="model-code" class="section level5">
+<h5>Model code</h5>
+<p>The model used to produce certain data needs to be well documented and linked from the resulting data product(s). However, it is not always easy to decide where and how to archive the code, and whether or not in conjunction with the data product(s). We outline in sections below three common code archiving options.</p>
+<p>Note that these scenarios (model code archived with data, or standalone in EDI, or elsewhere) are not mutually exclusive. Any project that involves code might make use of both established and custom software hosted on many different platforms, and might use some or all archiving options.</p>
+<p>To decide between archiving options, consider the questions listed in <a href="code.html">best practices for publishing code</a>.</p>
+</div>
+<div id="model-code-and-data-in-the-same-package" class="section level5">
+<h5>Model code and data in the same package</h5>
+<p>The goal of this practice is to ensure transparency of the data, and it applies to one-off models developed for the associated data, or occasionally to larger code bases for the reasons outlined in <a href="code.html">best practices for archiving code</a>. Include the code as a dataset/otherEntity. Additionally, it is recommended to include a CodeMeta file, which can also be handled and documented in EML as dataset/otherEntity. CodeMeta is a metadata standard for software and code compatible with schema.org. Refer to <a href="code.html">best practices for archiving code</a> for how to document the code and create CodeMeta.</p>
+</div>
+<div id="model-code-as-standalone-package" class="section level5">
+<h5>Model code as standalone package</h5>
+<p>If the model has been used to generate several datasets, i.e., is more widely applicable, it can be archived as its own package in EDI and assigned a DOI. Include the code as a dataset/otherEntity. Additionally, it is recommended to include a CodeMeta JSON-LD file, which can also be handled and documented in EML as dataset/otherEntity. CodeMeta is a metadata standard for software and code compatible with schema.org. Refer to <a href="code.html">best practices for archiving code</a> for how to document the code and create CodeMeta.</p>
+</div>
+<div id="model-code-archivedmaintained-elsewhere" class="section level5">
+<h5>Model code archived/maintained elsewhere</h5>
+<p>This might include complex community models/software maintained by many people, published and actively maintained R/Python packages, etc., or simply code archived in another repository such as <a href="https://www.comses.net/">CoMSES Net</a>. It may sometimes be advisable to archive a copy of the model code with the data, even if it appears to be maintained elsewhere. See recommendations above for referencing models in EML.</p>
+</div>
+</div>
+<div id="model-input-and-output-data" class="section level4">
+<h4>Model input and output data</h4>
+<p>These are considered data entities, which should be handled according to EML best practices for corresponding data types. However, if the resulting datasets are very large, one may consider if input/output from all individual model runs need to be archived. Are there specific model run results that are more useful for non-modelers? For example: results from model runs leading to a journal publication.</p>
+<p>Very large model inputs/outputs may need to be archived offline. Refer to <a href="large-data-sets.html">best practices for offline data</a>.</p>
+<p>If the model requires a specific folder structure, you can zip model input files within the package to preserve that folder structure. A disadvantage of this approach is that you cannot elegantly describe each file with EML.</p>
+<p>The <a href="https://modeldatarcn.github.io/#project-description">EarthCube Research Coordination Network, “What About Model Data?” group</a> is working on a rubric to help you determine how much model output data to save, based on assorted criteria on reproducibility/value of the data. Learn more about that group and their rubric on their <a href="https://modeldatarcn.github.io/">Model Data RCN website</a>.</p>
+<p>Researchers at the Department of Energyâ€™s Environmental Systems Science are also working on assessing model archiving needs. In <a href="https://eartharxiv.org/repository/view/260/">this preprint</a>, Simmonds et al. 2020 discuss feedback from communications with modellers and propose preliminary solutions. With regards to input/output data, their feedback indicates two opposite opinions: some feel the whole gamut of raw to aggregated outputs needs to be archived, while others advocate for only high-level outputs corresponding to publication figures. They also found that spin-up simulations were not considered a high priority for archiving. See section 2.3 What is worth archiving and for how long does it remain useful?</p>
+</div>
+<div id="model-parameters" class="section level4">
+<h4>Model parameters</h4>
+<p>Include model parameters whenever applicable. If code/input/output from multiple model runs are archived, make sure to archive all corresponding sets of parameters, and be explicit in linking the different components together.</p>
+<p>Consider archiving model parameter files as their own data object(s) in both their native format and as a text (non-binary) version. If the ‘runfile’ will be archived, consider including the parameters within that file with appropriate annotations.</p>
+</div>
+</div>
+<div id="example-data-packages-in-edi" class="section level3">
+<h3>Example data packages in EDI</h3>
+<table>
+<tr>
+<td>
+<strong>Dataset Title</strong>
+</td>
+<td>
+<strong>Description</strong>
+</td>
+<td>
+<strong>EDI Package ID</strong>
+</td>
+</tr>
+<tr>
+<td>
+<em>North Temperate Lakes LTER General Lake Model Parameter Set for Lake Mendota, Summer 2016 Calibration</em>
+</td>
+<td>
+Parameters for specific GLM runs. GLM is a large community model, not managed and archived in EDI
+</td>
+<td>
+<a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-ntl.348.2">knb-lter-ntl.348.2</a>
+</td>
+</tr>
+<tr>
+<td>
+<em>SBC LTER: Regional Oceanic Modeling System (ROMS) Setup Files, Code, and Lagrangian Model Setup Files</em>
+</td>
+<td>
+All the necessary code, grid, forcing, initial, and boundary condition files for running the UCLA version of the Regional Oceanic Modeling System (ROMS) for the Santa Barbara Channel
+</td>
+<td>
+<a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=126">knb-lter-sbc.126.1</a>
+</td>
+</tr>
+<tr>
+<td>
+<em>Lake thermal structure drives inter-annual variability in summer anoxia dynamics in a eutrophic lake over 37 years</em>
+</td>
+<td>
+Dataset to run a 37-year simulation (1979-2015) of the Lake Mendota lake ecosystem using the vertical 1D GLM-AED2 model.
+</td>
+<td>
+<a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-ntl&identifier=396">knb-lter-ntl.396.1</a>
+</td>
+</tr>
+</table>
+</div>
+<div id="resources-1" class="section level3">
+<h3>Resources</h3>
+<p>Janssen, Marco A., Lilian Na’ia Alessa, Michael Barton, Sean Bergin and Allen Lee (2008). â€˜Towards a Community Framework for Agent-Based Modellingâ€™. Journal of Artificial Societies and Social Simulation 11(2)6 <a href="http://jasss.soc.surrey.ac.uk/11/2/6.html">http://jasss.soc.surrey.ac.uk/11/2/6.html</a>.</p>
+<p>Simmonds, Maegen, William J. Riley, Shreyas Cholia, and Charuleka Varadharajan (2020). ‘Addressing Model Data Archiving Needs for the Department of Energyâ€™s Environmental Systems Science Community.’ EarthArXiv (preprint). <a href="https://doi.org/10.31223/osf.io/acdk4">https://doi.org/10.31223/osf.io/acdk4</a>.</p>
+<p>See sections 2.3 What is worth archiving and for how long does it remain useful?, discussed above, plus 2.4 Model data archiving protocol, where the authors argue for better standardized reporting format for model data, e.g., top-level metadata and directory structure at a minimum. Section 4.1 Developing Model Data Archiving Guidelines proposes an organization scheme for model data.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="code.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="images-and-documents-as-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/EDIorg/data-package-best-practices/edit/master/02-special-cases.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

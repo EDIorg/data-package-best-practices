@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Images and Documents as Data | Data Package Best Practices</title>
+  <meta name="description" content="<p>Best practice recommendations for data packages, described by
+Ecological Metadata Language (EML).</p>" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Images and Documents as Data | Data Package Best Practices" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
+Ecological Metadata Language (EML).</p>" />
+  <meta name="github-repo" content="EDIorg/data-package-best-practices" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Images and Documents as Data | Data Package Best Practices" />
+  
+  <meta name="twitter:description" content="<p>Best practice recommendations for data packages, described by
+Ecological Metadata Language (EML).</p>" />
+  
+
+<meta name="author" content="Environmental Data Initiative" />
+
+
+<meta name="date" content="2022-03-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="model-based-datasets.html"/>
+<link rel="next" href="spatial-data.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">EDI Data Package Best Practices</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
+<li class="chapter" data-level="" data-path="eml-best-practices.html"><a href="eml-best-practices.html"><i class="fa fa-check"></i>EML Best Practices</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html"><i class="fa fa-check"></i>Conventions and Definitions</a>
+<ul>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#audience"><i class="fa fa-check"></i>Audience</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#fonts-and-typeface"><i class="fa fa-check"></i>Fonts and typeface</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#definitions"><i class="fa fa-check"></i>Definitions</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#other-eml-resources"><i class="fa fa-check"></i>Other EML Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html"><i class="fa fa-check"></i>General Recommendations</a>
+<ul>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html#metadata-distribution"><i class="fa fa-check"></i>Metadata Distribution</a></li>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html#data-package-identifiers"><i class="fa fa-check"></i>Data Package Identifiers</a></li>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html#high-priority-elements"><i class="fa fa-check"></i>High-priority Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html"><i class="fa fa-check"></i>The root element: &lt;eml:eml&gt;</a>
+<ul>
+<li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#schemalocation-xml-attribute"><i class="fa fa-check"></i>@schemaLocation (XML attribute)</a></li>
+<li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#packageid-xml-attribute"><i class="fa fa-check"></i>@packageId (XML attribute)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html"><i class="fa fa-check"></i>Top Level Elements</a></li>
+<li class="chapter" data-level="" data-path="title-dataset.html"><a href="title-dataset.html"><i class="fa fa-check"></i>title (dataset)</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html"><i class="fa fa-check"></i>People and Organizations (Parties)</a>
+<ul>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#userid"><i class="fa fa-check"></i>userId</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#creator"><i class="fa fa-check"></i>creator</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#metadataprovider"><i class="fa fa-check"></i>metadataProvider</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#associatedparty"><i class="fa fa-check"></i>associatedParty</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#contact"><i class="fa fa-check"></i>contact</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#publisher"><i class="fa fa-check"></i>publisher</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pubdate.html"><a href="pubdate.html"><i class="fa fa-check"></i>pubDate</a></li>
+<li class="chapter" data-level="" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i>abstract</a></li>
+<li class="chapter" data-level="" data-path="keywordset-and-keyword.html"><a href="keywordset-and-keyword.html"><i class="fa fa-check"></i>keywordSet and keyword</a></li>
+<li class="chapter" data-level="" data-path="intellectualrights.html"><a href="intellectualrights.html"><i class="fa fa-check"></i>intellectualRights</a></li>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html"><i class="fa fa-check"></i>distribution</a>
+<ul>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html#dataset-level"><i class="fa fa-check"></i>Dataset level</a></li>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html#entity-level"><i class="fa fa-check"></i>Entity level</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html"><i class="fa fa-check"></i>coverage</a>
+<ul>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html#geographiccoverage"><i class="fa fa-check"></i>geographicCoverage</a></li>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html#temporalcoverage"><i class="fa fa-check"></i>temporalCoverage</a></li>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html#taxonomiccoverage"><i class="fa fa-check"></i>taxonomicCoverage</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="maintenance.html"><a href="maintenance.html"><i class="fa fa-check"></i>maintenance</a></li>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i>methods</a>
+<ul>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html#methodstep"><i class="fa fa-check"></i>methodStep</a></li>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html#sampling"><i class="fa fa-check"></i>sampling</a></li>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html#qualitycontrol"><i class="fa fa-check"></i>qualityControl</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i>project</a></li>
+<li class="chapter" data-level="" data-path="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html"><i class="fa fa-check"></i>[entity] = dataTable, spatialRaster, spatialVector, storedProcedure, view, otherEntity</a></li>
+<li class="chapter" data-level="" data-path="attributelist.html"><a href="attributelist.html"><i class="fa fa-check"></i>attributeList</a></li>
+<li class="chapter" data-level="" data-path="constraint.html"><a href="constraint.html"><i class="fa fa-check"></i>constraint</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-package-design-for-special-cases.html"><a href="data-package-design-for-special-cases.html"><i class="fa fa-check"></i>Data Package Design for Special Cases</a>
+<ul>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html"><i class="fa fa-check"></i>Code</a>
+<ul>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html#recommendations-for-data-packages"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html"><i class="fa fa-check"></i>Model-Based Datasets</a>
+<ul>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#recommendations-for-data-packages-1"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#example-data-packages-in-edi"><i class="fa fa-check"></i>Example data packages in EDI</a></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html"><i class="fa fa-check"></i>Images and Documents as Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#introduction-3"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#recommendations-for-data-packages-2"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#example-data-packages-in-edi-1"><i class="fa fa-check"></i>Example data packages in EDI</a></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="spatial-data.html"><a href="spatial-data.html"><i class="fa fa-check"></i>Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="spatial-data.html"><a href="spatial-data.html#introduction-4"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="spatial-data.html"><a href="spatial-data.html#recommendations-for-data-packages-3"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html"><i class="fa fa-check"></i>Data Gathered with Small Moving Platforms</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#introduction-5"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#recommendations-for-data-packages-4"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html"><i class="fa fa-check"></i>Data in Other Repositories</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#introduction-6"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#recommendations-for-data-packages-5"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#nucleotide-sequence-and-genomic-data"><i class="fa fa-check"></i>Nucleotide sequence and genomic data</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#example-data-packages-in-edi-2"><i class="fa fa-check"></i>Example data packages in EDI</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#appendix-tips-and-repository-information"><i class="fa fa-check"></i>Appendix: Tips and repository information</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html"><i class="fa fa-check"></i>Large Data Sets</a>
+<ul>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#introduction-7"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#recommendations-for-data-packages-6"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#references-1"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#potential-issues"><i class="fa fa-check"></i>Potential Issues</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="scientific-domain.html"><a href="scientific-domain.html"><i class="fa fa-check"></i>Scientific Domain</a>
+<ul>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html"><i class="fa fa-check"></i>Ecological community surveys</a>
+<ul>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#introduction-8"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#authors"><i class="fa fa-check"></i>Authors</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#anticipated-use-cases"><i class="fa fa-check"></i>Anticipated use cases</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#definitions-and-conventions"><i class="fa fa-check"></i>Definitions and conventions</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#recommendations-for-datasets"><i class="fa fa-check"></i>Recommendations for datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="meteorology-and-hydrology-data.html"><a href="meteorology-and-hydrology-data.html"><i class="fa fa-check"></i>Meteorology and Hydrology data</a>
+<ul>
+<li class="chapter" data-level="" data-path="meteorology-and-hydrology-data.html"><a href="meteorology-and-hydrology-data.html#introduction-9"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="meteorology-and-hydrology-data.html"><a href="meteorology-and-hydrology-data.html#recommendations-for-datasets-1"><i class="fa fa-check"></i>Recommendations for datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="soil-carbon.html"><a href="soil-carbon.html"><i class="fa fa-check"></i>Soil Carbon</a>
+<ul>
+<li class="chapter" data-level="" data-path="soil-carbon.html"><a href="soil-carbon.html#introduction-10"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="soil-carbon.html"><a href="soil-carbon.html#recommendations-for-datasets-2"><i class="fa fa-check"></i>Recommendations for datasets</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://EnvironmentalDataInitiative.org" target="blank">Environmental Data Initiative</a></li>
+<li style="margin-left:10px;"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/><li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Package Best Practices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="images-and-documents-as-data" class="section level2">
+<h2>Images and Documents as Data</h2>
+<p>Contributors: Renee F. Brown (lead), Stace Beaulieu, Sarah Elmendorf, Gastil Gastil-Buhl, Corinna Gries, Li Kui, Mary Martin, Greg Maurer, John Porter, Tim Whiteaker</p>
+<div id="introduction-3" class="section level3">
+<h3>Introduction</h3>
+<p>This chapter describes best practices for archiving images and other documents as data. The <a href="http://purl.obolibrary.org/obo/IAO_0000101">Environment Ontology (ENVO)</a> defines a document as ‘<em>a collection of information content entities intended to be understood together as a whole</em>.’ Common examples include still images, audio and/or video multimedia files, field notebooks, written interview notes or transcribed oral accounts, historical document collections, and ‘paper’ maps (non-digitized maps). For images that are already handled by specialized repositories (e.g., phenocam images, specimen images) refer to <a href="data-in-other-repositories.html">Data in Other Repositories</a>, for additional information on how to handle images from uncrewed (underwater or aerial) vehicles refer to <a href="data-gathered-with-small-moving-platforms.html">Data Gathered with Small Moving Platforms</a>, and for geospatial imagery refer to <a href="spatial-data.html">Spatial Data</a>.</p>
+</div>
+<div id="recommendations-for-data-packages-2" class="section level3">
+<h3>Recommendations for data packages</h3>
+<div id="reasons-to-archive-documents-as-data" class="section level4">
+<h4>Reasons to archive documents as data</h4>
+<ul>
+<li><strong>Enhance the credibility of associated datasets.</strong> Many document types (field notes, still images, etc.) often provide additional metadata that cannot easily be encapsulated in the associated dataset(s) or were not considered important at the time of transcription. As such, these documents may provide opportunities to rectify transcription errors, retrospectively provide explanations of unusual data, and/or include additional observational or measured data, such as opportunistic measurements or calibration parameters.</li>
+<li><strong>Provide opportunities for new analyses.</strong> New analytical methods may be employed on archived documents (especially still images) or documents that were never archived previously because the cost-to-benefit ratio was considered too high (e.g., pilot projects).</li>
+<li><strong>Improve ease of access.</strong> In distributed projects, access to original and/or ‘hard-copy’ documents may be limited to a particular institution or subset of people. By digitally archiving these documents in a data repository, the data become more findable, accessible, interoperable, and reusable (FAIR).</li>
+</ul>
+</div>
+<div id="considerations-for-data-package-structure" class="section level4">
+<h4>Considerations for data package structure</h4>
+<ul>
+<li><strong>Balance file size and number of files.</strong> A data package may contain document files individually or bundled as a compressed archive (e.g., zip). The decision of how to bundle documents into compressed archives and then into data packages should be guided by the overall goal of making data usable for the intended purpose of the documents. In most cases, this would involve finding specific documents by, for example, the date or location of the acquisition, or some other aspect of interest. In addition, the effort of documenting documents (each individually vs. in groups) has to be taken into account. Also see <a href="large-data-sets.html">Large Data Sets</a>.</li>
+<li><strong>Document grouping.</strong> Data packages, or compressed archives within data packages, may be grouped spatially (e.g., by location) and/or temporally (e.g., by date, season, or year). For example, data outputs from a stationary camera may be archived in annual data packages, each containing monthly compressed archives if the number of images is large. While moving camera outputs may also be archived annually, these data packages may instead include compressed archives containing all still images for a single location.</li>
+<li><strong>Document naming.</strong> To maximize searchability, document names should be unique and meaningful for a data reuser. It is recommended that individual documents be named according to their content, and compressed archives include date, location, and other relevant information in the filename.</li>
+<li><strong>Data inventory table.</strong> An inventory table providing the structure and organization of the included document entities or groups of documents (see Table 4.1) is recommended, especially for larger collections of documents within a data package. The inventory table serves as an additional source of metadata and may also be used to link specific documents to additional information.</li>
+<li><strong>Archival frequency.</strong> One should strive for archiving a fully processed group of documents when no more updates are expected (e.g., after a field season or annually) due to the large volume of documents to be handled repeatedly for each update.</li>
+<li><strong>Linking to related data packages.</strong> In the case where the documents are useful to understanding another data package and vice versa (e.g., met station visitation logs and met station time series data), it is recommended to link the complementary data package in the methods section of both datasets. Alternatively, include the document(s) or compressed archive(s) in the existing dataset as otherEntity, as described in the next section.</li>
+</ul>
+</div>
+<div id="documenting-data-packages" class="section level4">
+<h4>Documenting data packages</h4>
+<div id="ecological-metadata-language" class="section level5">
+<h5>Ecological Metadata Language</h5>
+<p>All data packages require good discovery-level metadata in Ecological Metadata Language (EML), which should be assembled using standard documented best practices. Documents (including compressed archives) should be included as otherEntity in the data package (e.g., see Example 4.1). Refer to the most recent version of EML Best Practices (<a href="https://environmentaldatainitiative.files.wordpress.com/2017/11/emlbestpractices-v3.pdf">currently v3</a>) for guidance regarding the formatName and entityType EML elements. If a format for your document type is not covered, it is recommended to use the appropriate <a href="https://github.com/DataONEorg/object-formats">MIME type</a>, if available.</p>
+<p>Example 1: EML otherEntity snippet for a pdf file</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb32-1"><a href="images-and-documents-as-data.html#cb32-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">otherEntity</span>&gt;</span>
+<span id="cb32-2"><a href="images-and-documents-as-data.html#cb32-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityName</span>&gt;site date&lt;/<span class="kw">entityName</span>&gt;</span>
+<span id="cb32-3"><a href="images-and-documents-as-data.html#cb32-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityDescription</span>&gt;Field notes at site and date.&lt;/<span class="kw">entityDescription</span>&gt;</span>
+<span id="cb32-4"><a href="images-and-documents-as-data.html#cb32-4" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
+<span id="cb32-5"><a href="images-and-documents-as-data.html#cb32-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">objectName</span>&gt;site_date.pdf&lt;/<span class="kw">objectName</span>&gt;</span>
+<span id="cb32-6"><a href="images-and-documents-as-data.html#cb32-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">size</span><span class="ot"> unit=</span><span class="st">&quot;byte&quot;</span>&gt;9674&lt;/<span class="kw">size</span>&gt;</span>
+<span id="cb32-7"><a href="images-and-documents-as-data.html#cb32-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">authentication</span><span class="ot"> method=</span><span class="st">&quot;MD5&quot;</span>&gt;8547b7a63fcf6c1f0913a5bd7549d9d1&lt;/<span class="kw">authentication</span>&gt;</span>
+<span id="cb32-8"><a href="images-and-documents-as-data.html#cb32-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">dataFormat</span>&gt;</span>
+<span id="cb32-9"><a href="images-and-documents-as-data.html#cb32-9" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">externallyDefinedFormat</span>&gt;</span>
+<span id="cb32-10"><a href="images-and-documents-as-data.html#cb32-10" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">formatName</span>&gt;Portable Document Format&lt;/<span class="kw">formatName</span>&gt;</span>
+<span id="cb32-11"><a href="images-and-documents-as-data.html#cb32-11" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">externallyDefinedFormat</span>&gt;</span>
+<span id="cb32-12"><a href="images-and-documents-as-data.html#cb32-12" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">dataFormat</span>&gt;</span>
+<span id="cb32-13"><a href="images-and-documents-as-data.html#cb32-13" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
+<span id="cb32-14"><a href="images-and-documents-as-data.html#cb32-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityType</span>&gt;application/pdf&lt;/<span class="kw">entityType</span>&gt;</span>
+<span id="cb32-15"><a href="images-and-documents-as-data.html#cb32-15" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">otherEntity</span>&gt;</span></code></pre></div>
+<p>The EML metadata should also include appropriate keywords describing the general purpose of the document or compressed archive (e.g., ice phenology, community composition, stream hydrology, etc.). For example, for still images, it is recommended to include keyword: image with the semantic annotation from the Information Artifact Ontology (IAO) :</p>
+<pre><code>**Term IRI:** [http://purl.obolibrary.org/obo/IAO_0000101](http://purl.obolibrary.org/obo/IAO_0000101)
+
+
+**Definition:** An image is an affine projection to a two dimensional surface, of measurements of some quality of an entity or entities repeated at regular intervals across a spatial range, where the measurements are represented as color and luminosity on the projected surface.</code></pre>
+<p>Note, IAO includes at least one subcategory for image (e.g., <a href="http://www.ontobee.org/ontology/IAO?iri=http://purl.obolibrary.org/obo/IAO_0000185">photograph</a>). It is recommended the most specific applicable concept be used.</p>
+</div>
+<div id="data-inventory-table" class="section level5">
+<h5>Data Inventory Table</h5>
+<p>We recommend that an additional level of metadata be provided through a data inventory table that effectively serves as a document catalog (see Table 4.1). The detail provided in this table should be guided by the same principles as stated above – to enable optimal usability of the documents. For example, still images from a stationary camera require latitude and longitude only in the EML file, not for each individual image. However, images from a moving camera may need that information for every image, or at least for every location (e.g., site, quadrat, transect). Additionally, Exif metadata from photographic images may be programmatically extracted to supplement the inventory table (refer to the <em>Tips and Tricks</em> section of <a href="data-gathered-with-Small-moving-platforms.html">Data Gathered with Small Moving Platforms</a>).</p>
+<p>The data inventory table should be structured such that each column represents a particular attribute, described in EML as a <a href="https://eml.ecoinformatics.org/schema/eml-dataTable_xsd.html#eml-dataTable.xsd">dataTable</a> entity, and each row represents an individual document or a compressed archive of a group of documents. At minimum, the table should include an attribute for the document/archive filename, as well as any other essential attributes that vary per each document/archive. Additional attributes may include information on the date and/or time, but for this information to be useful, be consistent and use a controlled vocabulary for these fields so that a user can effectively search on them.</p>
+<p>Table 1: Data inventory table structure.</p>
+<table>
+<tr>
+<td>
+<strong>Column</strong>
+</td>
+<td>
+<strong>Attribute Description</strong>
+</td>
+</tr>
+<tr>
+<td>
+Filename
+</td>
+<td>
+Filename of each document or compressed archive, including file extension (e.g., ‘site_date.jpg’). For compressed archives, include the relative path of the document, with respect to the uncompressed directory structure (e.g., ‘2018/SITE3/quadrat4.jpg’).
+</td>
+</tr>
+<tr>
+<td>
+Link/URL/URI
+</td>
+<td>
+Link to download a document if it is available on a different system (also see <a href="data-in-other-repositories.html">Data in Other Repositories</a>). Persistent identifiers are recommended, if available.
+</td>
+</tr>
+<tr>
+<td>
+Creator(s)
+</td>
+<td>
+Name(s) of the creator(s) of the original document (e.g., photographer, field technician, interviewer). Multiple creators should be entered into a single cell using the pipe delimiter.
+</td>
+</tr>
+<tr>
+<td>
+Datetime
+</td>
+<td>
+Date (and time) associated with the document, in <a href="https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations">ISO 8601 format</a> (e.g., 2007-04-05T12:30-02:00).
+</td>
+</tr>
+<tr>
+<td>
+Project specific datetime attributes
+</td>
+<td>
+One or more appropriately labeled columns containing project specific date and time information for easier search and retrieval of documents (e.g., year, season, campaign).
+</td>
+</tr>
+<tr>
+<td>
+Location
+</td>
+<td>
+One or more location columns as appropriate, such as latitude and longitude in decimal degrees, site name, transect name, altitude, depth, habitat, etc.
+</td>
+</tr>
+<tr>
+<td>
+Document specific attributes
+</td>
+<td>
+One or more columns as appropriate to the document type, such as weather conditions, organism name, instrument type, etc.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div id="example-data-packages-in-edi-1" class="section level3">
+<h3>Example data packages in EDI</h3>
+<p>Each of the Environmental Data Initiative (EDI) data packages listed below include images or other documents as data. Some of these packages contain data inventory tables (as dataTable entities) described in the EML metadata.</p>
+<p>Table 2: Data packages in EDI providing examples of best practices from this document.</p>
+<table>
+<tr>
+<td>
+<strong>Dataset Title</strong>
+</td>
+<td>
+<strong>Description</strong>
+</td>
+<td>
+<strong>EDI Package ID</strong>
+</td>
+</tr>
+<tr>
+<td>
+<em>Annual ground-based photographs taken at 15 net primary production (NPP) study sites at Jornada Basin LTER, 1996-ongoing</em>
+</td>
+<td>
+Compressed archives of images grouped by year. Includes data inventory file.
+</td>
+<td>
+<a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&identifier=210011005">knb-lter-jrn.210011005.105</a>
+</td>
+</tr>
+<tr>
+<td>
+<em>McMurdo Dry Valleys LTER: Landscape Albedo in Taylor Valley, Antarctica from 2015 to 2019</em>
+</td>
+<td>
+Compressed archives of aerial images, grouped by flight date, and associated reflectance data.
+</td>
+<td>
+<a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcm.2016.2">knb-lter-mcm.2016.2</a>
+</td>
+</tr>
+<tr>
+<td>
+<em>MCR LTER: Coral Reef: Computer Vision: Multi-annotator Comparison of Coral Photo Quadrat Analysis</em>
+</td>
+<td>
+5090 coral reef survey images, and 251,988 random-point annotations by coral ecology experts.
+</td>
+<td>
+<a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-mcr&identifier=5013">knb-lter-mcr.5013.3</a>
+</td>
+</tr>
+<tr>
+<td>
+<em>Abundance and biovolume of taxonomically-resolved phytoplankton and microzooplankton imaged continuously underway with an Imaging FlowCytobot along the NES-LTER Transect in winter 2018</em>
+</td>
+<td>
+144,281 images from a plankton imaging system with annotations and extracted size data.
+</td>
+<td>
+<a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-nes.9.1">knb-lter-nes.9.1</a>
+</td>
+</tr>
+<tr>
+<td>
+<em>Calling activity of Birds in the White Mountain National Forest: Audio Recordings (2016 and 2018)</em>
+</td>
+<td>
+Compressed archive containing 410 audio files in wav format. Includes data inventory table.
+</td>
+<td>
+<a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-hbr&identifier=268&revision=1">knb-lter-hbr.268.1</a>
+</td>
+</tr>
+</table>
+</div>
+<div id="resources-2" class="section level3">
+<h3>Resources</h3>
+<div id="considerations-for-digitizing-documents" class="section level4">
+<h4>Considerations for digitizing documents</h4>
+<p>Following are some general considerations and recommendations for digitizing paper or other ‘hard-copy’ documents for archival. This is not meant to be an exhaustive list. For further and more detailed information, please refer to the U.S. National Archives and Records Administration (NARA)â€™s <em><a href="https://www.archives.gov/files/preservation/technical/guidelines.pdf">Technical Guidelines for Digitizing Archival Materials for Electronic Access</a></em>.</p>
+<ul>
+<li><strong>Effort.</strong> The decision to digitize documents, as well as the digitization method, involves trade-offs in the accessibility and ease of using particular hardware and/or software technologies, the quality of the digitization, and the overall effort spent. Digitization efforts may be significant, for example, when dealing with a large number of documents requiring meaningful file names, text recognition, and/or high resolution for improved accessibility.</li>
+<li><strong>Equipment.</strong> Instruments for digitizing hard-copy documents range from high resolution scanners (less accessible, less user-friendly, more expensive, better quality) to smartphone cameras (ubiquitous, easy-to-use, lower quality). For example, taking a smartphone image in the field may be utilized for quick and easy digitization of field notes.</li>
+<li><strong>Document resolution and file size.</strong> This is an important consideration that should be guided by the content and purpose of the document. Detailed paper maps should probably be scanned at high resolution and large file size, while field sheets may not need as much detail.</li>
+<li><strong>Optical Character Recognition (OCR):</strong> When digitizing documents that include text, we recommend using scanning or other software with OCR capabilities (e.g., Adobe, ABBYY, Tesseract) to convert the text into machine readable characters so that the documents are searchable and thus, more usable. OCR does not work well for handwritten text, older fonts, or documents with busy backgrounds (speckled, dirty, faded, etc.).</li>
+<li><strong>Sensitive Information and Human Subjects:</strong> Regardless of the digitization method, one should be mindful of sensitive information that shouldnâ€™t be archived or otherwise redacted (e.g., photographs of human subjects, field notebooks containing personal messages, gate combinations, and/or telephone numbers). In all cases in which human subjects are involved, Institutional Review Board (IRB) restrictions must be heeded. A signed IRB consent form for the associated research project represents a contract between researcher and human subject. It is important to note that IRB restrictions can differ among research studies within the same project. For further information, see the <a href="https://environmentaldatainitiative.org/edi-data-policy-2/#Sensitive%20data">EDI Data Initiative Data Policy</a>.</li>
+</ul>
+<p>While transcription is a digitization method that can be performed on certain types of documents (e.g., audio/video recordings, field notebooks) and can enhance search capabilities, transcript generation requires substantially more effort than other digitization methods, and is prone to error. Moreover, in the case where the original documents contain drawings, transcripts may be incomplete or otherwise inaccurate. <em>Thus, we recommend digitizing documents by other means, using the considerations described above.</em></p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="model-based-datasets.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="spatial-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/EDIorg/data-package-best-practices/edit/master/02-special-cases.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
