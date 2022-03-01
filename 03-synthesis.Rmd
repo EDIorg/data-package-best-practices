@@ -1,0 +1,165 @@
+# Scientific Domain {-}
+
+This document contains current recommendations for data packages from specific scientific domains. Not all domains are covered.
+See navigation menu.
+
+# Ecological community surveys
+
+DRAFT DRAFT DRAFT
+
+
+## Introduction
+We know from experience that primary research data sets cannot be easily reused until all data are completely understood. Community survey data in particular, can be highly complex, often with location-specific methods.  Some general principles can be summarized from:
+
+- synthesis scientists working with this type of data
+- lessons learned from harmonization of primary data, e.g., EDI's `ecocomDP` project.
+
+## Authors
+- Margaret O'Brien (https://orcid.org/0000-0002-1693-8322)
+- ecocomDP working group: https://environmentaldatainitiative.org/dataset-design/data-package-design-for-community-survey-data/
+
+## Anticipated use cases
+
+### Synthesis
+Synthesis requires that primary research data sets be understood and combined into a similar format. EDI has examined the needs of synthesis scientists using community survey data, and that feedback is incorporated here. 
+
+### Harmonization
+Although a prescribed format would make data easily reused, the complexity of community surveys generally means that a prescribed format cannot be imposed on research studies. Therefore, EDI is harmonizing this data type in a workflow framework, and the lessons learned from examining raw data are included here. For more information on EDI's harmonization of community survey data, see: 
+- https://github.com/EDIorg/ecocomDP
+- https://environmentaldatainitiative.org/dataset-design/data-package-design-for-community-survey-data/
+
+### External applications
+Community survey data are of great interest to the broader biodiversity community, particularly through their support for portals such as GBIF, and the use of the Darwin Core Vocabulary. Harmonization is the first step in this process.
+
+
+## Definitions and conventions
+The recommendations and examples below are organized according to how easily the data are reused. In all cases **Best** is preferred, and recommended. **Marginal** and **not useable** may overlap in some situations.
+- **Best**: Data are easily understood (do not require manual handling or further investigation)
+- **OK**: Some manual, custom or specialized handling required
+- **Marginal**: Additional metadata is required, along with custom handling and probably investigation (e.g., questions answered via email)
+- **Not useable**: the dataset has significant metadata missing; or has too many inconsistencies or layout challenges for it to be used even with manual handling. 
+
+
+
+## Recommendations for datasets
+
+### Sampling methods
+Methods are generally text metadata
+*   **Best**
+    * explanation of the sampling strategy. 
+    * diagrams of sampling plots and their spatial relationships
+*   **OK**
+    * reference included to a paper describing the above
+*   **Marginal/not usable**
+    * no description of methods  
+
+### Dates
+Temporal sampling regime is consistent 
+
+*   **Best**: A column for dateTime is in the entity, and its format is consistent throughout 
+    *  example: [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.6.56](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.6.56) 
+*   **OK**: sampling regime changes over time (yyyy, vs yyyy-mm-dd)
+        *   YYYY, vs YYYY-MM-DD
+*   **Not useable**: date and time columns are not typed in EML as dateTimes (i.e, typed as strings, as below) 
+
+<!-- ![alt_text](images/DPBP-community-surveys0.png "image_tooltip")
+-->
+
+Synthesis efforts may be able to circumvent the lack of true dates by dropping records (and elevate a "not useable" dataset to "marginal")
+
+*the ECC currently checks attributes typed as dateTime in two ways:
+
+- format compared to a preferred list formats
+- if the format is in the preferred list, checks agreement of data values with that format
+*
+
+
+### Locations 
+Should be complete, with latitude and longitude
+
+*   **Best**: Columns for digital lat/lon
+    *   example:    [https://portal.edirepository.org/nis/metadataviewer?packageid=edi.5.3](https://portal.edirepository.org/nis/metadataviewer?packageid=edi.5.3) 
+*   **OK** (need custom processing):
+    *   In metadata only:
+        * example: [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33) 
+    *   Deg-min-sec (strings)
+    *   Locations in second table
+*   **Not useable**: sites codes without lat/lon
+
+
+### Site nesting
+Sampling site nesting can be understood
+
+*   **Best**: subsites are labeled
+    *  example: [https://portal.edirepository.org/nis/metadataviewer?packageid=edi.5.3](https://portal.edirepository.org/nis/metadataviewer?packageid=edi.5.3) 
+*   **OK**: 
+*   **Not useable**:
+* 
+
+
+### Taxa
+Taxa can be resolved 
+
+*   **Best**: Taxon codes in the entity itself, assigned at source by those familiar with these taxonomic groups
+    *  example: [https://portal.edirepository.org/nis/metadataviewer?packageid=edi.3.5](https://portal.edirepository.org/nis/metadataviewer?packageid=edi.3.5) 
+*   **OK**: species binomials (ids will have to be added later, by someone less familiar with these taxa)
+    *  example: [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33) 
+    *   **Not useable**: local codes only
+        * example (*if all they had included was the column called “sp_code”):  [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33)      
+
+
+###  Table column names
+Metadata can be matched to entity column
+
+*   **Best**: attributeName exactly matches column header  
+    *  example [https://portal.edirepository.org/nis/metadataviewer?packageid=edi.3.5](https://portal.edirepository.org/nis/metadataviewer?packageid=edi.3.5) 
+*   **OK**: can be matched by manual examination
+    * example  [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.1039.9](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.1039.9)
+*   **Marginal**: no header
+    *   example
+
+This feature has come up in other discussions. The EML metadata asserts what the content of a column is, however there is no explicit “key” into that column except for the column header in the data entity itself. If these do not match (or there is no table header), then there is nothing to go on but trust. That’s fine if data are shared only within a tightly knit community, but is less reliable when data are reused outside the orginating group. 
+
+*the ECC currently checks that number of columns and their typing match (within the limits of an RDB). For attributeNames, It shows you the first line of the table for manual comparison (an info check).*
+
+
+### Table linkages
+Foreign Key linkages are clear 
+
+*   **Best**: EML constraint included, with referential integrity 
+    *  example [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.6.56](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.6.56) 
+*   **OK**: FK detected manually, has referential integrity
+    *   url
+*   **Not useable**: FK detected manually, but no referential integrity
+    *   url 
+
+Table linkages are most important for harmonization; synthesis efforts may be able to circumvent issues (and elevate a "not useable" dataset to "marginal") by dropping records without referents in key fields.
+
+# Meteorology and Hydrology data
+
+## Introduction
+This is a summary page. it should have links out for details.
+
+
+### Synthesis use
+para here about CUAHSI, with link to that project.
+
+## Recommendations for datasets
+summary here.
+
+# Soil Carbon
+
+## Introduction
+Page desribing BPs for data packages about soil carbon. it will probably have links out for details.
+
+
+### Synthesis use
+para here about current synthesis use, eg, Weider WG.
+
+## Recommendations for datasets
+summary here.
+
+
+
+
+
