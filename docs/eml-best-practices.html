@@ -123,6 +123,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -293,12 +315,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="eml-best-practices" class="section level1">
 <h1>EML Best Practices</h1>
-<p>This document contains current ‘Best Practice’ recommendations for EML content for metadata related to ecological and environmental data. It is intended to augment the EML schema documentation <span class="citation">(<a href="#ref-EML_2019" role="doc-biblioref"><strong>EML_2019?</strong></a>)</span> for a less-technical audience. This is one component of several resources available to EML preparers. These recommendations are directed towards the following goals:</p>
+<p>This document contains current ‘Best Practice’ recommendations for EML content for metadata related to ecological and environmental data. It is intended to augment the EML schema documentation <span class="citation">(<a href="#ref-EML_2019" role="doc-biblioref">Jones et al. 2019</a>)</span> for a less-technical audience. This is one component of several resources available to EML preparers. These recommendations are directed towards the following goals:</p>
 <ul>
 <li>Provide guidance and clarification in the implementation of EML for datasets</li>
 <li>Minimize heterogeneity of EML documents to simplify development and re-use of software built to ingest it</li>
 <li>Maximize interoperability of EML documents to facilitate data synthesis</li>
 </ul>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-EML_2019" class="csl-entry">
+Jones, Matthew, Margaret O’Brien, Bryce Mecum, Carl Boettiger, Mark Schildhauer, Mitchell Maier, Timothy Whiteaker, Stevan Earl, and Steven Chong. 2019. <span>“Ecological Metadata Language Version 2.2.0.”</span> <a href="https://doi.org/10.5063/f11834t2">https://doi.org/10.5063/f11834t2</a>.
+</div>
 </div>
             </section>
 
