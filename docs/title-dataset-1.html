@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>EML Best Practices | Data Package Best Practices</title>
+  <title>title (dataset) | Data Package Best Practices</title>
   <meta name="description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="EML Best Practices | Data Package Best Practices" />
+  <meta property="og:title" content="title (dataset) | Data Package Best Practices" />
   <meta property="og:type" content="book" />
   
   
@@ -18,7 +18,7 @@ Ecological Metadata Language (EML).</p>" />
   <meta name="github-repo" content="EDIorg/data-package-best-practices" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="EML Best Practices | Data Package Best Practices" />
+  <meta name="twitter:title" content="title (dataset) | Data Package Best Practices" />
   
   <meta name="twitter:description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
@@ -34,8 +34,8 @@ Ecological Metadata Language (EML).</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="about-this-site.html"/>
-<link rel="next" href="introduction.html"/>
+<link rel="prev" href="top-level-elements.html"/>
+<link rel="next" href="people-and-organizations-parties.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -315,28 +315,29 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="eml-best-practices" class="section level1">
-<h1>EML Best Practices</h1>
-<p>This document contains current ‘Best Practice’ recommendations for EML content for metadata related to ecological and environmental data. It is intended to augment the EML schema documentation <span class="citation">(<a href="#ref-EML_2019" role="doc-biblioref">Jones et al. 2019</a>)</span> for a less-technical audience. This is one component of several resources available to EML preparers. These recommendations are directed towards the following goals:</p>
-<ul>
-<li>Provide guidance and clarification in the implementation of EML for datasets</li>
-<li>Minimize heterogeneity of EML documents to simplify development and re-use of software built to ingest it</li>
-<li>Maximize interoperability of EML documents to facilitate data synthesis</li>
-</ul>
-</div>
-<h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-EML_2019" class="csl-entry">
-Jones, Matthew, Margaret O’Brien, Bryce Mecum, Carl Boettiger, Mark Schildhauer, Mitchell Maier, Timothy Whiteaker, Stevan Earl, and Steven Chong. 2019. <span>“Ecological Metadata Language Version 2.2.0.”</span> <a href="https://doi.org/10.5063/f11834t2">https://doi.org/10.5063/f11834t2</a>.
-</div>
+<div id="title-dataset-1" class="section level2 unnumbered">
+<h2>title (dataset)</h2>
+<p>The dataset title element is found at this location (XPath):<br />
+<strong>/eml:eml/ dataset/title</strong><br />
+<strong>/eml:eml/method/methodStep/protocol/title</strong><br />
+<strong>/eml:eml/project/title</strong></p>
+<p>The dataset &lt;<strong>title</strong>&gt; should be descriptive and should mention the
+data collected, geographic context, research site, and time frame (what,
+where, and when).</p>
+<p>Example 3: dataset, alternateIdentifier, shortName, title</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb6-1"><a href="title-dataset-1.html#cb6-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dataset</span><span class="ot"> id=</span><span class="st">&quot;FLS-1&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="ot"> scope</span> <span class="ot">=</span> <span class="st">&quot;system&quot;</span>&gt;</span>
+<span id="cb6-2"><a href="title-dataset-1.html#cb6-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">alternateIdentifier</span>&gt;FLS-1&lt;/<span class="kw">alternateIdentifier</span>&gt;</span>
+<span id="cb6-3"><a href="title-dataset-1.html#cb6-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">shortName</span>&gt;Arthropods&lt;/<span class="kw">shortName</span>&gt;</span>
+<span id="cb6-4"><a href="title-dataset-1.html#cb6-4" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">title</span>&gt;Long-term Ground Arthropod Monitoring Dataset at Ficity, USA</span>
+<span id="cb6-5"><a href="title-dataset-1.html#cb6-5" aria-hidden="true" tabindex="-1"></a>      from 1998 to 2003&lt;/<span class="kw">title</span>&gt;</span></code></pre></div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="about-this-site.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="introduction.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="top-level-elements.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="people-and-organizations-parties.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -185,8 +185,13 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#schemalocation-xml-attribute"><i class="fa fa-check"></i>@schemaLocation (XML attribute)</a></li>
 <li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#packageid-xml-attribute"><i class="fa fa-check"></i>@packageId (XML attribute)</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html"><i class="fa fa-check"></i>Top Level Elements</a></li>
-<li class="chapter" data-level="" data-path="title-dataset.html"><a href="title-dataset.html"><i class="fa fa-check"></i>title (dataset)</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html"><i class="fa fa-check"></i>Top Level Elements</a>
+<ul>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#access"><i class="fa fa-check"></i>access</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#dataset"><i class="fa fa-check"></i>dataset</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#additionalMetadata"><i class="fa fa-check"></i>additionalMetadata</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="title-dataset-1.html"><a href="title-dataset-1.html"><i class="fa fa-check"></i>title (dataset)</a></li>
 <li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html"><i class="fa fa-check"></i>People and Organizations (Parties)</a>
 <ul>
 <li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#userid"><i class="fa fa-check"></i>userId</a></li>
@@ -477,33 +482,33 @@ DOI of publication providing in-depth context for data
 <li>The EDI portal interface provides <a href="https://portal.edirepository.org/nis/provenanceGenerator.jsp">automatic generation of provenance metadata</a> EML snippets for datasets in EDI. The <a href="https://github.com/EDIorg/emlAssemblyLine">EMLassemblyline</a> and <a href="https://github.com/BLE-LTER/MetaEgress">MetaEgress</a> (in connection with <a href="https://github.com/lter/LTER-core-metabase">LTER-core-metabase</a>) R packages for EML creation will also generate provenance metadata.</li>
 </ul>
 <p>Example 1: EML snippet with a data provenance methodStep:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb35-1"><a href="data-in-other-repositories.html#cb35-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">methodStep</span>&gt;</span>
-<span id="cb35-2"><a href="data-in-other-repositories.html#cb35-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">description</span>&gt;</span>
-<span id="cb35-3"><a href="data-in-other-repositories.html#cb35-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">para</span>&gt;This methodStep contains data provenance information as specified in the LTER EML Best Practices. Each dataSource element here lists entity-specific information and links to source data used in the creation of this derivative data package.&lt;/<span class="kw">para</span>&gt;</span>
-<span id="cb35-4"><a href="data-in-other-repositories.html#cb35-4" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">description</span>&gt;</span>
-<span id="cb35-5"><a href="data-in-other-repositories.html#cb35-5" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">dataSource</span>&gt;</span>
-<span id="cb35-6"><a href="data-in-other-repositories.html#cb35-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">title</span>&gt;Source dataset title&lt;/<span class="kw">title</span>&gt;</span>
-<span id="cb35-7"><a href="data-in-other-repositories.html#cb35-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">creator</span>&gt;</span>
-<span id="cb35-8"><a href="data-in-other-repositories.html#cb35-8" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">individualName</span>&gt;</span>
-<span id="cb35-9"><a href="data-in-other-repositories.html#cb35-9" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">givenName</span>&gt;first name&lt;/<span class="kw">givenName</span>&gt;</span>
-<span id="cb35-10"><a href="data-in-other-repositories.html#cb35-10" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">surName</span>&gt;last name&lt;/<span class="kw">surName</span>&gt;</span>
-<span id="cb35-11"><a href="data-in-other-repositories.html#cb35-11" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">individualName</span>&gt;</span>
-<span id="cb35-12"><a href="data-in-other-repositories.html#cb35-12" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">organizationName</span>&gt;organization name&lt;/<span class="kw">organizationName</span>&gt;</span>
-<span id="cb35-13"><a href="data-in-other-repositories.html#cb35-13" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">electronicMailAddress</span>&gt;email@some.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
-<span id="cb35-14"><a href="data-in-other-repositories.html#cb35-14" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">creator</span>&gt;</span>
-<span id="cb35-15"><a href="data-in-other-repositories.html#cb35-15" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">distribution</span>&gt;</span>
-<span id="cb35-16"><a href="data-in-other-repositories.html#cb35-16" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">online</span>&gt;</span>
-<span id="cb35-17"><a href="data-in-other-repositories.html#cb35-17" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">onlineDescription</span>&gt;This is a link to an external online data resource (describe resource and repository location).&lt;/<span class="kw">onlineDescription</span>&gt;</span>
-<span id="cb35-18"><a href="data-in-other-repositories.html#cb35-18" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">&quot;information&quot;</span>&gt;https://pasta.lternet.edu/package/metadata/eml/knb-lter-ntl/80/2&lt;/<span class="kw">url</span>&gt;</span>
-<span id="cb35-19"><a href="data-in-other-repositories.html#cb35-19" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">online</span>&gt;</span>
-<span id="cb35-20"><a href="data-in-other-repositories.html#cb35-20" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">distribution</span>&gt;</span>
-<span id="cb35-21"><a href="data-in-other-repositories.html#cb35-21" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">contact</span>&gt;</span>
-<span id="cb35-22"><a href="data-in-other-repositories.html#cb35-22" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">positionName</span>&gt;Information Manager&lt;/<span class="kw">positionName</span>&gt;</span>
-<span id="cb35-23"><a href="data-in-other-repositories.html#cb35-23" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">organizationName</span>&gt;organization name&lt;/<span class="kw">organizationName</span>&gt;</span>
-<span id="cb35-24"><a href="data-in-other-repositories.html#cb35-24" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">electronicMailAddress</span>&gt;infomgr@some.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
-<span id="cb35-25"><a href="data-in-other-repositories.html#cb35-25" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">contact</span>&gt;</span>
-<span id="cb35-26"><a href="data-in-other-repositories.html#cb35-26" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">dataSource</span>&gt;</span>
-<span id="cb35-27"><a href="data-in-other-repositories.html#cb35-27" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">methodStep</span>&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb38-1"><a href="data-in-other-repositories.html#cb38-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">methodStep</span>&gt;</span>
+<span id="cb38-2"><a href="data-in-other-repositories.html#cb38-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">description</span>&gt;</span>
+<span id="cb38-3"><a href="data-in-other-repositories.html#cb38-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">para</span>&gt;This methodStep contains data provenance information as specified in the LTER EML Best Practices. Each dataSource element here lists entity-specific information and links to source data used in the creation of this derivative data package.&lt;/<span class="kw">para</span>&gt;</span>
+<span id="cb38-4"><a href="data-in-other-repositories.html#cb38-4" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">description</span>&gt;</span>
+<span id="cb38-5"><a href="data-in-other-repositories.html#cb38-5" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">dataSource</span>&gt;</span>
+<span id="cb38-6"><a href="data-in-other-repositories.html#cb38-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">title</span>&gt;Source dataset title&lt;/<span class="kw">title</span>&gt;</span>
+<span id="cb38-7"><a href="data-in-other-repositories.html#cb38-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">creator</span>&gt;</span>
+<span id="cb38-8"><a href="data-in-other-repositories.html#cb38-8" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">individualName</span>&gt;</span>
+<span id="cb38-9"><a href="data-in-other-repositories.html#cb38-9" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">givenName</span>&gt;first name&lt;/<span class="kw">givenName</span>&gt;</span>
+<span id="cb38-10"><a href="data-in-other-repositories.html#cb38-10" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">surName</span>&gt;last name&lt;/<span class="kw">surName</span>&gt;</span>
+<span id="cb38-11"><a href="data-in-other-repositories.html#cb38-11" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">individualName</span>&gt;</span>
+<span id="cb38-12"><a href="data-in-other-repositories.html#cb38-12" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">organizationName</span>&gt;organization name&lt;/<span class="kw">organizationName</span>&gt;</span>
+<span id="cb38-13"><a href="data-in-other-repositories.html#cb38-13" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">electronicMailAddress</span>&gt;email@some.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
+<span id="cb38-14"><a href="data-in-other-repositories.html#cb38-14" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">creator</span>&gt;</span>
+<span id="cb38-15"><a href="data-in-other-repositories.html#cb38-15" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">distribution</span>&gt;</span>
+<span id="cb38-16"><a href="data-in-other-repositories.html#cb38-16" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">online</span>&gt;</span>
+<span id="cb38-17"><a href="data-in-other-repositories.html#cb38-17" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">onlineDescription</span>&gt;This is a link to an external online data resource (describe resource and repository location).&lt;/<span class="kw">onlineDescription</span>&gt;</span>
+<span id="cb38-18"><a href="data-in-other-repositories.html#cb38-18" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">&quot;information&quot;</span>&gt;https://pasta.lternet.edu/package/metadata/eml/knb-lter-ntl/80/2&lt;/<span class="kw">url</span>&gt;</span>
+<span id="cb38-19"><a href="data-in-other-repositories.html#cb38-19" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">online</span>&gt;</span>
+<span id="cb38-20"><a href="data-in-other-repositories.html#cb38-20" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">distribution</span>&gt;</span>
+<span id="cb38-21"><a href="data-in-other-repositories.html#cb38-21" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">contact</span>&gt;</span>
+<span id="cb38-22"><a href="data-in-other-repositories.html#cb38-22" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">positionName</span>&gt;Information Manager&lt;/<span class="kw">positionName</span>&gt;</span>
+<span id="cb38-23"><a href="data-in-other-repositories.html#cb38-23" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">organizationName</span>&gt;organization name&lt;/<span class="kw">organizationName</span>&gt;</span>
+<span id="cb38-24"><a href="data-in-other-repositories.html#cb38-24" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">electronicMailAddress</span>&gt;infomgr@some.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
+<span id="cb38-25"><a href="data-in-other-repositories.html#cb38-25" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">contact</span>&gt;</span>
+<span id="cb38-26"><a href="data-in-other-repositories.html#cb38-26" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">dataSource</span>&gt;</span>
+<span id="cb38-27"><a href="data-in-other-repositories.html#cb38-27" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">methodStep</span>&gt;</span></code></pre></div>
 </div>
 </div>
 <div id="nucleotide-sequence-and-genomic-data" class="section level3">
@@ -699,6 +704,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

@@ -185,8 +185,13 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#schemalocation-xml-attribute"><i class="fa fa-check"></i>@schemaLocation (XML attribute)</a></li>
 <li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#packageid-xml-attribute"><i class="fa fa-check"></i>@packageId (XML attribute)</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html"><i class="fa fa-check"></i>Top Level Elements</a></li>
-<li class="chapter" data-level="" data-path="title-dataset.html"><a href="title-dataset.html"><i class="fa fa-check"></i>title (dataset)</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html"><i class="fa fa-check"></i>Top Level Elements</a>
+<ul>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#access"><i class="fa fa-check"></i>access</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#dataset"><i class="fa fa-check"></i>dataset</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#additionalMetadata"><i class="fa fa-check"></i>additionalMetadata</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="title-dataset-1.html"><a href="title-dataset-1.html"><i class="fa fa-check"></i>title (dataset)</a></li>
 <li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html"><i class="fa fa-check"></i>People and Organizations (Parties)</a>
 <ul>
 <li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#userid"><i class="fa fa-check"></i>userId</a></li>
@@ -409,6 +414,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

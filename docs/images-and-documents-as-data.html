@@ -185,8 +185,13 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#schemalocation-xml-attribute"><i class="fa fa-check"></i>@schemaLocation (XML attribute)</a></li>
 <li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#packageid-xml-attribute"><i class="fa fa-check"></i>@packageId (XML attribute)</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html"><i class="fa fa-check"></i>Top Level Elements</a></li>
-<li class="chapter" data-level="" data-path="title-dataset.html"><a href="title-dataset.html"><i class="fa fa-check"></i>title (dataset)</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html"><i class="fa fa-check"></i>Top Level Elements</a>
+<ul>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#access"><i class="fa fa-check"></i>access</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#dataset"><i class="fa fa-check"></i>dataset</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#additionalMetadata"><i class="fa fa-check"></i>additionalMetadata</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="title-dataset-1.html"><a href="title-dataset-1.html"><i class="fa fa-check"></i>title (dataset)</a></li>
 <li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html"><i class="fa fa-check"></i>People and Organizations (Parties)</a>
 <ul>
 <li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#userid"><i class="fa fa-check"></i>userId</a></li>
@@ -344,21 +349,21 @@ div.csl-indent {
 <h5>Ecological Metadata Language</h5>
 <p>All data packages require good discovery-level metadata in Ecological Metadata Language (EML), which should be assembled using standard documented best practices. Documents (including compressed archives) should be included as otherEntity in the data package (e.g., see Example 4.1). Refer to the most recent version of EML Best Practices (<a href="https://environmentaldatainitiative.files.wordpress.com/2017/11/emlbestpractices-v3.pdf">currently v3</a>) for guidance regarding the formatName and entityType EML elements. If a format for your document type is not covered, it is recommended to use the appropriate <a href="https://github.com/DataONEorg/object-formats">MIME type</a>, if available.</p>
 <p>Example 1: EML otherEntity snippet for a pdf file</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb32-1"><a href="images-and-documents-as-data.html#cb32-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">otherEntity</span>&gt;</span>
-<span id="cb32-2"><a href="images-and-documents-as-data.html#cb32-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityName</span>&gt;site date&lt;/<span class="kw">entityName</span>&gt;</span>
-<span id="cb32-3"><a href="images-and-documents-as-data.html#cb32-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityDescription</span>&gt;Field notes at site and date.&lt;/<span class="kw">entityDescription</span>&gt;</span>
-<span id="cb32-4"><a href="images-and-documents-as-data.html#cb32-4" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
-<span id="cb32-5"><a href="images-and-documents-as-data.html#cb32-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">objectName</span>&gt;site_date.pdf&lt;/<span class="kw">objectName</span>&gt;</span>
-<span id="cb32-6"><a href="images-and-documents-as-data.html#cb32-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">size</span><span class="ot"> unit=</span><span class="st">&quot;byte&quot;</span>&gt;9674&lt;/<span class="kw">size</span>&gt;</span>
-<span id="cb32-7"><a href="images-and-documents-as-data.html#cb32-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">authentication</span><span class="ot"> method=</span><span class="st">&quot;MD5&quot;</span>&gt;8547b7a63fcf6c1f0913a5bd7549d9d1&lt;/<span class="kw">authentication</span>&gt;</span>
-<span id="cb32-8"><a href="images-and-documents-as-data.html#cb32-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb32-9"><a href="images-and-documents-as-data.html#cb32-9" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">externallyDefinedFormat</span>&gt;</span>
-<span id="cb32-10"><a href="images-and-documents-as-data.html#cb32-10" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">formatName</span>&gt;Portable Document Format&lt;/<span class="kw">formatName</span>&gt;</span>
-<span id="cb32-11"><a href="images-and-documents-as-data.html#cb32-11" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">externallyDefinedFormat</span>&gt;</span>
-<span id="cb32-12"><a href="images-and-documents-as-data.html#cb32-12" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb32-13"><a href="images-and-documents-as-data.html#cb32-13" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
-<span id="cb32-14"><a href="images-and-documents-as-data.html#cb32-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityType</span>&gt;application/pdf&lt;/<span class="kw">entityType</span>&gt;</span>
-<span id="cb32-15"><a href="images-and-documents-as-data.html#cb32-15" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">otherEntity</span>&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb35-1"><a href="images-and-documents-as-data.html#cb35-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">otherEntity</span>&gt;</span>
+<span id="cb35-2"><a href="images-and-documents-as-data.html#cb35-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityName</span>&gt;site date&lt;/<span class="kw">entityName</span>&gt;</span>
+<span id="cb35-3"><a href="images-and-documents-as-data.html#cb35-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityDescription</span>&gt;Field notes at site and date.&lt;/<span class="kw">entityDescription</span>&gt;</span>
+<span id="cb35-4"><a href="images-and-documents-as-data.html#cb35-4" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
+<span id="cb35-5"><a href="images-and-documents-as-data.html#cb35-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">objectName</span>&gt;site_date.pdf&lt;/<span class="kw">objectName</span>&gt;</span>
+<span id="cb35-6"><a href="images-and-documents-as-data.html#cb35-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">size</span><span class="ot"> unit=</span><span class="st">&quot;byte&quot;</span>&gt;9674&lt;/<span class="kw">size</span>&gt;</span>
+<span id="cb35-7"><a href="images-and-documents-as-data.html#cb35-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">authentication</span><span class="ot"> method=</span><span class="st">&quot;MD5&quot;</span>&gt;8547b7a63fcf6c1f0913a5bd7549d9d1&lt;/<span class="kw">authentication</span>&gt;</span>
+<span id="cb35-8"><a href="images-and-documents-as-data.html#cb35-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">dataFormat</span>&gt;</span>
+<span id="cb35-9"><a href="images-and-documents-as-data.html#cb35-9" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">externallyDefinedFormat</span>&gt;</span>
+<span id="cb35-10"><a href="images-and-documents-as-data.html#cb35-10" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">formatName</span>&gt;Portable Document Format&lt;/<span class="kw">formatName</span>&gt;</span>
+<span id="cb35-11"><a href="images-and-documents-as-data.html#cb35-11" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">externallyDefinedFormat</span>&gt;</span>
+<span id="cb35-12"><a href="images-and-documents-as-data.html#cb35-12" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">dataFormat</span>&gt;</span>
+<span id="cb35-13"><a href="images-and-documents-as-data.html#cb35-13" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
+<span id="cb35-14"><a href="images-and-documents-as-data.html#cb35-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityType</span>&gt;application/pdf&lt;/<span class="kw">entityType</span>&gt;</span>
+<span id="cb35-15"><a href="images-and-documents-as-data.html#cb35-15" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">otherEntity</span>&gt;</span></code></pre></div>
 <p>The EML metadata should also include appropriate keywords describing the general purpose of the document or compressed archive (e.g., ice phenology, community composition, stream hydrology, etc.). For example, for still images, it is recommended to include keyword: image with the semantic annotation from the Information Artifact Ontology (IAO) :</p>
 <pre><code>**Term IRI:** [http://purl.obolibrary.org/obo/IAO_0000101](http://purl.obolibrary.org/obo/IAO_0000101)
 
@@ -589,6 +594,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

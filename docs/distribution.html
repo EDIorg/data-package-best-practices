@@ -185,8 +185,13 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#schemalocation-xml-attribute"><i class="fa fa-check"></i>@schemaLocation (XML attribute)</a></li>
 <li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#packageid-xml-attribute"><i class="fa fa-check"></i>@packageId (XML attribute)</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html"><i class="fa fa-check"></i>Top Level Elements</a></li>
-<li class="chapter" data-level="" data-path="title-dataset.html"><a href="title-dataset.html"><i class="fa fa-check"></i>title (dataset)</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html"><i class="fa fa-check"></i>Top Level Elements</a>
+<ul>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#access"><i class="fa fa-check"></i>access</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#dataset"><i class="fa fa-check"></i>dataset</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#additionalMetadata"><i class="fa fa-check"></i>additionalMetadata</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="title-dataset-1.html"><a href="title-dataset-1.html"><i class="fa fa-check"></i>title (dataset)</a></li>
 <li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html"><i class="fa fa-check"></i>People and Organizations (Parties)</a>
 <ul>
 <li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#userid"><i class="fa fa-check"></i>userId</a></li>
@@ -324,14 +329,14 @@ because it applies to the entire package, not only to one entity.</p>
 <p><em>Context: The EDI repository will ignore a <code>&lt;distribution&gt;</code> element
 at the dataset level.</em></p>
 <p>Example 11a: distribution at the dataset level</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb11-1"><a href="distribution.html#cb11-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">distribution</span>&gt;</span>
-<span id="cb11-2"><a href="distribution.html#cb11-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">online</span>&gt;</span>
-<span id="cb11-3"><a href="distribution.html#cb11-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">onlineDescription</span>&gt;f1s-1 Data Web Page&lt;/<span class="kw">onlineDescription</span>&gt;</span>
-<span id="cb11-4"><a href="distribution.html#cb11-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">&quot;information&quot;</span>&gt;</span>
-<span id="cb11-5"><a href="distribution.html#cb11-5" aria-hidden="true" tabindex="-1"></a>         http://www.fsu.edu/lter/data/fls-1.htm</span>
-<span id="cb11-6"><a href="distribution.html#cb11-6" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">url</span>&gt;</span>
-<span id="cb11-7"><a href="distribution.html#cb11-7" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">online</span>&gt;</span>
-<span id="cb11-8"><a href="distribution.html#cb11-8" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">distribution</span>&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb14-1"><a href="distribution.html#cb14-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">distribution</span>&gt;</span>
+<span id="cb14-2"><a href="distribution.html#cb14-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">online</span>&gt;</span>
+<span id="cb14-3"><a href="distribution.html#cb14-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">onlineDescription</span>&gt;f1s-1 Data Web Page&lt;/<span class="kw">onlineDescription</span>&gt;</span>
+<span id="cb14-4"><a href="distribution.html#cb14-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">&quot;information&quot;</span>&gt;</span>
+<span id="cb14-5"><a href="distribution.html#cb14-5" aria-hidden="true" tabindex="-1"></a>         http://www.fsu.edu/lter/data/fls-1.htm</span>
+<span id="cb14-6"><a href="distribution.html#cb14-6" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">url</span>&gt;</span>
+<span id="cb14-7"><a href="distribution.html#cb14-7" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">online</span>&gt;</span>
+<span id="cb14-8"><a href="distribution.html#cb14-8" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">distribution</span>&gt;</span></code></pre></div>
 </div>
 <div id="entity-level" class="section level3">
 <h3>Entity level</h3>
@@ -377,19 +382,19 @@ element is intended specifically for controlling access to the data
 entity itself. For more information on the &lt;<strong>access</strong>&gt; tree, see
 above, under the general access discussion.</p>
 <p>Example 11b: distribution at the data entity level</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb12-1"><a href="distribution.html#cb12-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dataTable</span>&gt;</span>
-<span id="cb12-2"><a href="distribution.html#cb12-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
-<span id="cb12-3"><a href="distribution.html#cb12-3" aria-hidden="true" tabindex="-1"></a>   ...</span>
-<span id="cb12-4"><a href="distribution.html#cb12-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">distribution</span>&gt;</span>
-<span id="cb12-5"><a href="distribution.html#cb12-5" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">online</span>&gt;</span>
-<span id="cb12-6"><a href="distribution.html#cb12-6" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">onlineDescription</span>&gt;f1s-1 Data Web Page&lt;/<span class="kw">onlineDescription</span>&gt;</span>
-<span id="cb12-7"><a href="distribution.html#cb12-7" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">&quot;download&quot;</span>&gt;</span>
-<span id="cb12-8"><a href="distribution.html#cb12-8" aria-hidden="true" tabindex="-1"></a>               http://www.fsu.edu/lter/data/fls-1.csv</span>
-<span id="cb12-9"><a href="distribution.html#cb12-9" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">url</span>&gt;</span>
-<span id="cb12-10"><a href="distribution.html#cb12-10" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">online</span>&gt;</span>
-<span id="cb12-11"><a href="distribution.html#cb12-11" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">distribution</span>&gt;</span>
-<span id="cb12-12"><a href="distribution.html#cb12-12" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
-<span id="cb12-13"><a href="distribution.html#cb12-13" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dataTable</span>&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb15-1"><a href="distribution.html#cb15-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dataTable</span>&gt;</span>
+<span id="cb15-2"><a href="distribution.html#cb15-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
+<span id="cb15-3"><a href="distribution.html#cb15-3" aria-hidden="true" tabindex="-1"></a>   ...</span>
+<span id="cb15-4"><a href="distribution.html#cb15-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">distribution</span>&gt;</span>
+<span id="cb15-5"><a href="distribution.html#cb15-5" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">online</span>&gt;</span>
+<span id="cb15-6"><a href="distribution.html#cb15-6" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">onlineDescription</span>&gt;f1s-1 Data Web Page&lt;/<span class="kw">onlineDescription</span>&gt;</span>
+<span id="cb15-7"><a href="distribution.html#cb15-7" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">&quot;download&quot;</span>&gt;</span>
+<span id="cb15-8"><a href="distribution.html#cb15-8" aria-hidden="true" tabindex="-1"></a>               http://www.fsu.edu/lter/data/fls-1.csv</span>
+<span id="cb15-9"><a href="distribution.html#cb15-9" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">url</span>&gt;</span>
+<span id="cb15-10"><a href="distribution.html#cb15-10" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">online</span>&gt;</span>
+<span id="cb15-11"><a href="distribution.html#cb15-11" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">distribution</span>&gt;</span>
+<span id="cb15-12"><a href="distribution.html#cb15-12" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
+<span id="cb15-13"><a href="distribution.html#cb15-13" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dataTable</span>&gt;</span></code></pre></div>
 </div>
 </div>
             </section>
@@ -452,6 +457,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

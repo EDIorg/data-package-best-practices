@@ -185,8 +185,13 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#schemalocation-xml-attribute"><i class="fa fa-check"></i>@schemaLocation (XML attribute)</a></li>
 <li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#packageid-xml-attribute"><i class="fa fa-check"></i>@packageId (XML attribute)</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html"><i class="fa fa-check"></i>Top Level Elements</a></li>
-<li class="chapter" data-level="" data-path="title-dataset.html"><a href="title-dataset.html"><i class="fa fa-check"></i>title (dataset)</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html"><i class="fa fa-check"></i>Top Level Elements</a>
+<ul>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#access"><i class="fa fa-check"></i>access</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#dataset"><i class="fa fa-check"></i>dataset</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#additionalMetadata"><i class="fa fa-check"></i>additionalMetadata</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="title-dataset-1.html"><a href="title-dataset-1.html"><i class="fa fa-check"></i>title (dataset)</a></li>
 <li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html"><i class="fa fa-check"></i>People and Organizations (Parties)</a>
 <ul>
 <li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#userid"><i class="fa fa-check"></i>userId</a></li>
@@ -438,34 +443,34 @@ the dataset level for more information.</p>
 <p>&lt;<strong>additionalInfo</strong>&gt; is a text field for any material that cannot be
 characterized by the other elements for the data type.</p>
 <p>Example 20: The elements in the EntityGroup, showing the <dataTable> entity.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb21-1"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dataTable</span>&gt;</span>
-<span id="cb21-2"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityName</span>&gt;arthro_hab&lt;/<span class="kw">entityName</span>&gt;</span>
-<span id="cb21-3"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityDescription</span>&gt;</span>
-<span id="cb21-4"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-4" aria-hidden="true" tabindex="-1"></a>      habitat description for the sampling locations</span>
-<span id="cb21-5"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-5" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">entityDescription</span>&gt;</span>
-<span id="cb21-6"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-6" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
-<span id="cb21-7"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">objectName</span>&gt;fls-1.csv&lt;/<span class="kw">objectName</span>&gt;</span>
-<span id="cb21-8"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb21-9"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-9" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">textFormat</span>&gt;</span>
-<span id="cb21-10"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-10" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">numHeaderLines</span>&gt;1&lt;/<span class="kw">numHeaderLines</span>&gt;</span>
-<span id="cb21-11"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-11" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">numFooterLines</span>&gt;0&lt;/<span class="kw">numFooterLines</span>&gt;</span>
-<span id="cb21-12"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-12" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">recordDelimiter</span>&gt;\\r&lt;/<span class="kw">recordDelimiter</span>&gt;</span>
-<span id="cb21-13"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-13" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">numPhysicalLinesPerRecord</span>&gt;1&lt;/<span class="kw">numPhysicalLinesPerRecord</span>&gt;</span>
-<span id="cb21-14"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-14" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">recordDelimiter</span>&gt;\#x0A&lt;/<span class="kw">recordDelimiter</span>&gt;</span>
-<span id="cb21-15"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-15" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">attributeOrientation</span>&gt;column&lt;/<span class="kw">attributeOrientation</span>&gt;</span>
-<span id="cb21-16"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-16" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">simpleDelimited</span>&gt;</span>
-<span id="cb21-17"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-17" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">fieldDelimiter</span>&gt;,&lt;/<span class="kw">fieldDelimiter</span>&gt;</span>
-<span id="cb21-18"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-18" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">simpleDelimited</span>&gt;</span>
-<span id="cb21-19"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-19" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">textFormat</span>&gt;</span>
-<span id="cb21-20"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-20" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb21-21"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-21" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">distribution</span>&gt;</span>
-<span id="cb21-22"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-22" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">online</span>&gt;</span>
-<span id="cb21-23"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-23" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">onlineDescription</span>&gt;f1s-1 Data File&lt;/<span class="kw">onlineDescription</span>&gt;</span>
-<span id="cb21-24"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-24" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">&quot;download&quot;</span>&gt;http://www.fsu.edu/lter/data/fls-1.csv&lt;/<span class="kw">url</span>&gt;</span>
-<span id="cb21-25"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-25" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">online</span>&gt;</span>
-<span id="cb21-26"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-26" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">distribution</span>&gt;</span>
-<span id="cb21-27"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-27" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
-<span id="cb21-28"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb21-28" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dataTable</span>&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb24-1"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dataTable</span>&gt;</span>
+<span id="cb24-2"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityName</span>&gt;arthro_hab&lt;/<span class="kw">entityName</span>&gt;</span>
+<span id="cb24-3"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityDescription</span>&gt;</span>
+<span id="cb24-4"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-4" aria-hidden="true" tabindex="-1"></a>      habitat description for the sampling locations</span>
+<span id="cb24-5"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-5" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">entityDescription</span>&gt;</span>
+<span id="cb24-6"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-6" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
+<span id="cb24-7"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">objectName</span>&gt;fls-1.csv&lt;/<span class="kw">objectName</span>&gt;</span>
+<span id="cb24-8"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">dataFormat</span>&gt;</span>
+<span id="cb24-9"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-9" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">textFormat</span>&gt;</span>
+<span id="cb24-10"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-10" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">numHeaderLines</span>&gt;1&lt;/<span class="kw">numHeaderLines</span>&gt;</span>
+<span id="cb24-11"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-11" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">numFooterLines</span>&gt;0&lt;/<span class="kw">numFooterLines</span>&gt;</span>
+<span id="cb24-12"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-12" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">recordDelimiter</span>&gt;\\r&lt;/<span class="kw">recordDelimiter</span>&gt;</span>
+<span id="cb24-13"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-13" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">numPhysicalLinesPerRecord</span>&gt;1&lt;/<span class="kw">numPhysicalLinesPerRecord</span>&gt;</span>
+<span id="cb24-14"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-14" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">recordDelimiter</span>&gt;\#x0A&lt;/<span class="kw">recordDelimiter</span>&gt;</span>
+<span id="cb24-15"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-15" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">attributeOrientation</span>&gt;column&lt;/<span class="kw">attributeOrientation</span>&gt;</span>
+<span id="cb24-16"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-16" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">simpleDelimited</span>&gt;</span>
+<span id="cb24-17"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-17" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">fieldDelimiter</span>&gt;,&lt;/<span class="kw">fieldDelimiter</span>&gt;</span>
+<span id="cb24-18"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-18" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">simpleDelimited</span>&gt;</span>
+<span id="cb24-19"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-19" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">textFormat</span>&gt;</span>
+<span id="cb24-20"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-20" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">dataFormat</span>&gt;</span>
+<span id="cb24-21"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-21" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">distribution</span>&gt;</span>
+<span id="cb24-22"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-22" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">online</span>&gt;</span>
+<span id="cb24-23"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-23" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">onlineDescription</span>&gt;f1s-1 Data File&lt;/<span class="kw">onlineDescription</span>&gt;</span>
+<span id="cb24-24"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-24" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">&quot;download&quot;</span>&gt;http://www.fsu.edu/lter/data/fls-1.csv&lt;/<span class="kw">url</span>&gt;</span>
+<span id="cb24-25"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-25" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">online</span>&gt;</span>
+<span id="cb24-26"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-26" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">distribution</span>&gt;</span>
+<span id="cb24-27"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-27" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
+<span id="cb24-28"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html#cb24-28" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dataTable</span>&gt;</span></code></pre></div>
 <p>Each data type has a specific set of elements that follow the common
 elements. Table 2 shows the specific trees that are applied to each of
 the data type.</p>
@@ -600,6 +605,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

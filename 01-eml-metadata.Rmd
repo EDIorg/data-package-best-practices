@@ -189,6 +189,173 @@ element (<**eml:eml**>):
 <**dataset**>  More information: [dataset](#dataset)
 <**additionalMetadata**>More information: [additionalMetadata](#additionalMetadata)
 
+### access {#access}
+
+The access element is found at this location (XPath):  
+**/eml:eml/access**  
+**/eml:eml/\[entityType\]/physical/distribution/access**
+
+<**access**> contains a list of rules defining permissions for this
+metadata record and its data entity. Values must be applicable by the
+system where data is stored. Many repositories follow the KNB system of
+using access control format that conforms to the LDAP "distinguishedName
+(dn)" for an individual, as in
+"uid=FLS,o=LTER,dc=ecoinformatics,dc=org".
+
+As of EML 2.1.0, <**access**> trees are allowed at two places: as the
+first child of the <**eml:eml**> root element (a sibling to
+<**dataset**>) for controlling access to the entire document, and in a
+**physical/distribution** tree for controlling access to the resource
+URL. With the exception of certain sensitive information, metadata
+should be publicly accessible. The <**access**> element is optional,
+and if omitted, the repository may presume that only the dataset
+submitter will be allowed access.
+
+
+Example 2: access
+```xml
+<access authSystem="knb" order="allowFirst" scope="document">
+   <allow>
+      <principal>uid=FLS,o=lter,dc=ecoinformatics,dc=org</principal>
+      <permission>all</permission>
+   </allow>
+   <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+   </allow>
+</access>
+```
+### dataset {#dataset}
+
+This element is found at these locations (XPath):  
+**/eml:eml/dataset**
+
+Under <**dataset**>, the following elements are available. Some are
+optional, but if they appear, this order is enforced by the schema.
+Generally, the recommendations are presented here in this order, with
+the exception of elements related to people and organizations which are
+grouped together so that the distinctions between the uses of those
+elements are clear. Elements that can appear at different levels within
+an EML file are discussed at their first appearance, or highest level.
+
+<**alternateIdentifer**>  
+<**shortName**>  
+<**title**>  
+<**creator**>  
+<**metadataProvider**>  
+<**associatedParty**>  
+<**pubDate**>  
+<**language**>  
+<**series**>  
+<**abstract**>  
+<**keywordSet**>  
+<**additionalInfo**>  
+<**intellectualRights**>  
+<**distribution**>  
+<**coverage**>  
+<**purpose** >  
+<**maintenance**>  
+<**contact**>  
+<**publisher**>  
+<**pubPlace**>  
+<**project**>  
+
+These elements are then followed by one or more elements for the data
+entity (or entities), designated by choosing:
+
+[ **dataTable** | **spatialRaster** | **spatialVector** |
+**storedProcedure** | **view** | **otherEntity** ]
+
+#### alternateIdentifier
+
+The alternateIdentifier element is found at this location (XPath):  
+**/eml:eml/ dataset/alternateIdentifier**  
+**/eml:eml/ dataset/[entity]/alternateIdentifier**
+
+The contributing organization's local data set identifier should be
+listed as the EML <**alternateIdentifier**>, particularly when it
+differs from the "**packageId**" attribute in the <**eml:eml**>
+element. The <**alternateIdentifier**> should also be used to denote
+that a package belongs to more than contributing organization by
+including each individual ID in a separate <**alternateIdentifier**>
+tag. At the entity level, the <**alternateIdentifier**> should contain
+an alternate name for the data table (or other entity) itself (see
+additional comments under entities, below.)
+
+#### title (dataset)
+
+The dataset title element is found at this location (XPath):  
+**/eml:eml/ dataset/title**  
+**/eml:eml/method/methodStep/protocol/title**  
+**/eml:eml/project/title**
+
+The dataset <**title**> should be descriptive and should mention the
+data collected, geographic context, research site, and time frame (what,
+where, and when).
+
+
+Example 3: dataset, alternateIdentifier, shortName, title
+```xml
+<dataset id="FLS-1" system="FLS" scope = "system">
+   <alternateIdentifier>FLS-1</alternateIdentifier>
+   <shortName>Arthropods</shortName>
+   <title>Long-term Ground Arthropod Monitoring Dataset at Ficity, USA
+      from 1998 to 2003</title>
+```
+
+### additionalMetadata {#additionalMetadata}
+
+This element tree is found at (XPath):  
+**eml:eml/additionalMetadata**
+
+<**additionalMetadata**> is a flexible field for including any other
+relevant metadata that pertains to the resource being described. Its
+content must be valid XML. A unit as a <**customUnit**> must be
+described in this tree.
+
+<**describes**> (optional) is a pointer to an "id" attribute on an EML
+element ("id" described in another area). This pointer must be identical
+to the attribute it is pointing at, so that automated processes are able
+to associate <**additionalMetadata**> to the described attribute. If
+the <**describes**> element is omitted, it is assumed that the
+<**additionalMetadata**> content applies to the entire EML document.
+
+<**metadata**> contains the additional metadata to be included in the
+document. The contents can be any valid XML. This element should be used
+for extending EML to include metadata that is not already available in
+another part of the EML specification, or to include site- or
+system-specific extensions that are needed beyond the core metadata. The
+additional metadata contained in this field describes the element
+referenced in the <**describes**> element preceding it. If
+<**describes**> is not used, either <**metadata**> must contain
+sufficient information to define the association between
+<**additionalMetadata**> or the <**additionalMetadata**> can be
+presumed to apply to the entire data package.
+
+An example of "sufficient information to define the association" is the
+definition of a <**customUnit**>. The EML Parser expects to find the
+description of a <**customUnit**> in the id attribute of a
+<**unit**> element in a <**unitList**>, i.e., at
+/eml:eml/additionalMetadata/metadata/unitList/unit. For example,
+`"stmml:unit id="siemensPerMeter"` points at the <**customUnit**>
+`"siemensPerMeter"`. The EML Parser is available from GitHub, with the EML
+project. For descriptions of custom units see "Other Resources".
+
+
+Example 25: additionalMetadata custom unit
+```xml
+<additionalMetadata>
+   <metadata>
+      <stmml:unitList>
+         <stmml:unit id="siemensPerMeter" name="siemensPerMeter" abbreviation="S/m" 
+         unitType="conductance" parentSI="siemen" multiplierToSI="1" constantToSI="0">
+            <stmml:description>conductivity unit</stmml:description>
+         </stmml:unit>
+      </stmml:unitList>
+   </metadata>
+</additionalMetadata>
+```
+
 
 ## title (dataset) {-}
 
