@@ -39,15 +39,15 @@ The recommendations for EML metadata apply to all data packages. This section su
  **[Best Practices for Dataset Metadata in Ecological Metadata Language (EML)](./eml-best-practices.html)**
   
   
-### [Data Package Design](./datapackage-design-for-special-cases.html)
+### [Data Package Design](./data-package-design-for-special-cases.html)
 Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories. 
 
 
-**[Recommendations for data package design](./datapackage-design-for-special-cases.html)**
+**[Recommendations for data package design](./data-package-design-for-special-cases.html)**
 
 
-### [Data Products for Synthesis Research](./scientific_domain.html)
+### [Data Products for Synthesis Research](./scientific-domain.html)
 Recommendations for community developed data products. The data packages are derived from raw data and reformatted to meet certain data harmonization standards. Many of these data products have extensive related code bases, which recommendations can take into account and link to. 
 
 
-**[Recommendations for data products from specific scientific domains](./scientific_domain.html)**
+**[Recommendations for data products from specific scientific domains](./scientific-domain.html)**
