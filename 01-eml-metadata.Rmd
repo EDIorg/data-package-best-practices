@@ -2400,4 +2400,3 @@ Example 24: constraint
    </foreignKey>
 </constraint>
 ```
-```r if (knitr::is_html_output()) '## References {-}'```
