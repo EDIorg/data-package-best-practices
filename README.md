@@ -1,11 +1,3 @@
-This is a refactored version of the EDI Data Package Best Practices documentation.
-
-To view the rendered version: https://kzollove.github.io/data-package-best-practices/
-
-Please feel free to comment on this refactored version by opening a repo issue
-
-Everything below is from the original README:
-
 # data-package-best-practices
 
 This repository was initiated in late 2019, after EML 2.2 release.  It holds best practices recommendations related to data packages, written by the community of data managers who contributed to the EDI repository. The public-facing view is organized as gitbooks, which are comitted from a local checkout *when ready* (ie, edits to pages do not automatically become public). Individual gitbooks can be versioned and archived as PDFs.
