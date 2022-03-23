@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>The root element: &lt;eml:eml&gt; | Data Package Best Practices</title>
+  <meta name="description" content="<p>Best practice recommendations for data packages, described by
+Ecological Metadata Language (EML).</p>" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="The root element: &lt;eml:eml&gt; | Data Package Best Practices" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
+Ecological Metadata Language (EML).</p>" />
+  <meta name="github-repo" content="EDIorg/data-package-best-practices" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="The root element: &lt;eml:eml&gt; | Data Package Best Practices" />
+  
+  <meta name="twitter:description" content="<p>Best practice recommendations for data packages, described by
+Ecological Metadata Language (EML).</p>" />
+  
+
+<meta name="author" content="Environmental Data Initiative" />
+
+
+<meta name="date" content="2022-03-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="general-recommendations.html"/>
+<link rel="next" href="top-level-elements.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">EDI Data Package Best Practices</a></li>
+<li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
+<li class="chapter" data-level="" data-path="eml-best-practices.html"><a href="eml-best-practices.html"><i class="fa fa-check"></i>EML Best Practices</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html"><i class="fa fa-check"></i>Conventions and Definitions</a>
+<ul>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#audience"><i class="fa fa-check"></i>Audience</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#fonts-and-typeface"><i class="fa fa-check"></i>Fonts and typeface</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#definitions"><i class="fa fa-check"></i>Definitions</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#other-eml-resources"><i class="fa fa-check"></i>Other EML Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html"><i class="fa fa-check"></i>General Recommendations</a>
+<ul>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html#metadata-distribution"><i class="fa fa-check"></i>Metadata Distribution</a></li>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html#data-package-identifiers"><i class="fa fa-check"></i>Data Package Identifiers</a></li>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html#high-priority-elements"><i class="fa fa-check"></i>High-priority Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html"><i class="fa fa-check"></i>The root element: &lt;eml:eml&gt;</a>
+<ul>
+<li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#schemalocation-xml-attribute"><i class="fa fa-check"></i>@schemaLocation (XML attribute)</a></li>
+<li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#packageid-xml-attribute"><i class="fa fa-check"></i>@packageId (XML attribute)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html"><i class="fa fa-check"></i>Top Level Elements</a>
+<ul>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#access"><i class="fa fa-check"></i>access</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#dataset"><i class="fa fa-check"></i>dataset</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#additionalMetadata"><i class="fa fa-check"></i>additionalMetadata</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="title-dataset-1.html"><a href="title-dataset-1.html"><i class="fa fa-check"></i>title (dataset)</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html"><i class="fa fa-check"></i>People and Organizations (Parties)</a>
+<ul>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#userid"><i class="fa fa-check"></i>userId</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#creator"><i class="fa fa-check"></i>creator</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#metadataprovider"><i class="fa fa-check"></i>metadataProvider</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#associatedparty"><i class="fa fa-check"></i>associatedParty</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#contact"><i class="fa fa-check"></i>contact</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#publisher"><i class="fa fa-check"></i>publisher</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pubdate.html"><a href="pubdate.html"><i class="fa fa-check"></i>pubDate</a></li>
+<li class="chapter" data-level="" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i>abstract</a></li>
+<li class="chapter" data-level="" data-path="keywordset-and-keyword.html"><a href="keywordset-and-keyword.html"><i class="fa fa-check"></i>keywordSet and keyword</a></li>
+<li class="chapter" data-level="" data-path="intellectualrights.html"><a href="intellectualrights.html"><i class="fa fa-check"></i>intellectualRights</a></li>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html"><i class="fa fa-check"></i>distribution</a>
+<ul>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html#dataset-level"><i class="fa fa-check"></i>Dataset level</a></li>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html#entity-level"><i class="fa fa-check"></i>Entity level</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html"><i class="fa fa-check"></i>coverage</a>
+<ul>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html#geographiccoverage"><i class="fa fa-check"></i>geographicCoverage</a></li>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html#temporalcoverage"><i class="fa fa-check"></i>temporalCoverage</a></li>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html#taxonomiccoverage"><i class="fa fa-check"></i>taxonomicCoverage</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="maintenance.html"><a href="maintenance.html"><i class="fa fa-check"></i>maintenance</a></li>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i>methods</a>
+<ul>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html#methodstep"><i class="fa fa-check"></i>methodStep</a></li>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html#sampling"><i class="fa fa-check"></i>sampling</a></li>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html#qualitycontrol"><i class="fa fa-check"></i>qualityControl</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i>project</a></li>
+<li class="chapter" data-level="" data-path="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html"><i class="fa fa-check"></i>[entity] = dataTable, spatialRaster, spatialVector, storedProcedure, view, otherEntity</a></li>
+<li class="chapter" data-level="" data-path="attributelist.html"><a href="attributelist.html"><i class="fa fa-check"></i>attributeList</a></li>
+<li class="chapter" data-level="" data-path="constraint.html"><a href="constraint.html"><i class="fa fa-check"></i>constraint</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-package-design-for-special-cases.html"><a href="data-package-design-for-special-cases.html"><i class="fa fa-check"></i>Data Package Design for Special Cases</a>
+<ul>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html"><i class="fa fa-check"></i>Code</a>
+<ul>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html#recommendations-for-data-packages"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html"><i class="fa fa-check"></i>Model-Based Datasets</a>
+<ul>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#recommendations-for-data-packages-1"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#example-data-packages-in-edi"><i class="fa fa-check"></i>Example data packages in EDI</a></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html"><i class="fa fa-check"></i>Images and Documents as Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#introduction-3"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#recommendations-for-data-packages-2"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#example-data-packages-in-edi-1"><i class="fa fa-check"></i>Example data packages in EDI</a></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="spatial-data.html"><a href="spatial-data.html"><i class="fa fa-check"></i>Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="spatial-data.html"><a href="spatial-data.html#introduction-4"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="spatial-data.html"><a href="spatial-data.html#recommendations-for-data-packages-3"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html"><i class="fa fa-check"></i>Data Gathered with Small Moving Platforms</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#introduction-5"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#recommendations-for-data-packages-4"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html"><i class="fa fa-check"></i>Data in Other Repositories</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#introduction-6"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#recommendations-for-data-packages-5"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#nucleotide-sequence-and-genomic-data"><i class="fa fa-check"></i>Nucleotide sequence and genomic data</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#example-data-packages-in-edi-2"><i class="fa fa-check"></i>Example data packages in EDI</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#appendix-tips-and-repository-information"><i class="fa fa-check"></i>Appendix: Tips and repository information</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html"><i class="fa fa-check"></i>Large Data Sets</a>
+<ul>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#introduction-7"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#recommendations-for-data-packages-6"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#references-1"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#potential-issues"><i class="fa fa-check"></i>Potential Issues</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="scientific-domain.html"><a href="scientific-domain.html"><i class="fa fa-check"></i>Scientific Domain</a>
+<ul>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html"><i class="fa fa-check"></i>Ecological community surveys</a>
+<ul>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#introduction-8"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#authors"><i class="fa fa-check"></i>Authors</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#anticipated-use-cases"><i class="fa fa-check"></i>Anticipated use cases</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#definitions-and-conventions"><i class="fa fa-check"></i>Definitions and conventions</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#recommendations-for-datasets"><i class="fa fa-check"></i>Recommendations for datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="meteorology-and-hydrology-data.html"><a href="meteorology-and-hydrology-data.html"><i class="fa fa-check"></i>Meteorology and Hydrology data</a>
+<ul>
+<li class="chapter" data-level="" data-path="meteorology-and-hydrology-data.html"><a href="meteorology-and-hydrology-data.html#introduction-9"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="meteorology-and-hydrology-data.html"><a href="meteorology-and-hydrology-data.html#recommendations-for-datasets-1"><i class="fa fa-check"></i>Recommendations for datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="soil-carbon.html"><a href="soil-carbon.html"><i class="fa fa-check"></i>Soil Carbon</a>
+<ul>
+<li class="chapter" data-level="" data-path="soil-carbon.html"><a href="soil-carbon.html#introduction-10"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="soil-carbon.html"><a href="soil-carbon.html#recommendations-for-datasets-2"><i class="fa fa-check"></i>Recommendations for datasets</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Package Best Practices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Root_element" class="section level2 unnumbered">
+<h2>The root element: &lt;eml:eml&gt;</h2>
+<p>This element is the root element in all EML documents. The XPath
+notation is:
+<strong>/eml:eml</strong></p>
+<p>The root element holds two important parts, both of which are optional,
+but recommended.</p>
+<div id="schemalocation-xml-attribute" class="section level3">
+<h3>@schemaLocation (XML attribute)</h3>
+<p>This attribute is this location (XPath):<br />
+<strong>/eml:eml/@schemaLocation</strong></p>
+<p>The schemaLocation attribute tells a processor the name of the schema to
+which the EML document belongs and where to find it. Most repositories
+check schema compliance when data packages are deposited, but it is
+highly recommended that data managers know how and where to specify the
+schema that their metadata document should adhere to. This way, they can
+validate their own work in progress, e.g., through an XML editor like
+OxygenXML.</p>
+</div>
+<div id="packageid-xml-attribute" class="section level3">
+<h3>@packageId (XML attribute)</h3>
+<p>This attribute is found at this location (XPath):<br />
+<strong>/eml:eml/@packageId</strong></p>
+<p>As outlined elsewhere, EML preparers should manage unique identifiers
+and versioning at the local level (see <strong>@system</strong> discussion below).
+The <strong>packageId</strong> attribute can be used to contain the same identifier
+as is used by the repository.</p>
+<p><em>Context Note: The packageID attribute is required in all EML documents
+submitted to the EDI repository. It is entered into the repository software,
+and theformat is standardized to three parts: scope, package-number, revision.
+The scope should be “edi” unless another scope is justified by prior
+arrangement. See Example 1.</em></p>
+<p>Example 1: attributes packageId, id, system, and scope</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb2-1"><a href="Root_element.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span><span class="ot"> version=</span><span class="st">&quot;1.0&quot;</span><span class="ot"> encoding=</span><span class="st">&quot;UTF-8&quot;</span><span class="fu">?&gt;</span></span>
+<span id="cb2-2"><a href="Root_element.html#cb2-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">eml:eml</span><span class="ot"> xmlns:ds=</span><span class="st">&quot;eml://ecoinformatics.org/dataset-2.1.0&quot;</span></span>
+<span id="cb2-3"><a href="Root_element.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ot">   xmlns:xs=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema&quot;</span></span>
+<span id="cb2-4"><a href="Root_element.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ot">   xmlns:eml=</span><span class="st">&quot;eml://ecoinformatics.org/eml-2.1.0&quot;</span></span>
+<span id="cb2-5"><a href="Root_element.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ot">   xmlns:xsi=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span>
+<span id="cb2-6"><a href="Root_element.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ot">   xmlns:stmml=</span><span class="st">&quot;http://www.xml-cml.org/schema/stmml&quot;</span></span>
+<span id="cb2-7"><a href="Root_element.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ot">   xsi:schemaLocation=</span><span class="st">&quot;eml://ecoinformatics.org/eml-2.1.0</span></span>
+<span id="cb2-8"><a href="Root_element.html#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="st">      https://nis.lternet.edu/eml-2.1.0/eml.xsd&quot;</span></span>
+<span id="cb2-9"><a href="Root_element.html#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ot">   packageId=</span><span class="st">&quot;knb-lter-fls.21.3&quot;</span></span>
+<span id="cb2-10"><a href="Root_element.html#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ot">   system=</span><span class="st">&quot;FLS&quot;</span></span>
+<span id="cb2-11"><a href="Root_element.html#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ot">   scope=</span><span class="st">&quot;system&quot;</span>&gt;</span></code></pre></div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="general-recommendations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="top-level-elements.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/EDIorg/data-package-best-practices/edit/master/01-eml-metadata.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

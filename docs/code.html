@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Code | Data Package Best Practices</title>
+  <meta name="description" content="<p>Best practice recommendations for data packages, described by
+Ecological Metadata Language (EML).</p>" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Code | Data Package Best Practices" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
+Ecological Metadata Language (EML).</p>" />
+  <meta name="github-repo" content="EDIorg/data-package-best-practices" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Code | Data Package Best Practices" />
+  
+  <meta name="twitter:description" content="<p>Best practice recommendations for data packages, described by
+Ecological Metadata Language (EML).</p>" />
+  
+
+<meta name="author" content="Environmental Data Initiative" />
+
+
+<meta name="date" content="2022-03-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data-package-design-for-special-cases.html"/>
+<link rel="next" href="model-based-datasets.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">EDI Data Package Best Practices</a></li>
+<li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
+<li class="chapter" data-level="" data-path="eml-best-practices.html"><a href="eml-best-practices.html"><i class="fa fa-check"></i>EML Best Practices</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html"><i class="fa fa-check"></i>Conventions and Definitions</a>
+<ul>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#audience"><i class="fa fa-check"></i>Audience</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#fonts-and-typeface"><i class="fa fa-check"></i>Fonts and typeface</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#definitions"><i class="fa fa-check"></i>Definitions</a></li>
+<li class="chapter" data-level="" data-path="conventions-and-definitions.html"><a href="conventions-and-definitions.html#other-eml-resources"><i class="fa fa-check"></i>Other EML Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html"><i class="fa fa-check"></i>General Recommendations</a>
+<ul>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html#metadata-distribution"><i class="fa fa-check"></i>Metadata Distribution</a></li>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html#data-package-identifiers"><i class="fa fa-check"></i>Data Package Identifiers</a></li>
+<li class="chapter" data-level="" data-path="general-recommendations.html"><a href="general-recommendations.html#high-priority-elements"><i class="fa fa-check"></i>High-priority Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html"><i class="fa fa-check"></i>The root element: &lt;eml:eml&gt;</a>
+<ul>
+<li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#schemalocation-xml-attribute"><i class="fa fa-check"></i>@schemaLocation (XML attribute)</a></li>
+<li class="chapter" data-level="" data-path="Root_element.html"><a href="Root_element.html#packageid-xml-attribute"><i class="fa fa-check"></i>@packageId (XML attribute)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html"><i class="fa fa-check"></i>Top Level Elements</a>
+<ul>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#access"><i class="fa fa-check"></i>access</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#dataset"><i class="fa fa-check"></i>dataset</a></li>
+<li class="chapter" data-level="" data-path="top-level-elements.html"><a href="top-level-elements.html#additionalMetadata"><i class="fa fa-check"></i>additionalMetadata</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="title-dataset-1.html"><a href="title-dataset-1.html"><i class="fa fa-check"></i>title (dataset)</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html"><i class="fa fa-check"></i>People and Organizations (Parties)</a>
+<ul>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#userid"><i class="fa fa-check"></i>userId</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#creator"><i class="fa fa-check"></i>creator</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#metadataprovider"><i class="fa fa-check"></i>metadataProvider</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#associatedparty"><i class="fa fa-check"></i>associatedParty</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#contact"><i class="fa fa-check"></i>contact</a></li>
+<li class="chapter" data-level="" data-path="people-and-organizations-parties.html"><a href="people-and-organizations-parties.html#publisher"><i class="fa fa-check"></i>publisher</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pubdate.html"><a href="pubdate.html"><i class="fa fa-check"></i>pubDate</a></li>
+<li class="chapter" data-level="" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i>abstract</a></li>
+<li class="chapter" data-level="" data-path="keywordset-and-keyword.html"><a href="keywordset-and-keyword.html"><i class="fa fa-check"></i>keywordSet and keyword</a></li>
+<li class="chapter" data-level="" data-path="intellectualrights.html"><a href="intellectualrights.html"><i class="fa fa-check"></i>intellectualRights</a></li>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html"><i class="fa fa-check"></i>distribution</a>
+<ul>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html#dataset-level"><i class="fa fa-check"></i>Dataset level</a></li>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html#entity-level"><i class="fa fa-check"></i>Entity level</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html"><i class="fa fa-check"></i>coverage</a>
+<ul>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html#geographiccoverage"><i class="fa fa-check"></i>geographicCoverage</a></li>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html#temporalcoverage"><i class="fa fa-check"></i>temporalCoverage</a></li>
+<li class="chapter" data-level="" data-path="coverage.html"><a href="coverage.html#taxonomiccoverage"><i class="fa fa-check"></i>taxonomicCoverage</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="maintenance.html"><a href="maintenance.html"><i class="fa fa-check"></i>maintenance</a></li>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i>methods</a>
+<ul>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html#methodstep"><i class="fa fa-check"></i>methodStep</a></li>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html#sampling"><i class="fa fa-check"></i>sampling</a></li>
+<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html#qualitycontrol"><i class="fa fa-check"></i>qualityControl</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i>project</a></li>
+<li class="chapter" data-level="" data-path="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html"><a href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html"><i class="fa fa-check"></i>[entity] = dataTable, spatialRaster, spatialVector, storedProcedure, view, otherEntity</a></li>
+<li class="chapter" data-level="" data-path="attributelist.html"><a href="attributelist.html"><i class="fa fa-check"></i>attributeList</a></li>
+<li class="chapter" data-level="" data-path="constraint.html"><a href="constraint.html"><i class="fa fa-check"></i>constraint</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-package-design-for-special-cases.html"><a href="data-package-design-for-special-cases.html"><i class="fa fa-check"></i>Data Package Design for Special Cases</a>
+<ul>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html"><i class="fa fa-check"></i>Code</a>
+<ul>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html#recommendations-for-data-packages"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="code.html"><a href="code.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html"><i class="fa fa-check"></i>Model-Based Datasets</a>
+<ul>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#introduction-2"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#recommendations-for-data-packages-1"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#example-data-packages-in-edi"><i class="fa fa-check"></i>Example data packages in EDI</a></li>
+<li class="chapter" data-level="" data-path="model-based-datasets.html"><a href="model-based-datasets.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html"><i class="fa fa-check"></i>Images and Documents as Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#introduction-3"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#recommendations-for-data-packages-2"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#example-data-packages-in-edi-1"><i class="fa fa-check"></i>Example data packages in EDI</a></li>
+<li class="chapter" data-level="" data-path="images-and-documents-as-data.html"><a href="images-and-documents-as-data.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="spatial-data.html"><a href="spatial-data.html"><i class="fa fa-check"></i>Spatial Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="spatial-data.html"><a href="spatial-data.html#introduction-4"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="spatial-data.html"><a href="spatial-data.html#recommendations-for-data-packages-3"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html"><i class="fa fa-check"></i>Data Gathered with Small Moving Platforms</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#introduction-5"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#recommendations-for-data-packages-4"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="data-gathered-with-small-moving-platforms.html"><a href="data-gathered-with-small-moving-platforms.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html"><i class="fa fa-check"></i>Data in Other Repositories</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#introduction-6"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#recommendations-for-data-packages-5"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#nucleotide-sequence-and-genomic-data"><i class="fa fa-check"></i>Nucleotide sequence and genomic data</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#example-data-packages-in-edi-2"><i class="fa fa-check"></i>Example data packages in EDI</a></li>
+<li class="chapter" data-level="" data-path="data-in-other-repositories.html"><a href="data-in-other-repositories.html#appendix-tips-and-repository-information"><i class="fa fa-check"></i>Appendix: Tips and repository information</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html"><i class="fa fa-check"></i>Large Data Sets</a>
+<ul>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#introduction-7"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#recommendations-for-data-packages-6"><i class="fa fa-check"></i>Recommendations for data packages</a></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#references-1"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="large-data-sets.html"><a href="large-data-sets.html#potential-issues"><i class="fa fa-check"></i>Potential Issues</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="scientific-domain.html"><a href="scientific-domain.html"><i class="fa fa-check"></i>Scientific Domain</a>
+<ul>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html"><i class="fa fa-check"></i>Ecological community surveys</a>
+<ul>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#introduction-8"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#authors"><i class="fa fa-check"></i>Authors</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#anticipated-use-cases"><i class="fa fa-check"></i>Anticipated use cases</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#definitions-and-conventions"><i class="fa fa-check"></i>Definitions and conventions</a></li>
+<li class="chapter" data-level="" data-path="ecological-community-surveys.html"><a href="ecological-community-surveys.html#recommendations-for-datasets"><i class="fa fa-check"></i>Recommendations for datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="meteorology-and-hydrology-data.html"><a href="meteorology-and-hydrology-data.html"><i class="fa fa-check"></i>Meteorology and Hydrology data</a>
+<ul>
+<li class="chapter" data-level="" data-path="meteorology-and-hydrology-data.html"><a href="meteorology-and-hydrology-data.html#introduction-9"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="meteorology-and-hydrology-data.html"><a href="meteorology-and-hydrology-data.html#recommendations-for-datasets-1"><i class="fa fa-check"></i>Recommendations for datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="soil-carbon.html"><a href="soil-carbon.html"><i class="fa fa-check"></i>Soil Carbon</a>
+<ul>
+<li class="chapter" data-level="" data-path="soil-carbon.html"><a href="soil-carbon.html#introduction-10"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="soil-carbon.html"><a href="soil-carbon.html#recommendations-for-datasets-2"><i class="fa fa-check"></i>Recommendations for datasets</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Package Best Practices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="code" class="section level2">
+<h2>Code</h2>
+<p>Contributors: An T. Nguyen, Tim Whiteaker</p>
+<div id="introduction-1" class="section level3">
+<h3>Introduction</h3>
+<p>This document describes best practices for archiving software, code, or scripts, such as a simulation model, data visualization package, or data manipulation scripts. The intention of these recommendations is to make research based on modeling or software more transparent rather than achieve exact reproducibility, i.e., provide sufficient documentation so that a knowledgeable person can understand algorithms, programming decisions, and their ramifications for the results, rather than run the model and obtain the same results.</p>
+<p>Examples of candidate archives for code include <a href="https://www.comses.net/">CoMSES Net</a>, which focuses on sharing models related to social and ecological sciences, and <a href="https://zenodo.org/">Zenodo</a>, a popular DOI-minting all-purpose repository, that can conveniently archive a specific version of <a href="https://guides.github.com/activities/citable-code/">code in a GitHub repository</a>. Alternatively, code may be archived in the EDI repository, either by itself or as part of a data package. The best practices in this document cover both archiving code in EDI and referencing code archived elsewhere.</p>
+<p>While metadata for software may be described in detail using the EML &lt;<strong>software</strong>&gt; tree, there exists a project called <a href="https://codemeta.github.io/index.html">CodeMeta</a> which is specifically designed for software metadata. Therefore, one of the key recommendations in this document is to include a CodeMeta file when archiving software or code in EDI.</p>
+</div>
+<div id="recommendations-for-data-packages" class="section level3">
+<h3>Recommendations for data packages</h3>
+<div id="considerations-for-archiving-software-or-code" class="section level4">
+<h4>Considerations for archiving software or code</h4>
+<ul>
+<li>If it is a model and/or a model-based dataset, please see the <a href="model-based-datasets.html">best practices for archiving model-based datasets</a>.</li>
+<li>How likely is it that the code will be well maintained into the future? For example, code packages submitted to established code repositories may stay there only while they comply with all testing requirements and may be removed if not well maintained (e.g., the R package repository CRAN). If that commitment to code maintenance is unlikely, such a package should be archived in a repository without maintenance requirements.</li>
+<li>Should the code be archived as a separate package or with the data?
+<ul>
+<li>If the code is used to generate several independent datasets it should be archived as a separate package.</li>
+<li>The software authors wishing to place it under a different license from that of the associated data, or to obtain a DOI for only the code, may be reasons to separate code and data packages.</li>
+<li>If deciding to package code separately, it may be archived on EDI or another repository. If archiving code outside of EDI, see section 2.2.4 for instructions on how to reference that code from related data packages in EDI.</li>
+<li>In most other cases, it is recommended to archive code and data together for context.</li>
+</ul></li>
+<li>Large community software packages are usually maintained and available elsewhere. However, they may undergo significant updates and it may make sense to archive the code of a certain version with the data for transparency reasons. Consider whether prior versions of a software package are available wherever that software is distributed.</li>
+<li>When choosing a repository for the code, consider the ease of the archiving process and how well the code can be described. For example, Zenodo offers an easy pathway to archive code that is currently in GitHub, though metadata requirements are very light. Following the best practices described herein, you would create a CodeMeta file if you were going to archive with EDI. This is more rigorous than Zenodo, but then your code is better described, and in a machine-readable way.</li>
+</ul>
+</div>
+<div id="documenting-softwarecode" class="section level4">
+<h4>Documenting software/code</h4>
+<p>When describing the code with EML, include the code as an otherEntity in a data package. Although a well documented human readable text format of the code is preferred, in case of multiple scripts, and/or where directory structure is important, a zip archive may be used. For the formatName and entityType elements in EML, we recommend using format names from the <a href="https://cn.dataone.org/cn/v2/formats">DataONE format list</a> when possible. Some format names are included in examples below. Always check the list for the most up-to-date version of these names.</p>
+<p>Example 1: EML otherEntity snippet for a script file.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb29-1"><a href="code.html#cb29-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">otherEntity</span>&gt;</span>
+<span id="cb29-2"><a href="code.html#cb29-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityName</span>&gt;R script to process CTD data&lt;/<span class="kw">entityName</span>&gt;</span>
+<span id="cb29-3"><a href="code.html#cb29-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityDescription</span>&gt;Annotated RMarkdown script to process, calibrate, and flag raw CTD data.&lt;/<span class="kw">entityDescription</span>&gt;</span>
+<span id="cb29-4"><a href="code.html#cb29-4" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
+<span id="cb29-5"><a href="code.html#cb29-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">objectName</span>&gt;BLE_LTER_CTD_QAQC.Rmd&lt;/<span class="kw">objectName</span>&gt;</span>
+<span id="cb29-6"><a href="code.html#cb29-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">size</span><span class="ot"> unit=</span><span class="st">&quot;byte&quot;</span>&gt;9674&lt;/<span class="kw">size</span>&gt;</span>
+<span id="cb29-7"><a href="code.html#cb29-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">authentication</span><span class="ot"> method=</span><span class="st">&quot;MD5&quot;</span>&gt;8547b7a63fcf6c1f0913a5bd7549d9d1&lt;/<span class="kw">authentication</span>&gt;</span>
+<span id="cb29-8"><a href="code.html#cb29-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">dataFormat</span>&gt;</span>
+<span id="cb29-9"><a href="code.html#cb29-9" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">externallyDefinedFormat</span>&gt;</span>
+<span id="cb29-10"><a href="code.html#cb29-10" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">formatName</span>&gt;R Markdown file&lt;/<span class="kw">formatName</span>&gt;</span>
+<span id="cb29-11"><a href="code.html#cb29-11" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">externallyDefinedFormat</span>&gt;</span>
+<span id="cb29-12"><a href="code.html#cb29-12" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">dataFormat</span>&gt;</span>
+<span id="cb29-13"><a href="code.html#cb29-13" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
+<span id="cb29-14"><a href="code.html#cb29-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityType</span>&gt;script&lt;/<span class="kw">entityType</span>&gt;</span>
+<span id="cb29-15"><a href="code.html#cb29-15" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">otherEntity</span>&gt;</span></code></pre></div>
+<div id="software-license" class="section level5">
+<h5>Software License</h5>
+<p>It is important to include a use license to make it clear how others can use your work. We recommend the <a href="https://creativecommons.org/share-your-work/public-domain/cc0/">Creative Commons “no copyright reserved” (CC0)</a> license, which places the software in the public domain and makes it easiest for end users to adapt and use your work. If a more restrictive license is required, we recommend the <a href="https://directory.fsf.org/wiki/License:Apache-2.0">Apache License, Version 2.0</a> license, a permissive license that allows others to reuse, modify, and redistribute your software.</p>
+<p>If a mix of data and code needs to be archived, and they each fall under different licenses, then separating them into different packages is advisable to eliminate ambiguity on which license applies to which portion of a data package. When a license other than a public domain dedication is used, then in addition to specifying the license in the metadata (see the “intellectualRights” element in EML), consider including a copy of the license at the beginning of the code files themselves so that the license is readily apparent to end users who peruse the code.</p>
+</div>
+<div id="codemeta" class="section level5">
+<h5>CodeMeta</h5>
+<p>Include a CodeMeta JSON file for all code that is archived in EDI. The CodeMeta file should be named “codemeta.json” and listed as an EML otherEntity. The formatName should be “JavaScript Object Notation (JSON) file,” the entityType should be “metadata,” and the entityDescription should indicate that this is a CodeMeta file for a given software or script in the data package.</p>
+<p>For unnamed projects, e.g., one-off scripts for data processing, analysis, and/or visualisation, a CodeMeta file might appear to be overkill; however, CodeMeta files are simple to generate, and we recommend the below bare minimum. If there are multiple scripts each in their own otherEntity tag, we recommend aggregating information about them into one codemeta.json.</p>
+<p>Example 2: Minimum recommended codemeta.json example for unnamed projects.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb30-1"><a href="code.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb30-2"><a href="code.html#cb30-2" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;@context&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;https://doi.org/10.5063/schema/codemeta-2.0&quot;</span><span class="ot">,</span></span>
+<span id="cb30-3"><a href="code.html#cb30-3" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;http://schema.org&quot;</span></span>
+<span id="cb30-4"><a href="code.html#cb30-4" aria-hidden="true" tabindex="-1"></a>   <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb30-5"><a href="code.html#cb30-5" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;SoftwareSourceCode&quot;</span><span class="fu">,</span></span>
+<span id="cb30-6"><a href="code.html#cb30-6" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;RMarkdown script to calibrate and flag raw CTD data.&quot;</span><span class="fu">,</span></span>
+<span id="cb30-7"><a href="code.html#cb30-7" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;author&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb30-8"><a href="code.html#cb30-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;Person&quot;</span><span class="fu">,</span></span>
+<span id="cb30-9"><a href="code.html#cb30-9" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;givenName&quot;</span><span class="fu">:</span> <span class="st">&quot;Christina&quot;</span><span class="fu">,</span></span>
+<span id="cb30-10"><a href="code.html#cb30-10" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;familyName&quot;</span><span class="fu">:</span> <span class="st">&quot;Bonsell&quot;</span><span class="fu">,</span></span>
+<span id="cb30-11"><a href="code.html#cb30-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;email&quot;</span><span class="fu">:</span> <span class="st">&quot;cbonsell@utexas.edu&quot;</span><span class="fu">,</span></span>
+<span id="cb30-12"><a href="code.html#cb30-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;@id&quot;</span><span class="fu">:</span> <span class="st">&quot;https://orcid.org/0000-0002-8564-0618&quot;</span></span>
+<span id="cb30-13"><a href="code.html#cb30-13" aria-hidden="true" tabindex="-1"></a>   <span class="fu">},</span></span>
+<span id="cb30-14"><a href="code.html#cb30-14" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;keywords&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;calibration&quot;</span><span class="ot">,</span> <span class="st">&quot;CTD&quot;</span><span class="ot">,</span> <span class="st">&quot;RMarkdown&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb30-15"><a href="code.html#cb30-15" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;license&quot;</span><span class="fu">:</span> <span class="st">&quot;https://unlicense.org/&quot;</span><span class="fu">,</span></span>
+<span id="cb30-16"><a href="code.html#cb30-16" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;dateCreated&quot;</span><span class="fu">:</span> <span class="st">&quot;2013-10-19&quot;</span><span class="fu">,</span></span>
+<span id="cb30-17"><a href="code.html#cb30-17" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;programmingLanguage&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb30-18"><a href="code.html#cb30-18" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;ComputerLanguage&quot;</span><span class="fu">,</span></span>
+<span id="cb30-19"><a href="code.html#cb30-19" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;R&quot;</span><span class="fu">,</span></span>
+<span id="cb30-20"><a href="code.html#cb30-20" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;3.6.2&quot;</span><span class="fu">,</span></span>
+<span id="cb30-21"><a href="code.html#cb30-21" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://r-project.org&quot;</span></span>
+<span id="cb30-22"><a href="code.html#cb30-22" aria-hidden="true" tabindex="-1"></a>   <span class="fu">}</span></span>
+<span id="cb30-23"><a href="code.html#cb30-23" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<p>Example 3: sample otherEntity metadata for example 2â€™s codemeta.json.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb31-1"><a href="code.html#cb31-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">otherEntity</span>&gt;</span>
+<span id="cb31-2"><a href="code.html#cb31-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityName</span>&gt;CodeMeta file for BLE_LTER_CTD_QAQC.Rmd&lt;/<span class="kw">entityName</span>&gt;</span>
+<span id="cb31-3"><a href="code.html#cb31-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityDescription</span>&gt;CodeMeta file for annotated RMarkdown script to process, calibrate, and flag raw CTD data.&lt;/<span class="kw">entityDescription</span>&gt;</span>
+<span id="cb31-4"><a href="code.html#cb31-4" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
+<span id="cb31-5"><a href="code.html#cb31-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">objectName</span>&gt;codemeta.json&lt;/<span class="kw">objectName</span>&gt;</span>
+<span id="cb31-6"><a href="code.html#cb31-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">size</span><span class="ot"> unit=</span><span class="st">&quot;byte&quot;</span>&gt;702&lt;/<span class="kw">size</span>&gt;</span>
+<span id="cb31-7"><a href="code.html#cb31-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">authentication</span><span class="ot"> method=</span><span class="st">&quot;MD5&quot;</span>&gt;8547b7a63abc6c1f0913a5bd7549d9d1&lt;/<span class="kw">authentication</span>&gt;</span>
+<span id="cb31-8"><a href="code.html#cb31-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">dataFormat</span>&gt;</span>
+<span id="cb31-9"><a href="code.html#cb31-9" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">externallyDefinedFormat</span>&gt;</span>
+<span id="cb31-10"><a href="code.html#cb31-10" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">formatName</span>&gt;application/json&lt;/<span class="kw">formatName</span>&gt;</span>
+<span id="cb31-11"><a href="code.html#cb31-11" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">externallyDefinedFormat</span>&gt;</span>
+<span id="cb31-12"><a href="code.html#cb31-12" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">dataFormat</span>&gt;</span>
+<span id="cb31-13"><a href="code.html#cb31-13" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
+<span id="cb31-14"><a href="code.html#cb31-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityType</span>&gt;CodeMeta&lt;/<span class="kw">entityType</span>&gt;</span>
+<span id="cb31-15"><a href="code.html#cb31-15" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">otherEntity</span>&gt;</span></code></pre></div>
+<p>For named projects, also include the software name, and the version if applicable. The example below shows some additional metadata you can include. See also the more complete <a href="https://docs.ropensci.org/codemetar/articles/codemeta-intro.html">codemetar example</a> and the available <a href="https://codemeta.github.io/terms/">CodeMeta terms</a>.</p>
+<p>Example 4: A more complete CodeMeta example for named projects. Example taken from the CodeMeta project Github with edits for brevity.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb32-1"><a href="code.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb32-2"><a href="code.html#cb32-2" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;@context&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;https://doi.org/10.5063/schema/codemeta-2.0&quot;</span><span class="ot">,</span></span>
+<span id="cb32-3"><a href="code.html#cb32-3" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;http://schema.org&quot;</span></span>
+<span id="cb32-4"><a href="code.html#cb32-4" aria-hidden="true" tabindex="-1"></a>   <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb32-5"><a href="code.html#cb32-5" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;SoftwareSourceCode&quot;</span><span class="fu">,</span></span>
+<span id="cb32-6"><a href="code.html#cb32-6" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;codemetar: Generate &#39;CodeMeta&#39; Metadata for R Packages&quot;</span><span class="fu">,</span></span>
+<span id="cb32-7"><a href="code.html#cb32-7" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;A JSON-LD format for software metadata&quot;</span><span class="fu">,</span></span>
+<span id="cb32-8"><a href="code.html#cb32-8" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;author&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></span>
+<span id="cb32-9"><a href="code.html#cb32-9" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;Person&quot;</span><span class="fu">,</span></span>
+<span id="cb32-10"><a href="code.html#cb32-10" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&quot;givenName&quot;</span><span class="fu">:</span> <span class="st">&quot;Carl&quot;</span><span class="fu">,</span></span>
+<span id="cb32-11"><a href="code.html#cb32-11" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&quot;familyName&quot;</span><span class="fu">:</span> <span class="st">&quot;Boettiger&quot;</span><span class="fu">,</span></span>
+<span id="cb32-12"><a href="code.html#cb32-12" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&quot;email&quot;</span><span class="fu">:</span> <span class="st">&quot;cboettig@gmail.com&quot;</span><span class="fu">,</span></span>
+<span id="cb32-13"><a href="code.html#cb32-13" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&quot;@id&quot;</span><span class="fu">:</span> <span class="st">&quot;https://orcid.org/0000-0002-1642-628X&quot;</span></span>
+<span id="cb32-14"><a href="code.html#cb32-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb32-15"><a href="code.html#cb32-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
+<span id="cb32-16"><a href="code.html#cb32-16" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;Person&quot;</span><span class="fu">,</span></span>
+<span id="cb32-17"><a href="code.html#cb32-17" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&quot;givenName&quot;</span><span class="fu">:</span> <span class="st">&quot;MaÃ«lle&quot;</span><span class="fu">,</span></span>
+<span id="cb32-18"><a href="code.html#cb32-18" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&quot;familyName&quot;</span><span class="fu">:</span> <span class="st">&quot;Salmon&quot;</span><span class="fu">,</span></span>
+<span id="cb32-19"><a href="code.html#cb32-19" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&quot;@id&quot;</span><span class="fu">:</span> <span class="st">&quot;https://orcid.org/0000-0002-2815-0399&quot;</span></span>
+<span id="cb32-20"><a href="code.html#cb32-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb32-21"><a href="code.html#cb32-21" aria-hidden="true" tabindex="-1"></a>   <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb32-22"><a href="code.html#cb32-22" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;codeRepository&quot;</span><span class="fu">:</span> <span class="st">&quot;https://github.com/ropensci/codemetar&quot;</span><span class="fu">,</span></span>
+<span id="cb32-23"><a href="code.html#cb32-23" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;dateCreated&quot;</span><span class="fu">:</span> <span class="st">&quot;2013-10-19&quot;</span><span class="fu">,</span></span>
+<span id="cb32-24"><a href="code.html#cb32-24" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;license&quot;</span><span class="fu">:</span> <span class="st">&quot;https://spdx.org/licenses/GPL-3.0&quot;</span><span class="fu">,</span></span>
+<span id="cb32-25"><a href="code.html#cb32-25" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;0.1.8&quot;</span><span class="fu">,</span></span>
+<span id="cb32-26"><a href="code.html#cb32-26" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;programmingLanguage&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb32-27"><a href="code.html#cb32-27" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;ComputerLanguage&quot;</span><span class="fu">,</span></span>
+<span id="cb32-28"><a href="code.html#cb32-28" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;R&quot;</span><span class="fu">,</span></span>
+<span id="cb32-29"><a href="code.html#cb32-29" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;3.5.3&quot;</span><span class="fu">,</span></span>
+<span id="cb32-30"><a href="code.html#cb32-30" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://r-project.org&quot;</span></span>
+<span id="cb32-31"><a href="code.html#cb32-31" aria-hidden="true" tabindex="-1"></a>   <span class="fu">},</span></span>
+<span id="cb32-32"><a href="code.html#cb32-32" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;softwareRequirements&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></span>
+<span id="cb32-33"><a href="code.html#cb32-33" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;SoftwareApplication&quot;</span><span class="fu">,</span></span>
+<span id="cb32-34"><a href="code.html#cb32-34" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&quot;identifier&quot;</span><span class="fu">:</span> <span class="st">&quot;R&quot;</span><span class="fu">,</span></span>
+<span id="cb32-35"><a href="code.html#cb32-35" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;R&quot;</span><span class="fu">,</span></span>
+<span id="cb32-36"><a href="code.html#cb32-36" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;&gt;= 3.0.0&quot;</span></span>
+<span id="cb32-37"><a href="code.html#cb32-37" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb32-38"><a href="code.html#cb32-38" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
+<span id="cb32-39"><a href="code.html#cb32-39" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;SoftwareApplication&quot;</span><span class="fu">,</span></span>
+<span id="cb32-40"><a href="code.html#cb32-40" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&quot;identifier&quot;</span><span class="fu">:</span> <span class="st">&quot;git2r&quot;</span><span class="fu">,</span></span>
+<span id="cb32-41"><a href="code.html#cb32-41" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;git2r&quot;</span><span class="fu">,</span></span>
+<span id="cb32-42"><a href="code.html#cb32-42" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&quot;provider&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb32-43"><a href="code.html#cb32-43" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;@id&quot;</span><span class="fu">:</span> <span class="st">&quot;https://cran.r-project.org&quot;</span><span class="fu">,</span></span>
+<span id="cb32-44"><a href="code.html#cb32-44" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;Organization&quot;</span><span class="fu">,</span></span>
+<span id="cb32-45"><a href="code.html#cb32-45" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Comprehensive R Archive Network (CRAN)&quot;</span><span class="fu">,</span></span>
+<span id="cb32-46"><a href="code.html#cb32-46" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://cran.r-project.org&quot;</span></span>
+<span id="cb32-47"><a href="code.html#cb32-47" aria-hidden="true" tabindex="-1"></a>         <span class="fu">}</span></span>
+<span id="cb32-48"><a href="code.html#cb32-48" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb32-49"><a href="code.html#cb32-49" aria-hidden="true" tabindex="-1"></a>   <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb32-50"><a href="code.html#cb32-50" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;keywords&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;metadata&quot;</span><span class="ot">,</span> <span class="st">&quot;codemeta&quot;</span><span class="ot">,</span> <span class="st">&quot;ropensci&quot;</span><span class="ot">]</span></span>
+<span id="cb32-51"><a href="code.html#cb32-51" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+</div>
+<div id="metadata-to-enable-reproducibility" class="section level5">
+<h5>Metadata to enable reproducibility</h5>
+<p>When archiving software, we strongly recommend including a user guide with installation and usage instructions if such would not already be apparent to the typical user. Take into account that the user might not have access to certain inputs that the software/scripts require. Include when feasible at least some example data, and configure the script so that it is ready to run with the example data.</p>
+<p>Aside from the software/code itself and its dependencies, other pieces of information may be important should a user wish to reproduce results, such as the operating system and version and the system locale. Include this information in the data packageâ€™s methods/methodStep/description. For certain tools, there are ways to easily generate this information, e.g., a call to sessionInfo() in the R console. If the system outputs this information in a standardly formatted plain text file, that might be included as an otherEntity.</p>
+</div>
+</div>
+<div id="linking-code-and-data" class="section level4">
+<h4>Linking code and data</h4>
+<p>There are a few solutions for providing explicit machine-readable linkages between different entities/packages (the distinction between code/data doesnâ€™t matter too much here). For most cases we recommend the simplest approach, which is to use the methods/methodStep/description element of EML. More advanced users may wish to utilize the other solutions described herein.</p>
+<div id="descriptive-approach" class="section level5">
+<h5>Descriptive approach</h5>
+<p>In the dataset methods/methodStep/description element, include verbal descriptions such as “results.csv was derived from raw_data.csv using script.R” and repeat for all entities. If code and data reside in different packages, be sure to specify that.</p>
+</div>
+<div id="the-eml-datasource-element" class="section level5">
+<h5>The EML dataSource element</h5>
+<p>Nested under methods/methodStep, dataSource elements describe other data packages that serve as source for the current package. dataSource looks like a mini-EML tree describing the source data. Example: <a href="http://portal.edirepository.org/nis/simpleSearch?defType=edismax&amp;q=ecocomDP&amp;fq=-scope:ecotrends&amp;fq=-scope:lter-landsat*&amp;fl=id,packageid,title,author,organization,pubdate,coordinates&amp;debug=false">ecocomDP packages</a> list the original packages under dataSource. dataSource does not describe relationships between entities in the same package, and as far as we know there is no explicit way in EML to do so.</p>
+</div>
+<div id="provone" class="section level5">
+<h5>ProvONE</h5>
+<p><a href="http://jenkins-1.dataone.org/jenkins/view/Documentation%20Projects/job/ProvONE-Documentation-trunk/ws/provenance/ProvONE/v1/provone.html">ProvONE</a> is a model developed by DataONE affiliates for provenance or denoting relationships between data entities. Each package on DataONE is described by a science metadata document (e.g., EML, ISO, FGDC) and a resource map document following ProvONE. The resource map powers a nice display of data relationships (see <a href="https://arcticdata.io/catalog/view/doi%3A10.18739%2FA2556Q">this package on the Arctic Data Center</a>). This handles both relationships between entities in the same package and entities residing in different packages. However, note that EDI currently does not utilize this model.</p>
+</div>
+</div>
+<div id="external-software" class="section level4">
+<h4>External software</h4>
+<p>Large community-backed tools or proprietary software such as ArcGIS Pro or Microsoft Excel do not need to be archived. However, if they have had any impact on the final data (e.g., ArcGIS Pro was used to modify spatial rasters), the EML methods section should describe the routines performed. Within the data package, indicate linkage to external software as follows.</p>
+<ul>
+<li>Briefly describe the software/code and its relationship to the data in EMLâ€™s methods/methodStep/description element.</li>
+<li>Names of all software used. Include both the common acronym and the full spelling.</li>
+<li>The URL(s) to all models/software used. Stable, persistent URLs pointing to exact version(s) are preferable, rather than generic links such as a project homepage. If the archived model has a DOI, then include a full citation to the model in the methods/methodStep/description text. The exception to this is when referencing tools such as Excel that have achieved global household name status.</li>
+<li>Broadly, the system setup used, if relevant.</li>
+<li>Information on exact versions for all code used (including dependencies). This is important, e.g., ArcGIS Pro 2.4.1 is very different from ArcGIS for Desktop 10.7.1. Different systems have methods to easily generate this information, e.g. a call to sessionInfo() in the R console.</li>
+<li>Consider, if applicable, to archive the “runfile” as its own data entity within the data package, i.e., the script(s) that sets parameters and/or calls on functions imported from external software.</li>
+</ul>
+<p>Example 5: EML method description referring to external software.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb33-1"><a href="code.html#cb33-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">methods</span>&gt;</span>
+<span id="cb33-2"><a href="code.html#cb33-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">methodStep</span>&gt;</span>
+<span id="cb33-3"><a href="code.html#cb33-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">description</span>&gt;</span>
+<span id="cb33-4"><a href="code.html#cb33-4" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">para</span>&gt;           </span>
+<span id="cb33-5"><a href="code.html#cb33-5" aria-hidden="true" tabindex="-1"></a>            The seagrass coverage raster was created in ArcGIS Pro (version</span>
+<span id="cb33-6"><a href="code.html#cb33-6" aria-hidden="true" tabindex="-1"></a>            2.4.3, by Esri) using the IDW geoprocessing tool on</span>
+<span id="cb33-7"><a href="code.html#cb33-7" aria-hidden="true" tabindex="-1"></a>            sampling_points.csv with a power of 2 and the nearest</span>
+<span id="cb33-8"><a href="code.html#cb33-8" aria-hidden="true" tabindex="-1"></a>            12 points.</span>
+<span id="cb33-9"><a href="code.html#cb33-9" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">para</span>&gt;</span>
+<span id="cb33-10"><a href="code.html#cb33-10" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">para</span>&gt;</span>
+<span id="cb33-11"><a href="code.html#cb33-11" aria-hidden="true" tabindex="-1"></a>            The raster was then refined using the seagrass-refiner package</span>
+<span id="cb33-12"><a href="code.html#cb33-12" aria-hidden="true" tabindex="-1"></a>            with the auto-refine option checked (Smith, 2017).</span>
+<span id="cb33-13"><a href="code.html#cb33-13" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">para</span>&gt;</span>
+<span id="cb33-14"><a href="code.html#cb33-14" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">para</span>&gt;</span>
+<span id="cb33-15"><a href="code.html#cb33-15" aria-hidden="true" tabindex="-1"></a>            Smith, J. (2017). seagrass-refiner: a package that does the cool</span>
+<span id="cb33-16"><a href="code.html#cb33-16" aria-hidden="true" tabindex="-1"></a>            seagrass stuff, Version 1.2, Zenodo.  https://doi.org/this-is/a-fake-doi,</span>
+<span id="cb33-17"><a href="code.html#cb33-17" aria-hidden="true" tabindex="-1"></a>            2017.</span>
+<span id="cb33-18"><a href="code.html#cb33-18" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">para</span>&gt;</span>
+<span id="cb33-19"><a href="code.html#cb33-19" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">description</span>&gt;</span>
+<span id="cb33-20"><a href="code.html#cb33-20" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">methodStep</span>&gt;</span>
+<span id="cb33-21"><a href="code.html#cb33-21" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">methods</span>&gt;</span></code></pre></div>
+</div>
+</div>
+<div id="resources" class="section level3">
+<h3>Resources</h3>
+<p><a href="https://codemeta.github.io/">CodeMeta</a> website</p>
+<p><a href="https://codemeta.github.io/codemeta-generator/">CodeMeta generator</a> for creating CodeMeta</p>
+<p><a href="https://codemeta.github.io/crosswalk/">CodeMeta crosswalks</a> for a number of popular software</p>
+<p><a href="https://codemeta.github.io/terms/">CodeMeta terms</a> you can use for describing software</p>
+<p>A description of some <a href="https://opensource.org/licenses">software licenses</a></p>
+<p><a href="model-based-datasets.html">Best practices document to archiving model-based datasets</a></p>
+<p><a href="http://jenkins-1.dataone.org/jenkins/view/Documentation%20Projects/job/ProvONE-Documentation-trunk/ws/provenance/ProvONE/v1/provone.html">ProvONE documentation</a></p>
+<p><a href="https://www.w3.org/TR/prov-o/">W3C PROV-O documentation</a></p>
+<p><a href="https://docs.google.com/document/d/1JeznivTDubi0ZX_lsO50eCUl-8zxSiz_xq5SsBRwbuw/edit">Licensing software as part of an EDI data package</a></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-package-design-for-special-cases.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="model-based-datasets.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/EDIorg/data-package-best-practices/edit/master/02-special-cases.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
