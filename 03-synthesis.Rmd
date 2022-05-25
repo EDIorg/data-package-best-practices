@@ -16,7 +16,7 @@ We know from experience that primary research data sets cannot be easily reused 
 
 ### Authors
 - Margaret O'Brien (https://orcid.org/0000-0002-1693-8322)
-- ecocomDP working group: https://environmentaldatainitiative.org/dataset-design/data-package-design-for-community-survey-data/
+- ecocomDP working group: https://edirepository.org/resources/thematic-standardization
 
 ### Anticipated use cases
 
@@ -26,7 +26,7 @@ Synthesis requires that primary research data sets be understood and combined in
 #### Harmonization
 Although a prescribed format would make data easily reused, the complexity of community surveys generally means that a prescribed format cannot be imposed on research studies. Therefore, EDI is harmonizing this data type in a workflow framework, and the lessons learned from examining raw data are included here. For more information on EDI's harmonization of community survey data, see: 
 - https://github.com/EDIorg/ecocomDP
-- https://environmentaldatainitiative.org/dataset-design/data-package-design-for-community-survey-data/
+- https://edirepository.org/resources/thematic-standardization#ecocomdp
 
 #### External applications
 Community survey data are of great interest to the broader biodiversity community, particularly through their support for portals such as GBIF, and the use of the Darwin Core Vocabulary. Harmonization is the first step in this process.
