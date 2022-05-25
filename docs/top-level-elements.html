@@ -7,11 +7,10 @@
   <title>Top Level Elements | Data Package Best Practices</title>
   <meta name="description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Top Level Elements | Data Package Best Practices" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
@@ -27,7 +26,7 @@ Ecological Metadata Language (EML).</p>" />
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2022-03-04" />
+<meta name="date" content="2022-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -36,7 +35,6 @@ Ecological Metadata Language (EML).</p>" />
   
 <link rel="prev" href="Root_element.html"/>
 <link rel="next" href="title-dataset-1.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,8 +52,9 @@ Ecological Metadata Language (EML).</p>" />
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -160,7 +159,7 @@ div.csl-indent {
 
 <ul class="summary">
 <li><a href="./">EDI Data Package Best Practices</a></li>
-<li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+<li style="margin-left:10px;"><a href="https://edirepository.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
@@ -315,15 +314,15 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="top-level-elements" class="section level2 unnumbered">
-<h2>Top Level Elements</h2>
+<div id="top-level-elements" class="section level2 unnumbered hasAnchor">
+<h2>Top Level Elements<a href="top-level-elements.html#top-level-elements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>An EML <strong>dataset</strong> is composed of up to three elements under the root
 element (&lt;<strong>eml:eml</strong>&gt;):</p>
 <p>&lt;<strong>access</strong>&gt; More information: <a href="top-level-elements.html#access">access</a><br />
 &lt;<strong>dataset</strong>&gt; More information: <a href="top-level-elements.html#dataset">dataset</a>
 &lt;<strong>additionalMetadata</strong>&gt;More information: <a href="top-level-elements.html#additionalMetadata">additionalMetadata</a></p>
-<div id="access" class="section level3">
-<h3>access</h3>
+<div id="access" class="section level3 hasAnchor">
+<h3>access<a href="top-level-elements.html#access" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The access element is found at this location (XPath):<br />
 <strong>/eml:eml/access</strong><br />
 <strong>/eml:eml/<span class="math display">\[entityType\]</span>/physical/distribution/access</strong></p>
@@ -342,19 +341,19 @@ should be publicly accessible. The &lt;<strong>access</strong>&gt; element is op
 and if omitted, the repository may presume that only the dataset
 submitter will be allowed access.</p>
 <p>Example 2: access</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb3-1"><a href="top-level-elements.html#cb3-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">access</span><span class="ot"> authSystem=</span><span class="st">&quot;knb&quot;</span><span class="ot"> order=</span><span class="st">&quot;allowFirst&quot;</span><span class="ot"> scope=</span><span class="st">&quot;document&quot;</span>&gt;</span>
-<span id="cb3-2"><a href="top-level-elements.html#cb3-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">allow</span>&gt;</span>
-<span id="cb3-3"><a href="top-level-elements.html#cb3-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">principal</span>&gt;uid=FLS,o=lter,dc=ecoinformatics,dc=org&lt;/<span class="kw">principal</span>&gt;</span>
-<span id="cb3-4"><a href="top-level-elements.html#cb3-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">permission</span>&gt;all&lt;/<span class="kw">permission</span>&gt;</span>
-<span id="cb3-5"><a href="top-level-elements.html#cb3-5" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">allow</span>&gt;</span>
-<span id="cb3-6"><a href="top-level-elements.html#cb3-6" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">allow</span>&gt;</span>
-<span id="cb3-7"><a href="top-level-elements.html#cb3-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">principal</span>&gt;public&lt;/<span class="kw">principal</span>&gt;</span>
-<span id="cb3-8"><a href="top-level-elements.html#cb3-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">permission</span>&gt;read&lt;/<span class="kw">permission</span>&gt;</span>
-<span id="cb3-9"><a href="top-level-elements.html#cb3-9" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">allow</span>&gt;</span>
-<span id="cb3-10"><a href="top-level-elements.html#cb3-10" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">access</span>&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb3-1"><a href="top-level-elements.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;access</span><span class="ot"> authSystem=</span><span class="st">&quot;knb&quot;</span><span class="ot"> order=</span><span class="st">&quot;allowFirst&quot;</span><span class="ot"> scope=</span><span class="st">&quot;document&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb3-2"><a href="top-level-elements.html#cb3-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;allow&gt;</span></span>
+<span id="cb3-3"><a href="top-level-elements.html#cb3-3" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;principal&gt;</span>uid=FLS,o=lter,dc=ecoinformatics,dc=org<span class="kw">&lt;/principal&gt;</span></span>
+<span id="cb3-4"><a href="top-level-elements.html#cb3-4" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;permission&gt;</span>all<span class="kw">&lt;/permission&gt;</span></span>
+<span id="cb3-5"><a href="top-level-elements.html#cb3-5" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/allow&gt;</span></span>
+<span id="cb3-6"><a href="top-level-elements.html#cb3-6" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;allow&gt;</span></span>
+<span id="cb3-7"><a href="top-level-elements.html#cb3-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;principal&gt;</span>public<span class="kw">&lt;/principal&gt;</span></span>
+<span id="cb3-8"><a href="top-level-elements.html#cb3-8" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;permission&gt;</span>read<span class="kw">&lt;/permission&gt;</span></span>
+<span id="cb3-9"><a href="top-level-elements.html#cb3-9" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/allow&gt;</span></span>
+<span id="cb3-10"><a href="top-level-elements.html#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/access&gt;</span></span></code></pre></div>
 </div>
-<div id="dataset" class="section level3">
-<h3>dataset</h3>
+<div id="dataset" class="section level3 hasAnchor">
+<h3>dataset<a href="top-level-elements.html#dataset" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This element is found at these locations (XPath):<br />
 <strong>/eml:eml/dataset</strong></p>
 <p>Under &lt;<strong>dataset</strong>&gt;, the following elements are available. Some are
@@ -389,8 +388,8 @@ an EML file are discussed at their first appearance, or highest level.</p>
 entity (or entities), designated by choosing:</p>
 <p>[ <strong>dataTable</strong> | <strong>spatialRaster</strong> | <strong>spatialVector</strong> |
 <strong>storedProcedure</strong> | <strong>view</strong> | <strong>otherEntity</strong> ]</p>
-<div id="alternateidentifier" class="section level4">
-<h4>alternateIdentifier</h4>
+<div id="alternateidentifier" class="section level4 hasAnchor">
+<h4>alternateIdentifier<a href="top-level-elements.html#alternateidentifier" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The alternateIdentifier element is found at this location (XPath):<br />
 <strong>/eml:eml/ dataset/alternateIdentifier</strong><br />
 <strong>/eml:eml/ dataset/[entity]/alternateIdentifier</strong></p>
@@ -404,8 +403,8 @@ tag. At the entity level, the &lt;<strong>alternateIdentifier</strong>&gt; shoul
 an alternate name for the data table (or other entity) itself (see
 additional comments under entities, below.)</p>
 </div>
-<div id="title-dataset" class="section level4">
-<h4>title (dataset)</h4>
+<div id="title-dataset" class="section level4 hasAnchor">
+<h4>title (dataset)<a href="top-level-elements.html#title-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The dataset title element is found at this location (XPath):<br />
 <strong>/eml:eml/ dataset/title</strong><br />
 <strong>/eml:eml/method/methodStep/protocol/title</strong><br />
@@ -414,15 +413,15 @@ additional comments under entities, below.)</p>
 data collected, geographic context, research site, and time frame (what,
 where, and when).</p>
 <p>Example 3: dataset, alternateIdentifier, shortName, title</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb4-1"><a href="top-level-elements.html#cb4-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dataset</span><span class="ot"> id=</span><span class="st">&quot;FLS-1&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="ot"> scope</span> <span class="ot">=</span> <span class="st">&quot;system&quot;</span>&gt;</span>
-<span id="cb4-2"><a href="top-level-elements.html#cb4-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">alternateIdentifier</span>&gt;FLS-1&lt;/<span class="kw">alternateIdentifier</span>&gt;</span>
-<span id="cb4-3"><a href="top-level-elements.html#cb4-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">shortName</span>&gt;Arthropods&lt;/<span class="kw">shortName</span>&gt;</span>
-<span id="cb4-4"><a href="top-level-elements.html#cb4-4" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">title</span>&gt;Long-term Ground Arthropod Monitoring Dataset at Ficity, USA</span>
-<span id="cb4-5"><a href="top-level-elements.html#cb4-5" aria-hidden="true" tabindex="-1"></a>      from 1998 to 2003&lt;/<span class="kw">title</span>&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb4-1"><a href="top-level-elements.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;dataset</span><span class="ot"> id=</span><span class="st">&quot;FLS-1&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="ot"> scope</span> <span class="ot">=</span> <span class="st">&quot;system&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-2"><a href="top-level-elements.html#cb4-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;alternateIdentifier&gt;</span>FLS-1<span class="kw">&lt;/alternateIdentifier&gt;</span></span>
+<span id="cb4-3"><a href="top-level-elements.html#cb4-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;shortName&gt;</span>Arthropods<span class="kw">&lt;/shortName&gt;</span></span>
+<span id="cb4-4"><a href="top-level-elements.html#cb4-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;title&gt;</span>Long-term Ground Arthropod Monitoring Dataset at Ficity, USA</span>
+<span id="cb4-5"><a href="top-level-elements.html#cb4-5" aria-hidden="true" tabindex="-1"></a>      from 1998 to 2003<span class="kw">&lt;/title&gt;</span></span></code></pre></div>
 </div>
 </div>
-<div id="additionalMetadata" class="section level3">
-<h3>additionalMetadata</h3>
+<div id="additionalMetadata" class="section level3 hasAnchor">
+<h3>additionalMetadata<a href="top-level-elements.html#additionalMetadata" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This element tree is found at (XPath):<br />
 <strong>eml:eml/additionalMetadata</strong></p>
 <p>&lt;<strong>additionalMetadata</strong>&gt; is a flexible field for including any other
@@ -455,16 +454,16 @@ description of a &lt;<strong>customUnit</strong>&gt; in the id attribute of a
 <code>"siemensPerMeter"</code>. The EML Parser is available from GitHub, with the EML
 project. For descriptions of custom units see “Other Resources.”</p>
 <p>Example 25: additionalMetadata custom unit</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb5-1"><a href="top-level-elements.html#cb5-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">additionalMetadata</span>&gt;</span>
-<span id="cb5-2"><a href="top-level-elements.html#cb5-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">metadata</span>&gt;</span>
-<span id="cb5-3"><a href="top-level-elements.html#cb5-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">stmml:unitList</span>&gt;</span>
-<span id="cb5-4"><a href="top-level-elements.html#cb5-4" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">stmml:unit</span><span class="ot"> id=</span><span class="st">&quot;siemensPerMeter&quot;</span><span class="ot"> name=</span><span class="st">&quot;siemensPerMeter&quot;</span><span class="ot"> abbreviation=</span><span class="st">&quot;S/m&quot;</span> </span>
-<span id="cb5-5"><a href="top-level-elements.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ot">         unitType=</span><span class="st">&quot;conductance&quot;</span><span class="ot"> parentSI=</span><span class="st">&quot;siemen&quot;</span><span class="ot"> multiplierToSI=</span><span class="st">&quot;1&quot;</span><span class="ot"> constantToSI=</span><span class="st">&quot;0&quot;</span>&gt;</span>
-<span id="cb5-6"><a href="top-level-elements.html#cb5-6" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">stmml:description</span>&gt;conductivity unit&lt;/<span class="kw">stmml:description</span>&gt;</span>
-<span id="cb5-7"><a href="top-level-elements.html#cb5-7" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">stmml:unit</span>&gt;</span>
-<span id="cb5-8"><a href="top-level-elements.html#cb5-8" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">stmml:unitList</span>&gt;</span>
-<span id="cb5-9"><a href="top-level-elements.html#cb5-9" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">metadata</span>&gt;</span>
-<span id="cb5-10"><a href="top-level-elements.html#cb5-10" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">additionalMetadata</span>&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb5-1"><a href="top-level-elements.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;additionalMetadata&gt;</span></span>
+<span id="cb5-2"><a href="top-level-elements.html#cb5-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;metadata&gt;</span></span>
+<span id="cb5-3"><a href="top-level-elements.html#cb5-3" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;stmml:unitList&gt;</span></span>
+<span id="cb5-4"><a href="top-level-elements.html#cb5-4" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;stmml:unit</span><span class="ot"> id=</span><span class="st">&quot;siemensPerMeter&quot;</span><span class="ot"> name=</span><span class="st">&quot;siemensPerMeter&quot;</span><span class="ot"> abbreviation=</span><span class="st">&quot;S/m&quot;</span> </span>
+<span id="cb5-5"><a href="top-level-elements.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ot">         unitType=</span><span class="st">&quot;conductance&quot;</span><span class="ot"> parentSI=</span><span class="st">&quot;siemen&quot;</span><span class="ot"> multiplierToSI=</span><span class="st">&quot;1&quot;</span><span class="ot"> constantToSI=</span><span class="st">&quot;0&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb5-6"><a href="top-level-elements.html#cb5-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;stmml:description&gt;</span>conductivity unit<span class="kw">&lt;/stmml:description&gt;</span></span>
+<span id="cb5-7"><a href="top-level-elements.html#cb5-7" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/stmml:unit&gt;</span></span>
+<span id="cb5-8"><a href="top-level-elements.html#cb5-8" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/stmml:unitList&gt;</span></span>
+<span id="cb5-9"><a href="top-level-elements.html#cb5-9" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/metadata&gt;</span></span>
+<span id="cb5-10"><a href="top-level-elements.html#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/additionalMetadata&gt;</span></span></code></pre></div>
 </div>
 </div>
             </section>

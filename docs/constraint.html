@@ -7,11 +7,10 @@
   <title>constraint | Data Package Best Practices</title>
   <meta name="description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="constraint | Data Package Best Practices" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
@@ -27,7 +26,7 @@ Ecological Metadata Language (EML).</p>" />
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2022-03-04" />
+<meta name="date" content="2022-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -36,7 +35,6 @@ Ecological Metadata Language (EML).</p>" />
   
 <link rel="prev" href="attributelist.html"/>
 <link rel="next" href="data-package-design-for-special-cases.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,8 +52,9 @@ Ecological Metadata Language (EML).</p>" />
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -160,7 +159,7 @@ div.csl-indent {
 
 <ul class="summary">
 <li><a href="./">EDI Data Package Best Practices</a></li>
-<li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+<li style="margin-left:10px;"><a href="https://edirepository.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
@@ -315,8 +314,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="constraint" class="section level2 unnumbered">
-<h2>constraint</h2>
+<div id="constraint" class="section level2 unnumbered hasAnchor">
+<h2>constraint<a href="constraint.html#constraint" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This element tree is found at (XPath):<br />
 <strong>/eml:eml/dataset/dataTable/constraint</strong><br />
 <strong>/eml:eml/dataset/view/constraint</strong><br />
@@ -357,23 +356,23 @@ this constraint applies, referenced by its id attribute (described in
 another area). All &lt;<strong>ConstraintType</strong>&gt; entities require additional
 &lt;<strong>constraintName</strong>&gt; and &lt;<strong>attributeReference</strong>&gt; tags.</p>
 <p>Example 24: constraint</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb28-1"><a href="constraint.html#cb28-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">constraint</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.PRIMARY&quot;</span>&gt;</span>
-<span id="cb28-2"><a href="constraint.html#cb28-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">primaryKey</span>&gt;</span>
-<span id="cb28-3"><a href="constraint.html#cb28-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">constraintName</span>&gt;PRIMARY&lt;/<span class="kw">constraintName</span>&gt;</span>
-<span id="cb28-4"><a href="constraint.html#cb28-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">key</span>&gt;</span>
-<span id="cb28-5"><a href="constraint.html#cb28-5" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeReference</span>&gt;soil_chemistry.ID&lt;/<span class="kw">attributeReference</span>&gt;</span>
-<span id="cb28-6"><a href="constraint.html#cb28-6" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">key</span>&gt;</span>
-<span id="cb28-7"><a href="constraint.html#cb28-7" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">primaryKey</span>&gt;</span>
-<span id="cb28-8"><a href="constraint.html#cb28-8" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">constraint</span>&gt;</span>
-<span id="cb28-9"><a href="constraint.html#cb28-9" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">constraint</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.FK_soil_chemistry_sites&quot;</span>&gt;</span>
-<span id="cb28-10"><a href="constraint.html#cb28-10" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">foreignKey</span>&gt;</span>
-<span id="cb28-11"><a href="constraint.html#cb28-11" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">constraintName</span>&gt;FK_soil_chemistry_sites&lt;/<span class="kw">constraintName</span>&gt;</span>
-<span id="cb28-12"><a href="constraint.html#cb28-12" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">key</span>&gt;</span>
-<span id="cb28-13"><a href="constraint.html#cb28-13" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeReference</span>&gt;soil_chemistry.site_id&lt;/<span class="kw">attributeReference</span>&gt;</span>
-<span id="cb28-14"><a href="constraint.html#cb28-14" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">key</span>&gt;</span>
-<span id="cb28-15"><a href="constraint.html#cb28-15" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">entityReference</span>&gt;sites&lt;/<span class="kw">entityReference</span>&gt;</span>
-<span id="cb28-16"><a href="constraint.html#cb28-16" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">foreignKey</span>&gt;</span>
-<span id="cb28-17"><a href="constraint.html#cb28-17" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">constraint</span>&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb28-1"><a href="constraint.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;constraint</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.PRIMARY&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb28-2"><a href="constraint.html#cb28-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;primaryKey&gt;</span></span>
+<span id="cb28-3"><a href="constraint.html#cb28-3" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;constraintName&gt;</span>PRIMARY<span class="kw">&lt;/constraintName&gt;</span></span>
+<span id="cb28-4"><a href="constraint.html#cb28-4" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;key&gt;</span></span>
+<span id="cb28-5"><a href="constraint.html#cb28-5" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;attributeReference&gt;</span>soil_chemistry.ID<span class="kw">&lt;/attributeReference&gt;</span></span>
+<span id="cb28-6"><a href="constraint.html#cb28-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/key&gt;</span></span>
+<span id="cb28-7"><a href="constraint.html#cb28-7" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/primaryKey&gt;</span></span>
+<span id="cb28-8"><a href="constraint.html#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/constraint&gt;</span></span>
+<span id="cb28-9"><a href="constraint.html#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;constraint</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.FK_soil_chemistry_sites&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb28-10"><a href="constraint.html#cb28-10" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;foreignKey&gt;</span></span>
+<span id="cb28-11"><a href="constraint.html#cb28-11" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;constraintName&gt;</span>FK_soil_chemistry_sites<span class="kw">&lt;/constraintName&gt;</span></span>
+<span id="cb28-12"><a href="constraint.html#cb28-12" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;key&gt;</span></span>
+<span id="cb28-13"><a href="constraint.html#cb28-13" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;attributeReference&gt;</span>soil_chemistry.site_id<span class="kw">&lt;/attributeReference&gt;</span></span>
+<span id="cb28-14"><a href="constraint.html#cb28-14" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/key&gt;</span></span>
+<span id="cb28-15"><a href="constraint.html#cb28-15" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;entityReference&gt;</span>sites<span class="kw">&lt;/entityReference&gt;</span></span>
+<span id="cb28-16"><a href="constraint.html#cb28-16" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/foreignKey&gt;</span></span>
+<span id="cb28-17"><a href="constraint.html#cb28-17" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/constraint&gt;</span></span></code></pre></div>
 
 </div>
 <!-- </div> -->

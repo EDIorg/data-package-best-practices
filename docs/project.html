@@ -7,11 +7,10 @@
   <title>project | Data Package Best Practices</title>
   <meta name="description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="project | Data Package Best Practices" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
@@ -27,7 +26,7 @@ Ecological Metadata Language (EML).</p>" />
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2022-03-04" />
+<meta name="date" content="2022-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -36,7 +35,6 @@ Ecological Metadata Language (EML).</p>" />
   
 <link rel="prev" href="methods.html"/>
 <link rel="next" href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,8 +52,9 @@ Ecological Metadata Language (EML).</p>" />
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -160,7 +159,7 @@ div.csl-indent {
 
 <ul class="summary">
 <li><a href="./">EDI Data Package Best Practices</a></li>
-<li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+<li style="margin-left:10px;"><a href="https://edirepository.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
@@ -315,8 +314,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="project" class="section level2 unnumbered">
-<h2>project</h2>
+<div id="project" class="section level2 unnumbered hasAnchor">
+<h2>project<a href="project.html#project" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This element is found at this location (XPath):<br />
 <strong>/eml:eml/dataset/project</strong></p>
 <p><strong>General information</strong>: EML is one of the few specifications
@@ -348,48 +347,48 @@ be referenced by the
 <strong>studyExtent/spatialSamplingUnits/referencedEntityId</strong>. The sibling
 &lt;<strong>descriptor</strong>&gt; tag can be used for text descriptions of the site.</p>
 <p>Example 19: project</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb23-1"><a href="project.html#cb23-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">project</span>&gt;</span>
-<span id="cb23-2"><a href="project.html#cb23-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">title</span>&gt;FSL basic monitoring program&lt;/<span class="kw">title</span>&gt;</span>
-<span id="cb23-3"><a href="project.html#cb23-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">personnel</span><span class="ot"> id=</span><span class="st">&quot;pers-30&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span>&gt;</span>
-<span id="cb23-4"><a href="project.html#cb23-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">individualName</span>&gt;</span>
-<span id="cb23-5"><a href="project.html#cb23-5" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">salutation</span>&gt;Dr.&lt;/<span class="kw">salutation</span>&gt;</span>
-<span id="cb23-6"><a href="project.html#cb23-6" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">givenName</span>&gt;Eva&lt;/<span class="kw">givenName</span>&gt;</span>
-<span id="cb23-7"><a href="project.html#cb23-7" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">givenName</span>&gt;M.&lt;/<span class="kw">givenName</span>&gt;</span>
-<span id="cb23-8"><a href="project.html#cb23-8" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">surName</span>&gt;Scientist&lt;/<span class="kw">surName</span>&gt;</span>
-<span id="cb23-9"><a href="project.html#cb23-9" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">individualName</span>&gt;</span>
-<span id="cb23-10"><a href="project.html#cb23-10" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">address</span>&gt;</span>
-<span id="cb23-11"><a href="project.html#cb23-11" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">deliveryPoint</span>&gt;Department of Ecology&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb23-12"><a href="project.html#cb23-12" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">deliveryPoint</span>&gt;Fictitious State University&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb23-13"><a href="project.html#cb23-13" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">deliveryPoint</span>&gt;PO Box 111111&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb23-14"><a href="project.html#cb23-14" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">city</span>&gt;Ficity&lt;/<span class="kw">city</span>&gt;</span>
-<span id="cb23-15"><a href="project.html#cb23-15" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">administrativeArea</span>&gt;FI&lt;/<span class="kw">administrativeArea</span>&gt;</span>
-<span id="cb23-16"><a href="project.html#cb23-16" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">postalCode</span>&gt;11111-1111&lt;/<span class="kw">postalCode</span>&gt;</span>
-<span id="cb23-17"><a href="project.html#cb23-17" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">address</span>&gt;</span>
-<span id="cb23-18"><a href="project.html#cb23-18" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">role</span>&gt;principalInvestigator&lt;/<span class="kw">role</span>&gt;</span>
-<span id="cb23-19"><a href="project.html#cb23-19" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">personnel</span>&gt;</span>
-<span id="cb23-20"><a href="project.html#cb23-20" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">personnel</span><span class="ot"> id=</span><span class="st">&quot;pers-130&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span>&gt;</span>
-<span id="cb23-21"><a href="project.html#cb23-21" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">individualName</span>&gt;</span>
-<span id="cb23-22"><a href="project.html#cb23-22" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">givenName</span>&gt;Monica&lt;/<span class="kw">givenName</span>&gt;</span>
-<span id="cb23-23"><a href="project.html#cb23-23" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">givenName</span>&gt;D.&lt;/<span class="kw">givenName</span>&gt;</span>
-<span id="cb23-24"><a href="project.html#cb23-24" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">surName</span>&gt;Techy&lt;/<span class="kw">surName</span>&gt;</span>
-<span id="cb23-25"><a href="project.html#cb23-25" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">individualName</span>&gt;</span>
-<span id="cb23-26"><a href="project.html#cb23-26" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">address</span>&gt;</span>
-<span id="cb23-27"><a href="project.html#cb23-27" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">deliveryPoint</span>&gt;Department for Ecology&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb23-28"><a href="project.html#cb23-28" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">deliveryPoint</span>&gt;Fictitious State University&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb23-29"><a href="project.html#cb23-29" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">deliveryPoint</span>&gt;PO Box 111111&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb23-30"><a href="project.html#cb23-30" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">city</span>&gt;Ficity&lt;/<span class="kw">city</span>&gt;</span>
-<span id="cb23-31"><a href="project.html#cb23-31" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">administrativeArea</span>&gt;FI&lt;/<span class="kw">administrativeArea</span>&gt;</span>
-<span id="cb23-32"><a href="project.html#cb23-32" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">postalCode</span>&gt;11111-1111&lt;/<span class="kw">postalCode</span>&gt;</span>
-<span id="cb23-33"><a href="project.html#cb23-33" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">address</span>&gt;</span>
-<span id="cb23-34"><a href="project.html#cb23-34" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">role</span>&gt;principalInvestigator&lt;/<span class="kw">role</span>&gt;</span>
-<span id="cb23-35"><a href="project.html#cb23-35" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">personnel</span>&gt;</span>
-<span id="cb23-36"><a href="project.html#cb23-36" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">abstract</span>&gt;</span>
-<span id="cb23-37"><a href="project.html#cb23-37" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">para</span>&gt;The FLS basic monitoring program consists of monitoring of</span>
+<div class="sourceCode" id="cb23"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb23-1"><a href="project.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;project&gt;</span></span>
+<span id="cb23-2"><a href="project.html#cb23-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;title&gt;</span>FSL basic monitoring program<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb23-3"><a href="project.html#cb23-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;personnel</span><span class="ot"> id=</span><span class="st">&quot;pers-30&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb23-4"><a href="project.html#cb23-4" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;individualName&gt;</span></span>
+<span id="cb23-5"><a href="project.html#cb23-5" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;salutation&gt;</span>Dr.<span class="kw">&lt;/salutation&gt;</span></span>
+<span id="cb23-6"><a href="project.html#cb23-6" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;givenName&gt;</span>Eva<span class="kw">&lt;/givenName&gt;</span></span>
+<span id="cb23-7"><a href="project.html#cb23-7" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;givenName&gt;</span>M.<span class="kw">&lt;/givenName&gt;</span></span>
+<span id="cb23-8"><a href="project.html#cb23-8" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;surName&gt;</span>Scientist<span class="kw">&lt;/surName&gt;</span></span>
+<span id="cb23-9"><a href="project.html#cb23-9" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/individualName&gt;</span></span>
+<span id="cb23-10"><a href="project.html#cb23-10" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;address&gt;</span></span>
+<span id="cb23-11"><a href="project.html#cb23-11" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;deliveryPoint&gt;</span>Department of Ecology<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb23-12"><a href="project.html#cb23-12" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;deliveryPoint&gt;</span>Fictitious State University<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb23-13"><a href="project.html#cb23-13" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;deliveryPoint&gt;</span>PO Box 111111<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb23-14"><a href="project.html#cb23-14" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;city&gt;</span>Ficity<span class="kw">&lt;/city&gt;</span></span>
+<span id="cb23-15"><a href="project.html#cb23-15" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;administrativeArea&gt;</span>FI<span class="kw">&lt;/administrativeArea&gt;</span></span>
+<span id="cb23-16"><a href="project.html#cb23-16" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;postalCode&gt;</span>11111-1111<span class="kw">&lt;/postalCode&gt;</span></span>
+<span id="cb23-17"><a href="project.html#cb23-17" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/address&gt;</span></span>
+<span id="cb23-18"><a href="project.html#cb23-18" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;role&gt;</span>principalInvestigator<span class="kw">&lt;/role&gt;</span></span>
+<span id="cb23-19"><a href="project.html#cb23-19" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/personnel&gt;</span></span>
+<span id="cb23-20"><a href="project.html#cb23-20" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;personnel</span><span class="ot"> id=</span><span class="st">&quot;pers-130&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb23-21"><a href="project.html#cb23-21" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;individualName&gt;</span></span>
+<span id="cb23-22"><a href="project.html#cb23-22" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;givenName&gt;</span>Monica<span class="kw">&lt;/givenName&gt;</span></span>
+<span id="cb23-23"><a href="project.html#cb23-23" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;givenName&gt;</span>D.<span class="kw">&lt;/givenName&gt;</span></span>
+<span id="cb23-24"><a href="project.html#cb23-24" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;surName&gt;</span>Techy<span class="kw">&lt;/surName&gt;</span></span>
+<span id="cb23-25"><a href="project.html#cb23-25" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/individualName&gt;</span></span>
+<span id="cb23-26"><a href="project.html#cb23-26" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;address&gt;</span></span>
+<span id="cb23-27"><a href="project.html#cb23-27" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;deliveryPoint&gt;</span>Department for Ecology<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb23-28"><a href="project.html#cb23-28" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;deliveryPoint&gt;</span>Fictitious State University<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb23-29"><a href="project.html#cb23-29" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;deliveryPoint&gt;</span>PO Box 111111<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb23-30"><a href="project.html#cb23-30" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;city&gt;</span>Ficity<span class="kw">&lt;/city&gt;</span></span>
+<span id="cb23-31"><a href="project.html#cb23-31" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;administrativeArea&gt;</span>FI<span class="kw">&lt;/administrativeArea&gt;</span></span>
+<span id="cb23-32"><a href="project.html#cb23-32" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;postalCode&gt;</span>11111-1111<span class="kw">&lt;/postalCode&gt;</span></span>
+<span id="cb23-33"><a href="project.html#cb23-33" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/address&gt;</span></span>
+<span id="cb23-34"><a href="project.html#cb23-34" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;role&gt;</span>principalInvestigator<span class="kw">&lt;/role&gt;</span></span>
+<span id="cb23-35"><a href="project.html#cb23-35" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/personnel&gt;</span></span>
+<span id="cb23-36"><a href="project.html#cb23-36" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;abstract&gt;</span></span>
+<span id="cb23-37"><a href="project.html#cb23-37" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;para&gt;</span>The FLS basic monitoring program consists of monitoring of</span>
 <span id="cb23-38"><a href="project.html#cb23-38" aria-hidden="true" tabindex="-1"></a>         arthropod populations, plant net primary productivity, and bird</span>
 <span id="cb23-39"><a href="project.html#cb23-39" aria-hidden="true" tabindex="-1"></a>         populations. Monitoring takes place at 3 locations, 4 times a year.</span>
-<span id="cb23-40"><a href="project.html#cb23-40" aria-hidden="true" tabindex="-1"></a>         Climate parameters a continuously measured at all stations.&lt;/<span class="kw">para</span>&gt;</span>
-<span id="cb23-41"><a href="project.html#cb23-41" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">abstract</span>&gt;</span>
-<span id="cb23-42"><a href="project.html#cb23-42" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">project</span>&gt;</span></code></pre></div>
+<span id="cb23-40"><a href="project.html#cb23-40" aria-hidden="true" tabindex="-1"></a>         Climate parameters a continuously measured at all stations.<span class="kw">&lt;/para&gt;</span></span>
+<span id="cb23-41"><a href="project.html#cb23-41" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/abstract&gt;</span></span>
+<span id="cb23-42"><a href="project.html#cb23-42" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/project&gt;</span></span></code></pre></div>
 </div>
             </section>
 

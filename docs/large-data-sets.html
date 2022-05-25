@@ -7,11 +7,10 @@
   <title>Large Data Sets | Data Package Best Practices</title>
   <meta name="description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Large Data Sets | Data Package Best Practices" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
@@ -27,7 +26,7 @@ Ecological Metadata Language (EML).</p>" />
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2022-03-04" />
+<meta name="date" content="2022-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -36,7 +35,6 @@ Ecological Metadata Language (EML).</p>" />
   
 <link rel="prev" href="data-in-other-repositories.html"/>
 <link rel="next" href="scientific-domain.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,8 +52,9 @@ Ecological Metadata Language (EML).</p>" />
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -160,7 +159,7 @@ div.csl-indent {
 
 <ul class="summary">
 <li><a href="./">EDI Data Package Best Practices</a></li>
-<li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+<li style="margin-left:10px;"><a href="https://edirepository.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
@@ -315,21 +314,21 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="large-data-sets" class="section level2">
-<h2>Large Data Sets</h2>
+<div id="large-data-sets" class="section level2 hasAnchor">
+<h2>Large Data Sets<a href="large-data-sets.html#large-data-sets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Contributors: Margaret O’Brien, Corinna Gries, Mark Servilla</p>
-<div id="introduction-7" class="section level3">
-<h3>Introduction</h3>
-<p>Data entities are kept offline when they are too large to be handled easily by the HTTP protocol, are expected to be rarely requested, and can be mailed on an external drive. If you suspect your data fall into this category, contact EDI for advice (<a href="mailto:support@environmentaldatainitiative.org" class="email">support@environmentaldatainitiative.org</a>). Below are recommendations for the EDI repository’s handling of data packages that have an offline component.</p>
-<div id="background" class="section level4">
-<h4>Background</h4>
+<div id="introduction-7" class="section level3 hasAnchor">
+<h3>Introduction<a href="large-data-sets.html#introduction-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Data entities are kept offline when they are too large to be handled easily by the HTTP protocol, are expected to be rarely requested, and can be mailed on an external drive. If you suspect your data fall into this category, contact EDI for advice (<a href="mailto:support@edirepository.org" class="email">support@edirepository.org</a>). Below are recommendations for the EDI repository’s handling of data packages that have an offline component.</p>
+<div id="background" class="section level4 hasAnchor">
+<h4>Background<a href="large-data-sets.html#background" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Standard practice is to handle data entities (both upload and download) via the HTTP protocol, using a URL. However, for very large datasets HTTP can fail due to physical limits. The limit for “too large” is somewhat subjective; EDI’s current limit for datasets that are “too large for HTTP” is 100GB (all data and metadata).</p>
 </div>
 </div>
-<div id="recommendations-for-data-packages-6" class="section level3">
-<h3>Recommendations for data packages</h3>
-<div id="physical-storage" class="section level4">
-<h4>Physical Storage</h4>
+<div id="recommendations-for-data-packages-6" class="section level3 hasAnchor">
+<h3>Recommendations for data packages<a href="large-data-sets.html#recommendations-for-data-packages-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="physical-storage" class="section level4 hasAnchor">
+<h4>Physical Storage<a href="large-data-sets.html#physical-storage" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><p>The use of a Solid-state Drive (SSD) is strongly recommended for all offline data storage. The SSD should be formatted using one of the following file systems: 1) exFAT, 2) NTFS, or 3) ext4. Each of these file systems can accommodate individual file sizes greater than 1TB.</p></li>
 <li><p>Add data to external drive in native (non-compressed, non-tarred, non-zipped) format, deliver to EDI (e.g., by physical mail).</p></li>
@@ -346,16 +345,16 @@ Center for Limnology
 680 North Park Street
 Madison WI 53706-1413</p>
 </div>
-<div id="access-1" class="section level4">
-<h4>Access</h4>
-<p>To receive offline data, send a request to <a href="mailto:support@environmentaldatainitiative.org" class="email">support@environmentaldatainitiative.org</a> listing the data package(s) of interest and we’ll determine the best mode of delivery. If technically feasible, we will stage data on an internet accessible host and will send you a URL when the data are ready for download. Otherwise, data will be sent on physical media. To receive data on physical media, you will be required to send a storage device of adequate volume to:</p>
+<div id="access-1" class="section level4 hasAnchor">
+<h4>Access<a href="large-data-sets.html#access-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To receive offline data, send a request to <a href="mailto:support@edirepository.org" class="email">support@edirepository.org</a> listing the data package(s) of interest and we’ll determine the best mode of delivery. If technically feasible, we will stage data on an internet accessible host and will send you a URL when the data are ready for download. Otherwise, data will be sent on physical media. To receive data on physical media, you will be required to send a storage device of adequate volume to:</p>
 <p>Attn: Mark Servilla
 UNM Biology, Castetter Hall 1480 MSC03-2020
 219 Yale Blvd NE Albuquerque, NM 87131-0001</p>
 <p>We will utilize a delivery service of your choice, however, you will be responsible for all shipping arrangements and fees, including pre-arranging return delivery.</p>
 </div>
-<div id="data-package" class="section level4">
-<h4>Data package</h4>
+<div id="data-package" class="section level4 hasAnchor">
+<h4>Data package<a href="large-data-sets.html#data-package" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>The external hard drive should contain at least two entities: the data (which will be offline) and an inventory or manifest that describe the contents of the external hard drive.</li>
 <li>Content of the manifest (inventory of holdings) would be dictated by the type of data entity. The <strong>manifest will be available as an online entity</strong> (through the EDI Data Portal) so that potential requestors can evaluate the offline resource before requesting it.</li>
@@ -372,18 +371,18 @@ UNM Biology, Castetter Hall 1480 MSC03-2020
 </ul></li>
 </ul>
 </div>
-<div id="package-metadata" class="section level4">
-<h4>Package Metadata</h4>
+<div id="package-metadata" class="section level4 hasAnchor">
+<h4>Package Metadata<a href="large-data-sets.html#package-metadata" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>(in EDI metadata template and converted to EML - generally, as for any data package)</p>
 <ul>
 <li>Abstract: describe the collection generally. If individual files require specific software to read, provide the name of that software.</li>
 <li>Creators</li>
 <li>Contact - The first listed contact is responsible for sending out copies as requested and is typically the EDI repository manager:</li>
 </ul>
-<div class="sourceCode" id="cb39"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb39-1"><a href="large-data-sets.html#cb39-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">contact</span>&gt;</span>
-<span id="cb39-2"><a href="large-data-sets.html#cb39-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">organizationName</span>&gt;Environmental Data Initiative&lt;/<span class="kw">organizationName</span>&gt;</span>
-<span id="cb39-3"><a href="large-data-sets.html#cb39-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">electronicMailAddress</span>&gt;support@environmentaldatainitiative.org&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
-<span id="cb39-4"><a href="large-data-sets.html#cb39-4" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">contact</span>&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb39-1"><a href="large-data-sets.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;contact&gt;</span></span>
+<span id="cb39-2"><a href="large-data-sets.html#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;organizationName&gt;</span>Environmental Data Initiative<span class="kw">&lt;/organizationName&gt;</span></span>
+<span id="cb39-3"><a href="large-data-sets.html#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;electronicMailAddress&gt;</span>support@edirepository.org<span class="kw">&lt;/electronicMailAddress&gt;</span></span>
+<span id="cb39-4"><a href="large-data-sets.html#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/contact&gt;</span></span></code></pre></div>
 <ul>
 <li>Methods - detailed collection/generation methods for the offline data entities. Detailed information for re-using the data. (May instead be included in the manifest table if different for different offline files.)</li>
 <li>Data Entities
@@ -399,8 +398,8 @@ UNM Biology, Castetter Hall 1480 MSC03-2020
 </ul></li>
 </ul>
 </div>
-<div id="eml" class="section level4">
-<h4>EML</h4>
+<div id="eml" class="section level4 hasAnchor">
+<h4>EML<a href="large-data-sets.html#eml" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In addition to basic resource-level metadata, at least two entities should be described:</p>
 <ul>
 <li>Manifest (inventory) should be a tableEntity: will be the online entity and described as all</li>
@@ -410,8 +409,8 @@ UNM Biology, Castetter Hall 1480 MSC03-2020
 <li>Distribution node will be <code>offline</code> (See Table 1, code block)</li>
 </ul></li>
 </ul>
-<div id="table_1" class="section level5">
-<h5>Table 1. Three required fields for an offline distribution</h5>
+<div id="table_1" class="section level5 hasAnchor">
+<h5>Table 1. Three required fields for an offline distribution<a href="large-data-sets.html#table_1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <table>
 <tr>
 <td>
@@ -439,35 +438,35 @@ Instead of a data URL, you will have an offline distribution node. The name of a
 </tr>
 </table>
 </div>
-<div id="sample_xml_offline" class="section level5">
-<h5>Sample XML, offline entity</h5>
+<div id="sample_xml_offline" class="section level5 hasAnchor">
+<h5>Sample XML, offline entity<a href="large-data-sets.html#sample_xml_offline" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <div class="sourceCode" id="cb40"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb40-1"><a href="large-data-sets.html#cb40-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-2"><a href="large-data-sets.html#cb40-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">physical</span>&gt;</span>
-<span id="cb40-3"><a href="large-data-sets.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">objectName</span>&gt;mainl_2005acc.zip&lt;/<span class="kw">objectName</span>&gt;</span>
-<span id="cb40-4"><a href="large-data-sets.html#cb40-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb40-5"><a href="large-data-sets.html#cb40-5" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">externallyDefinedFormat</span>&gt;</span>
-<span id="cb40-6"><a href="large-data-sets.html#cb40-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">formatName</span>&gt;netCDF file&lt;/<span class="kw">formatName</span>&gt;</span>
-<span id="cb40-7"><a href="large-data-sets.html#cb40-7" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">externallyDefinedFormat</span>&gt;</span>
-<span id="cb40-8"><a href="large-data-sets.html#cb40-8" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb40-9"><a href="large-data-sets.html#cb40-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">distribution</span>&gt;</span>
-<span id="cb40-10"><a href="large-data-sets.html#cb40-10" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">offline</span>&gt;</span>
-<span id="cb40-11"><a href="large-data-sets.html#cb40-11" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">mediumName</span>&gt;External drive&lt;/<span class="kw">mediumName</span>&gt;</span>
-<span id="cb40-12"><a href="large-data-sets.html#cb40-12" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">offline</span>&gt;</span>
-<span id="cb40-13"><a href="large-data-sets.html#cb40-13" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">distribution</span>&gt;</span>
-<span id="cb40-14"><a href="large-data-sets.html#cb40-14" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">physical</span>&gt;</span></code></pre></div>
+<span id="cb40-2"><a href="large-data-sets.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;physical&gt;</span></span>
+<span id="cb40-3"><a href="large-data-sets.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;objectName&gt;</span>mainl_2005acc.zip<span class="kw">&lt;/objectName&gt;</span></span>
+<span id="cb40-4"><a href="large-data-sets.html#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;dataFormat&gt;</span></span>
+<span id="cb40-5"><a href="large-data-sets.html#cb40-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;externallyDefinedFormat&gt;</span></span>
+<span id="cb40-6"><a href="large-data-sets.html#cb40-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;formatName&gt;</span>netCDF file<span class="kw">&lt;/formatName&gt;</span></span>
+<span id="cb40-7"><a href="large-data-sets.html#cb40-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/externallyDefinedFormat&gt;</span></span>
+<span id="cb40-8"><a href="large-data-sets.html#cb40-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/dataFormat&gt;</span></span>
+<span id="cb40-9"><a href="large-data-sets.html#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;distribution&gt;</span></span>
+<span id="cb40-10"><a href="large-data-sets.html#cb40-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;offline&gt;</span></span>
+<span id="cb40-11"><a href="large-data-sets.html#cb40-11" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;mediumName&gt;</span>External drive<span class="kw">&lt;/mediumName&gt;</span></span>
+<span id="cb40-12"><a href="large-data-sets.html#cb40-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/offline&gt;</span></span>
+<span id="cb40-13"><a href="large-data-sets.html#cb40-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/distribution&gt;</span></span>
+<span id="cb40-14"><a href="large-data-sets.html#cb40-14" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/physical&gt;</span></span></code></pre></div>
 </div>
 </div>
 </div>
-<div id="references-1" class="section level3">
-<h3>References</h3>
-<div id="eml-documentation" class="section level4">
-<h4>EML documentation</h4>
+<div id="references-1" class="section level3 hasAnchor">
+<h3>References<a href="large-data-sets.html#references-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="eml-documentation" class="section level4 hasAnchor">
+<h4>EML documentation<a href="large-data-sets.html#eml-documentation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><a href="https://eml.ecoinformatics.org/schema/index.html">https://eml.ecoinformatics.org/schema/index.html</a></p>
 <p>Look for the PhysicalDistributionType</p>
 </div>
 </div>
-<div id="potential-issues" class="section level3">
-<h3>Potential Issues</h3>
+<div id="potential-issues" class="section level3 hasAnchor">
+<h3>Potential Issues<a href="large-data-sets.html#potential-issues" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>SSD formatting (eventually, whatever we use, it will become unusable).</li>
 <li>Even with cloud storage, eventually a binary format will become unusable.</li>

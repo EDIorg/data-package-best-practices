@@ -7,11 +7,10 @@
   <title>maintenance | Data Package Best Practices</title>
   <meta name="description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="maintenance | Data Package Best Practices" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
@@ -27,7 +26,7 @@ Ecological Metadata Language (EML).</p>" />
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2022-03-04" />
+<meta name="date" content="2022-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -36,7 +35,6 @@ Ecological Metadata Language (EML).</p>" />
   
 <link rel="prev" href="coverage.html"/>
 <link rel="next" href="methods.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,8 +52,9 @@ Ecological Metadata Language (EML).</p>" />
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -160,7 +159,7 @@ div.csl-indent {
 
 <ul class="summary">
 <li><a href="./">EDI Data Package Best Practices</a></li>
-<li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+<li style="margin-left:10px;"><a href="https://edirepository.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
@@ -315,8 +314,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="maintenance" class="section level2 unnumbered">
-<h2>maintenance</h2>
+<div id="maintenance" class="section level2 unnumbered hasAnchor">
+<h2>maintenance<a href="maintenance.html#maintenance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This element is found at these locations (XPath):<br />
 <strong>eml:eml/dataset/maintenance</strong></p>
 <p>The dataset/maintenance/description element should be used to document
@@ -325,13 +324,13 @@ change history can also be used to describe alterations in static
 documents. The description element (TextType) can contain both formatted
 and unformatted text blocks.</p>
 <p>Example 16: maintenance</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb20-1"><a href="maintenance.html#cb20-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">maintenance</span>&gt;</span>
-<span id="cb20-2"><a href="maintenance.html#cb20-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">description</span>&gt;</span>
-<span id="cb20-3"><a href="maintenance.html#cb20-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">para</span>&gt;</span>
+<div class="sourceCode" id="cb20"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb20-1"><a href="maintenance.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;maintenance&gt;</span></span>
+<span id="cb20-2"><a href="maintenance.html#cb20-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;description&gt;</span></span>
+<span id="cb20-3"><a href="maintenance.html#cb20-3" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;para&gt;</span></span>
 <span id="cb20-4"><a href="maintenance.html#cb20-4" aria-hidden="true" tabindex="-1"></a>         Data are updated annually at the end of the calendar year.</span>
-<span id="cb20-5"><a href="maintenance.html#cb20-5" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">para</span>&gt;</span>
-<span id="cb20-6"><a href="maintenance.html#cb20-6" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">description</span>&gt;</span>
-<span id="cb20-7"><a href="maintenance.html#cb20-7" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">maintenance</span>&gt;</span></code></pre></div>
+<span id="cb20-5"><a href="maintenance.html#cb20-5" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/para&gt;</span></span>
+<span id="cb20-6"><a href="maintenance.html#cb20-6" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/description&gt;</span></span>
+<span id="cb20-7"><a href="maintenance.html#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/maintenance&gt;</span></span></code></pre></div>
 </div>
             </section>
 

@@ -7,11 +7,10 @@
   <title>title (dataset) | Data Package Best Practices</title>
   <meta name="description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="title (dataset) | Data Package Best Practices" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
@@ -27,7 +26,7 @@ Ecological Metadata Language (EML).</p>" />
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2022-03-04" />
+<meta name="date" content="2022-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -36,7 +35,6 @@ Ecological Metadata Language (EML).</p>" />
   
 <link rel="prev" href="top-level-elements.html"/>
 <link rel="next" href="people-and-organizations-parties.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,8 +52,9 @@ Ecological Metadata Language (EML).</p>" />
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -160,7 +159,7 @@ div.csl-indent {
 
 <ul class="summary">
 <li><a href="./">EDI Data Package Best Practices</a></li>
-<li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+<li style="margin-left:10px;"><a href="https://edirepository.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
@@ -315,8 +314,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="title-dataset-1" class="section level2 unnumbered">
-<h2>title (dataset)</h2>
+<div id="title-dataset-1" class="section level2 unnumbered hasAnchor">
+<h2>title (dataset)<a href="title-dataset-1.html#title-dataset-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The dataset title element is found at this location (XPath):<br />
 <strong>/eml:eml/ dataset/title</strong><br />
 <strong>/eml:eml/method/methodStep/protocol/title</strong><br />
@@ -325,11 +324,11 @@ div.csl-indent {
 data collected, geographic context, research site, and time frame (what,
 where, and when).</p>
 <p>Example 3: dataset, alternateIdentifier, shortName, title</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb6-1"><a href="title-dataset-1.html#cb6-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dataset</span><span class="ot"> id=</span><span class="st">&quot;FLS-1&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="ot"> scope</span> <span class="ot">=</span> <span class="st">&quot;system&quot;</span>&gt;</span>
-<span id="cb6-2"><a href="title-dataset-1.html#cb6-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">alternateIdentifier</span>&gt;FLS-1&lt;/<span class="kw">alternateIdentifier</span>&gt;</span>
-<span id="cb6-3"><a href="title-dataset-1.html#cb6-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">shortName</span>&gt;Arthropods&lt;/<span class="kw">shortName</span>&gt;</span>
-<span id="cb6-4"><a href="title-dataset-1.html#cb6-4" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">title</span>&gt;Long-term Ground Arthropod Monitoring Dataset at Ficity, USA</span>
-<span id="cb6-5"><a href="title-dataset-1.html#cb6-5" aria-hidden="true" tabindex="-1"></a>      from 1998 to 2003&lt;/<span class="kw">title</span>&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb6-1"><a href="title-dataset-1.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;dataset</span><span class="ot"> id=</span><span class="st">&quot;FLS-1&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="ot"> scope</span> <span class="ot">=</span> <span class="st">&quot;system&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb6-2"><a href="title-dataset-1.html#cb6-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;alternateIdentifier&gt;</span>FLS-1<span class="kw">&lt;/alternateIdentifier&gt;</span></span>
+<span id="cb6-3"><a href="title-dataset-1.html#cb6-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;shortName&gt;</span>Arthropods<span class="kw">&lt;/shortName&gt;</span></span>
+<span id="cb6-4"><a href="title-dataset-1.html#cb6-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;title&gt;</span>Long-term Ground Arthropod Monitoring Dataset at Ficity, USA</span>
+<span id="cb6-5"><a href="title-dataset-1.html#cb6-5" aria-hidden="true" tabindex="-1"></a>      from 1998 to 2003<span class="kw">&lt;/title&gt;</span></span></code></pre></div>
 </div>
             </section>
 

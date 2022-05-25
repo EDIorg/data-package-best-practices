@@ -7,11 +7,10 @@
   <title>Code | Data Package Best Practices</title>
   <meta name="description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Code | Data Package Best Practices" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
@@ -27,7 +26,7 @@ Ecological Metadata Language (EML).</p>" />
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2022-03-04" />
+<meta name="date" content="2022-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -36,7 +35,6 @@ Ecological Metadata Language (EML).</p>" />
   
 <link rel="prev" href="data-package-design-for-special-cases.html"/>
 <link rel="next" href="model-based-datasets.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,8 +52,9 @@ Ecological Metadata Language (EML).</p>" />
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -160,7 +159,7 @@ div.csl-indent {
 
 <ul class="summary">
 <li><a href="./">EDI Data Package Best Practices</a></li>
-<li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+<li style="margin-left:10px;"><a href="https://edirepository.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
@@ -315,19 +314,19 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="code" class="section level2">
-<h2>Code</h2>
+<div id="code" class="section level2 hasAnchor">
+<h2>Code<a href="code.html#code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Contributors: An T. Nguyen, Tim Whiteaker</p>
-<div id="introduction-1" class="section level3">
-<h3>Introduction</h3>
+<div id="introduction-1" class="section level3 hasAnchor">
+<h3>Introduction<a href="code.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This document describes best practices for archiving software, code, or scripts, such as a simulation model, data visualization package, or data manipulation scripts. The intention of these recommendations is to make research based on modeling or software more transparent rather than achieve exact reproducibility, i.e., provide sufficient documentation so that a knowledgeable person can understand algorithms, programming decisions, and their ramifications for the results, rather than run the model and obtain the same results.</p>
 <p>Examples of candidate archives for code include <a href="https://www.comses.net/">CoMSES Net</a>, which focuses on sharing models related to social and ecological sciences, and <a href="https://zenodo.org/">Zenodo</a>, a popular DOI-minting all-purpose repository, that can conveniently archive a specific version of <a href="https://guides.github.com/activities/citable-code/">code in a GitHub repository</a>. Alternatively, code may be archived in the EDI repository, either by itself or as part of a data package. The best practices in this document cover both archiving code in EDI and referencing code archived elsewhere.</p>
 <p>While metadata for software may be described in detail using the EML &lt;<strong>software</strong>&gt; tree, there exists a project called <a href="https://codemeta.github.io/index.html">CodeMeta</a> which is specifically designed for software metadata. Therefore, one of the key recommendations in this document is to include a CodeMeta file when archiving software or code in EDI.</p>
 </div>
-<div id="recommendations-for-data-packages" class="section level3">
-<h3>Recommendations for data packages</h3>
-<div id="considerations-for-archiving-software-or-code" class="section level4">
-<h4>Considerations for archiving software or code</h4>
+<div id="recommendations-for-data-packages" class="section level3 hasAnchor">
+<h3>Recommendations for data packages<a href="code.html#recommendations-for-data-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="considerations-for-archiving-software-or-code" class="section level4 hasAnchor">
+<h4>Considerations for archiving software or code<a href="code.html#considerations-for-archiving-software-or-code" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>If it is a model and/or a model-based dataset, please see the <a href="model-based-datasets.html">best practices for archiving model-based datasets</a>.</li>
 <li>How likely is it that the code will be well maintained into the future? For example, code packages submitted to established code repositories may stay there only while they comply with all testing requirements and may be removed if not well maintained (e.g., the R package repository CRAN). If that commitment to code maintenance is unlikely, such a package should be archived in a repository without maintenance requirements.</li>
@@ -342,32 +341,32 @@ div.csl-indent {
 <li>When choosing a repository for the code, consider the ease of the archiving process and how well the code can be described. For example, Zenodo offers an easy pathway to archive code that is currently in GitHub, though metadata requirements are very light. Following the best practices described herein, you would create a CodeMeta file if you were going to archive with EDI. This is more rigorous than Zenodo, but then your code is better described, and in a machine-readable way.</li>
 </ul>
 </div>
-<div id="documenting-softwarecode" class="section level4">
-<h4>Documenting software/code</h4>
+<div id="documenting-softwarecode" class="section level4 hasAnchor">
+<h4>Documenting software/code<a href="code.html#documenting-softwarecode" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When describing the code with EML, include the code as an otherEntity in a data package. Although a well documented human readable text format of the code is preferred, in case of multiple scripts, and/or where directory structure is important, a zip archive may be used. For the formatName and entityType elements in EML, we recommend using format names from the <a href="https://cn.dataone.org/cn/v2/formats">DataONE format list</a> when possible. Some format names are included in examples below. Always check the list for the most up-to-date version of these names.</p>
 <p>Example 1: EML otherEntity snippet for a script file.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb29-1"><a href="code.html#cb29-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">otherEntity</span>&gt;</span>
-<span id="cb29-2"><a href="code.html#cb29-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityName</span>&gt;R script to process CTD data&lt;/<span class="kw">entityName</span>&gt;</span>
-<span id="cb29-3"><a href="code.html#cb29-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityDescription</span>&gt;Annotated RMarkdown script to process, calibrate, and flag raw CTD data.&lt;/<span class="kw">entityDescription</span>&gt;</span>
-<span id="cb29-4"><a href="code.html#cb29-4" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
-<span id="cb29-5"><a href="code.html#cb29-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">objectName</span>&gt;BLE_LTER_CTD_QAQC.Rmd&lt;/<span class="kw">objectName</span>&gt;</span>
-<span id="cb29-6"><a href="code.html#cb29-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">size</span><span class="ot"> unit=</span><span class="st">&quot;byte&quot;</span>&gt;9674&lt;/<span class="kw">size</span>&gt;</span>
-<span id="cb29-7"><a href="code.html#cb29-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">authentication</span><span class="ot"> method=</span><span class="st">&quot;MD5&quot;</span>&gt;8547b7a63fcf6c1f0913a5bd7549d9d1&lt;/<span class="kw">authentication</span>&gt;</span>
-<span id="cb29-8"><a href="code.html#cb29-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb29-9"><a href="code.html#cb29-9" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">externallyDefinedFormat</span>&gt;</span>
-<span id="cb29-10"><a href="code.html#cb29-10" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">formatName</span>&gt;R Markdown file&lt;/<span class="kw">formatName</span>&gt;</span>
-<span id="cb29-11"><a href="code.html#cb29-11" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">externallyDefinedFormat</span>&gt;</span>
-<span id="cb29-12"><a href="code.html#cb29-12" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb29-13"><a href="code.html#cb29-13" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
-<span id="cb29-14"><a href="code.html#cb29-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityType</span>&gt;script&lt;/<span class="kw">entityType</span>&gt;</span>
-<span id="cb29-15"><a href="code.html#cb29-15" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">otherEntity</span>&gt;</span></code></pre></div>
-<div id="software-license" class="section level5">
-<h5>Software License</h5>
+<div class="sourceCode" id="cb29"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb29-1"><a href="code.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;otherEntity&gt;</span></span>
+<span id="cb29-2"><a href="code.html#cb29-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;entityName&gt;</span>R script to process CTD data<span class="kw">&lt;/entityName&gt;</span></span>
+<span id="cb29-3"><a href="code.html#cb29-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;entityDescription&gt;</span>Annotated RMarkdown script to process, calibrate, and flag raw CTD data.<span class="kw">&lt;/entityDescription&gt;</span></span>
+<span id="cb29-4"><a href="code.html#cb29-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;physical&gt;</span></span>
+<span id="cb29-5"><a href="code.html#cb29-5" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;objectName&gt;</span>BLE_LTER_CTD_QAQC.Rmd<span class="kw">&lt;/objectName&gt;</span></span>
+<span id="cb29-6"><a href="code.html#cb29-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;size</span><span class="ot"> unit=</span><span class="st">&quot;byte&quot;</span><span class="kw">&gt;</span>9674<span class="kw">&lt;/size&gt;</span></span>
+<span id="cb29-7"><a href="code.html#cb29-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;authentication</span><span class="ot"> method=</span><span class="st">&quot;MD5&quot;</span><span class="kw">&gt;</span>8547b7a63fcf6c1f0913a5bd7549d9d1<span class="kw">&lt;/authentication&gt;</span></span>
+<span id="cb29-8"><a href="code.html#cb29-8" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;dataFormat&gt;</span></span>
+<span id="cb29-9"><a href="code.html#cb29-9" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;externallyDefinedFormat&gt;</span></span>
+<span id="cb29-10"><a href="code.html#cb29-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;formatName&gt;</span>R Markdown file<span class="kw">&lt;/formatName&gt;</span></span>
+<span id="cb29-11"><a href="code.html#cb29-11" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/externallyDefinedFormat&gt;</span></span>
+<span id="cb29-12"><a href="code.html#cb29-12" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/dataFormat&gt;</span></span>
+<span id="cb29-13"><a href="code.html#cb29-13" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/physical&gt;</span></span>
+<span id="cb29-14"><a href="code.html#cb29-14" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;entityType&gt;</span>script<span class="kw">&lt;/entityType&gt;</span></span>
+<span id="cb29-15"><a href="code.html#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/otherEntity&gt;</span></span></code></pre></div>
+<div id="software-license" class="section level5 hasAnchor">
+<h5>Software License<a href="code.html#software-license" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>It is important to include a use license to make it clear how others can use your work. We recommend the <a href="https://creativecommons.org/share-your-work/public-domain/cc0/">Creative Commons “no copyright reserved” (CC0)</a> license, which places the software in the public domain and makes it easiest for end users to adapt and use your work. If a more restrictive license is required, we recommend the <a href="https://directory.fsf.org/wiki/License:Apache-2.0">Apache License, Version 2.0</a> license, a permissive license that allows others to reuse, modify, and redistribute your software.</p>
 <p>If a mix of data and code needs to be archived, and they each fall under different licenses, then separating them into different packages is advisable to eliminate ambiguity on which license applies to which portion of a data package. When a license other than a public domain dedication is used, then in addition to specifying the license in the metadata (see the “intellectualRights” element in EML), consider including a copy of the license at the beginning of the code files themselves so that the license is readily apparent to end users who peruse the code.</p>
 </div>
-<div id="codemeta" class="section level5">
-<h5>CodeMeta</h5>
+<div id="codemeta" class="section level5 hasAnchor">
+<h5>CodeMeta<a href="code.html#codemeta" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Include a CodeMeta JSON file for all code that is archived in EDI. The CodeMeta file should be named “codemeta.json” and listed as an EML otherEntity. The formatName should be “JavaScript Object Notation (JSON) file,” the entityType should be “metadata,” and the entityDescription should indicate that this is a CodeMeta file for a given software or script in the data package.</p>
 <p>For unnamed projects, e.g., one-off scripts for data processing, analysis, and/or visualisation, a CodeMeta file might appear to be overkill; however, CodeMeta files are simple to generate, and we recommend the below bare minimum. If there are multiple scripts each in their own otherEntity tag, we recommend aggregating information about them into one codemeta.json.</p>
 <p>Example 2: Minimum recommended codemeta.json example for unnamed projects.</p>
@@ -395,21 +394,21 @@ div.csl-indent {
 <span id="cb30-22"><a href="code.html#cb30-22" aria-hidden="true" tabindex="-1"></a>   <span class="fu">}</span></span>
 <span id="cb30-23"><a href="code.html#cb30-23" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
 <p>Example 3: sample otherEntity metadata for example 2â€™s codemeta.json.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb31-1"><a href="code.html#cb31-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">otherEntity</span>&gt;</span>
-<span id="cb31-2"><a href="code.html#cb31-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityName</span>&gt;CodeMeta file for BLE_LTER_CTD_QAQC.Rmd&lt;/<span class="kw">entityName</span>&gt;</span>
-<span id="cb31-3"><a href="code.html#cb31-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityDescription</span>&gt;CodeMeta file for annotated RMarkdown script to process, calibrate, and flag raw CTD data.&lt;/<span class="kw">entityDescription</span>&gt;</span>
-<span id="cb31-4"><a href="code.html#cb31-4" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
-<span id="cb31-5"><a href="code.html#cb31-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">objectName</span>&gt;codemeta.json&lt;/<span class="kw">objectName</span>&gt;</span>
-<span id="cb31-6"><a href="code.html#cb31-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">size</span><span class="ot"> unit=</span><span class="st">&quot;byte&quot;</span>&gt;702&lt;/<span class="kw">size</span>&gt;</span>
-<span id="cb31-7"><a href="code.html#cb31-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">authentication</span><span class="ot"> method=</span><span class="st">&quot;MD5&quot;</span>&gt;8547b7a63abc6c1f0913a5bd7549d9d1&lt;/<span class="kw">authentication</span>&gt;</span>
-<span id="cb31-8"><a href="code.html#cb31-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb31-9"><a href="code.html#cb31-9" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">externallyDefinedFormat</span>&gt;</span>
-<span id="cb31-10"><a href="code.html#cb31-10" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">formatName</span>&gt;application/json&lt;/<span class="kw">formatName</span>&gt;</span>
-<span id="cb31-11"><a href="code.html#cb31-11" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">externallyDefinedFormat</span>&gt;</span>
-<span id="cb31-12"><a href="code.html#cb31-12" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb31-13"><a href="code.html#cb31-13" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
-<span id="cb31-14"><a href="code.html#cb31-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityType</span>&gt;CodeMeta&lt;/<span class="kw">entityType</span>&gt;</span>
-<span id="cb31-15"><a href="code.html#cb31-15" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">otherEntity</span>&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb31-1"><a href="code.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;otherEntity&gt;</span></span>
+<span id="cb31-2"><a href="code.html#cb31-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;entityName&gt;</span>CodeMeta file for BLE_LTER_CTD_QAQC.Rmd<span class="kw">&lt;/entityName&gt;</span></span>
+<span id="cb31-3"><a href="code.html#cb31-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;entityDescription&gt;</span>CodeMeta file for annotated RMarkdown script to process, calibrate, and flag raw CTD data.<span class="kw">&lt;/entityDescription&gt;</span></span>
+<span id="cb31-4"><a href="code.html#cb31-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;physical&gt;</span></span>
+<span id="cb31-5"><a href="code.html#cb31-5" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;objectName&gt;</span>codemeta.json<span class="kw">&lt;/objectName&gt;</span></span>
+<span id="cb31-6"><a href="code.html#cb31-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;size</span><span class="ot"> unit=</span><span class="st">&quot;byte&quot;</span><span class="kw">&gt;</span>702<span class="kw">&lt;/size&gt;</span></span>
+<span id="cb31-7"><a href="code.html#cb31-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;authentication</span><span class="ot"> method=</span><span class="st">&quot;MD5&quot;</span><span class="kw">&gt;</span>8547b7a63abc6c1f0913a5bd7549d9d1<span class="kw">&lt;/authentication&gt;</span></span>
+<span id="cb31-8"><a href="code.html#cb31-8" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;dataFormat&gt;</span></span>
+<span id="cb31-9"><a href="code.html#cb31-9" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;externallyDefinedFormat&gt;</span></span>
+<span id="cb31-10"><a href="code.html#cb31-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;formatName&gt;</span>application/json<span class="kw">&lt;/formatName&gt;</span></span>
+<span id="cb31-11"><a href="code.html#cb31-11" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/externallyDefinedFormat&gt;</span></span>
+<span id="cb31-12"><a href="code.html#cb31-12" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/dataFormat&gt;</span></span>
+<span id="cb31-13"><a href="code.html#cb31-13" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/physical&gt;</span></span>
+<span id="cb31-14"><a href="code.html#cb31-14" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;entityType&gt;</span>CodeMeta<span class="kw">&lt;/entityType&gt;</span></span>
+<span id="cb31-15"><a href="code.html#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/otherEntity&gt;</span></span></code></pre></div>
 <p>For named projects, also include the software name, and the version if applicable. The example below shows some additional metadata you can include. See also the more complete <a href="https://docs.ropensci.org/codemetar/articles/codemeta-intro.html">codemetar example</a> and the available <a href="https://codemeta.github.io/terms/">CodeMeta terms</a>.</p>
 <p>Example 4: A more complete CodeMeta example for named projects. Example taken from the CodeMeta project Github with edits for brevity.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb32-1"><a href="code.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
@@ -464,30 +463,30 @@ div.csl-indent {
 <span id="cb32-50"><a href="code.html#cb32-50" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&quot;keywords&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;metadata&quot;</span><span class="ot">,</span> <span class="st">&quot;codemeta&quot;</span><span class="ot">,</span> <span class="st">&quot;ropensci&quot;</span><span class="ot">]</span></span>
 <span id="cb32-51"><a href="code.html#cb32-51" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
 </div>
-<div id="metadata-to-enable-reproducibility" class="section level5">
-<h5>Metadata to enable reproducibility</h5>
+<div id="metadata-to-enable-reproducibility" class="section level5 hasAnchor">
+<h5>Metadata to enable reproducibility<a href="code.html#metadata-to-enable-reproducibility" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>When archiving software, we strongly recommend including a user guide with installation and usage instructions if such would not already be apparent to the typical user. Take into account that the user might not have access to certain inputs that the software/scripts require. Include when feasible at least some example data, and configure the script so that it is ready to run with the example data.</p>
 <p>Aside from the software/code itself and its dependencies, other pieces of information may be important should a user wish to reproduce results, such as the operating system and version and the system locale. Include this information in the data packageâ€™s methods/methodStep/description. For certain tools, there are ways to easily generate this information, e.g., a call to sessionInfo() in the R console. If the system outputs this information in a standardly formatted plain text file, that might be included as an otherEntity.</p>
 </div>
 </div>
-<div id="linking-code-and-data" class="section level4">
-<h4>Linking code and data</h4>
+<div id="linking-code-and-data" class="section level4 hasAnchor">
+<h4>Linking code and data<a href="code.html#linking-code-and-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>There are a few solutions for providing explicit machine-readable linkages between different entities/packages (the distinction between code/data doesnâ€™t matter too much here). For most cases we recommend the simplest approach, which is to use the methods/methodStep/description element of EML. More advanced users may wish to utilize the other solutions described herein.</p>
-<div id="descriptive-approach" class="section level5">
-<h5>Descriptive approach</h5>
+<div id="descriptive-approach" class="section level5 hasAnchor">
+<h5>Descriptive approach<a href="code.html#descriptive-approach" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>In the dataset methods/methodStep/description element, include verbal descriptions such as “results.csv was derived from raw_data.csv using script.R” and repeat for all entities. If code and data reside in different packages, be sure to specify that.</p>
 </div>
-<div id="the-eml-datasource-element" class="section level5">
-<h5>The EML dataSource element</h5>
+<div id="the-eml-datasource-element" class="section level5 hasAnchor">
+<h5>The EML dataSource element<a href="code.html#the-eml-datasource-element" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Nested under methods/methodStep, dataSource elements describe other data packages that serve as source for the current package. dataSource looks like a mini-EML tree describing the source data. Example: <a href="http://portal.edirepository.org/nis/simpleSearch?defType=edismax&amp;q=ecocomDP&amp;fq=-scope:ecotrends&amp;fq=-scope:lter-landsat*&amp;fl=id,packageid,title,author,organization,pubdate,coordinates&amp;debug=false">ecocomDP packages</a> list the original packages under dataSource. dataSource does not describe relationships between entities in the same package, and as far as we know there is no explicit way in EML to do so.</p>
 </div>
-<div id="provone" class="section level5">
-<h5>ProvONE</h5>
+<div id="provone" class="section level5 hasAnchor">
+<h5>ProvONE<a href="code.html#provone" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><a href="http://jenkins-1.dataone.org/jenkins/view/Documentation%20Projects/job/ProvONE-Documentation-trunk/ws/provenance/ProvONE/v1/provone.html">ProvONE</a> is a model developed by DataONE affiliates for provenance or denoting relationships between data entities. Each package on DataONE is described by a science metadata document (e.g., EML, ISO, FGDC) and a resource map document following ProvONE. The resource map powers a nice display of data relationships (see <a href="https://arcticdata.io/catalog/view/doi%3A10.18739%2FA2556Q">this package on the Arctic Data Center</a>). This handles both relationships between entities in the same package and entities residing in different packages. However, note that EDI currently does not utilize this model.</p>
 </div>
 </div>
-<div id="external-software" class="section level4">
-<h4>External software</h4>
+<div id="external-software" class="section level4 hasAnchor">
+<h4>External software<a href="code.html#external-software" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Large community-backed tools or proprietary software such as ArcGIS Pro or Microsoft Excel do not need to be archived. However, if they have had any impact on the final data (e.g., ArcGIS Pro was used to modify spatial rasters), the EML methods section should describe the routines performed. Within the data package, indicate linkage to external software as follows.</p>
 <ul>
 <li>Briefly describe the software/code and its relationship to the data in EMLâ€™s methods/methodStep/description element.</li>
@@ -498,31 +497,31 @@ div.csl-indent {
 <li>Consider, if applicable, to archive the “runfile” as its own data entity within the data package, i.e., the script(s) that sets parameters and/or calls on functions imported from external software.</li>
 </ul>
 <p>Example 5: EML method description referring to external software.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb33-1"><a href="code.html#cb33-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">methods</span>&gt;</span>
-<span id="cb33-2"><a href="code.html#cb33-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">methodStep</span>&gt;</span>
-<span id="cb33-3"><a href="code.html#cb33-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">description</span>&gt;</span>
-<span id="cb33-4"><a href="code.html#cb33-4" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">para</span>&gt;           </span>
+<div class="sourceCode" id="cb33"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb33-1"><a href="code.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;methods&gt;</span></span>
+<span id="cb33-2"><a href="code.html#cb33-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;methodStep&gt;</span></span>
+<span id="cb33-3"><a href="code.html#cb33-3" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;description&gt;</span></span>
+<span id="cb33-4"><a href="code.html#cb33-4" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;para&gt;</span>           </span>
 <span id="cb33-5"><a href="code.html#cb33-5" aria-hidden="true" tabindex="-1"></a>            The seagrass coverage raster was created in ArcGIS Pro (version</span>
 <span id="cb33-6"><a href="code.html#cb33-6" aria-hidden="true" tabindex="-1"></a>            2.4.3, by Esri) using the IDW geoprocessing tool on</span>
 <span id="cb33-7"><a href="code.html#cb33-7" aria-hidden="true" tabindex="-1"></a>            sampling_points.csv with a power of 2 and the nearest</span>
 <span id="cb33-8"><a href="code.html#cb33-8" aria-hidden="true" tabindex="-1"></a>            12 points.</span>
-<span id="cb33-9"><a href="code.html#cb33-9" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">para</span>&gt;</span>
-<span id="cb33-10"><a href="code.html#cb33-10" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">para</span>&gt;</span>
+<span id="cb33-9"><a href="code.html#cb33-9" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/para&gt;</span></span>
+<span id="cb33-10"><a href="code.html#cb33-10" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;para&gt;</span></span>
 <span id="cb33-11"><a href="code.html#cb33-11" aria-hidden="true" tabindex="-1"></a>            The raster was then refined using the seagrass-refiner package</span>
 <span id="cb33-12"><a href="code.html#cb33-12" aria-hidden="true" tabindex="-1"></a>            with the auto-refine option checked (Smith, 2017).</span>
-<span id="cb33-13"><a href="code.html#cb33-13" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">para</span>&gt;</span>
-<span id="cb33-14"><a href="code.html#cb33-14" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">para</span>&gt;</span>
+<span id="cb33-13"><a href="code.html#cb33-13" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/para&gt;</span></span>
+<span id="cb33-14"><a href="code.html#cb33-14" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;para&gt;</span></span>
 <span id="cb33-15"><a href="code.html#cb33-15" aria-hidden="true" tabindex="-1"></a>            Smith, J. (2017). seagrass-refiner: a package that does the cool</span>
 <span id="cb33-16"><a href="code.html#cb33-16" aria-hidden="true" tabindex="-1"></a>            seagrass stuff, Version 1.2, Zenodo.  https://doi.org/this-is/a-fake-doi,</span>
 <span id="cb33-17"><a href="code.html#cb33-17" aria-hidden="true" tabindex="-1"></a>            2017.</span>
-<span id="cb33-18"><a href="code.html#cb33-18" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">para</span>&gt;</span>
-<span id="cb33-19"><a href="code.html#cb33-19" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">description</span>&gt;</span>
-<span id="cb33-20"><a href="code.html#cb33-20" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">methodStep</span>&gt;</span>
-<span id="cb33-21"><a href="code.html#cb33-21" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">methods</span>&gt;</span></code></pre></div>
+<span id="cb33-18"><a href="code.html#cb33-18" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/para&gt;</span></span>
+<span id="cb33-19"><a href="code.html#cb33-19" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/description&gt;</span></span>
+<span id="cb33-20"><a href="code.html#cb33-20" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/methodStep&gt;</span></span>
+<span id="cb33-21"><a href="code.html#cb33-21" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/methods&gt;</span></span></code></pre></div>
 </div>
 </div>
-<div id="resources" class="section level3">
-<h3>Resources</h3>
+<div id="resources" class="section level3 hasAnchor">
+<h3>Resources<a href="code.html#resources" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><a href="https://codemeta.github.io/">CodeMeta</a> website</p>
 <p><a href="https://codemeta.github.io/codemeta-generator/">CodeMeta generator</a> for creating CodeMeta</p>
 <p><a href="https://codemeta.github.io/crosswalk/">CodeMeta crosswalks</a> for a number of popular software</p>

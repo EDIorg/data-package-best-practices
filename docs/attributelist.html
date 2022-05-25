@@ -7,11 +7,10 @@
   <title>attributeList | Data Package Best Practices</title>
   <meta name="description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="attributeList | Data Package Best Practices" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
@@ -27,7 +26,7 @@ Ecological Metadata Language (EML).</p>" />
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2022-03-04" />
+<meta name="date" content="2022-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -36,7 +35,6 @@ Ecological Metadata Language (EML).</p>" />
   
 <link rel="prev" href="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity.html"/>
 <link rel="next" href="constraint.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,8 +52,9 @@ Ecological Metadata Language (EML).</p>" />
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -160,7 +159,7 @@ div.csl-indent {
 
 <ul class="summary">
 <li><a href="./">EDI Data Package Best Practices</a></li>
-<li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+<li style="margin-left:10px;"><a href="https://edirepository.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
@@ -315,8 +314,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="attributelist" class="section level2 unnumbered">
-<h2>attributeList</h2>
+<div id="attributelist" class="section level2 unnumbered hasAnchor">
+<h2>attributeList<a href="attributelist.html#attributelist" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This element tree is found at (XPath):<br />
 <strong>/eml:eml/dataset/dataTable/attributeList</strong><br />
 <strong>/eml:eml/dataset/view/attributeList</strong><br />
@@ -353,8 +352,8 @@ include float, integer and string.</p>
 are drawn for the attribute. EML’s attribute-unit model is described in
 detail; see “Other Resources.” One of the 5 scale types must be used:
 nominal, ordinal, interval, ratio, or dateTime, as follows:</p>
-<div id="non-numeric-types" class="section level5">
-<h5>Non-numeric types:</h5>
+<div id="non-numeric-types" class="section level5 hasAnchor">
+<h5>Non-numeric types:<a href="attributelist.html#non-numeric-types" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>The &lt;<strong>nominal</strong>&gt; scale is used to represent named categories. Values are
 assigned to distinguish them from other observations. This would include
 a list of coded values (e.g. 1=male, 2=female), or plain text
@@ -372,8 +371,8 @@ explanations. For &lt;<strong>textDomain</strong>&gt; an optional pattern may de
 the text, e.g., a US telephone number can be described by the format
 “\d\d\d-\d\d\d-\d\d\d\d.”</p>
 </div>
-<div id="numeric-types" class="section level5">
-<h5>Numeric types:</h5>
+<div id="numeric-types" class="section level5 hasAnchor">
+<h5>Numeric types:<a href="attributelist.html#numeric-types" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>&lt;<strong>interval</strong>&gt; measurements are ordinal, but in addition, use
 equal-sized units on a scale between values. Because the units are equal
 sized, these measurements are numeric. However, the starting point is
@@ -460,302 +459,302 @@ SQL system with a defined storage type. The second &lt;<strong>attributeList</st
 includes tags for &lt;<strong>customUnits</strong>&gt;, with the Unit defined in the
 &lt;<strong>additionalMetadata</strong>&gt; tree.</p>
 <p>Example 21: attributeList/attribute dataTable</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb25-1"><a href="attributelist.html#cb25-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">attributeList</span>&gt;</span>
-<span id="cb25-2"><a href="attributelist.html#cb25-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.site_id&quot;</span>&gt;</span>
-<span id="cb25-3"><a href="attributelist.html#cb25-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeName</span>&gt;site_id&lt;/<span class="kw">attributeName</span>&gt;</span>
-<span id="cb25-4"><a href="attributelist.html#cb25-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeDefinition</span>&gt;Site id as used in sites table&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb25-5"><a href="attributelist.html#cb25-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span>&gt;string&lt;/<span class="kw">storageType</span>&gt;</span>
-<span id="cb25-6"><a href="attributelist.html#cb25-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb25-7"><a href="attributelist.html#cb25-7" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">nominal</span>&gt;</span>
-<span id="cb25-8"><a href="attributelist.html#cb25-8" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nonNumericDomain</span>&gt;</span>
-<span id="cb25-9"><a href="attributelist.html#cb25-9" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">textDomain</span>&gt;</span>
-<span id="cb25-10"><a href="attributelist.html#cb25-10" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">definition</span>&gt;Site id as used in sites table&lt;/<span class="kw">definition</span>&gt;</span>
-<span id="cb25-11"><a href="attributelist.html#cb25-11" aria-hidden="true" tabindex="-1"></a>               &lt;/<span class="kw">textDomain</span>&gt;</span>
-<span id="cb25-12"><a href="attributelist.html#cb25-12" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">nonNumericDomain</span>&gt;</span>
-<span id="cb25-13"><a href="attributelist.html#cb25-13" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">nominal</span>&gt;</span>
-<span id="cb25-14"><a href="attributelist.html#cb25-14" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb25-15"><a href="attributelist.html#cb25-15" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb25-16"><a href="attributelist.html#cb25-16" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.pH&quot;</span>&gt;</span>
-<span id="cb25-17"><a href="attributelist.html#cb25-17" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeName</span>&gt;pH&lt;/<span class="kw">attributeName</span>&gt;</span>
-<span id="cb25-18"><a href="attributelist.html#cb25-18" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeDefinition</span>&gt;ph of soil solution&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb25-19"><a href="attributelist.html#cb25-19" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span>&gt;float&lt;/<span class="kw">storageType</span>&gt;</span>
-<span id="cb25-20"><a href="attributelist.html#cb25-20" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb25-21"><a href="attributelist.html#cb25-21" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">ratio</span>&gt;</span>
-<span id="cb25-22"><a href="attributelist.html#cb25-22" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">unit</span>&gt;</span>
-<span id="cb25-23"><a href="attributelist.html#cb25-23" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">standardUnit</span>&gt;dimensionless&lt;/<span class="kw">standardUnit</span>&gt;</span>
-<span id="cb25-24"><a href="attributelist.html#cb25-24" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">unit</span>&gt;</span>
-<span id="cb25-25"><a href="attributelist.html#cb25-25" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">precision</span>&gt;0.01&lt;/<span class="kw">precision</span>&gt;</span>
-<span id="cb25-26"><a href="attributelist.html#cb25-26" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">numericDomain</span>&gt;</span>
-<span id="cb25-27"><a href="attributelist.html#cb25-27" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">numberType</span>&gt;real&lt;/<span class="kw">numberType</span>&gt;</span>
-<span id="cb25-28"><a href="attributelist.html#cb25-28" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">numericDomain</span>&gt;</span>
-<span id="cb25-29"><a href="attributelist.html#cb25-29" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">ratio</span>&gt;</span>
-<span id="cb25-30"><a href="attributelist.html#cb25-30" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb25-31"><a href="attributelist.html#cb25-31" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb25-32"><a href="attributelist.html#cb25-32" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">&quot;pass2001.q110&quot;</span>&gt;</span>
-<span id="cb25-33"><a href="attributelist.html#cb25-33" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeName</span>&gt;q110&lt;/<span class="kw">attributeName</span>&gt;</span>
-<span id="cb25-34"><a href="attributelist.html#cb25-34" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeDefinition</span>&gt;Q110-Preference for front yard landscape&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb25-35"><a href="attributelist.html#cb25-35" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span>&gt;float&lt;/<span class="kw">storageType</span>&gt;</span>
-<span id="cb25-36"><a href="attributelist.html#cb25-36" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb25-37"><a href="attributelist.html#cb25-37" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">ordinal</span>&gt;</span>
-<span id="cb25-38"><a href="attributelist.html#cb25-38" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nonNumericDomain</span>&gt;</span>
-<span id="cb25-39"><a href="attributelist.html#cb25-39" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">enumeratedDomain</span>&gt;</span>
-<span id="cb25-40"><a href="attributelist.html#cb25-40" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">codeDefinition</span>&gt;</span>
-<span id="cb25-41"><a href="attributelist.html#cb25-41" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">code</span>&gt;1.00&lt;/<span class="kw">code</span>&gt;</span>
-<span id="cb25-42"><a href="attributelist.html#cb25-42" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">definition</span>&gt;1-A desert landscape&lt;/<span class="kw">definition</span>&gt;</span>
-<span id="cb25-43"><a href="attributelist.html#cb25-43" aria-hidden="true" tabindex="-1"></a>                  &lt;/<span class="kw">codeDefinition</span>&gt;</span>
-<span id="cb25-44"><a href="attributelist.html#cb25-44" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">codeDefinition</span>&gt;</span>
-<span id="cb25-45"><a href="attributelist.html#cb25-45" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">code</span>&gt;2.00&lt;/<span class="kw">code</span>&gt;</span>
-<span id="cb25-46"><a href="attributelist.html#cb25-46" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">definition</span>&gt;2-Mostly lawn&lt;/<span class="kw">definition</span>&gt;</span>
-<span id="cb25-47"><a href="attributelist.html#cb25-47" aria-hidden="true" tabindex="-1"></a>                  &lt;/<span class="kw">codeDefinition</span>&gt;</span>
-<span id="cb25-48"><a href="attributelist.html#cb25-48" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">codeDefinition</span>&gt;</span>
-<span id="cb25-49"><a href="attributelist.html#cb25-49" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">code</span>&gt;3.00&lt;/<span class="kw">code</span>&gt;</span>
-<span id="cb25-50"><a href="attributelist.html#cb25-50" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">definition</span>&gt;3-Some lawn&lt;/<span class="kw">definition</span>&gt;</span>
-<span id="cb25-51"><a href="attributelist.html#cb25-51" aria-hidden="true" tabindex="-1"></a>                  &lt;/<span class="kw">codeDefinition</span>&gt;</span>
-<span id="cb25-52"><a href="attributelist.html#cb25-52" aria-hidden="true" tabindex="-1"></a>               &lt;/<span class="kw">enumeratedDomain</span>&gt;</span>
-<span id="cb25-53"><a href="attributelist.html#cb25-53" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">nonNumericDomain</span>&gt;</span>
-<span id="cb25-54"><a href="attributelist.html#cb25-54" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">ordinal</span>&gt;</span>
-<span id="cb25-55"><a href="attributelist.html#cb25-55" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb25-56"><a href="attributelist.html#cb25-56" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb25-57"><a href="attributelist.html#cb25-57" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">&quot;att.2&quot;</span>&gt;</span>
-<span id="cb25-58"><a href="attributelist.html#cb25-58" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeName</span>&gt;Year&lt;/<span class="kw">attributeName</span>&gt;</span>
-<span id="cb25-59"><a href="attributelist.html#cb25-59" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeDefinition</span>&gt;Calendar year of the observation from years 1990 - 2010&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb25-60"><a href="attributelist.html#cb25-60" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">storageType</span>&gt;integer&lt;/<span class="kw">storageType</span>&gt;</span>
-<span id="cb25-61"><a href="attributelist.html#cb25-61" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb25-62"><a href="attributelist.html#cb25-62" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">dateTime</span>&gt;</span>
-<span id="cb25-63"><a href="attributelist.html#cb25-63" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">formatString</span>&gt;YYYY&lt;/<span class="kw">formatString</span>&gt;</span>
-<span id="cb25-64"><a href="attributelist.html#cb25-64" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">dateTimePrecision</span>&gt;1&lt;/<span class="kw">dateTimePrecision</span>&gt;</span>
-<span id="cb25-65"><a href="attributelist.html#cb25-65" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">dateTimeDomain</span>&gt;</span>
-<span id="cb25-66"><a href="attributelist.html#cb25-66" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">bounds</span>&gt;</span>
-<span id="cb25-67"><a href="attributelist.html#cb25-67" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span>&gt;1993&lt;/<span class="kw">minimum</span>&gt;</span>
-<span id="cb25-68"><a href="attributelist.html#cb25-68" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">maximum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span>&gt;2003&lt;/<span class="kw">maximum</span>&gt;</span>
-<span id="cb25-69"><a href="attributelist.html#cb25-69" aria-hidden="true" tabindex="-1"></a>               &lt;/<span class="kw">bounds</span>&gt;</span>
-<span id="cb25-70"><a href="attributelist.html#cb25-70" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">dateTimeDomain</span>&gt;</span>
-<span id="cb25-71"><a href="attributelist.html#cb25-71" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">dateTime</span>&gt;</span>
-<span id="cb25-72"><a href="attributelist.html#cb25-72" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb25-73"><a href="attributelist.html#cb25-73" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb25-74"><a href="attributelist.html#cb25-74" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">&quot;att.7&quot;</span>&gt;</span>
-<span id="cb25-75"><a href="attributelist.html#cb25-75" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeName</span>&gt;Count&lt;/<span class="kw">attributeName</span>&gt;</span>
-<span id="cb25-76"><a href="attributelist.html#cb25-76" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeDefinition</span>&gt;Number of individuals observed&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb25-77"><a href="attributelist.html#cb25-77" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">storageType</span>&gt;integer&lt;/<span class="kw">storageType</span>&gt;</span>
-<span id="cb25-78"><a href="attributelist.html#cb25-78" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb25-79"><a href="attributelist.html#cb25-79" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">interval</span>&gt;</span>
-<span id="cb25-80"><a href="attributelist.html#cb25-80" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">unit</span>&gt;</span>
-<span id="cb25-81"><a href="attributelist.html#cb25-81" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">standardUnit</span>&gt;number&lt;/<span class="kw">standardUnit</span>&gt;</span>
-<span id="cb25-82"><a href="attributelist.html#cb25-82" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">unit</span>&gt;</span>
-<span id="cb25-83"><a href="attributelist.html#cb25-83" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">precision</span>&gt;1&lt;/<span class="kw">precision</span>&gt;</span>
-<span id="cb25-84"><a href="attributelist.html#cb25-84" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">numericDomain</span>&gt;</span>
-<span id="cb25-85"><a href="attributelist.html#cb25-85" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">numberType</span>&gt;whole&lt;/<span class="kw">numberType</span>&gt;</span>
-<span id="cb25-86"><a href="attributelist.html#cb25-86" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">bounds</span>&gt;</span>
-<span id="cb25-87"><a href="attributelist.html#cb25-87" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span>&gt;0&lt;/<span class="kw">minimum</span>&gt;</span>
-<span id="cb25-88"><a href="attributelist.html#cb25-88" aria-hidden="true" tabindex="-1"></a>               &lt;/<span class="kw">bounds</span>&gt;</span>
-<span id="cb25-89"><a href="attributelist.html#cb25-89" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">numericDomain</span>&gt;</span>
-<span id="cb25-90"><a href="attributelist.html#cb25-90" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">interval</span>&gt;</span>
-<span id="cb25-91"><a href="attributelist.html#cb25-91" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb25-92"><a href="attributelist.html#cb25-92" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">missingValueCode</span>&gt;</span>
-<span id="cb25-93"><a href="attributelist.html#cb25-93" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">code</span>&gt;NaN&lt;/<span class="kw">code</span>&gt;</span>
-<span id="cb25-94"><a href="attributelist.html#cb25-94" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">codeExplanation</span>&gt;value not recorded or invalid&lt;/<span class="kw">codeExplanation</span>&gt;</span>
-<span id="cb25-95"><a href="attributelist.html#cb25-95" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">missingValueCode</span>&gt;</span>
-<span id="cb25-96"><a href="attributelist.html#cb25-96" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb25-97"><a href="attributelist.html#cb25-97" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">&quot;att.7&quot;</span>&gt;</span>
-<span id="cb25-98"><a href="attributelist.html#cb25-98" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeName</span>&gt;cond&lt;/<span class="kw">attributeName</span>&gt;</span>
-<span id="cb25-99"><a href="attributelist.html#cb25-99" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeLabel</span>&gt;Conductivity&lt;/<span class="kw">attributeLabel</span>&gt;</span>
-<span id="cb25-100"><a href="attributelist.html#cb25-100" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeDefinition</span>&gt;measured with SeaBird Elecronics CTD-911&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb25-101"><a href="attributelist.html#cb25-101" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">storageType</span>&gt;float&lt;/<span class="kw">storageType</span>&gt;</span>
-<span id="cb25-102"><a href="attributelist.html#cb25-102" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb25-103"><a href="attributelist.html#cb25-103" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">ratio</span>&gt;</span>
-<span id="cb25-104"><a href="attributelist.html#cb25-104" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">unit</span>&gt;</span>
-<span id="cb25-105"><a href="attributelist.html#cb25-105" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">customUnit</span>&gt;siemensPerMeter&lt;/<span class="kw">customUnit</span>&gt;</span>
-<span id="cb25-106"><a href="attributelist.html#cb25-106" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">unit</span>&gt;</span>
-<span id="cb25-107"><a href="attributelist.html#cb25-107" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">precision</span>&gt;0.0001&lt;/<span class="kw">precision</span>&gt;</span>
-<span id="cb25-108"><a href="attributelist.html#cb25-108" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">numericDomain</span>&gt;</span>
-<span id="cb25-109"><a href="attributelist.html#cb25-109" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">numberType</span>&gt;real&lt;/<span class="kw">numberType</span>&gt;</span>
-<span id="cb25-110"><a href="attributelist.html#cb25-110" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">bounds</span>&gt;</span>
-<span id="cb25-111"><a href="attributelist.html#cb25-111" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span>&gt;0&lt;/<span class="kw">minimum</span>&gt;</span>
-<span id="cb25-112"><a href="attributelist.html#cb25-112" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">maximum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span>&gt;40&lt;/<span class="kw">maximum</span>&gt;</span>
-<span id="cb25-113"><a href="attributelist.html#cb25-113" aria-hidden="true" tabindex="-1"></a>               &lt;/<span class="kw">bounds</span>&gt;</span>
-<span id="cb25-114"><a href="attributelist.html#cb25-114" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">numericDomain</span>&gt;</span>
-<span id="cb25-115"><a href="attributelist.html#cb25-115" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">ratio</span>&gt;</span>
-<span id="cb25-116"><a href="attributelist.html#cb25-116" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb25-117"><a href="attributelist.html#cb25-117" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb25-118"><a href="attributelist.html#cb25-118" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">attributeList</span>&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb25-1"><a href="attributelist.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;attributeList&gt;</span></span>
+<span id="cb25-2"><a href="attributelist.html#cb25-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.site_id&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb25-3"><a href="attributelist.html#cb25-3" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attributeName&gt;</span>site_id<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb25-4"><a href="attributelist.html#cb25-4" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>Site id as used in sites table<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb25-5"><a href="attributelist.html#cb25-5" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="kw">&gt;</span>string<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb25-6"><a href="attributelist.html#cb25-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb25-7"><a href="attributelist.html#cb25-7" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;nominal&gt;</span></span>
+<span id="cb25-8"><a href="attributelist.html#cb25-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;nonNumericDomain&gt;</span></span>
+<span id="cb25-9"><a href="attributelist.html#cb25-9" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;textDomain&gt;</span></span>
+<span id="cb25-10"><a href="attributelist.html#cb25-10" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;definition&gt;</span>Site id as used in sites table<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb25-11"><a href="attributelist.html#cb25-11" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;/textDomain&gt;</span></span>
+<span id="cb25-12"><a href="attributelist.html#cb25-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
+<span id="cb25-13"><a href="attributelist.html#cb25-13" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/nominal&gt;</span></span>
+<span id="cb25-14"><a href="attributelist.html#cb25-14" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb25-15"><a href="attributelist.html#cb25-15" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb25-16"><a href="attributelist.html#cb25-16" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;soil_chemistry.pH&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb25-17"><a href="attributelist.html#cb25-17" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attributeName&gt;</span>pH<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb25-18"><a href="attributelist.html#cb25-18" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>ph of soil solution<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb25-19"><a href="attributelist.html#cb25-19" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="kw">&gt;</span>float<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb25-20"><a href="attributelist.html#cb25-20" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb25-21"><a href="attributelist.html#cb25-21" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;ratio&gt;</span></span>
+<span id="cb25-22"><a href="attributelist.html#cb25-22" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;unit&gt;</span></span>
+<span id="cb25-23"><a href="attributelist.html#cb25-23" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;standardUnit&gt;</span>dimensionless<span class="kw">&lt;/standardUnit&gt;</span></span>
+<span id="cb25-24"><a href="attributelist.html#cb25-24" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/unit&gt;</span></span>
+<span id="cb25-25"><a href="attributelist.html#cb25-25" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;precision&gt;</span>0.01<span class="kw">&lt;/precision&gt;</span></span>
+<span id="cb25-26"><a href="attributelist.html#cb25-26" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;numericDomain&gt;</span></span>
+<span id="cb25-27"><a href="attributelist.html#cb25-27" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;numberType&gt;</span>real<span class="kw">&lt;/numberType&gt;</span></span>
+<span id="cb25-28"><a href="attributelist.html#cb25-28" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/numericDomain&gt;</span></span>
+<span id="cb25-29"><a href="attributelist.html#cb25-29" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/ratio&gt;</span></span>
+<span id="cb25-30"><a href="attributelist.html#cb25-30" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb25-31"><a href="attributelist.html#cb25-31" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb25-32"><a href="attributelist.html#cb25-32" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;pass2001.q110&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb25-33"><a href="attributelist.html#cb25-33" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attributeName&gt;</span>q110<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb25-34"><a href="attributelist.html#cb25-34" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>Q110-Preference for front yard landscape<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb25-35"><a href="attributelist.html#cb25-35" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="kw">&gt;</span>float<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb25-36"><a href="attributelist.html#cb25-36" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb25-37"><a href="attributelist.html#cb25-37" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;ordinal&gt;</span></span>
+<span id="cb25-38"><a href="attributelist.html#cb25-38" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;nonNumericDomain&gt;</span></span>
+<span id="cb25-39"><a href="attributelist.html#cb25-39" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;enumeratedDomain&gt;</span></span>
+<span id="cb25-40"><a href="attributelist.html#cb25-40" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;codeDefinition&gt;</span></span>
+<span id="cb25-41"><a href="attributelist.html#cb25-41" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;code&gt;</span>1.00<span class="kw">&lt;/code&gt;</span></span>
+<span id="cb25-42"><a href="attributelist.html#cb25-42" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;definition&gt;</span>1-A desert landscape<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb25-43"><a href="attributelist.html#cb25-43" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;/codeDefinition&gt;</span></span>
+<span id="cb25-44"><a href="attributelist.html#cb25-44" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;codeDefinition&gt;</span></span>
+<span id="cb25-45"><a href="attributelist.html#cb25-45" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;code&gt;</span>2.00<span class="kw">&lt;/code&gt;</span></span>
+<span id="cb25-46"><a href="attributelist.html#cb25-46" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;definition&gt;</span>2-Mostly lawn<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb25-47"><a href="attributelist.html#cb25-47" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;/codeDefinition&gt;</span></span>
+<span id="cb25-48"><a href="attributelist.html#cb25-48" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;codeDefinition&gt;</span></span>
+<span id="cb25-49"><a href="attributelist.html#cb25-49" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;code&gt;</span>3.00<span class="kw">&lt;/code&gt;</span></span>
+<span id="cb25-50"><a href="attributelist.html#cb25-50" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;definition&gt;</span>3-Some lawn<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb25-51"><a href="attributelist.html#cb25-51" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;/codeDefinition&gt;</span></span>
+<span id="cb25-52"><a href="attributelist.html#cb25-52" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;/enumeratedDomain&gt;</span></span>
+<span id="cb25-53"><a href="attributelist.html#cb25-53" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
+<span id="cb25-54"><a href="attributelist.html#cb25-54" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/ordinal&gt;</span></span>
+<span id="cb25-55"><a href="attributelist.html#cb25-55" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb25-56"><a href="attributelist.html#cb25-56" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb25-57"><a href="attributelist.html#cb25-57" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;att.2&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb25-58"><a href="attributelist.html#cb25-58" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attributeName&gt;</span>Year<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb25-59"><a href="attributelist.html#cb25-59" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>Calendar year of the observation from years 1990 - 2010<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb25-60"><a href="attributelist.html#cb25-60" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;storageType&gt;</span>integer<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb25-61"><a href="attributelist.html#cb25-61" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb25-62"><a href="attributelist.html#cb25-62" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;dateTime&gt;</span></span>
+<span id="cb25-63"><a href="attributelist.html#cb25-63" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;formatString&gt;</span>YYYY<span class="kw">&lt;/formatString&gt;</span></span>
+<span id="cb25-64"><a href="attributelist.html#cb25-64" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;dateTimePrecision&gt;</span>1<span class="kw">&lt;/dateTimePrecision&gt;</span></span>
+<span id="cb25-65"><a href="attributelist.html#cb25-65" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;dateTimeDomain&gt;</span></span>
+<span id="cb25-66"><a href="attributelist.html#cb25-66" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;bounds&gt;</span></span>
+<span id="cb25-67"><a href="attributelist.html#cb25-67" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>1993<span class="kw">&lt;/minimum&gt;</span></span>
+<span id="cb25-68"><a href="attributelist.html#cb25-68" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;maximum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>2003<span class="kw">&lt;/maximum&gt;</span></span>
+<span id="cb25-69"><a href="attributelist.html#cb25-69" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;/bounds&gt;</span></span>
+<span id="cb25-70"><a href="attributelist.html#cb25-70" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/dateTimeDomain&gt;</span></span>
+<span id="cb25-71"><a href="attributelist.html#cb25-71" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/dateTime&gt;</span></span>
+<span id="cb25-72"><a href="attributelist.html#cb25-72" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb25-73"><a href="attributelist.html#cb25-73" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb25-74"><a href="attributelist.html#cb25-74" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;att.7&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb25-75"><a href="attributelist.html#cb25-75" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attributeName&gt;</span>Count<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb25-76"><a href="attributelist.html#cb25-76" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>Number of individuals observed<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb25-77"><a href="attributelist.html#cb25-77" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;storageType&gt;</span>integer<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb25-78"><a href="attributelist.html#cb25-78" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb25-79"><a href="attributelist.html#cb25-79" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;interval&gt;</span></span>
+<span id="cb25-80"><a href="attributelist.html#cb25-80" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;unit&gt;</span></span>
+<span id="cb25-81"><a href="attributelist.html#cb25-81" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;standardUnit&gt;</span>number<span class="kw">&lt;/standardUnit&gt;</span></span>
+<span id="cb25-82"><a href="attributelist.html#cb25-82" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/unit&gt;</span></span>
+<span id="cb25-83"><a href="attributelist.html#cb25-83" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;precision&gt;</span>1<span class="kw">&lt;/precision&gt;</span></span>
+<span id="cb25-84"><a href="attributelist.html#cb25-84" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;numericDomain&gt;</span></span>
+<span id="cb25-85"><a href="attributelist.html#cb25-85" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;numberType&gt;</span>whole<span class="kw">&lt;/numberType&gt;</span></span>
+<span id="cb25-86"><a href="attributelist.html#cb25-86" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;bounds&gt;</span></span>
+<span id="cb25-87"><a href="attributelist.html#cb25-87" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>0<span class="kw">&lt;/minimum&gt;</span></span>
+<span id="cb25-88"><a href="attributelist.html#cb25-88" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;/bounds&gt;</span></span>
+<span id="cb25-89"><a href="attributelist.html#cb25-89" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/numericDomain&gt;</span></span>
+<span id="cb25-90"><a href="attributelist.html#cb25-90" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/interval&gt;</span></span>
+<span id="cb25-91"><a href="attributelist.html#cb25-91" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb25-92"><a href="attributelist.html#cb25-92" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;missingValueCode&gt;</span></span>
+<span id="cb25-93"><a href="attributelist.html#cb25-93" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;code&gt;</span>NaN<span class="kw">&lt;/code&gt;</span></span>
+<span id="cb25-94"><a href="attributelist.html#cb25-94" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;codeExplanation&gt;</span>value not recorded or invalid<span class="kw">&lt;/codeExplanation&gt;</span></span>
+<span id="cb25-95"><a href="attributelist.html#cb25-95" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/missingValueCode&gt;</span></span>
+<span id="cb25-96"><a href="attributelist.html#cb25-96" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb25-97"><a href="attributelist.html#cb25-97" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;att.7&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb25-98"><a href="attributelist.html#cb25-98" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attributeName&gt;</span>cond<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb25-99"><a href="attributelist.html#cb25-99" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attributeLabel&gt;</span>Conductivity<span class="kw">&lt;/attributeLabel&gt;</span></span>
+<span id="cb25-100"><a href="attributelist.html#cb25-100" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attributeDefinition&gt;</span>measured with SeaBird Elecronics CTD-911<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb25-101"><a href="attributelist.html#cb25-101" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;storageType&gt;</span>float<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb25-102"><a href="attributelist.html#cb25-102" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb25-103"><a href="attributelist.html#cb25-103" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;ratio&gt;</span></span>
+<span id="cb25-104"><a href="attributelist.html#cb25-104" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;unit&gt;</span></span>
+<span id="cb25-105"><a href="attributelist.html#cb25-105" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;customUnit&gt;</span>siemensPerMeter<span class="kw">&lt;/customUnit&gt;</span></span>
+<span id="cb25-106"><a href="attributelist.html#cb25-106" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/unit&gt;</span></span>
+<span id="cb25-107"><a href="attributelist.html#cb25-107" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;precision&gt;</span>0.0001<span class="kw">&lt;/precision&gt;</span></span>
+<span id="cb25-108"><a href="attributelist.html#cb25-108" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;numericDomain&gt;</span></span>
+<span id="cb25-109"><a href="attributelist.html#cb25-109" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;numberType&gt;</span>real<span class="kw">&lt;/numberType&gt;</span></span>
+<span id="cb25-110"><a href="attributelist.html#cb25-110" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;bounds&gt;</span></span>
+<span id="cb25-111"><a href="attributelist.html#cb25-111" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>0<span class="kw">&lt;/minimum&gt;</span></span>
+<span id="cb25-112"><a href="attributelist.html#cb25-112" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;maximum</span><span class="ot"> exclusive=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>40<span class="kw">&lt;/maximum&gt;</span></span>
+<span id="cb25-113"><a href="attributelist.html#cb25-113" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;/bounds&gt;</span></span>
+<span id="cb25-114"><a href="attributelist.html#cb25-114" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/numericDomain&gt;</span></span>
+<span id="cb25-115"><a href="attributelist.html#cb25-115" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/ratio&gt;</span></span>
+<span id="cb25-116"><a href="attributelist.html#cb25-116" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb25-117"><a href="attributelist.html#cb25-117" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb25-118"><a href="attributelist.html#cb25-118" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/attributeList&gt;</span></span></code></pre></div>
 <p>The examples below show complete entity trees for &lt;<strong>spatialVector</strong>&gt;
 and &lt;<strong>spatialRaster</strong>&gt; converted via XSLT (stylesheet) from Esri
 metadata format. For details see “Other Resources.”</p>
 <p>Example 22: Entity and attribute information for spatialVector</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb26-1"><a href="attributelist.html#cb26-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">spatialVector</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955&quot;</span>&gt;</span>
-<span id="cb26-2"><a href="attributelist.html#cb26-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityName</span>&gt;Landuse for Ficity in 1955&lt;/<span class="kw">entityName</span>&gt;</span>
-<span id="cb26-3"><a href="attributelist.html#cb26-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityDescription</span>&gt;This GIS layer represents a reconstructed</span>
+<div class="sourceCode" id="cb26"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb26-1"><a href="attributelist.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;spatialVector</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb26-2"><a href="attributelist.html#cb26-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;entityName&gt;</span>Landuse for Ficity in 1955<span class="kw">&lt;/entityName&gt;</span></span>
+<span id="cb26-3"><a href="attributelist.html#cb26-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;entityDescription&gt;</span>This GIS layer represents a reconstructed</span>
 <span id="cb26-4"><a href="attributelist.html#cb26-4" aria-hidden="true" tabindex="-1"></a>      generalized landuse map for the area of current Ficity around the time</span>
-<span id="cb26-5"><a href="attributelist.html#cb26-5" aria-hidden="true" tabindex="-1"></a>      period of 1955.&lt;/<span class="kw">entityDescription</span>&gt;</span>
-<span id="cb26-6"><a href="attributelist.html#cb26-6" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
-<span id="cb26-7"><a href="attributelist.html#cb26-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">objectName</span>&gt;fls-20.zip&lt;/<span class="kw">objectName</span>&gt;</span>
-<span id="cb26-8"><a href="attributelist.html#cb26-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb26-9"><a href="attributelist.html#cb26-9" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">externallyDefinedFormat</span>&gt;</span>
-<span id="cb26-10"><a href="attributelist.html#cb26-10" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">formatName</span>&gt;Esri Shapefile (zipped)&lt;/<span class="kw">formatName</span>&gt;</span>
-<span id="cb26-11"><a href="attributelist.html#cb26-11" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">externallyDefinedFormat</span>&gt;</span>
-<span id="cb26-12"><a href="attributelist.html#cb26-12" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb26-13"><a href="attributelist.html#cb26-13" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">distribution</span>&gt;</span>
-<span id="cb26-14"><a href="attributelist.html#cb26-14" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">online</span>&gt;</span>
-<span id="cb26-15"><a href="attributelist.html#cb26-15" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">onlineDescription</span>&gt;f1s-20 Zipped Shapefile File&lt;/<span class="kw">onlineDescription</span>&gt;</span>
-<span id="cb26-16"><a href="attributelist.html#cb26-16" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">&quot;download&quot;</span>&gt;http://www.fsu.edu/lter/data/fls-20.zip&lt;/<span class="kw">url</span>&gt;</span>
-<span id="cb26-17"><a href="attributelist.html#cb26-17" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">online</span>&gt;</span>
-<span id="cb26-18"><a href="attributelist.html#cb26-18" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">distribution</span>&gt;</span>
-<span id="cb26-19"><a href="attributelist.html#cb26-19" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
-<span id="cb26-20"><a href="attributelist.html#cb26-20" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attributeList</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.attributeList&quot;</span>&gt;</span>
-<span id="cb26-21"><a href="attributelist.html#cb26-21" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.FID&quot;</span>&gt;</span>
-<span id="cb26-22"><a href="attributelist.html#cb26-22" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeName</span>&gt;FID&lt;/<span class="kw">attributeName</span>&gt;</span>
-<span id="cb26-23"><a href="attributelist.html#cb26-23" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeDefinition</span>&gt;Internal feature number.&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb26-24"><a href="attributelist.html#cb26-24" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span>&gt;OID&lt;/<span class="kw">storageType</span>&gt;</span>
-<span id="cb26-25"><a href="attributelist.html#cb26-25" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb26-26"><a href="attributelist.html#cb26-26" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nominal</span>&gt;</span>
-<span id="cb26-27"><a href="attributelist.html#cb26-27" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">nonNumericDomain</span>&gt;</span>
-<span id="cb26-28"><a href="attributelist.html#cb26-28" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">textDomain</span>&gt;</span>
-<span id="cb26-29"><a href="attributelist.html#cb26-29" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">definition</span>&gt;</span>
+<span id="cb26-5"><a href="attributelist.html#cb26-5" aria-hidden="true" tabindex="-1"></a>      period of 1955.<span class="kw">&lt;/entityDescription&gt;</span></span>
+<span id="cb26-6"><a href="attributelist.html#cb26-6" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;physical&gt;</span></span>
+<span id="cb26-7"><a href="attributelist.html#cb26-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;objectName&gt;</span>fls-20.zip<span class="kw">&lt;/objectName&gt;</span></span>
+<span id="cb26-8"><a href="attributelist.html#cb26-8" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;dataFormat&gt;</span></span>
+<span id="cb26-9"><a href="attributelist.html#cb26-9" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;externallyDefinedFormat&gt;</span></span>
+<span id="cb26-10"><a href="attributelist.html#cb26-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;formatName&gt;</span>Esri Shapefile (zipped)<span class="kw">&lt;/formatName&gt;</span></span>
+<span id="cb26-11"><a href="attributelist.html#cb26-11" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/externallyDefinedFormat&gt;</span></span>
+<span id="cb26-12"><a href="attributelist.html#cb26-12" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/dataFormat&gt;</span></span>
+<span id="cb26-13"><a href="attributelist.html#cb26-13" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;distribution&gt;</span></span>
+<span id="cb26-14"><a href="attributelist.html#cb26-14" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;online&gt;</span></span>
+<span id="cb26-15"><a href="attributelist.html#cb26-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;onlineDescription&gt;</span>f1s-20 Zipped Shapefile File<span class="kw">&lt;/onlineDescription&gt;</span></span>
+<span id="cb26-16"><a href="attributelist.html#cb26-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;url</span><span class="ot"> function=</span><span class="st">&quot;download&quot;</span><span class="kw">&gt;</span>http://www.fsu.edu/lter/data/fls-20.zip<span class="kw">&lt;/url&gt;</span></span>
+<span id="cb26-17"><a href="attributelist.html#cb26-17" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/online&gt;</span></span>
+<span id="cb26-18"><a href="attributelist.html#cb26-18" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/distribution&gt;</span></span>
+<span id="cb26-19"><a href="attributelist.html#cb26-19" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/physical&gt;</span></span>
+<span id="cb26-20"><a href="attributelist.html#cb26-20" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;attributeList</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.attributeList&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb26-21"><a href="attributelist.html#cb26-21" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.FID&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb26-22"><a href="attributelist.html#cb26-22" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;attributeName&gt;</span>FID<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb26-23"><a href="attributelist.html#cb26-23" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;attributeDefinition&gt;</span>Internal feature number.<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb26-24"><a href="attributelist.html#cb26-24" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>OID<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb26-25"><a href="attributelist.html#cb26-25" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb26-26"><a href="attributelist.html#cb26-26" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;nominal&gt;</span></span>
+<span id="cb26-27"><a href="attributelist.html#cb26-27" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;nonNumericDomain&gt;</span></span>
+<span id="cb26-28"><a href="attributelist.html#cb26-28" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;textDomain&gt;</span></span>
+<span id="cb26-29"><a href="attributelist.html#cb26-29" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;definition&gt;</span></span>
 <span id="cb26-30"><a href="attributelist.html#cb26-30" aria-hidden="true" tabindex="-1"></a>                        Sequential unique whole numbers that are automatically generated.</span>
-<span id="cb26-31"><a href="attributelist.html#cb26-31" aria-hidden="true" tabindex="-1"></a>                     &lt;/<span class="kw">definition</span>&gt;</span>
-<span id="cb26-32"><a href="attributelist.html#cb26-32" aria-hidden="true" tabindex="-1"></a>                  &lt;/<span class="kw">textDomain</span>&gt;</span>
-<span id="cb26-33"><a href="attributelist.html#cb26-33" aria-hidden="true" tabindex="-1"></a>               &lt;/<span class="kw">nonNumericDomain</span>&gt;</span>
-<span id="cb26-34"><a href="attributelist.html#cb26-34" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">nominal</span>&gt;</span>
-<span id="cb26-35"><a href="attributelist.html#cb26-35" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb26-36"><a href="attributelist.html#cb26-36" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb26-37"><a href="attributelist.html#cb26-37" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.Shape&quot;</span>&gt;</span>
-<span id="cb26-38"><a href="attributelist.html#cb26-38" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeName</span>&gt;Shape&lt;/<span class="kw">attributeName</span>&gt;</span>
-<span id="cb26-39"><a href="attributelist.html#cb26-39" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeDefinition</span>&gt;Feature geometry.&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb26-40"><a href="attributelist.html#cb26-40" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span>&gt;Geometry&lt;/<span class="kw">storageType</span>&gt;</span>
-<span id="cb26-41"><a href="attributelist.html#cb26-41" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb26-42"><a href="attributelist.html#cb26-42" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nominal</span>&gt;</span>
-<span id="cb26-43"><a href="attributelist.html#cb26-43" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">nonNumericDomain</span>&gt;</span>
-<span id="cb26-44"><a href="attributelist.html#cb26-44" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">textDomain</span>&gt;</span>
-<span id="cb26-45"><a href="attributelist.html#cb26-45" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">definition</span>&gt;Coordinates defining the features.&lt;/<span class="kw">definition</span>&gt;</span>
-<span id="cb26-46"><a href="attributelist.html#cb26-46" aria-hidden="true" tabindex="-1"></a>                  &lt;/<span class="kw">textDomain</span>&gt;</span>
-<span id="cb26-47"><a href="attributelist.html#cb26-47" aria-hidden="true" tabindex="-1"></a>               &lt;/<span class="kw">nonNumericDomain</span>&gt;</span>
-<span id="cb26-48"><a href="attributelist.html#cb26-48" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">nominal</span>&gt;</span>
-<span id="cb26-49"><a href="attributelist.html#cb26-49" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb26-50"><a href="attributelist.html#cb26-50" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb26-51"><a href="attributelist.html#cb26-51" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.Z955&quot;</span>&gt;</span>
-<span id="cb26-52"><a href="attributelist.html#cb26-52" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeName</span>&gt;Z955&lt;/<span class="kw">attributeName</span>&gt;</span>
-<span id="cb26-53"><a href="attributelist.html#cb26-53" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeDefinition</span>&gt;</span>
+<span id="cb26-31"><a href="attributelist.html#cb26-31" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb26-32"><a href="attributelist.html#cb26-32" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;/textDomain&gt;</span></span>
+<span id="cb26-33"><a href="attributelist.html#cb26-33" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
+<span id="cb26-34"><a href="attributelist.html#cb26-34" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/nominal&gt;</span></span>
+<span id="cb26-35"><a href="attributelist.html#cb26-35" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb26-36"><a href="attributelist.html#cb26-36" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb26-37"><a href="attributelist.html#cb26-37" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.Shape&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb26-38"><a href="attributelist.html#cb26-38" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;attributeName&gt;</span>Shape<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb26-39"><a href="attributelist.html#cb26-39" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;attributeDefinition&gt;</span>Feature geometry.<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb26-40"><a href="attributelist.html#cb26-40" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>Geometry<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb26-41"><a href="attributelist.html#cb26-41" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb26-42"><a href="attributelist.html#cb26-42" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;nominal&gt;</span></span>
+<span id="cb26-43"><a href="attributelist.html#cb26-43" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;nonNumericDomain&gt;</span></span>
+<span id="cb26-44"><a href="attributelist.html#cb26-44" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;textDomain&gt;</span></span>
+<span id="cb26-45"><a href="attributelist.html#cb26-45" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;definition&gt;</span>Coordinates defining the features.<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb26-46"><a href="attributelist.html#cb26-46" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;/textDomain&gt;</span></span>
+<span id="cb26-47"><a href="attributelist.html#cb26-47" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
+<span id="cb26-48"><a href="attributelist.html#cb26-48" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/nominal&gt;</span></span>
+<span id="cb26-49"><a href="attributelist.html#cb26-49" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb26-50"><a href="attributelist.html#cb26-50" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb26-51"><a href="attributelist.html#cb26-51" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;Landuse for Ficity in 1955.Z955&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb26-52"><a href="attributelist.html#cb26-52" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;attributeName&gt;</span>Z955<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb26-53"><a href="attributelist.html#cb26-53" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;attributeDefinition&gt;</span></span>
 <span id="cb26-54"><a href="attributelist.html#cb26-54" aria-hidden="true" tabindex="-1"></a>            This field signifies the landuse value for each polygon.</span>
-<span id="cb26-55"><a href="attributelist.html#cb26-55" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb26-56"><a href="attributelist.html#cb26-56" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span>&gt;string&lt;/<span class="kw">storageType</span>&gt;</span>
-<span id="cb26-57"><a href="attributelist.html#cb26-57" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb26-58"><a href="attributelist.html#cb26-58" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nominal</span>&gt;</span>
-<span id="cb26-59"><a href="attributelist.html#cb26-59" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">nonNumericDomain</span>&gt;</span>
-<span id="cb26-60"><a href="attributelist.html#cb26-60" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">enumeratedDomain</span>&gt;</span>
-<span id="cb26-61"><a href="attributelist.html#cb26-61" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">codeDefinition</span>&gt;</span>
-<span id="cb26-62"><a href="attributelist.html#cb26-62" aria-hidden="true" tabindex="-1"></a>                        &lt;<span class="kw">code</span>&gt;Agriculture&lt;/<span class="kw">code</span>&gt;</span>
-<span id="cb26-63"><a href="attributelist.html#cb26-63" aria-hidden="true" tabindex="-1"></a>                        &lt;<span class="kw">definition</span>&gt;Agricultural land use&lt;/<span class="kw">definition</span>&gt;</span>
-<span id="cb26-64"><a href="attributelist.html#cb26-64" aria-hidden="true" tabindex="-1"></a>                     &lt;/<span class="kw">codeDefinition</span>&gt;</span>
-<span id="cb26-65"><a href="attributelist.html#cb26-65" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">codeDefinition</span>&gt;</span>
-<span id="cb26-66"><a href="attributelist.html#cb26-66" aria-hidden="true" tabindex="-1"></a>                        &lt;<span class="kw">code</span>&gt;Urban&lt;/<span class="kw">code</span>&gt;</span>
-<span id="cb26-67"><a href="attributelist.html#cb26-67" aria-hidden="true" tabindex="-1"></a>                        &lt;<span class="kw">definition</span>&gt;Urbanized area&lt;/<span class="kw">definition</span>&gt;</span>
-<span id="cb26-68"><a href="attributelist.html#cb26-68" aria-hidden="true" tabindex="-1"></a>                     &lt;/<span class="kw">codeDefinition</span>&gt;</span>
-<span id="cb26-69"><a href="attributelist.html#cb26-69" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">codeDefinition</span>&gt;</span>
-<span id="cb26-70"><a href="attributelist.html#cb26-70" aria-hidden="true" tabindex="-1"></a>                        &lt;<span class="kw">code</span>&gt;Desert&lt;/<span class="kw">code</span>&gt;</span>
-<span id="cb26-71"><a href="attributelist.html#cb26-71" aria-hidden="true" tabindex="-1"></a>                        &lt;<span class="kw">definition</span>&gt;Unmodified area&lt;/<span class="kw">definition</span>&gt;</span>
-<span id="cb26-72"><a href="attributelist.html#cb26-72" aria-hidden="true" tabindex="-1"></a>                     &lt;/<span class="kw">codeDefinition</span>&gt;</span>
-<span id="cb26-73"><a href="attributelist.html#cb26-73" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">codeDefinition</span>&gt;</span>
-<span id="cb26-74"><a href="attributelist.html#cb26-74" aria-hidden="true" tabindex="-1"></a>                        &lt;<span class="kw">code</span>&gt;Recreation&lt;/<span class="kw">code</span>&gt;</span>
-<span id="cb26-75"><a href="attributelist.html#cb26-75" aria-hidden="true" tabindex="-1"></a>                        &lt;<span class="kw">definition</span>&gt;Recreational land use&lt;/<span class="kw">definition</span>&gt;</span>
-<span id="cb26-76"><a href="attributelist.html#cb26-76" aria-hidden="true" tabindex="-1"></a>                     &lt;/<span class="kw">codeDefinition</span>&gt;</span>
-<span id="cb26-77"><a href="attributelist.html#cb26-77" aria-hidden="true" tabindex="-1"></a>                  &lt;/<span class="kw">enumeratedDomain</span>&gt;</span>
-<span id="cb26-78"><a href="attributelist.html#cb26-78" aria-hidden="true" tabindex="-1"></a>               &lt;/<span class="kw">nonNumericDomain</span>&gt;</span>
-<span id="cb26-79"><a href="attributelist.html#cb26-79" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">nominal</span>&gt;</span>
-<span id="cb26-80"><a href="attributelist.html#cb26-80" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb26-81"><a href="attributelist.html#cb26-81" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb26-82"><a href="attributelist.html#cb26-82" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">attributeList</span>&gt;</span>
-<span id="cb26-83"><a href="attributelist.html#cb26-83" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">geometry</span>&gt;Polygon&lt;/<span class="kw">geometry</span>&gt;</span>
-<span id="cb26-84"><a href="attributelist.html#cb26-84" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">geometricObjectCount</span>&gt;78&lt;/<span class="kw">geometricObjectCount</span>&gt;</span>
-<span id="cb26-85"><a href="attributelist.html#cb26-85" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">spatialReference</span>&gt;</span>
-<span id="cb26-86"><a href="attributelist.html#cb26-86" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">horizCoordSysName</span>&gt;NAD_1927_UTM_Zone_12N&lt;/<span class="kw">horizCoordSysName</span>&gt;</span>
-<span id="cb26-87"><a href="attributelist.html#cb26-87" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">spatialReference</span>&gt;</span>
-<span id="cb26-88"><a href="attributelist.html#cb26-88" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">spatialVector</span>&gt;</span></code></pre></div>
+<span id="cb26-55"><a href="attributelist.html#cb26-55" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb26-56"><a href="attributelist.html#cb26-56" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="kw">&gt;</span>string<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb26-57"><a href="attributelist.html#cb26-57" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb26-58"><a href="attributelist.html#cb26-58" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;nominal&gt;</span></span>
+<span id="cb26-59"><a href="attributelist.html#cb26-59" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;nonNumericDomain&gt;</span></span>
+<span id="cb26-60"><a href="attributelist.html#cb26-60" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;enumeratedDomain&gt;</span></span>
+<span id="cb26-61"><a href="attributelist.html#cb26-61" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;codeDefinition&gt;</span></span>
+<span id="cb26-62"><a href="attributelist.html#cb26-62" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">&lt;code&gt;</span>Agriculture<span class="kw">&lt;/code&gt;</span></span>
+<span id="cb26-63"><a href="attributelist.html#cb26-63" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">&lt;definition&gt;</span>Agricultural land use<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb26-64"><a href="attributelist.html#cb26-64" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;/codeDefinition&gt;</span></span>
+<span id="cb26-65"><a href="attributelist.html#cb26-65" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;codeDefinition&gt;</span></span>
+<span id="cb26-66"><a href="attributelist.html#cb26-66" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">&lt;code&gt;</span>Urban<span class="kw">&lt;/code&gt;</span></span>
+<span id="cb26-67"><a href="attributelist.html#cb26-67" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">&lt;definition&gt;</span>Urbanized area<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb26-68"><a href="attributelist.html#cb26-68" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;/codeDefinition&gt;</span></span>
+<span id="cb26-69"><a href="attributelist.html#cb26-69" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;codeDefinition&gt;</span></span>
+<span id="cb26-70"><a href="attributelist.html#cb26-70" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">&lt;code&gt;</span>Desert<span class="kw">&lt;/code&gt;</span></span>
+<span id="cb26-71"><a href="attributelist.html#cb26-71" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">&lt;definition&gt;</span>Unmodified area<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb26-72"><a href="attributelist.html#cb26-72" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;/codeDefinition&gt;</span></span>
+<span id="cb26-73"><a href="attributelist.html#cb26-73" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;codeDefinition&gt;</span></span>
+<span id="cb26-74"><a href="attributelist.html#cb26-74" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">&lt;code&gt;</span>Recreation<span class="kw">&lt;/code&gt;</span></span>
+<span id="cb26-75"><a href="attributelist.html#cb26-75" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">&lt;definition&gt;</span>Recreational land use<span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb26-76"><a href="attributelist.html#cb26-76" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;/codeDefinition&gt;</span></span>
+<span id="cb26-77"><a href="attributelist.html#cb26-77" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;/enumeratedDomain&gt;</span></span>
+<span id="cb26-78"><a href="attributelist.html#cb26-78" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
+<span id="cb26-79"><a href="attributelist.html#cb26-79" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/nominal&gt;</span></span>
+<span id="cb26-80"><a href="attributelist.html#cb26-80" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb26-81"><a href="attributelist.html#cb26-81" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb26-82"><a href="attributelist.html#cb26-82" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/attributeList&gt;</span></span>
+<span id="cb26-83"><a href="attributelist.html#cb26-83" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;geometry&gt;</span>Polygon<span class="kw">&lt;/geometry&gt;</span></span>
+<span id="cb26-84"><a href="attributelist.html#cb26-84" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;geometricObjectCount&gt;</span>78<span class="kw">&lt;/geometricObjectCount&gt;</span></span>
+<span id="cb26-85"><a href="attributelist.html#cb26-85" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;spatialReference&gt;</span></span>
+<span id="cb26-86"><a href="attributelist.html#cb26-86" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;horizCoordSysName&gt;</span>NAD_1927_UTM_Zone_12N<span class="kw">&lt;/horizCoordSysName&gt;</span></span>
+<span id="cb26-87"><a href="attributelist.html#cb26-87" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/spatialReference&gt;</span></span>
+<span id="cb26-88"><a href="attributelist.html#cb26-88" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/spatialVector&gt;</span></span></code></pre></div>
 <p>Example 23: Entity and attribute information for spatialRaster</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb27-1"><a href="attributelist.html#cb27-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">spatialRaster</span><span class="ot"> id=</span><span class="st">&quot;fi_24k&quot;</span>&gt;</span>
-<span id="cb27-2"><a href="attributelist.html#cb27-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityName</span>&gt;fi_24k&lt;/<span class="kw">entityName</span>&gt;</span>
-<span id="cb27-3"><a href="attributelist.html#cb27-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityDefinition</span>&gt;Ficiticiou State 7.5 Minute Digital Elevation Model&lt;/<span class="kw">entityDefinition</span>&gt;</span>
-<span id="cb27-4"><a href="attributelist.html#cb27-4" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
-<span id="cb27-5"><a href="attributelist.html#cb27-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">objectName</span>&gt;fls-30.zip&lt;/<span class="kw">objectName</span>&gt;</span>
-<span id="cb27-6"><a href="attributelist.html#cb27-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb27-7"><a href="attributelist.html#cb27-7" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">externallyDefinedFormat</span>&gt;</span>
-<span id="cb27-8"><a href="attributelist.html#cb27-8" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">formatName</span>&gt;Esri binary grid&lt;/<span class="kw">formatName</span>&gt;</span>
-<span id="cb27-9"><a href="attributelist.html#cb27-9" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">externallyDefinedFormat</span>&gt;</span>
-<span id="cb27-10"><a href="attributelist.html#cb27-10" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb27-11"><a href="attributelist.html#cb27-11" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">distribution</span>&gt;</span>
-<span id="cb27-12"><a href="attributelist.html#cb27-12" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">online</span>&gt;</span>
-<span id="cb27-13"><a href="attributelist.html#cb27-13" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">onlineDescription</span>&gt;f1s-30 zipped raster data File&lt;/<span class="kw">onlineDescription</span>&gt;</span>
-<span id="cb27-14"><a href="attributelist.html#cb27-14" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">&quot;download&quot;</span>&gt;http://www.fsu.edu/lter/data/fls-30.zip&lt;/<span class="kw">url</span>&gt;</span>
-<span id="cb27-15"><a href="attributelist.html#cb27-15" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">online</span>&gt;</span>
-<span id="cb27-16"><a href="attributelist.html#cb27-16" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">distribution</span>&gt;</span>
-<span id="cb27-17"><a href="attributelist.html#cb27-17" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
-<span id="cb27-18"><a href="attributelist.html#cb27-18" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attributeList</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.attributeList&quot;</span>&gt;</span>
-<span id="cb27-19"><a href="attributelist.html#cb27-19" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.ObjectID&quot;</span>&gt;</span>
-<span id="cb27-20"><a href="attributelist.html#cb27-20" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeName</span>&gt;ObjectID&lt;/<span class="kw">attributeName</span>&gt;</span>
-<span id="cb27-21"><a href="attributelist.html#cb27-21" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeDefinition</span>&gt;Internal feature number.&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb27-22"><a href="attributelist.html#cb27-22" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span>&gt;OID&lt;/<span class="kw">storageType</span>&gt;</span>
-<span id="cb27-23"><a href="attributelist.html#cb27-23" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb27-24"><a href="attributelist.html#cb27-24" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nominal</span>&gt;</span>
-<span id="cb27-25"><a href="attributelist.html#cb27-25" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">nonNumericDomain</span>&gt;</span>
-<span id="cb27-26"><a href="attributelist.html#cb27-26" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">textDomain</span>&gt;</span>
-<span id="cb27-27"><a href="attributelist.html#cb27-27" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">definition</span>&gt;</span>
+<div class="sourceCode" id="cb27"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb27-1"><a href="attributelist.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;spatialRaster</span><span class="ot"> id=</span><span class="st">&quot;fi_24k&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb27-2"><a href="attributelist.html#cb27-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;entityName&gt;</span>fi_24k<span class="kw">&lt;/entityName&gt;</span></span>
+<span id="cb27-3"><a href="attributelist.html#cb27-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;entityDefinition&gt;</span>Ficiticiou State 7.5 Minute Digital Elevation Model<span class="kw">&lt;/entityDefinition&gt;</span></span>
+<span id="cb27-4"><a href="attributelist.html#cb27-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;physical&gt;</span></span>
+<span id="cb27-5"><a href="attributelist.html#cb27-5" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;objectName&gt;</span>fls-30.zip<span class="kw">&lt;/objectName&gt;</span></span>
+<span id="cb27-6"><a href="attributelist.html#cb27-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;dataFormat&gt;</span></span>
+<span id="cb27-7"><a href="attributelist.html#cb27-7" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;externallyDefinedFormat&gt;</span></span>
+<span id="cb27-8"><a href="attributelist.html#cb27-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;formatName&gt;</span>Esri binary grid<span class="kw">&lt;/formatName&gt;</span></span>
+<span id="cb27-9"><a href="attributelist.html#cb27-9" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/externallyDefinedFormat&gt;</span></span>
+<span id="cb27-10"><a href="attributelist.html#cb27-10" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/dataFormat&gt;</span></span>
+<span id="cb27-11"><a href="attributelist.html#cb27-11" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;distribution&gt;</span></span>
+<span id="cb27-12"><a href="attributelist.html#cb27-12" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;online&gt;</span></span>
+<span id="cb27-13"><a href="attributelist.html#cb27-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;onlineDescription&gt;</span>f1s-30 zipped raster data File<span class="kw">&lt;/onlineDescription&gt;</span></span>
+<span id="cb27-14"><a href="attributelist.html#cb27-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;url</span><span class="ot"> function=</span><span class="st">&quot;download&quot;</span><span class="kw">&gt;</span>http://www.fsu.edu/lter/data/fls-30.zip<span class="kw">&lt;/url&gt;</span></span>
+<span id="cb27-15"><a href="attributelist.html#cb27-15" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/online&gt;</span></span>
+<span id="cb27-16"><a href="attributelist.html#cb27-16" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/distribution&gt;</span></span>
+<span id="cb27-17"><a href="attributelist.html#cb27-17" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/physical&gt;</span></span>
+<span id="cb27-18"><a href="attributelist.html#cb27-18" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;attributeList</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.attributeList&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb27-19"><a href="attributelist.html#cb27-19" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.ObjectID&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb27-20"><a href="attributelist.html#cb27-20" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;attributeName&gt;</span>ObjectID<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb27-21"><a href="attributelist.html#cb27-21" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;attributeDefinition&gt;</span>Internal feature number.<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb27-22"><a href="attributelist.html#cb27-22" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>OID<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb27-23"><a href="attributelist.html#cb27-23" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb27-24"><a href="attributelist.html#cb27-24" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;nominal&gt;</span></span>
+<span id="cb27-25"><a href="attributelist.html#cb27-25" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;nonNumericDomain&gt;</span></span>
+<span id="cb27-26"><a href="attributelist.html#cb27-26" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;textDomain&gt;</span></span>
+<span id="cb27-27"><a href="attributelist.html#cb27-27" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;definition&gt;</span></span>
 <span id="cb27-28"><a href="attributelist.html#cb27-28" aria-hidden="true" tabindex="-1"></a>                        Sequential unique whole numbers that are automatically generated.</span>
-<span id="cb27-29"><a href="attributelist.html#cb27-29" aria-hidden="true" tabindex="-1"></a>                     &lt;/<span class="kw">definition</span>&gt;</span>
-<span id="cb27-30"><a href="attributelist.html#cb27-30" aria-hidden="true" tabindex="-1"></a>                  &lt;/<span class="kw">textDomain</span>&gt;</span>
-<span id="cb27-31"><a href="attributelist.html#cb27-31" aria-hidden="true" tabindex="-1"></a>               &lt;/<span class="kw">nonNumericDomain</span>&gt;</span>
-<span id="cb27-32"><a href="attributelist.html#cb27-32" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">nominal</span>&gt;</span>
-<span id="cb27-33"><a href="attributelist.html#cb27-33" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb27-34"><a href="attributelist.html#cb27-34" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb27-35"><a href="attributelist.html#cb27-35" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.Cell Value&quot;</span>&gt;</span>
-<span id="cb27-36"><a href="attributelist.html#cb27-36" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeName</span>&gt;Cell Value&lt;/<span class="kw">attributeName</span>&gt;</span>
-<span id="cb27-37"><a href="attributelist.html#cb27-37" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeDefinition</span>&gt;Elevation Value&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb27-38"><a href="attributelist.html#cb27-38" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span>&gt;Integer&lt;/<span class="kw">storageType</span>&gt;</span>
-<span id="cb27-39"><a href="attributelist.html#cb27-39" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb27-40"><a href="attributelist.html#cb27-40" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">ratio</span>&gt;</span>
-<span id="cb27-41"><a href="attributelist.html#cb27-41" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">unit</span>&gt;</span>
-<span id="cb27-42"><a href="attributelist.html#cb27-42" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">standardUnit</span>&gt;meter&lt;/<span class="kw">standardUnit</span>&gt;</span>
-<span id="cb27-43"><a href="attributelist.html#cb27-43" aria-hidden="true" tabindex="-1"></a>               &lt;/<span class="kw">unit</span>&gt;</span>
-<span id="cb27-44"><a href="attributelist.html#cb27-44" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">precision</span> /&gt;</span>
-<span id="cb27-45"><a href="attributelist.html#cb27-45" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">numericDomain</span>&gt;</span>
-<span id="cb27-46"><a href="attributelist.html#cb27-46" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">numberType</span>&gt;integer&lt;/<span class="kw">numberType</span>&gt;</span>
-<span id="cb27-47"><a href="attributelist.html#cb27-47" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">bounds</span>&gt;</span>
-<span id="cb27-48"><a href="attributelist.html#cb27-48" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;true&quot;</span>&gt;-5193.000000&lt;/<span class="kw">minimum</span>&gt;</span>
-<span id="cb27-49"><a href="attributelist.html#cb27-49" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">maximum</span><span class="ot"> exclusive=</span><span class="st">&quot;true&quot;</span>&gt;14785.000000&lt;/<span class="kw">maximum</span>&gt;</span>
-<span id="cb27-50"><a href="attributelist.html#cb27-50" aria-hidden="true" tabindex="-1"></a>                  &lt;/<span class="kw">bounds</span>&gt;</span>
-<span id="cb27-51"><a href="attributelist.html#cb27-51" aria-hidden="true" tabindex="-1"></a>               &lt;/<span class="kw">numericDomain</span>&gt;</span>
-<span id="cb27-52"><a href="attributelist.html#cb27-52" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">ratio</span>&gt;</span>
-<span id="cb27-53"><a href="attributelist.html#cb27-53" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb27-54"><a href="attributelist.html#cb27-54" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb27-55"><a href="attributelist.html#cb27-55" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.Count&quot;</span>&gt;</span>
-<span id="cb27-56"><a href="attributelist.html#cb27-56" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeName</span>&gt;Count&lt;/<span class="kw">attributeName</span>&gt;</span>
-<span id="cb27-57"><a href="attributelist.html#cb27-57" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeDefinition</span>&gt;Count&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb27-58"><a href="attributelist.html#cb27-58" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span>&gt;Integer&lt;/<span class="kw">storageType</span>&gt;</span>
-<span id="cb27-59"><a href="attributelist.html#cb27-59" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb27-60"><a href="attributelist.html#cb27-60" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">ratio</span>&gt;</span>
-<span id="cb27-61"><a href="attributelist.html#cb27-61" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">unit</span>&gt;</span>
-<span id="cb27-62"><a href="attributelist.html#cb27-62" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">standardUnit</span>&gt;number&lt;/<span class="kw">standardUnit</span>&gt;</span>
-<span id="cb27-63"><a href="attributelist.html#cb27-63" aria-hidden="true" tabindex="-1"></a>               &lt;/<span class="kw">unit</span>&gt;</span>
-<span id="cb27-64"><a href="attributelist.html#cb27-64" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">precision</span> /&gt;</span>
-<span id="cb27-65"><a href="attributelist.html#cb27-65" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">numericDomain</span>&gt;</span>
-<span id="cb27-66"><a href="attributelist.html#cb27-66" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">numberType</span>&gt;whole&lt;/<span class="kw">numberType</span>&gt;</span>
-<span id="cb27-67"><a href="attributelist.html#cb27-67" aria-hidden="true" tabindex="-1"></a>               &lt;/<span class="kw">numericDomain</span>&gt;</span>
-<span id="cb27-68"><a href="attributelist.html#cb27-68" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">ratio</span>&gt;</span>
-<span id="cb27-69"><a href="attributelist.html#cb27-69" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">measurementScale</span>&gt;</span>
-<span id="cb27-70"><a href="attributelist.html#cb27-70" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb27-71"><a href="attributelist.html#cb27-71" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">attributeList</span>&gt;</span>
-<span id="cb27-72"><a href="attributelist.html#cb27-72" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">spatialReference</span>&gt;</span>
-<span id="cb27-73"><a href="attributelist.html#cb27-73" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">horizCoordSysName</span>&gt;NAD_1927_UTM_Zone_12N&lt;/<span class="kw">horizCoordSysName</span>&gt;</span>
-<span id="cb27-74"><a href="attributelist.html#cb27-74" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">spatialReference</span>&gt;</span>
-<span id="cb27-75"><a href="attributelist.html#cb27-75" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">horizontalAccuracy</span>&gt;not available&lt;/<span class="kw">horizontalAccuracy</span>&gt;</span>
-<span id="cb27-76"><a href="attributelist.html#cb27-76" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">verticalAccuracy</span>&gt;not available&lt;/<span class="kw">verticalAccuracy</span>&gt;</span>
-<span id="cb27-77"><a href="attributelist.html#cb27-77" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">cellSizeXDirection</span>&gt;30.0&lt;/<span class="kw">cellSizeXDirection</span>&gt;</span>
-<span id="cb27-78"><a href="attributelist.html#cb27-78" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">cellSizeYDirection</span>&gt;30.0&lt;/<span class="kw">cellSizeYDirection</span>&gt;</span>
-<span id="cb27-79"><a href="attributelist.html#cb27-79" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">numberOfBands</span>&gt;1&lt;/<span class="kw">numberOfBands</span>&gt;</span>
-<span id="cb27-80"><a href="attributelist.html#cb27-80" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">rasterOrigin</span>&gt;Upper Left&lt;/<span class="kw">rasterOrigin</span>&gt;</span>
-<span id="cb27-81"><a href="attributelist.html#cb27-81" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">rows</span>&gt;21092&lt;/<span class="kw">rows</span>&gt;</span>
-<span id="cb27-82"><a href="attributelist.html#cb27-82" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">columns</span>&gt;18136&lt;/<span class="kw">columns</span>&gt;</span>
-<span id="cb27-83"><a href="attributelist.html#cb27-83" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">verticals</span>&gt;1&lt;/<span class="kw">verticals</span>&gt;</span>
-<span id="cb27-84"><a href="attributelist.html#cb27-84" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">cellGeometry</span>&gt;matrix&lt;/<span class="kw">cellGeometry</span>&gt;</span>
-<span id="cb27-85"><a href="attributelist.html#cb27-85" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">spatialRaster</span>&gt;</span></code></pre></div>
+<span id="cb27-29"><a href="attributelist.html#cb27-29" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;/definition&gt;</span></span>
+<span id="cb27-30"><a href="attributelist.html#cb27-30" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;/textDomain&gt;</span></span>
+<span id="cb27-31"><a href="attributelist.html#cb27-31" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;/nonNumericDomain&gt;</span></span>
+<span id="cb27-32"><a href="attributelist.html#cb27-32" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/nominal&gt;</span></span>
+<span id="cb27-33"><a href="attributelist.html#cb27-33" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb27-34"><a href="attributelist.html#cb27-34" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb27-35"><a href="attributelist.html#cb27-35" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.Cell Value&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb27-36"><a href="attributelist.html#cb27-36" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;attributeName&gt;</span>Cell Value<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb27-37"><a href="attributelist.html#cb27-37" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;attributeDefinition&gt;</span>Elevation Value<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb27-38"><a href="attributelist.html#cb27-38" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>Integer<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb27-39"><a href="attributelist.html#cb27-39" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb27-40"><a href="attributelist.html#cb27-40" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;ratio&gt;</span></span>
+<span id="cb27-41"><a href="attributelist.html#cb27-41" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;unit&gt;</span></span>
+<span id="cb27-42"><a href="attributelist.html#cb27-42" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;standardUnit&gt;</span>meter<span class="kw">&lt;/standardUnit&gt;</span></span>
+<span id="cb27-43"><a href="attributelist.html#cb27-43" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;/unit&gt;</span></span>
+<span id="cb27-44"><a href="attributelist.html#cb27-44" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;precision</span> <span class="kw">/&gt;</span></span>
+<span id="cb27-45"><a href="attributelist.html#cb27-45" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;numericDomain&gt;</span></span>
+<span id="cb27-46"><a href="attributelist.html#cb27-46" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;numberType&gt;</span>integer<span class="kw">&lt;/numberType&gt;</span></span>
+<span id="cb27-47"><a href="attributelist.html#cb27-47" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;bounds&gt;</span></span>
+<span id="cb27-48"><a href="attributelist.html#cb27-48" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;minimum</span><span class="ot"> exclusive=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>-5193.000000<span class="kw">&lt;/minimum&gt;</span></span>
+<span id="cb27-49"><a href="attributelist.html#cb27-49" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">&lt;maximum</span><span class="ot"> exclusive=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>14785.000000<span class="kw">&lt;/maximum&gt;</span></span>
+<span id="cb27-50"><a href="attributelist.html#cb27-50" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;/bounds&gt;</span></span>
+<span id="cb27-51"><a href="attributelist.html#cb27-51" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;/numericDomain&gt;</span></span>
+<span id="cb27-52"><a href="attributelist.html#cb27-52" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/ratio&gt;</span></span>
+<span id="cb27-53"><a href="attributelist.html#cb27-53" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb27-54"><a href="attributelist.html#cb27-54" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb27-55"><a href="attributelist.html#cb27-55" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;attribute</span><span class="ot"> id=</span><span class="st">&quot;fi_24k.Count&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb27-56"><a href="attributelist.html#cb27-56" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;attributeName&gt;</span>Count<span class="kw">&lt;/attributeName&gt;</span></span>
+<span id="cb27-57"><a href="attributelist.html#cb27-57" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;attributeDefinition&gt;</span>Count<span class="kw">&lt;/attributeDefinition&gt;</span></span>
+<span id="cb27-58"><a href="attributelist.html#cb27-58" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;storageType</span><span class="ot"> typeSystem=</span><span class="st">&quot;http://www.esri.com/metadata/esriprof80.html&quot;</span><span class="kw">&gt;</span>Integer<span class="kw">&lt;/storageType&gt;</span></span>
+<span id="cb27-59"><a href="attributelist.html#cb27-59" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;measurementScale&gt;</span></span>
+<span id="cb27-60"><a href="attributelist.html#cb27-60" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;ratio&gt;</span></span>
+<span id="cb27-61"><a href="attributelist.html#cb27-61" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;unit&gt;</span></span>
+<span id="cb27-62"><a href="attributelist.html#cb27-62" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;standardUnit&gt;</span>number<span class="kw">&lt;/standardUnit&gt;</span></span>
+<span id="cb27-63"><a href="attributelist.html#cb27-63" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;/unit&gt;</span></span>
+<span id="cb27-64"><a href="attributelist.html#cb27-64" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;precision</span> <span class="kw">/&gt;</span></span>
+<span id="cb27-65"><a href="attributelist.html#cb27-65" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;numericDomain&gt;</span></span>
+<span id="cb27-66"><a href="attributelist.html#cb27-66" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">&lt;numberType&gt;</span>whole<span class="kw">&lt;/numberType&gt;</span></span>
+<span id="cb27-67"><a href="attributelist.html#cb27-67" aria-hidden="true" tabindex="-1"></a>               <span class="kw">&lt;/numericDomain&gt;</span></span>
+<span id="cb27-68"><a href="attributelist.html#cb27-68" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/ratio&gt;</span></span>
+<span id="cb27-69"><a href="attributelist.html#cb27-69" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/measurementScale&gt;</span></span>
+<span id="cb27-70"><a href="attributelist.html#cb27-70" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/attribute&gt;</span></span>
+<span id="cb27-71"><a href="attributelist.html#cb27-71" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/attributeList&gt;</span></span>
+<span id="cb27-72"><a href="attributelist.html#cb27-72" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;spatialReference&gt;</span></span>
+<span id="cb27-73"><a href="attributelist.html#cb27-73" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;horizCoordSysName&gt;</span>NAD_1927_UTM_Zone_12N<span class="kw">&lt;/horizCoordSysName&gt;</span></span>
+<span id="cb27-74"><a href="attributelist.html#cb27-74" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/spatialReference&gt;</span></span>
+<span id="cb27-75"><a href="attributelist.html#cb27-75" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;horizontalAccuracy&gt;</span>not available<span class="kw">&lt;/horizontalAccuracy&gt;</span></span>
+<span id="cb27-76"><a href="attributelist.html#cb27-76" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;verticalAccuracy&gt;</span>not available<span class="kw">&lt;/verticalAccuracy&gt;</span></span>
+<span id="cb27-77"><a href="attributelist.html#cb27-77" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;cellSizeXDirection&gt;</span>30.0<span class="kw">&lt;/cellSizeXDirection&gt;</span></span>
+<span id="cb27-78"><a href="attributelist.html#cb27-78" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;cellSizeYDirection&gt;</span>30.0<span class="kw">&lt;/cellSizeYDirection&gt;</span></span>
+<span id="cb27-79"><a href="attributelist.html#cb27-79" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;numberOfBands&gt;</span>1<span class="kw">&lt;/numberOfBands&gt;</span></span>
+<span id="cb27-80"><a href="attributelist.html#cb27-80" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;rasterOrigin&gt;</span>Upper Left<span class="kw">&lt;/rasterOrigin&gt;</span></span>
+<span id="cb27-81"><a href="attributelist.html#cb27-81" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;rows&gt;</span>21092<span class="kw">&lt;/rows&gt;</span></span>
+<span id="cb27-82"><a href="attributelist.html#cb27-82" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;columns&gt;</span>18136<span class="kw">&lt;/columns&gt;</span></span>
+<span id="cb27-83"><a href="attributelist.html#cb27-83" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;verticals&gt;</span>1<span class="kw">&lt;/verticals&gt;</span></span>
+<span id="cb27-84"><a href="attributelist.html#cb27-84" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;cellGeometry&gt;</span>matrix<span class="kw">&lt;/cellGeometry&gt;</span></span>
+<span id="cb27-85"><a href="attributelist.html#cb27-85" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/spatialRaster&gt;</span></span></code></pre></div>
 <p>The &lt;<strong>otherEntity</strong>&gt; data type includes the free text &lt;<strong>entityType</strong>&gt; element for naming the type of the entity.
 The <strong>otherEntity/physical/dataFormat/externallyDefinedFormat/formatName</strong> element stores the file format.
 While there is no controlled vocabulary for the content of these elements, format names can be drawn from <a href="https://cn.dataone.org/cn/v2/formats">DataONE’s objectFormaList</a>. Table 3 provides suggestions for some common other entity formats.</p>

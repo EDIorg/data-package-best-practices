@@ -7,11 +7,10 @@
   <title>Conventions and Definitions | Data Package Best Practices</title>
   <meta name="description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Conventions and Definitions | Data Package Best Practices" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
@@ -27,7 +26,7 @@ Ecological Metadata Language (EML).</p>" />
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2022-03-04" />
+<meta name="date" content="2022-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -36,7 +35,6 @@ Ecological Metadata Language (EML).</p>" />
   
 <link rel="prev" href="introduction.html"/>
 <link rel="next" href="general-recommendations.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,8 +52,9 @@ Ecological Metadata Language (EML).</p>" />
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -160,7 +159,7 @@ div.csl-indent {
 
 <ul class="summary">
 <li><a href="./">EDI Data Package Best Practices</a></li>
-<li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+<li style="margin-left:10px;"><a href="https://edirepository.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
@@ -315,10 +314,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="conventions-and-definitions" class="section level2 unnumbered">
-<h2>Conventions and Definitions</h2>
-<div id="audience" class="section level3">
-<h3>Audience</h3>
+<div id="conventions-and-definitions" class="section level2 unnumbered hasAnchor">
+<h2>Conventions and Definitions<a href="conventions-and-definitions.html#conventions-and-definitions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="audience" class="section level3 hasAnchor">
+<h3>Audience<a href="conventions-and-definitions.html#audience" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This document is intended for data managers. It assumes that readers are familiar with</p>
 <ul>
 <li>the basic structure of an XML document, and the ability to edit in an XML
@@ -327,10 +326,10 @@ editor like OxygenXML or XMLSpy.</li>
 document from a repository’s help-page, contact them for more information.</li>
 </ul>
 </div>
-<div id="fonts-and-typeface" class="section level3">
-<h3>Fonts and typeface</h3>
+<div id="fonts-and-typeface" class="section level3 hasAnchor">
+<h3>Fonts and typeface<a href="conventions-and-definitions.html#fonts-and-typeface" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Numbered examples of EML nodes are in fixed-width font:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="conventions-and-definitions.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span><span class="ot"> version=</span><span class="st">&quot;1.0&quot;</span><span class="ot"> encoding=</span><span class="st">&quot;UTF-8&quot;</span><span class="fu">?&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="conventions-and-definitions.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></span></code></pre></div>
 <p>XML element and attribute names, XPath and references to element names
 in text are in bold face. Single element names are surrounded by angle
 brackets, as they appear in XML.</p>
@@ -343,8 +342,8 @@ the EDI repository (but not by other repositories).</p>
 called “context notes,” and are placed in separate paragraphs, in
 italic.</em></p>
 </div>
-<div id="definitions" class="section level3">
-<h3>Definitions</h3>
+<div id="definitions" class="section level3 hasAnchor">
+<h3>Definitions<a href="conventions-and-definitions.html#definitions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <dl>
 <dt>
 EML preparer
@@ -372,11 +371,11 @@ avoid confusion with the EML element “<b>dataset</b>.”
 </dd>
 </dl>
 </div>
-<div id="other-eml-resources" class="section level3">
-<h3>Other EML Resources</h3>
+<div id="other-eml-resources" class="section level3 hasAnchor">
+<h3>Other EML Resources<a href="conventions-and-definitions.html#other-eml-resources" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Some sections refer to further information or tools. These can be found
-on the EDI website, under “Resources and How To…,” at
-<a href="https://environmentaldatarepository.org">https://environmentaldatarepository.org</a></p>
+on the EDI website, under “Resources,” at
+<a href="https://edirepository.org">https://edirepository.org</a></p>
 </div>
 </div>
             </section>

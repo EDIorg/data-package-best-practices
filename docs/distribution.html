@@ -7,11 +7,10 @@
   <title>distribution | Data Package Best Practices</title>
   <meta name="description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="distribution | Data Package Best Practices" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
@@ -27,7 +26,7 @@ Ecological Metadata Language (EML).</p>" />
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2022-03-04" />
+<meta name="date" content="2022-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -36,7 +35,6 @@ Ecological Metadata Language (EML).</p>" />
   
 <link rel="prev" href="intellectualrights.html"/>
 <link rel="next" href="coverage.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,8 +52,9 @@ Ecological Metadata Language (EML).</p>" />
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -160,7 +159,7 @@ div.csl-indent {
 
 <ul class="summary">
 <li><a href="./">EDI Data Package Best Practices</a></li>
-<li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+<li style="margin-left:10px;"><a href="https://edirepository.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
@@ -315,31 +314,31 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="distribution" class="section level2 unnumbered">
-<h2>distribution</h2>
+<div id="distribution" class="section level2 unnumbered hasAnchor">
+<h2>distribution<a href="distribution.html#distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This element is found at these locations (XPath):<br />
 <strong>/eml:eml/dataset/distribution</strong><br />
 <strong>/eml:eml/dataset/[entity]/physical/distribution</strong></p>
 <p>The &lt;<strong>distribution</strong>&gt; element can appear at both the dataset and
 entity levels.</p>
-<div id="dataset-level" class="section level3">
-<h3>Dataset level</h3>
+<div id="dataset-level" class="section level3 hasAnchor">
+<h3>Dataset level<a href="distribution.html#dataset-level" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>At the dataset level, the <code>&lt;distribution&gt;</code> element should be used for information only,
 because it applies to the entire package, not only to one entity.</p>
 <p><em>Context: The EDI repository will ignore a <code>&lt;distribution&gt;</code> element
 at the dataset level.</em></p>
 <p>Example 11a: distribution at the dataset level</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb14-1"><a href="distribution.html#cb14-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">distribution</span>&gt;</span>
-<span id="cb14-2"><a href="distribution.html#cb14-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">online</span>&gt;</span>
-<span id="cb14-3"><a href="distribution.html#cb14-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">onlineDescription</span>&gt;f1s-1 Data Web Page&lt;/<span class="kw">onlineDescription</span>&gt;</span>
-<span id="cb14-4"><a href="distribution.html#cb14-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">&quot;information&quot;</span>&gt;</span>
+<div class="sourceCode" id="cb14"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb14-1"><a href="distribution.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;distribution&gt;</span></span>
+<span id="cb14-2"><a href="distribution.html#cb14-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;online&gt;</span></span>
+<span id="cb14-3"><a href="distribution.html#cb14-3" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;onlineDescription&gt;</span>f1s-1 Data Web Page<span class="kw">&lt;/onlineDescription&gt;</span></span>
+<span id="cb14-4"><a href="distribution.html#cb14-4" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;url</span><span class="ot"> function=</span><span class="st">&quot;information&quot;</span><span class="kw">&gt;</span></span>
 <span id="cb14-5"><a href="distribution.html#cb14-5" aria-hidden="true" tabindex="-1"></a>         http://www.fsu.edu/lter/data/fls-1.htm</span>
-<span id="cb14-6"><a href="distribution.html#cb14-6" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">url</span>&gt;</span>
-<span id="cb14-7"><a href="distribution.html#cb14-7" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">online</span>&gt;</span>
-<span id="cb14-8"><a href="distribution.html#cb14-8" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">distribution</span>&gt;</span></code></pre></div>
+<span id="cb14-6"><a href="distribution.html#cb14-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/url&gt;</span></span>
+<span id="cb14-7"><a href="distribution.html#cb14-7" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/online&gt;</span></span>
+<span id="cb14-8"><a href="distribution.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/distribution&gt;</span></span></code></pre></div>
 </div>
-<div id="entity-level" class="section level3">
-<h3>Entity level</h3>
+<div id="entity-level" class="section level3 hasAnchor">
+<h3>Entity level<a href="distribution.html#entity-level" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The entity-level <code>&lt;distribution&gt;</code> element contains information on how that
 specific data entity (e.g., data table) can be accessed. The &lt;<strong>distribution</strong>&gt; element
 has one of three children for describing the location of the resource:
@@ -382,19 +381,19 @@ element is intended specifically for controlling access to the data
 entity itself. For more information on the &lt;<strong>access</strong>&gt; tree, see
 above, under the general access discussion.</p>
 <p>Example 11b: distribution at the data entity level</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb15-1"><a href="distribution.html#cb15-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dataTable</span>&gt;</span>
-<span id="cb15-2"><a href="distribution.html#cb15-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
+<div class="sourceCode" id="cb15"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb15-1"><a href="distribution.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;dataTable&gt;</span></span>
+<span id="cb15-2"><a href="distribution.html#cb15-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;physical&gt;</span></span>
 <span id="cb15-3"><a href="distribution.html#cb15-3" aria-hidden="true" tabindex="-1"></a>   ...</span>
-<span id="cb15-4"><a href="distribution.html#cb15-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">distribution</span>&gt;</span>
-<span id="cb15-5"><a href="distribution.html#cb15-5" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">online</span>&gt;</span>
-<span id="cb15-6"><a href="distribution.html#cb15-6" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">onlineDescription</span>&gt;f1s-1 Data Web Page&lt;/<span class="kw">onlineDescription</span>&gt;</span>
-<span id="cb15-7"><a href="distribution.html#cb15-7" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">&quot;download&quot;</span>&gt;</span>
+<span id="cb15-4"><a href="distribution.html#cb15-4" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;distribution&gt;</span></span>
+<span id="cb15-5"><a href="distribution.html#cb15-5" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;online&gt;</span></span>
+<span id="cb15-6"><a href="distribution.html#cb15-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;onlineDescription&gt;</span>f1s-1 Data Web Page<span class="kw">&lt;/onlineDescription&gt;</span></span>
+<span id="cb15-7"><a href="distribution.html#cb15-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;url</span><span class="ot"> function=</span><span class="st">&quot;download&quot;</span><span class="kw">&gt;</span></span>
 <span id="cb15-8"><a href="distribution.html#cb15-8" aria-hidden="true" tabindex="-1"></a>               http://www.fsu.edu/lter/data/fls-1.csv</span>
-<span id="cb15-9"><a href="distribution.html#cb15-9" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">url</span>&gt;</span>
-<span id="cb15-10"><a href="distribution.html#cb15-10" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">online</span>&gt;</span>
-<span id="cb15-11"><a href="distribution.html#cb15-11" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">distribution</span>&gt;</span>
-<span id="cb15-12"><a href="distribution.html#cb15-12" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
-<span id="cb15-13"><a href="distribution.html#cb15-13" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dataTable</span>&gt;</span></code></pre></div>
+<span id="cb15-9"><a href="distribution.html#cb15-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/url&gt;</span></span>
+<span id="cb15-10"><a href="distribution.html#cb15-10" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/online&gt;</span></span>
+<span id="cb15-11"><a href="distribution.html#cb15-11" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/distribution&gt;</span></span>
+<span id="cb15-12"><a href="distribution.html#cb15-12" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/physical&gt;</span></span>
+<span id="cb15-13"><a href="distribution.html#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/dataTable&gt;</span></span></code></pre></div>
 </div>
 </div>
             </section>

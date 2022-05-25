@@ -7,11 +7,10 @@
   <title>General Recommendations | Data Package Best Practices</title>
   <meta name="description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="General Recommendations | Data Package Best Practices" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
@@ -27,7 +26,7 @@ Ecological Metadata Language (EML).</p>" />
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2022-03-04" />
+<meta name="date" content="2022-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -36,7 +35,6 @@ Ecological Metadata Language (EML).</p>" />
   
 <link rel="prev" href="conventions-and-definitions.html"/>
 <link rel="next" href="Root_element.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,8 +52,9 @@ Ecological Metadata Language (EML).</p>" />
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -160,7 +159,7 @@ div.csl-indent {
 
 <ul class="summary">
 <li><a href="./">EDI Data Package Best Practices</a></li>
-<li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+<li style="margin-left:10px;"><a href="https://edirepository.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
@@ -315,19 +314,19 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="general-recommendations" class="section level2 unnumbered">
-<h2>General Recommendations</h2>
+<div id="general-recommendations" class="section level2 unnumbered hasAnchor">
+<h2>General Recommendations<a href="general-recommendations.html#general-recommendations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Following are general best practices for handling EML dataset metadata:</p>
-<div id="metadata-distribution" class="section level3">
-<h3>Metadata Distribution</h3>
+<div id="metadata-distribution" class="section level3 hasAnchor">
+<h3>Metadata Distribution<a href="general-recommendations.html#metadata-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Do not publicly distribute EML documents containing elements with incorrect information, e.g., as a workaround for missing metadata or to meet validation requirements. Pre-publication drafts, or EML produced for demonstration or testing purposes should be clearly identified as such and not contributed to public archives, because these are passed on to large-scale clearinghouses. For previews of drafts or handling test and demonstration data packages, consult your repository to learn about options.</p>
 </div>
-<div id="data-package-identifiers" class="section level3">
-<h3>Data Package Identifiers</h3>
+<div id="data-package-identifiers" class="section level3 hasAnchor">
+<h3>Data Package Identifiers<a href="general-recommendations.html#data-package-identifiers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Metadata and data set versioning are controlled by the contributor, and so identifiers are tied to local systems. Many repository systems that accept EML-described data support principles of immutable metadata and data entity versioning. EML has elements to contain package identifiers, although these may also be assigned externally. It is the responsibility of the submitters to understand the practices of their intended repository when using identifiers.</p>
 </div>
-<div id="high-priority-elements" class="section level3">
-<h3>High-priority Elements</h3>
+<div id="high-priority-elements" class="section level3 hasAnchor">
+<h3>High-priority Elements<a href="general-recommendations.html#high-priority-elements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>To support locating data by time, geographic location, and taxonomically, metadata should provide as much information as possible for the data package, in the three &lt;<strong>coverage</strong>&gt;; elements:
 <ul>

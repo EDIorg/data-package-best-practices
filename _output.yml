@@ -6,7 +6,7 @@ bookdown::gitbook:
       collapse: section
       before: |
         <li><a href="./">EDI Data Package Best Practices</a></li>
-        <li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+        <li style="margin-left:10px;"><a href="https://edirepository.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
         
     edit: https://github.com/EDIorg/data-package-best-practices/edit/master/%s
     download: ["pdf", "epub"]

@@ -98,8 +98,8 @@ avoid confusion with the EML element "<b>dataset</b>".</dd>
 ### Other EML Resources
 
 Some sections refer to further information or tools. These can be found
-on the EDI website, under "Resources and How To...", at
-[https://environmentaldatarepository.org](https://environmentaldatarepository.org)
+on the EDI website, under "Resources", at
+[https://edirepository.org](https://edirepository.org)
 
 ## General Recommendations {-}
 

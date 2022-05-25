@@ -7,11 +7,10 @@
   <title>People and Organizations (Parties) | Data Package Best Practices</title>
   <meta name="description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="People and Organizations (Parties) | Data Package Best Practices" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
@@ -27,7 +26,7 @@ Ecological Metadata Language (EML).</p>" />
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2022-03-04" />
+<meta name="date" content="2022-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -36,7 +35,6 @@ Ecological Metadata Language (EML).</p>" />
   
 <link rel="prev" href="title-dataset-1.html"/>
 <link rel="next" href="pubdate.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,8 +52,9 @@ Ecological Metadata Language (EML).</p>" />
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -160,7 +159,7 @@ div.csl-indent {
 
 <ul class="summary">
 <li><a href="./">EDI Data Package Best Practices</a></li>
-<li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+<li style="margin-left:10px;"><a href="https://edirepository.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
@@ -315,8 +314,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="people-and-organizations-parties" class="section level2 unnumbered">
-<h2>People and Organizations (Parties)</h2>
+<div id="people-and-organizations-parties" class="section level2 unnumbered hasAnchor">
+<h2>People and Organizations (Parties)<a href="people-and-organizations-parties.html#people-and-organizations-parties" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>People and organizations are all described using a “ResponsibleParty”
 group of elements, which is found at these locations (XPath):<br />
 <strong>/eml:eml/dataset/creator</strong><br />
@@ -347,8 +346,8 @@ recommended to simplify contacting responsible parties. See the
 organizations, so &lt;<strong>address</strong>&gt;, &lt;<strong>phone</strong>&gt;, and &lt;<strong>onlineURL</strong>&gt;
 elements should be included for them. In the examples, these elements
 are included for completeness.</p>
-<div id="userid" class="section level3">
-<h3>userId</h3>
+<div id="userid" class="section level3 hasAnchor">
+<h3>userId<a href="people-and-organizations-parties.html#userid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This element is found at this location (XPath):<br />
 <strong>/eml:eml/dataset/creator/userId</strong><br />
 <strong>/eml:eml/dataset/contact/userId</strong><br />
@@ -365,66 +364,66 @@ examples here are for ORCID identifiers, and that organization has asked
 that its full URI be used as both the <strong>system</strong> attribute, and as the
 head of the identifier itself.</p>
 <p>Example 4: creator</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb7-1"><a href="people-and-organizations-parties.html#cb7-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">creator</span><span class="ot"> id=</span><span class="st">&quot;org-1&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="ot"> scope=</span><span class="st">&quot;system&quot;</span>&gt;</span>
-<span id="cb7-2"><a href="people-and-organizations-parties.html#cb7-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">organizationName</span>&gt;Fictitious LTER Site&lt;/<span class="kw">organizationName</span>&gt;</span>
-<span id="cb7-3"><a href="people-and-organizations-parties.html#cb7-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">address</span>&gt;</span>
-<span id="cb7-4"><a href="people-and-organizations-parties.html#cb7-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;Department for Ecology&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb7-5"><a href="people-and-organizations-parties.html#cb7-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;Fictitious State University&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb7-6"><a href="people-and-organizations-parties.html#cb7-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;PO Box 111111&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb7-7"><a href="people-and-organizations-parties.html#cb7-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">city</span>&gt;Ficity&lt;/<span class="kw">city</span>&gt;</span>
-<span id="cb7-8"><a href="people-and-organizations-parties.html#cb7-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">administrativeArea</span>&gt;FI&lt;/<span class="kw">administrativeArea</span>&gt;</span>
-<span id="cb7-9"><a href="people-and-organizations-parties.html#cb7-9" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">postalCode</span>&gt;11111-1111&lt;/<span class="kw">postalCode</span>&gt;</span>
-<span id="cb7-10"><a href="people-and-organizations-parties.html#cb7-10" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">address</span>&gt;</span>
-<span id="cb7-11"><a href="people-and-organizations-parties.html#cb7-11" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span><span class="ot"> phonetype=</span><span class="st">&quot;voice&quot;</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
-<span id="cb7-12"><a href="people-and-organizations-parties.html#cb7-12" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">electronicMailAddress</span>&gt;fsu.contact@fi.univ.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
-<span id="cb7-13"><a href="people-and-organizations-parties.html#cb7-13" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">onlineUrl</span>&gt;http://www.fsu.edu/&lt;/<span class="kw">onlineUrl</span>&gt;</span>
-<span id="cb7-14"><a href="people-and-organizations-parties.html#cb7-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span><span class="ot"> system=</span><span class="st">&quot;https://orcid.org&quot;</span>&gt;</span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb7-1"><a href="people-and-organizations-parties.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;creator</span><span class="ot"> id=</span><span class="st">&quot;org-1&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="ot"> scope=</span><span class="st">&quot;system&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb7-2"><a href="people-and-organizations-parties.html#cb7-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;organizationName&gt;</span>Fictitious LTER Site<span class="kw">&lt;/organizationName&gt;</span></span>
+<span id="cb7-3"><a href="people-and-organizations-parties.html#cb7-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;address&gt;</span></span>
+<span id="cb7-4"><a href="people-and-organizations-parties.html#cb7-4" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>Department for Ecology<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb7-5"><a href="people-and-organizations-parties.html#cb7-5" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>Fictitious State University<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb7-6"><a href="people-and-organizations-parties.html#cb7-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>PO Box 111111<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb7-7"><a href="people-and-organizations-parties.html#cb7-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;city&gt;</span>Ficity<span class="kw">&lt;/city&gt;</span></span>
+<span id="cb7-8"><a href="people-and-organizations-parties.html#cb7-8" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;administrativeArea&gt;</span>FI<span class="kw">&lt;/administrativeArea&gt;</span></span>
+<span id="cb7-9"><a href="people-and-organizations-parties.html#cb7-9" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;postalCode&gt;</span>11111-1111<span class="kw">&lt;/postalCode&gt;</span></span>
+<span id="cb7-10"><a href="people-and-organizations-parties.html#cb7-10" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/address&gt;</span></span>
+<span id="cb7-11"><a href="people-and-organizations-parties.html#cb7-11" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;phone</span><span class="ot"> phonetype=</span><span class="st">&quot;voice&quot;</span><span class="kw">&gt;</span>(999) 999-9999<span class="kw">&lt;/phone&gt;</span></span>
+<span id="cb7-12"><a href="people-and-organizations-parties.html#cb7-12" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;electronicMailAddress&gt;</span>fsu.contact@fi.univ.edu<span class="kw">&lt;/electronicMailAddress&gt;</span></span>
+<span id="cb7-13"><a href="people-and-organizations-parties.html#cb7-13" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;onlineUrl&gt;</span>http://www.fsu.edu/<span class="kw">&lt;/onlineUrl&gt;</span></span>
+<span id="cb7-14"><a href="people-and-organizations-parties.html#cb7-14" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;userId</span><span class="ot"> system=</span><span class="st">&quot;https://orcid.org&quot;</span><span class="kw">&gt;</span></span>
 <span id="cb7-15"><a href="people-and-organizations-parties.html#cb7-15" aria-hidden="true" tabindex="-1"></a>      https://orcid.org/0000-0000-0000-0000</span>
-<span id="cb7-16"><a href="people-and-organizations-parties.html#cb7-16" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">userId</span>&gt;</span>
-<span id="cb7-17"><a href="people-and-organizations-parties.html#cb7-17" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">creator</span>&gt;</span>
-<span id="cb7-18"><a href="people-and-organizations-parties.html#cb7-18" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">creator</span><span class="ot"> id=</span><span class="st">&quot;pos-1&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="ot"> scope=</span><span class="st">&quot;system&quot;</span>&gt;</span>
-<span id="cb7-19"><a href="people-and-organizations-parties.html#cb7-19" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">positionName</span>&gt;FLS Lead PI&lt;/<span class="kw">positionName</span>&gt;</span>
-<span id="cb7-20"><a href="people-and-organizations-parties.html#cb7-20" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">address</span>&gt;</span>
-<span id="cb7-21"><a href="people-and-organizations-parties.html#cb7-21" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;Department for Ecology&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb7-22"><a href="people-and-organizations-parties.html#cb7-22" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;Fictitious State University&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb7-23"><a href="people-and-organizations-parties.html#cb7-23" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;PO Box 111111&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb7-24"><a href="people-and-organizations-parties.html#cb7-24" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">city</span>&gt;Ficity&lt;/<span class="kw">city</span>&gt;</span>
-<span id="cb7-25"><a href="people-and-organizations-parties.html#cb7-25" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">administrativeArea</span>&gt;FI&lt;/<span class="kw">administrativeArea</span>&gt;</span>
-<span id="cb7-26"><a href="people-and-organizations-parties.html#cb7-26" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">postalCode</span>&gt;11111-1111&lt;/<span class="kw">postalCode</span>&gt;</span>
-<span id="cb7-27"><a href="people-and-organizations-parties.html#cb7-27" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">address</span>&gt;</span>
-<span id="cb7-28"><a href="people-and-organizations-parties.html#cb7-28" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span><span class="ot"> phonetype=</span><span class="st">&quot;voice&quot;</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
-<span id="cb7-29"><a href="people-and-organizations-parties.html#cb7-29" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">electronicMailAddress</span>&gt;fsu.leadPI@fi.univ.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
-<span id="cb7-30"><a href="people-and-organizations-parties.html#cb7-30" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">onlineUrl</span>&gt;http://www.fsu.edu/&lt;/<span class="kw">onlineUrl</span>&gt;</span>
-<span id="cb7-31"><a href="people-and-organizations-parties.html#cb7-31" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span><span class="ot"> system=</span><span class="st">&quot;https://orcid.org&quot;</span>&gt;</span>
+<span id="cb7-16"><a href="people-and-organizations-parties.html#cb7-16" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/userId&gt;</span></span>
+<span id="cb7-17"><a href="people-and-organizations-parties.html#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/creator&gt;</span></span>
+<span id="cb7-18"><a href="people-and-organizations-parties.html#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;creator</span><span class="ot"> id=</span><span class="st">&quot;pos-1&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="ot"> scope=</span><span class="st">&quot;system&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb7-19"><a href="people-and-organizations-parties.html#cb7-19" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;positionName&gt;</span>FLS Lead PI<span class="kw">&lt;/positionName&gt;</span></span>
+<span id="cb7-20"><a href="people-and-organizations-parties.html#cb7-20" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;address&gt;</span></span>
+<span id="cb7-21"><a href="people-and-organizations-parties.html#cb7-21" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>Department for Ecology<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb7-22"><a href="people-and-organizations-parties.html#cb7-22" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>Fictitious State University<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb7-23"><a href="people-and-organizations-parties.html#cb7-23" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>PO Box 111111<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb7-24"><a href="people-and-organizations-parties.html#cb7-24" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;city&gt;</span>Ficity<span class="kw">&lt;/city&gt;</span></span>
+<span id="cb7-25"><a href="people-and-organizations-parties.html#cb7-25" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;administrativeArea&gt;</span>FI<span class="kw">&lt;/administrativeArea&gt;</span></span>
+<span id="cb7-26"><a href="people-and-organizations-parties.html#cb7-26" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;postalCode&gt;</span>11111-1111<span class="kw">&lt;/postalCode&gt;</span></span>
+<span id="cb7-27"><a href="people-and-organizations-parties.html#cb7-27" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/address&gt;</span></span>
+<span id="cb7-28"><a href="people-and-organizations-parties.html#cb7-28" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;phone</span><span class="ot"> phonetype=</span><span class="st">&quot;voice&quot;</span><span class="kw">&gt;</span>(999) 999-9999<span class="kw">&lt;/phone&gt;</span></span>
+<span id="cb7-29"><a href="people-and-organizations-parties.html#cb7-29" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;electronicMailAddress&gt;</span>fsu.leadPI@fi.univ.edu<span class="kw">&lt;/electronicMailAddress&gt;</span></span>
+<span id="cb7-30"><a href="people-and-organizations-parties.html#cb7-30" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;onlineUrl&gt;</span>http://www.fsu.edu/<span class="kw">&lt;/onlineUrl&gt;</span></span>
+<span id="cb7-31"><a href="people-and-organizations-parties.html#cb7-31" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;userId</span><span class="ot"> system=</span><span class="st">&quot;https://orcid.org&quot;</span><span class="kw">&gt;</span></span>
 <span id="cb7-32"><a href="people-and-organizations-parties.html#cb7-32" aria-hidden="true" tabindex="-1"></a>      https://orcid.org/0000-0000-0000-0000</span>
-<span id="cb7-33"><a href="people-and-organizations-parties.html#cb7-33" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">userId</span>&gt;</span>
-<span id="cb7-34"><a href="people-and-organizations-parties.html#cb7-34" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">creator</span>&gt;</span>
-<span id="cb7-35"><a href="people-and-organizations-parties.html#cb7-35" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">creator</span><span class="ot"> id=</span><span class="st">&quot;pers-1&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="ot"> scope=</span><span class="st">&quot;system&quot;</span>&gt;</span>
-<span id="cb7-36"><a href="people-and-organizations-parties.html#cb7-36" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">individualName</span>&gt;</span>
-<span id="cb7-37"><a href="people-and-organizations-parties.html#cb7-37" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">salutation</span>&gt;Dr.&lt;/<span class="kw">salutation</span>&gt;</span>
-<span id="cb7-38"><a href="people-and-organizations-parties.html#cb7-38" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">givenName</span>&gt;Joe&lt;/<span class="kw">givenName</span>&gt;</span>
-<span id="cb7-39"><a href="people-and-organizations-parties.html#cb7-39" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">givenName</span>&gt;T.&lt;/<span class="kw">givenName</span>&gt;</span>
-<span id="cb7-40"><a href="people-and-organizations-parties.html#cb7-40" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">surName</span>&gt;Ecologist Jr.&lt;/<span class="kw">surName</span>&gt;</span>
-<span id="cb7-41"><a href="people-and-organizations-parties.html#cb7-41" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">individualName</span>&gt;</span>
-<span id="cb7-42"><a href="people-and-organizations-parties.html#cb7-42" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">organizationName</span>&gt;FSL LTER&lt;/<span class="kw">organizationName</span>&gt;</span>
-<span id="cb7-43"><a href="people-and-organizations-parties.html#cb7-43" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">address</span>&gt;</span>
-<span id="cb7-44"><a href="people-and-organizations-parties.html#cb7-44" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;Department for Ecology&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb7-45"><a href="people-and-organizations-parties.html#cb7-45" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;Fictitious State University&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb7-46"><a href="people-and-organizations-parties.html#cb7-46" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;PO Box 111111&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb7-47"><a href="people-and-organizations-parties.html#cb7-47" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">city</span>&gt;Ficity&lt;/<span class="kw">city</span>&gt;</span>
-<span id="cb7-48"><a href="people-and-organizations-parties.html#cb7-48" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">administrativeArea</span>&gt;FI&lt;/<span class="kw">administrativeArea</span>&gt;</span>
-<span id="cb7-49"><a href="people-and-organizations-parties.html#cb7-49" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">postalCode</span>&gt;11111-1111&lt;/<span class="kw">postalCode</span>&gt;</span>
-<span id="cb7-50"><a href="people-and-organizations-parties.html#cb7-50" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">address</span>&gt;</span>
-<span id="cb7-51"><a href="people-and-organizations-parties.html#cb7-51" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span><span class="ot"> phonetype=</span><span class="st">&quot;voice&quot;</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
-<span id="cb7-52"><a href="people-and-organizations-parties.html#cb7-52" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">electronicMailAddress</span>&gt;jecologist@fi.univ.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
-<span id="cb7-53"><a href="people-and-organizations-parties.html#cb7-53" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">onlineUrl</span>&gt;http://www.fsu.edu/~jecologist&lt;/<span class="kw">onlineUrl</span>&gt;</span>
-<span id="cb7-54"><a href="people-and-organizations-parties.html#cb7-54" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span><span class="ot"> system=</span><span class="st">&quot;https://orcid.org&quot;</span>&gt;</span>
+<span id="cb7-33"><a href="people-and-organizations-parties.html#cb7-33" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/userId&gt;</span></span>
+<span id="cb7-34"><a href="people-and-organizations-parties.html#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/creator&gt;</span></span>
+<span id="cb7-35"><a href="people-and-organizations-parties.html#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;creator</span><span class="ot"> id=</span><span class="st">&quot;pers-1&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="ot"> scope=</span><span class="st">&quot;system&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb7-36"><a href="people-and-organizations-parties.html#cb7-36" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;individualName&gt;</span></span>
+<span id="cb7-37"><a href="people-and-organizations-parties.html#cb7-37" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;salutation&gt;</span>Dr.<span class="kw">&lt;/salutation&gt;</span></span>
+<span id="cb7-38"><a href="people-and-organizations-parties.html#cb7-38" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;givenName&gt;</span>Joe<span class="kw">&lt;/givenName&gt;</span></span>
+<span id="cb7-39"><a href="people-and-organizations-parties.html#cb7-39" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;givenName&gt;</span>T.<span class="kw">&lt;/givenName&gt;</span></span>
+<span id="cb7-40"><a href="people-and-organizations-parties.html#cb7-40" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;surName&gt;</span>Ecologist Jr.<span class="kw">&lt;/surName&gt;</span></span>
+<span id="cb7-41"><a href="people-and-organizations-parties.html#cb7-41" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/individualName&gt;</span></span>
+<span id="cb7-42"><a href="people-and-organizations-parties.html#cb7-42" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;organizationName&gt;</span>FSL LTER<span class="kw">&lt;/organizationName&gt;</span></span>
+<span id="cb7-43"><a href="people-and-organizations-parties.html#cb7-43" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;address&gt;</span></span>
+<span id="cb7-44"><a href="people-and-organizations-parties.html#cb7-44" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>Department for Ecology<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb7-45"><a href="people-and-organizations-parties.html#cb7-45" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>Fictitious State University<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb7-46"><a href="people-and-organizations-parties.html#cb7-46" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>PO Box 111111<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb7-47"><a href="people-and-organizations-parties.html#cb7-47" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;city&gt;</span>Ficity<span class="kw">&lt;/city&gt;</span></span>
+<span id="cb7-48"><a href="people-and-organizations-parties.html#cb7-48" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;administrativeArea&gt;</span>FI<span class="kw">&lt;/administrativeArea&gt;</span></span>
+<span id="cb7-49"><a href="people-and-organizations-parties.html#cb7-49" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;postalCode&gt;</span>11111-1111<span class="kw">&lt;/postalCode&gt;</span></span>
+<span id="cb7-50"><a href="people-and-organizations-parties.html#cb7-50" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/address&gt;</span></span>
+<span id="cb7-51"><a href="people-and-organizations-parties.html#cb7-51" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;phone</span><span class="ot"> phonetype=</span><span class="st">&quot;voice&quot;</span><span class="kw">&gt;</span>(999) 999-9999<span class="kw">&lt;/phone&gt;</span></span>
+<span id="cb7-52"><a href="people-and-organizations-parties.html#cb7-52" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;electronicMailAddress&gt;</span>jecologist@fi.univ.edu<span class="kw">&lt;/electronicMailAddress&gt;</span></span>
+<span id="cb7-53"><a href="people-and-organizations-parties.html#cb7-53" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;onlineUrl&gt;</span>http://www.fsu.edu/~jecologist<span class="kw">&lt;/onlineUrl&gt;</span></span>
+<span id="cb7-54"><a href="people-and-organizations-parties.html#cb7-54" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;userId</span><span class="ot"> system=</span><span class="st">&quot;https://orcid.org&quot;</span><span class="kw">&gt;</span></span>
 <span id="cb7-55"><a href="people-and-organizations-parties.html#cb7-55" aria-hidden="true" tabindex="-1"></a>      https://orcid.org/0000-0000-0000-0000</span>
-<span id="cb7-56"><a href="people-and-organizations-parties.html#cb7-56" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">userId</span>&gt;</span>
-<span id="cb7-57"><a href="people-and-organizations-parties.html#cb7-57" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">creator</span>&gt;</span></code></pre></div>
+<span id="cb7-56"><a href="people-and-organizations-parties.html#cb7-56" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/userId&gt;</span></span>
+<span id="cb7-57"><a href="people-and-organizations-parties.html#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/creator&gt;</span></span></code></pre></div>
 </div>
-<div id="creator" class="section level3">
-<h3>creator</h3>
+<div id="creator" class="section level3 hasAnchor">
+<h3>creator<a href="people-and-organizations-parties.html#creator" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This element is found at this location (XPath):<br />
 <strong>/eml:eml/dataset/creator</strong></p>
 <p>The &lt;<strong>creator</strong>&gt; is considered to be the author of the data
@@ -440,8 +439,8 @@ frequently default to searches using PI’s last name. Therefore it is a
 reasonable practice to include more creators rather than fewer, even if
 it blurs the credit for long-term data.</p>
 </div>
-<div id="metadataprovider" class="section level3">
-<h3>metadataProvider</h3>
+<div id="metadataprovider" class="section level3 hasAnchor">
+<h3>metadataProvider<a href="people-and-organizations-parties.html#metadataprovider" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This element is found at this location (XPath):<br />
 <strong>/eml:eml/dataset/metadataProvider</strong></p>
 <p>The &lt;<strong>metadataProvider</strong>&gt; element lists the person or organization
@@ -453,26 +452,26 @@ element. For acquired data sets, where the &lt;<strong>creator</strong>&gt; or
 metadata content, the actual metadata content provider should be listed
 instead (see Example below).</p>
 <p>Example 5: metadataProvider</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb8-1"><a href="people-and-organizations-parties.html#cb8-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">metadataProvider</span>&gt;</span>
-<span id="cb8-2"><a href="people-and-organizations-parties.html#cb8-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">organizationName</span>&gt;Fictitious LTER Site&lt;/<span class="kw">organizationName</span>&gt;</span>
-<span id="cb8-3"><a href="people-and-organizations-parties.html#cb8-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">address</span>&gt;</span>
-<span id="cb8-4"><a href="people-and-organizations-parties.html#cb8-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;Department of Ecology&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb8-5"><a href="people-and-organizations-parties.html#cb8-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;Fictitious State University&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb8-6"><a href="people-and-organizations-parties.html#cb8-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;PO Box 111111&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb8-7"><a href="people-and-organizations-parties.html#cb8-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">city</span>&gt;Ficity&lt;/<span class="kw">city</span>&gt;</span>
-<span id="cb8-8"><a href="people-and-organizations-parties.html#cb8-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">administrativeArea</span>&gt;FI&lt;/<span class="kw">administrativeArea</span>&gt;</span>
-<span id="cb8-9"><a href="people-and-organizations-parties.html#cb8-9" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">postalCode</span>&gt;11111-1111&lt;/<span class="kw">postalCode</span>&gt;</span>
-<span id="cb8-10"><a href="people-and-organizations-parties.html#cb8-10" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">address</span>&gt;</span>
-<span id="cb8-11"><a href="people-and-organizations-parties.html#cb8-11" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span><span class="ot"> phonetype=</span><span class="st">&quot;voice&quot;</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
-<span id="cb8-12"><a href="people-and-organizations-parties.html#cb8-12" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">electronicMailAddress</span>&gt;fsu@fi.univ.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
-<span id="cb8-13"><a href="people-and-organizations-parties.html#cb8-13" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">onlineUrl</span>&gt;http://www.fsu.edu/&lt;/<span class="kw">onlineUrl</span>&gt;</span>
-<span id="cb8-14"><a href="people-and-organizations-parties.html#cb8-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span><span class="ot"> system=</span><span class="st">&quot;https://orcid.org&quot;</span>&gt;</span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb8-1"><a href="people-and-organizations-parties.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;metadataProvider&gt;</span></span>
+<span id="cb8-2"><a href="people-and-organizations-parties.html#cb8-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;organizationName&gt;</span>Fictitious LTER Site<span class="kw">&lt;/organizationName&gt;</span></span>
+<span id="cb8-3"><a href="people-and-organizations-parties.html#cb8-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;address&gt;</span></span>
+<span id="cb8-4"><a href="people-and-organizations-parties.html#cb8-4" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>Department of Ecology<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb8-5"><a href="people-and-organizations-parties.html#cb8-5" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>Fictitious State University<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb8-6"><a href="people-and-organizations-parties.html#cb8-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>PO Box 111111<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb8-7"><a href="people-and-organizations-parties.html#cb8-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;city&gt;</span>Ficity<span class="kw">&lt;/city&gt;</span></span>
+<span id="cb8-8"><a href="people-and-organizations-parties.html#cb8-8" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;administrativeArea&gt;</span>FI<span class="kw">&lt;/administrativeArea&gt;</span></span>
+<span id="cb8-9"><a href="people-and-organizations-parties.html#cb8-9" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;postalCode&gt;</span>11111-1111<span class="kw">&lt;/postalCode&gt;</span></span>
+<span id="cb8-10"><a href="people-and-organizations-parties.html#cb8-10" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/address&gt;</span></span>
+<span id="cb8-11"><a href="people-and-organizations-parties.html#cb8-11" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;phone</span><span class="ot"> phonetype=</span><span class="st">&quot;voice&quot;</span><span class="kw">&gt;</span>(999) 999-9999<span class="kw">&lt;/phone&gt;</span></span>
+<span id="cb8-12"><a href="people-and-organizations-parties.html#cb8-12" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;electronicMailAddress&gt;</span>fsu@fi.univ.edu<span class="kw">&lt;/electronicMailAddress&gt;</span></span>
+<span id="cb8-13"><a href="people-and-organizations-parties.html#cb8-13" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;onlineUrl&gt;</span>http://www.fsu.edu/<span class="kw">&lt;/onlineUrl&gt;</span></span>
+<span id="cb8-14"><a href="people-and-organizations-parties.html#cb8-14" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;userId</span><span class="ot"> system=</span><span class="st">&quot;https://orcid.org&quot;</span><span class="kw">&gt;</span></span>
 <span id="cb8-15"><a href="people-and-organizations-parties.html#cb8-15" aria-hidden="true" tabindex="-1"></a>      https://orcid.org/0000-0000-0000-0000</span>
-<span id="cb8-16"><a href="people-and-organizations-parties.html#cb8-16" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">userId</span>&gt;</span>
-<span id="cb8-17"><a href="people-and-organizations-parties.html#cb8-17" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">metadataProvider</span>&gt;</span></code></pre></div>
+<span id="cb8-16"><a href="people-and-organizations-parties.html#cb8-16" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/userId&gt;</span></span>
+<span id="cb8-17"><a href="people-and-organizations-parties.html#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/metadataProvider&gt;</span></span></code></pre></div>
 </div>
-<div id="associatedparty" class="section level3">
-<h3>associatedParty</h3>
+<div id="associatedparty" class="section level3 hasAnchor">
+<h3>associatedParty<a href="people-and-organizations-parties.html#associatedparty" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This element is found at this location (XPath):<br />
 <strong>/eml:eml/dataset/associatedParty</strong></p>
 <p>List other people who were involved with the data in some way (field
@@ -481,31 +480,31 @@ technicians, students assistants, etc.) as &lt;<strong>associatedParty</strong>&
 university, institution, or agency could also be listed as an
 &lt;<strong>associatedParty</strong>&gt; using &lt;<strong>role</strong>&gt; of “owner” when appropriate.</p>
 <p>Example 6: associatedParty</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb9-1"><a href="people-and-organizations-parties.html#cb9-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">associatedParty</span><span class="ot"> id=</span><span class="st">&quot;12010&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="ot"> scope=</span><span class="st">&quot;system&quot;</span>&gt;</span>
-<span id="cb9-2"><a href="people-and-organizations-parties.html#cb9-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">individualName</span>&gt;</span>
-<span id="cb9-3"><a href="people-and-organizations-parties.html#cb9-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">givenName</span>&gt;Ima&lt;/<span class="kw">givenName</span>&gt;</span>
-<span id="cb9-4"><a href="people-and-organizations-parties.html#cb9-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">surName</span>&gt;Testuser&lt;/<span class="kw">surName</span>&gt;</span>
-<span id="cb9-5"><a href="people-and-organizations-parties.html#cb9-5" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">individualName</span>&gt;</span>
-<span id="cb9-6"><a href="people-and-organizations-parties.html#cb9-6" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">organizationName</span>&gt;FSL LTER&lt;/<span class="kw">organizationName</span>&gt;</span>
-<span id="cb9-7"><a href="people-and-organizations-parties.html#cb9-7" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">address</span>&gt;</span>
-<span id="cb9-8"><a href="people-and-organizations-parties.html#cb9-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;Department for Ecology&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb9-9"><a href="people-and-organizations-parties.html#cb9-9" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;Fictitious State University&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb9-10"><a href="people-and-organizations-parties.html#cb9-10" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;PO Box 111111&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb9-11"><a href="people-and-organizations-parties.html#cb9-11" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">city</span>&gt;Ficity&lt;/<span class="kw">city</span>&gt;</span>
-<span id="cb9-12"><a href="people-and-organizations-parties.html#cb9-12" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">administrativeArea</span>&gt;FI&lt;/<span class="kw">administrativeArea</span>&gt;</span>
-<span id="cb9-13"><a href="people-and-organizations-parties.html#cb9-13" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">postalCode</span>&gt;11111-1111&lt;/<span class="kw">postalCode</span>&gt;</span>
-<span id="cb9-14"><a href="people-and-organizations-parties.html#cb9-14" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">address</span>&gt;</span>
-<span id="cb9-15"><a href="people-and-organizations-parties.html#cb9-15" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span><span class="ot"> phonetype=</span><span class="st">&quot;voice&quot;</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
-<span id="cb9-16"><a href="people-and-organizations-parties.html#cb9-16" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">electronicMailAddress</span>&gt;itestuser@lternet.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
-<span id="cb9-17"><a href="people-and-organizations-parties.html#cb9-17" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">onlineUrl</span>&gt;http://search.lternet.edu/directory_view.php?personid=12010<span class="dv">&amp;amp;</span>query=itestuser&lt;/<span class="kw">onlineUrl</span>&gt;</span>
-<span id="cb9-18"><a href="people-and-organizations-parties.html#cb9-18" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span><span class="ot"> system=</span><span class="st">&quot;https://orcid.org&quot;</span>&gt;</span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb9-1"><a href="people-and-organizations-parties.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;associatedParty</span><span class="ot"> id=</span><span class="st">&quot;12010&quot;</span><span class="ot"> system=</span><span class="st">&quot;FLS&quot;</span><span class="ot"> scope=</span><span class="st">&quot;system&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb9-2"><a href="people-and-organizations-parties.html#cb9-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;individualName&gt;</span></span>
+<span id="cb9-3"><a href="people-and-organizations-parties.html#cb9-3" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;givenName&gt;</span>Ima<span class="kw">&lt;/givenName&gt;</span></span>
+<span id="cb9-4"><a href="people-and-organizations-parties.html#cb9-4" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;surName&gt;</span>Testuser<span class="kw">&lt;/surName&gt;</span></span>
+<span id="cb9-5"><a href="people-and-organizations-parties.html#cb9-5" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/individualName&gt;</span></span>
+<span id="cb9-6"><a href="people-and-organizations-parties.html#cb9-6" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;organizationName&gt;</span>FSL LTER<span class="kw">&lt;/organizationName&gt;</span></span>
+<span id="cb9-7"><a href="people-and-organizations-parties.html#cb9-7" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;address&gt;</span></span>
+<span id="cb9-8"><a href="people-and-organizations-parties.html#cb9-8" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>Department for Ecology<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb9-9"><a href="people-and-organizations-parties.html#cb9-9" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>Fictitious State University<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb9-10"><a href="people-and-organizations-parties.html#cb9-10" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>PO Box 111111<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb9-11"><a href="people-and-organizations-parties.html#cb9-11" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;city&gt;</span>Ficity<span class="kw">&lt;/city&gt;</span></span>
+<span id="cb9-12"><a href="people-and-organizations-parties.html#cb9-12" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;administrativeArea&gt;</span>FI<span class="kw">&lt;/administrativeArea&gt;</span></span>
+<span id="cb9-13"><a href="people-and-organizations-parties.html#cb9-13" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;postalCode&gt;</span>11111-1111<span class="kw">&lt;/postalCode&gt;</span></span>
+<span id="cb9-14"><a href="people-and-organizations-parties.html#cb9-14" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/address&gt;</span></span>
+<span id="cb9-15"><a href="people-and-organizations-parties.html#cb9-15" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;phone</span><span class="ot"> phonetype=</span><span class="st">&quot;voice&quot;</span><span class="kw">&gt;</span>(999) 999-9999<span class="kw">&lt;/phone&gt;</span></span>
+<span id="cb9-16"><a href="people-and-organizations-parties.html#cb9-16" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;electronicMailAddress&gt;</span>itestuser@lternet.edu<span class="kw">&lt;/electronicMailAddress&gt;</span></span>
+<span id="cb9-17"><a href="people-and-organizations-parties.html#cb9-17" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;onlineUrl&gt;</span>http://search.lternet.edu/directory_view.php?personid=12010<span class="dv">&amp;amp;</span>query=itestuser<span class="kw">&lt;/onlineUrl&gt;</span></span>
+<span id="cb9-18"><a href="people-and-organizations-parties.html#cb9-18" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;userId</span><span class="ot"> system=</span><span class="st">&quot;https://orcid.org&quot;</span><span class="kw">&gt;</span></span>
 <span id="cb9-19"><a href="people-and-organizations-parties.html#cb9-19" aria-hidden="true" tabindex="-1"></a>      https://orcid.org/0000-0000-0000-0000</span>
-<span id="cb9-20"><a href="people-and-organizations-parties.html#cb9-20" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">userId</span>&gt;</span>
-<span id="cb9-21"><a href="people-and-organizations-parties.html#cb9-21" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">role</span>&gt;Technician&lt;/<span class="kw">role</span>&gt;</span>
-<span id="cb9-22"><a href="people-and-organizations-parties.html#cb9-22" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">associatedParty</span>&gt;</span></code></pre></div>
+<span id="cb9-20"><a href="people-and-organizations-parties.html#cb9-20" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/userId&gt;</span></span>
+<span id="cb9-21"><a href="people-and-organizations-parties.html#cb9-21" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;role&gt;</span>Technician<span class="kw">&lt;/role&gt;</span></span>
+<span id="cb9-22"><a href="people-and-organizations-parties.html#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/associatedParty&gt;</span></span></code></pre></div>
 </div>
-<div id="contact" class="section level3">
-<h3>contact</h3>
+<div id="contact" class="section level3 hasAnchor">
+<h3>contact<a href="people-and-organizations-parties.html#contact" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This element is found at this location (XPath):<br />
 <strong>/eml:eml/dataset/contact</strong></p>
 <p>A &lt;<strong>contact</strong>&gt; element is required in all EML metadata records. Full
@@ -518,26 +517,26 @@ the work belong under &lt;<strong>associatedParty</strong>&gt; rather than
 &lt;<strong>electronicMailAddress</strong>&gt;, and &lt;<strong>onlineURL</strong>&gt; elements for the
 &lt;<strong>contact</strong>&gt; element.</p>
 <p>Example 7: contact</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb10-1"><a href="people-and-organizations-parties.html#cb10-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">contact</span>&gt;</span>
-<span id="cb10-2"><a href="people-and-organizations-parties.html#cb10-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">positionName</span><span class="ot"> id=</span><span class="st">&quot;pos-4&quot;</span>&gt;Information Manager&lt;/<span class="kw">positionName</span>&gt;</span>
-<span id="cb10-3"><a href="people-and-organizations-parties.html#cb10-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">address</span>&gt;</span>
-<span id="cb10-4"><a href="people-and-organizations-parties.html#cb10-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;Department for Ecology&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb10-5"><a href="people-and-organizations-parties.html#cb10-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;Fictitious State University&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb10-6"><a href="people-and-organizations-parties.html#cb10-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;PO Box 111111&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
-<span id="cb10-7"><a href="people-and-organizations-parties.html#cb10-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">city</span>&gt;Ficity&lt;/<span class="kw">city</span>&gt;</span>
-<span id="cb10-8"><a href="people-and-organizations-parties.html#cb10-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">administrativeArea</span>&gt;FI&lt;/<span class="kw">administrativeArea</span>&gt;</span>
-<span id="cb10-9"><a href="people-and-organizations-parties.html#cb10-9" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">postalCode</span>&gt;11111-1111&lt;/<span class="kw">postalCode</span>&gt;</span>
-<span id="cb10-10"><a href="people-and-organizations-parties.html#cb10-10" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">address</span>&gt;</span>
-<span id="cb10-11"><a href="people-and-organizations-parties.html#cb10-11" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span><span class="ot"> phonetype=</span><span class="st">&quot;voice&quot;</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
-<span id="cb10-12"><a href="people-and-organizations-parties.html#cb10-12" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">electronicMailAddress</span>&gt;fsu.data@fi.univ.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
-<span id="cb10-13"><a href="people-and-organizations-parties.html#cb10-13" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">onlineUrl</span>&gt;http://www.fsu.edu/&lt;/<span class="kw">onlineUrl</span>&gt;</span>
-<span id="cb10-14"><a href="people-and-organizations-parties.html#cb10-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span><span class="ot"> system=</span><span class="st">&quot;https://orcid.org&quot;</span>&gt;</span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb10-1"><a href="people-and-organizations-parties.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;contact&gt;</span></span>
+<span id="cb10-2"><a href="people-and-organizations-parties.html#cb10-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;positionName</span><span class="ot"> id=</span><span class="st">&quot;pos-4&quot;</span><span class="kw">&gt;</span>Information Manager<span class="kw">&lt;/positionName&gt;</span></span>
+<span id="cb10-3"><a href="people-and-organizations-parties.html#cb10-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;address&gt;</span></span>
+<span id="cb10-4"><a href="people-and-organizations-parties.html#cb10-4" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>Department for Ecology<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb10-5"><a href="people-and-organizations-parties.html#cb10-5" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>Fictitious State University<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb10-6"><a href="people-and-organizations-parties.html#cb10-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;deliveryPoint&gt;</span>PO Box 111111<span class="kw">&lt;/deliveryPoint&gt;</span></span>
+<span id="cb10-7"><a href="people-and-organizations-parties.html#cb10-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;city&gt;</span>Ficity<span class="kw">&lt;/city&gt;</span></span>
+<span id="cb10-8"><a href="people-and-organizations-parties.html#cb10-8" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;administrativeArea&gt;</span>FI<span class="kw">&lt;/administrativeArea&gt;</span></span>
+<span id="cb10-9"><a href="people-and-organizations-parties.html#cb10-9" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;postalCode&gt;</span>11111-1111<span class="kw">&lt;/postalCode&gt;</span></span>
+<span id="cb10-10"><a href="people-and-organizations-parties.html#cb10-10" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/address&gt;</span></span>
+<span id="cb10-11"><a href="people-and-organizations-parties.html#cb10-11" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;phone</span><span class="ot"> phonetype=</span><span class="st">&quot;voice&quot;</span><span class="kw">&gt;</span>(999) 999-9999<span class="kw">&lt;/phone&gt;</span></span>
+<span id="cb10-12"><a href="people-and-organizations-parties.html#cb10-12" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;electronicMailAddress&gt;</span>fsu.data@fi.univ.edu<span class="kw">&lt;/electronicMailAddress&gt;</span></span>
+<span id="cb10-13"><a href="people-and-organizations-parties.html#cb10-13" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;onlineUrl&gt;</span>http://www.fsu.edu/<span class="kw">&lt;/onlineUrl&gt;</span></span>
+<span id="cb10-14"><a href="people-and-organizations-parties.html#cb10-14" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;userId</span><span class="ot"> system=</span><span class="st">&quot;https://orcid.org&quot;</span><span class="kw">&gt;</span></span>
 <span id="cb10-15"><a href="people-and-organizations-parties.html#cb10-15" aria-hidden="true" tabindex="-1"></a>      https://orcid.org/0000-0000-0000-0000</span>
-<span id="cb10-16"><a href="people-and-organizations-parties.html#cb10-16" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">userId</span>&gt;</span>
-<span id="cb10-17"><a href="people-and-organizations-parties.html#cb10-17" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">contact</span>&gt;</span></code></pre></div>
+<span id="cb10-16"><a href="people-and-organizations-parties.html#cb10-16" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/userId&gt;</span></span>
+<span id="cb10-17"><a href="people-and-organizations-parties.html#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/contact&gt;</span></span></code></pre></div>
 </div>
-<div id="publisher" class="section level3">
-<h3>publisher</h3>
+<div id="publisher" class="section level3 hasAnchor">
+<h3>publisher<a href="people-and-organizations-parties.html#publisher" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This element is found at this location (XPath):<br />
 <strong>/eml:eml/dataset/publisher</strong></p>
 <p>The organization producing the EML metadata (e.g., an LTER site or field
@@ -548,9 +547,9 @@ the organization’s name (&lt;<strong>organizationName</strong>&gt;). Complete 
 displays may use this element, although typically, the repository
 becomes the publisher in citations.</p>
 <p>Example 8: publisher</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb11-1"><a href="people-and-organizations-parties.html#cb11-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">publisher</span>&gt;</span>
-<span id="cb11-2"><a href="people-and-organizations-parties.html#cb11-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">organizationName</span>&gt;Fictitious LTER site&lt;/<span class="kw">organizationName</span>&gt;</span>
-<span id="cb11-3"><a href="people-and-organizations-parties.html#cb11-3" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">publisher</span>&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb11-1"><a href="people-and-organizations-parties.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;publisher&gt;</span></span>
+<span id="cb11-2"><a href="people-and-organizations-parties.html#cb11-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;organizationName&gt;</span>Fictitious LTER site<span class="kw">&lt;/organizationName&gt;</span></span>
+<span id="cb11-3"><a href="people-and-organizations-parties.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/publisher&gt;</span></span></code></pre></div>
 </div>
 </div>
             </section>

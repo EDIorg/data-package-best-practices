@@ -7,11 +7,10 @@
   <title>keywordSet and keyword | Data Package Best Practices</title>
   <meta name="description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="keywordSet and keyword | Data Package Best Practices" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
@@ -27,7 +26,7 @@ Ecological Metadata Language (EML).</p>" />
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2022-03-04" />
+<meta name="date" content="2022-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -36,7 +35,6 @@ Ecological Metadata Language (EML).</p>" />
   
 <link rel="prev" href="abstract.html"/>
 <link rel="next" href="intellectualrights.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,8 +52,9 @@ Ecological Metadata Language (EML).</p>" />
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -160,7 +159,7 @@ div.csl-indent {
 
 <ul class="summary">
 <li><a href="./">EDI Data Package Best Practices</a></li>
-<li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+<li style="margin-left:10px;"><a href="https://edirepository.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
@@ -315,8 +314,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="keywordset-and-keyword" class="section level2 unnumbered">
-<h2>keywordSet and keyword</h2>
+<div id="keywordset-and-keyword" class="section level2 unnumbered hasAnchor">
+<h2>keywordSet and keyword<a href="keywordset-and-keyword.html#keywordset-and-keyword" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This element is found at these locations (XPath):<br />
 <strong>/eml:eml/dataset/keywordSet</strong><br />
 <strong>/eml:eml/dataset/project/keywordSet</strong></p>
@@ -335,40 +334,40 @@ three-letter site acronym and site name. In addition to specific
 keywords, relevant conceptual keywords should also be included, e.g.,
 from the LTER Controlled Vocabulary.</em></p>
 <p>Example 9: pubDate, abstract,keywordSet, keyword</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb12-1"><a href="keywordset-and-keyword.html#cb12-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">pubDate</span>&gt;2014&lt;/<span class="kw">pubDate</span>&gt;</span>
-<span id="cb12-2"><a href="keywordset-and-keyword.html#cb12-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">abstract</span>&gt;</span>
-<span id="cb12-3"><a href="keywordset-and-keyword.html#cb12-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">para</span>&gt;Ground arthropods communities are monitored in different</span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb12-1"><a href="keywordset-and-keyword.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;pubDate&gt;</span>2014<span class="kw">&lt;/pubDate&gt;</span></span>
+<span id="cb12-2"><a href="keywordset-and-keyword.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;abstract&gt;</span></span>
+<span id="cb12-3"><a href="keywordset-and-keyword.html#cb12-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;para&gt;</span>Ground arthropods communities are monitored in different</span>
 <span id="cb12-4"><a href="keywordset-and-keyword.html#cb12-4" aria-hidden="true" tabindex="-1"></a>      habitats in a rapidly changing environment. The arthropods are</span>
 <span id="cb12-5"><a href="keywordset-and-keyword.html#cb12-5" aria-hidden="true" tabindex="-1"></a>      collected in traps four times a year in ten locations and determined</span>
-<span id="cb12-6"><a href="keywordset-and-keyword.html#cb12-6" aria-hidden="true" tabindex="-1"></a>      as far as possible to family, genus or species.&lt;/<span class="kw">para</span>&gt;</span>
-<span id="cb12-7"><a href="keywordset-and-keyword.html#cb12-7" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">abstract</span>&gt;</span>
-<span id="cb12-8"><a href="keywordset-and-keyword.html#cb12-8" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">keywordSet</span>&gt;</span>
-<span id="cb12-9"><a href="keywordset-and-keyword.html#cb12-9" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;place&quot;</span>&gt;City&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-10"><a href="keywordset-and-keyword.html#cb12-10" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;place&quot;</span>&gt;State&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-11"><a href="keywordset-and-keyword.html#cb12-11" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;place&quot;</span>&gt;Region&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-12"><a href="keywordset-and-keyword.html#cb12-12" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;place&quot;</span>&gt;County&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-13"><a href="keywordset-and-keyword.html#cb12-13" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span>&gt;FLS&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-14"><a href="keywordset-and-keyword.html#cb12-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span>&gt;Fictitious LTER Site&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-15"><a href="keywordset-and-keyword.html#cb12-15" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span>&gt;LTER&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-16"><a href="keywordset-and-keyword.html#cb12-16" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span>&gt;Arthropods&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-17"><a href="keywordset-and-keyword.html#cb12-17" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span>&gt;Richness&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-18"><a href="keywordset-and-keyword.html#cb12-18" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keywordThesaurus</span>&gt;FLS site thesaurus&lt;/<span class="kw">keywordThesaurus</span>&gt;</span>
-<span id="cb12-19"><a href="keywordset-and-keyword.html#cb12-19" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">keywordSet</span>&gt;</span>
-<span id="cb12-20"><a href="keywordset-and-keyword.html#cb12-20" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">keywordSet</span>&gt;</span>
-<span id="cb12-21"><a href="keywordset-and-keyword.html#cb12-21" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span>&gt;ecology&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-22"><a href="keywordset-and-keyword.html#cb12-22" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span>&gt;biodiversity&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-23"><a href="keywordset-and-keyword.html#cb12-23" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span>&gt;population dynamics&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-24"><a href="keywordset-and-keyword.html#cb12-24" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span>&gt;terrestrial&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-25"><a href="keywordset-and-keyword.html#cb12-25" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span>&gt;arthropods&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-26"><a href="keywordset-and-keyword.html#cb12-26" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span>&gt;pitfall trap&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-27"><a href="keywordset-and-keyword.html#cb12-27" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span>&gt;monitoring&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-28"><a href="keywordset-and-keyword.html#cb12-28" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span>&gt;abundance&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-29"><a href="keywordset-and-keyword.html#cb12-29" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keywordThesaurus</span>&gt;LTER controlled vocabulary&lt;/<span class="kw">keywordThesaurus</span>&gt;</span>
-<span id="cb12-30"><a href="keywordset-and-keyword.html#cb12-30" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">keywordSet</span>&gt;</span>
-<span id="cb12-31"><a href="keywordset-and-keyword.html#cb12-31" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">keywordSet</span>&gt;</span>
-<span id="cb12-32"><a href="keywordset-and-keyword.html#cb12-32" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span>&gt;populations&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb12-33"><a href="keywordset-and-keyword.html#cb12-33" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keywordThesaurus</span>&gt;LTER core research areas&lt;/<span class="kw">keywordThesaurus</span>&gt;</span>
-<span id="cb12-34"><a href="keywordset-and-keyword.html#cb12-34" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">keywordSet</span>&gt;</span></code></pre></div>
+<span id="cb12-6"><a href="keywordset-and-keyword.html#cb12-6" aria-hidden="true" tabindex="-1"></a>      as far as possible to family, genus or species.<span class="kw">&lt;/para&gt;</span></span>
+<span id="cb12-7"><a href="keywordset-and-keyword.html#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/abstract&gt;</span></span>
+<span id="cb12-8"><a href="keywordset-and-keyword.html#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;keywordSet&gt;</span></span>
+<span id="cb12-9"><a href="keywordset-and-keyword.html#cb12-9" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;place&quot;</span><span class="kw">&gt;</span>City<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-10"><a href="keywordset-and-keyword.html#cb12-10" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;place&quot;</span><span class="kw">&gt;</span>State<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-11"><a href="keywordset-and-keyword.html#cb12-11" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;place&quot;</span><span class="kw">&gt;</span>Region<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-12"><a href="keywordset-and-keyword.html#cb12-12" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;place&quot;</span><span class="kw">&gt;</span>County<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-13"><a href="keywordset-and-keyword.html#cb12-13" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>FLS<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-14"><a href="keywordset-and-keyword.html#cb12-14" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>Fictitious LTER Site<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-15"><a href="keywordset-and-keyword.html#cb12-15" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>LTER<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-16"><a href="keywordset-and-keyword.html#cb12-16" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>Arthropods<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-17"><a href="keywordset-and-keyword.html#cb12-17" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>Richness<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-18"><a href="keywordset-and-keyword.html#cb12-18" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keywordThesaurus&gt;</span>FLS site thesaurus<span class="kw">&lt;/keywordThesaurus&gt;</span></span>
+<span id="cb12-19"><a href="keywordset-and-keyword.html#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/keywordSet&gt;</span></span>
+<span id="cb12-20"><a href="keywordset-and-keyword.html#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;keywordSet&gt;</span></span>
+<span id="cb12-21"><a href="keywordset-and-keyword.html#cb12-21" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>ecology<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-22"><a href="keywordset-and-keyword.html#cb12-22" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>biodiversity<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-23"><a href="keywordset-and-keyword.html#cb12-23" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>population dynamics<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-24"><a href="keywordset-and-keyword.html#cb12-24" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>terrestrial<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-25"><a href="keywordset-and-keyword.html#cb12-25" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>arthropods<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-26"><a href="keywordset-and-keyword.html#cb12-26" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>pitfall trap<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-27"><a href="keywordset-and-keyword.html#cb12-27" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>monitoring<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-28"><a href="keywordset-and-keyword.html#cb12-28" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>abundance<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-29"><a href="keywordset-and-keyword.html#cb12-29" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keywordThesaurus&gt;</span>LTER controlled vocabulary<span class="kw">&lt;/keywordThesaurus&gt;</span></span>
+<span id="cb12-30"><a href="keywordset-and-keyword.html#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/keywordSet&gt;</span></span>
+<span id="cb12-31"><a href="keywordset-and-keyword.html#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;keywordSet&gt;</span></span>
+<span id="cb12-32"><a href="keywordset-and-keyword.html#cb12-32" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keyword</span><span class="ot"> keywordType=</span><span class="st">&quot;theme&quot;</span><span class="kw">&gt;</span>populations<span class="kw">&lt;/keyword&gt;</span></span>
+<span id="cb12-33"><a href="keywordset-and-keyword.html#cb12-33" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;keywordThesaurus&gt;</span>LTER core research areas<span class="kw">&lt;/keywordThesaurus&gt;</span></span>
+<span id="cb12-34"><a href="keywordset-and-keyword.html#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/keywordSet&gt;</span></span></code></pre></div>
 </div>
             </section>
 

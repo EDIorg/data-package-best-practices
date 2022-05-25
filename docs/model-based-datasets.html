@@ -7,11 +7,10 @@
   <title>Model-Based Datasets | Data Package Best Practices</title>
   <meta name="description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Model-Based Datasets | Data Package Best Practices" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
@@ -27,7 +26,7 @@ Ecological Metadata Language (EML).</p>" />
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2022-03-04" />
+<meta name="date" content="2022-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -36,7 +35,6 @@ Ecological Metadata Language (EML).</p>" />
   
 <link rel="prev" href="code.html"/>
 <link rel="next" href="images-and-documents-as-data.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,8 +52,9 @@ Ecological Metadata Language (EML).</p>" />
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -160,7 +159,7 @@ div.csl-indent {
 
 <ul class="summary">
 <li><a href="./">EDI Data Package Best Practices</a></li>
-<li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+<li style="margin-left:10px;"><a href="https://edirepository.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
@@ -315,88 +314,88 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="model-based-datasets" class="section level2">
-<h2>Model-Based Datasets</h2>
+<div id="model-based-datasets" class="section level2 hasAnchor">
+<h2>Model-Based Datasets<a href="model-based-datasets.html#model-based-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Contributors: An T. Nguyen, Tim Whiteaker, Corinna Gries</p>
-<div id="introduction-2" class="section level3">
-<h3>Introduction</h3>
+<div id="introduction-2" class="section level3 hasAnchor">
+<h3>Introduction<a href="model-based-datasets.html#introduction-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This document includes recommendations for archiving data packages composed of model-based datasets. These datasets may include the model code itself, input data, model parameter settings, and output data.</p>
 <p>The range of cases for model-based datasets includes small one-off model code specific to one research question, through various code packages which are maintained in community repositories as long as they meet requirements (e.g., CRAN for R packages), to large community models maintained by groups of programmers and users.</p>
 <p>The intention of these recommendations is to make research based on modeling more transparent rather than achieve exact reproducibility, i.e., provide sufficient documentation so that a knowledgeable person can understand algorithms, programming decisions, and their ramifications for the results, rather than run the model and obtain the same results.</p>
 <p>It is not always easy to determine who among project personnel (IMs, scientists, programmers) is responsible for the different components of a model-based dataset. This is best decided on a case-by-case basis. A common division is that the code authors annotate the code, and the IM handles the archiving and linkage to data product(s); partially except in cases of large community models.</p>
 </div>
-<div id="recommendations-for-data-packages-1" class="section level3">
-<h3>Recommendations for data packages</h3>
+<div id="recommendations-for-data-packages-1" class="section level3 hasAnchor">
+<h3>Recommendations for data packages<a href="model-based-datasets.html#recommendations-for-data-packages-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="figure">
 <img src="../images/model_datasets.png" title="model data management flowchart" alt="" />
 <p class="caption">Figure 1: Flowchart for considering archival paths for various model components.</p>
 </div>
-<div id="referencing-models-in-eml" class="section level4">
-<h4>Referencing models in EML</h4>
+<div id="referencing-models-in-eml" class="section level4 hasAnchor">
+<h4>Referencing models in EML<a href="model-based-datasets.html#referencing-models-in-eml" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>For data packages related to a model, whether the model is archived within the same data package or not, indicate linkage to the model in EML following the <a href="code.html">best practices for archiving code</a> (see the section on linking code and data).</p>
 <p>Example 1: EML snippet relating data to models via the method description:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb34-1"><a href="model-based-datasets.html#cb34-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">methodStep</span>&gt;</span>
-<span id="cb34-2"><a href="model-based-datasets.html#cb34-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">description</span>&gt;</span>
-<span id="cb34-3"><a href="model-based-datasets.html#cb34-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">para</span>&gt;This methodStep contains data provenance information as specified in the LTER EML Best Practices. Each dataSource element here lists entity-specific information and links to source data used in the creation of this derivative data package.&lt;/<span class="kw">para</span>&gt;</span>
-<span id="cb34-4"><a href="model-based-datasets.html#cb34-4" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">description</span>&gt;</span>
-<span id="cb34-5"><a href="model-based-datasets.html#cb34-5" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">dataSource</span>&gt;</span>
-<span id="cb34-6"><a href="model-based-datasets.html#cb34-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">title</span>&gt;Source dataset title&lt;/<span class="kw">title</span>&gt;</span>
-<span id="cb34-7"><a href="model-based-datasets.html#cb34-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">creator</span>&gt;</span>
-<span id="cb34-8"><a href="model-based-datasets.html#cb34-8" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">individualName</span>&gt;</span>
-<span id="cb34-9"><a href="model-based-datasets.html#cb34-9" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">givenName</span>&gt;first name&lt;/<span class="kw">givenName</span>&gt;</span>
-<span id="cb34-10"><a href="model-based-datasets.html#cb34-10" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">surName</span>&gt;last name&lt;/<span class="kw">surName</span>&gt;</span>
-<span id="cb34-11"><a href="model-based-datasets.html#cb34-11" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">individualName</span>&gt;</span>
-<span id="cb34-12"><a href="model-based-datasets.html#cb34-12" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">organizationName</span>&gt;organization name&lt;/<span class="kw">organizationName</span>&gt;</span>
-<span id="cb34-13"><a href="model-based-datasets.html#cb34-13" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">electronicMailAddress</span>&gt;email@some.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
-<span id="cb34-14"><a href="model-based-datasets.html#cb34-14" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">creator</span>&gt;</span>
-<span id="cb34-15"><a href="model-based-datasets.html#cb34-15" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">distribution</span>&gt;</span>
-<span id="cb34-16"><a href="model-based-datasets.html#cb34-16" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">online</span>&gt;</span>
-<span id="cb34-17"><a href="model-based-datasets.html#cb34-17" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">onlineDescription</span>&gt;This is a link to an external online data resource (describe resource and repository location).&lt;/<span class="kw">onlineDescription</span>&gt;</span>
-<span id="cb34-18"><a href="model-based-datasets.html#cb34-18" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">&quot;information&quot;</span>&gt;https://pasta.lternet.edu/package/metadata/eml/knb-lter-ntl/80/2&lt;/<span class="kw">url</span>&gt;</span>
-<span id="cb34-19"><a href="model-based-datasets.html#cb34-19" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">online</span>&gt;</span>
-<span id="cb34-20"><a href="model-based-datasets.html#cb34-20" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">distribution</span>&gt;</span>
-<span id="cb34-21"><a href="model-based-datasets.html#cb34-21" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">contact</span>&gt;</span>
-<span id="cb34-22"><a href="model-based-datasets.html#cb34-22" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">positionName</span>&gt;Information Manager&lt;/<span class="kw">positionName</span>&gt;</span>
-<span id="cb34-23"><a href="model-based-datasets.html#cb34-23" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">organizationName</span>&gt;organization name&lt;/<span class="kw">organizationName</span>&gt;</span>
-<span id="cb34-24"><a href="model-based-datasets.html#cb34-24" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">electronicMailAddress</span>&gt;infomgr@some.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
-<span id="cb34-25"><a href="model-based-datasets.html#cb34-25" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">contact</span>&gt;</span>
-<span id="cb34-26"><a href="model-based-datasets.html#cb34-26" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">dataSource</span>&gt;</span>
-<span id="cb34-27"><a href="model-based-datasets.html#cb34-27" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">methodStep</span>&gt;</span></code></pre></div>
-<div id="model-code" class="section level5">
-<h5>Model code</h5>
+<div class="sourceCode" id="cb34"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb34-1"><a href="model-based-datasets.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;methodStep&gt;</span></span>
+<span id="cb34-2"><a href="model-based-datasets.html#cb34-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;description&gt;</span></span>
+<span id="cb34-3"><a href="model-based-datasets.html#cb34-3" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;para&gt;</span>This methodStep contains data provenance information as specified in the LTER EML Best Practices. Each dataSource element here lists entity-specific information and links to source data used in the creation of this derivative data package.<span class="kw">&lt;/para&gt;</span></span>
+<span id="cb34-4"><a href="model-based-datasets.html#cb34-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/description&gt;</span></span>
+<span id="cb34-5"><a href="model-based-datasets.html#cb34-5" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;dataSource&gt;</span></span>
+<span id="cb34-6"><a href="model-based-datasets.html#cb34-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;title&gt;</span>Source dataset title<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb34-7"><a href="model-based-datasets.html#cb34-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;creator&gt;</span></span>
+<span id="cb34-8"><a href="model-based-datasets.html#cb34-8" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;individualName&gt;</span></span>
+<span id="cb34-9"><a href="model-based-datasets.html#cb34-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;givenName&gt;</span>first name<span class="kw">&lt;/givenName&gt;</span></span>
+<span id="cb34-10"><a href="model-based-datasets.html#cb34-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;surName&gt;</span>last name<span class="kw">&lt;/surName&gt;</span></span>
+<span id="cb34-11"><a href="model-based-datasets.html#cb34-11" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/individualName&gt;</span></span>
+<span id="cb34-12"><a href="model-based-datasets.html#cb34-12" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;organizationName&gt;</span>organization name<span class="kw">&lt;/organizationName&gt;</span></span>
+<span id="cb34-13"><a href="model-based-datasets.html#cb34-13" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;electronicMailAddress&gt;</span>email@some.edu<span class="kw">&lt;/electronicMailAddress&gt;</span></span>
+<span id="cb34-14"><a href="model-based-datasets.html#cb34-14" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/creator&gt;</span></span>
+<span id="cb34-15"><a href="model-based-datasets.html#cb34-15" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;distribution&gt;</span></span>
+<span id="cb34-16"><a href="model-based-datasets.html#cb34-16" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;online&gt;</span></span>
+<span id="cb34-17"><a href="model-based-datasets.html#cb34-17" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;onlineDescription&gt;</span>This is a link to an external online data resource (describe resource and repository location).<span class="kw">&lt;/onlineDescription&gt;</span></span>
+<span id="cb34-18"><a href="model-based-datasets.html#cb34-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;url</span><span class="ot"> function=</span><span class="st">&quot;information&quot;</span><span class="kw">&gt;</span>https://pasta.lternet.edu/package/metadata/eml/knb-lter-ntl/80/2<span class="kw">&lt;/url&gt;</span></span>
+<span id="cb34-19"><a href="model-based-datasets.html#cb34-19" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/online&gt;</span></span>
+<span id="cb34-20"><a href="model-based-datasets.html#cb34-20" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/distribution&gt;</span></span>
+<span id="cb34-21"><a href="model-based-datasets.html#cb34-21" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;contact&gt;</span></span>
+<span id="cb34-22"><a href="model-based-datasets.html#cb34-22" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;positionName&gt;</span>Information Manager<span class="kw">&lt;/positionName&gt;</span></span>
+<span id="cb34-23"><a href="model-based-datasets.html#cb34-23" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;organizationName&gt;</span>organization name<span class="kw">&lt;/organizationName&gt;</span></span>
+<span id="cb34-24"><a href="model-based-datasets.html#cb34-24" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;electronicMailAddress&gt;</span>infomgr@some.edu<span class="kw">&lt;/electronicMailAddress&gt;</span></span>
+<span id="cb34-25"><a href="model-based-datasets.html#cb34-25" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/contact&gt;</span></span>
+<span id="cb34-26"><a href="model-based-datasets.html#cb34-26" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/dataSource&gt;</span></span>
+<span id="cb34-27"><a href="model-based-datasets.html#cb34-27" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/methodStep&gt;</span></span></code></pre></div>
+<div id="model-code" class="section level5 hasAnchor">
+<h5>Model code<a href="model-based-datasets.html#model-code" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>The model used to produce certain data needs to be well documented and linked from the resulting data product(s). However, it is not always easy to decide where and how to archive the code, and whether or not in conjunction with the data product(s). We outline in sections below three common code archiving options.</p>
 <p>Note that these scenarios (model code archived with data, or standalone in EDI, or elsewhere) are not mutually exclusive. Any project that involves code might make use of both established and custom software hosted on many different platforms, and might use some or all archiving options.</p>
 <p>To decide between archiving options, consider the questions listed in <a href="code.html">best practices for publishing code</a>.</p>
 </div>
-<div id="model-code-and-data-in-the-same-package" class="section level5">
-<h5>Model code and data in the same package</h5>
+<div id="model-code-and-data-in-the-same-package" class="section level5 hasAnchor">
+<h5>Model code and data in the same package<a href="model-based-datasets.html#model-code-and-data-in-the-same-package" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>The goal of this practice is to ensure transparency of the data, and it applies to one-off models developed for the associated data, or occasionally to larger code bases for the reasons outlined in <a href="code.html">best practices for archiving code</a>. Include the code as a dataset/otherEntity. Additionally, it is recommended to include a CodeMeta file, which can also be handled and documented in EML as dataset/otherEntity. CodeMeta is a metadata standard for software and code compatible with schema.org. Refer to <a href="code.html">best practices for archiving code</a> for how to document the code and create CodeMeta.</p>
 </div>
-<div id="model-code-as-standalone-package" class="section level5">
-<h5>Model code as standalone package</h5>
+<div id="model-code-as-standalone-package" class="section level5 hasAnchor">
+<h5>Model code as standalone package<a href="model-based-datasets.html#model-code-as-standalone-package" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>If the model has been used to generate several datasets, i.e., is more widely applicable, it can be archived as its own package in EDI and assigned a DOI. Include the code as a dataset/otherEntity. Additionally, it is recommended to include a CodeMeta JSON-LD file, which can also be handled and documented in EML as dataset/otherEntity. CodeMeta is a metadata standard for software and code compatible with schema.org. Refer to <a href="code.html">best practices for archiving code</a> for how to document the code and create CodeMeta.</p>
 </div>
-<div id="model-code-archivedmaintained-elsewhere" class="section level5">
-<h5>Model code archived/maintained elsewhere</h5>
+<div id="model-code-archivedmaintained-elsewhere" class="section level5 hasAnchor">
+<h5>Model code archived/maintained elsewhere<a href="model-based-datasets.html#model-code-archivedmaintained-elsewhere" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>This might include complex community models/software maintained by many people, published and actively maintained R/Python packages, etc., or simply code archived in another repository such as <a href="https://www.comses.net/">CoMSES Net</a>. It may sometimes be advisable to archive a copy of the model code with the data, even if it appears to be maintained elsewhere. See recommendations above for referencing models in EML.</p>
 </div>
 </div>
-<div id="model-input-and-output-data" class="section level4">
-<h4>Model input and output data</h4>
+<div id="model-input-and-output-data" class="section level4 hasAnchor">
+<h4>Model input and output data<a href="model-based-datasets.html#model-input-and-output-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>These are considered data entities, which should be handled according to EML best practices for corresponding data types. However, if the resulting datasets are very large, one may consider if input/output from all individual model runs need to be archived. Are there specific model run results that are more useful for non-modelers? For example: results from model runs leading to a journal publication.</p>
 <p>Very large model inputs/outputs may need to be archived offline. Refer to <a href="large-data-sets.html">best practices for offline data</a>.</p>
 <p>If the model requires a specific folder structure, you can zip model input files within the package to preserve that folder structure. A disadvantage of this approach is that you cannot elegantly describe each file with EML.</p>
 <p>The <a href="https://modeldatarcn.github.io/#project-description">EarthCube Research Coordination Network, “What About Model Data?” group</a> is working on a rubric to help you determine how much model output data to save, based on assorted criteria on reproducibility/value of the data. Learn more about that group and their rubric on their <a href="https://modeldatarcn.github.io/">Model Data RCN website</a>.</p>
 <p>Researchers at the Department of Energyâ€™s Environmental Systems Science are also working on assessing model archiving needs. In <a href="https://eartharxiv.org/repository/view/260/">this preprint</a>, Simmonds et al. 2020 discuss feedback from communications with modellers and propose preliminary solutions. With regards to input/output data, their feedback indicates two opposite opinions: some feel the whole gamut of raw to aggregated outputs needs to be archived, while others advocate for only high-level outputs corresponding to publication figures. They also found that spin-up simulations were not considered a high priority for archiving. See section 2.3 What is worth archiving and for how long does it remain useful?</p>
 </div>
-<div id="model-parameters" class="section level4">
-<h4>Model parameters</h4>
+<div id="model-parameters" class="section level4 hasAnchor">
+<h4>Model parameters<a href="model-based-datasets.html#model-parameters" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Include model parameters whenever applicable. If code/input/output from multiple model runs are archived, make sure to archive all corresponding sets of parameters, and be explicit in linking the different components together.</p>
 <p>Consider archiving model parameter files as their own data object(s) in both their native format and as a text (non-binary) version. If the ‘runfile’ will be archived, consider including the parameters within that file with appropriate annotations.</p>
 </div>
 </div>
-<div id="example-data-packages-in-edi" class="section level3">
-<h3>Example data packages in EDI</h3>
+<div id="example-data-packages-in-edi" class="section level3 hasAnchor">
+<h3>Example data packages in EDI<a href="model-based-datasets.html#example-data-packages-in-edi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table>
 <tr>
 <td>
@@ -444,8 +443,8 @@ Dataset to run a 37-year simulation (1979-2015) of the Lake Mendota lake ecosyst
 </tr>
 </table>
 </div>
-<div id="resources-1" class="section level3">
-<h3>Resources</h3>
+<div id="resources-1" class="section level3 hasAnchor">
+<h3>Resources<a href="model-based-datasets.html#resources-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Janssen, Marco A., Lilian Na’ia Alessa, Michael Barton, Sean Bergin and Allen Lee (2008). â€˜Towards a Community Framework for Agent-Based Modellingâ€™. Journal of Artificial Societies and Social Simulation 11(2)6 <a href="http://jasss.soc.surrey.ac.uk/11/2/6.html">http://jasss.soc.surrey.ac.uk/11/2/6.html</a>.</p>
 <p>Simmonds, Maegen, William J. Riley, Shreyas Cholia, and Charuleka Varadharajan (2020). ‘Addressing Model Data Archiving Needs for the Department of Energyâ€™s Environmental Systems Science Community.’ EarthArXiv (preprint). <a href="https://doi.org/10.31223/osf.io/acdk4">https://doi.org/10.31223/osf.io/acdk4</a>.</p>
 <p>See sections 2.3 What is worth archiving and for how long does it remain useful?, discussed above, plus 2.4 Model data archiving protocol, where the authors argue for better standardized reporting format for model data, e.g., top-level metadata and directory structure at a minimum. Section 4.1 Developing Model Data Archiving Guidelines proposes an organization scheme for model data.</p>

@@ -7,11 +7,10 @@
   <title>Images and Documents as Data | Data Package Best Practices</title>
   <meta name="description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Images and Documents as Data | Data Package Best Practices" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="<p>Best practice recommendations for data packages, described by
 Ecological Metadata Language (EML).</p>" />
@@ -27,7 +26,7 @@ Ecological Metadata Language (EML).</p>" />
 <meta name="author" content="Environmental Data Initiative" />
 
 
-<meta name="date" content="2022-03-04" />
+<meta name="date" content="2022-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -36,7 +35,6 @@ Ecological Metadata Language (EML).</p>" />
   
 <link rel="prev" href="model-based-datasets.html"/>
 <link rel="next" href="spatial-data.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,8 +52,9 @@ Ecological Metadata Language (EML).</p>" />
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -160,7 +159,7 @@ div.csl-indent {
 
 <ul class="summary">
 <li><a href="./">EDI Data Package Best Practices</a></li>
-<li style="margin-left:10px;"><a href="https://EnvironmentalDataInitiative.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
+<li style="margin-left:10px;"><a href="https://edirepository.org" target="blank"><img class="img-responsive center-block" src="./images/EDI-logo-svg.png" alt="EDI Logo" height="90" width="90"/></a><li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="about-this-site.html"><a href="about-this-site.html"><i class="fa fa-check"></i>About This Site</a></li>
@@ -315,25 +314,25 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="images-and-documents-as-data" class="section level2">
-<h2>Images and Documents as Data</h2>
+<div id="images-and-documents-as-data" class="section level2 hasAnchor">
+<h2>Images and Documents as Data<a href="images-and-documents-as-data.html#images-and-documents-as-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Contributors: Renee F. Brown (lead), Stace Beaulieu, Sarah Elmendorf, Gastil Gastil-Buhl, Corinna Gries, Li Kui, Mary Martin, Greg Maurer, John Porter, Tim Whiteaker</p>
-<div id="introduction-3" class="section level3">
-<h3>Introduction</h3>
+<div id="introduction-3" class="section level3 hasAnchor">
+<h3>Introduction<a href="images-and-documents-as-data.html#introduction-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This chapter describes best practices for archiving images and other documents as data. The <a href="http://purl.obolibrary.org/obo/IAO_0000101">Environment Ontology (ENVO)</a> defines a document as ‘<em>a collection of information content entities intended to be understood together as a whole</em>.’ Common examples include still images, audio and/or video multimedia files, field notebooks, written interview notes or transcribed oral accounts, historical document collections, and ‘paper’ maps (non-digitized maps). For images that are already handled by specialized repositories (e.g., phenocam images, specimen images) refer to <a href="data-in-other-repositories.html">Data in Other Repositories</a>, for additional information on how to handle images from uncrewed (underwater or aerial) vehicles refer to <a href="data-gathered-with-small-moving-platforms.html">Data Gathered with Small Moving Platforms</a>, and for geospatial imagery refer to <a href="spatial-data.html">Spatial Data</a>.</p>
 </div>
-<div id="recommendations-for-data-packages-2" class="section level3">
-<h3>Recommendations for data packages</h3>
-<div id="reasons-to-archive-documents-as-data" class="section level4">
-<h4>Reasons to archive documents as data</h4>
+<div id="recommendations-for-data-packages-2" class="section level3 hasAnchor">
+<h3>Recommendations for data packages<a href="images-and-documents-as-data.html#recommendations-for-data-packages-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="reasons-to-archive-documents-as-data" class="section level4 hasAnchor">
+<h4>Reasons to archive documents as data<a href="images-and-documents-as-data.html#reasons-to-archive-documents-as-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><strong>Enhance the credibility of associated datasets.</strong> Many document types (field notes, still images, etc.) often provide additional metadata that cannot easily be encapsulated in the associated dataset(s) or were not considered important at the time of transcription. As such, these documents may provide opportunities to rectify transcription errors, retrospectively provide explanations of unusual data, and/or include additional observational or measured data, such as opportunistic measurements or calibration parameters.</li>
 <li><strong>Provide opportunities for new analyses.</strong> New analytical methods may be employed on archived documents (especially still images) or documents that were never archived previously because the cost-to-benefit ratio was considered too high (e.g., pilot projects).</li>
 <li><strong>Improve ease of access.</strong> In distributed projects, access to original and/or ‘hard-copy’ documents may be limited to a particular institution or subset of people. By digitally archiving these documents in a data repository, the data become more findable, accessible, interoperable, and reusable (FAIR).</li>
 </ul>
 </div>
-<div id="considerations-for-data-package-structure" class="section level4">
-<h4>Considerations for data package structure</h4>
+<div id="considerations-for-data-package-structure" class="section level4 hasAnchor">
+<h4>Considerations for data package structure<a href="images-and-documents-as-data.html#considerations-for-data-package-structure" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><strong>Balance file size and number of files.</strong> A data package may contain document files individually or bundled as a compressed archive (e.g., zip). The decision of how to bundle documents into compressed archives and then into data packages should be guided by the overall goal of making data usable for the intended purpose of the documents. In most cases, this would involve finding specific documents by, for example, the date or location of the acquisition, or some other aspect of interest. In addition, the effort of documenting documents (each individually vs. in groups) has to be taken into account. Also see <a href="large-data-sets.html">Large Data Sets</a>.</li>
 <li><strong>Document grouping.</strong> Data packages, or compressed archives within data packages, may be grouped spatially (e.g., by location) and/or temporally (e.g., by date, season, or year). For example, data outputs from a stationary camera may be archived in annual data packages, each containing monthly compressed archives if the number of images is large. While moving camera outputs may also be archived annually, these data packages may instead include compressed archives containing all still images for a single location.</li>
@@ -343,27 +342,27 @@ div.csl-indent {
 <li><strong>Linking to related data packages.</strong> In the case where the documents are useful to understanding another data package and vice versa (e.g., met station visitation logs and met station time series data), it is recommended to link the complementary data package in the methods section of both datasets. Alternatively, include the document(s) or compressed archive(s) in the existing dataset as otherEntity, as described in the next section.</li>
 </ul>
 </div>
-<div id="documenting-data-packages" class="section level4">
-<h4>Documenting data packages</h4>
-<div id="ecological-metadata-language" class="section level5">
-<h5>Ecological Metadata Language</h5>
+<div id="documenting-data-packages" class="section level4 hasAnchor">
+<h4>Documenting data packages<a href="images-and-documents-as-data.html#documenting-data-packages" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="ecological-metadata-language" class="section level5 hasAnchor">
+<h5>Ecological Metadata Language<a href="images-and-documents-as-data.html#ecological-metadata-language" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>All data packages require good discovery-level metadata in Ecological Metadata Language (EML), which should be assembled using standard documented best practices. Documents (including compressed archives) should be included as otherEntity in the data package (e.g., see Example 4.1). Refer to the most recent version of EML Best Practices (<a href="https://environmentaldatainitiative.files.wordpress.com/2017/11/emlbestpractices-v3.pdf">currently v3</a>) for guidance regarding the formatName and entityType EML elements. If a format for your document type is not covered, it is recommended to use the appropriate <a href="https://github.com/DataONEorg/object-formats">MIME type</a>, if available.</p>
 <p>Example 1: EML otherEntity snippet for a pdf file</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb35-1"><a href="images-and-documents-as-data.html#cb35-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">otherEntity</span>&gt;</span>
-<span id="cb35-2"><a href="images-and-documents-as-data.html#cb35-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityName</span>&gt;site date&lt;/<span class="kw">entityName</span>&gt;</span>
-<span id="cb35-3"><a href="images-and-documents-as-data.html#cb35-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityDescription</span>&gt;Field notes at site and date.&lt;/<span class="kw">entityDescription</span>&gt;</span>
-<span id="cb35-4"><a href="images-and-documents-as-data.html#cb35-4" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
-<span id="cb35-5"><a href="images-and-documents-as-data.html#cb35-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">objectName</span>&gt;site_date.pdf&lt;/<span class="kw">objectName</span>&gt;</span>
-<span id="cb35-6"><a href="images-and-documents-as-data.html#cb35-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">size</span><span class="ot"> unit=</span><span class="st">&quot;byte&quot;</span>&gt;9674&lt;/<span class="kw">size</span>&gt;</span>
-<span id="cb35-7"><a href="images-and-documents-as-data.html#cb35-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">authentication</span><span class="ot"> method=</span><span class="st">&quot;MD5&quot;</span>&gt;8547b7a63fcf6c1f0913a5bd7549d9d1&lt;/<span class="kw">authentication</span>&gt;</span>
-<span id="cb35-8"><a href="images-and-documents-as-data.html#cb35-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb35-9"><a href="images-and-documents-as-data.html#cb35-9" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">externallyDefinedFormat</span>&gt;</span>
-<span id="cb35-10"><a href="images-and-documents-as-data.html#cb35-10" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">formatName</span>&gt;Portable Document Format&lt;/<span class="kw">formatName</span>&gt;</span>
-<span id="cb35-11"><a href="images-and-documents-as-data.html#cb35-11" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">externallyDefinedFormat</span>&gt;</span>
-<span id="cb35-12"><a href="images-and-documents-as-data.html#cb35-12" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb35-13"><a href="images-and-documents-as-data.html#cb35-13" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
-<span id="cb35-14"><a href="images-and-documents-as-data.html#cb35-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityType</span>&gt;application/pdf&lt;/<span class="kw">entityType</span>&gt;</span>
-<span id="cb35-15"><a href="images-and-documents-as-data.html#cb35-15" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">otherEntity</span>&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb35-1"><a href="images-and-documents-as-data.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;otherEntity&gt;</span></span>
+<span id="cb35-2"><a href="images-and-documents-as-data.html#cb35-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;entityName&gt;</span>site date<span class="kw">&lt;/entityName&gt;</span></span>
+<span id="cb35-3"><a href="images-and-documents-as-data.html#cb35-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;entityDescription&gt;</span>Field notes at site and date.<span class="kw">&lt;/entityDescription&gt;</span></span>
+<span id="cb35-4"><a href="images-and-documents-as-data.html#cb35-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;physical&gt;</span></span>
+<span id="cb35-5"><a href="images-and-documents-as-data.html#cb35-5" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;objectName&gt;</span>site_date.pdf<span class="kw">&lt;/objectName&gt;</span></span>
+<span id="cb35-6"><a href="images-and-documents-as-data.html#cb35-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;size</span><span class="ot"> unit=</span><span class="st">&quot;byte&quot;</span><span class="kw">&gt;</span>9674<span class="kw">&lt;/size&gt;</span></span>
+<span id="cb35-7"><a href="images-and-documents-as-data.html#cb35-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;authentication</span><span class="ot"> method=</span><span class="st">&quot;MD5&quot;</span><span class="kw">&gt;</span>8547b7a63fcf6c1f0913a5bd7549d9d1<span class="kw">&lt;/authentication&gt;</span></span>
+<span id="cb35-8"><a href="images-and-documents-as-data.html#cb35-8" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;dataFormat&gt;</span></span>
+<span id="cb35-9"><a href="images-and-documents-as-data.html#cb35-9" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;externallyDefinedFormat&gt;</span></span>
+<span id="cb35-10"><a href="images-and-documents-as-data.html#cb35-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;formatName&gt;</span>Portable Document Format<span class="kw">&lt;/formatName&gt;</span></span>
+<span id="cb35-11"><a href="images-and-documents-as-data.html#cb35-11" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;/externallyDefinedFormat&gt;</span></span>
+<span id="cb35-12"><a href="images-and-documents-as-data.html#cb35-12" aria-hidden="true" tabindex="-1"></a>      <span class="kw">&lt;/dataFormat&gt;</span></span>
+<span id="cb35-13"><a href="images-and-documents-as-data.html#cb35-13" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;/physical&gt;</span></span>
+<span id="cb35-14"><a href="images-and-documents-as-data.html#cb35-14" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;entityType&gt;</span>application/pdf<span class="kw">&lt;/entityType&gt;</span></span>
+<span id="cb35-15"><a href="images-and-documents-as-data.html#cb35-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/otherEntity&gt;</span></span></code></pre></div>
 <p>The EML metadata should also include appropriate keywords describing the general purpose of the document or compressed archive (e.g., ice phenology, community composition, stream hydrology, etc.). For example, for still images, it is recommended to include keyword: image with the semantic annotation from the Information Artifact Ontology (IAO) :</p>
 <pre><code>**Term IRI:** [http://purl.obolibrary.org/obo/IAO_0000101](http://purl.obolibrary.org/obo/IAO_0000101)
 
@@ -371,8 +370,8 @@ div.csl-indent {
 **Definition:** An image is an affine projection to a two dimensional surface, of measurements of some quality of an entity or entities repeated at regular intervals across a spatial range, where the measurements are represented as color and luminosity on the projected surface.</code></pre>
 <p>Note, IAO includes at least one subcategory for image (e.g., <a href="http://www.ontobee.org/ontology/IAO?iri=http://purl.obolibrary.org/obo/IAO_0000185">photograph</a>). It is recommended the most specific applicable concept be used.</p>
 </div>
-<div id="data-inventory-table" class="section level5">
-<h5>Data Inventory Table</h5>
+<div id="data-inventory-table" class="section level5 hasAnchor">
+<h5>Data Inventory Table<a href="images-and-documents-as-data.html#data-inventory-table" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>We recommend that an additional level of metadata be provided through a data inventory table that effectively serves as a document catalog (see Table 4.1). The detail provided in this table should be guided by the same principles as stated above – to enable optimal usability of the documents. For example, still images from a stationary camera require latitude and longitude only in the EML file, not for each individual image. However, images from a moving camera may need that information for every image, or at least for every location (e.g., site, quadrat, transect). Additionally, Exif metadata from photographic images may be programmatically extracted to supplement the inventory table (refer to the <em>Tips and Tricks</em> section of <a href="data-gathered-with-Small-moving-platforms.html">Data Gathered with Small Moving Platforms</a>).</p>
 <p>The data inventory table should be structured such that each column represents a particular attribute, described in EML as a <a href="https://eml.ecoinformatics.org/schema/eml-dataTable_xsd.html#eml-dataTable.xsd">dataTable</a> entity, and each row represents an individual document or a compressed archive of a group of documents. At minimum, the table should include an attribute for the document/archive filename, as well as any other essential attributes that vary per each document/archive. Additional attributes may include information on the date and/or time, but for this information to be useful, be consistent and use a controlled vocabulary for these fields so that a user can effectively search on them.</p>
 <p>Table 1: Data inventory table structure.</p>
@@ -445,8 +444,8 @@ One or more columns as appropriate to the document type, such as weather conditi
 </div>
 </div>
 </div>
-<div id="example-data-packages-in-edi-1" class="section level3">
-<h3>Example data packages in EDI</h3>
+<div id="example-data-packages-in-edi-1" class="section level3 hasAnchor">
+<h3>Example data packages in EDI<a href="images-and-documents-as-data.html#example-data-packages-in-edi-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Each of the Environmental Data Initiative (EDI) data packages listed below include images or other documents as data. Some of these packages contain data inventory tables (as dataTable entities) described in the EML metadata.</p>
 <p>Table 2: Data packages in EDI providing examples of best practices from this document.</p>
 <table>
@@ -518,17 +517,17 @@ Compressed archive containing 410 audio files in wav format. Includes data inven
 </tr>
 </table>
 </div>
-<div id="resources-2" class="section level3">
-<h3>Resources</h3>
-<div id="considerations-for-digitizing-documents" class="section level4">
-<h4>Considerations for digitizing documents</h4>
+<div id="resources-2" class="section level3 hasAnchor">
+<h3>Resources<a href="images-and-documents-as-data.html#resources-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="considerations-for-digitizing-documents" class="section level4 hasAnchor">
+<h4>Considerations for digitizing documents<a href="images-and-documents-as-data.html#considerations-for-digitizing-documents" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Following are some general considerations and recommendations for digitizing paper or other ‘hard-copy’ documents for archival. This is not meant to be an exhaustive list. For further and more detailed information, please refer to the U.S. National Archives and Records Administration (NARA)â€™s <em><a href="https://www.archives.gov/files/preservation/technical/guidelines.pdf">Technical Guidelines for Digitizing Archival Materials for Electronic Access</a></em>.</p>
 <ul>
 <li><strong>Effort.</strong> The decision to digitize documents, as well as the digitization method, involves trade-offs in the accessibility and ease of using particular hardware and/or software technologies, the quality of the digitization, and the overall effort spent. Digitization efforts may be significant, for example, when dealing with a large number of documents requiring meaningful file names, text recognition, and/or high resolution for improved accessibility.</li>
 <li><strong>Equipment.</strong> Instruments for digitizing hard-copy documents range from high resolution scanners (less accessible, less user-friendly, more expensive, better quality) to smartphone cameras (ubiquitous, easy-to-use, lower quality). For example, taking a smartphone image in the field may be utilized for quick and easy digitization of field notes.</li>
 <li><strong>Document resolution and file size.</strong> This is an important consideration that should be guided by the content and purpose of the document. Detailed paper maps should probably be scanned at high resolution and large file size, while field sheets may not need as much detail.</li>
 <li><strong>Optical Character Recognition (OCR):</strong> When digitizing documents that include text, we recommend using scanning or other software with OCR capabilities (e.g., Adobe, ABBYY, Tesseract) to convert the text into machine readable characters so that the documents are searchable and thus, more usable. OCR does not work well for handwritten text, older fonts, or documents with busy backgrounds (speckled, dirty, faded, etc.).</li>
-<li><strong>Sensitive Information and Human Subjects:</strong> Regardless of the digitization method, one should be mindful of sensitive information that shouldnâ€™t be archived or otherwise redacted (e.g., photographs of human subjects, field notebooks containing personal messages, gate combinations, and/or telephone numbers). In all cases in which human subjects are involved, Institutional Review Board (IRB) restrictions must be heeded. A signed IRB consent form for the associated research project represents a contract between researcher and human subject. It is important to note that IRB restrictions can differ among research studies within the same project. For further information, see the <a href="https://environmentaldatainitiative.org/edi-data-policy-2/#Sensitive%20data">EDI Data Initiative Data Policy</a>.</li>
+<li><strong>Sensitive Information and Human Subjects:</strong> Regardless of the digitization method, one should be mindful of sensitive information that shouldnâ€™t be archived or otherwise redacted (e.g., photographs of human subjects, field notebooks containing personal messages, gate combinations, and/or telephone numbers). In all cases in which human subjects are involved, Institutional Review Board (IRB) restrictions must be heeded. A signed IRB consent form for the associated research project represents a contract between researcher and human subject. It is important to note that IRB restrictions can differ among research studies within the same project. For further information, see the <a href="https://edirepository.org/about/edi-policy#sensitive-data">EDI Data Initiative Data Policy</a>.</li>
 </ul>
 <p>While transcription is a digitization method that can be performed on certain types of documents (e.g., audio/video recordings, field notebooks) and can enhance search capabilities, transcript generation requires substantially more effort than other digitization methods, and is prone to error. Moreover, in the case where the original documents contain drawings, transcripts may be incomplete or otherwise inaccurate. <em>Thus, we recommend digitizing documents by other means, using the considerations described above.</em></p>
 </div>
