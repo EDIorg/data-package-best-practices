@@ -13,7 +13,7 @@ EML Best Practice recommendations have evolved over time. The most active contri
 Timeline and Previous Revisions
 
 - 2017 Best Practices for Dataset Metadata in EML v3 (this document)
-- 2016 EDI inception, see http://environmentaldatainitiative.org
+- 2016 EDI inception, see http://edirepository.org
 - 2011 EML Best Practices for LTER sites v2
 - 2008 EML 2.1 release
 - 2004 EML Best Practices for LTER sites
