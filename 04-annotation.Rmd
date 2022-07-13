@@ -1,0 +1,24 @@
+# Data Package Annotation
+
+This document contains 'Best Practice' recommendations for annotating data packages published in EDI. These recommendations are directed towards the following goals:
+
+- item 1
+- item 2
+- etc
+
+## Introduction {-}
+
+What this is all about ...
+
+Contributors (alphabetical order):
+
+- Corinna Gries
+- Margaret O'Brien
+- Colin Smith
+- Kristin Vanderbilt
+
+## Conventions and Definitions {-}
+
+## General Recommendations {-}
+
+## ?
