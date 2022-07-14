@@ -21,4 +21,13 @@ Contributors (alphabetical order):
 
 ## General Recommendations {-}
 
-## ?
+### Classifying Methodology Type
+
+Broadly classifying the methods by which a data package was created enables discovery by these classes. A few that have been requested thus far and their corresponding URIs:
+
+* Field Method: http://purl.dataone.org/odo/ECSO_00000082
+* Synthesized/derived data: _We haven't found an annotation for this type yet._
+* Modeled Method: http://purl.dataone.org/odo/ECSO_00000083
+* Manipulative experiment: http://purl.dataone.org/odo/ECSO_00000506
+* Natural experiment: http://purl.dataone.org/odo/ECSO_00000507
+
