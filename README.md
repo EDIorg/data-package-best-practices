@@ -1,8 +1,8 @@
-# Dataset Preparation Guides for the EDI Community
+# Dataset Preparation Guides for the EDI Community (data-package-best-practices)
 
 This repository contains a series of documents about preparing and publishing datasets in the environmental sciences and similar contexts. Topics include community-developed metadata standards, serialization and markup formatting guidelines, and best practices for the content of published research datasets. This documentation is maintained by the [Environmental Data Initiative](https://edirepository.org) (EDI) and all content has been developed and written in collaboration with EDI's community of scientists, data managers, and repository users. Two versions of this content are published online:
 
-* [A current production version](https://ediorg.github.io/dataset_preparation_guides/), derived from the `main` branch of the repository.
+* [A current production version](https://ediorg.github.io/data-package-best-practices/), derived from the `main` branch of the repository.
 * [A prerelease version](https://prerelease-edi-docs.netlify.app) containing new and in-development documents, derived from the `prerelease` branch.
 
 **NOTE: Content in the current production version was originally taken from EDI's [*Data Package Best Practices*](https://ediorg.github.io/data-package-best-practices/) site ([repo](https://github.com/EDIorg/data-package-best-practices))**
@@ -23,7 +23,7 @@ The maintenance of this repository and development of the included documents is 
 
 The guide documents and most website content are written in Quarto markdown, a variant of `pandoc` markdown, and saved as `.qmd` files. See the [Quarto guide](https://quarto.org/docs/guide/) for information on how to author `.qmd` files. New content, or edits to existing documents, can be contributed in several possible ways:
 
-1. To suggest a change you may [file an issue](https://github.com/EDIorg/dataset_preparation_guides/issues/new/choose) in the GitHub repository outlining your proposed changes. This will begin a conversation with the maintainers and others in the community about whether and how to implement changes to the documents or website. You may be invited to draft the content changes (see the next item).
+1. To suggest a change you may [file an issue](https://github.com/EDIorg/data-package-best-practices/issues/new/choose) in the GitHub repository outlining your proposed changes. This will begin a conversation with the maintainers and others in the community about whether and how to implement changes to the documents or website. You may be invited to draft the content changes (see the next item).
 2. If you are ready to create a draft of the changes yourself, new `.qmd` files or edits to existing pages may be submitted as a pull request to the `prerelease` branch. See this [GitHub tutorial](https://github.blog/developer-skills/github/beginners-guide-to-github-creating-a-pull-request/) for some simple instructions and links to more resources. Maintainers will review the changes before merging them into the `prerelease` branch for further community input.
 3. In some cases, particularly if you are involved in a community working group, you may request permission to push changes directly to the `prerelease` branch. If you think this would be the best way to contribute your changes please contact the maintainers listed in the [About](about.qmd) page or <info@edirepository.org>. 
 4. Periodically, community working groups convene to develop and draft changes to these guides, and much of the writing, revising, and editing process takes place in formats outside this repository (Word or Google Docs). To get involved in one of these efforts and contribute changes that way, see the [About](about.qmd) page and contact working group leads, or propose your own working group to the community.

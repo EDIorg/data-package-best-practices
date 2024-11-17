@@ -21,7 +21,7 @@ This website contains a series of documents about preparing and publishing datas
 - Augment the schema documentation for the Ecological Metadata Language [EML, @jones_ecological_2019]
 - Facilitate the development and use of community-standard harmonized data products to improve data synthesis and integration
 
-To contribute to these documents or participate in the associated working groups, see the [About](about.qmd) page or the repository [README](https://github.com/EDIorg/dataset_preparation_guides). For more on the history of this effort, and access to earlier editions of the guides, see the [History](history.qmd) page.
+To contribute to these documents or participate in the associated working groups, see the [About](about.qmd) page or the repository [README](https://github.com/EDIorg/data-package-best-practices). For more on the history of this effort, and access to earlier editions of the guides, see the [History](history.qmd) page.
 
 ## The guides
 

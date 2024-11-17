@@ -14,7 +14,7 @@ website:
   page-navigation: true
   bread-crumbs: true
   announcement: 
-    content: "**Prerelease version**: This content is under development. See [here](https://ediorg.github.io/dataset_preparation_guides/) for community-accepted documents." 
+    content: "**Prerelease version**: This content is under development. See [here](https://ediorg.github.io/data-package-best-practices/) for community-accepted documents." 
     position: above-navbar
     dismissable: false
     type: danger
