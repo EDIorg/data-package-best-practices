@@ -1,0 +1,159 @@
+# People and organizations (ResponsibleParty) {#sec-chapter-4}
+
+The EML schema provides several elements to describe the parties responsible for a dataset. Responsible party elements may refer to either individual people, organizations, or positions within an organization, and all are derived from the **ResponsibleParty** EML type (see [Appendix B](appendix-b-xml-schemas-and-eml.qmd)). Examples include &lt;**creator**>, &lt;**contact**>, &lt;**associatedParty**>, &lt;**metadataProvider**> and &lt;**publisher**>. Responsible party elements are typically used multiple times, and often in multiple places, in an EML document. Note that in this chapter we focus on &lt;**dataset**> level responsible parties, but also see the &lt;**project**> tree for similar recommendations there (Chapter 5). Any **ResponsibleParty** element must be further described using one or more of the &lt;**individualName**>, &lt;**positionName**>, or &lt;**organizationName**> elements, and may include &lt;**userId**>, &lt;**address**>, &lt;**electronicMailAddress**>, and &lt;**phone**> child elements. Recommendations for populating these child elements are described first since they apply generally to any of the specific **ResponsibleParty** elements that follow.
+
+
+## ResponsibleParty child elements
+
+When a **ResponsibleParty** element describes a person, the &lt;**individualName**> element should be filled with the person’s full name. An &lt;**individualName**> element should contain both the &lt;**surName> **(i.e. family name) and &lt;**givenName>** child elements whenever possible. Multiple &lt;**givenName**> elements should be used for additional given names (such as middle name) and should appear in the person’s preferred order. The &lt;**salutation**> element is for salutations that come before a name (e.g., Dr.). If the person uses a name suffix it should be added after the name within the &lt;**surName**> element. Be aware that conventions on the ordering of given names and surnames vary with culture and that the content of &lt;**surName**> is usually used for alphabetical sorting. To further describe an individual person, consider including an &lt;**organizationName**> element with the person’s institutional affiliation or employer, and contact information in &lt;**address**>, &lt;**phone**>, and &lt;**electronicMailAddress**> elements, though these can be left out when using the &lt;**userId**> child element as described below. When there is any doubt about content or placement of information within these child elements the best practice is to ask the individual for their preference.
+
+If the **ResponsibleParty** element is describing an organization instead of an individual person, no &lt;**individualName**> is needed and &lt;**organizationName**> should be included instead. Use a clear and complete value for the organization’s name, spelling out any acronyms and limiting abbreviations. Also consider including contact information in &lt;**address**>, &lt;**phone**>, &lt;**onlineUrl**>, and &lt;**electronicMailAddress**> elements, but again, use of the &lt;**userId**> child element may obviate this need (see below).
+
+In some cases **ResponsibleParty** elements should describe an organization’s personnel positions (such as a research site data manager) without referencing the individual person holding the position. To do this, leave out &lt;**individualName**> and include &lt;**positionName**> and &lt;**organizationName**>. Referencing such positions and using position-based email addresses (e.g. [data.manager@myuniversity.edu](mailto:data.manager@myuniversity.edu)) in the &lt;**electronicMailAddress**> element can reduce record keeping overhead as personnel change over time. See the section for the &lt;**contact**> party below, and Example 4.4.
+
+
+### Making use of &lt;**userId**>
+
+As indicated above, **ResponsibleParty** elements can hold a great deal of information about people and organizations that contribute to published datasets. Unfortunately, it can become difficult to maintain personnel information when curating datasets for the long term. For example, it may be impractical for data managers to keep dataset contact information up-to-date as students involved in a large research project move to new institutions and positions over time. With the advent of unique identifier registries for individual researchers and research organizations, unique identifiers can be used to reference metadata in an independent, centralized database. The &lt;**userId**> child element is intended to hold such identifiers for **ResponsibleParty** elements and it is strongly recommended to include person or organization identifiers in this way whenever possible. Doing so makes it unnecessary to populate the &lt;**address**>, &lt;**phone**>, &lt;**organizationName**>, and &lt;**onlineURL**> elements if that information is current on the target database of the ID in a &lt;**userId**> element, and it reduces the burden of metadata maintenance over time. 
+
+For each **ResponsibleParty** element describing an individual (containing &lt;**individualName**>), use identifiers from the Open Researcher and Contributor ID registry ([ORCID](https://orcid.org/)) to uniquely identify individuals in &lt;**userId**>. ORCID identifiers are quick and easy to obtain at [https://orcid.org](https://orcid.org) so dataset contributors should be encouraged to register if they don’t yet have one. For party elements describing organizations (containing &lt;**organizationName**>, but not &lt;**individualName**> or &lt;**positionName**>), there are multiple possible identifier registries, but we recommend using the Research Organization Registry ([ROR](https://ror.org/)). If the organization does not have an ROR ID, the [ISNI](https://isni.org) or [Wikidata](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID) identifier are acceptable options that may already exist. If none of these organizational identifiers already exist, it is still worth the effort to register one, though the process may take slightly more planning. Position-based party elements (containing &lt;**positionName**> and &lt;**organizationName**>, but not &lt;**individualName**>) should not contain &lt;**userId**> elements.
+
+When placing the identifier in the &lt;**userId**> element, use a resolvable URI, e.g., [https://orcid.org/0000-0000-0000-0000](https://orcid.org/0000-0000-0000-0000) for an ORCID and [https://ror.org/021nxhr62](https://ror.org/021nxhr62) for an ROR ID. The opening &lt;**userId**> tag should also contain the \@**directory** attribute with a value of the registry URI, e.g., &lt;**userId directory=”[https://orcid.org](https://orcid.org)”**>. When providing both person and organization identifiers (ORCID and ROR), do not mix them by creating **ResponsibleParty** elements with more than one &lt;**userId**>, and instead use two separate elements. For example, place a researcher’s ORCID in the &lt;**creator**> element, and their organization’s ROR in the &lt;**metadataProvider**> element (since metadata is typically managed at the organization level).
+
+
+## Dataset authors (&lt;creator>)
+
+The &lt;**creator**> element is used to identify the authors of a dataset, i.e. the person(s) who provided intellectual input into creating the dataset. Data repositories such as EDI typically list the creators as the dataset authors in the citation. At least one &lt;**creator**> is required in every EML document, but multiple are allowed and should be entered in EML in the authorship order preferred in the citation. While authorship policies are beyond the scope of this document, we recommend that programs or projects that are publishing data should develop clear authorship policies that outline which contributions and roles merit inclusion in dataset author lists. Appropriate roles to include in dataset citations may include investigators, students, personnel involved in data collection or quality assurance (technicians, data managers) and others. Many research-oriented organizations have developed policies that can be used as guidance in this regard (see [NCEAS](https://learning.nceas.ucsb.edu/2022-04-arctic/collaboration-authorship-and-data-policies.html#authorship-and-credit-policies) and [VCR-LTER](https://www.vcrlter.virginia.edu/elecvol/VCRLTERAuthorshipGuidelines.pdf) policies, for example). Once a policy is decided, consider adding &lt;**creator**> elements as needed to achieve the desired citation as generated by the chosen repository.
+
+A &lt;**creator**> element’s &lt;**individualName**> (including &lt;**surName>** and &lt;**givenName>**) child element is used to build citations and each should therefore be completed fully, preferably with input from the person themselves, to allow proper attribution. The &lt;**positionName**> element can be used to further define a person’s role authoring the dataset, for example by entering “Principal investigator” for a scientist that initiated the dataset. Some data contributors prefer to have the research site or organization appear as an author. To do this, include a &lt;**creator**> element populated with research organization or site information using the &lt;**organizationName**> element (and leaving out &lt;**individualName**>). The &lt;**userId**> element is useful in &lt;**creator**> elements, so include ORCID or ROR identifiers as appropriate whenever possible. Keep in mind that stewardship of long-term datasets may change over time, and searchers frequently default to searching by author last name. Therefore it is a reasonable practice to add to the list of &lt;**creator**> elements over time, including more authors rather than fewer, even if it blurs the credit for long-term data.
+
+Example 4.1: An example using the &lt;**creator**> **ResponsibleParty **element to describe an author of a dataset. Note the &lt;**positionName**>, which is not required but may be helpful, and the ORCID identifier.
+
+
+```xml
+<creator>
+  <individualName>
+    <givenName>Jane</givenName>
+    <surName>McInvestigator</surName>
+  </individualName>
+  <electronicMailAddress>mcinvestigator@ficstate.edu</electronicMailAddress>
+  <userId directory="https://orcid.org">
+    https://orcid.org/0000-0000-0000-0000
+  </userId>
+  <positionName>Principal investigator</positionName>
+</creator>
+```
+
+
+
+## Metadata providers (&lt;metadataProvider>)
+
+The &lt;**metadataProvider**> element lists the person or organization responsible for providing the metadata to describe the published dataset. This can be a person, but many research sites, organizations, or networks derive metadata from multiple sources, so it is common to place the organization (e.g., an LTER site) under &lt;**metadataProvider**> instead. Note that in many cases the person or organization in &lt;**metadataProvider**> is not one of those appearing in the dataset’s &lt;**creator**> or &lt;**associatedParty**> elements.
+
+Example 4.2: A &lt;**metadataProvider**> element used to describe an organization that produced the metadata for a dataset. Note the ROR identifier in &lt;**userId**>.
+
+
+```xml
+<metadataProvider>
+  <organizationName>Fictitious Research Site</organizationName>
+  <electronicMailAddress>frs@ficstate.edu</electronicMailAddress>
+  <onlineUrl>http://frs.ficstate.edu/</onlineUrl>
+  <userId directory="https://ror.org">
+    https://ror.org/12345xy67
+  </userId>
+</metadataProvider>
+```
+
+
+
+## Associated parties (&lt;associatedParty>)
+
+Use &lt;**associatedParty**> elements to list other people who were involved with the data in some way (field technicians or assistants, data analysts, etc.). All &lt;**associatedParty**> elements require a &lt;**role**> child element that defines the party’s role with respect to the dataset. There are suggested role terms included in the EML schema (“technician”, “editor”, “originator”, “principalInvestigator”, etc.; documentation [here](https://eml.ecoinformatics.org/schema/eml-party_xsd.html#RoleType)) but there are no restrictions on using other terms. Parent institutions or named research organizations could be listed in &lt;**associatedParty**> using a &lt;**role**> of “owner”, “originator”, or similar, for example. Like dataset creators, the number of &lt;**associatedParty**> elements may increase over time.
+
+Example 4.3: An &lt;**associatedParty**> element for a technician. Note that the &lt;**role**> child element is required for &lt;**associatedParty**>.
+
+
+```xml
+<associatedParty>
+  <individualName>
+    <givenName>Ima</givenName>
+    <surName>Tech</surName>
+  </individualName>
+  <electronicMailAddress>itech@ficstate.edu</electronicMailAddress>
+  <userId directory="https://orcid.org">
+    https://orcid.org/0000-0000-0000-0000
+  </userId>
+  <role>Technician</role>
+</associatedParty>
+```
+
+
+
+## Dataset contacts (&lt;contact>)
+
+A &lt;**contact**> element is used to list designated contact persons or organizations for the dataset and is required in all EML documents. It is recommended to include a &lt;**contact**> element populated for a data manager or similar position that is independent of the individual holding the position (e.g., an email alias such as [data.manager@ficstate.edu](mailto:data.manager@fsu.edu)) so that contact information remains current with personnel changes. If multiple contacts are listed (e.g., a data manager and a lead PI) all will need to be kept current. Technicians who performed the work belong under &lt;**associatedParty**> rather than &lt;**contact**>. It may be advisable to complete the &lt;**address**>, &lt;**phone**>, &lt;**electronicMailAddress**>, and &lt;**onlineURL**> elements for the &lt;**contact**> element to make multiple methods of communication available to users if they are available. 
+
+Example 4.4: The required &lt;**contact**> **ResponsibleParty** element. This example demonstrates a position-based contact that is independent of an individual person, and full contact information. Note the lack of a &lt;**userId**> element since these are ambiguous for position-based parties.
+
+
+```xml
+<contact>
+  <positionName>Information Manager</positionName>
+  <organizationName>Fictitious Research Site</organizationName>
+  <address>
+    <deliveryPoint>Department for Ecology</deliveryPoint>
+    <deliveryPoint>Fictional State University</deliveryPoint>
+    <deliveryPoint>PO Box 111111</deliveryPoint>
+    <city>Ficity</city>
+    <administrativeArea>FI</administrativeArea>
+    <postalCode>11111-1111</postalCode>
+  </address>
+  <phone phonetype="voice">(999) 999-9999</phone>
+  <electronicMailAddress>data.manager@ficstate.edu</electronicMailAddress>
+  <onlineUrl>http://frs.ficstate.edu/im</onlineUrl>
+</contact>
+```
+
+
+
+## Dataset publisher (&lt;publisher>)
+
+This element defines the publisher of the EML dataset, and is typically used for the publisher part of the citation. The recommended content of &lt;**publisher**> depends on how and where the dataset will be published. If the dataset is being published on a “local” system (such as a project website), the organization producing the EML metadata (e.g., an LTER site or field station) should be placed in the &lt;**publisher**> element. Spell out the organization’s name in &lt;**organizationName**> and complete the &lt;**address**>, &lt;**phone**>, &lt;**electronicMailAddress**>, and &lt;**onlineURL**> elements. Upon publication of the dataset in a research data repository, that repository usually becomes the publisher, and this element should be populated with appropriate repository information. The repository may populate this information in the EML itself upon publication.
+
+*Context note: When publishing an EML dataset to the EDI repository, EDI will insert a publisher element upon data submission, which will overwrite any other &lt;publisher> element.*
+
+Example 4.5: A &lt;**publisher**> element containing information for the EDI repository, as it would appear after publication of the dataset.
+
+
+```xml
+<publisher>
+  <organizationName>Environmental Data Initiative</organizationName>
+  <electronicMailAddress>info@edirepository.org</electronicMailAddress>
+  <onlineUrl>https://edirepository.org</onlineUrl>
+  <userId directory="https://ror.org">
+    https://ror.org/0330j0z60
+  </userId>
+</publisher>
+```
+
+
+
+## XPaths referenced in this chapter
+
+Dataset creator: **/eml:eml/dataset/creator**
+
+Dataset creator user given name: **/eml:eml/dataset/creator/individualName/givenName**
+
+Dataset creator user surname: **/eml:eml/dataset/creator/individualName/surName**
+
+Dataset creator user ID: **/eml:eml/dataset/creator/userId**
+
+Dataset creator userId directory attribute: **/eml:eml/dataset/creator/userId/\@directory**
+
+Metadata provider: **/eml:eml/dataset/metadataProvider**
+
+Associated party: **/eml:eml/dataset/associatedParty**
+
+Dataset contact: **/eml:eml/dataset/contact**
+
+Dataset publisher: **/eml:eml/dataset/publisher**

@@ -1,0 +1,106 @@
+# General dataset information {#sec-chapter-3}
+
+The elements below are required or recommended to provide general information about the dataset and the resources it contains. All of these will be most useful when placed as direct child elements of &lt;**dataset**>.
+
+
+## Dataset title
+
+The &lt;**title**> element contains the title for the dataset, which should be concise but descriptive enough to help a potential data user decide whether the dataset may be fit for their use. The dataset &lt;**title**> element is typically used in full-text searches, so to facilitate discovery it should identify the data collected, the geographic context or research site, and the time frame (what, where, and when). Dataset titles should be meaningful in a global context, so avoid short, overly general titles like “Biomass Data” in favor of a more useful title like “Plant Biomass in Marshes on Hog Island, VA, USA, 1994-2003”. Avoid titles that are excessively long and include too much detail on specific attributes, locations or dates, and note that titles may need to be updated if they do feature changeable metadata (such as data collection dates). Also keep in mind that dataset titles are distinct from manuscript or journal article titles, though it may sometimes be useful to refer to a related publication in a dataset title.
+
+
+## Abstract
+
+The &lt;**abstract**> element should contain the dataset abstract, which is a brief, clearly written overview of the dataset. The &lt;**abstract**> element is used in full-text searches, so its contents should be rich with descriptive text that expands on the “what,” “when,” and “where” information introduced in the dataset title. Other useful abstract text can include taxonomic information, general methods descriptions, and a listing of measured variables in the dataset. The abstract is also a good place to include useful information that does not fit, or is not searchable, in other parts of EML’s structured metadata. For example, if a repository search system does not index EML maintenance information (described below), including a line describing whether the dataset is “ongoing” or “complete” would allow users to search for datasets being actively updated. Before placing search terms in the abstract, be sure to consider whether there are other searchable and more standardizable places to insert them in EML, such as in keyword elements.
+
+As a general rule, make the abstract easy to understand by limiting technical jargon and spelling out acronyms. For datasets with a large number of variables consider using descriptive categories instead of listing all variables by name (e.g. use the term “nutrients” instead of nitrate, phosphate, calcium, etc.), unless the variable names are particularly relevant for searches. Note that &lt;**abstract**> elements can also appear in the &lt;**project**> tree (see Chapter 5) and are a **TextType** element in EML (see [Appendix B](appendix-b-xml-schemas-and-eml.qmd)), so abstract text will generally be formatted within &lt;**para**> tag pairs, and sometimes &lt;**section**> or &lt;**markdown**> tags.
+
+The abstract for a dataset is not the same as for a journal article, report, or other publications that may be associated with the data. Do not copy a manuscript abstract into the dataset &lt;**abstract**> element and instead briefly describe the dataset itself following the guidance above. In some cases using the dataset &lt;**abstract**> to describe the purpose of the data or the intent of data collection (“Why”) is useful to dataset users, but avoid describing research results or interpreting the data.
+
+
+## Publication date (&lt;pubDate>)
+
+The date of public release of the dataset online should be placed in the &lt;**pubDate**> element. This element is commonly used for constructing citations, so the &lt;**pubDate**> value should be updated when the dataset receives significant metadata or data revisions or additions (e.g., corrected data, or additions to an ongoing time series). New, published versions of a dataset, especially when issued a new DOI, should always have &lt;**pubDate**> updated to the current date, but note that dataset versioning practices vary by repository system.
+
+*Context note: When submitting to the EDI repository, the &lt;**pubDate**> element for the dataset is automatically populated with the date the dataset is published and receives a DOI.*
+
+Example 3.1: An example of useful child elements to &lt;**dataset**> describing a dataset from the Fictional Research Site (FRS). Note the &lt;**para**> tags for formatting text in the &lt;**abstract**> element (a TextType).
+
+
+```xml
+<dataset id="FRS-1" system="FRS" scope="system">
+  <alternateIdentifier>FRS-1</alternateIdentifier>
+  <shortName>FRS Arthropods</shortName>
+  <title>Long-term Ground Arthropod Monitoring Dataset at Fictitious Research Site, USA from 1998 to 2003</title>
+  <abstract>
+    <para>
+This dataset contains ground arthropod weights and other measures
+collected at the Fictitious Research Site between 1998 to 2003.
+Arthropods, mainly spiders, lobsters, and trilobites, were captured at
+27 sampling locations using pitfall traps. Captured individuals were
+measured and then released unharmed. Variables for each capture record
+in the data table include weight (g), body length (mm), and number of
+leg pairs (n). This study is complete.
+    </para>
+  </abstract>
+  <pubDate>2004-12-25</pubDate>
+  …
+</dataset>
+```
+
+
+
+## Maintenance information (&lt;maintenance>)
+
+The &lt;**maintenance**> element is used to describe how a dataset will be updated and maintained once published, and can optionally be used to document specific changes to included data tables or metadata over time. Several child elements within &lt;**maintenance**> are useful for these tasks. The &lt;**description**> child element can be used to enter free text about the data collection schedule or dataset updates and maintenance. It can contain both formatted and unformatted text blocks (TextType). It was once common practice to add the search terms “ongoing” or “complete” here to indicate whether new data will be added to the dataset in the future. Because the maintenance element is not usually indexed by repository search tools, it is now recommended to place “ongoing” or “complete” in the dataset keywords or abstract if discovery with those terms is desired. Be aware that the “ongoing” term needs to be removed when data collection is complete, which is an easy step to overlook. The &lt;**maintenanceUpdateFrequency**> child element should be used to indicate the frequency of planned updates to the dataset. This element has a controlled vocabulary (see [the EML schema](https://eml.ecoinformatics.org/schema/eml-dataset_xsd#MaintenanceType_maintenanceUpdateFrequency)) that contains commonly recognized frequency vocabulary words such as annually, monthly, asNeeded, notPlanned, and others.
+
+Example 3.2: A &lt;**maintenance**> element providing a detailed description and planned update frequency in &lt;**maintenanceUpdateFrequency**>. Here, &lt;**description**> is an unformatted TextType element (no &lt;**para**> or other formatting tags).
+
+
+```xml
+<maintenance>
+  <description>This is an ongoing dataset with data collected each summer field season (May-Sept). New observations will be appended to the dataset by the end of each calendar year.</description>
+  <maintenanceUpdateFrequency>annually</maintenanceUpdateFrequency>
+</maintenance>
+```
+
+
+The EML schema also provides the &lt;**changeHistory**> element and its child elements (&lt;**changeDate**>, &lt;**changeScope**>, &lt;**comment**>, &lt;**oldValue**>) that can be used to construct a version history (i.e. change log) for the dataset and its associated entities. There are no agreed upon standards for using the &lt;**maintenance**> element for this purpose, so best practices may be decided by individual data contributors, data managers, sites, or research networks. Whatever approach is used, including three important pieces of information is generally recommended. 
+
+
+
+1. Give a summary of the change.
+2. Indicate whether the change occurred in the data, metadata, or both.
+3. Describe when the change occurred using dataset version numbers or timestamps.
+
+This information can be provided using a series of &lt;**changeHistory**> elements ([BLE LTER example](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-ble.13.3)) or formatted text in the maintenance &lt;**description**> element ([FCE LTER example](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-fce.1069.15)).
+
+
+## Alternate identifier (&lt;alternateIdentifier>)
+
+The contributing organization’s local data set identifier should be listed as the EML &lt;**alternateIdentifier**> whenever this value differs from the “**packageId**” attribute in the &lt;**eml:eml**> element. The &lt;**alternateIdentifier**> element can also be used to denote that a package belongs to more than one contributing organization by including each individual organization’s ID as a separate &lt;**alternateIdentifier**> element. At the entity level, the &lt;**alternateIdentifier**> should contain an alternate name for the data table or other entity itself (see Chapter 10).
+
+*Context note: When submitting to the EDI repository, an &lt;**alternateIdentifier**> element will be added to EML containing the DOI that the dataset is published under.*
+
+
+## Short name (&lt;shortName>)
+
+The &lt;**shortName**> element should contain an abbreviation or shortened name for the dataset. There are no generally accepted best practices for the content of this element other than that it should be shorter than the dataset &lt;**title**> element. Whatever shortened dataset naming scheme is acceptable and useful to data managers, users, sites, or research networks can be used here.
+
+
+## XPaths referenced in this chapter
+
+Dataset title element: **/eml:eml/dataset/title**
+
+Dataset abstract: **/eml:eml/dataset/abstract**
+
+Project tree abstract: **/eml:eml/dataset/project/abstract**
+
+Publication date: **/eml:eml/dataset/pubDate**
+
+Maintenance: **/eml:eml/dataset/maintenance**
+
+Alternate identifier: **/eml:eml/dataset/alternateIdentifier**
+
+Short name: **/eml:eml/dataset/shortName**
+
+

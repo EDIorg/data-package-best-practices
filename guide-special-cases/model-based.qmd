@@ -82,7 +82,7 @@ If the model requires a specific folder structure, you can zip model input files
 
 The [EarthCube Research Coordination Network, "What About Model Data?" group](https://modeldatarcn.github.io/#project-description) is working on a rubric to help you determine how much model output data to save, based on assorted criteria on reproducibility/value of the data.  Learn more about that group and their rubric on their [Model Data RCN website](https://modeldatarcn.github.io/).
 
-Researchers at the Department of Energyâ€™s Environmental Systems Science are also working on assessing model archiving needs. In [this preprint](https://eartharxiv.org/repository/view/260/), Simmonds et al. 2020 discuss feedback from communications with modellers and propose preliminary solutions. With regards to input/output data, their feedback indicates two opposite opinions: some feel the whole gamut of raw to aggregated outputs needs to be archived, while others advocate for only high-level outputs corresponding to publication figures. They also found that spin-up simulations were not considered a high priority for archiving. See section 2.3 What is worth archiving and for how long does it remain useful?
+Researchers at the Department of Energy's Environmental Systems Science are also working on assessing model archiving needs. In their preprint, Simmonds et al. [-@simmonds_addressing_2020] discuss feedback from communications with modellers and propose preliminary solutions. With regards to input/output data, their feedback indicates two opposite opinions: some feel the whole gamut of raw to aggregated outputs needs to be archived, while others advocate for only high-level outputs corresponding to publication figures. They also found that spin-up simulations were not considered a high priority for archiving. See section 2.3 What is worth archiving and for how long does it remain useful?
 
 ### Model parameters
 
@@ -129,8 +129,4 @@ Consider archiving model parameter files as their own data object(s) in both the
 
 ## Resources
 
-Janssen, Marco A., Lilian Na'ia Alessa, Michael Barton, Sean Bergin and Allen Lee (2008). â€˜Towards a Community Framework for Agent-Based Modellingâ€™. Journal of Artificial Societies and Social Simulation 11(2)6 [http://jasss.soc.surrey.ac.uk/11/2/6.html](http://jasss.soc.surrey.ac.uk/11/2/6.html).
-
-Simmonds, Maegen, William J. Riley, Shreyas Cholia, and Charuleka Varadharajan (2020). 'Addressing Model Data Archiving Needs for the Department of Energyâ€™s Environmental Systems Science Community'. EarthArXiv (preprint). [https://doi.org/10.31223/osf.io/acdk4](https://doi.org/10.31223/osf.io/acdk4).
-
-See sections 2.3 What is worth archiving and for how long does it remain useful?, discussed above, plus 2.4 Model data archiving protocol, where the authors argue for better standardized reporting format for model data, e.g., top-level metadata and directory structure at a minimum. Section 4.1 Developing Model Data Archiving Guidelines proposes an organization scheme for model data.  
+See Janssen et al [-@marco_a_janssen_towards_2008] for general discussion of modeling data archiving frameworks. In the Simmonds paper [-@simmonds_addressing_2020] mentioned above, see sections 2.3 What is worth archiving and for how long does it remain useful?, discussed above, plus 2.4 Model data archiving protocol, where the authors argue for better standardized reporting format for model data, e.g., top-level metadata and directory structure at a minimum. Section 4.1 Developing Model Data Archiving Guidelines proposes an organization scheme for model data.

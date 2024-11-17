@@ -1,0 +1,63 @@
+# Metadata and dataset design principles {#sec-chapter-2}
+
+
+## Definition and Structure of a Dataset
+
+Datasets (or data packages) consist of two major components: the data and the metadata which describes that data. Metadata helps meet several needs. First, it enables data discovery by providing searchable content which allows researchers to find data based on creators, title, keywords, and geographical, temporal and taxonomic information. Second, it can provide information required to assess fitness-for-use. This includes information on the details of the data, including an abstract or description, what was measured, units, and methods. Third, metadata provides detailed information such as data format descriptions and methods that allow a researcher to actually make use of data. Last but not least, it provides unique, persistent identification of the data (e.g., a Digital Object Identifier, or DOI) that can be used for accurate data citation, therefore allowing proper attribution and credit to the data contributor when data are re-used.
+
+Good metadata meets all those needs and converts obscure sets of numbers into meaningful data that are ready for use. 
+
+There is no perfect dataset. When designing a dataset, it is important to consider multiple factors in order to satisfy local or community research needs as well as reusability for new research. Sometimes these needs conflict, requiring compromises. Considerations such as whether data from a study should be published as a single package or in a set of related packages must be made to ultimately create a dataset that is optimized for discovery and reuse. Here are links to documents that summarize general considerations and also special considerations that may be associated with specific types of data: 
+
+
+
+* [General considerations](https://edirepository.org/resources/designing-a-data-package)
+* [Special cases (e.g., spatial data, model outputs, images, etc.)](https://ediorg.github.io/data-package-best-practices/data-package-design-for-special-cases.html)
+
+
+## High-priority Metadata
+
+In recent years community standards for metadata have evolved to best provide for data Findability, Accessibility, Interoperability, and Reusability [FAIR data, @wilkinson_fair_2016]. General community recommendations for FAIR data have been developed [@bahim_fair_2020], along with  more specific guides to important metadata elements in EML [@jones_quantifying_2019]. Even more recently, artificial intelligence (AI) readiness requirements for data, which relate to FAIR criteria, are being identified [@esip_checklist_2022], and new metadata authoring systems are focusing on meeting these new standards.  Some data repositories have also adopted these standards and implemented specific metadata requirements for contributed datasets. 
+
+Metadata to describe scientific data can be very extensive and it can be difficult to know where to begin when assembling a dataset. Community standards for metadata have converged on some recommended areas of metadata to prioritize, shown below.
+
+
+
+* **Citation metadata** for a dataset include the names of the data contributors (creators or  authors), a descriptive title, the publication date, the dataset publisher (usually an online repository), and a unique identifier (usually a DOI provided by the repository). Data contributors should be identified with an appropriate, community accepted identifier (e.g. [ORCID](https://orcid.org/) for individuals, [ROR](https://ror.org/) for organizations).
+* **Titles** should be meaningful and include elements that make them understandable outside the local context. For example a title of “Primary production in a coastal stream in Northampton County, Virginia, 2020” provides thematic, location and temporal context and is much preferred over a title that fails to provide such context such as “Stream primary production” or even worse simply “Primary production.”
+* **Keywords** should be comprehensive and include higher level concepts applicable to the data in the areas of what ecosystem it was measured in, what was measured, methods used, and organism groups.
+* An **abstract** is usually encountered early during evaluation of a dataset and should contain enough information to allow potential data users to understand the data and decide on its fitness for use. The abstract should be about the data, not the paper the data were used in.
+* **Coverage** metadata, including the time periods and geographic location of data collection, and any taxonomic groups sampled or observed, will greatly improve discoverability for any environmental dataset.
+* The **methods** for generating the data are critical information for potential users to evaluate the relevance and usability of the dataset for their research or synthesis projects. Methods metadata should include detailed descriptions of sampling and experimental design, data collection procedures, quality assurance and control procedures, and any analysis or post-processing as they apply to interpreting and using the data.
+* The **attributes of the data** for each data object included in a dataset, usually files of some kind (each referred to as a “data entity” in EML), should also be provided. For table data (e.g. tabular data in delimited text files) these attributes should include column header names,  categorical data codes used, measurement units for each variable, and other information. For other, non-tabular data types (imagery, audio, unstructured documents, etc.), similar attributes may apply, but there will be variations depending on the object.
+
+In the chapters ahead, each of these categories of metadata is described in detail, with particular attention to how they should be included in a valid EML document. This is, however, not an exhaustive list, and this best practices document contains recommendations for including many other metadata elements.
+
+
+## Unique Identifiers, versions, and data immutability
+
+EML requires a package identifier attribute (**/eml:eml/\@packageId**) in order to be valid. However, the format and management thereof and implementation of versioning are governed by the community and the repository. A versioning system allows for updates to datasets while at the same time guaranteeing data immutability, i.e., all older versions of data are unchanged and publicly available. It is the responsibility of the submitters to understand the practices of their intended repository when assigning identifiers. A repository should be able to mint and manage a Digital Object Identifier (DOI or equivalent) in addition to the EML package ID.
+
+*Context note: In the [EDI repository packageIds](https://edirepository.org/resources/the-data-package#data-package-identifier) are constructed with three parts, the scope, a scope-specific identification number or accession number, and the version number. For example, the packageId “edi.20.3” has a scope of “edi,” an accession number of 20 and a version number of 3. *
+
+
+## Semantic annotations
+
+EML 2.2 and above supports  semantic annotations. These are elements that provide additional information, in the form of unique identifiers linking to online ontologies or other resources relevant to the element they are associated with. An **&lt;annotation>** element can be added to each dataset, data entity, and attribute element, or to a list of annotations (&lt;**annotations**> element), or even to the &lt;**additionalMetadata**> elements (not recommended). For detailed discussion see Chapter 7.
+
+
+## Markdown support
+
+EML 2.2 and above supports &lt;**markdown**> child elements within &lt;**abstract**> .and &lt;**methods**> elements to allow for better formatting of content for human readability. For more information see example 9.2 (Chapter 9 - Methods), the update in the EML schema documentation ([What’s New in EML 2.2.0](https://eml.ecoinformatics.org/whats-new-in-eml-2-2-0.html#markdown-support)), and [Appendix B](appendix-b-xml-schemas-and-eml.qmd).
+
+
+## Repeatable Elements
+
+Several EML elements, for example methods, coverage, citations and responsible parties  are flexible in that they can be used within several different levels of an EML document. For example, **&lt;methods>** could be optionally be used to describe a dataset,, a data entity, and a data attribute in an EML document (e.g., as a child element of &lt;**dataset**>, &lt;**dataTable**>, or &lt;**attribute**>), representing the overall methods for the dataset, methods specific to a given entity, or methods describing how data was collected for a given variable (attribute). Similarly, **&lt;coverage>** elements can be used at the dataset, methods, data entity, and attribute levels to document locations, dates/times and taxonomic composition at each of those levels. 
+
+The general best practice for using these repeatable, or multi-level, elements is to use them only at the “highest” level of an EML document (typically as part of a **&lt;dataset>** element) and not  at more deeply nested levels (e.g., as part of data entities or attributes). The rationale for this recommendation is that these elements will be most visible to data users, and most available to support data searches, at the dataset level. If there are application- or repository-specific use-cases for placing these elements in more deeply-nested positions then this recommendation may be relaxed, but currently such use-cases are rare. See Chapters 7 and 9 for more discussion of this subject with respect to the &lt;**coverage**> and &lt;**methods**> elements. 
+
+
+## Connecting data and research
+
+Creating reference and attribution links between datasets and other research publications is important for data providers, data users, and publishers (repositories, journals, etc.), and there are many use-cases for such links. Datasets used to generate research results should be properly cited in the resulting publications (e.g. journal articles) to allow attribution and reproducibility. Authors of datasets should appropriately cite literature used in generating their published data (such as published procedures or analytical methods). Researchers are increasingly using published dataset descriptor articles (or “data papers”) to release and publicize high value datasets in repositories. Finally, when creating a dataset derived from other data sources, it is important to describe the data provenance by referencing those sources accurately. Each of these use cases has an implementation in EML for appropriate referencing or linking. See Chapter 8 for various methods of literature citation, and Chapter 9 for describing data provenance.

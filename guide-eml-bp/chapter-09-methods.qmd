@@ -1,0 +1,139 @@
+# Methods {#sec-chapter-9}
+
+The methods and procedures used to generate data objects should be described in the EML &lt;**methods**> tree and its child elements. As a ‘rule of thumb,’ the content of the &lt;**methods**> tree is intended to be human readable instead of machine-readable, and should fully describe all steps used when collecting and processing the data. When these steps follow an established protocol, references to external sources, such as a published article (with DOI) containing the methods, may be given, but in most cases it is preferable to include detailed methods descriptions that can be readily browsed, indexed for searching, and will remain available with the data even if links to external documents fail. In addition to content in EML &lt;**methods**>, images, documentation files (e.g. txt or pdf), or code illustrating methods may be included as “other entities” in your dataset. Although the &lt;**methods>** tree can appear at the &lt;**dataset**>, entity, and &lt;**attributes**> levels, it is recommended to describe all methods used at the dataset level. This recommendation assures that a data reuser can find all important information in one place.
+
+A &lt;**methods**> tree must contain at least one &lt;**methodStep**> element, and may optionally have a &lt;**sampling**> element and any number of &lt;**qualityControl**> elements. The &lt;**methodStep**> element may have the optional child elements &lt;**dataSource**>, &lt;**instrumentation**>, and &lt;**software**>. Figure 9.1 outlines the likely decision points needed to choose what child elements to include in &lt;**methods**>.
+
+
+## Methods steps (&lt;methodStep>)
+
+At least one &lt;**methodStep**> element is required under &lt;**methods**>, and each step should contain a logical portion of the methods used to create the published data; for example, sampling design, field data collection, laboratory procedures, quality control/assurance, and statistical analysis. A dataset &lt;**methods**> element may contain as many &lt;**methodStep**> elements as are necessary. All text describing each step must be placed within a &lt;**description**> element, which is a **TextType** (see [Appendix B](appendix-b-xml-schemas-and-eml.qmd)). For &lt;**description**> elements that require complex formatting or layouts, the standard **TextType** elements (&lt;**section**>, &lt;**para**>, etc.), Markdown formatting (&lt;**markdown**>), and LaTex typesetting may be used. Below are additional, optional child elements to &lt;**methodStep**>.
+
+
+### Data provenance (&lt;dataSource>)
+
+The optional &lt;**dataSource**> element is for creating references to published data that was used as source data for the dataset being described (i.e. a dataset’s provenance). For instance, if the data being described by EML is mean annual temperature values calculated from hourly temperature measurements published in a separate dataset, the &lt;**dataSource**> element could be used to identify and provide a reference to these source data. This element may contain a fairly complete set of child elements describing the source data, including a &lt;**title**>, &lt;**creator**>, and &lt;**contact**>, but the most important child element is a &lt;**distribution**> element containing the source dataset’s DOI or other URL (**distribution/online/url**). It is strongly recommended to include &lt;**dataSource**> elements when publishing any dataset derived from other sources.
+
+*Context note: The* &lt;**dataSource**> *element is used by the EDI repository’s provenance tracking system for linking between derived and source data packages. For more information, see additional data [repository resources from EDI.](https://edirepository.org/resources/provenance-metadata)*
+
+Example 9.1: An example of a &lt;**methods**> element with one &lt;**methodStep**> element that includes a &lt;**dataSource**> child element to indicate data provenance. The &lt;**description**> element uses **TextType** &lt;**section**>, &lt;**title**>, and &lt;**para**> formatting elements, but note that it is not sufficiently detailed for a derived dataset.
+
+
+```xml
+<methods>
+  <methodStep>
+    <description>
+      <section>
+        <title>Data collection</title>
+        <para>
+          We utilize NPP data collected from 1906 to 2006 from the FRS
+          site. The FRS NPP data unit definition is kg/m\^2/yr.
+        </para>
+      </section>
+	<section>
+	  <title>Quality control and analysis</title>
+        <para>These data were cleaned before analysis.</para>
+    </section>
+    </description>
+    <dataSource>
+      <title>NPP data from FRS 1906 to 2006</title>
+      <creator>
+        <organizationName>Fictitious Research Site</organizationName>
+      </creator>
+      <distribution>
+        <online>
+          <onlineDescription>This DOI link references a source dataset that was used to create this derivative dataset.</onlineDescription>
+          <url function="information">
+            https://doi.org/10.6073/pasta/91789c93a8930c3091bc5849060ff672
+          </url>
+        </online>
+      </distribution>
+      <contact>
+        <organizationName>Fictitious Research Site</organizationName>
+        <positionName>Information Manager</positionName>
+        <electronicMailAddress>
+          data.manager@ficstate.edu
+        </electronicMailAddress>
+      </contact>
+    </dataSource>
+  </methodStep>
+</methods>
+```
+
+
+
+### Instrumentation and software
+
+The &lt;**instrumentation>** and &lt;**software**> elements are both optional and only occasionally used. Both are most common in disciplines and projects that rely on extensive instrumentation and data post-processing, for example marine science, micrometeorology, sensor networks, or bioinformatics datasets. There are ongoing efforts to create standardized metadata and controlled vocabularies for these categories of metadata, which may improve their utility and ease-of-use in the future.
+
+The &lt;**instrumentation**> element may contain a full description of the instruments used, including manufacturer, model, calibration dates and accuracy. Changes in instrumentation and dates of changes should be mentioned earlier under the &lt;**description**>. The &lt;**software**> element describes software used to process the data. Include relevant details such as software title, author, implementation (hardware, operating system), and version. 
+
+Example 9.2: An example of a &lt;**methods**> element with one &lt;**methodsStep**>. The &lt;**description**> element uses a &lt;**markdown**> element for complex layouts, and there are two &lt;**instrumentation**> child elements that indicate the equipment used to collect the data. Note that descriptive markdown text has been abbreviated to save space where indicated by ellipses.
+
+
+```xml
+<methods>
+  <methodStep>
+    <description>
+      <markdown>
+## Sampling design and supplies for arthropod biodiversity monitoring
+
+At each monitoring site, between 10 and 21 pitfall traps were installed in randomized locations...
+
+**Supplies used:**
+
+* pitfall traps - P-16 plastic Solo cups with lids
+* metal spades and large bulb planters (to dig holes in which to put traps)
+* 70% ethanol (to preserve specimens)
+* Qorpak glass jars with lids from the VWR Corporation, 120ml (4oz), cap size 58-400 (comes included), Qorpak no. 7743C, VWR catalog no. 16195-703.
+
+## Data collection procedures
+
+... On each collection date, all trapped taxa were retrieved from the traps and returned to the lab. In the lab arthropods were counted, measured (body length in mm), and taxa were identified to Family. Specimens were preserved...
+
+## Tissue isotope analysis
+
+... subsamples of arthropods were sorted by taxon, oven dried, ground in liquid nitrogen, and then analyzed in a combustion CHN elemental analyser coupled to an isotope ratio mass spectrometer (IRMS)...
+      </markdown>
+    </description>
+    <instrumentation>Fisons 1110 CHN elemental analyzer; CE Elantech, Inc., Lakewood, NJ, USA</instrumentation>
+    <instrumentation>Finnigan DELTAplus Advantage mass spectrometer; Thermo Scientific Inc., West Palm Beach , FL, USA</instrumentation>
+  </methodStep>
+</methods>
+```
+
+
+
+### Citations
+
+Any &lt;**methodStep**> element may contain an indeterminate number of &lt;**citation**> child elements for documenting references to external sources. The &lt;**citation**> element is a CitationType designed for bibliographic information, which can be useful when referencing, for example, a methods paper or published protocol used to collect the data. With the introduction of new citation and referencing features in EML 2.2, **it is no longer recommended to place &lt;citation> elements within a &lt;methodStep>** -  use the &lt;**literatureCited**> element instead, preferably at the &lt;**dataset**> level. See Chapter 8 and [Appendix B](appendix-b-xml-schemas-and-eml.qmd) for more information.
+
+
+## Optional &lt;methods> child elements
+
+There are two other optional children of the &lt;**methods**> element: &lt;**sampling**> and &lt;**qualityControl**>. These elements are designed to contain very specific information about sampling procedures and post-collection data handling. In most cases this information is easy to include in one or more &lt;**methodsStep**> elements as described above, but if more detailed and structured descriptions of sampling and QA/QC procedures are needed these elements may be used. See [Appendix A](appendix-a-specialized-elements.qmd) for further information.
+
+
+## Decision flowchart
+
+Figure 9.1 This flowchart outlines decision points for what children and content to include in an EML &lt;**methods**> element.
+
+
+![A flowchart for determining the structure and content of a methods element](img/9_Methods_flowchart.png "A flowchart to determine structure and content of an EML methods document")
+
+
+## XPaths referenced in this chapter
+
+Dataset methods: **/eml:eml/dataset/methods**
+
+Dataset method steps: **/eml:eml/dataset/methods/methodStep**
+
+TextType method step: **/eml:eml/dataset/methods/methodStep/description/section/…**
+
+Markdown method step: **/eml:eml/dataset/methods/methodStep/description/markdown**
+
+Provenance metadata: **/eml:eml/dataset/methods/methodStep/dataSource**
+
+Instrumentation: **/eml:eml/dataset/methods/methodStep/instrumentation**
+
+Software: **/eml:eml/dataset/methods/methodStep/software**

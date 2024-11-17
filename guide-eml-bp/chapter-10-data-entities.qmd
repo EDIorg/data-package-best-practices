@@ -1,0 +1,201 @@
+# Data entities {#sec-chapter-10}
+
+An EML document is a container for metadata that describe the digital products of research or data collection activities, which can include a wide range of file types and other data objects. Data entities are a class of EML elements that directly describe these digital objects, and altogether, six data entity types have been defined for this purpose. This chapter provides thorough guidance on using &lt;**dataTable**> and &lt;**otherEntity**> data entity elements because they are very commonly used in EML documents and are capable of describing a wide range of data objects or files. The &lt;**spatialRaster**> and &lt;**spatialVector**> entity types are occasionally used for geospatial data objects and are addressed in depth in the [spatial data](https://ediorg.github.io/data-package-best-practices/spatial-data.html) chapter of the “Data Package Design for Special Cases” companion document. The &lt;**view**> and &lt;**storedProcedure**> entity types are only briefly described in [Appendix A](appendix-a-specialized-elements.qmd) because they refer to specific data products derived from relational databases that are rarely used. To assist with selection of an EML entity type, table A.1 in [Appendix A](appendix-a-specialized-elements.qmd) describes the purpose, example data objects, and metadata features of all six available types.
+
+Every EML data entity has a set of potential child elements in common, called the **EntityGroup**, for storing general information about the data resource. Some of these are required and some are recommended. In addition, each data entity type has a set of child elements specific to the type with, again, some required and some recommended. Table 10.1 summarizes typical use cases for &lt;**dataEntity**> and &lt;**otherEntity**>, and their required and recommended child elements. More details about child elements come later in the chapter.
+
+Table 10.1. Required and recommended child elements for &lt;**dataTable**> and &lt;**otherEntity**> types. Members of the **EntityGroup** are given, followed by elements specific to the entity type. This is a subset of Table A.2 in [Appendix A](appendix-a-specialized-elements.qmd).
+
+
+| Entity Type | Typical Uses | Required and recommended elements |
+|---|------|--------|
+| &lt;**dataTable**> | Tabular data objects with a fixed structure (delimited text files, simple spreadsheet, etc.) | **EntityGroup**<br>\ \ \ \ &lt;**entityName**> (required)<br>\ \ \ \ &lt;**entityDescription**><br>\ \ \ \ &lt;**physical**><br>&lt;**attributeList**> (required)<br>&lt;**numberOfRecords**> |
+| &lt;**otherEntity**> | Data objects not described by other standard entity types (images, non-tabular data, binary files, etc.) | **EntityGroup**<br>\ \ \ \ &lt;**entityName**> (required)<br>\ \ \ \ &lt;**entityDescription**><br>\ \ \ \ &lt;**physical**><<br>&lt;**entityType**> (required)<br>&lt;**attributeList**> (for tabular data) |
+
+
+*Context note: Like many other EML elements, each of the entity elements has three attributes, ID, scope, and system. EDI will automatically fill them in with the actual entityID within the EDI repository system, scope = “document”, and system = "[https://pasta.edirepository.org](https://pasta.edirepository.org)". Hence, these attributes should not be used for local information as they will be overwritten upon submission. Use &lt;alternateIdentifier> instead.*
+
+
+## Recommendations for dataTable
+
+Carefully consider what files or data objects should be described with a &lt;**dataTable**> element. If at all possible, do not publish tabular data in dated, proprietary, or binary file formats such as Microsoft Excel files. When handling tabular data in such formats it is preferable to export to accessible, open data formats, such as plain delimited text files (such as CSV) for publication. The &lt;**attributeList**> tree is required in &lt;**dataTable**> entities to describe all attributes, or column variables, in the table. Best practices for &lt;**attributeList**> are in Chapter 11.
+
+Example 10.1: An example of a &lt;**dataTable**> entity. The elements in the EntityGroup are shown, along with an abbreviated &lt;**attributeList**>, which is required for a &lt;**dataTable**>.
+
+
+```xml
+<dataTable>
+  <entityName>Arthropod habitat table</entityName>
+  <entityDescription>
+    habitat description table for the sampling locations
+  </entityDescription>
+  <physical>
+    <objectName>frs-1-arthro-hab.csv</objectName>
+    <dataFormat>
+      <textFormat>
+        <numHeaderLines>1</numHeaderLines>
+        <numFooterLines>0</numFooterLines>
+        <recordDelimiter>\r</recordDelimiter>
+        <numPhysicalLinesPerRecord>1</numPhysicalLinesPerRecord>
+        <attributeOrientation>column</attributeOrientation>
+        <simpleDelimited>
+          <fieldDelimiter>,</fieldDelimiter>
+          <quoteCharacter>"</quoteCharacter>
+        </simpleDelimited>
+      </textFormat>
+    </dataFormat>
+    <distribution>
+      <online>
+        <onlineDescription>frs-1 Arthro Habitat Data File</onlineDescription>
+        <url function="download">
+          http://www.ficstate.edu/lter/data/frs-1-arthro-hab.csv
+        </url>
+      </online>
+    </distribution>
+  </physical>
+  <attributeList>
+    …
+  </attributeList
+</dataTable>
+```
+
+
+
+## Recommendations for otherEntity
+
+When publishing an &lt;**otherEntity**>, we recommend using open, non-proprietary file formats to the extent possible, so that the published data objects can be used without restriction (such as requiring an expensive software license). Though &lt;**otherEntity**> is something of a catch-all data entity type, it requires a free text &lt;**entityType**> child element to describe whatever data object is being published. It is strongly recommended to place standardized descriptive text here that complements the standardized file format information included in **physical/dataFormat/externallyDefinedFormat/formatName**. This is demonstrated in Example 10.2, and Table 10.2 provides suggested &lt;**entityType**> values for a variety of file formats. Further guidance on this, including sources for standard terms, is given below in the “Physical tree” section. Additional information needed to fully describe the file format, data structure, use, or other aspects of the data object can also be provided in the element’s &lt;**entityDescription**> as needed.
+
+*Context note: When archiving HTML documents at EDI, the format name must be "text/html" in order for the document to be accepted.*
+
+Example 10.2: An example of an &lt;**otherEntity**> element. The recommended elements in the **EntityGroup** are shown, as is a standardized value in the required &lt;**entityType**> element. Note the corresponding IANA standard text in the &lt;**formatName**> element.
+
+
+```xml
+<otherEntity>
+  <entityName>Field and lab protocol for arthropod sampling</entityName>
+  <entityDescription>
+    An Adobe PDF (archival PDF/A) document describing the habitat, sampling locations, field collection protocols, and laboratory processing procedures for the FLS arthropod sampling program.
+  </entityDescription>
+  <physical>
+    <objectName>frs-1-artho-protocol.pdf</objectName>
+    <dataFormat>
+      <externallyDefinedFormat>
+        <formatName>application/pdf</formatName>
+      </externallyDefinedFormat>
+    </dataFormat>
+    <distribution>
+      <online>
+        <onlineDescription>frs-1 Arthropod Protocol</onlineDescription>
+        <url function="download">
+          http://www.ficstate.edu/lter/protocols/frs-1-arthro-protocol.pdf
+        </url>
+      </online>
+    </distribution>
+  </physical>
+  <entityType>Portable Document Format</entityType>
+</otherEntity>
+```
+
+
+
+## EntityGroup elements
+
+In the **EntityGroup**, the &lt;**entityName**> element is required, and &lt;**entityDescription**> and &lt;**physical**> (including optional &lt;**access**>) are recommended. Optional additional **EntityGroup** elements include &lt;**alternateIdentifier**>, &lt;**additionalInfo**>, &lt;**coverage**>, and &lt;**methods**>. These are briefly described after the required and recommended elements, but for better readability by data users, it is generally recommended that their content be provided at the dataset level and not distributed throughout the EML document.
+
+
+### Entity name (required)
+
+ The entity name (&lt;**entityName**>) is a human readable name of the data object, whether that is a file, database table, document, or something else. The content should not exceed 100 characters. 
+
+*Context note: The EDI repository requires that &lt;**entityName**> elements be unique within the dataset. This element will be displayed on the dataset landing page as the name for the entity.*
+
+
+### Entity description (recommended)
+
+The &lt;**entityDescription**> element should contain a longer, more descriptive explanation of the data in the entity. Like all descriptions, it is human-readable text, and should help determine if it is appropriate for a particular use. This element is an appropriate place to elaborate on the format of the data object if it cannot be easily described within the &lt;**physical**> tree (see discussion under &lt;**dataFormat**> below).
+
+
+### Physical tree (recommended)
+
+The &lt;**physical**> tree (**/eml:eml/dataset/[entity]/physical**) describes the physical format and location of the data object. It should contain sufficient detail to allow a data user to obtain and access the object with the correct software tools. There are a number of child elements in the &lt;**physical**> tree that we recommend populating.
+
+
+#### &lt;characterEncoding>
+
+The &lt;**characterEncoding**> element defines the encoding of any text file data objects. For most English language based data, an encoding of UTF-8 is typically correct, with ASCII being another typical encoding. Whatever you choose, if you do provide an encoding, please be sure it is not an incorrect one, e.g., do not choose ASCII if your data include extended Latin characters.
+
+
+#### &lt;objectName>
+
+The &lt;**objectName**> is the filename of the object in a file system or wherever it is accessible via the internet. For example, “NPPdata_FRS_2006-2020.csv”.
+
+
+#### &lt;dataFormat>
+
+The &lt;**dataFormat**> element defines the internal physical format of the data object. The three possible child elements to choose choose within this element are
+
+
+
+1. &lt;**textFormat**>, which describes a formatted text data object (a CSV file for example) using a range of child elements. This is commonly used to describe the data format of &lt;**dataTable**> elements.
+2. &lt;**externallyDefinedFormat**>, which describes data objects that are in prescribed formats other than text format (e.g., NetCDF, KML, Excel). This element is commonly used for &lt;**otherEntity**> elements.
+3.  &lt;**binaryRasterFormat**>, which describes a raster data file such as a GeoTIFF, which is useful when publishing spatial data files (See the [spatial data](https://ediorg.github.io/data-package-best-practices/spatial-data.html) chapter of the “Data Package Design for Special Cases” companion document).
+
+When using &lt;**externallyDefinedFormat**>, the format should be named in the &lt;**formatName**> child element. To promote machine interpretability, we recommend using media type values (formerly known as MIME types) from the **template **column, e.g., "application/zip", of [IANA's Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml) list, which is the authoritative source for internet media types. Many media types are not registered with IANA, so if your format is not present there, you may use one of the *media types* from [DataONE's format list](https://cn.dataone.org/cn/v2/formats), which includes many non-standard, but still commonly accepted media/MIME types. If you cannot find a matching IANA media type, specify your own, and consider [adding it to IANA](https://www.iana.org/form/media-types,). 
+
+The &lt;**otherEntity**> element commonly describes non-tabular data objects that require an **externallyDefinedFormat/formatName** element. In addition to selecting a standard IANA or DataONE media type value, it is also beneficial to populate the required &lt;**entityType**> element with the corresponding *media name* from IANA or DataONE. This is demonstrated in Example 10.2, and Table 10.2 gives further examples. To give the reader even more clues about how to use or interpret the non-tabular data object, it is recommended to provide additional information about the data object in &lt;**entityDescription**>.  
+
+Table 10.2. Recommended entity types and format names for some files that can be included in an &lt;**otherEntity**>.
+
+| Common Name<br> | &lt;entityType> value<br>(from DataOne or similar) | &lt;formatName> value<br>(IANA if possible, or DataOne) |
+|----|-------|--------|
+| R script | R programming language script | text/x-rsrc |
+| R markdown file | R Markdown file | text/markdown |
+| Python script | Python programming language script | text/x-python |
+| JPEG image | JPEG | image/jpeg |
+| PDF document | Adobe Portable Document Format | application/pdf |
+| Zip file | Zip file format | application/zip |
+
+
+*Context note: If archiving HTML files at EDI, you must use a formatName of "text/html" for the entity to be accepted.*
+
+
+#### &lt;distribution>
+
+The &lt;**distribution**> tree provides information on how the resource is distributed, and the contents of this tree is generally covered at the &lt;**dataset**> level (refer to Chapter 6). However, there are a few points which will be reiterated. For submission of the dataset to a repository, the content of a &lt;**url**> element at the entity level should deliver data, and not point to another application or use page. The &lt;**url**>’s \@**function** attribute should have the value “download” (i.e. &lt;**url function=”download”**> This is implied if the \@**function** attribute is omitted.
+
+*Context note: EDI provides a ‘manual’ upload option for smaller data entities directly from the user’s desktop. For this option, the distribution URL does not need to be provided. Upon submission, EDI will replace the distribution URL with the repository download URL for the data object.*
+
+An optional &lt;**access**> element in a data entity’s &lt;**distribution**> tree is intended specifically to control access to the data entity separately from the metadata. For more information on using the &lt;**access**> tree, refer to the discussion in Chapter 6.
+
+
+### Optional EntityGroup elements
+
+All of the EntityGroup elements below are optional. They may add value at the data entity level under some circumstances, but in general they are more useful at the &lt;**dataset**> level.
+
+
+
+* **Alternate identifier:** The primary identifier for a data entity belongs in the \@**id** attribute of the entity element (e.g., &lt;**dataTable id=“xxx”**>) and may be filled in by the repository, but adding the &lt;**alternateIdentifier**> element can accommodate additional identifiers that might be used in a local data management system. It is used similarly to the &lt;**alternateIdentifier**> element at the &lt;**dataset**> level, as described in Chapter 3.
+* **Annotations:** The &lt;**annotation**> element can be used at the entity level to establish links to semantic ontologies and other external resources that provide context or utility to the entity or its content. See Chapter 7 for more details.
+* **Additional information:** The &lt;**additionalInfo**> element is a text field for any material that cannot be characterized by the other elements for the data type.
+* **Coverage and methods:** Entity-level &lt;**coverage**> and &lt;**methods**> elements can provide information on the geographic, taxonomic and temporal coverages, or data collection methods, for the data entity. The general recommendation is that these be placed at the &lt;**dataset**> level instead, but there may be specific use cases that benefit from entity-level coverage or methods information. See more details about coverages in Chapter 7, and about methods in Chapter 9.
+
+
+## XPaths referenced in this chapter
+
+Data table entity: **/eml:eml/dataset/dataTable**
+
+Other entity: **/eml:eml/dataset/otherEntity**
+
+Data table entity name: **/eml:eml/dataset/dataTable/entityName**
+
+Other entity description: **/eml:eml/dataset/otherEntity/entityDescription**
+
+Data table physical tree: **/eml:eml/dataset/dataTable/physical/**
+
+Object name (filename): **/eml:eml/dataset/dataTable/physical/objectName**
+
+Format name: …**physical/distribution/dataFormat/externallyDefinedFormat/formatName**
+
+Other entity type: **eml:eml/dataset/otherEntity/entityType**
+
+Other entity annotation: **eml:eml/dataset/otherEntity/annotation**

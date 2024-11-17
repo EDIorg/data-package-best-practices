@@ -1,33 +1,29 @@
-# Overview {.unnumbered}
+---
+title: EDI Dataset Preparation Guides
+sidebar: alldocs
+toc: false
+listing:
+  id: guide-listing
+  include:
+    categories: [draft, published]
+  sort: 
+    - "categories desc"
+    - "date desc"
+  fields: [image, date, title, description, categories]
+  type: table
+---
 
-::: {.callout-note}
+This website contains a series of documents about preparing and publishing datasets in the environmental sciences and similar contexts. Topics include community-developed metadata standards, serialization and markup formatting guidelines, best practices for content in ecological synthesis datasets, and more. This documentation is maintained by the [Environmental Data Initiative](https://edirepository.org) (EDI) and all content has been developed and written in collaboration with EDI's community of scientists, data managers, and repository users.
 
-**This website is being updated right now.**
+**The purpose of these guides is to:**
 
-Most content here is from the most recent update around 2022-05-25 version, and newer, community-led content will be available in the [prerelease version](https://prerelease-edi-docs.netlify.app).
+- Provide guidance for creating published data products that are findable, accessible, interoperable, and reusable [FAIR, @wilkinson_fair_2016]
+- Augment the schema documentation for the Ecological Metadata Language [EML, @jones_ecological_2019]
+- Facilitate the development and use of community-standard harmonized data products to improve data synthesis and integration
 
+To contribute to these documents or participate in the associated working groups, see the [About](about.qmd) page or the repository [README](https://github.com/EDIorg/dataset_preparation_guides). For more on the history of this effort, and access to earlier editions of the guides, see the [History](history.qmd) page.
+
+## The guides
+
+::: {#guide-listing}
 :::
-
-This website contains a series of documents about preparing and publishing datasets in the environmental sciences and similar contexts. Topics include community-developed metadata standards, serialization and markup formatting guidelines, best practices for content in ecological synthesis datasets, and more. This documentation is maintained by the [Environmental Data Initiative](https://edirepository.org) (EDI) and all content has been developed and written in coordination with EDI's community of scientists, data managers, and repository users.
-
-Guides published here are directed towards the following goals:
-
-- Minimize heterogeneity of EML-described data packages to simplify development and re-use of software
-- Maximize interoperability to facilitate data synthesis
-- Provide guidance and clarification on
-  - the use of Ecological Metadata Language (EML)
-  - design a data package
-  - prepare a data product for synthesis
-
-To contribute to these documents or participate in the associated working groups, see the "[About this site](about.qmd)" page or the [repository README](https://github.com/EDIorg/dataset_preparation_guides). This website and all documents are rendered as a [Quarto book](https://quarto.org/docs/books).
-
-## Books
-
-### [Best Practices for Dataset Metadata in Ecological Metadata Language (EML)](guide-eml-bp/preface.qmd)
-The recommendations for EML metadata apply to all data packages. This book is a reproduction of V3 of the static PDF document "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)," last updated in 2017. The entire most recent (versioned, citable) release will be made available as a PDF. 
-  
-### [Data Package Design for Special Cases](guide-special-cases/preface.qmd)
-Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories. 
-
-### [Scientific Domain-Specific Dataset Guidelines](guide-domain-specific/preface.qmd)
-_Very much a work in progress._ Recommendations for community-developed data products from specific scientific domains. Not all scientific domains are covered. The data packages are derived from raw data and reformatted to meet certain data harmonization standards, often with extensive related code bases.

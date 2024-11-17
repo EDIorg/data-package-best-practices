@@ -1,0 +1,176 @@
+# Citations and references {#sec-chapter-8}
+
+Scholarly research norms call for the attribution of sources in all research works. More recently established open science principles place high value on the reproducibility of research, with the expectation that citation-based links between published research products, such as between journal articles and datasets, will facilitate this. Citation metrics have also become increasingly important for gauging the re-use and impact of any research product, including datasets. The EML standard therefore supports extensive use-cases for citations and referencing in datasets, and we provide details on usage and examples below. These include several new elements that were introduced in EML version 2.2, as described in the [EML schema documents](https://eml.ecoinformatics.org/whats-new-in-eml-2-2-0.html). 
+
+
+## Works cited in a dataset
+
+As in other scholarly works (journal articles, theses, etc.), dataset authors should use citations and references to provide proper attribution and identification of sources used to create their dataset. EML provides the &lt;**literatureCited**> element to include a list of references for external resources cited in the dataset, for example methods papers or other published protocols used to derive the data. The &lt;**literatureCited**> element was introduced in EML version 2.2 and is implemented as a list of **CitationType** elements, either &lt;**citation**> or &lt;**bibtex**> (more information below, or in [Appendix B](appendix-b-xml-schemas-and-eml.qmd)). Before this element was introduced, references cited in an EML dataset were usually included as text within the methods description (**methods/methodStep/description,** see Chapter 9, or [an EDI example](https://doi.org/10.6073/pasta/899c822b54488524bf5f32746387540c)), which is simple, and keeps the references in flow with the method description. However, whether or not references are described elsewhere in EML, **utilizing the &lt;literatureCited> element, preferably at the &lt;dataset> level, is the recommended method to list references cited in a dataset**. This approach makes citation information more machine-interpretable and accessible to citation tracking systems.
+
+
+## Citations accrued by a dataset
+
+Using EML to document “cited by” information (a.k.a. inbound citations or backlinks) can be useful when a dataset is referenced or used in other scholarly works, for example when it is described and cited in a publication (like a “data paper”), or when its data are used to generate research results with an appropriate citation in the resulting journal article. These use-cases are supported by EML’s &lt;**referencePublication**> and &lt;**usageCitation**> elements, respectively. In many cases, the &lt;**referencePublication**> and &lt;**usageCitation**> elements are challenging or impossible to accurately apply in EML because the dataset is usually published before the work that cites it (the “cart before the horse” problem). In practice, “cited by” information is most often identified after-the-fact and tracked by non-EML systems at repositories or other services. Using these elements in EML is relatively rare and no examples are provided here, but for more information see the EML schema documentation ([Section 5.1.4, eml-literature module](https://eml.ecoinformatics.org/eml-schema)).
+
+
+## Using CitationType elements and BibTeX
+
+**Tip:** BibTeX is pronounced "bib-tek"
+
+The &lt;**literatureCited**> element is a list of one or more child elements, each containing the reference information for a resource the authors have cited in the dataset. Usually, &lt;**citation**> elements are used as the items in the list. The &lt;**citation**> element is built from the EML **CitationType** (see [Appendix B](appendix-b-xml-schemas-and-eml.qmd)), which describes a reference either with a set of component child XML elements, or with a &lt;**bibtex**> child element that contains a BibTeX string, a structured text format for describing citations (more information [here](https://en.wikipedia.org/wiki/BibTeX)). 
+
+When not using &lt;**bibtex**>, the source described in a &lt;**citation**> element must be described with some generic resource description elements  (&lt;**title**>, &lt;**creator**>, &lt;**pubDate**>, and similar) and a “resource type” child element drawn from EML’s list of available types, including &lt;**article**>, &lt;**book**>, &lt;**thesis**>, &lt;**report**>, and others. Each of these resource type elements has a corresponding set of possible child elements. The &lt;**article**> element is the most common resource type and is covered in example 8.1; for others consult the EML schema documents ([Section 5.1.4, eml-literature module](https://eml.ecoinformatics.org/eml-schema) and [CitationType](https://eml.ecoinformatics.org/schema/eml-literature_xsd#CitationType) definition). Note that the &lt;**referencePublication**> and &lt;**usageCitation**> elements, if used, are also CitationTypes and are constructed just like &lt;**citation**>.
+
+Example 8.1: A &lt;**citation**> element using the EML child elements to describe a reference publication. This is for a journal article, and therefore uses the &lt;**article**> resource type element.
+
+
+```xml
+<citation>
+  <title>Title of a paper</title>
+  <creator>
+    <individualName>
+      <givenName>Author</givenName>
+      <surName>McAuthorson</surName>
+    </individualName>
+  </creator>
+  <pubDate>2017</pubDate>
+  <article>
+    <journal>EcoSphere</journal>
+    <pageRange>158-168</pageRange>
+    <publicationPlace>https://doi.org/10.0000/some_doi.123</publicationPlace>
+  </article>
+</citation>
+```
+
+
+When using &lt;**bibtex**> within a &lt;**citation**> element, all other child elements described above are not used because that information is already encoded in the BibTeX string. The resource types included in the BibTeX may vary depending on the reference management system used, but will be similar to those defined in EML (which are modeled on EndNote types). Example 8.2 gives a simple example.
+
+Example 8.2: A &lt;**citation**> element using BibTeX child elements to describe a reference publication. This is for the same article as in the previous example, with `@article` representing the resource type.
+
+
+```xml
+<citation>
+  <bibtex>
+    @article{mcauthorson_2017,
+       title = {Title of a Paper},
+       doi = {10.0000/some_doi.123},
+       journal = {EcoSphere},
+       author = {McAuthorson, Author},
+       year = {2017},
+       volume = {15},
+       number = {11},
+       pages = {158--168}
+    }
+  </bibtex>
+</citation>
+```
+
+
+Since references can be added to &lt;**literatureCited**> as &lt;**citation**> elements either with or without &lt;**bibtex**> child elements, dataset authors (or their EML preparation software) must decide which to use. **This document recommends using the citation format that is most convenient to the reader's workflow, and if one cannot decide, then go with BibTeX.** Using a reference manager software, such as Zotero, Mendeley, or EndNote, makes it convenient to export citations as BibTeX directly from a reference collection. Using the BibTeX format also enables users to easily import the citations into their own collection through their reference manager.
+
+BibTex is a fully-developed standard independent of EML, so using the &lt;**bibtex**> child element allows a high degree of flexibility, but can create challenges in interpretation and implementation. This is because
+
+
+
+1. The BibTeX format allows chaining multiple citations into one text block, so instead of describing two articles with two &lt;**bibtex**> elements, one could use a single &lt;**bibtex**> element and include the BibTeX for two articles within it (as in Example 8.3).
+2. EML allows &lt;**bibtex**> elements to be placed as direct children of &lt;**literatureCited**> (also as in Example 8.3)
+
+As a current best practice, **we recommend including only one reference within each &lt;bibtex> element, and enclosing each &lt;bibtex> element within a &lt;citation> element**. This is demonstrated in example 8.4, and is a more interpretable standard that matches the intent of the &lt;**literatureCited**> and &lt;**citation**> elements. When expressing reference information as BibTeX text, one must remember to escape XML special characters when they appear, such as a less-than sign (&lt;) in the title of a paper, as in any XML element’s content. If escaping is necessary in BibTeX, one can enclose the entire content of the &lt;**bibtex**> element in a CDATA block. See [Appendix B](appendix-b-xml-schemas-and-eml.qmd) for more details about XML special characters.
+
+Example 8.3: Example of &lt;**literatureCited**> element with one child &lt;**bibtex**> element describing two journal articles. This arrangement of references in &lt;**literatureCited**> is valid, but not currently recommended.
+
+
+```xml
+<dataset>
+  …
+  <literatureCited>
+    <bibtex>
+      @article{mcauthorson_2017,
+         title = {How To Collect Temperature Data},
+         doi = {10.0000/some_doi.123},
+         journal = {EcoSphere},
+         author = {McAuthorson, Author},
+         year = {2017},
+         pages = {158--168}
+      }
+      @article{delacroix_2018,
+         title = {How To Measure Animal Happiness},
+         doi = {10.0001/other_doi.321},
+         journal = {Ecosquare},
+         author = {Delacroix, Eugenia and Lee, Vonda and Weiss, Ragnar},
+         year = {2018},
+         pages = {15--16}
+      }
+    </bibtex>
+  </literatureCited>
+  …
+</dataset>
+```
+
+
+Example 8.4: Example of &lt;**literatureCited**> element with child &lt;**citation**> elements describing two journal articles with &lt;**bibtex**>. This is the recommended way to use BibTex formatting for multiple references in &lt;**literatureCited**>.
+
+
+```xml
+<dataset>
+  …
+  <literatureCited>
+    <citation>
+      <bibtex>
+        @article{mcauthorson_2017,
+           title = {How To Collect Temperature Data},
+           doi = {10.0000/some_doi.123},
+           journal = {EcoSphere},
+           author = {McAuthorson, Author},
+           year = {2017},
+           pages = {158--168}
+        }
+      </bibtex>
+    </citation>
+    <citation>
+      <bibtex>
+        @article{delacroix_2018,
+           title = {How To Measure Animal Happiness},
+           doi = {10.0001/other_doi.321},
+           journal = {Ecosquare},
+           author = {Delacroix, Eugenia and Lee, Vonda and Weiss, Ragnar},
+           year = {2018},
+           pages = {15--16}
+        }
+      </bibtex>
+    </citation>
+  </literatureCited>
+  …
+</dataset>
+```
+
+
+
+## Where (in EML) and when to use citation metadata
+
+Citation elements can appear in several places in EML. For example, a &lt;**methodStep**> can include one or more &lt;**citation**> child elements as references for a dataset’s methods section (**methods/methodStep/citation,** see Chapter 9), which was a common practice before &lt;**literatureCited**> was released in EML 2.2. For better consistency and machine-readability, however, **use &lt;literatureCited> and other CitationType elements as direct children of &lt;dataset>**. To summarize the use cases for these once again:
+
+
+
+* The &lt;**literatureCited**> element is a list including one or more child &lt;**citation**> or &lt;**bibtex**> elements, each describing resources the authors have cited in the dataset. These might include research publications demonstrating a concept, methods papers (such as methods used to derive the data), published protocols, or other foundational works that are cited in the EML metadata.
+* The &lt;**referencePublication**> element is reserved for describing publications whose purpose is to describe the dataset and its use. For example, as the profile and importance of open data has risen, dataset descriptor articles (or “data papers”) are often used to publicize newly released datasets. Typically there is only one reference publication for any given dataset.
+* A &lt;**usageCitation**> is used for publications that reference the dataset, such as a journal article presenting research results derived from the data. Data citation is important for proper attribution and reproducibility of research, and is increasingly required by publishers.
+
+As a general rule, &lt;**referencePublication**> and &lt;**usageCitation**> elements are difficult to use in EML documents because the resource to be described is usually published after the EML document is created. If the resource is available with a DOIs at the time of EML creation, then they are fine to include, but alternative methods of linking these types of resources to a published EML dataset are typically preferred.
+
+*Context Note: The EDI repository has a system for tracking citations of EDI datasets external to EML metadata documents. This allows an up-to-date listing of citations without requiring a new version of the EDI dataset be produced. Add dataset usage citations with the “Add Journal Citation” link at the bottom of the landing page for each dataset in EDI.*
+
+
+## XPaths referenced in this chapter
+
+Literature cited: **/eml:eml/dataset/literatureCited**
+
+Literature cited citation child: **/eml:eml/dataset/literatureCited/citation**
+
+Literature cited BibTex child: **/eml:eml/dataset/literatureCited/bibtex**
+
+Usage citation: **/eml:eml/dataset/usageCitation**
+
+Reference publication: **/eml:eml/dataset/referencePublication**
+
+Citation in a methods step: **/eml:eml/dataset/methods/methodStep/citation**

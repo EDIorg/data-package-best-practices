@@ -1,0 +1,9 @@
+---
+title: Scientific Domain-Specific Dataset Guides
+---
+
+_Very much a work in progress._ 
+
+Recommendations for community-developed data products from specific scientific domains. Not all scientific domains are covered. The data packages are derived from raw data and reformatted to meet certain data harmonization standards. Many of these data products have extensive related code bases, which the recommendations may take into account and link to. 
+
+Most of these guides are in a draft state.

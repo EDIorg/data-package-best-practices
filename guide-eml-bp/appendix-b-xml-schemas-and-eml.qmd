@@ -1,0 +1,346 @@
+# Appendix B. XML, schemas, and EML {#sec-appendix-b .unnumbered}
+
+
+## What is XML?
+
+The Extensible Markup Language, or XML, is a markup language for encoding documents in a format that is both human-readable and machine-readable. XML is used in all sorts of application domains. The Ecological Metadata Language, or EML, is one such application for working with ecological and environmental data.
+
+
+### Tags, elements, and attributes
+
+Every XML document has a structure defined by the presence of XML *tags*. Tags have names that are enclosed in angle brackets, and all tags must be paired. The first tag in a pair is the start tag (**&lt;tag>**) and the second, with its name prefixed by a backslash (**&lt;/tag>**), is a closing tag. A pair of tags is used to form an *element*, which is the most fundamental unit of information encoded in an XML document. An element consists of a start tag, a closing tag, and all content in between them. In this document, we frequently refer to XML elements (and implicitly to their content) using the start tag in boldface type with angle brackets.
+
+To add further structure to the information in an XML document, elements can be nested within other elements, giving XML documents a hierarchical, or tree-like, structure (also known as the Document Object Model, or DOM). The first element that encloses all other elements is referred to as the “root” of the tree, and all XML documents must have one root element. For example, an XML element called **&lt;individualName>** might define a person’s full name as in example B.1.
+
+Example B.1: a simple XML element
+
+
+```xml
+<individualName>
+  <givenName>Grace</givenName>
+  <surName>O'Malley</surName>
+</individualName>
+```
+
+
+This is a simple, but complete, XML tree with **&lt;individualName>** as the root element. Note that hierarchically nested elements are often referred to using a family tree language. In the example above, **&lt;givenName>** is the child of the parent element **&lt;individualName>**, and a sibling to the **&lt;surName>** element.
+
+Besides having a name, any XML element may also be assigned *attributes*. Attributes are a key-value statement defined inside an element’s start tag, after the element name. If we wished to assign a type attribute to our **&lt;individualName>** element, we might do something like example B.2.
+
+Example B.2: a simple XML element with a \@**type** attribute
+
+
+```xml
+<individualName type="pirate">
+  <givenName>Grace</givenName>
+  <surName>O'Malley</surName>
+</individualName>
+```
+
+
+Keep in mind that we could accomplish the same thing by including the type as an element nested in **&lt;individualName>** as in example B.3.
+
+Example B.3: a simple XML element with individual type as a child element
+
+
+```xml
+<individualName>
+  <givenName>Grace</givenName>
+  <surName>O'Malley</surName>
+  <individualType>pirate</individualType>
+</individualName>
+```
+
+
+There are no requirements or rules for using attributes in XML, but they can be useful for attaching additional data to an element. Attributes are used in several places in EML, and their use is defined in the EML schema (which we’ll talk about in a moment).
+
+
+### Navigating XML documents with XPath
+
+As noted above, the tree-like structure of XML documents means that any element can be a branch (if it contains more elements) or a leaf (if it is an atomic value). Elements in this hierarchy are often referred to as nodes and each can contain attributes, text, or other values. These nodes and associated values can be referenced and navigated using a convention called `XPath`, which is similar to the way we describe computer file system paths. Nodes are referred to by name and are separated by forward slashes (/), starting with the top-level, or most inclusive, note on the left. For example, in the &lt;**individualName**> examples from the section above, if we wished to select the individual type we would use the XPaths “**/individualName/\@type**” if it were defined as an attribute, and “**/individualName/individualType**” if it were defined as a child element if &lt;**individualName**>.
+
+
+### Namespace attributes
+
+Namespace attributes are a special kind of XML attribute that are used to make a defined vocabulary of elements, or namespace, available in an XML document. A namespace attribute usually also assigns a prefix that refers to the namespace in named elements. Namespace prefixes are commonly used to avoid conflicts between elements that have different content or purposes, but similar names. For instance, in an XML application that used both customer and product tables, the two table elements could be distinguished with namespaces: **&lt;c:table>** and **&lt;p:table>**. To use the **c** and **p **namespace prefixes, in an XML element, the namespaces must be imported and assigned those prefixes using a namespace attribute.
+
+Namespace attributes have a two-part key that starts with **xmlns** (for XML namespace), followed by a colon and then the prefix that will identify elements from the given namespace. Most XML namespaces are designed for particular applications or user communities and the definition of the namespace and its elements are kept in an agreed upon location. Usually this location is a URL, which becomes the value for the namespace attribute. To make the EML namespace available under the **eml** prefix, for example, one must include the attribute  **xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0"** in the top-level element of an EML document.
+
+
+### Escaping special characters
+
+As a structured text markup language, XML must treat certain characters as special. Most importantly, the less-than sign (&lt;) is special because it begins an XML tag and the ampersand (&) is special because it begins something called an entity reference (see [here](https://www.w3.org/TR/xml/#sec-references)). When these special characters appear as content in XML (i.e., as text between start and end tags, or in an attribute value), most XML parsers will interpret them as part of the XML structure. For example, the less-than sign in the text expression “one &lt; two” would be interpreted as the start of an XML tag when parsed. The quotation, apostrophe, and greater-than signs (“, ‘, and >) are also special characters, but they are misinterpreted much less often. To avoid errors, special characters can be “escaped” in one of two ways. 
+
+First, special characters can be encoded with distinct character sequences that XML parsers can understand without ambiguity. Notice that these escape sequences begin with the special ampersand. Escape encodings for the five special characters are:
+
+
+
+* `<` encoded as `&lt;`
+* `&` encoded as `&amp;`
+* `'` encoded as `&apos;`
+* `"` encoded as `&quot;`
+* `>` encoded as `&gt;`
+
+Second, blocks of text containing special characters can be enclosed in a CDATA section, which begins with the `<![CDATA[` sequence and closes with `]]>`, such as in example B.4. This is a handy way to escape text that contains many special characters at once. Escaping special characters is not needed in every case, but it is well-worth remembering to escape &lt; and & most of the time (see this SE answer for a concise summary: [https://stackoverflow.com/a/46637835/290085](https://stackoverflow.com/a/46637835/290085)). 
+
+Example 2.4: A CDATA section in which all text content between the opening and closing CDATA sequences (`<![CDATA[` and `]]>`), including the &lt;**greeting**> tags, will be interpreted as character data instead of XML markup. Example taken from W3.org documentation ([link](https://www.w3.org/TR/REC-xml/#sec-cdata-sect)).
+
+
+```xml
+  <![CDATA[<greeting>Hello, world!</greeting>]]>
+```
+
+
+
+### Other XML features
+
+It is common to find a *declaration* at the beginning of XML documents. Declarations are enclosed in angle brackets with question marks, and most declarations that you will see, including in EML, look like this:
+
+
+```xml
+  <?xml version="1.0" encoding="UTF-8"?>
+```
+
+
+Declarations are not tags. They are used to hold metadata about the XML document itself.
+
+
+### Resources
+
+The XML standard is described in:
+
+
+
+* [https://www.w3.org/XML/](https://www.w3.org/XML/)
+
+Tutorials on XML
+
+
+
+* [https://www.w3schools.com/xml/](https://www.w3schools.com/xml/)
+* [https://developer.mozilla.org/en-US/docs/Web/XML/XML_introduction](https://developer.mozilla.org/en-US/docs/Web/XML/XML_introduction)
+
+
+## What is an XML Schema?
+
+An XML *schema* is a description of a specific type of XML document that is defined by rules about its form and the content it contains. An XML schema is written in a subset of XML called XML Schema Definition, or XSD. Any other XML documents that are written as instances of a particular XML schema must be able to be “validated” against the rules laid out in that schema’s XSD file. To make an XML document into an instance of a particular schema, the schema location and XSD file must be referenced using the **schemaLocation** attribute from the XML Schema Instance namespace ([http://www.w3.org/2001/XMLSchema-instance](http://www.w3.org/2001/XMLSchema-instance), usually given the **xsi** prefix). Details about this attribute are in the “Overview of the EML schema” section and the examples below.
+
+The EML standard consists of a series of XSD files collectively defining the structure of a valid EML document and the minimum content that it needs to contain. You can look at this schema definition on GitHub ([https://github.com/NCEAS/eml/tree/main/xsd](https://github.com/NCEAS/eml/tree/main/xsd)) if you like. The EML standard uses an XML schema because doing so enables users and applications to ensure the consistency and completeness of a metadata document. Many data repositories that accept EML metadata documents check schema compliance when datasets are deposited, and it is highly recommended that data managers using EML know the schema location and how to validate their documents’ adherence to it.
+
+
+### XML Data types
+
+All XML schemas are built using a hierarchy of defined element types, starting with those types that are built into XML itself. Built into XML are several element types to contain particular kinds of data, such as text (`xs:string`), decimal numbers (`xs:decimal`), and dates (`xs:date`). Using a series of rules defined in an XSD file, a more complex data type, referred to as a “`complexType`”, can be built from these simpler types. For example, an &lt;**individualName**> element might be defined using an XSD rule stating that it must contain the &lt;**givenName**> and &lt;**surName**> child elements, in that order, and that both must be `xs:string` data types, as in the rule in example B.4.
+
+Example B.4: an XSD rule defining a complex type for an &lt;**individualName**> element
+
+
+```xml
+<xs:element name="individualName">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="givenName" type="xs:string"/>
+      <xs:element name="surName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+```
+
+
+This is an example of a `complexType` being defined in an XML schema, and with this definition, an `individualName` element could be re-used throughout any document following this schema. When the document was validated, any `individualName` elements that were formatted differently, such as those missing a `surName` element, or with child elements out of order, would violate the schema. In this way, XML data types can be defined, nested, and built into very complex, and useful data structures. A number of data types are defined in the EML schema to contain and validate particularly useful elements of metadata.
+
+
+### Validating against a schema
+
+There are a number of tools that can be used to validate an XML document against a schema defined in an XSD file. If the XSD location is provided in the XML document root (as described in the EML root element section below), then most tools will compare the document against that XSD without any need to access it separately. Elements that break the rule of the schema can be identified using warning messages
+
+
+### Resources
+
+XML Schemas and XSD
+
+
+
+* [https://www.w3schools.com/xml/xml_schema.asp](https://www.w3schools.com/xml/xml_schema.asp)
+
+Tools for validating XML against any schema
+
+
+
+* [Oxygen](https://www.oxygenxml.com/) - a full featured XML editing software with built in schema validation (paid license)
+* [XML Copy Editor](https://xml-copy-editor.sourceforge.io/) - a fast, free, validating XML editor
+* [Freeformatter.com](https://www.freeformatter.com) - A website offering free XML validation tools
+
+
+## Overview of the EML schema
+
+Like all XML documents, EML has a hierarchical structure. Because the EML standard is ultimately defined by an XML schema (or XSD), there are rules about what elements must be included, in which locations in the hierarchy, and what content they may and may not hold. A valid EML document must follow these rules. In this section we define the XML elements that are placed at the highest level of an EML document, and how they should be structured. We start with the “root” element, which encloses all others, and then define several top-level elements that may be placed directly inside the root. Some of the top-level elements are required and some are optional, and many have required or recommended attributes to consider.
+
+
+### The root element (**&lt;eml:eml>**)
+
+This **&lt;eml:eml>** element is the root element in all EML documents, meaning that it is required and encloses all other elements. Other than any declarations present, the opening tag of this root element (**&lt;eml:eml>**) should always come first in an EML document. Notice that the EML namespace is often immediately defined using the first attribute in this element (**xmlns:eml="[https://eml.ecoinformatics.org/eml-2.2.0](https://eml.ecoinformatics.org/eml-2.2.0)"**) though this may not be required by all applications using EML documents. The EML root element has three other important and required attributes that are described below. An example EML root starting tag, with all these elements, is shown in Example B.5.
+
+
+#### Schema location attribute
+
+The \@**xsi:schemaLocation** attribute is required and tells a processor (or person) that the XML document is an instance of the EML schema and where to find the XML schema file (XSD) to validate against. For an EML 2.2.0 document, this attribute should contain two URIs, one pointing to the EML namespace (https://eml.ecoinformatics.org/eml-2.2.0) and one pointing to the EML schema XSD (https://nis.lternet.edu/schemas/EML/eml-2.2.0/eml.xsd). 
+
+
+#### Package identifier attribute
+
+All metadata documents following the EML schema must be given a globally unique identifier that allows identification and citation of the dataset. This identifier should be placed in the required \@**packageId** attribute, and if the dataset will be published, it is recommended that the \@**packageId** attribute contain the same identifier as will be used by the repository. The content and structure of these identifiers may follow practices in place at a data manager’s local level, the data repository’s specifications, or a combination of the two.
+
+*Context note: At the EDI repository, the packageID is entered into the repository software in a format that is standardized to three parts: scope, package-number, revision. The scope should be “edi” unless another scope is justified by prior arrangement, such as in Example 1.*
+
+
+#### System attribute
+
+The \@**system** attribute is required to identify the data management or repository system that an EML document belongs to. This attribute provides the context needed to interpret other attributes of the EML, particularly \@**packageId**. The value of this attribute should be recognizable to the EML preparer’s local data management system, or to the repository the EML will be published in (see example B.5).
+
+*Context note: When publishing to the EDI repository, the system attribute will be replaced with "https://pasta.edirepository.org"*
+
+Example B.5: A root EML element’s starting tag, including required attributes \@**schemaLocation**, \@**packageId**, and \@**system**. The \@**system** attribute is set to “https://pasta.edirepository.org”, indicating that this dataset is, or will be, published in the EDI repository and the \@**packageId** attribute uses the EDI identifier format. Note that the three other namespace attributes (`xmlns:eml`, `xmlns:xsi`, `xmlns:stmml`) are not strictly required.
+
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://ecoinformatics.org/dataset-2.2.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:stmml="http://www.xml-cml.org/schema/stmml"
+   xsi:schemaLocation="https://ecoinformatics.org/eml-2.2.0
+      https://ecoinformatics.org/eml-2.2.0/eml.xsd"
+   packageId="frs.21.3"
+   system="https://pasta.edirepository.org">
+```
+
+
+
+### Top Level Elements
+
+There are a number of potential top-level elements that can be nested directly below the EML root (**&lt;eml:eml>**). Only one, a **&lt;dataset>** element, is required for data packages, but several others are commonly used. We briefly describe the most common and useful top-level elements below, and then mention others that are more suitable for use within **&lt;dataset>**. Many of these elements receive greater attention in later chapters.
+
+
+#### The dataset element (**&lt;dataset>**)
+
+The **&lt;dataset>** element is an EML document’s flexible container for the vast majority of metadata describing the data file(s) being shared or published. Under **&lt;dataset>**, many EML elements are available to describe the dataset. Some of these elements are required and some are optional, and some (such as people and organizations) are “repeatable” elements that may be nested at multiple levels and locations within a **&lt;dataset>**. All must follow the order enforced by the EML schema. Refer to Chapter 2 for a list of the highest-priority metadata elements needed to meet FAIR data principles, in the order they should be included as child elements of **&lt;dataset>**. Chapters 3-12 of this document are devoted to recommended placement, formatting and content of these sub-elements of **&lt;dataset>**. Though not all are required, we highly recommend including them to facilitate re-use of the data resource when it is shared or published.
+
+*Context note: When publishing to the EDI repository, the PASTA+ system will add an &lt;alternate Identifier> element to the EML document that includes the unique Digital Object Identifier (DOI) generated for the published data package.*
+
+The descriptive metadata elements within **&lt;dataset>** should be followed by one or more data entity elements that describe the actual data files being shared or published. There are several possible types of data entity elements that may be chosen depending on the file or data. The most commonly used are:
+
+
+
+* **&lt;dataTable>** describes a tabular data file, such as an delimited text or spreadsheet file
+* **&lt;otherEntity>** describes a file that doesn’t fit into the data entity categories above
+* **&lt;spatialRaster>** describes a georeferenced raster data file, such as a geotiff
+* **&lt;spatialVector>** describes a data file describing georeferenced geometries, such as a shapefile
+
+Both of the spatial data entity types are infrequently used and are primarily described in the “Data Package Design for Special Cases” companion to this document. The most infrequently used elements include **&lt;storedProcedure>**, which describes a measurement or observation protocol, and **&lt;view>,** which describes a query of a relational database or other structured data resource. We include no best-practices for these data entity types in this document.
+
+
+#### Additional metadata (**&lt;additionalMetadata>**)
+
+The **&lt;additionalMetadata>** element is a flexible field for including any other relevant metadata that pertains to the resource being described by EML. Its content must be valid XML. Though there is significant flexibility in how to create and use **&lt;additionalMetadata>** elements, there are also some common use cases that require particular child elements. Several use cases and other considerations for using this element are described in Chapter 12.
+
+
+#### Access elements (**&lt;access>**)
+
+Note that this element is deprecated in EML 2.2 ([link](https://eml.ecoinformatics.org/whats-new-in-eml-2-2-0.html#access-elements-deprecated))
+
+An &lt;**access**> element contains a list of rules defining access permissions for an EML document’s metadata and any data files (or entities) that the metadata describes. In general, **&lt;access>** trees precede other top-level EML elements, and any access rules must be specific to the system where the dataset is stored. Usually, that system is a research data repository.
+
+This element is now deprecated, but is still in use by data repositories (including EDI) that are backward compatible with EML 2.1.0. Note that if **&lt;access>** is omitted, the repository may presume that only the dataset submitter will be allowed access. The **&lt;access>** element is described more fully in Chapter 6.
+
+
+#### Dataset annotations (&lt;annotations>)
+
+Annotations are a more recent addition to the EML schema and are used to describe the purpose and content of a dataset using precise semantics. An **&lt;annotations>** element contains a list of child **&lt;annotation>** elements, and can be included within many EML elements, at multiple levels within an EML document (including the root). Annotations are described in detail in Chapter 7.
+
+
+#### Other top-level elements
+
+The **&lt;citation>**, **&lt;software>**, and **&lt;protocol>** elements may also be placed directly below **&lt;eml:eml>**. When used at this level, the EML document is primarily being used to describe a bibliographic source (article, book, etc.), software package, or published scientific protocol instead of a dataset. EML metadata documents are only rarely used in this way and other, more widely accepted standards exist. These use cases for EML are therefore outside the scope of this document..
+
+
+### EML Complex Types and the module system
+
+As described above, a range of useful XML `complexTypes` have been defined in the EML schema (they are referred to as Complex Types in the schema documentation). We have already briefly discussed several elements that are instances of these types, and each instance of a type must contain specific child elements and contents to be valid. Some commonly recurring and generally useful EML data types are listed below, but there are many more.
+
+
+
+* **TextType** ([EML schema definition](https://eml.ecoinformatics.org/schema/eml-text_xsd#TextType)) is a data type used to convey formatted or unformatted descriptive text. Formatted TextType elements use &lt;**section**>, &lt;**para**>, and &lt;**markdown**> child elements to define sections, paragraphs, titles, and other formatting that makes long-form text more human-readable. Unformatted TextType elements do not use these child elements. Note that using the &lt;**markdown**> child element allows the use of [markdown formatting](https://www.markdownguide.org) in descriptive metadata fields, but display of this formatting depends on support by repositories or other platforms. The &lt;**abstract**> (Chapter 3), &lt;**intellectualRights**> (Chapter 7), &lt;**methodStep**> (Chapter 9), and many &lt;**description**> elements found in EML are TextType elements.
+* **CitationType** ([EML schema definition](https://eml.ecoinformatics.org/schema/eml-literature_xsd#CitationType)) is used to assemble bibliographic information for citing published works like journal articles or books. The &lt;**citation**> elements described in Chapter 8 (and above) are CitationTypes that may be used in several locations in EML See Chapter 8 for usage information and the schema documentation ([Section 5.1.4, eml-literature module](https://eml.ecoinformatics.org/eml-schema)) for additional details.
+* **ResponsibleParty** ([EML schema definition](https://eml.ecoinformatics.org/schema/eml-party_xsd#ResponsibleParty)) is a data type defining a person, organization, or role associated with the EML dataset. They contain many possible child elements depending on the party being described. The &lt;**creator**>, &lt;**contact**>, &lt;**metadataProvider**> and other elements are ResponsibleParty elements and are described in section Chapter 4.
+* **ResearchProjectType** ([EML schema definition](https://eml.ecoinformatics.org/schema/eml-project_xsd#ResearchProjectType)) is a data type used to assemble information about the project under which the dataset was created. They contain child elements to describe the project, such as **&lt;title>**, **&lt;abstract>**, &lt;**personnel**>, and **&lt;award>** information. See Chapter 5 for more.
+
+The EML schema and its associated Complex Types are organized into a system of modules. Complex Types and associated EML elements that serve similar purposes or share similar functions are grouped together into named modules. For instance, data types and elements having to do with citing sources (journal articles, books, etc.) are grouped in the `eml-literature` module. These modules are fairly regularly referred to within the EML schema documentation.
+
+
+### A very simple EML example
+
+To create a valid EML document, there are a few required elements and attributes. In example B.6 we present a very simple EML document that contains all required elements and will successfully validate against the EML schema. However, the metadata this document contains is not very descriptive and wouldn’t be sufficient to re-use a dataset if it were published this way. For this reason, the main chapters of this document elaborate on how to create rich, useful metadata and place it into an EML document. Beginning in Chapter 3, the highest priority EML elements to include with any published dataset are described, along with how to populate and structure them to make published datasets more compliant with FAIR principles.
+
+Example B.6: A minimal example of a valid EML document, including a declaration, the required EML root and dataset elements, and any required attributes and child elements for each. Inclusion of a data entity (&lt;**otherEntity**> in this case), is optional, but shown for clarity.
+
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd" packageId="frs.1002.3" system="frs">
+  <dataset>
+    <title>Pirate attacks in the South Seas, 2000-2014</title>
+    <creator>
+      <individualName>
+        <givenName>Grace</givenName>
+        <surName>O'Malley</surName>
+      </individualName>
+    </creator>
+    <contact>
+      <organizationName>Fictitious Research Site</organizationName>
+    </contact>
+    <otherEntity>
+      <entityName>An example data entity</entityName>
+      <entityType>Shapefile</entityType>
+    </otherEntity>
+  </dataset>
+</eml:eml>
+```
+
+
+
+### Resources
+
+About the EML schema
+
+
+
+* The EML Schema XSD documents: [https://github.com/NCEAS/eml/tree/main/xsd](https://github.com/NCEAS/eml/tree/main/xsd)
+* The EML development project’s schema documentation: [https://eml.ecoinformatics.org/](https://eml.ecoinformatics.org/) 
+* Summary of EML validation rules in [EML schema documentation, section 6](https://eml.ecoinformatics.org/validation-and-content-references)
+
+Tools for validating XML against the EML schema
+
+
+
+* [EML Parser](https://knb.ecoinformatics.org/emlparser) - An online EML parser/validator maintained by EML developers
+* [emlvp](https://github.com/PASTAplus/emlvp) - EML Validator/Parser is a simple python package written by the EDI repository that can validate EML documents
+* [EML](https://docs.ropensci.org/EML/) - An R package that can help build and then validate EML documents
+
+
+## XPaths referenced in this chapter
+
+Root EML element: **/eml:eml**
+
+Schema location attribute: **/eml:eml/\@schemaLocation**
+
+Package identifier attribute: **/eml:eml/\@packageId**
+
+Dataset element: **/eml:eml/dataset**
+
+Additional metadata: /**eml:eml/additionalMetadata**
+
+Top-level annotations: **/eml:eml/annotations**
+
+Top-level access element: **/eml:eml/access**
+
+Dataset annotations: **/eml:eml/dataset/annotations**

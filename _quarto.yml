@@ -1,46 +1,101 @@
 project:
-  type: book
-  output-dir: _book
+  type: website
+  output-dir: _site
 
-book:
-  title: "EDI Dataset Preparation Guides"
-  author: "Environmental Data Initiative and colleagues"
-  description: "Community-developed guides for preparing and publishing datasets in the environmental sciences, and similar contexts, using the Ecological Metadata Language (EML)."
-  date: "2022-05-25"
+website:
+  title: "Dataset Preparation Guides"
+  description: "Community-developed guides for preparing and publishing datasets in the environmental sciences, and similar contexts, using the Ecological Metadata Language (EML) and other standards."
   favicon: img/edi-logo.png
-  site-url: https://ediorg.github.io/data-package-best-practices
-  repo-url: https://github.com/ediorg/data-package-best-practices
+  site-url: https://ediorg.github.io/dataset_preparation_guides
+  repo-url: https://github.com/EDIorg/dataset_preparation_guides
+  issue-url: https://github.com/EDIorg/dataset_preparation_guides/issues/new/choose
   repo-branch: main
   repo-actions: [edit, issue]
+  page-navigation: true
+  bread-crumbs: true
+  announcement: 
+    content: "**Prerelease version**: This content is under development. See [here](https://ediorg.github.io/dataset_preparation_guides/) for community-accepted documents." 
+    position: above-navbar
+    dismissable: false
+    type: danger
+  search:
+    location: navbar
   navbar:
-    search: true
     logo: img/edi-logo.png
-  chapters:
-    - index.qmd
-    - about.qmd
-    - contributing.qmd
+    background: light
+    left:
+      - text: Home
+        href: index.qmd
+      - text: About
+        href: about.qmd
+      - text: More
+        menu:
+          - contributing.qmd
+          - history.qmd
+    tools:
+      - icon: github
+        href: https://github.com/ediorg/dataset_preparation_guides
+        text: EDIorg GitHub repository
 
-    - part: guide-eml-bp/preface.qmd
-      chapters:
-        - guide-eml-bp/introduction.qmd
-        - guide-eml-bp/content-recommendations.qmd
-
-    - part: guide-special-cases/preface.qmd
-      chapters: 
-        - guide-special-cases/code.qmd
-        - guide-special-cases/model-based.qmd
-        - guide-special-cases/images-and-docs.qmd
-        - guide-special-cases/spatial-data.qmd
-        - guide-special-cases/moving-platforms.qmd
-        - guide-special-cases/other-repositories.qmd
-        - guide-special-cases/large-offline.qmd
-
-    - part: guide-domain-specific/preface.qmd
-      chapters:
-        - guide-domain-specific/ecocom.qmd
-        - guide-domain-specific/hymet.qmd
-        - guide-domain-specific/soil-carbon.qmd
-    - references.qmd
+  sidebar:
+    id: alldocs
+    style: floating
+    title: "Guides"
+    collapse-level: 1
+    contents:
+      - section: "EML Best Practices"
+        href: guide-eml-bp/book.qmd
+        contents:
+          - href: guide-eml-bp/chapter-01-introduction-to-eml.qmd
+            text: "1. Introduction to EML"
+          - href: guide-eml-bp/chapter-02-metadata-and-dataset-design-principles.qmd
+            text: "2. Metadata and dataset design principles"
+          - href: guide-eml-bp/chapter-03-general-dataset-information.qmd
+            text: "3. General dataset information"
+          - href: guide-eml-bp/chapter-04-people-and-organizations-responsibleparty.qmd
+            text: "4. People and organizations (ResponsibleParty)"
+          - href: guide-eml-bp/chapter-05-the-project-tree.qmd
+            text: "5. The project tree"
+          - href: guide-eml-bp/chapter-06-data-access-and-usage-rights.qmd
+            text: "6. Data access and usage rights"
+          - href: guide-eml-bp/chapter-07-keywords-coverage-and-annotations.qmd
+            text: "7. Keywords, coverage and annotations"
+          - href: guide-eml-bp/chapter-08-citations-and-references.qmd
+            text: "8. Citations and references"
+          - href: guide-eml-bp/chapter-09-methods.qmd
+            text: "9. Methods"
+          - href: guide-eml-bp/chapter-10-data-entities.qmd
+            text: "10. Data entities"
+          - href: guide-eml-bp/chapter-11-variable-descriptions-attributes.qmd
+            text: "11. Variable descriptions (Attributes)"
+          - href: guide-eml-bp/chapter-12-additional-metadata.qmd
+            text: "12. Additional metadata"
+          - href: guide-eml-bp/appendix-a-specialized-elements.qmd
+          - href: guide-eml-bp/appendix-b-xml-schemas-and-eml.qmd
+          - href: guide-eml-bp/appendix-c-known-issues-and-gotchas.qmd
+      - section: "Dataset Design for Special Cases"
+        href: guide-special-cases/book.qmd
+        contents: 
+          - href: guide-special-cases/code.qmd
+            text: "1. Code"
+          - href: guide-special-cases/model-based.qmd
+            text: "2. Model-based datasets"
+          - href: guide-special-cases/images-and-docs.qmd
+            text: "3. Images and documents as data"
+          - href: guide-special-cases/spatial-data.qmd
+            text: "4. Spatial data"
+          - href: guide-special-cases/moving-platforms.qmd
+            text: "5. Data gathered with small moving platforms"
+          - href: guide-special-cases/other-repositories.qmd
+            text: "6. Data in other repositories"
+          - href: guide-special-cases/large-offline.qmd
+            text: "7. Large datasets"
+      - section: "Domain-Specific Guides"
+        href: guide-domain-specific/about-domain-specific.qmd
+        contents:
+          - guide-domain-specific/ecocom.qmd
+          - guide-domain-specific/hymet.qmd
+          - guide-domain-specific/soil-carbon.qmd
 
 execute:
   freeze: auto
@@ -50,8 +105,9 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
-#  pdf:
-#    documentclass: scrreprt
-
-
+    highlight-style: pygments
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+    fontsize: 1.0em
+    toc: true
 

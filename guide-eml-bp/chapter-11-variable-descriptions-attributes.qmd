@@ -1,0 +1,235 @@
+# Variable descriptions (Attributes) {#sec-chapter-11}
+
+The data entities described by an EML document are typically files containing some kind of research or monitoring data. As such, these data entities hold one or more variables, which are the amounts, characteristics, or other values being measured or controlled during data collection. In EML, a data entity’s variables are referred to as “attributes,” and the *eml-attribute* module provides EML structures to describe all attributes (variables) within a data entity. Attribute metadata in EML should provide the name and definition of each attribute, its measurement domain, a description of coded values, definitions of missing values, and other pertinent information. All &lt;**dataTable**> entities are required to contain an &lt;**attributeList**> element with this information, as are other, less-commonly used entity types.
+
+
+## Attribute lists and attributes
+
+The &lt;**attributeList**> tree is required for all data types except for &lt;**otherEntity**>. It describes all attributes in a data entity as a list of individual &lt;**attribute**> elements. Each &lt;**attribute**> element must fully describe a particular attribute (variable) of the data entity using the range of required and optional child elements described below. An &lt;**attribute**> element should have an **id** attribute (e.g., &lt;**attribute id=”att.01”**>) if it will be referenced by annotations or other elements of EML. Required and optional child elements of an &lt;**attribute**> element are described below.
+
+
+### Attribute names (required) 
+
+The &lt;**attributeName**> element contains text denoting the identifier or name of a field in a data table, such as the header name for a column in a CSV file. This value must be composed of alphanumeric characters (in the Unicode set, typically) and is often a short name or abbreviation for the full attribute name. It should give some indication of the meaning or content of the data field. Values in &lt;**attributeName**> must match the column headers of a CSV or other data table.
+
+*Context note: in the EDI repository,* &lt;**attributeName**> *elements must be unique within a data entity.*
+
+
+### Attribute definitions (required)
+
+The **attributeDefinition**> element is a text field giving a precise and complete text definition of the attribute. It explains the contents of the attribute fully so that a data user can interpret the attribute accurately.
+
+
+### Measurement scale (required)	
+
+The &lt;**measurementScale**> element describes the *scale* from which values of the attribute are drawn. Measurement scales assign meaning to the values of an attribute (or variable) in a data entity, examples being the units of a numeric variable, a list of identifiers or code names in a categorical variable, or a description of format used for date or time variables. One of five scale types defined in the EML schema must be inserted as a child element to &lt;**measurementScale**>. Two of these are non-numeric (&lt;**nominal**>, &lt;**ordinal**>) and three are numeric (&lt;**interval**>, &lt;**ratio**>, &lt;**dateTime**>). The significance of these &lt;**measurementScale**> child elements are as follows:
+
+
+
+* A nominal scale (&lt;**nominal**>) is a non-numeric scale where named values are used to distinguish one observation or category from another. Nominal values have no intrinsic logical or ordered relationship to each other, they serve only as identifiers or descriptors. An attribute using a nominal scale might include simple text identifiers for individuals (“Gabe”, “Corinna”, “Tim”…), named groups or categories in the data (“control” or “treatment”), or plain text descriptions (“sample vial eaten by a bear”). Note that observations or groups in nominal data can be coded numerically (e.g. 1=male, 2=female), so nominal data CAN contain numbers, but these numbers are not intrinsically meaningful.
+* Ordinal scales (&lt;**ordinal**>) are also non-numeric, but ordinal values have a logical or ordered relationship to one another where the magnitude of the differences between the values is not defined or meaningful. For example, qualitative data that is ordered (Low, Medium, High) or ranked (1=Good, 2=Fair, 3=Poor) uses the ordinal scale. Note that ordinal data can also be coded numerically.
+* An interval measurement scale (&lt;**interval**>) uses numeric values that have equal-sized increments (or units) between one another and an arbitrary zero point. For example, the Celsius temperature scale uses equally-spaced degrees, but zero does not represent “absolute zero” (i.e., the temperature at which molecular motion stops), and 20 C is not “twice as hot” as 10 C. Latitude and longitude are also intervals since their zero points are arbitrarily chosen.
+* Ratio measurement scales (&lt;**ratio**>) also use numeric values with equally-spaced increments, but with a meaningful zero point that allows legitimate ratio comparisons. For example, the Kelvin scale reflects the amount of kinetic energy of a substance (i.e., zero is the point where a substance transmits no thermal energy), and so temperature measured in kelvin units is a ratio measurement. Concentration is also a ratio measurement because a solution at 10 micromolePerLiter has twice as much substance as one at 5 micromolePerLiter.
+* Date-time measurement scales (&lt;**dateTime**>) use date and time values from the Gregorian calendar, including year, month, day, hour, minute, and second. Though these essentially are ordered, numeric data, dates and times may be represented in many different ways and must therefore be described with specialized metadata.
+
+Each of the five &lt;**measurementScale**> child elements described above requires its own child elements to fully describe the measurement scale.
+
+
+#### Describing non-numeric scales (&lt;nominal> and &lt;ordinal>)
+
+Both the &lt;**nominal**> and &lt;**ordinal**> measurement scale elements require a &lt;**nonNumericDomain**> element with either a text domain element (&lt;**textDomain**>) indicating plain text values, or an enumerated list of codes (&lt;**enumeratedDomain**). The &lt;**enumeratedDomain**> describes categorical data and requires one or more &lt;**codeDefinition**> elements to describe each category or coded value present in the attribute using the &lt;**code**> and &lt;**definition**> child elements. Note that codes and their explanations can also be provided in a referenced data entity (&lt;**entityCodeList**>) or an external source (&lt;**externalCodeSet**>), but these are rarely used and not generally recommended. For &lt;**textDomain**> an optional pattern provided in &lt;**definition**> may describe the text, e.g., a US telephone number can be described by the format “\d\d\d-\d\d\d-\d\d\d\d.”
+
+
+#### Describing numeric scales (&lt;interval> and &lt;ratio>)
+
+The numeric &lt;**interval**> and &lt;**ratio**> measurement scales require child elements to describe measurement units (&lt;**unit>**) and number type (&lt;**numericDomain>**), and can optionally describe the floating point precision of attribute values (&lt;**precision**>). Any measurement units included in &lt;**unit**> must be described in correct physical units that are clearly defined and linked to the International System of Units (SI). Terms which describe data but are not units, such as the substance or substrate being measured, should be placed in &lt;**attributeDefinition**>. For example, for data describing “milligrams of carbon per square meter,” “carbon” belongs in the &lt;**attributeDefinition**>, while the &lt;**unit**> is “milligramPerMeterSquared.” A wide selection of units are already included in the EML schema’s standard units dictionary (see the [EML schema docs](https://eml.ecoinformatics.org/schema/eml-unitTypeDefinitions_xsd.html#StandardUnitDictionary)). To assign one of these to an attribute, include it by name in a &lt;**standardUnit**> child element (**unit/standardUnit**). 
+
+If an appropriate unit is not available in the EML standard units dictionary, or if a unit from a different source is desired, a unit name should be placed in a &lt;**customUnit**> element (**unit/customUnit**) and then defined in an &lt;**additionalMetadata**> element, generally at the &lt;**dataset**> level (refer to Example 12.2 and the Custom Unit part of Chapter 12 for details). There are many alternative unit dictionaries or ontologies that can be used as custom units in EML, such as UCUM.org (“kg/m2” or “kg.m-2”) and QUDT.org (“kiloGM-PER-M2”). Each has some advantages with respect to interpretability, lack of ambiguity, use of special characters (e.g., “𝜇”), brevity, degree of standardization, and desirability as perceived by researchers. Most of these can also be coupled to &lt;**annotation**> elements that link the unit to online resources from the dictionary/ontology itself. For general purposes, one may also define custom units independently of other standards, such as by naming custom units following the pattern set by EML standard units (“kilogramPerMeterSquared”), When doing so, the following guidelines from ISO recommendations apply to their naming: 1) Units should be written out, not abbreviated. 2) Unit modifiers, such as “squared,” should follow the unit being modified. For example, meterSquared is preferred, while squareMeter is improper. 3) Units should be singular, such as “meter,” and not plural, such as “meters.” Again, all units placed in &lt;**customUnit**> must be defined in the document’s &lt;**additionalMetadata**> elements using the conventions described in Chapter 12.
+
+*Context note: The EDI repository and LTER Network are currently developing a new custom units framework for EML based on the QUDT ontology and annotations. Following the best practices in this document will allow an easy transition to this new system.*
+
+The &lt;**numericDomain**> element describes the numeric values of an attribute using a required &lt;**numberType**> element with a controlled vocabulary (*natural*, *whole*, *integer*, *real*, defined in the [EML schema documentation](https://eml.ecoinformatics.org/schema/eml-attribute_xsd#NumericDomainType_numberType)), and, optionally, a &lt;**bounds**> element describing the minimum and maximum allowable values of the numeric attribute. The &lt;**bounds**> are theoretical or allowable minimum and maximum values (prescriptive), rather than the actual observed range in a data set (descriptive). 
+
+The optional &lt;**precision**> element describes the number of decimal places for the attribute, which is useful to determine rounding criteria, estimate storage size, and choose system-specific data types (e.g. “float” vs “long” in C) for an attribute. Currently, EML does not allow more than one precision value for a column, so variable attribute precision information should be described in a &lt;**methodStep**> element.
+
+
+#### Describing &lt;dateTime> scales
+
+Date and time variables can be expressed in many different formats, some of which are ambiguous. The &lt;**formatString**> child element (**dateTime/formatString**) is required to to describe the format of any dateTime attributes in a data entity, and it is strongly recommended to use the ISO 8601 standard in data entities described with EML. An example of an allowable ISO date-time format is “YYYY-MM-DD,” as in 2004-06-25, or, more fully, as “YYYY-MM-DDThh:mm:ssTZD” (eg 1997-07-16T19:20:30.45Z). Place whatever string is appropriate to describe the data directly into a &lt;**formatString**> element. The ISO standard is quite strict, and legacy datasets or equipment outputs (e.g. from sensors) often contain non-ISO standard dates. The EML schema therefore provides additional allowable formats (see the [EML documentation for a complete list](https://eml.ecoinformatics.org/schema/eml-attribute_xsd#AttributeType_AttributeType_measurementScale_dateTime)). Note that a &lt;**dateTime**> measurement scale cannot be used to describe time durations. In that case, use a ratio measurement scale with a unit such as seconds, nominalMinute or nominalDay (all from the EML standard units library) which are defined in relation to SI second. To describe the measurement precision of dates or times in a &lt;**dateTime**> scales, using the &lt;**dateTimePrecision**> element is recommended.
+
+
+### Attribute labels (optional)
+
+The &lt;**attributeLabel**> element contains a less ambiguous or less cryptic alternative identification than what is provided in &lt;**attributeName**>. The value in &lt;**attributeLabel**> is likely to be used as a column or row header in an HTML display.
+
+
+### Attribute storage type (optional)
+
+A &lt;**storageType**> element is optional, but is recommended and should contain a text field indicating the data type used to store the values of the attribute. For instance, decimal numbers may stored using data types called “float”, “numeric”, or “decimal” depending on the particular programming language (e.g. Python, R) or relational database system (e.g., PostgreSQL or MySQL) being used. The value in &lt;**storageType**> may therefore be system- or application-specific if needed, such as to designate specific types for storage in a relational database system, but can also be used to provide a more general ‘hint’ to users or destination systems about how the attribute should be stored or represented. If there are no system-specific applications for the data (or they are unknown), we recommend choosing the best match from a small list of appropriate non-system-specific values, including *float*, *integer*, *string*, *boolean*, and *dateTime*. You may also choose from the values already provided by your EML preparation system if that is more convenient. Perhaps most importantly, do not indicate a type that is completely wrong, such as *integer* when the attribute clearly stores text values.
+
+
+### Missing value codes (optional)
+
+The &lt;**missingValueCode**> is optional, but it is strongly recommended to include it for any attribute that contains missing data values indicated with a particular code (e.g. NA, NaN, ND, -9999). Like enumerated domains above, this element should contain a &lt;**code**> and &lt;**definition**> child element to describe the missing value code and its meaning. The missing value code is a string, not a value, which means that the content of this field must exactly match what appears in place of data values for it to be correctly interpreted. For example, if data are output with precision .01 and with missing values formatted to “-9999.00,” then the content of the &lt;**missingValueCode**> element must be “-9999.00” not “-9999.”
+
+
+### Annotation (optional)
+
+Any &lt;**attribute**> element may contain an optional &lt;**annotation**> element, or can be referenced by annotations elsewhere in EML via their \@**id** attribute. Annotations add additional context about the measurement or variable by linking to concepts or terms from an ontology. Annotations are described more fully in Chapter 7, and Example 7.7 gives an example of annotations used within an &lt;**attribute**>. Though few use-cases have been fully developed for doing this to date, future custom units functionality in EML will almost certainly rely on annotations within &lt;**attribute**> elements.
+
+
+## Examples
+
+Example 11.1 has examples of many of the required, recommended, and optional metadata described above. For additional examples see those provided the spatialRaster and spatialVector sections of [Appendix A](appendix-a-specialized-elements.qmd).
+
+Example 11.1: An &lt;**attributeList**> element with six &lt;**attribute**> children, as would be included to describe a tabular data entity. Variables described include a nominal text attribute (site identifier), a ratio attribute using dimensionless units (pH), a ordinal attribute with enumerated numeric values (a categorical variable), a dateTime attribute for year, an integer interval attribute for individual counts, and a ratio attribute with conductivity units. Note that several &lt;**attribute**> elements have \@**id** attributes that would be required for annotation. There are also \@**typeSystem** attributes for some &lt;**storageType**> elements that link the column data types to those defined in the XML schema (defined by www.w3.org). Also note that attribute 8, the “cond” column, uses a &lt;**customUnit**>. This unit is described in the chapter on &lt;**additionalMetadata**> (Chapter 12) in Example 12.1.
+
+
+```xml
+<attributeList>
+  <attribute id="soil_chemistry.site_id">
+    <attributeName>site_id</attributeName>
+    <attributeDefinition>Site identifier as used in sites table</attributeDefinition>
+    <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+      string
+    </storageType>
+    <measurementScale>
+      <nominal>
+        <nonNumericDomain>
+          <textDomain>
+            <definition>Site identifier text</definition>
+          </textDomain>
+        </nonNumericDomain>
+      </nominal>
+    </measurementScale>
+  </attribute>
+  <attribute id="soil_chemistry.pH">
+    <attributeName>pH</attributeName>
+    <attributeDefinition>ph of soil solution</attributeDefinition>
+    <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+      float
+    </storageType>
+    <measurementScale>
+      <ratio>
+        <unit>
+          <standardUnit>dimensionless</standardUnit>
+        </unit>
+        <precision>0.01</precision>
+        <numericDomain>
+          <numberType>real</numberType>
+        </numericDomain>
+      </ratio>
+    </measurementScale>
+  </attribute>
+  <attribute id="pass2001.q110">
+    <attributeName>q110</attributeName>
+    <attributeDefinition>Q110-Preference for front yard landscape</attributeDefinition>
+    <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+      integer
+    </storageType>
+    <measurementScale>
+      <ordinal>
+        <nonNumericDomain>
+          <enumeratedDomain>
+            <codeDefinition>
+              <code>1</code>
+              <definition>1-A desert landscape</definition>
+            </codeDefinition>
+            <codeDefinition>
+              <code>2</code>
+              <definition>2-Mostly lawn</definition>
+            </codeDefinition>
+            <codeDefinition>
+              <code>3</code>
+              <definition>3-Some lawn</definition>
+            </codeDefinition>
+          </enumeratedDomain>
+        </nonNumericDomain>
+      </ordinal>
+    </measurementScale>
+  </attribute>
+  <attribute id="att.2">
+    <attributeName>Year</attributeName>
+    <attributeDefinition>Calendar year of the observation from years 1990 - 2010</attributeDefinition>
+    <storageType>dateTime</storageType>
+    <measurementScale>
+      <dateTime>
+        <formatString>YYYY</formatString>
+        <dateTimePrecision>1</dateTimePrecision>
+        <dateTimeDomain>
+          <bounds>
+            <minimum exclusive="false">1993</minimum>
+            <maximum exclusive="false">2003</maximum>
+          </bounds>
+        </dateTimeDomain>
+      </dateTime>
+    </measurementScale>
+  </attribute>
+  <attribute id="att.7">
+    <attributeName>Count</attributeName>
+    <attributeDefinition>Number of individuals observed</attributeDefinition>
+    <storageType>integer</storageType>
+    <measurementScale>
+      <interval>
+        <unit>
+          <standardUnit>number</standardUnit>
+        </unit>
+        <precision>1</precision>
+        <numericDomain>
+          <numberType>whole</numberType>
+          <bounds>
+            <minimum exclusive="false">0</minimum>
+          </bounds>
+        </numericDomain>
+      </interval>
+    </measurementScale>
+    <missingValueCode>
+      <code>NaN</code>
+      <codeExplanation>value not recorded or invalid</codeExplanation>
+    </missingValueCode>
+  </attribute>
+  <attribute id="att.8">
+    <attributeName>cond</attributeName>
+    <attributeLabel>Conductivity</attributeLabel>
+    <attributeDefinition>measured with SeaBird Elecronics CTD-911</attributeDefinition>
+    <storageType>float</storageType>
+    <measurementScale>
+      <ratio>
+        <unit>
+          <customUnit>siemensPerMeter</customUnit>
+        </unit>
+        <precision>0.0001</precision>
+        <numericDomain>
+          <numberType>real</numberType>
+          <bounds>
+            <minimum exclusive="false">0</minimum>
+            <maximum exclusive="false">40</maximum>
+          </bounds>
+        </numericDomain>
+      </ratio>
+    </measurementScale>
+  </attribute>
+</attributeList>
+```
+
+
+
+## XPaths referenced in this chapter
+
+Attribute list: **/eml:eml/dataset/dataTable/attributeList**
+
+An attribute: **/eml:eml/dataset/dataTable/attributeList/attribute**
+
+An attribute’s ID attribute: **/eml:eml/dataset/dataTable/attributeList/attribute/\@id**
+
+An attribute’s name: **/eml:eml/dataset/dataTable/attributeList/attribute/attributeName**
+
+An attribute definition: **/eml:eml/dataset/dataTable/attributeList/attribute/attributeDefinition**
+
+Nominal attribute: **/eml:eml/dataset/dataTable/attributeList/attribute/nominal**
+
+Standard numeric unit: **/eml:eml/dataset/dataTable/attributeList/attribute/ratio/standardUnit**
+
+Custom numeric unit: **/eml:eml/dataset/dataTable/attributeList/attribute/ratio/customUnit**
+
+Missing value code: **/eml:eml/dataset/dataTable/attributeList/attribute/missingValueCode**

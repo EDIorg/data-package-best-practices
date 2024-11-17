@@ -1,4 +1,4 @@
-# Contributing {.unnumbered}
+# Contributing
 
 The maintenance of this repository and development of the included documents is coordinated by EDI, with major updates and new content developed and approved through a community-oriented process. If you would like to help develop these documents please contact the maintainers and working group leads listed on the [About](about.qmd) page, or reach out to EDI at [info@edirepository.org](mailto:info@edirepository.org>). Some details on how contribution works are below.
 

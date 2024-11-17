@@ -34,7 +34,7 @@ Clearly, there are many possible ways to combine raw data, derived data, and met
 
 ### Examples and additional metadata guidance
 
-Several EDI data packages for data from moving platforms are presented as examples in Table 1. Many more detailed, ?drone-specific? metadata terms and values can be included in data packages for drones and other moving platforms. For completeness we have developed a comprehensive list of recommended and optional metadata terms based on the work of Wyngaard et al. (2019), Thorner et al. (2020), with mappings to select relevant ontologies, viewable [here](https://docs.google.com/spreadsheets/d/1PQ0SUEQLgQXdz2PUNDy2jGry3o9veAedcz8l-5ubpwU). For each metadata element, we assessed its utility in terms of data discovery, evaluating fitness for use, and actual data reuse. The minimum recommended subsets of metadata that are included in the section above were derived from this table.  
+Several EDI data packages for data from moving platforms are presented as examples in Table 1. Many more detailed, ?drone-specific? metadata terms and values can be included in data packages for drones and other moving platforms. For completeness we have developed a comprehensive list of recommended and optional metadata terms based on the work of Wyngaard et al. [-@wyngaard_emergent_2019], Thomer et al. [-@thomer_minimum_2020], with mappings to select relevant ontologies, viewable [here](https://docs.google.com/spreadsheets/d/1PQ0SUEQLgQXdz2PUNDy2jGry3o9veAedcz8l-5ubpwU). For each metadata element, we assessed its utility in terms of data discovery, evaluating fitness for use, and actual data reuse. The minimum recommended subsets of metadata that are included in the section above were derived from this table.  
 
 Table 1. Example packages at EDI and other repositories
 
@@ -90,9 +90,3 @@ For making an image catalog (.csv) from a directory of images, consider using th
 ### Semantic Annotation
 
 Semantic annotation of drone imagery is a rapidly developing field. Ontologies that provide relevant terms include: [dronetology](http://www.dronetology.net/); [sensorML](http://www.sensorml.com/ontologies.html); [FGDC content standard for digital geospatial metadata](https://www.fgdc.gov/metadata/csdgm/) (not officially an ontology but a structured metadata format with defined terms); [Semantic Sensor Network ontology](https://www.w3.org/TR/vocab-ssn/) (SSN, including the SOSA core); [Semantic Web for Earth and Environment Technology ontology](https://bioportal.bioontology.org/ontologies/SWEET) (SWEET); and [Environment Ontology](http://www.obofoundry.org/ontology/envo.html).
-
-### References
-
-Thomer, Andrea K., Swanz, Sarah, Barbieri, Lindsay, Wyngaard, Jane. (2020). A minimum information framework the FAIR collection of earth and environmental science data with drones. DOI: 10.5281/zenodo.4017647
-
-Wyngaard, J.; Barbieri, L.; Thomer, A.; Adams, J.; Sullivan, D.; Crosby, C.; Parr, C.; Klump, J.; Raj Shrestha, S.; Bell, T. Emergent Challenges for Science sUAS Data Management: Fairness through Community Engagement and Best Practices Development. _Remote Sens._ **2019**, _11_, 1797.

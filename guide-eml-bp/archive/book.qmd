@@ -1,0 +1,57 @@
+---
+title:  'Best Practices for Dataset Metadata in Ecological Metadata Language (EML)'
+subtitle: Version 3
+date: November 2017
+author:
+  - name: Dan Bahauddin
+    affiliation: University of Minnesota
+  - name: Barbara Benson
+  - name: Emery Boose
+    affiliation: Harvard University
+  - name: James Brunt
+    affiliation: University of New Mexico
+  - name: Duane Costa
+    affiliation: University of New Mexico
+  - name: Corinna Gries
+    affiliation: University of Wisconsin, Madison
+    orcid: 0000-0002-9091-6543
+  - name: Don Henshaw
+    affiliation: Oregon State University
+  - name: Margaret O'Brien
+    affiliation: University of California, Santa Barbara
+    orcid: 0000-0002-1693-8322
+  - name: Ken Ramsey
+    affiliation: New Mexico State University
+  - name: Inigo San Gil
+    affiliation: University of New Mexico
+  - name: Mark Servilla
+    affiliation: University of New Mexico
+  - name: Wade Sheldon
+  - name: Phillip Tarrant
+  - name: Theresa Valentine
+  - name: John Vande Castle
+  - name: Kristin Vanderbilt
+    affiliation: University of New Mexico
+  - name: Jonathan Walsh
+  - name: Yang Xia
+    affiliation: University of Kansas
+  - name: LTER Network Information Management Committee
+    affiliation: Various
+    roles: [conceptualization, editing]
+abstract: This book presents "best practice" recommendations for creating metadata documents in the Ecological Metadata Language (EML), a widely accepted standard for research metadata exchange in the environmental sciences. The document focuses the most common use-cases for EML and recommends content and formatting for its most important and frequently-used metadata elements. As such, these recommendations can be applied to most research datasets that include EML metadata. There are also recommendations specific to the U.S. LTER Network and Environmental Data Initiative (EDI) repository. This is Version 3 of the book, updated in 2017 by the EML Best Practices working group of the LTER Network Information Management Committee.
+description: These recommendations for creating EML metadata documents can be applied to most research datasets. This is Version 3 (2017), written by the LTER/EDI EML Best Practices Working Group. Find earlier versions [here](../../history.qmd).
+license: CC BY
+keywords:
+  - data
+  - metadata
+  - publishing
+  - guide
+  - repository
+  - LTER Network
+  - Environmental Data Initiative
+citation: 
+  container-title: Environmental Data Initiative
+  doi: 10.5555/12345678
+categories: draft
+image: ../../img/book.svg
+---

@@ -1,0 +1,76 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "EDI Dataset Preparation Guides"
+  author: "Environmental Data Initiative and colleagues"
+  description: "Community-developed guides for preparing and publishing datasets in the environmental sciences, and similar contexts, using the Ecological Metadata Language (EML)."
+  date: "2022-05-25"
+  favicon: edi-logo.png
+  site-url: https://ediorg.github.io/dataset_preparation_guides
+  repo-url: https://github.com/ediorg/dataset_preparation_guides
+  repo-branch: main
+  repo-actions: [edit, issue]
+  navbar:
+    search: true
+    logo: edi-logo.png
+  chapters:
+    - index.qmd
+    - about.qmd
+    - contributing.qmd
+    - history.qmd
+
+    - part: guide-eml-bp/book.qmd
+      chapters:
+        - guide-eml-bp/preface.qmd
+        - guide-eml-bp/chapter-01-introduction-to-eml.qmd
+        - guide-eml-bp/chapter-02-metadata-and-dataset-design-principles.qmd
+        - guide-eml-bp/chapter-03-general-dataset-information.qmd
+        - guide-eml-bp/chapter-04-people-and-organizations-responsibleparty.qmd
+        - guide-eml-bp/chapter-05-the-project-tree.qmd
+        - guide-eml-bp/chapter-06-data-access-and-usage-rights.qmd
+        - guide-eml-bp/chapter-07-keywords-coverage-and-annotations.qmd
+        - guide-eml-bp/chapter-08-citations-and-references.qmd
+        - guide-eml-bp/chapter-09-methods.qmd
+        - guide-eml-bp/chapter-10-data-entities.qmd
+        - guide-eml-bp/chapter-11-variable-descriptions-attributes.qmd
+        - guide-eml-bp/chapter-12-additional-metadata.qmd
+        - guide-eml-bp/appendix-a-specialized-elements.qmd
+        - guide-eml-bp/appendix-b-xml-schemas-and-eml.qmd
+        - guide-eml-bp/appendix-c-known-issues-and-gotchas.qmd
+
+    - part: guide-special-cases/book.qmd
+      chapters:
+        - guide-special-cases/preface.qmd
+        - guide-special-cases/code.qmd
+        - guide-special-cases/model-based.qmd
+        - guide-special-cases/images-and-docs.qmd
+        - guide-special-cases/spatial-data.qmd
+        - guide-special-cases/moving-platforms.qmd
+        - guide-special-cases/other-repositories.qmd
+        - guide-special-cases/large-offline.qmd
+
+    - part: guide-domain-specific/preface.qmd
+      chapters:
+        - guide-domain-specific/ecocom.qmd
+        - guide-domain-specific/hymet.qmd
+        - guide-domain-specific/soil-carbon.qmd
+    - references.qmd
+
+execute:
+  freeze: auto
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: flatly
+    highlight-style: pygments
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+#  pdf:
+#    documentclass: scrreprt
+
+
+

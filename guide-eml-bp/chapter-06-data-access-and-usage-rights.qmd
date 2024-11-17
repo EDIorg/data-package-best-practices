@@ -1,0 +1,169 @@
+# Data access and usage rights {#sec-chapter-6}
+
+The primary purpose of using EML to describe a dataset is to make the data reusable. While the majority of an EML is devoted to describing the data and their origin, there are also several EML elements used to determine whether, how, and by whom the data should be used. 
+
+
+
+1. Permission to access the dataset itself is set in the &lt;**access**> element. These permissions are decided by the data contributor and the publisher (usually a repository), and open access permissions are usually recommended. The EML &lt;**access**> element is being deprecated in favor of repository-specific access functions, but is still useful for compatibility with some systems.
+2. The method for distributing a dataset and its associated data entities is described in the &lt;**distribution**> element. Generally datasets are shared by distribution of digital files over the internet using URLs, but there are other methods to consider.
+3. Licensing of the dataset and associated usage rights (or intellectual rights) are communicated in the &lt;**intellectualRights**> and &lt;**licensed**> elements. These elements describe the legal requirements and other policies and expectations for use of the data once it is obtained. Open licenses with minimal restrictions on data use are usually recommended for research datasets.
+
+These sections of EML are described in order below.
+
+
+## Permission to access the dataset (&lt;access>)
+
+An &lt;**access**> element contains a list of rules defining access permissions for an EML document’s metadata and any data files (or entities) that the metadata describes. Any access rules defined must be applicable to the system where the dataset is stored. Usually, that system is a research data repository. See Example 6.1 below if you plan to construct your own access element. With the exception of certain sensitive information, metadata should be publicly accessible.
+
+In EML 2.1, &lt;**access**> trees were allowed at two places: as the first child of the &lt;**eml:eml**> root element (at the same level as &lt;**dataset**>) for controlling access to the entire document, and in a data entity &lt;**distribution**> element for controlling access to the data entity. The &lt;**access**> element is now deprecated in EML 2.2 and access control is transitioning to repository specific applications. Nevertheless, the &lt;**access**> element is still available in EML 2.2 for backward compatibility and EML preparers should note that if &lt;**access**> is omitted some repositories will presume that only the dataset submitter should be allowed access.
+
+*Context note: The EDI repository still recommends including the &lt;**access**> element as the first child of the root (**&lt;eml:eml>**) element and uses an [access control format](https://edirepository.org/resources/access-control) that conforms to the KNB system of using the LDAP “distinguishedName (dn)” for an individual, as in “uid=userID,o=EDI,dc=edirepository,dc=org.” Public access is recommended, but a [temporary embargo on the data entities](https://edirepository.org/about/edi-policy) may be requested with certain exceptions.*
+
+Example 6.1: An &lt;**access**> element for the EDI repository allowing full permission (“all”) to the “userID” user that uploaded the dataset, and read access to all other users (“public”).
+
+
+```xml
+<access authSystem="https://pasta.edirepository.org/authentication" order="allowFirst" scope="document" system="https://pasta.edirepository.org">
+  <allow>
+    <principal>uid=userID,o=EDI,dc=edirepository,dc=org</principal>
+    <permission>all</permission>
+  </allow>
+  <allow>
+    <principal>public</principal>
+    <permission>read</permission>
+  </allow>
+</access>
+```
+
+
+
+## Distribution of data entities (&lt;distribution>)
+
+The &lt;**distribution**> element provides methods to obtain either the data entities themselves, metadata records, or further resources related to the dataset. This element can appear in many places in an EML document. At the dataset level (direct child of &lt;**dataset**>) it would provide a method to obtain the dataset itself. At the entity level (e.g. within a &lt;**dataTable**> element) the element provides a method to obtain the data entity files. The &lt;**distribution**> element has one of three children for describing the location of the resource: &lt;**online**>, &lt;**offline**>, and &lt;**inline**>.
+
+The &lt;**online**> element describes resources distributed over the internet. Distribution via a URL is recommended and will usually be the case when publishing to a research data repository. The &lt;**online**> element may contain two sub elements, &lt;**url**>, populated with the URL for the resource, and &lt;**onlineDescription**>, which describes the online resource and is optional. Any &lt;**url**> element should have an optional **function** attribute which can be set to either “download” or “information.” When **function=“download”**, accessing the URL directly streams the data object for download. When **function=“information”**, accessing the URL leads to a website such as a data catalog, intended-use page, or other address that provides information about downloading the object but doesn’t directly return the data stream. If the **function** attribute is omitted, then “download” is implied. If a data entity can be distributed via database connection, the &lt;**connection**> child element is also permitted as an alternative to &lt;**url**>, though this is rarely used.
+
+*Context note: For an EML dataset to be accepted into the EDI repository, it must include a distribution URL at the entity level (e.g., /eml:eml/dataset/dataTable/physical/distribution/url) with a function attribute having the value “download” (or empty, which defaults to “download”). This URL may be added before uploading the EML file by [adding static links manually](https://edirepository.org/resources/uploading-with-static-data-links) or with ezEML, or can be added upon upload to the repository using the web-based portal interface. The EDI repository system also has alternatives for uploading data entities if you do not have a method to deliver entities via URL (http). More details are available [here](https://edirepository.org/resources/publishing-a-data-package), or contact EDI for information.*
+
+The &lt;**offline**> element describes resources (including data entities) that are not available online and must be distributed by other means. Often this refers to very large datasets that are best distributed on physical media like hard drives. For offline resources the &lt;**offline**> element should contain at least the &lt;**mediumName**> child element to describe the medium the data is distributed on (e.g. tape, hardcopy, etc.). It may also be advisable to include the &lt;**mediumNote**> element to describe how and where resources can be obtained in the offline format.
+
+*Context note: Recommendations for handling [large datasets in EDI](https://ediorg.github.io/data-package-best-practices/large-data-sets.html). Contact [EDI support](mailto:support@edirepository.org).*
+
+An &lt;**inline**> element can contain data that is stored directly within the EML document. This data can be included as text or a string that can be parsed by the user. In general, including data in &lt;**inline**> elements is not recommended because it makes data access more difficult for users.
+
+At the dataset level the &lt;**distribution**> element should be used to distribute metadata or other information, not for the download of data or related resources. Therefore, include &lt;**url**> elements with the \@**function** attribute indicating an informational resource (`function=“information”`) with links to resources that provide information about the entire dataset instead of a specific data entity. URLs provided here may point back to the researcher or site’s local information page or data catalog record. When uploading to a research data repository this element may be populated with a URL pointing to the dataset’s online address at the repository.
+
+*Context note: The EDI repository will add a &lt;distribution> element at the dataset level that includes the dataset’s DOI which points to the dataset landing page within the repository.*
+
+Example 6.2: A &lt;**distribution**> element at the dataset level that refers to a research site’s data catalog entry for a dataset.
+
+
+```xml
+<distribution id="frs-1" scope="system" system="https://frs.fictate.edu/data">
+  <online>
+    <onlineDescription>frs-1 Data Catalog Page</onlineDescription>
+    <url function="information">
+      http://frs.ficstate.edu/data/frs-1.htm
+    </url>
+  </online>
+</distribution>
+```
+
+
+An entity level &lt;**distribution**> element should contain information on how that specific data entity (e.g., data table) can be accessed. It is most common, and recommended, to make data entities available for download over the the internet with a URL. Therefore, include &lt;**url**> elements with the “download” attribute (`function=“download”`) containing links that will stream the data object for download by the user. In a research data repository the download URLs are managed by the repository itself and will usually be added upon publication of the dataset. As mentioned above, the &lt;**connection**> element is available as an alternative to &lt;**url**> for database connections. Note that in EML 2.1 an &lt;**access**> element is also permitted within entity level &lt;**distribution**> elements to control access to the entity. See the access section above for more information.
+
+*Context note: For all data uploaded to EDI the data access URL is inserted during the submission process using the fully qualified data entity ID. However, for automated data submission to EDI this element may be [used for staging data on a local server.](https://edirepository.org/resources/uploading-with-static-data-links) *
+
+Example 6.3: A &lt;**distribution**> element at the data entity level. This is an example of how a data repository (EDI in this case) might distribute a published data entity via a download URL.
+
+
+```xml
+<dataTable>
+  <physical>
+    ...
+    <distribution>
+      <online>
+        <url function="download"> https://pasta.lternet.edu/package/data/eml/frs/36/5/d22ec5961958e900a65fb1d402132c89
+        </url>
+      </online>
+    </distribution>
+  </physical>
+  ...
+</dataTable>
+```
+
+
+
+## Licensing and intellectual rights (&lt;licensed>, &lt;intellectualRights>)
+
+Two elements are available to govern licensing and data usage rights: &lt;**licensed**> and &lt;**intellectualRights**>. It is recommended that licensing, policies, and expectations for use of published datasets be clearly articulated in these elements. In general, research datasets should be released with the fewest restrictions on use possible. Information in these elements may be scrutinized by journal reviewers and funding agencies when datasets are cited in papers or proposals.
+
+The &lt;**licensed**> element was added in EML 2.2.0 and provides a structured approach for including common licenses. It is strongly recommended to choose community standard licenses for published datasets and describe them in &lt;**licensed**> using the &lt;**licenseName**>, &lt;**url**>, and &lt;**identifier**> elements as shown in Example 6.5. The System Package Data Exchange standard (SPDX) provides a vocabulary of machine-interpretable license URLs, and the EML schema recommends populating the &lt;**url**> element with values from this list ([https://spdx.org/licenses/](https://spdx.org/licenses/)). Creative Commons  ([https://creativecommons.org](https://creativecommons.org)) offers a number of well-established licenses that are commonly used and appropriate for research datasets, and these can be readily found in the SPDX list.
+
+The &lt;**intellectualRights**> element provides a free text field to explain data use policies. It is a **TextType** element (see [Appendix B](appendix-b-xml-schemas-and-eml.qmd)) and thus can be formatted with &lt;**section**>, &lt;**para**> and other formatting elements. Use this element to clearly describe the policies and expectations for use of the dataset, particularly those not already stated in the dataset license. These policies and expectations should match those agreed upon by the dataset creators and affiliated institutions, funding agencies, and/or research networks. If data access at the repository level or in &lt;**access**> elements is different than any policy articulated here (e.g. restricted-access packages), explain why and provide expectations or a timeframe for data release.
+
+*Context note: In-depth discussion of licensing data may be found at [EDI](https://edirepository.org/resources/licensing-data), the [LTER Network Data Access Policy](https://lternet.edu/data-access-policy/#:~:text=LTER%20data%20and%20metadata%20may,credited%20for%20the%20original%20creation.), and the respective recommended public licenses ([open access with attribution](https://spdx.org/licenses/CC-BY-4.0.html), [data in public domain](https://spdx.org/licenses/CC0-1.0.html)).*
+
+*Context note: If no &lt;intellectualRights> or &lt;licensed> element is included EDI will insert text that releases data under “CC-0”. The LTER Network-wide default policy is “CC-BY.” Please consult those organizations for more information and more details.*
+
+Example 6.4: An &lt;**intellectualRights**> element populated with text following the LTER Network data use policy. This TextType element is formatted with &lt;**section**> and &lt;**para**> elements.
+
+
+```xml
+<intellectualRights>
+  <section>
+    <title>Data Policy</title>
+    <para>
+      This data package is released to the "public domain" under
+      Creative Commons CC0 1.0 "No Rights Reserved" (see:
+      https://creativecommons.org/publicdomain/zero/1.0/). It is considered
+      professional etiquette to provide attribution of the original work if
+      this data package is shared in whole or by individual components. A
+      generic citation is provided for this data package on the website
+      https://portal.edirepository.org (herein "website") in the summary
+      metadata page. Communication (and collaboration) with the creators of
+      this data package is recommended to prevent duplicate research or
+      publication. This data package (and its components) is made available
+      "as is" and with no warranty of accuracy or fitness for use. The
+      creators of this data package and the website shall not be liable for
+      any damages resulting from misinterpretation or misuse of the data
+      package or its components. Periodic updates of this data package may
+      be available from the website. Thank you.
+    </para>
+  </section>
+</intellectualRights>
+```
+
+
+Example 6.5: A &lt;**licensed**> element populated with information for the CC-BY license.
+
+
+```xml
+<licensed>
+  <licenseName>Creative Commons Attribution 4.0 International</licenseName>
+  <url>https://spdx.org/licenses/CC-BY-4.0</url>
+  <identifier>CC-BY-4.0</identifier>
+</licensed>
+```
+
+
+
+## XPaths referenced in this chapter
+
+Dataset access (recommended by EDI): **/eml:eml/access**
+
+Data entity access (deprecated): **/eml:eml/dataset/dataTable/physical/distribution/access**
+
+Dataset distribution: **/eml:eml/dataset/distribution**
+
+Dataset distribution function attrib: **/eml:eml/dataset/distribution/\@function=”information”**
+
+Entity distribution: **/eml:eml/dataset/dataTable/physical/distribution**
+
+URL for entity distribution: **/eml:eml/dataset/dataTable/physical/distribution/online/url**
+
+Licensing element: **/eml:eml/dataset/licensed**
+
+License name **/eml:eml/dataset/licensed/licenseName**
+
+Intellectual rights: **/eml:eml/dataset/intellectualRights**

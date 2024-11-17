@@ -1,0 +1,16 @@
+# History and early versions
+
+[This repository](https://github.com/EDIorg/data-package-best-practices) was initiated in late 2019, after the EML 2.2 release [@jones_ecological_2019]. Prior to this there were several efforts to create guidance documents for creating research metadata in EML, starting with the "Best Practices for Dataset Metadata in Ecological Metadata Language" guide. Since that time, additional guides for a more diverse set of research metadata use cases have been added. Some versions of these guides are published in accessible form, and some are not. Below we have collected historical information and, where possible, accessible copies of early versions these guides.
+
+**EML Best Practices**
+
+* The first "BPs" (and the origins of this collection) were focused on the use of the EML metadata schema, and created by the LTER data managers.
+  - *EML Best Practices, Version 1*, 2005: current whereabouts unknown 
+* Over time, that document was expanded to include specifics about data types and practices of the LTER related to the then-nascent PASTA system.
+  - *EML Best Practices, Version 2*, 2012?: current whereabouts unknown  
+* In 2017, the newly established [EDI](https://edirepository.org) repository (established in 2016) revised the EML BP to general material about use of the EML spec.
+  - *EML Best Practices, Version 3*, 2017: [HTML pages](./guide-eml-bp/archive/book.qmd), [PDF version](https://drive.google.com/file/d/1HaoRXPjCtDueIJ-IzflktglYJzIIUkxH/view?usp=sharing)
+- This repository was created in 2019 to house that and other data package recommendations as gh-pages. Some minor modifications were made to the *EML Best Practices, Version 3*, document after this was initiated. See the repository history for details.
+- In 2023 and 2024, the EML Best Practices working group re-convened to produce *EML Best Practices, Version 4*, which will be published soon.
+
+

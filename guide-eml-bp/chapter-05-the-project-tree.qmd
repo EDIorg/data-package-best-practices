@@ -1,0 +1,87 @@
+# The project tree {#sec-chapter-5}
+
+Use the &lt;**project**> tree to describe the project under which the dataset was created. This element is an EML ResearchProjectType (see [Appendix B](appendix-b-xml-schemas-and-eml.qmd)) and it is therefore possible to include a large range of structured child elements within a **&lt;project>** tree. We recommend focusing on a few key descriptive child elements (project title, abstract, and key personnel), and funding information, which are described below. There are optional child elements for describing the study area and project design (&lt;**studyAreaDescription**> and &lt;**designDescription**>), but if those descriptions are important and can be kept brief, we recommend putting them in the project abstract instead (**/eml:eml/dataset/project/abstract**).
+
+The &lt;**title**> and &lt;**personnel**> elements are required for any project tree. The &lt;**title**> element should distinctly identify the project. If the project is supported by a grant from a funding agency (NSF, for example) the project may already have a title that can be used for this element. If not, choose something concise and meaningful to a dataset user. Personnel associated with the project, such as principal investigators, should be included in one or more &lt;**personnel**> elements, which are **ResponsibleParty** XML types (described in [Appendix B](appendix-b-xml-schemas-and-eml.qmd)). A &lt;**personnel**> element must contain a child &lt;**role**> element, so include project personnel roles (principal investigator, co-PI, etc.) here. The project &lt;**abstract**> element is a brief, clearly-written overview of the project. It may contain information about the project objectives, study design, location, and other relevant details. The project &lt;**title**> and &lt;**abstract**> elements are essentially the same as elements presented in Chapter 3, while the &lt;**personnel**> element is similar to &lt;**associatedParty**> in Chapter 4. Guidelines presented in those sections also apply here.
+
+It is strongly recommended to describe project funding using the &lt;**award**> element and its child elements (&lt;**funderName**>, &lt;**funderIdentifier**>, &lt;**awardNumber**>, etc.). These provide a machine-interpretable description of the funding support for the project, including funding agency and grant number. For the optional &lt;**funderIdentifier**>, use the funding agency's [ROR ID](https://ror.org/) if they have one. If not, see if they have a [Crossref ID](https://gitlab.com/crossref/open_funder_registry), or failing that, a [Wikidata ID](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID). These identifiers should be entered in the form of a URL, e.g., [https://ror.org/021nxhr62](https://ror.org/021nxhr62). The &lt;**funding**> element (**/eml:eml/dataset/project/funding/**) can be used to provide a nuanced, human-friendly version of funding information. It is a **TextType** element (see [Appendix B](appendix-b-xml-schemas-and-eml.qmd)) and thus can be formatted with &lt;**section**>, &lt;**para**> and other formatting elements.
+
+It is common for research activities to have multiple sources of support, either as a series of grants awarded sequentially over time, or multiple grants supporting research at the same time. To describe a project supported by a series of awards (such as an LTER site), you may include the most recent award and PIs directly within the &lt;**project**> and previous awards and PIs as &lt;**relatedProject**> elements (or even simply include additional &lt;**award**> elements). For projects with multiple simultaneous funding sources, you may nest as many &lt;**relatedProject**> elements within the &lt;**project**> tree as needed. Any nested &lt;**relatedProject**> elements can be populated in the same way as the parent &lt;**project**> element, but there is no standard practice for this, so do what works for you or your research organization. Be sure to include appropriate &lt;**funding**> and &lt;**award**> elements in any &lt;**project**> or &lt;**relatedProject**> element to make clear how projects are supported.
+
+Example 5.1: A &lt;**project**> element describing an NSF-funded environmental monitoring study with two principal investigators. Note the &lt;**award**>, which is a high priority for any funded project.
+
+
+```xml
+<project>
+  <title>FRS basic monitoring program</title>
+  <personnel>
+    <individualName>
+      <salutation>Dr.</salutation>
+      <givenName>Eva</givenName>
+      <surName>Scientist</surName>
+    </individualName>
+    <electronicMailAddress>eva@ficstate.edu</electronicMailAddress>
+    <userId system="https://orcid.org">
+      https://orcid.org/0000-0000-0000-0000
+    </userId>
+    <role>principalInvestigator</role>
+  </personnel>
+  <personnel>
+    <individualName>
+      <givenName>Monica</givenName>
+      <surName>Techy</surName>
+    </individualName>
+    <electronicMailAddress>monica@ficstate.edu</electronicMailAddress>
+    <userId system="https://orcid.org">
+      https://orcid.org/0000-0000-0000-0000
+    </userId>
+    <role>principalInvestigator</role>
+  </personnel>
+  <abstract>
+    <para>
+      The FRS basic monitoring program consists of monitoring of
+      arthropod populations, plant net primary productivity, and bird
+      populations. Monitoring takes place at 3 locations, 4 times a year.
+      Climate parameters are continuously measured at all stations.
+    </para>
+  </abstract>
+  <funding>
+    <para>
+      Funding is from the National Science Foundation under award #1546024 (2016-02-22 to 2021-01-28).
+    </para>
+  </funding>
+  <award>
+    <funderName>National Science Foundation</funderName>
+    <funderIdentifier>https://ror.org/021nxhr62</funderIdentifier>
+    <awardNumber>1546024</awardNumber>
+    <title>Scientia Arctica: A Knowledge Archive for Discovery and Reproducible Science in the Arctic</title>
+    <awardUrl>
+https://www.nsf.gov/awardsearch/showAward?AWD_ID=1546024
+    </awardUrl>
+  </award>
+</project>
+```
+
+
+
+## XPaths referenced in this chapter
+
+The project tree: **/eml:eml/dataset/project**
+
+Project title: **/eml:eml/dataset/project/title**
+
+Project abstract: **/eml:eml/dataset/project/abstract**
+
+Project personnel: **/eml:eml/dataset/project/personnel**
+
+Project funding: **/eml:eml/dataset/project/funding**
+
+Funding award: **/eml:eml/dataset/project/award**
+
+Award funder name: **/eml:eml/dataset/project/award/funderName**
+
+Funding award title: **/eml:eml/dataset/project/award/title**
+
+Funding award number: **/eml:eml/dataset/project/award/awardNumber**
+
+A related project: **/eml:eml/dataset/project/relatedProject**

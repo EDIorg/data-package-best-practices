@@ -1,4 +1,15 @@
-# Ecological community surveys
+---
+title: Ecological community survey data (ecocomDP)
+date: last-modified
+author:
+  - name: Margaret O'Brien
+    affiliation: University of California, Santa Barbara
+    orcid: 0000-0002-1693-8322
+    roles: [conceptualization, writing, editing]
+description: This guide covers how to format community survey and biodiversity data to the "ecocomDP" harmonized data model. The ecocomDP standard and associated tools are a community-supported project involving the LTER Network, NEON, and others.
+categories: draft
+image: ../img/journal-text.svg
+---
 
 DRAFT DRAFT DRAFT
 

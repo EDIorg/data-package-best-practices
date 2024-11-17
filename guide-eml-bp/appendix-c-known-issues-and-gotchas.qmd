@@ -1,0 +1,11 @@
+# Appendix C. Known issues and gotchas in EML {#sec-appendix-c .unnumbered}
+
+Just bullet points for now
+
+
+
+* Custom units & varying capitalization of an attribute
+* Validator problems
+* Id and references - RP id cannot be re-used. 
+* Referring to citations multiple times
+* EDI overwrites entity \@**id** attribute

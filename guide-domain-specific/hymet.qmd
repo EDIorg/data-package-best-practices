@@ -1,3 +1,17 @@
+---
+title: Hydrology and meteorology data (hymetDP)
+date: last-modified
+author:
+  - name: Gregory E. Maurer
+    affiliation: New Mexico State University
+    orcid: 0000-0002-3007-8058
+    email: gmaurer@nmsu.edu
+    roles: [conceptualization, writing, editing]
+description: Work in progress. This guide covers how to format hydrology and meteorology data, and data from environmental sensor networks in general, to the "hymetDP" harmonized data model.
+categories: placeholder
+image: ../img/journal-text.svg
+---
+
 # Hydrology and Meteorology Data
 
 ## Introduction

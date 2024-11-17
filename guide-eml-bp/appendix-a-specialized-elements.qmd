@@ -1,0 +1,535 @@
+# Appendix A. Specialized elements {#sec-appendix-a .unnumbered}
+
+This appendix covers “specialized” EML elements that are not recommended for most EML applications. These elements are not deprecated or obsolete, but they do have limited use-cases and are fairly rarely used. Best practices for their use have not been determined. Much of the text and most examples come from earlier versions of the EML Best Practices document. 
+
+
+## Geographic Coverage
+
+There are multiple EML elements that can be used to describe the geographic coverage of a dataset. The highest priority is to define the geographic coverage at the dataset level as described in Chapter 7. Less commonly used are geographic coverage elements within methods and more complex boundaries described by datasetGPolygon, both described below.
+
+
+### methods/spatialSamplingUnits/&lt;geographicCoverage>
+
+In the dataset/methods element, individual sampling sites may be entered under &lt;**spatialSamplingUnits**>, each site in a separate coverage element (see below).
+
+Example A.1: geographicCoverage under spatialSamplingUnits
+
+
+```xml
+<spatialSamplingUnits>
+  <coverage>
+    <geographicDescription>sitenumber 1</geographicDescription>
+    <boundingCoordinates>
+      <westBoundingCoordinate>-112.2</westBoundingCoordinate>
+      <eastBoundingCoordinate>-112.2</eastBoundingCoordinate>
+      <northBoundingCoordinate>33.5</northBoundingCoordinate>
+      <southBoundingCoordinate>33.5</southBoundingCoordinate>
+    </boundingCoordinates>
+  </coverage>
+  <coverage>
+    <geographicDescription>sitenumber 2</geographicDescription>
+    <boundingCoordinates>
+      <westBoundingCoordinate>-111.7</westBoundingCoordinate>
+      <eastBoundingCoordinate>-111.7</eastBoundingCoordinate>
+      <northBoundingCoordinate>33.6</northBoundingCoordinate>
+      <southBoundingCoordinate>33.6</southBoundingCoordinate>
+    </boundingCoordinates>
+  </coverage>
+  <coverage>
+    <geographicDescription>sitenumber 3</geographicDescription>
+    <boundingCoordinates>
+      <westBoundingCoordinate>-112.1</westBoundingCoordinate>
+      <eastBoundingCoordinate>-112.1</eastBoundingCoordinate>
+      <northBoundingCoordinate>33.7</northBoundingCoordinate>
+      <southBoundingCoordinate>33.7</southBoundingCoordinate>
+    </boundingCoordinates>
+  </coverage>
+</spatialSamplingUnits>
+```
+
+
+
+### &lt;datasetGPolygon>
+
+The &lt;**datasetGPolygon**> element may be included when the required bounding box does not adequately describe the study location, for example, if an irregular polygon is necessary to describe the study area, or there is an area within the bounding box that is excluded. This element is optional, and has two child elements.
+
+&lt;**datasetGPolygonOuterGRing**>: This is the outer part of the polygon shape that encompasses the broadest area of coverage. It can be created either by a gRing (list of points) or 4 or more &lt;**gRingPoint**>s. Documentation for an FGDC G-Ring states that four points are required to define a polygon, and the first and last should be identical. However this is not enforceable in XML Schema, and so in EML a minimum of three &lt;**gRingPoint**>s is required to define the polygon, and it can be assumed that since a polygon is closed, the last point can be joined to the first.
+
+The &lt;**datasetGPolygonExclusionGRing**> is the closed, non-intersecting boundary of a void area (or hole in an interior area). This could be the center of the doughnut shape created by the &lt;**datasetGPolygon**>. It can be created either by a gRing (list of points) or one or more &lt;**gRingPoint**>s. This is used if there is an internal polygon to be excluded from the outer polygon, e.g, a lake to be excluded from the broader geographic coverage.
+
+*Context note: It is somewhat rare for repository systems to display complex geographic coverage elements. EDI, for example, does not display datasetGPolygon elements in dataset landing pages.*
+
+
+## Taxonomic coverage
+
+
+### &lt;taxonomicSystem> child elements
+
+The optional **taxonomicCoverage/taxonomicSystem** trees may be used to detail the use of taxonomic identification resources and on the identification process. &lt;**classificationSystem**> should be used to list authoritative taxonomic databases (such as ITIS, IPNI, NCBI, Index Fungorum, or USDA Plants) or classification systems used for taxonomic identification. Documentation and relevant literature regarding, used authoritative sources, including URL’s pointing to these sources, should be listed in &lt;**classificationSystemCitation**>. Exceptions to, or deviation from, used authoritative sources should be explained in &lt;**classificationSystemModification**>.
+
+Methods and protocols used for taxonomic classification should be detailed using the &lt;**identifierName**> and &lt;**taxonomicProcedures**> tags. Examples of methods that should be listed in &lt;**taxonomicProcedures**> are details of specimen processing, keys, and chemical or genetic analyses. &lt;**taxonomicCompleteness**> may be used to document the status, estimated importance, and reason for incomplete identifications.
+
+Example A.2:  Taxonomic system
+
+
+```xml
+<taxonomicSystem>
+  <classificationSystem>
+    <classificationSystemCitation>
+      <title>Integrated Taxonomic Information System (ITIS)</title>
+      <creator>
+        <organizationName>
+          Integrated Taxonomic Information System
+        </organizationName>
+        <onlineUrl>http://www.itis.gov/</onlineUrl>
+      </creator>
+      <generic>
+        <publisher>
+          <organizationName>
+            Integrated Taxonomic Information System
+          </organizationName>
+          <onlineUrl>http://www.itis.gov/</onlineUrl>
+        </publisher>
+      </generic>
+    </classificationSystemCitation>
+  </classificationSystem>
+  <identifierName>
+    <references>pers-1</references>
+  </identifierName>
+  <taxonomicProcedures>
+    All individuals where identified and stored in alcohol, except 
+    for one voucher specimen for each species which was tagged and 
+    pinned.
+  </taxonomicProcedures>
+</taxonomicSystem>
+```
+
+
+
+## Optional &lt;methods> child elements
+
+
+## &lt;sampling>
+
+This optional tree can contain very specific information about the study site and associated sampling locations and frequencies. However, we recommend that descriptive geographic and temporal coverage elements should also be available at the dataset level to ensure dataset users have all information at their fingertips. The &lt;**studyExtent**> child element provides specific information about the temporal and geographic extent of the study such as domains of interest in addition to geographic, temporal, and taxonomic coverage of the study site. This information can be provided as either simple text using &lt;**description**> or by including detailed temporal or geographic &lt;**coverage**> elements describing discrete time periods sampled or the sub-regions sampled within the overall geographic bounding box that was described at the &lt;**dataset**> level. The &lt;**samplingDescription**> element is an alternative TextType element available as a child to &lt;**sampling**> that may be formatted similarly to the sampling methods section of a journal article.
+
+
+## &lt;qualityControl>
+
+The optional &lt;**qualityControl**> element describes actions taken to either control or assess the quality of data resulting from the methods used to create the dataset. For a basic description under &lt;**qualityControl**>, use the &lt;**description**> element. The &lt;**citation**> and &lt;**protocol**> elements are also available to define detailed QA/QC protocols, but keep in mind that referencing external sources may fail in the future.
+
+Example A.3: A methods element with some optional child elements &lt;sampling> and &lt;qualityControl>. Note the **sampling/spatialSamplingUnits/geographicCoverage** element.
+
+
+```xml
+<methods>
+  <methodStep>
+    <description>
+      <section>
+        <title>
+          Pitfall trap sampling for ground arthropod biodiversity monitoring
+        </title>
+        <para>Supplies used: pitfall traps (P-16 plastic Solo cups with lids) 
+          metal spades and large bulb planters (to dig holes in which to
+          put traps) 70% ethanol (to preserve specimens) Qorpak glass jars
+          with lids from the VWR Corporation, 120ml (4oz), cap size 58-400 
+          (comes included), Qorpak no. 7743C, VWR catalog no.
+          16195-703.</para>
+        <para>Between 10 and 21 traps are placed at each site in suitable
+          location.</para>
+        <para>All trapped taxa counted and measured (body length), most taxa
+          identified to Family, ants to Genus</para>
+      </section>
+    </description>
+    <instrumentation>SBE MicroCAT 37-SM (S/N 1790); manufacturer:
+      Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Conductivity
+      (accuracy: 0.0003 S/m, readability: 0.00001 S/m, range: 0 to 7 S/m);
+      last calibration: Feb 28, 2001</instrumentation>
+    <instrumentation>SBE MicroCAT 37-SM (S/N 1790); manufacturer:
+      Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Pressure
+      (water) (accuracy: 0.2m, readability: 0.0004m, range: 0 to 20m); last
+      calibration: Feb 28, 2001</instrumentation>
+    <instrumentation>SBE MicroCAT 37-SM (S/N 1790); manufacturer:
+      Sea-Bird Electronics (model: 37-SM MicroCAT); parameter: Temperature
+      (water) (accuracy: 0.002°C, readability: 0.0001°C, range: -5 to 35°C);
+      last calibration: Feb 28, 2001</instrumentation>
+  </methodStep>
+  <sampling>
+    <studyExtent>
+      <description>
+        <para>Arthropod pit fall traps are placed in three different
+          locations four times a year</para>
+      </description>
+    </studyExtent>
+    <samplingDescription>
+      <para>Six traps were set in a transect at each location.</para>
+    </samplingDescription>
+    <spatialSamplingUnits>
+      <coverage>
+        <geographicDescription>site number 1</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-112.234566</westBoundingCoordinate>
+          <eastBoundingCoordinate>-112.234566</eastBoundingCoordinate>
+          <northBoundingCoordinate>33.534566</northBoundingCoordinate>
+          <southBoundingCoordinate>33.534566</southBoundingCoordinate>
+        </boundingCoordinates>
+      </coverage>
+      <coverage>
+        <geographicDescription>site number 2</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-111.745677</westBoundingCoordinate>
+          <eastBoundingCoordinate>-111.745677</eastBoundingCoordinate>
+          <northBoundingCoordinate>33.64577</northBoundingCoordinate>
+          <southBoundingCoordinate>33.64577</southBoundingCoordinate>
+        </boundingCoordinates>
+      </coverage>
+      <coverage>
+        <geographicDescription>site number 3</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-112.167899</westBoundingCoordinate>
+          <eastBoundingCoordinate>-112.16799</eastBoundingCoordinate>
+          <northBoundingCoordinate>33.76799</northBoundingCoordinate>
+          <southBoundingCoordinate>33.76799</southBoundingCoordinate>
+        </boundingCoordinates>
+      </coverage>
+    </spatialSamplingUnits>
+  </sampling>
+  <qualityControl>
+    <description>
+      <para>All specimens are archived for future reference. Quality
+        control during data entry is achieved with standard database
+        techniques of pulldowns that prevent typos and constraints.
+        Scientists inspect standard data summary statistics after data
+        entry.</para>
+    </description>
+  </qualityControl>
+</methods>
+```
+
+
+Example A.4: methods, with dataSource
+
+
+```xml
+<methods>
+  <methodStep>
+    <description>
+      <section>
+        <para>We utilize NPP data collected from 1906 to 2006 from the ONL
+          LTER site. The ONL NPP data unit definition is kg/m\^2/yr. This      
+          unit does not require conversion.</para>
+      </section>
+    </description>
+    <dataSource>
+      <title>NPP data from ONL 1906 to 2006</title>
+      <creator>
+        <organizationName>ONL LTER</organizationName>
+      </creator>
+      <distribution>
+        <online>
+          <onlineDescription>This online link references an EML document that describes data used in the creation of this derivative data package.
+          </onlineDescription>
+          <url function="information">
+            https://pasta.lternet.edu/package/metadata/eml/edi/15/5
+          </url>
+        </online>
+      </distribution>
+      <contact>
+        <organizationName>ONL LTER</organizationName>
+        <positionName>ONL Information Manager</positionName>
+        <electronicMailAddress>im@onl.lternet.edu</electronicMailAddress>
+      </contact>
+    </dataSource>
+  </methodStep>
+</methods>
+```
+
+
+
+## SpatialRaster & SpatialVector and their attributes
+
+Some examples from the earlier attributes section:
+
+The examples below show complete entity trees for &lt;**spatialVector**> and &lt;**spatialRaster**> converted via XSLT (stylesheet) from Esri metadata format. 
+
+Example A.5: Entity and attribute information for spatialVector
+
+
+```xml
+<spatialVector id="Landuse for Ficity in 1955">
+  <entityName>Landuse for Ficity in 1955</entityName>
+  <entityDescription>This GIS layer represents a reconstructed
+    generalized landuse map for the area of current Ficity around the time
+    period of 1955.</entityDescription>
+  <physical>
+    <objectName>frs-20.zip</objectName>
+    <dataFormat>
+      <externallyDefinedFormat>
+        <formatName>Esri Shapefile (zipped)</formatName>
+      </externallyDefinedFormat>
+    </dataFormat>
+    <distribution>
+      <online>
+        <onlineDescription>f1s-20 Zipped Shapefile File</onlineDescription>
+        <url function="download">http://www.fsu.edu/frs/data/frs-20.zip</url>
+      </online>
+    </distribution>
+  </physical>
+  <attributeList>
+    <attribute>
+      <attributeName>FID</attributeName>
+      <attributeDefinition>Internal feature number.</attributeDefinition>
+      <storageType typeSystem="http://www.esri.com/metadata/esriprof80.html">
+        OID
+      </storageType>
+      <measurementScale>
+        <nominal>
+          <nonNumericDomain>
+            <textDomain>
+              <definition>
+                Sequential unique whole numbers that are automatically 
+                generated.
+              </definition>
+            </textDomain>
+          </nonNumericDomain>
+        </nominal>
+      </measurementScale>
+    </attribute>
+    <attribute>
+      <attributeName>Shape</attributeName>
+      <attributeDefinition>Feature geometry.</attributeDefinition>
+      <storageType typeSystem="http://www.esri.com/metadata/esriprof80.html">
+        geometry
+      </storageType>
+      <measurementScale>
+        <nominal>
+          <nonNumericDomain>
+            <textDomain>
+              <definition>Coordinates defining the features.</definition>
+            </textDomain>
+          </nonNumericDomain>
+        </nominal>
+      </measurementScale>
+    </attribute>
+    <attribute>
+      <attributeName>Z955</attributeName>
+      <attributeDefinition>
+        This field signifies the landuse value for each polygon.
+      </attributeDefinition>
+      <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+        string
+      </storageType>
+      <measurementScale>
+        <nominal>
+          <nonNumericDomain>
+            <enumeratedDomain>
+              <codeDefinition>
+                <code>Agriculture</code>
+                <definition>Agricultural land use</definition>
+              </codeDefinition>
+              <codeDefinition>
+                <code>Urban</code>
+                <definition>Urbanized area</definition>
+              </codeDefinition>
+              <codeDefinition>
+                <code>Desert</code>
+                <definition>Unmodified area</definition>
+              </codeDefinition>
+              <codeDefinition>
+                <code>Recreation</code>
+                <definition>Recreational land use</definition>
+              </codeDefinition>
+            </enumeratedDomain>
+          </nonNumericDomain>
+        </nominal>
+      </measurementScale>
+    </attribute>
+  </attributeList>
+  <geometry>Polygon</geometry>
+  <geometricObjectCount>78</geometricObjectCount>
+  <spatialReference>
+    <horizCoordSysName>NAD_1927_UTM_Zone_12N</horizCoordSysName>
+  </spatialReference>
+</spatialVector>
+```
+
+
+Example A.6: Entity and attribute information for spatialRaster
+
+
+```xml
+<spatialRaster id="fi_24k">
+  <entityName>fi_24k</entityName>
+  <entityDefinition>
+    Fictitious State 7.5 Minute Digital Elevation Model
+  </entityDefinition>
+  <physical>
+    <objectName>frs-30.zip</objectName>
+    <dataFormat>
+      <externallyDefinedFormat>
+        <formatName>Esri binary grid</formatName>
+      </externallyDefinedFormat>
+    </dataFormat>
+    <distribution>
+      <online>
+        <onlineDescription>frs-30 zipped raster data File</onlineDescription>
+        <url function="download">http://www.fsu.edu/frs/data/frs-30.zip</url>
+      </online>
+    </distribution>
+  </physical>
+  <attributeList>
+    <attribute>
+      <attributeName>ObjectID</attributeName>
+      <attributeDefinition>Internal feature number.</attributeDefinition>
+      <storageType typeSystem="http://www.esri.com/metadata/esriprof80.html">
+        OID
+      </storageType>
+      <measurementScale>
+        <nominal>
+          <nonNumericDomain>
+            <textDomain>
+              <definition>
+                Sequential unique whole numbers that are automatically 
+                generated.
+              </definition>
+            </textDomain>
+          </nonNumericDomain>
+        </nominal>
+      </measurementScale>
+    </attribute>
+    <attribute>
+      <attributeName>Cell Value</attributeName>
+      <attributeDefinition>Elevation Value</attributeDefinition>
+      <storageType typeSystem="http://www.esri.com/metadata/esriprof80.html">
+        Integer
+      </storageType>
+      <measurementScale>
+        <ratio>
+          <unit>
+            <standardUnit>meter</standardUnit>
+          </unit>
+          <precision />
+          <numericDomain>
+            <numberType>integer</numberType>
+            <bounds>
+              <minimum exclusive="true">-5193.000000</minimum>
+              <maximum exclusive="true">14785.000000</maximum>
+            </bounds>
+          </numericDomain>
+        </ratio>
+      </measurementScale>
+    </attribute>
+    <attribute>
+      <attributeName>Count</attributeName>
+      <attributeDefinition>Count</attributeDefinition>
+      <storageType typeSystem="http://www.esri.com/metadata/esriprof80.html">
+        Integer
+      </storageType>
+      <measurementScale>
+        <ratio>
+          <unit>
+            <standardUnit>number</standardUnit>
+          </unit>
+          <precision />
+          <numericDomain>
+            <numberType>whole</numberType>
+          </numericDomain>
+        </ratio>
+      </measurementScale>
+    </attribute>
+  </attributeList>
+  <spatialReference>
+    <horizCoordSysName>NAD_1927_UTM_Zone_12N</horizCoordSysName>
+  </spatialReference>
+  <horizontalAccuracy>not available</horizontalAccuracy>
+  <verticalAccuracy>not available</verticalAccuracy>
+  <cellSizeXDirection>30.0</cellSizeXDirection>
+  <cellSizeYDirection>30.0</cellSizeYDirection>
+  <numberOfBands>1</numberOfBands>
+  <rasterOrigin>Upper Left</rasterOrigin>
+  <rows>21092</rows>
+  <columns>18136</columns>
+  <verticals>1</verticals>
+  <cellGeometry>matrix</cellGeometry>
+</spatialRaster>
+```
+
+
+
+## Tables describing all entity types
+
+Table A.1 Summary of the six entities in EML, including the type of data entity typically described with that element, how they are created and a brief description of its metadata.
+
+
+| Element name | Used for | Created from | Metadata features |
+|---|-----|----|-----|
+| dataTable | Fixed-structure tabular data objects (csv, database table, etc.) | export from code, RDBMS or spreadsheets | columns/rows named and defined, e.g., measurement and storage typing |
+| otherEntity | Data objects not described by other standard entity types (images, non-tabular data, binary files, etc.) | applications | type of entity |
+| spatialRaster | Gridded data, raster cell data, remote sensing data | applications, stylesheet conversions. See "Other Resources" | spatial organization of the raster cells, their data values, and if derived via imaging sensors, characteristics about the image and its individual bands |
+| spatialVector | Lines, points polygons, KML (if converted), ESRI shape files | applications, stylesheet conversions. See "Other Resources" | information about the vector's geometry type, count, attributes, and topology level |
+| view | Data returned from a database query | RDBMS | Recommended to handle as data table (above). |
+| storedProcedure | Data returned from a stored procedure in a database | RDBMS | Recommended to handle as data table (above) |
+
+
+Table A.2. Elements specific to each of the six entity types.
+
+| Entity Type | Typical Uses | Data entity child elements |
+|--|---|-----|
+| &lt;**dataTable**> | Tabular data objects with a fixed structure (delimited text files, simple spreadsheet, etc.) | **EntityGroup** (&lt;**entityName**> required, others recommended or optional)<br>&lt;**attributeList**> (required)<br>&lt;**constraint**><br>&lt;**caseSensitivity**><br>&lt;**numberOfRecords**> |
+| &lt;**view**> | Data returned from a database query | **EntityGroup** (&lt;**entityName**> required, others recommended or optional)<br>&lt;**attributeList**> (required)<br>&lt;**constraint**><br>&lt;**queryStatement**> (required) |
+| &lt;**storedProcedure**> | Data returned from a stored procedure in a database | **EntityGroup** (&lt;**entityName**> required, others recommended or optional)<br>&lt;**attributeList**> (required)<br>&lt;**constraint**><br>&lt;**parameter**> |
+| &lt;**otherEntity**> | Data objects not described by other standard entity types (images, non-tabular data, binary files, etc.) | **EntityGroup** (&lt;**entityName**> required, others recommended or optional)<br>&lt;**attributeList**><br>&lt;**constraint**><br>&lt;**entityType**> (required) |
+| &lt;**spatialRaster**> | Gridded data, raster cell data, remote sensing data | **EntityGroup** (&lt;**entityName**> required, others recommended or optional)<br>&lt;**attributeList**> (required)<br>&lt;**constraint**><br>&lt;**spatialReference**> (required)<br>&lt;**georeferenceInfo**><br>&lt;**horizontalAccuracy**> (required)<br>&lt;**verticalAccuracy**> (required)<br>&lt;**cellSizeYDirection**> (required)<br>&lt;**numberOfBands**> (required)<br>&lt;**rasterOrigin**> (required)<br>&lt;**rows**> (required)<br>&lt;**columns**> (required)<br>&lt;**verticals**> (required)<br>&lt;**cellGeometry**> (required)<br>&lt;**toneGradation**><br>&lt;**scaleFactor**><br>&lt;**offset**><br>&lt;**imageDescription**> |
+| &lt;**spatialVector**> | Lines, points polygons, KML (if converted), ESRI shape files | **EntityGroup** (&lt;**entityName**> required, others recommended or optional)<br>&lt;**attributeList**> (required)<br>&lt;**constraint**><br>&lt;**geometry**> (required)<br>&lt;**geometricObjectCount**><br>&lt;**topologyLevel**><br>&lt;**spatialReference**><br>&lt;**horizontalAccuracy**><br>&lt;**verticalAccuracy**> |
+
+## &lt;constraint>
+
+This element tree is found at (XPath):
+
+**/eml:eml/dataset/dataTable/constraint**
+
+**/eml:eml/dataset/view/constraint**
+
+**/eml:eml/dataset/spatialRaster/constraint**
+
+**/eml:eml/dataset/spatialVector/constraint**
+
+**/eml:eml/dataset/storedProcedure/constraint**
+
+The &lt;**constraint**> tree is for describing any integrity constraints between entities within a data package (e.g. tables), as they would be maintained in a relational management system. Use of the &lt;**constraint**> tree is encouraged when data elements contain integrity constraints from a relational database. Example TO-DO shows the constraints for the &lt;**attributeList**> in Example TO-DO. If there are constraints in which several columns are involved, these should be described in methods/qualityControl, since EML is not currently equipped to handle keys defined by multiple columns. When the &lt;**constraint**> tree is used, all of the entities that may be referenced should be in the same package. There are six child elements:
+
+&lt;**primaryKey**> is an element which declares the primary key in the entity to which the defined constraint pertains.
+
+&lt;**uniqueKey**> is an element which represents a unique key within the referenced entity. This is different from a primary key in that it does not form any implicit foreign key relationships to other entities; however it is required to be unique within the entity.
+
+&lt;**nonNullConstraint**> defines a constraint that indicates that no null values should be present for an attribute in this entity.
+
+&lt;**checkConstraint**> defines a constraint which checks a conditional clause within an entity.
+
+&lt;**foreignKey**> defines an SQL statement or other language implementation of the condition for a check constraint. Generally this provides a means for constraining the values within and among entities. It also provides the means to meaningfully link table for explanation of codes (de-normalization).
+
+&lt;**joinCondition**> defines a foreign key relationship among entities which relates this entity to another’s primary key.
+
+The &lt;**primaryKey**>, &lt;**uniqueKey**>, &lt;**nonNullConstraint**> require an additional &lt;**key**> tag defining the attribute to which this constraint applies, referenced by its id attribute (described in another area). All &lt;**ConstraintType**> entities require additional &lt;**constraintName**> and &lt;**attributeReference**> tags.
+
+Example A.7: constraint
+
+
+```xml
+<constraint id="soil_chemistry.PRIMARY">
+  <primaryKey>
+    <constraintName>PRIMARY</constraintName>
+    <key>
+      <attributeReference>soil_chemistry.ID</attributeReference>
+    </key>
+  </primaryKey>
+</constraint>
+<constraint id="soil_chemistry.FK_soil_chemistry_sites">
+  <foreignKey>
+    <constraintName>FK_soil_chemistry_sites</constraintName>
+    <key>
+      <attributeReference>soil_chemistry.site_id</attributeReference>
+    </key>
+    <entityReference>sites</entityReference>
+  </foreignKey>
+</constraint>

@@ -1,0 +1,387 @@
+# Keywords, coverage, and annotations {#sec-chapter-7}
+
+
+## Keywords (&lt;keywordSet>, &lt;keyword>)
+
+Meaningful keywords are essential metadata for describing published datasets and enhancing their discoverability. In EML documents, include keywords as &lt;**keyword**> elements nested within one or more parent &lt;**keywordSet**> elements and it is recommended to place &lt;**keywordSet**> elements as children of &lt;**dataset**> (/**eml:eml/dataset/keywordSet**). Whenever possible, it is recommended to populate a &lt;**keywordSet**> keyword terms selected from established, community-accepted controlled vocabularies (CV) or keyword lists, and then include the name or identifier of the CV or list within a &lt;**keywordThesaurus**> child element in the same &lt;**keywordSet**>. Using this same approach, research groups, institutions, or individual data managers may create and reference keyword thesauri specific to the subject matter of the data and their data management needs. Because &lt;**keyword**> elements, along with &lt;**title**> and &lt;**abstract**> elements, are frequently accessed by full-text search tools, following thoughtful, consistent keywording practices will help optimize the searchability of datasets.
+
+Individual &lt;**keyword**> elements can be categorized using the \@**keywordType** attribute, which accepts a predefined list of values. For example, it is appropriate to include meaningful keywords for geographic places (e.g. state, city, county) which can be given the ”place” attribute value. The ”theme” attribute value is commonly used to describe keywords related to research themes. Other valid \@**keywordType** values include “taxonomic”, “stratum”, and “temporal”. Using this attribute is optional and not all EML creation systems support it, but it is recommended.
+
+*Context note: Communities often have specific standards for keywords to assist in searches. For example, the LTER Network requests that datasets should include keywords for LTER core research areas (e.g. primary production), the network and three-letter site acronyms (e.g. LTER, FLS), and relevant conceptual and subject-matter keywords from the [LTER Controlled Vocabulary](https://vocab.lternet.edu/vocab/vocab/index.php). To highlight that LTER core research area and controlled vocabulary terms are present, it may be appropriate to include clearly named &lt;keywordThesaurus> elements in their &lt;keywordSet>, as suggested in Example 7.1. This practice is not well standardized in LTER network datasets at this time. Conventions vary widely by community, so be aware of the best practices employed by your site, institution, data repository, or research community.*
+
+Example 7.1: Several &lt;**keywordSet**> elements containing keywords derived from an FLS LTER site list (probably developed internally to the site), the LTER controlled vocabulary, the LTER core research areas, and the USGS Geographic Names Information System (GNIS).
+
+
+```xml
+<keywordSet>
+  <keyword keywordType="theme">FLS</keyword>
+  <keyword keywordType="theme">Fictitious LTER Site</keyword>
+  <keyword keywordType="theme">LTER</keyword>
+  <keyword keywordType="theme">Arthropods</keyword>
+  <keyword keywordType="theme">Richness</keyword>
+  <keywordThesaurus>FLS site thesaurus</keywordThesaurus>
+</keywordSet>
+<keywordSet>
+  <keyword keywordType="theme">ecology</keyword>
+  <keyword keywordType="theme">biodiversity</keyword>
+  <keyword keywordType="theme">population dynamics</keyword>
+  <keyword keywordType="theme">terrestrial</keyword>
+  <keyword keywordType="theme">arthropods</keyword>
+  <keyword keywordType="theme">pitfall trap</keyword>
+  <keyword keywordType="theme">monitoring</keyword>
+  <keyword keywordType="theme">abundance</keyword>
+  <keywordThesaurus>LTER controlled vocabulary</keywordThesaurus>
+</keywordSet>
+<keywordSet>
+  <keyword keywordType="theme">populations</keyword>
+  <keywordThesaurus>LTER core research areas</keywordThesaurus>
+</keywordSet>
+<keywordSet>
+  <keyword keywordType="place">Atigun River</keyword>
+  <keyword keywordType="place">State of Alaska</keyword>
+  <keywordThesaurus>Geographic Names Information System</keywordThesaurus>
+<keywordSet>
+```
+
+
+
+## Coverage elements (&lt;coverage>)
+
+The &lt;**coverage**> element is intended to describe a dataset’s coverage in terms of space, time, and taxonomy, and may therefore contain three types of child element: &lt;**geographicCoverage**>, &lt;**temporalCoverage**>, and &lt;**taxonomicCoverage**>. Populating these elements as recommended enables discovery by advanced search tools, and facilitates successful interpretation and reuse of the data. This best practice recommends using &lt;**coverage**> elements at the dataset level (**eml:eml/dataset/coverage**), but they may also be placed at methods, entity and attribute levels for some use cases.
+
+
+### Geographic Coverage (&lt;geographicCoverage>)
+
+The &lt;**geographicCoverage**> element describes geographic features related to the data, such as research sites or sample locations. A &lt;**coverage**> element can contain multiple &lt;**geographicCoverage**> elements, each describing a geographic feature such as a point or bounding box. Include at least one &lt;**geographicCoverage**> element per dataset, and as many as necessary to facilitate dataset discovery and evaluate fitness for use. Note, however, that this element is not designed to exhaustively describe a dataset’s spatial entities. The most common features described in &lt;**geographicCoverage**> are points and bounding boxes, but more complex spatial entities can also be defined in EML (see [Appendix A](appendix-a-specialized-elements.qmd)). 
+
+Creating a &lt;**geographicCoverage**> element to describe a point or bounding box requires two child elements: &lt;**boundingCoordinates**> and &lt;**geographicDescription**>. The &lt;**boundingCoordinates**> element defines these geographic features by listing the coordinates (longitude or latitude) defining their western, eastern, northern, and southern limits, in that order, enclosed in appropriate child elements (e.g. &lt;**westBoundingCoordinate**>, &lt;**northBoundingCoordinate**>, etc.). For bounding boxes, the north and south coordinate pair and the east and west coordinate pair will contain distinct values (Example 7.2), but for a point location these coordinate pairs must share the same value (Example 7.3). Latitudes and longitudes must be expressed in decimal degrees and should use the same datum (e.g., WGS 84). Use an appropriate number of decimal places to accurately represent a location or feature; more decimal places are appropriate for precise point locations. Longitudes west of the Prime Meridian and latitudes south of the Equator must be prefixed with a minus sign (-).
+
+The &lt;**geographicDescription**> element is a string type and should describe the geographic feature in a detailed, comprehensive way. Include useful geographic search terms such as country, state, county or province, city, general topography, landmarks, rivers, the datum of coordinates in &lt;**boundingCoordinates**> (if known), and other relevant information. The method for determining coordinates and other spatial information can be included with the &lt;**methods**> elements in the EML document.
+
+Example 7.2: A simple bounding box &lt;**geographicCoverage**> element. Note that the west, east, north, south ordering of coordinates is required.
+
+
+```xml
+<coverage>
+  <geographicCoverage>
+    <geographicDescription>
+      Ficity, FI metropolitan area, USA. Coordinates based on WGS84 datum.
+    </geographicDescription>
+    <boundingCoordinates>
+      <westBoundingCoordinate>-112.373614</westBoundingCoordinate>
+      <eastBoundingCoordinate>-111.612936</eastBoundingCoordinate>
+      <northBoundingCoordinate>33.708829</northBoundingCoordinate>
+      <southBoundingCoordinate>33.298975</southBoundingCoordinate>
+    </boundingCoordinates>
+  </geographicCoverage>
+</coverage>
+```
+
+
+Example 7.3: A &lt;**geographicCoverage**> element for three discrete point locations. Note the identical values in the west/east and north/south bounding coordinate pairs.
+
+
+```xml
+<coverage>
+  <geographicCoverage>
+    <geographicDescription>site 1, Ficity, FI metropolitan area, USA. Coordinates based on WGS84 datum.</geographicDescription>
+    <boundingCoordinates>
+      <westBoundingCoordinate>-112.2</westBoundingCoordinate>
+      <eastBoundingCoordinate>-112.2</eastBoundingCoordinate>
+      <northBoundingCoordinate>33.5</northBoundingCoordinate>
+      <southBoundingCoordinate>33.5</southBoundingCoordinate>
+    </boundingCoordinates>
+    <geographicDescription>site 2, Ficity, FI metropolitan area, USA. Coordinates based on WGS84 datum.</geographicDescription>
+    <boundingCoordinates>
+      <westBoundingCoordinate>-111.7</westBoundingCoordinate>
+      <eastBoundingCoordinate>-111.7</eastBoundingCoordinate>
+      <northBoundingCoordinate>33.6</northBoundingCoordinate>
+      <southBoundingCoordinate>33.6</southBoundingCoordinate>
+    </boundingCoordinates>
+    <geographicDescription>site 3, Ficity, FI metropolitan area, USA. Coordinates based on WGS84 datum.</geographicDescription>
+    <boundingCoordinates>
+      <westBoundingCoordinate>-112.1</westBoundingCoordinate>
+      <eastBoundingCoordinate>-112.1</eastBoundingCoordinate>
+      <northBoundingCoordinate>33.7</northBoundingCoordinate>
+      <southBoundingCoordinate>33.7</southBoundingCoordinate>
+    </boundingCoordinates>
+  <geographicCoverage>
+</coverage>
+```
+
+
+Point and bounding box elements may be used together, and the content and number of &lt;**geographicCoverage**> elements included in a dataset is at the discretion of the data contributor and EML preparer. As a sensible default, include at least one &lt;**geographicCoverage**> element defining the maximum geographic extent represented in the data. This may be a point, as for a single weather station, or a bounding box, as for a research site or observational area. If there are significant distances between observations or study sites and grouping them into one bounding box would be misleading or confusing, include &lt;**geographicCoverage**> elements for each nominal site or group (at your discretion). For example, a dataset for a cross-site study should probably have bounding boxes for each site, and a few widely spaced monitoring stations should not be enclosed by one very large bounding box.  
+
+Providing appropriate geographic detail is recommended, but keep in mind that the &lt;**geographicCoverage**> element is not intended to fully describe spatial datasets. Including large numbers of &lt;**geographicCoverage**> elements in a dataset (more than 10, say) may be impractical for data managers, and extracting useful spatial data from those elements can be onerous for users. For example, when a dataset needs to describe numerous geographic features, such as data from a regular sample grid or spatially dense sampling area, it is appropriate to describe the grid or area with a bounding box rather than a long list of points in individual &lt;**geographicCoverage**> elements. More advanced spatial entities can also be added to a &lt;**geographicCoverage**> using the &lt;**datasetGPoly**> child element. This element is not used frequently but can be useful and is described in [Appendix A](appendix-a-specialized-elements.qmd). If spatial location is important to use or interpret the data, the best practice is to include geographic features as a separate data entity with the dataset. When the dataset’s geographic coverage is lengthy, complex and/or intended for use in GIS software, consider including the locations as tabular data (a CSV file), or in geospatial files, like a GeoPackage or KMZ file, attached as an &lt;**otherEntity**> (see Chapter 10).
+
+
+### Temporal Coverage (&lt;temporalCoverage>)
+
+The &lt;**temporalCoverage**> element represents the period(s) of time covered in the dataset. Most often this means the dates that included data were collected. If the dataset is for a study using retrospective or historical data, this element should not refer to the dates the study was conducted, but the dates represented in the data.
+
+Either &lt;**singleDateTime**> or &lt;**rangeOfDates**> are required child elements, and the &lt;**temporalCoverage**> element therefore allows for three descriptions: a single date and time (one &lt;**singleDateTime**>), multiple dates and times (>1 &lt;**singleDateTime**>) and a range of dates and times (&lt;**rangeOfDates**>). A &lt;**rangeOfDates**> element must contain valid &lt;**beginDate**> and &lt;**endDate**> child elements. All &lt;**singleDateTime**>, &lt;**beginDate**>, and &lt;**endDate**> elements must contain either the &lt;**calendarDate**> and optional &lt;**time**> elements, or an &lt;**alternativeTimeScale**>. Two formats are allowed for &lt;**calendarDate**>, either a 4-digit year, or a date in ISO 8601 format: YYYY-MM-DD. The &lt;**alternativeTimeScale**> is appropriate in cases where temporal descriptions such as “years before present” are used (see [the schema](https://eml.ecoinformatics.org/schema/eml-coverage_xsd#SingleDateTimeType_alternativeTimeScale)), e.g., for long-term tree ring chronologies dating back thousands of years.
+
+For datasets considered “ongoing,” i.e., data are planned to be added at intervals, it is not valid to leave an empty &lt;**endDate**> tag in EML. Further, EML is intended to house immutable “snapshots” of data (depending on repository support). So, for ongoing datasets the best practice is to populate &lt;**endDate**> with the latest date in the included data file and then update the field when new data are added. Do not include &lt;**temporalCoverage**> elements indicating times when no data are present. Use the &lt;**maintenance**> element to describe the update frequency and dataset version history, and the &lt;**title**>, &lt;**abstract**>, and/or &lt;**methods**> elements to describe plans for ongoing data collection (see Chapter 3).
+
+Example 7.4: A simple &lt;**temporalCoverage**> element describing a range of dates represented in a long-term dataset.
+
+
+```xml
+<temporalCoverage>
+  <rangeOfDates>
+    <beginDate>
+      <calendarDate>1998-11-12</calendarDate>
+    </beginDate>
+    <endDate>
+      <calendarDate>2003-12-31</calendarDate>
+    </endDate>
+  </rangeOfDates>
+</temporalCoverage>
+```
+
+
+
+### Taxonomic Coverage (&lt;taxonomicCoverage>)
+
+The &lt;**taxonomicCoverage**> element documents taxonomic information for all organisms relevant to the study. The lowest available level, preferably the species binomial, and common name should always be included, but higher-level taxa can also be included to support broader taxonomic searches. Blocks of &lt;**taxonomicClassification**> elements should be hierarchically nested within a single &lt;**taxonomicCoverage**> element rather than repeated at the same level. The optional &lt;**generalTaxonomicCoverage**> element can include general descriptions of a) the procedure for how taxonomy was determined (keys used, etc.), b) the flora/fauna included in the study (scope), and c) granularity of the taxonomy - for example, identification to family, genus, or species.
+
+It is strongly recommended to include external taxonomic identifiers (such as from ITIS or WoRMS) for a given taxon using the &lt;**taxonId**> element. When indicating the taxonomic provider in &lt;**taxonId**>, use a URL for the provider, e.g., [https://www.itis.gov/](https://www.itis.gov/). It is also advisable to provide common names within &lt;**taxonomicClassification**> elements using the &lt;**commonName**> element if possible.
+
+The &lt;**taxonomicCoverage**> element can become very large when numerous taxa are described, and the EML schema allows this element to have a flexible structure. When taxa are numerous, it may be advisable not to expand the full taxonomic tree within the &lt;**taxonomicCoverage**>, i.e. only include species level &lt;**taxonRankName**> and &lt;**taxonRankValue**> elements, along with a resolvable &lt;**taxonId**> element for each (compare Examples 7.5 and 7.6). It is also allowable to combine taxonomic elements in the hierarchy under like &lt;**taxonRankName**> elements to create a taxonomic “tree” (not illustrated), but this practice may impede combining and re-using &lt;**taxonomicClassification**> information from multiple documents so should be considered carefully. Note that the EML schema does not prescribe or validate any particular taxonomic classification system, and can ultimately support whatever classification hierarchy a user wants. However, linking to a community-standard taxonomic system (ITIS, WoRMS, etc.) is generally recommended. In some cases, alternatives to using the &lt;**taxonomicCoverage**> element, such as including long lists of taxa with relevant identifiers as a &lt;**dataTable**> entity, or a taxonomic database as an &lt;**otherEntity**>, can be considered. There are downsides to this approach, however, because data entity contents are not typically indexed by search tools, and discovery of data by taxa would therefore be limited.
+
+The &lt;**taxonomicCoverage**> element can include several more elements that describe taxonomic identification resources, methods and protocols used for taxonomic classification, classification systems used, etc. (see [Appendix A](appendix-a-specialized-elements.qmd)); however, for simplicity one should include these details in the &lt;**methods**> element of the EML document.
+
+Example 7.5: A &lt;**taxonomicCoverage**> element describing two species. Note the ITIS identifiers.
+
+
+```xml
+<taxonomicCoverage>
+  <generalTaxonomicCoverage>
+    Mollusks were identified to species
+  </generalTaxonomicCoverage>
+  <taxonomicClassification>
+    <taxonRankName>Kingdom</taxonRankName>
+    <taxonRankValue>Animalia</taxonRankValue>
+    <taxonId provider="https://www.itis.gov/">202423</taxonId>
+    <taxonomicClassification>
+      <taxonRankName>Phylum</taxonRankName>
+      <taxonRankValue>Mollusca</taxonRankValue>
+      <commonName>mollusks</commonName>
+      <taxonId provider="https://www.itis.gov/">69458</taxonId>
+      <taxonomicClassification>
+        <taxonRankName>Class</taxonRankName>
+        <taxonRankValue>Gastropoda</taxonRankValue>
+        <commonName>gastropods</commonName>
+        <commonName>snails</commonName>
+        <taxonId provider="https://www.itis.gov/">69459</taxonId>
+        <taxonomicClassification>
+          <taxonRankName>Order</taxonRankName>
+          <taxonRankValue>Archaeopulmonata</taxonRankValue>
+          <taxonId provider="https://www.itis.gov/">78782</taxonId>
+          <taxonomicClassification>
+            <taxonRankName>Family</taxonRankName>
+            <taxonRankValue>Ellobiidae</taxonRankValue>
+            <taxonId provider="https://www.itis.gov/">76453</taxonId>
+            <taxonomicClassification>
+              <taxonRankName>Genus</taxonRankName>
+              <taxonRankValue>Detracia</taxonRankValue>
+              <taxonId provider="https://www.itis.gov/">76462</taxonId>
+              <taxonomicClassification>
+                <taxonRankName>Species</taxonRankName>
+                <taxonRankValue>Detracia floridana</taxonRankValue>
+                <commonName>florida melampus</commonName>
+                <taxonId provider="https://www.itis.gov/">76463</taxonId>
+              </taxonomicClassification>
+            </taxonomicClassification>
+          </taxonomicClassification>
+        </taxonomicClassification>
+      </taxonomicClassification>
+    </taxonomicClassification>
+  </taxonomicClassification>
+  <taxonomicClassification>
+    <taxonRankName>Kingdom</taxonRankName>
+    <taxonRankValue>Animalia</taxonRankValue>
+    <taxonId provider="https://www.itis.gov/">202423</taxonId>
+    <taxonomicClassification>
+      <taxonRankName>Phylum</taxonRankName>
+      <taxonRankValue>Mollusca</taxonRankValue>
+      <commonName>mollusks</commonName>
+      <taxonId provider="https://www.itis.gov/">69458</taxonId>
+      <taxonomicClassification>
+        <taxonRankName>Class</taxonRankName>
+        <taxonRankValue>Bivalvia</taxonRankValue>
+        <commonName>bivalves</commonName>
+        <commonName>clams</commonName>
+        <taxonId provider="https://www.itis.gov/">79118</taxonId>
+        <taxonomicClassification>
+          <taxonRankName>Order</taxonRankName>
+          <taxonRankValue>Mytiloida</taxonRankValue>
+          <taxonId provider="https://www.itis.gov/">79450</taxonId>
+          <taxonomicClassification>
+            <taxonRankName>Family</taxonRankName>
+            <taxonRankValue>Mytilidae</taxonRankValue>
+            <taxonId provider="https://www.itis.gov/">79451</taxonId>
+            <taxonomicClassification>
+              <taxonRankName>Genus</taxonRankName>
+              <taxonRankValue>Geukensia</taxonRankValue>
+              <taxonId provider="https://www.itis.gov/">79554</taxonId>
+              <taxonomicClassification>
+                <taxonRankName>Species</taxonRankName>
+                <taxonRankValue>Geukensia demissa</taxonRankValue>
+                <commonName>ribbed mussel</commonName>
+                <taxonId provider="https://www.itis.gov/">79555</taxonId>
+              </taxonomicClassification>
+            </taxonomicClassification>
+          </taxonomicClassification>
+        </taxonomicClassification>
+      </taxonomicClassification>
+    </taxonomicClassification>
+  </taxonomicClassification>
+</taxonomicCoverage>
+```
+
+
+Example 7.6: A &lt;**taxonomicCoverage**> element describing two species, omitting the descriptions of higher level taxa.  In this example, it is essential to include taxonomic identifiers since a given taxon name could appear under more than one higher level taxonomic rank.
+
+
+```xml
+<taxonomicCoverage>
+  <generalTaxonomicCoverage>
+    Mollusks were identified to species
+  </generalTaxonomicCoverage>
+  <taxonomicClassification>
+    <taxonRankName>Species</taxonRankName>
+    <taxonRankValue>Detracia floridana</taxonRankValue>
+    <commonName>florida melampus</commonName>
+    <taxonId provider="https://www.itis.gov/">76463</taxonId>
+  </taxonomicClassification>
+  <taxonomicClassification>
+    <taxonRankName>Species</taxonRankName>
+    <taxonRankValue>Geukensia demissa</taxonRankValue>
+    <commonName>ribbed mussel</commonName>
+    <taxonId provider="https://www.itis.gov/">79555</taxonId>
+  </taxonomicClassification>
+</taxonomicCoverage>
+```
+
+
+
+## Annotations (&lt;annotation>, &lt;annotations>)
+
+Semantic annotation is the practice of enhancing the context, utility, and meaning of a dataset by establishing relationships between its metadata and external resources like community ontologies or controlled vocabularies. Elements for semantic annotations are relatively new to EML and applications are still in development. See the[ annotation primer by the EML developers for a thorough overview (7 Semantic Annotation Primer](https://eml.ecoinformatics.org/semantic-annotation-primer.html)), and it is strongly recommended to look for advice and feedback on using semantic annotation in your research and data management communities before implementing them in EML. In brief, EML 2.2.0 supports entering terms from web-accessible ontologies and vocabularies via &lt;**annotation**> elements.
+
+For example, a unit for an attribute might be listed as “g/m2” or “g m-2” or “gramPerMeterSquared” depending on the local conventions for input of units, but an annotation indicating a Uniform Resource Identifier (URI) of [http://qudt.org/vocab/unit/GM-PER-M2](http://qudt.org/vocab/unit/GM-PER-M2)  would provide a way to indicate that they all are associated with the same underlying unit that is described in the community-maintained QUDT ontology. The corresponding XML is shown in example 7.7 below. 
+
+Example 7.7: An &lt;**annotation**> element for describing a measurement unit by describing its relationship to a unit in community ontology (QUDT). The ontology entry is indicated with a URI.
+
+
+```xml
+<annotation>
+  <propertyURI label="has unit">
+    http://qudt.org/schema/qudt/Unit
+  </propertyURI>
+  <valueURI label=" GM-PER-M2">
+    http://qudt.org/vocab/unit/GM-PER-M2
+  </valueURI>
+</annotation>
+```
+
+
+The label attribute of each propertyURI or valueURI is flexible and should be human-readable. The URI content is not expected to be human readable, but can be used to distinctly identify a relationship (property) and specific value.  Chapter 7 of the EML specification document ([7 Semantic Annotation Primer](https://eml.ecoinformatics.org/semantic-annotation-primer.html)) provides additional information on how annotations are structured and where annotations can appear in EML metadata.  Utility of annotations is increased when communities use the same sources for URIs. This avoids the need to crosswalk different ontologies. 
+
+Annotations always refer to a particular element of metadata, known as the *subject* of the annotation. To be the subject of an annotation, that element must have an **id** attribute with a unique value (e.g. &lt;**dataset id=”dataset-01”**>). Each &lt;**annotation**> element has two required child elements - &lt;**propertyURI**> and &lt;**valueURI**> - that, together with the subject, form a full semantic statement. Annotations are allowed in five locations in the EML document:
+
+
+
+* In &lt;**dataset**>, &lt;**attribute**>, or entity (&lt;**dataTable**>, &lt;**otherEntity**>, etc) elements
+* in an &lt;**annotations**> root element
+* as a child of an &lt;**additionalMetadata**> root element
+
+In the &lt;**dataset**>, &lt;**attribute**>, or entity position, the subject of the annotation is the parent element within which the &lt;**annotation**> element is placed, as in Example 7.8.
+
+Example 7.8: An &lt;**attribute**> element with two child &lt;**annotation**> elements providing ontology references about the variable. Note that the annotated element must be given the **id=”att.12”** attribute to become the subject of the two annotations.
+
+
+```xml
+<attribute id="att.12">
+  <attributeName>biomass</attributeName>
+  ...
+  <annotation>
+    <propertyURI label="of characteristic">
+      http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofCharacteristic
+    </propertyURI>
+    <valueURI label="Mass">
+      http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl#Mass
+    </valueURI>
+  </annotation>
+  <annotation>
+    <propertyURI label="of entity">
+      http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ofEntity
+    </propertyURI>
+    <valueURI label="Plant Material">
+      http://purl.dataone.org/odo/ECSO_00000503
+    </valueURI>
+  </annotation>
+</attribute>
+```
+
+
+The &lt;**annotations**> element is a root-level (**/eml:eml/annotations**) container intended to hold one or more &lt;**annotation**> elements. A \@**references** attribute must be used to establish the subject of any &lt;**annotation**> listed in &lt;**annotations**>. The value of the \@**references** attribute should point to the \@**id** attribute for the intended element, as in Example 7.9.
+
+Example 7.9: An &lt;**annotations**> element with one &lt;**annotation**> referencing the “CDR-biodiv-table” entity.
+
+
+```xml
+<annotations>   
+  <annotation references="CDR-biodiv-table">
+    <propertyURI label="Subject">
+      http://purl.org/dc/elements/1.1/subject 
+    </propertyURI>
+    <valueURI label="grassland">
+      http://purl.obolibrary.org/obo/ENVO_01000177 
+    </valueURI>
+  </annotation>
+</annotations>
+```
+
+
+Similarly, &lt;**annotation**> elements within the root level &lt;**additionalMetadata**> element (**eml:eml/additionalMetadata**) may describe elements elsewhere in the EML document. Establish the subject of these elements using the associated &lt;**describes**> element populated with the \@**id** attribute value for the intended element, as in Example 7.10. More information on the structure of &lt;**additionalMetadata**> is given in Chapter 12.
+
+Example 7.10: An &lt;**annotation**> within the &lt;**additionalMetadata**> element used to provide parent organization information for a person identified with the `id=adam.sheperd` attribute.
+
+
+```xml
+<additionalMetadata>
+  <describes>adam.sheperd</describes>
+  <metadata>
+    <annotation>
+      <propertyURI label="member of">
+        https://schema.org/memberOf
+      </propertyURI>
+      <valueURI label="BCO-DMO">
+        https://ror.org/00vcb3m70
+      </valueURI>
+    </annotation>
+  </metadata>
+</additionalMetadata>
+```
+
+
+
+## XPaths referenced in this chapter
+
+Keyword set: **/eml:eml/dataset/keywordSet**
+
+A keyword: **/eml:eml/dataset/keywordSet/keyword**
+
+Keyword thesaurus name: **/eml:eml/dataset/keywordSet/keywordThesaurus**
+
+Dataset geographic coverage: **/eml:eml/dataset/coverage/geographicCoverage**
+
+Dataset temporal coverage: **/eml:eml/dataset/coverage/temporalCoverage**
+
+Dataset taxonomic coverage: **/eml:eml/dataset/coverage/taxonomicCoverage**
+
+Dataset annotations: **/eml:eml/dataset/annotations**
+
+Annotation about an EML element: **/eml:eml/additionalMetadata/metadata/annotation**
