@@ -6,9 +6,9 @@ website:
   title: "Dataset Preparation Guides"
   description: "Community-developed guides for preparing and publishing datasets in the environmental sciences, and similar contexts, using the Ecological Metadata Language (EML) and other standards."
   favicon: img/edi-logo.png
-  site-url: https://ediorg.github.io/dataset_preparation_guides
-  repo-url: https://github.com/EDIorg/dataset_preparation_guides
-  issue-url: https://github.com/EDIorg/dataset_preparation_guides/issues/new/choose
+  site-url: https://ediorg.github.io/data-package-best-practices
+  repo-url: https://github.com/EDIorg/data-package-best-practices
+  issue-url: https://github.com/EDIorg/data-package-best-practices/issues/new/choose
   repo-branch: main
   repo-actions: [edit, issue]
   page-navigation: true
@@ -34,7 +34,7 @@ website:
           - history.qmd
     tools:
       - icon: github
-        href: https://github.com/ediorg/dataset_preparation_guides
+        href: https://github.com/ediorg/data-package-best-practices
         text: EDIorg GitHub repository
 
   sidebar:
