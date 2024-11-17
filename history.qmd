@@ -12,5 +12,3 @@
   - *EML Best Practices, Version 3*, 2017: [HTML pages](./guide-eml-bp/archive/book.qmd), [PDF version](https://drive.google.com/file/d/1HaoRXPjCtDueIJ-IzflktglYJzIIUkxH/view?usp=sharing)
 - This repository was created in 2019 to house that and other data package recommendations as gh-pages. Some minor modifications were made to the *EML Best Practices, Version 3*, document after this was initiated. See the repository history for details.
 - In 2023 and 2024, the EML Best Practices working group re-convened to produce *EML Best Practices, Version 4*, which will be published soon.
-
-
