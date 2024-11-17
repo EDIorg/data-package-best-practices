@@ -1,0 +1,11 @@
+# Soil Carbon
+
+## Introduction
+Page desribing BPs for data packages about soil carbon. it will probably have links out for details.
+
+
+### Synthesis use
+para here about current synthesis use, eg, Weider WG.
+
+## Recommendations for datasets
+summary here.

@@ -1,0 +1,22 @@
+# Introduction
+
+Members of the working group developing these documents: S. Beaulieu, R. Brown, J. Downing, S. Elmendorf, H. Garritt, G. Gastil-Buhl, C. Gries, J. Hollingsworth, H.-Y. Hsieh, L. Kui, M. Martin, G. Maurer, A. Nguyen, J. Porter, A. Sapp, M. Servilla, T. Whiteaker
+
+In these documents we consider special cases for archiving research data based on their data type, format, or acquisition method, and recommend practices that ensure optimal re-usability of the data. Most recommendations here are aimed at improving documentation of data acquisition and processing to avoid misinterpretation. This includes the recommendation to publish raw data and/or processing code along with the data products. Others are aimed at usability in terms of data size/volume, or connecting related data. Some recommendations involve including a metadata document formatted according to a new and emerging standard (e.g., codeMeta) or a data inventory table. Data inventory tables can cross the line between metadata and data and are intended to improve discoverability and navigation of archived data. 
+
+The intended audience for these best practice recommendations is the ecological research information manager (IM) community, and they are applicable to anyone operating in the context of an ecological research program. We assume that the target data repository is designed to handle ecological data, and that a given archive package will include metadata encoded in a community standard. This document references elements of the [EML metadata standard](https://eml.ecoinformatics.org/), but many aspects would similarly apply to other metadata standards and these documents should be considered in the larger context of applicable metadata standard best practices. We refer to the Environmental Data Initiative ([EDI](https://portal.edirepository.org)) as an example data repository, though the same practices could be applied to other similar repositories.
+
+Throughout the chapters we use the term _data package_ to refer to a published unit of data and metadata together, which is the convention at the EDI repository. At other data repositories, equivalent terms for a data package, such as _dataset_, may be used. A data package may contain one or more _entities_, such as csv tables, spatial data, processing or modeling code, and other documents (pdf, jpg, zip). A basic discussion of data package design can be found as [EDI's first phase of data publishing documentation](https://edirepository.org/resources/designing-a-data-package) and in the [LTER Best Practices for Dataset Metadata in  Ecological Metadata Language (EML)](https://environmentaldatainitiative.files.wordpress.com/2017/11/emlbestpractices-v3.pdf).
+
+Generally, we recommend archiving entities using standard file formats that are likely to be machine readable in the future. Exceptions to this may exist where the community standard for processing particular data types relies on specialized file formats (binary, closed specification, etc.) or proprietary software. In these cases, it may be appropriate to archive specialized file types and/or a copy that has been parsed into a format (e.g. ascii) that does not require proprietary software.
+
+**Table of contents**
+
+*   [Processing code](./code.qmd)
+*   [Modeling datasets](./model-based.qmd)
+*   [Images and documents](./images-and-docs.qmd)
+*   [Spatial data](./spatial-data.qmd)
+*   [Data gathered with small, moving platforms](./moving-platforms.qmd)
+*   [Provenance and data in other repositories](./other-repositories.qmd)
+*   [Very large datasets](./large-offline.qmd)
+

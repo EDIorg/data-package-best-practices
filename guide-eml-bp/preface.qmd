@@ -1,0 +1,62 @@
+---
+title: Best Practices for Dataset Metadata in Ecological Metadata Language (EML)
+subtitle: Version 3
+date: November 2017
+author: EML Best Practices Committee
+---
+
+
+# Preface {.unnumbered}
+
+::: {style='text-align:center;'}
+
+This document is managed and distributed by the Environmental Data Initiative (EDI)
+
+https://edirepository.org | info@edirepository.org
+
+:::
+
+The recommendations for EML metadata apply to all data packages. This book is a reproduction of V3 of the static PDF document "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)," last updated in 2017. The entire most recent (versioned, citable) release will be made available as a PDF. 
+
+Please cite as:
+
+Best Practices for Dataset Metadata in Ecological Metadata Language (EML Best Practices V3). 2017. Environmental Data Initiative.
+
+## Conventions and Definitions
+
+### Audience
+
+This document is intended for data managers. It assumes that readers are familiar with
+
+- the basic structure of an XML document, and the ability to edit in an XML editor like OxygenXML or XMLSpy.
+- the process for contributing data to a repository. If you reached this document from a repository's help-page, contact them for more information.
+
+### Fonts and typeface
+
+Numbered examples of EML nodes are in fixed-width font:
+
+```{.xml}
+<?xml version="1.0" encoding="UTF-8"?>
+```
+
+XML element and attribute names, XPath and references to element names in text are in bold face. Single element names are surrounded by angle brackets, as they appear in XML.
+
+<**dataTable**>  
+**/eml:eml/\@packageId**
+
+Some recommendations have special context, e.g., an XML element or attribute may be requested by a community (e.g., LTER), or required by the EDI repository (but not by other repositories).
+
+_Context notes: Recommendations for EML usage in a specific context are called "context notes", and are placed in separate paragraphs, in italic._
+
+### Definitions
+
+**EML preparer**: the person responsible for "building" the EML metadata record. Generally, this is a data manager working with a project or physical site that produces data.
+
+**Contributor**: the research project contributing the data package, e.g., an LTER or OBFS site, or a Macrosystems project. Generally, the "EML preparer" works with or for the "Contributor."
+
+**Data package**: the EML metadata together with its entity or entities. This is generally the unit housed in repositories. We use this term to avoid confusion with the EML element "**dataset**".
+
+### Other EML Resources
+
+Some sections refer to further information or tools. These can be found on the EDI website, under "Resources", at
+[https://edirepository.org](https://edirepository.org)

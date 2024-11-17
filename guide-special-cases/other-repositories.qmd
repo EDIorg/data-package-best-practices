@@ -1,0 +1,293 @@
+# Data in Other Repositories
+
+Contributors: Greg Maurer (lead), Stace Beaulieu, RenÃ©e Brown, Sarah Elmendorf,  Hap Garritt, Gastil Gastil-Buhl, Corinna Gries, Li Kui, An Nguyen, John Porter, Margaret O'Brien, Tim Whiteaker
+
+## Introduction
+
+A wide variety of data repositories are available for publishing biological, environmental, and Earth observation data, and the choice of where to publish a particular dataset is determined by many competing factors. For example, a funding agency or journal may require a certain repository (e.g., NSF BCO-DMO, NSF ADC, USDA ADC, DOE ESS-DIVE); the research subject or data type may be best served by a specialized repository (e.g., AmeriFlux, GenBank); or datasets may be submitted to a general purpose repository with minimal metadata requirements to simplify and speed data publishing (e.g., DRYAD, Figshare, Zenodo). For these and other reasons related datasets are sometimes published in disparate data repositories, the same data needs to be discoverable in more than one repository, or multiple datasets from one or more repositories may be used to create a new, derived dataset. In such cases, it can be advantageous to establish links between datasets in different repositories such that provenance, supplementation, duplication or other relationships are explicit. Clearly, this subject goes well beyond the single repository and better standards and approaches for linking resources and documenting data provenance are being developed elsewhere  (e.g. [DataONE](https://www.dataone.org/network/), [ProvONE](https://purl.dataone.org/provone-v1-dev), [WholeTale](https://wholetale.org/)). Here we concentrate on specific cases in the context of large and multidisciplinary projects, such as LTER sites, that wish to enhance data discovery and preserve data relationships across multiple repositories.
+
+## Recommendations for data packages
+
+### Considerations for creating linked data
+
+In practice, links to data in other repositories can be achieved using metadata only, by including a data inventory file, or, although not recommended, by duplicating the data in the new repository record. **Generally, duplicating data in multiple repositories is not recommended because it creates two problems.** First, it is a burden to maintain multiple copies of a dataset and avoid divergence between them. Second, it can create confusion for data re-users who may download or cite the same data multiple times. Care must be taken to clearly identify such duplications for data users when they are created. Whenever linked datasets are created, it is strongly recommended that both repositories are aligned with FAIR data principles, [outlined here](https://doi.org/10.1038/sdata.2016.18), so that users have unfettered access to all data and metadata.
+
+In addition to these considerations, there are a number of reasons to create a new repository record that is linked to data in other repositories. Each of these reasons, which are outlined below, has pros and cons that will need to be weighed from the different perspectives of the data user, data provider and research project management requirements.
+
+* **Requirements dictate multiple repositories:** Large research projects or sites are frequently funded by different agencies and programs. Data collection may be supported by several such funding streams and, hence, fall in the purview of more than one requirement to archive data in a particular repository. In some cases, data repositories already accommodate such requirements by linking or replicating data appropriately. Examples of this are LTER data in EDI, NSF BCO-DMO and NSF ADC.
+* **Adding important metadata**: If data were originally submitted to a general purpose repository with minimal metadata requirements (e.g., DRYAD, figshare) additional metadata (e.g., EML) may be needed for discoverability, reusability, and integration. By creating a new repository record that identifies and is linked to the original published dataset, richer and more useful metadata can be added to the new record and utilized.
+* **Use of specialist repositories for related data:** There are sometimes advantages to publishing particular data types in specialized repositories. Specialized data repositories (e.g. GenBank, AmeriFlux) usually enforce strict data formatting, provide quality standards, enhanced search, discovery and reuse of particular types of data across projects in a way that is not possible using a generalized metadata format (EML) and repository (EDI). However, these data may not be discoverable with other, related project data taken at the same location and time. Creating links between related datasets held in specialist and generalist repositories helps preserve this context.
+* **A derived data product is archived in a different repository than the source (raw) data:** A wide range of cases fall into this category, from a direct one to one relationship of, e.g., a gene sequence and its OTU identification, a metagenome analysis and its community diversity metrics, to several datasets being combined in synthesis or meta-analysis studies. In these cases, links between source data and derived data products that are published in separate repositories need to be created and clearly documented.
+* **Linking to site- or project-relevant data from other research groups or agencies:** Although it may help with some aspects of data discovery it is generally not recommended to create records in EDI for data collected and managed by entirely different research groups or agencies. **_In these cases, however, it is recommended to place a pointer to such repositories on a project website or develop other means for data users to discover relevant resources._**
+
+### General metadata for linked data packages in EDI
+
+In EDI, the linked data package can be assembled using standard practices and EML metadata elements, but the included metadata and data entities must clearly lead the data user to files held in outside repositories. In addition, the package metadata should communicate the essential elements needed for data discovery (subject matter, authors, location, time-frame, etc.) and a brief description of how the data may be accessed, re-used, and cited via the outside repository as needed. General guidance on the content and structure of key metadata elements in an EDI data package linked to data in other repositories are described below.
+
+* **Abstract:** Describe the key features of the data package. If the data package contains only links to data held in other repositories, or data duplicated from another repository, clearly state that the original data are located in a different repository and direct the user to the correct data citation. Describe the target data in sufficient detail that users can determine whether these data are fit for their use, and instruct them on how to find and re-use the data.
+* **Methods:** Collection/generation methods for any data entities included or linked to. If the methods are well-described in the metadata at another repository, this element can simply refer users there. If the new data package includes ancillary data or derived data, describe how those data were collected or derived.
+* **Geographic description** and **coordinates:** At a minimum these elements should define a bounding box that will make the data package discoverable through EDI, DataOne, or other geographic search interfaces. Additional, more detailed coordinates may be given in the inventory file entity as described below.
+* **Keywords:** Since some linked data packages include an inventory of data held at a different repository, include the keyword "data inventory" and thematic keywords that describe the data entities in the other repository.
+
+### Common use cases and their structure in EDI
+
+There are several common use cases for creating a new linked data package in EDI. The new package may establish either a one-to-one link from EDI to a dataset in another repository, or a one-to-many relationship that is more complex. Three possible cases are described below in terms of what entities to publish, where to publish them, metadata elements to be created in EML, and the contents of included data entities. There are likely to be other use cases for linking EDI data packages to other repositories.
+
+**Case 1:** One dataset needs to be discoverable in more than one data repository. The data remain the same, but the metadata in the new data package at EDI may be upgraded beyond what exists in the other repository.
+
+* The metadata in EDI must clearly state, preferably in the abstract or another obvious location, that this data package is already published in another repository. Include the original unique identifier and instruct users to cite that original data, if appropriate.  
+* Include instructions on how to access and cite the original data if the original repository is lacking in such guidance.
+* If data are duplicated (which is not recommended), metadata should include information on how versions in different repositories are kept synchronized. If such synchronization is not feasible, users should be warned to inspect both sources for the latest data..
+* In EML the &lt;additionalIdentifier> field may be used to store the persistent identifier (DOI), or a link (URL) that refers to the data held in another repository to make the link machine readable. Where an external repository supplies both a URL and DOI, use the DOI as URLs may not be maintained through time.
+
+**Case 2:** A list of data records held in a specialized repository needs to be linked to ancillary or supporting data that are being published in EDI (for derived data see Case 3).
+
+* This case applies when a collection of datasets, or similar scientific resources, is held in a specialized repository and closely related ancillary or supporting data and metadata needs to be archived in a more generalist data repository like EDI. For example, ancillary environmental data or laboratory analyses held in EDI could be linked to collections of sequence reads held in NCBI GenBank or museum voucher specimens archived with Darwin Core metadata. See complete examples in Table 5.3.
+* The new EDI data package should include a 'data inventory' (or manifest of holdings) file as a data entity. This is most likely a simple tabular data file, such as a CSV, that lists and describes the repository records held in the specialized data repository and has its column attributes described in EML as a [dataTable](https://eml.ecoinformatics.org/schema/eml-dataTable_xsd.html#eml-dataTable.xsd) entity.
+* The inventory table must have a row for each outside repository record (or some meaningful grouping of records, e.g., project in NCBI) being linked to, with columns that include persistent unique identifiers of the data in the other repository, and relevant descriptors of the data. The complete content of the inventory will be dictated by the structure of the other repository and the data entities and metadata held there. Suggested columns are presented in Table 5.1.
+* The inventory table may also provide additional contextual information for each individual data resource in another repository. Table 5.2 presents examples of these contextual columns. They are, however, subject dependent and may vary for different projects. For more examples, see the discussion on sequencing and genomic data later in this document.
+
+Table 1: Suggested columns for identifying the external data in the data inventory table.
+
+<table>
+  <tr>
+   <td><strong>Column</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>External unique ID
+   </td>
+   <td>Unique identifier for the data resource in the other repository. E.g. Accession number
+   </td>
+  </tr>
+  <tr>
+   <td>External access URL
+   </td>
+   <td>A unique, persistent link to the data resource in the other repository.
+   </td>
+  </tr>
+  <tr>
+   <td>Title/description
+   </td>
+   <td>Title and/or brief description of the data resource
+   </td>
+  </tr>
+  <tr>
+   <td>Filename(s)
+   </td>
+   <td>Dataset or file name at the other repository
+   </td>
+  </tr>
+  <tr>
+   <td>Format
+   </td>
+   <td>File format of above
+   </td>
+  </tr>
+  <tr>
+   <td>Repository URL
+   </td>
+   <td>URL of the repository being linked to
+   </td>
+  </tr>
+</table>
+
+Table 2: Examples of additional contextual columns in the data inventory table.
+
+<table>
+  <tr>
+   <td><strong>Column</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Latitude/Longitude
+   </td>
+   <td>Latitude and longitude in standard format for each data resource in the other repository.
+   </td>
+  </tr>
+  <tr>
+   <td>Location name
+   </td>
+   <td>Locally used name of collection site
+   </td>
+  </tr>
+  <tr>
+   <td>Treatment level
+   </td>
+   <td>Experimental treatment applied to the outside dataset
+   </td>
+  </tr>
+  <tr>
+   <td>Start/End datetime
+   </td>
+   <td>Starting/ending datetime of the data resource (NA for End if data collection is ongoing)
+   </td>
+  </tr>
+  <tr>
+   <td>Reference publication
+   </td>
+   <td>DOI of publication providing in-depth context for data
+   </td>
+  </tr>
+</table>
+
+**Case 3:** One or more datasets in other repositories are used to create derived data products that need to be archived in EDI.
+
+* In this case the new dataset is directly or indirectly derived from the 'source' dataset(s) in other repositories. Such derived data may serve a wide range of research purposes, including use in cross-site synthesis, re-analysis, or meta-analysis studies.
+* Provenance metadata should be used to describe the relationship between the source and derived datasets, which ensures reproducibility and preserves data lineage. In a new EDI data package that archives derived data, the provenance metadata should be inserted in the EML file utilizing &lt;dataSource> elements. The &lt;dataSource> elements should be nested within a &lt;methodStep> element and will establish the links to any source datasets located in another repository. An example snippet of provenance EML is shown in Figure 1.
+* Other cross-repository standards for provenance metadata are still being developed and are not widely adopted, e.g., [ProvONE](http://homepages.cs.ncl.ac.uk/paolo.missier/doc/dataone-prov-3-years-later.pdf).
+* The EDI portal interface provides [automatic generation of provenance metadata](https://portal.edirepository.org/nis/provenanceGenerator.jsp)  EML snippets for datasets in EDI. The [EMLassemblyline](https://github.com/EDIorg/emlAssemblyLine) and [MetaEgress](https://github.com/BLE-LTER/MetaEgress) (in connection with [LTER-core-metabase](https://github.com/lter/LTER-core-metabase)) R packages for EML creation will also generate provenance metadata.
+
+Example 1: EML snippet with a data provenance methodStep:
+
+```{.xml}
+<methodStep>
+   <description>
+      <para>This methodStep contains data provenance information as specified in the LTER EML Best Practices. Each dataSource element here lists entity-specific information and links to source data used in the creation of this derivative data package.</para>
+   </description>
+   <dataSource>
+      <title>Source dataset title</title>
+      <creator>
+         <individualName>
+            <givenName>first name</givenName>
+            <surName>last name</surName>
+         </individualName>
+         <organizationName>organization name</organizationName>
+         <electronicMailAddress>email@some.edu</electronicMailAddress>
+      </creator>
+      <distribution>
+         <online>
+            <onlineDescription>This is a link to an external online data resource (describe resource and repository location).</onlineDescription>
+            <url function="information">https://pasta.lternet.edu/package/metadata/eml/knb-lter-ntl/80/2</url>
+         </online>
+      </distribution>
+      <contact>
+         <positionName>Information Manager</positionName>
+         <organizationName>organization name</organizationName>
+         <electronicMailAddress>infomgr@some.edu</electronicMailAddress>
+      </contact>
+   </dataSource>
+</methodStep>
+```
+
+## Nucleotide sequence and genomic data
+
+Nucleotide sequence data consists of the order and arrangement of DNA or RNA bases extracted from individual organisms or environmental samples. Similarly, genomic data refers to the complete genetic information (either DNA or RNA) of an organism, while metagenomic data refers to the study of genomes recovered from environmental samples. Sequencing, genomic and metagenomic datasets can be very large and complex, and researchers in these fields benefit from particular methods of data access, analysis, and collaboration. Therefore, these data have specialized requirements for data archiving.
+
+Archiving nucleotide sequence and genomic (or other '[omics](https://en.wikipedia.org/wiki/Omics)') data are a common use case for creating linked datasets. Data that originate from nucleotide sequencing techniques are most often stored in specialized repositories such as National Center for Biotechnology Information (NCBI) GenBank and the European Nucleotide Archive. However, while sequences or assembled genomes constitute important raw data, ancillary and derived data products related to these raw data are frequently published in repositories specializing in ecological data. For example, data derived from sequence data, such as operational taxonomic units (OTUs) or functional assignments, and ancillary data that describe the environmental, biochemical, or experimental context of the sequencing data, are often included in scientific publications, and do not always fit within the scope of a specialized sequence or genome data repository.
+
+### Recommendations for sequencing or genomic datasets
+
+Linking to genomics data is an example of Case 2 described above. Summaries or inventories of data records held in a repository like NCBI GenBank are linked to their derived products or additional measurements published in a more generalist repository such as EDI.
+
+In addition to the metadata typically included with any data package published by the site or research group, include metadata that is descriptive specifically of sequencing and genomics datasets. It is recommended to refer to the [MixS templates](https://press3.mcs.anl.gov/gensc/mixs/) for standard terminology, especially in the keyword section:
+
+**Keywords** that can help users discover the sequencing or genomic dataset include:
+
+1. General data type descriptions ('nucleotide sequence', 'genomics', 'metagenomics')
+2. Names of target genes or subfragments ('16S rRNA', '18S rRNA', 'nif', 'amoA', 'rpo', 'ITS')
+3. Names of the sequencing technique ('Sanger', 'pyrosequencing', 'ABI-solid')
+4. Names of the linked repository ('SRA', 'EMBL', 'Ensembl')
+5. Descriptors of included ancillary data ('nitrogen', 'soil', 'drought')
+6. Descriptors of derived data products ('OTU', 'functional annotation', 'population')
+
+**Inventory tables** are of central importance to datasets that index data resources in a sequencing or genomics repository. It is recommended that this inventory should have the columns described in Table 1. Note that the unique identifiers included will depend on the granularity of the links to the outside repository. For example, in NCBI, there are accession numbers and URLs for a project, samples within the project, and sequence datasets from a given sample.
+
+**External unique ID and URL:** For NCBI GenBank this would be the accession number for a collection. For most sequence and genomic datasets an access URL would include an accession number (e.g. [https://www.ncbi.nlm.nih.gov/nuccore/AY741555](https://www.ncbi.nlm.nih.gov/nuccore/AY741555)). Referring to a range of accession numbers, may involve providing a search URL that will return the desired list, e.g. ([https://www.ncbi.nlm.nih.gov/popset/?term=AY741555](https://www.ncbi.nlm.nih.gov/popset/?term=AY741555)). The recommendation is to link to the widest level of sequence or genomic granularity that is useful to interpret data being archived in the new dataset.
+The following are suggestions for additional contextual columns in the inventory table. This information is generally associated with the data in the genomics repository and should only be duplicated if deemed useful for reuse, or if missing in the original data.
+
+* **Sequencing method**: the name of the sequencing method used; e.g., Sanger, pyrosequencing, ABI-solid. This attribute is used in MIxS templates, where it is called seq_meth.
+* **Environment (biome, feature, or material) descriptors**: These are descriptors of the environmental context and are standardized by the genomics community in the [MixS templates](https://press3.mcs.anl.gov/gensc/mixs/) and [EnvO](www.environmentontology.org/Browse-EnvO).
+* **Taxon description**: If applicable, e.g., Binomial name, or taxonomic group
+
+Data packages of metadata and inventory tables will aid in discovering genomic data within an ecological data repository (EDI) and will aid in clarifying the context in which they were collected. Most use cases, however, employ this inventory table to link specific genetic data to derived data. Such products frequently are community or population metrics where species, OTUs or traits have been determined from the sequence data.
+
+## Example data packages in EDI
+
+Each of the EDI data packages below are linked to data in outside repositories. Some contain data inventory tables (as dataTable entities) that link to the datasets held in outside repositories and are described in the EML metadata. The EML abstract and methods elements in each give detailed access and citation instructions.
+
+Table 3: Linked data packages at EDI that provide examples of the best practices in this document.
+
+<table>
+  <tr>
+   <td><strong>Title</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+   <td><strong>EDI packageID</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><em>Mass and energy fluxes from the US-Jo2 AmeriFlux eddy covariance tower in Tromble Weir experimental watershed at the Jornada Basin LTER site, 2010-ongoing</em>
+   </td>
+   <td>This data package links to eddy covariance data from a Jornada Basin LTER tower. The data are held at the AmeriFlux data repository (<a href="https://ameriflux.lbl.gov/">https://ameriflux.lbl.gov</a>)
+   </td>
+   <td><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&identifier=210338005">knb-lter-jrn.210338005</a>
+   </td>
+  </tr>
+  <tr>
+   <td><em>Catalog of GenBank sequence read archive (SRA) entries of 16S and 18S rRNA genes from bacterial and protistan planktonic communities along the Eastern Beaufort Sea coast, North Slope, Alaska, 2011-2013</em>
+   </td>
+   <td>Data inventory of runs, samples, and experiments held at GenBank.
+   </td>
+   <td><a href="https://doi.org/10.6073/pasta/0e4d75453560ab5c085c9b547be68731">knb-lter-ble.10</a>
+   </td>
+  </tr>
+  <tr>
+   <td><em>Correlation of native and exotic species richness: a global meta-analysis finds no invasion paradox across scales</em>
+   </td>
+   <td>This data package re-publishes data held in a package in Dryad. The metadata has been substantially enriched relative to the original dataset.
+   </td>
+   <td><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=edi.548.1">edi.548.1</a>
+   </td>
+  </tr>
+  <tr>
+   <td><em>Vascular Flora of the Harvard Farm at Harvard Forest since 2014</em>
+   </td>
+   <td>This data package includes an inventory table with information on voucher specimens held in the Harvard Herbarium.
+   </td>
+   <td><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-hfr.236.3">knb-lter-hfr.236.3</a>
+   </td>
+  </tr>
+  <tr>
+   <td><em>Biological responses to landscape change in the McMurdo Dry Valleys, Antarctica</em>
+   </td>
+   <td>This data package links to genomic data in NCBI, and includes additional data from biogeochemical analyses performed on each sample.
+   </td>
+   <td><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcm.262.1">knb-lter-mcm.262.1</a>
+   </td>
+  </tr>
+</table>
+
+## Appendix: Tips and repository information
+
+This section aggregates information helpful at the time this document was written, particularly regarding nucleotide sequence and genomic data repositories in widespread use at this time. Given the rapid rate of change in the field, this info may fall out of date quickly.
+
+### Sequence and genomic repository information
+
+It is generally preferable that sequencing and genomic data are archived in community repositories that are specialized for their data type, rather than in a generalist repository such as the [Environmental Data Initiative](https://edirepository.org/) (EDI). There are many such specialized repositories; a fairly comprehensive listing is provided by the journal _[Nucleic Acids Research](http://nar.oxfordjournals.org/)_ (summarized on [this page](https://en.wikipedia.org/wiki/List_of_biological_databases)). Metadata standards and collaborative structures among these repositories are governed by the [International Nucleotide Sequence Database Collaboration](http://www.insdc.org/) (INSDC, more guidance [here](https://www.nature.com/sdata/policies/repositories#nuc)).Often these repositories provide or are accessible to specialized tools for searching, accessing, and analyzing the data (e.g., BLAST, MG-RAST). Furthermore, some products derived from sequence or genomic data are best archived in another specialized repository (e.g., metagenome-assembled genomes, or MAGs). As a general rule, these specialized repositories assign unique identifiers to projects, samples, and/or single sequences (often referred to as accession numbers) that can be used to locate sequences or genomic data. Note that each repository may have its own mechanism for reverse linking to related data held in another repository (such as EDI), and these mechanisms are beyond the scope of this document.
+
+* [NCBI Databases](https://www.ncbi.nlm.nih.gov/search/) - list of various databases with search capabilities. See also [How to submit data to GenBank](https://www.ncbi.nlm.nih.gov/genbank/submit/).
+* [NCBI Accession Number prefixes](https://www.ncbi.nlm.nih.gov/Sequin/acc.html) - Explanation of accession number prefix codes.
+* [DNA DataBank of Japan (DDBJ)](http://www.ddbj.nig.ac.jp/) - list of various databases with search capabilities. See also [Submissions](https://www.ddbj.nig.ac.jp/submission-e.html).
+* [European Nucleotide Archive (ENA)](http://www.ebi.ac.uk/ena/) - list of various databases with search capabilities. See also [Submit and update](https://www.ebi.ac.uk/ena/submit).
+* [Integrated Microbial Genomes & Microbiomes (IMG/M) system](https://img.jgi.doe.gov/) from the Joint Genome Institute
+* [MG-RAST](http://www.mg-rast.org/mgmain.html?mgpage=downloadintro) (technically an analysis pipeline not a primary repository, but replicates to primary repositories) Replicates to the European Bioinformatics Institute (EMBL-EBI), which in turn replicates to the NCBI Sequence Read Archive (such that data submitted on MG-RAST will automatically appear on all three).
+* [Barcode of Life DataSystems (BOLD)](http://www.barcodinglife.com/) DNA barcoding is a taxonomic method that uses one or more standardized short genetic markers in an organism's DNA to identify it as belonging to a particular species. Through this method unknown DNA samples are identified to registered species based on comparison to a reference library. The Centre for Biodiversity Genomics in Canada maintains the BOLD public data portal, a cloud-based data storage and analysis platform.
+
+### Tips for locating metadata in sequence and genomic data repositories
+
+Where information for populating metadata in EML has not been supplied directly to the IM from the research group, metadata that investigators provided when submitting data may be found in the genomics repository.
+
+* For data in NCBI, go to the [NCBI website](https://www.ncbi.nlm.nih.gov/search/) and search using the accession number. Or search by accession number in a specific NCBI Database, for example Genes PopSet (the PopSet database is a collection of related DNA sequences derived from population, phylogenetic, mutation and ecosystem studies that have been submitted to NCBI).
+* For sequences submitted to the [NCBI Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra), there are some easily accessible online tools for generating tables of linked sequence data and their metadata. For an example, go to the example dataset at [https://www.ncbi.nlm.nih.gbov/bioproject/305753](https://www.ncbi.nlm.nih.gov/bioproject/305753), and click the number next to **SRA Experiments** to see a list of all experiments. Then click **Send results to Run selector** to see a table summarizing geolocations and associated metadata which could be archived at EDI or used to extract metadata for EML preparation.
+* A full Data Carpentry tutorial on accessing data on the NCBI SRA database can be found here: [Examining Data on the NCBI SRA Database](https://datacarpentry.org/organization-genomics/03-ncbi-sra/index.html)
+* [BCO-DMO examples](https://www.bco-dmo.org/contributing-sequence-accession-numbers) for contributing sequence accession numbers.
+
+### Darwin Core standard for sequence data
+
+For sequence data to conform with the Darwin Core standard, a column header 'associatedSequences' ([https://dwc.tdwg.org/terms/#dwc:associatedSequences](https://dwc.tdwg.org/terms/#dwc:associatedSequences)) may be used in the inventory table populated with a unique identifier (or list of identifiers) for the sequence data (e.g., SNLBE002-17, a sequence in Barcode Of Life Data system, aka BOLD) or full URL (e.g., [http://www.boldsystems.org/index.php/Public_RecordView?processid=SNLBE002-17](http://www.boldsystems.org/index.php/Public_RecordView?processid=SNLBE002-17)).

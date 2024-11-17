@@ -1,0 +1,14 @@
+---
+title: Data Package Design for Special Cases
+date: '2021'
+subtitle: Version 1
+author: LTER/EDI Non-tabular Data Working Group
+---
+
+# Preface  {.unnumbered}
+
+Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories.
+
+**Cite this document as:**
+
+Gries, Corinna, Stace Beaulieu, Renee F Brown, Sarah Elmendorf, Hap Garritt, Gastil Gastil-Buhl, Hsun-Yi Hsieh, et al. 2021. “Data Package Design for Special Cases.” Environmental Data Initiative. https://doi.org/10.6073/PASTA/9D4C803578C3FBCB45FC23F13124D052.

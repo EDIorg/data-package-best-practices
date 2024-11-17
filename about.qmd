@@ -1,0 +1,41 @@
+# About {.unnumbered}
+
+This website and the content it contains are a collaborative project of the Environmental Data Initiative (EDI) and numerous community partners and individuals. The intended audience is researchers, data managers, and repository users working the environmental science and management fields.
+
+## The website
+
+::: {style='text-align:center;'}
+
+This website is managed and maintained by the Environmental Data Initiative (EDI)  
+**<https://edirepository.org>**
+
+For general inquiries, contact us at:  
+<info@edirepository.org>
+
+**Current maintainers**  
+Gregory Maurer (<gmaurer@nmsu.edu>)  
+Colin Smith (<colin.smith@wisc.edu>)
+
+Content is created and published using [Quarto](https://quarto.org/), and all web pages are hosted by [GitHub](https://github.com) and [Netlify](https://netlify.app).
+
+:::
+
+## Contributors to the guides
+
+All of the dataset preparation guides presented here have been developed and written by a collaborative community of scientists, data managers, and repository users. This community draws heavily from the Information Management Committee of the the [U.S. Long-term Ecological Research Network (LTER)](https://lternet.edu), data specialists and curators at [EDI](https://edirepository.org), and numerous partners in the environmental research and data management communities. 
+
+Many individuals from the community described above have contributed to these guides over the years. Individual contributors are listed in the title page, citation information, and/or document metadata for each guide. Please don't hesitate to reach out to the maintainers if anyone has been overlooked, or if information needs to be corrected.
+
+**If you would like to contribute**, please read the [Contributing page](contributing.qmd) and contact the maintainers or representatives from the current working groups below.
+
+## Community working groups
+
+The ideas, words, and recommendations in these guides came to fruition as a result of many community working groups convening over periods of months to years. Below is a non-exhaustive list of these current and past working groups and their contacts. Don't hesitate to reach out to working group contacts if you would like to participate.
+
+* EML Best Practices working group
+  - Active from 2022-present
+  - Contact Greg Maurer (<gmaurer@nmsu.edu>)
+* Non-tabular data working group
+  - Active from 2019-2021
+  - Contact Corinna Gries (<cgries@wisc.edu>)
+

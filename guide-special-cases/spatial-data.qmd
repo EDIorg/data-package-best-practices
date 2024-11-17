@@ -1,0 +1,108 @@
+# Spatial Data
+
+Contributors: Tim Whiteaker, John Porter, Mary Martin
+
+## Introduction
+
+This document/chapter contains recommendations on data package structure and metadata for spatial datasets. Over the timeline of Long Term Ecological Research (LTER) Network?s use of the Ecological Metadata Language (EML), both spatial data formats and data curation options have evolved. In this document, focus on best practices that can be widely adopted with the goal of enhancing data discoverability and usability, and the understanding that there are multiple solutions to creating these data packages.
+
+## Recommendations for data packages
+
+### Considerations for archiving spatial data
+
+#### Data formats
+
+To maximize reuse, avoid proprietary formats. The formats listed below can be read or imported by most mainstream GIS programs or with code using libraries such as GDAL.
+
+Strongly recommended formats:
+
+* **GeoTIFF** - An open format for storing spatial raster data and metadata in a TIFF file.
+* **GeoPackage** - A standard format from the Open Geospatial Consortium (OGC) for storing vector and raster data in a SQLite database file.
+
+Some other formats to consider are listed below.
+
+* **KML/KMZ** - Keyhole Markup Language (KML) file and its zipped version for storing vector data. This format was popularized by Google Earth and is now an OGC standard.  KML is best visualized in Google software and may not render as well in other GIS software.
+* **GeoJSON** - A format for storing vector data as text in JavaScript Object Notation (JSON).  GeoJSON data are limited to the WGS84 coordinate system.
+* **netCDF/HDF5** - binary formats originally designed for storing multidimensional arrays of spatial data typically organized onto a grid, but which now can accommodate vector data following the NetCDF Climate and Forecast Conventions (version 1.8 or higher).
+
+A couple of Esri formats are worth mentioning and are listed below.
+
+* **File geodatabase** - One of Esri's formats for storing vector and raster information. Several feature classes and rasters can be stored in this folder and file based structure. GDAL's OpenFileGDB driver enables non-Esri software to view at least the data layers in a file geodatabase, but usage of more advanced file geodatabase components such as topology rules or geometric networks may not be available outside of Esri software.  Field types may not be imported correctly either.  Export to GeoPackage instead, unless geodatabase is the only format that supports the advanced representation of your GIS data.  Just know that you limit potential reuse of your data if you use this format.
+* **Shapefile** - A legacy format for vector data which is widely supported. Be aware of [shapefile limitations](https://en.wikipedia.org/wiki/Shapefile#Limitations) when considering this format. A shapefile consists of several individual files; include them as a single zip file in the data package. If the package has more than one shapefile, create a separate zip file for each shapefile.
+
+Although other open formats exist, their implementation in popular GIS software may be less common. If a proprietary format must be used to capture the full meaning of the data, consider also including a version of the data in an open format such as a simple data table along with metadata explaining its limitations in that format, or instructions on how to utilize the proprietary format. For example, an Esri layer package could be used when including recommended symbols for drawing vector features in a GIS is desired, in which case one could note that the vector data can be extracted by treating the layer package as a zip file.
+
+Formats that are composed of more than one file, such as shapefiles, should be zipped.  Include one dataset per zip file. For example, if you have 10 shapefiles, you would create 10 zip files.
+
+### Documenting spatial data packages
+
+#### Document as spatial[Raster, Vector] vs. otherEntity in EML
+
+There is a noticeable divergence in EDI spatial data packages, specifically, in the use of otherEntity vs spatial[Raster,Vector]. Here we discuss pros and cons of why one might choose to document spatial data with one type of EML entity over another. Either method is acceptable, and we recommend using spatial[Raster,Vector] when feasible.  The documentation that follows provides best practices that will maximize discoverability and useability of spatial data, regardless of the entity type used.
+
+#### [otherEntity](https://eml.ecoinformatics.org/schema/eml-dataset_xsd.html#DatasetType_otherEntity)
+
+* Pros
+  * EML preparation is simpler than with the spatial EML types
+  * Allows aggregated data structures (e.g., file geodatabases)
+* Cons
+  * Spatial data stored as &lt;otherEntity> might be harder to discover because it may be difficult to determine if data in an &lt;otherEntity> is spatial data or some other type when searching or browsing
+  * There is currently no controlled keywording to identify spatial data files that are included as otherEntity in EML
+  * Tabular attributes of geometric entities may not be described in detail
+  * Units (latitude/longitude vs meters vs feet) and projections may not be identified
+
+#### spatial[[Raster](https://eml.ecoinformatics.org/schema/eml-dataset_xsd.html#DatasetType_spatialRaster),[Vector](https://eml.ecoinformatics.org/schema/eml-dataset_xsd.html#DatasetType_spatialVector)]
+
+* Pros
+  * EML more fully describes vector attributes
+  * There is a well documented path from Esri metadata to EML
+  * An EML metadata search (on EDI or elsewhere) clearly identifies these as spatial datasets through the use of spatialRaster or spatialVector entities
+  * LTER has built applications based on spatial[Raster,Vector] entities
+* Cons
+  * Data may not originate in ArcGIS, requiring a custom workflow to generate spatial entity EML
+  * Spatial[Raster,Vector] can?t describe multi-layer aggregates of GIS data (e.g.,  geodatabases containing multiple feature classes)
+
+#### Keywords
+
+Clearly identifying a dataset as spatial in nature is important to discoverability. This can be achieved by the use of keywords in the EML keyword elements as well as in the title/abstract and methods where appropriate. Keywords frequently searched include: GIS, geographic information system, spatial data, plus the more specific format names like shapefile, geoTIFF etc. Consider including as appropriate.
+
+Do include the keywords **spatial vector** and **spatial raster** as appropriate for your data. These keywords should be used especially if the data are archived as otherEntity.  
+
+You may also include keywords that describe broad spatial data layers, e.g., digital elevation model, elevation, boundary, land use, land cover, census, parcel, imagery, as well as keywords that describe the specifics associated with a broad spatial data layer, e.g., land cover types such as water and vegetation types, land use types such as urban and forest, and so on.
+
+#### GIS software compatible metadata
+
+GIS platforms will not ingest EML metadata.  If your GIS software creates its own metadata file specific to that software, then it may be included as otherEntity.  Be sure to populate this metadata, for example with descriptions and units for attributes in vector data or raster attribute tables. However, metadata in the standard ISO 19115 or CSDGM format to enable the metadata to be read by other GIS software is more useful.
+
+#### Attribute and coordinate system detail for otherEntity
+
+While the GIS software compatible metadata included in the package typically describes attributes and coordinate systems of the data, such descriptions should also be included in the EML metadata to help users determine fit for use prior to data download. The EML spatialVector and spatialRaster types include elements for this purpose. EML otherEntity can also include attribute descriptions; however, inclusion of attributes in this more generic element may not be as common, and the element does not formally support a description of coordinate systems.
+
+When using [otherEntity](https://eml.ecoinformatics.org/schema/eml-dataset_xsd.html#DatasetType_otherEntity) instead of spatialVector or spatialRaster, include coordinate system details in the otherEntity/entityDescription element. If not including a description of attributes in the otherEntity/attributeList element, at least include a summary description of attributes in otherEntity/entityDescription. If the spatial dataset and its associated metadata files are the only items in the data package, then you can include these descriptions in higher level EML elements such as the dataset abstract in addition to or in place of descriptions at the entity level.
+
+#### Standardized content for formats and entity types
+
+In EML physical/dataFormat/externallyDefinedFormat, include a **formatName** indicating the spatial data file format. We recommend using format names from the [DataONE format list](https://cn.dataone.org/cn/v2/formats) when possible.  Some spatial items from that list are shown below. Always check the list for the most up-to-date version of these names.
+
+* Esri Shapefile (zipped)
+* Google Earth Keyhole Markup Language (KML)
+* Google Earth Keyhole Markup Language (KML) Compressed archive
+* Network Common Data Format, version 4
+* Hierarchical Data Format version 5 (HDF5)
+* GeoTIFF
+* GeoPackage Encoding Standard (OGC) Format Family
+* Esri File Geodatabase (zipped)
+* GeoJSON, version RFC 7946
+
+If your format is not included in the DataONE list, consider submitting an issue to that GitHub repository's issue tracker so that the format can be added.
+
+EML **formatVersion**, a sibling of formatName can be used to indicate the format version as in the example EML snippet below.
+
+```{.xml}
+<externallyDefinedFormat>
+  <formatName>Network Common Data Format, version 4</formatName>
+  <formatVersion>netCDF-4 classic</formatVersion>
+</externallyDefinedFormat>
+```
+
+For otherEntity, when populating the **entityType** element, use **spatial raster** or **spatial vector** as appropriate.

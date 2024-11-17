@@ -1,0 +1,12 @@
+---
+title: Scientific Domain-Specific Metadata Guide
+date: '2019'
+author: Margaret O'Brien and others
+title-block-banner: false
+---
+
+# Preface {.unnumbered}
+
+_Very much a work in progress._ 
+
+Recommendations for community-developed data products from specific scientific domains. Not all scientific domains are covered. The data packages are derived from raw data and reformatted to meet certain data harmonization standards. Many of these data products have extensive related code bases, which recommendations can take into account and link to. 

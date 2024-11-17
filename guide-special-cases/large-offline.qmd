@@ -1,0 +1,141 @@
+# Large Data Sets
+
+Contributors: Margaret O’Brien, Corinna Gries, Mark Servilla
+
+## Introduction
+
+Data entities are kept offline when they are too large to be handled easily by the HTTP protocol, are expected to be rarely requested, and can be mailed on an external drive.  If you suspect your data fall into this category, contact EDI for advice (support@edirepository.org). Below are recommendations for the EDI repository's handling of data packages that have an offline component.
+
+### Background
+
+Standard practice is to handle data entities (both upload and download) via the HTTP protocol, using a URL. However, for very large datasets HTTP can fail due to physical limits. The limit for “too large” is somewhat subjective; EDI's current limit for datasets that are “too large for HTTP” is 100GB (all data and metadata).
+
+## Recommendations for data packages
+
+### Physical Storage
+
+* The use of a Solid-state Drive (SSD) is strongly recommended for all offline data storage. The SSD should be formatted using one of the following file systems: 1) exFAT, 2) NTFS, or 3) ext4. Each of these file systems can accommodate individual file sizes greater than 1TB.
+
+* Add data to external drive in native (non-compressed, non-tarred, non-zipped) format, deliver to EDI (e.g., by physical mail).
+* EDI will store three copies, one external hard drive each in New Mexico and in Wisconsin, one copy in general EDI backup cloud storage.
+* Please mail one copy each to:
+
+Attn: Mark Servilla
+UNM Biology, Castetter Hall 1480
+MSC03-2020, 219 Yale Blvd NE
+Albuquerque, NM 87131-0001
+
+Attn: Corinna Gries
+University of Wisconsin
+Center for Limnology
+680 North Park Street
+Madison WI 53706-1413
+
+### Access
+
+To receive offline data, send a request to support@edirepository.org listing the data package(s) of interest and we'll determine the best mode of delivery. If technically feasible, we will stage data on an internet accessible host and will send you a URL when the data are ready for download. Otherwise, data will be sent on physical media. To receive data on physical media, you will be required to send a storage device of adequate volume to:
+
+Attn: Mark Servilla
+UNM Biology, Castetter Hall 1480 MSC03-2020
+219 Yale Blvd NE Albuquerque, NM 87131-0001
+
+We will utilize a delivery service of your choice, however, you will be responsible for all shipping arrangements and fees, including pre-arranging return delivery.
+
+### Data package
+
+* The external hard drive should contain at least two entities: the data (which will be offline) and an inventory or manifest that describe the contents of the external hard drive.
+* Content of the manifest (inventory of holdings) would be dictated by the type of data entity. The **manifest will be available as an online entity** (through the EDI Data Portal) so that potential requestors can evaluate the offline resource before requesting it.
+* Suggested columns are:
+  * Filename(s)
+  * Format (netCDF, tabular csv, etc.)
+  * Start_datetime
+  * End_datetime
+  * Location_lat
+  * Location_lon
+  * (other params the PIs may feel are essential)
+  * Checksum
+
+### Package Metadata
+
+(in EDI metadata template and converted to EML - generally, as for any data package)
+
+* Abstract: describe the collection generally. If individual files require specific software to read, provide the name of that software.
+* Creators
+* Contact - The first listed contact is responsible for sending out copies as requested and is typically the EDI repository manager:
+```{.xml}
+<contact>
+  <organizationName>Environmental Data Initiative</organizationName>
+  <electronicMailAddress>support@edirepository.org</electronicMailAddress>
+</contact>
+```
+* Methods - detailed collection/generation methods for the offline data entities. Detailed information for re-using the data. (May instead be included in the manifest table if different for different offline files.)
+* Data Entities
+  * Offline Entity:
+    * Describe as you would for an online resource. Restate the software needed to read the individual files if this is important to a user. See [Table 1](#table_1) and [Sample XML](#sample_xml_offline).
+  * Manifest (inventory of the offline holdings)
+    * Column descriptions as for any data table
+
+### EML
+
+In addition to basic resource-level metadata, at least two entities should be described:
+
+* Manifest (inventory) should be a tableEntity: will be the online entity and described as all
+* Offline entity:
+  * Fill out high-level fields as for an online resource. Restate the software needed to read the individual files if this is important to a user.
+  * Distribution node will be `offline` (See Table 1, code block)
+
+#### Table 1. Three required fields for an offline distribution  {#table_1}
+
+<table>
+  <tr>
+   <td>physical/objectName
+   </td>
+   <td>As for any entity, this is the name of the file or data object
+   </td>
+  </tr>
+  <tr>
+   <td>dataFormat/ExternallyDefinedFormat/formatName
+   </td>
+   <td>The name of the format the data object is in. If there is a special compression applied, list it here.
+   </td>
+  </tr>
+  <tr>
+   <td>distribution/offline/mediumName
+   </td>
+   <td>Instead of a data URL, you will have an offline distribution node. The name of almost all offline media is “external drive”, because that is how you will deliver the data to a requestor.
+   </td>
+  </tr>
+</table>
+
+#### Sample XML, offline entity   {#sample_xml_offline}
+
+```{.xml}
+
+<physical>
+  <objectName>mainl_2005acc.zip</objectName>
+  <dataFormat>
+    <externallyDefinedFormat>
+      <formatName>netCDF file</formatName>
+    </externallyDefinedFormat>
+  </dataFormat>
+  <distribution>
+    <offline>
+      <mediumName>External drive</mediumName>
+    </offline>
+  </distribution>
+</physical>
+
+```
+
+## References
+
+### EML documentation
+
+[https://eml.ecoinformatics.org/schema/index.html](https://eml.ecoinformatics.org/schema/index.html)
+
+Look for the PhysicalDistributionType
+
+## Potential Issues
+
+* SSD formatting (eventually, whatever we use, it will become unusable).
+* Even with cloud storage, eventually a binary format will become unusable.

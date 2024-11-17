@@ -1,6 +1,0 @@
-repo: https://github.com/EDIorg/data-package-best-practices
-delete_merged_file: true
-language:
-  ui:
-    chapter_name: ""
-output_dir: "docs"
