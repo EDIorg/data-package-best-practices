@@ -19,7 +19,7 @@ Guides published here are directed towards the following goals:
   - design a data package
   - prepare a data product for synthesis
 
-To contribute to these documents or participate in the associated working groups, see the "[About this site](about.qmd)" page or the [repository README](https://github.com/EDIorg/dataset_preparation_guides). This website and all documents are rendered as a [Quarto book](https://quarto.org/docs/books).
+To contribute to these documents or participate in the associated working groups, see the "[About this site](about.qmd)" page or the [repository README](https://github.com/EDIorg/data-package-best-practices). This website and all documents are rendered as a [Quarto book](https://quarto.org/docs/books).
 
 ## Books
 
