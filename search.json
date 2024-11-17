@@ -34,7 +34,7 @@
     "href": "about.html#the-website",
     "title": "About",
     "section": "",
-    "text": "This website is managed and maintained by the Environmental Data Initiative (EDI)\nhttps://edirepository.org\nFor general inquiries, contact us at:\ninfo@edirepository.org\nCurrent maintainers\nGregory Maurer (gmaurer@nmsu.edu)\nColin Smith (colin.smith@wisc.edu)\nContent is created and published using Quarto, and all web pages are hosted by GitHub and Netlify.",
+    "text": "This website is managed and maintained by the Environmental Data Initiative (EDI)\nhttps://edirepository.org\nFor general inquiries, contact us at:\ninfo@edirepository.org\nCurrent maintainers\nGregory Maurer (gmaurer@nmsu.edu)\nColin Smith (colin.smith@wisc.edu)\nContent is created and published using Quarto. All source files are managed in the EDIorg/data-package-best-practices GitHub repository, and rendered web pages are hosted by GitHub Pages or Netlify. The main branch of the repository renders to the current production website, and the prerelease branch renders to a prerelease website for newer content that is in review or development. See the repository README or Contributing page for more details.",
     "crumbs": [
       "About"
     ]
