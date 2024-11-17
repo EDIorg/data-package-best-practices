@@ -1,0 +1,57 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "EDI Dataset Preparation Guides"
+  author: "Environmental Data Initiative and colleagues"
+  description: "Community-developed guides for preparing and publishing datasets in the environmental sciences, and similar contexts, using the Ecological Metadata Language (EML)."
+  date: "2022-05-25"
+  favicon: img/edi-logo.png
+  site-url: https://ediorg.github.io/data-package-best-practices
+  repo-url: https://github.com/ediorg/data-package-best-practices
+  repo-branch: main
+  repo-actions: [edit, issue]
+  navbar:
+    search: true
+    logo: img/edi-logo.png
+  chapters:
+    - index.qmd
+    - about.qmd
+    - contributing.qmd
+
+    - part: guide-eml-bp/preface.qmd
+      chapters:
+        - guide-eml-bp/introduction.qmd
+        - guide-eml-bp/content-recommendations.qmd
+
+    - part: guide-special-cases/preface.qmd
+      chapters: 
+        - guide-special-cases/code.qmd
+        - guide-special-cases/model-based.qmd
+        - guide-special-cases/images-and-docs.qmd
+        - guide-special-cases/spatial-data.qmd
+        - guide-special-cases/moving-platforms.qmd
+        - guide-special-cases/other-repositories.qmd
+        - guide-special-cases/large-offline.qmd
+
+    - part: guide-domain-specific/preface.qmd
+      chapters:
+        - guide-domain-specific/ecocom.qmd
+        - guide-domain-specific/hymet.qmd
+        - guide-domain-specific/soil-carbon.qmd
+    - references.qmd
+
+execute:
+  freeze: auto
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+#  pdf:
+#    documentclass: scrreprt
+
+
+
