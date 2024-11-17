@@ -2,9 +2,9 @@
 
 ::: {.callout-note}
 
-**This website is being updated right now.**
+**These guides and the website are being updated right now.**
 
-Most content here is from the most recent update around 2022-05-25 version, and newer, community-led content will be available in the [prerelease version](https://prerelease-edi-docs.netlify.app).
+Most content here is from the most recent "official" update of the guides that happened around 2022-05-25 version. Newer, community-led content is available for review in the [prerelease version](https://prerelease-edi-docs.netlify.app).
 
 :::
 

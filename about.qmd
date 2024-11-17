@@ -16,7 +16,7 @@ For general inquiries, contact us at:
 Gregory Maurer (<gmaurer@nmsu.edu>)  
 Colin Smith (<colin.smith@wisc.edu>)
 
-Content is created and published using [Quarto](https://quarto.org/). All source files are managed in the [`EDIorg/data-package-best-practices`](https://github.org/EDIorg/data-package-best-practices) GitHub repository, and rendered web pages are hosted by [GitHub Pages](https://pages.github.com) or [Netlify](https://netlify.app). The `main` branch of the repository renders to the [current production website](https://ediorg.github.io/data-package-best-practices/), and the `prerelease` branch renders to a [prerelease website](https://prerelease-edi-docs.netlify.app/) for newer content that is in review or development.  See the repository [README](https://github.org/EDIorg/data-package-best-practices) or [Contributing page](contributing.qmd) for more details.
+Content is created and published using [Quarto](https://quarto.org/). All source files are managed in the [`EDIorg/data-package-best-practices`](https://github.org/EDIorg/data-package-best-practices) GitHub repository, and rendered web pages are hosted by [GitHub Pages](https://pages.github.com) or [Netlify](https://netlify.app). The `main` branch of the repository renders to the [current production website](https://ediorg.github.io/data-package-best-practices/), and the `prerelease` branch renders to a [prerelease website](https://prerelease-edi-docs.netlify.app/) for newer content that is in review or development.  See the repository [README](https://github.org/EDIorg/data-package-best-practices/) or [Contributing page](contributing.qmd) for more details.
 
 :::
 
@@ -38,4 +38,3 @@ The ideas, words, and recommendations in these guides came to fruition as a resu
 * Non-tabular data working group
   - Active from 2019-2021
   - Contact Corinna Gries (<cgries@wisc.edu>)
-
