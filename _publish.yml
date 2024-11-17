@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: 295af2f3-409a-48ef-a32c-a8f146d3cf7c
+      url: 'https://prerelease-edi-docs.netlify.app'
