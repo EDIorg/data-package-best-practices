@@ -4,7 +4,7 @@
 
 **These guides and the website are being updated right now.**
 
-Most content here is from the most recent "official" update of the guides that happened around 2022-05-25 version. Newer, community-led content is available for review in the [prerelease version](https://prerelease-edi-docs.netlify.app).
+Most content here is from the most recent "official" update of the guides that happened around May of 2022. Newer, community-led content is available for review in the [prerelease version](https://prerelease-edi-docs.netlify.app).
 
 :::
 
