@@ -1,0 +1,1 @@
+Sitemap: https://ediorg.github.io/data-package-best-practices/sitemap.xml
