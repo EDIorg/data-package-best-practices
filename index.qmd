@@ -2,11 +2,9 @@
 
 ::: {.callout-note}
 
-**This website and all documents are in development. Use with caution.**
+**This website is being updated right now.**
 
-Content in the current production version was originally taken and lightly modified from EDI's [*Data Package Best Practices*](https://ediorg.github.io/data-package-best-practices/) site (2022-05-25 version, see the [repo](https://github.com/EDIorg/data-package-best-practices)).
-
-Newer, community-led content is available in the [prerelease version](https://prerelease-edi-docs.netlify.app).
+Most content here is from the most recent update around 2022-05-25 version, and newer, community-led content will be available in the [prerelease version](https://prerelease-edi-docs.netlify.app).
 
 :::
 
