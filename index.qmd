@@ -13,7 +13,7 @@ listing:
   type: table
 ---
 
-TEST - This website contains a series of documents about preparing and publishing datasets in the environmental sciences and similar contexts. Topics include community-developed metadata standards, serialization and markup formatting guidelines, best practices for content in ecological synthesis datasets, and more. This documentation is maintained by the [Environmental Data Initiative](https://edirepository.org) (EDI) and all content has been developed and written in collaboration with EDI's community of scientists, data managers, and repository users.
+This website contains a series of documents about preparing and publishing datasets in the environmental sciences and similar contexts. Topics include community-developed metadata standards, serialization and markup formatting guidelines, best practices for content in ecological synthesis datasets, and more. This documentation is maintained by the [Environmental Data Initiative](https://edirepository.org) (EDI) and all content has been developed and written in collaboration with EDI's community of scientists, data managers, and repository users.
 
 **The purpose of these guides is to:**
 
