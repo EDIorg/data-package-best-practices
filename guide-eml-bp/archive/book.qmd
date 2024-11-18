@@ -43,15 +43,17 @@ description: These recommendations for creating EML metadata documents can be ap
 license: CC BY
 keywords:
   - data
+  - EML
+  - dataset
+  - scientific research
+  - environmental science
   - metadata
   - publishing
   - guide
   - repository
-  - LTER Network
-  - Environmental Data Initiative
 citation: 
   container-title: Environmental Data Initiative
-  doi: 10.5555/12345678
+  doi: n/a
 categories: draft
 image: ../../img/book.svg
 ---
