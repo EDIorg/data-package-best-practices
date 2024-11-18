@@ -16,9 +16,10 @@ For general inquiries, contact us at:
 Gregory Maurer (<gmaurer@nmsu.edu>)  
 Colin Smith (<colin.smith@wisc.edu>)
 
-Content is created and published using [Quarto](https://quarto.org/). All source files are managed in the [`EDIorg/data-package-best-practices`](https://github.org/EDIorg/data-package-best-practices) GitHub repository, and rendered web pages are hosted by [GitHub Pages](https://pages.github.com) or [Netlify](https://netlify.app). The `main` branch of the repository renders to the [current production website](https://ediorg.github.io/data-package-best-practices/), and the `prerelease` branch renders to a [prerelease website](https://prerelease-edi-docs.netlify.app/) for newer content that is in review or development.  See the repository [README](https://github.org/EDIorg/data-package-best-practices/) or [Contributing page](contributing.qmd) for more details.
-
 :::
+
+Content on this website is created and published using [Quarto](https://quarto.org/). All source files are managed in the [`EDIorg/data-package-best-practices`](https://github.org/EDIorg/data-package-best-practices) GitHub repository, and rendered web pages are hosted by [GitHub Pages](https://pages.github.com) or [Netlify](https://netlify.app). The `main` branch of the repository renders to the [current production website](https://ediorg.github.io/data-package-best-practices/), and the `prerelease` branch renders to a [prerelease website](https://prerelease-edi-docs.netlify.app/) for new content and documents under review or development.  See the repository [README](https://github.org/EDIorg/data-package-best-practices) or [Contributing page](contributing.qmd) for more details.
+
 
 ## Contributors to the guides
 
@@ -32,9 +33,15 @@ Many individuals from the community described above have contributed to these gu
 
 The ideas, words, and recommendations in these guides came to fruition as a result of many community working groups convening over periods of months to years. Below is a non-exhaustive list of these current and past working groups and their contacts. Don't hesitate to reach out to working group contacts if you would like to participate.
 
-* EML Best Practices working group
-  - Active from 2022-present
+* **EML Best Practices Working Group**
+  - In existence 2005-present
   - Contact Greg Maurer (<gmaurer@nmsu.edu>)
-* Non-tabular data working group
+  - Currently active members (2022-present): Corinna Gries (University of Wisconsin, Madison), Gabriel Kamener (Florida International University), Sage Lichtenwalner (Rutgers University), Mary Martin (University of New Hampshire), Gregory E. Maurer (New Mexico State University), Margaret O’Brien (University of California, Santa Barbara), John H. Porter (University of Virginia), Tim Whiteaker (University of Texas at Austin)
+  - Past members: Dan Bahauddin (University of Minnesota), Barbara Benson, Emery Boose (Harvard University), James Brunt
+ (University of New Mexico), Duane Costa (University of New Mexico),  Corinna Gries (University of Wisconsin, Madison), Don Henshaw (Oregon State University), Margaret O’Brien (University of California, Santa Barbara), Ken Ramsey (New Mexico State University), Inigo San Gil (University of New Mexico), Mark Servilla (University of New Mexico), Wade Sheldon, Phillip Tarrant, Theresa Valentine, John Vande Castle, Kristin Vanderbilt (University of New Mexico), Jonathan Walsh, Yang Xia (Kansas State University)
+  
+* **Non-tabular Data Working Group**
   - Active from 2019-2021
   - Contact Corinna Gries (<cgries@wisc.edu>)
+  - Members: Stace Beaulieu (Woods Hole Oceanographic Institute), Renée F. Brown (University of New Mexico), Jason Downing (University of Alaska, Fairbanks), Sarah Elmendorf (University of Colorado Boulder), Hap Garritt (Woods Hole Oceanographic Institute), Gastil Gastil-Buhl (University of California Santa Barbara), Corinna Gries (University of Wisconsin, Madison), Hsun-Yi Hseih (Michigan State University), Li Kui (University of California Santa Barbara), Mary Martin (University of New Hampshire), Gregory E. Maurer (New Mexico State University), An T. Nguyen (University of Texas at Austin), John H. Porter  (University of Virginia), Adam Sapp (University of Georgia), Mark Servilla (University of New Mexico), Tim Whiteaker (University of Texas at Austin)
+
