@@ -5,7 +5,7 @@ toc: false
 listing:
   id: guide-listing
   include:
-    categories: [draft, published]
+    categories: [archived, draft, published]
   sort: 
     - "categories desc"
     - "date desc"
