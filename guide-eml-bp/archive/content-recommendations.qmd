@@ -318,7 +318,7 @@ Example 4: creator
    <phone phonetype="voice">(999) 999-9999</phone>
    <electronicMailAddress>fsu.contact@fi.univ.edu</electronicMailAddress>
    <onlineUrl>http://www.fsu.edu/</onlineUrl>
-   <userId system="https://orcid.org">
+   <userId directory="https://orcid.org">
       https://orcid.org/0000-0000-0000-0000
    </userId>
 </creator>
@@ -335,7 +335,7 @@ Example 4: creator
    <phone phonetype="voice">(999) 999-9999</phone>
    <electronicMailAddress>fsu.leadPI@fi.univ.edu</electronicMailAddress>
    <onlineUrl>http://www.fsu.edu/</onlineUrl>
-   <userId system="https://orcid.org">
+   <userId directory="https://orcid.org">
       https://orcid.org/0000-0000-0000-0000
    </userId>
 </creator>
@@ -358,7 +358,7 @@ Example 4: creator
    <phone phonetype="voice">(999) 999-9999</phone>
    <electronicMailAddress>jecologist@fi.univ.edu</electronicMailAddress>
    <onlineUrl>http://www.fsu.edu/~jecologist</onlineUrl>
-   <userId system="https://orcid.org">
+   <userId directory="https://orcid.org">
       https://orcid.org/0000-0000-0000-0000
    </userId>
 </creator>
@@ -412,7 +412,7 @@ Example 5: metadataProvider
    <phone phonetype="voice">(999) 999-9999</phone>
    <electronicMailAddress>fsu@fi.univ.edu</electronicMailAddress>
    <onlineUrl>http://www.fsu.edu/</onlineUrl>
-   <userId system="https://orcid.org">
+   <userId directory="https://orcid.org">
       https://orcid.org/0000-0000-0000-0000
    </userId>
 </metadataProvider>
@@ -449,7 +449,7 @@ Example 6: associatedParty
    <phone phonetype="voice">(999) 999-9999</phone>
    <electronicMailAddress>itestuser@lternet.edu</electronicMailAddress>
    <onlineUrl>http://search.lternet.edu/directory_view.php?personid=12010&amp;query=itestuser</onlineUrl>
-   <userId system="https://orcid.org">
+   <userId directory="https://orcid.org">
       https://orcid.org/0000-0000-0000-0000
    </userId>
    <role>Technician</role>
@@ -487,7 +487,7 @@ Example 7: contact
    <phone phonetype="voice">(999) 999-9999</phone>
    <electronicMailAddress>fsu.data@fi.univ.edu</electronicMailAddress>
    <onlineUrl>http://www.fsu.edu/</onlineUrl>
-   <userId system="https://orcid.org">
+   <userId directory="https://orcid.org">
       https://orcid.org/0000-0000-0000-0000
    </userId>
 </contact>
