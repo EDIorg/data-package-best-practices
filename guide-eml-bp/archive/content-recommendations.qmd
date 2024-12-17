@@ -21,7 +21,7 @@ This attribute is found at this location (XPath):
 
 As outlined elsewhere, EML preparers should manage unique identifiers and versioning at the local level (see **\@system** discussion below). The **packageId** attribute can be used to contain the same identifier as is used by the repository.
 
-_Context Note: The packageID attribute is required in all EML documents submitted to the EDI repository. It is entered into the repository software, and theformat is standardized to three parts: scope, package-number, revision. The scope should be "edi" unless another scope is justified by prior arrangement. See Example 1._
+_Context note: The packageID attribute is required in all EML documents submitted to the EDI repository. It is entered into the repository software, and theformat is standardized to three parts: scope, package-number, revision. The scope should be "edi" unless another scope is justified by prior arrangement. See Example 1._
 
 
 ## Top Level Elements
@@ -61,7 +61,7 @@ This attribute group can be used on these EML elements:
 <**attribute**>
 <**constraint**>
 
-These three attributes are found as a group and are usually optional. The primary use of the id attribute is as an internal reference, hence each id must be unique within one EML document. E.g.,. a <**creator**> must have a different id than a <**dataTable**>. And if the same person appears in seberal places (at dataset/creator, protocol/creator or project/creator, the same id cannot be repeated, so either the content of the id must be changed or a reference used for repeated instances. This restriction can cause problems when content is drawn from a system with IDs (e.g. a personnel database), and is under consideration by the EML developers. Ideally the three attributes would work together. The scope attribute can have one of two values, “system” or “document”. It is preferred that when the scope is set to “system”, that the system attribute defines the ID-system, the id attribute content is (presumably) from that system. Currently, a reasonable general practice should be to define a system on the <**eml:eml**> element and set it to the site (but not set the system attribute at any other level), and to set scope=“document” on elements other than <**eml:eml**>.
+These three attributes are found as a group and are usually optional. The primary use of the id attribute is as an internal reference, hence each id must be unique within one EML document. E.g.,. a <**creator**> must have a different id than a <**dataTable**>. And if the same person appears in several places (at dataset/creator, protocol/creator or project/creator, the same id cannot be repeated, so either the content of the id must be changed or a reference used for repeated instances. This restriction can cause problems when content is drawn from a system with IDs (e.g. a personnel database), and is under consideration by the EML developers. Ideally the three attributes would work together. The scope attribute can have one of two values, “system” or “document”. It is preferred that when the scope is set to “system”, that the system attribute defines the ID-system, the id attribute content is (presumably) from that system. Currently, a reasonable general practice should be to define a system on the <**eml:eml**> element and set it to the site (but not set the system attribute at any other level), and to set scope=“document” on elements other than <**eml:eml**>.
 
 Example 1: attributes packageId, id, system, and scope
 ```{.xml}
@@ -175,7 +175,7 @@ additional comments under entities, below.)
 
 The dataset title element is found at this location (XPath):  
 **/eml:eml/ dataset/title**  
-**/eml:eml/method/methodStep/protocol/title**  
+**/eml:eml/methods/methodStep/protocol/title**  
 **/eml:eml/project/title**
 
 The dataset <**title**> should be descriptive and should mention the
@@ -257,7 +257,7 @@ group of elements, which is found at these locations (XPath):
 **/eml:eml/dataset/associatedParty**  
 **/eml:eml/dataset/publisher**  
 **/eml:eml/dataset/project/creator**  
-**/eml:eml/dataset/method/methodStep/protocol/creator**  
+**/eml:eml/dataset/methods/methodStep/protocol/creator**  
 
 **General recommendations**: When using <**individualName**>
 elements anywhere within an EML document, names should be constructed
@@ -292,7 +292,7 @@ This element is found at this location (XPath):
 **/eml:eml/dataset/associatedParty/userId**  
 **/eml:eml/dataset/publisher/userId**  
 **/eml:eml/dataset/project/creator/userId**  
-**/eml:eml/dataset/method/methodStep/protocol/creator/userId**
+**/eml:eml/dataset/methods/methodStep/protocol/creator/userId**
 
 The optional <**userId**> field holds identifiers for responsible
 parties from other systems. This element is repeatable so that multiple
@@ -564,7 +564,7 @@ also are appropriate (e.g. state, city, county). If groups of keywords
 are from a specific vocabulary, its name belongs the optional tag
 <**keywordThesaurus**>.
 
-_Context: Communities sometimes have specific requests for keywords to
+_Context note: Communities sometimes have specific requests for keywords to
 assist in searches. E.g, the LTER requests that keywords should include
 a LTER core research area(s), the network acronym (LTER, ILTER, etc.),
 three-letter site acronym and site name. In addition to specific
@@ -622,7 +622,7 @@ description of any deviation from the general policy specific for this
 particular package (e.g. restricted-access packages). The timeframe for
 release should be included as well.
 
-_Context: If no_ <**intellectualRights**> _element is included EDI
+_Context note: If no_ <**intellectualRights**> _element is included EDI
 will insert text that releases data under "CC-0" (shown in example). The
 LTER Network-wide default policy is "CC-BY". Please consult those
 organizations for more information and more details._
@@ -668,7 +668,7 @@ entity levels.
 At the dataset level, the `<distribution>` element should be used for information only, 
 because it applies to the entire package, not only to one entity.
 
-_Context: The EDI repository will ignore a `<distribution>` element
+_Context note: The EDI repository will ignore a `<distribution>` element
 at the dataset level._
 
 Example 11a: distribution at the dataset level
@@ -714,14 +714,15 @@ page, or other page that provides information about downloading the
 object but does not directly return the data stream, then the
 "function" attribute should be set to "information".
 
-_Context: for am EML data package to be accepted into the EDI
+_Context note: for am EML data package to be accepted into the EDI
 repository, it must include at least one URL; at the entity level (e.g.,
 a dataTable at /eml:eml/dataset/dataTable/physical/distribution/url).
 The URL must include the function attribute with the value "download"
 (or empty, i.e., defaults to "download")._
 
-[*Editor's note*: The context note below has been added to the online version.]
-_Context: The EDI repository system has alternatives for uploading data
+[*Editor's note*: The context note below was added to the online version only.]  
+
+_Context note: The EDI repository system has alternatives for uploading data
 entities if you do not have a server which can deliver entities via a URL (http). 
 Contact EDI for more information on these options._
 
@@ -1162,7 +1163,7 @@ calibration information for an instrument or input parameters for a
 model. It also may hold the source (provenance) data when describing a
 derived dataset.
 
-_Context Note: The_ <**dataSource**> _element is used by the EDI
+_Context note: The_ <**dataSource**> _element is used by the EDI
 repository's provenance tracking system for linking between derived and
 source data packages. For more information, see additional data
 repository resources from EDI._
@@ -1183,7 +1184,7 @@ detailed temporal or geographic <**coverage**> elements describing
 discrete time periods sampled or multiple sub-regions sampled within the
 overall geographic bounding box that was described at the dataset level.
 
-_Context Note: In the past, LTER requested that individual sampling
+_Context note: In the past, LTER requested that individual sampling
 locations be listed here (under **studyExtent/spatialSamplingUnits**),
 and some LTER sites may have applications that specifically use that
 XPath. However, in general use, the dataset-level geographicCoverage
@@ -1335,9 +1336,9 @@ project. As stated earlier, the description of elements that are reused
 descriptions for these three elements (<**title**>, <**personnel**>
 and <**abstract**>) can be found above, under <**dataset**>, above.
 Two elements are unique to the <**project**> tree,
-<**fundingSource**> and <**studyAreaDiscription**>.
+<**funding**> and <**studyAreaDiscription**>.
 
-<**fundingSource**> should contain the agency and grant number. It is
+<**funding**> should contain the agency and grant number. It is
 not optional.
 
 <**studyAreaDiscription**> tree and its accompanying <**citation**>
@@ -1495,8 +1496,8 @@ ASCII file name. However, a better analogy is that the
 at field station", with its instantiation (filename) in the
 <**objectName**> element (see below).
 
-_Context: The EDI repository requires that <**entityName**>s be unique
-within the entity._
+_Context note: The EDI repository requires that <**entityName**>s be unique
+within the data package (EML document)._
 
 <**entityDescription**> This should be a longer, more descriptive
 explanation of the data in the entity. Like all descriptions, it is
@@ -1677,7 +1678,7 @@ attributeNames be suitable for use as a variable, e.g., composed of
 ASCII characters, and that the <**attributeName**>s match the column
 headers of a CSV or other text table.
 
-_Context: in the EDI repository,_ <**attributeName**>_s must be unique
+_Context note: in the EDI repository,_ <**attributeName**>_s must be unique
 within a data entity._
 
 <**attributeLabel**> (optional): is used to provide a less ambiguous
@@ -1763,7 +1764,7 @@ the unit being modified. For example, meterSquared is preferred, while
 squareMeter is improper. Units should be singular, such as "meter", and
 not plural, such as "meters".
 
-_Context: EDI has adopted the LTER Unit Registry and recommends that
+_Context note: EDI has adopted the LTER Unit Registry and recommends that
 <**customUnit**> element be used for all units with content pulled
 from the Unit Registry, even when the unit is already listed in the
 standard unit dictionary._
@@ -1785,7 +1786,7 @@ large), and .001 meters for a different species, but all the data on
 "fish length" are collected into one attribute and are measured using
 their appropriate precision values. For these cases precision can be
 omitted, but the variable precision information should be described in
-detail in **method/methodStep**. Together, the information in
+detail in **methods/methodStep**. Together, the information in
 <**numericDomain**> and <**precision**> are sufficient to decide
 upon an appropriate system-specific data type for representing a
 particular attribute. For example, an attribute with a numeric domain
@@ -1797,7 +1798,7 @@ The <**measurementType**> element, <**dateTime**>, is a date-time
 value from the Gregorian calendar and it is recommended that these be
 expressed in a format that conforms to the ISO 8601 standard. An example
 of an allowable ISO date-time is "YYYY-MM-DD", as in 2004-06-25, or,
-more fully, as "YYYY-MM-DDThh:mm:ssTZD" (eg 1997-07-16T19:20:30.45Z).
+more fully, as "YYYY-MM-DDThh:mm:ssTZ" (eg 1997-07-16T19:20:30.45Z).
 The ISO standard is quite strict about the structure of date components.
 Since legacy data often contain non-standard dates, and existing
 equipment (e.g., sensors) may still be producing non-standard dates, the
