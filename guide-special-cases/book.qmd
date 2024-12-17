@@ -11,27 +11,35 @@ author:
     roles: [conceptualization, writing, editing]
   - name: Stace Beaulieu
     affiliation: Woods Hole Oceanographic Institute
+    orcid: 0000-0002-2609-5453
     roles: [conceptualization, writing, editing]
   - name: Renée F. Brown
     affiliation: University of New Mexico
+    orcid: 0000-0002-4986-7663
     roles: [conceptualization, writing, editing]
   - name: Sarah Elmendorf
     affiliation: University of Colorado Boulder
+    orcid: 0000-0003-1085-8521
     roles: [conceptualization, writing, editing]
   - name: Hap Garritt
     affiliation: Woods Hole Oceanographic Institute
     roles: [conceptualization, writing, editing]
+    orcid: 0000-0001-5912-0769
   - name: Gastil Gastil-Buhl
     affiliation: University of California Santa Barbara
+    orcid: 0000-0001-9177-5722
     roles: [conceptualization, writing, editing]
   - name: Hsun-Yi Hseih
     affiliation: Michigan State University
+    orcid: 0000-0003-2245-3695
     roles: [conceptualization, writing, editing]
   - name: Li Kui
     affiliation: University of California Santa Barbara
+    orcid: 0000-0002-5894-4907
     roles: [conceptualization, writing, editing]
   - name: Mary Martin
     affiliation: University of New Hampshire
+    orcid: 0000-0003-1791-5584
     roles: [conceptualization, writing, editing]
   - name: Gregory E. Maurer
     affiliation: New Mexico State University
@@ -48,12 +56,15 @@ author:
     roles: [conceptualization, writing, editing]
   - name: Adam Sapp
     affiliation: University of Georgia
+    orcid: 0000-0002-3197-7602
     roles: [conceptualization, writing, editing]
   - name: Mark Servilla
     affiliation: University of New Mexico
+    orcid: 0000-0002-3192-7306
     roles: [conceptualization, writing, editing]
   - name: Tim Whiteaker
     affiliation: University of Texas at Austin
+    orcid: 0000-0002-1940-4158
     roles: [conceptualization, writing, editing]
   - name: LTER Network Information Management Committee
     affiliation: Various

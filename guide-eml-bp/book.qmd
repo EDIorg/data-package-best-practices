@@ -9,12 +9,15 @@ author:
     roles: [conceptualization, writing, editing]
   - name: Gabriel Kamener
     affiliation: Florida International University
+    orcid: 0000-0002-4202-7573
     roles: [conceptualization, writing, editing]
   - name: Sage Lichtenwalner
     affiliation: Rutgers University
+    orcid: 0000-0002-4926-3579
     roles: [conceptualization, writing, editing]
   - name: Mary Martin
     affiliation: University of New Hampshire
+    orcid: 0000-0003-1791-5584
     roles: [conceptualization, writing, editing]
   - name: Gregory E. Maurer
     affiliation: New Mexico State University
@@ -32,6 +35,7 @@ author:
     roles: [conceptualization, writing, editing]
   - name: Tim Whiteaker
     affiliation: University of Texas at Austin
+    orcid: 0000-0002-1940-4158
     roles: [conceptualization, writing, editing]
   - name: LTER Network Information Management Committee
     affiliation: Various
