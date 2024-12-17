@@ -88,7 +88,7 @@ Example 2: Minimum recommended codemeta.json example for unnamed projects.
 }
 ```
 
-Example 3: sample otherEntity metadata for example 2â€™s codemeta.json.
+Example 3: sample otherEntity metadata for example 2's codemeta.json.
 
 ```xml
 <otherEntity>
@@ -170,11 +170,11 @@ Example 4: A more complete CodeMeta example for named projects. Example taken fr
 
 When archiving software, we strongly recommend including a user guide with installation and usage instructions if such would not already be apparent to the typical user. Take into account that the user might not have access to certain inputs that the software/scripts require. Include when feasible at least some example data, and configure the script so that it is ready to run with the example data.
 
-Aside from the software/code itself and its dependencies, other pieces of information may be important should a user wish to reproduce results, such as the operating system and version and the system locale. Include this information in the data packageâ€™s methods/methodStep/description. For certain tools, there are ways to easily generate this information, e.g., a call to sessionInfo() in the R console. If the system outputs this information in a standardly formatted plain text file, that might be included as an otherEntity.
+Aside from the software/code itself and its dependencies, other pieces of information may be important should a user wish to reproduce results, such as the operating system and version and the system locale. Include this information in the data package's methods/methodStep/description. For certain tools, there are ways to easily generate this information, e.g., a call to sessionInfo() in the R console. If the system outputs this information in a standardly formatted plain text file, that might be included as an otherEntity.
 
 ### Linking code and data
 
-There are a few solutions for providing explicit machine-readable linkages between different entities/packages (the distinction between code/data doesnâ€™t matter too much here). For most cases we recommend the simplest approach, which is to use the methods/methodStep/description element of EML. More advanced users may wish to utilize the other solutions described herein.
+There are a few solutions for providing explicit machine-readable linkages between different entities/packages (the distinction between code/data doesn't matter too much here). For most cases we recommend the simplest approach, which is to use the methods/methodStep/description element of EML. More advanced users may wish to utilize the other solutions described herein.
 
 #### Descriptive approach
 
@@ -192,7 +192,7 @@ Nested under methods/methodStep, dataSource elements describe other data package
 
 Large community-backed tools or proprietary software such as ArcGIS Pro or Microsoft Excel do not need to be archived. However, if they have had any impact on the final data (e.g., ArcGIS Pro was used to modify spatial rasters), the EML methods section should describe the routines performed. Within the data package, indicate linkage to external software as follows.
 
-* Briefly describe the software/code and its relationship to the data in EMLâ€™s methods/methodStep/description element.
+* Briefly describe the software/code and its relationship to the data in EML's methods/methodStep/description element.
 * Names of all software used. Include both the common acronym and the full spelling.
 * The URL(s) to all models/software used. Stable, persistent URLs pointing to exact version(s) are preferable, rather than generic links such as a project homepage. If the archived model has a DOI, then include a full citation to the model in the methods/methodStep/description text. The exception to this is when referencing tools such as Excel that have achieved global household name status.
 * Broadly, the system setup used, if relevant.
