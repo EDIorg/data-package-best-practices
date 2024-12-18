@@ -70,19 +70,27 @@ author:
     affiliation: Various
     roles: [conceptualization, editing]
 abstract: This book covers considerations for creating well-designed datasets for publishing data types outside the most common cases for research data. Specialized needs for preparing and publishing a dataset may arise because the data are not tabular in structure, are stored in non-standard file formats, are collected with unique or new acquisition methods, or are large in size. Some examples of specialized data types described here are imagery, code, document archives, spatial data files, and raw genomic data stored in other repositories. This is Version 1 of the document, written and edited by the Non-tabular Data Working Group of the U.S. LTER Network Information Management Committee.
-description: Considerations for creating well-designed datasets that include data specialized by type, format, or acquisition method. Examples are images, code, documents, and raw data in other repositories. This is Version 1, written by the LTER/EDI Non-tabular Data Working Group.
+description: Community-developed considerations for creating well-designed datasets that include data specialized by type, format, or acquisition method. Examples are images, code, documents, and raw data in other repositories.
 license: CC BY
 keywords:
+  - data management
   - EML
   - dataset
-  - scientific research
+  - imagery
+  - big data
+  - documents
+  - drone
+  - code
+  - research
   - environmental science
   - metadata
   - publishing
   - guide
   - repository
 citation: 
+  type: book
   container-title: Environmental Data Initiative
+  version: 1
   doi: 10.6073/pasta/9d4c803578c3fbcb45fc23f13124d052
 categories: published
 image: ../img/book.svg

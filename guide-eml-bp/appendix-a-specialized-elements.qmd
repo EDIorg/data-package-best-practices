@@ -57,7 +57,10 @@ The &lt;**datasetGPolygon**> element may be included when the required bounding 
 
 The &lt;**datasetGPolygonExclusionGRing**> is the closed, non-intersecting boundary of a void area (or hole in an interior area). This could be the center of the doughnut shape created by the &lt;**datasetGPolygon**>. It can be created either by a gRing (list of points) or one or more &lt;**gRingPoint**>s. This is used if there is an internal polygon to be excluded from the outer polygon, e.g, a lake to be excluded from the broader geographic coverage.
 
-*Context note: It is somewhat rare for repository systems to display complex geographic coverage elements. EDI, for example, does not display datasetGPolygon elements in dataset landing pages.*
+::: {.callout-tip}
+## EDI context note
+It is somewhat rare for repository systems to display complex geographic coverage elements. EDI, for example, does not display &lt;**datasetGPolygon**> elements in dataset landing pages.
+:::
 
 
 ## Taxonomic coverage

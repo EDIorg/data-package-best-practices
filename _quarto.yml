@@ -49,30 +49,33 @@ website:
             - href: guide-eml-bp/chapter-01-introduction-to-eml.qmd
               text: "1. Introduction to EML"
             - href: guide-eml-bp/chapter-02-metadata-and-dataset-design-principles.qmd
-              text: "2. Metadata and dataset design principles"
+              text: "2. Metadata & dataset design"
             - href: guide-eml-bp/chapter-03-general-dataset-information.qmd
-              text: "3. General dataset information"
+              text: "3. General information"
             - href: guide-eml-bp/chapter-04-people-and-organizations-responsibleparty.qmd
-              text: "4. People and organizations (ResponsibleParty)"
+              text: "4. People and organizations"
             - href: guide-eml-bp/chapter-05-the-project-tree.qmd
               text: "5. The project tree"
             - href: guide-eml-bp/chapter-06-data-access-and-usage-rights.qmd
-              text: "6. Data access and usage rights"
+              text: "6. Data access & usage rights"
             - href: guide-eml-bp/chapter-07-keywords-coverage-and-annotations.qmd
-              text: "7. Keywords, coverage and annotations"
+              text: "7. Keywords, coverage & annotations"
             - href: guide-eml-bp/chapter-08-citations-and-references.qmd
-              text: "8. Citations and references"
+              text: "8. Citations & references"
             - href: guide-eml-bp/chapter-09-methods.qmd
               text: "9. Methods"
             - href: guide-eml-bp/chapter-10-data-entities.qmd
               text: "10. Data entities"
             - href: guide-eml-bp/chapter-11-variable-descriptions-attributes.qmd
-              text: "11. Variable descriptions (Attributes)"
+              text: "11. Variable descriptions"
             - href: guide-eml-bp/chapter-12-additional-metadata.qmd
               text: "12. Additional metadata"
             - href: guide-eml-bp/appendix-a-specialized-elements.qmd
+              text: "A. Specialized elements"
             - href: guide-eml-bp/appendix-b-xml-schemas-and-eml.qmd
+              text: "B. XML, schemas, & EML"
             - href: guide-eml-bp/appendix-c-known-issues-and-gotchas.qmd
+              text: "C. Known issues & gotchas"
         - section: "Dataset Design for Special Cases"
           href: guide-special-cases/book.qmd
           contents: 

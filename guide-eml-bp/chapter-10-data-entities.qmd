@@ -13,7 +13,10 @@ Table 10.1. Required and recommended child elements for &lt;**dataTable**> and &
 | &lt;**otherEntity**> | Data objects not described by other standard entity types (images, non-tabular data, binary files, etc.) | **EntityGroup**<br>\ \ \ \ &lt;**entityName**> (required)<br>\ \ \ \ &lt;**entityDescription**><br>\ \ \ \ &lt;**physical**><<br>&lt;**entityType**> (required)<br>&lt;**attributeList**> (for tabular data) |
 
 
-*Context note: Like many other EML elements, each of the entity elements has three attributes, ID, scope, and system. EDI will automatically fill them in with the actual entityID within the EDI repository system, scope = “document”, and system = "[https://pasta.edirepository.org](https://pasta.edirepository.org)". Hence, these attributes should not be used for local information as they will be overwritten upon submission. Use &lt;alternateIdentifier> instead.*
+::: {.callout-tip}
+## EDI context note
+Like many other EML elements, each of the entity elements has three attributes, \@**id**, \@**scope**, and \@**system**. EDI will automatically fill them in with the actual entityID within the EDI repository system (a hash), `scope = “document”`, and `system = "https://pasta.edirepository.org"`. Hence, these attributes should not be used for local information as they will be overwritten upon submission. Use &lt;**alternateIdentifier**> instead.
+:::
 
 
 ## Recommendations for dataTable
@@ -55,7 +58,7 @@ Example 10.1: An example of a &lt;**dataTable**> entity. The elements in the Ent
   </physical>
   <attributeList>
     …
-  </attributeList
+  </attributeList>
 </dataTable>
 ```
 
@@ -65,7 +68,10 @@ Example 10.1: An example of a &lt;**dataTable**> entity. The elements in the Ent
 
 When publishing an &lt;**otherEntity**>, we recommend using open, non-proprietary file formats to the extent possible, so that the published data objects can be used without restriction (such as requiring an expensive software license). Though &lt;**otherEntity**> is something of a catch-all data entity type, it requires a free text &lt;**entityType**> child element to describe whatever data object is being published. It is strongly recommended to place standardized descriptive text here that complements the standardized file format information included in **physical/dataFormat/externallyDefinedFormat/formatName**. This is demonstrated in Example 10.2, and Table 10.2 provides suggested &lt;**entityType**> values for a variety of file formats. Further guidance on this, including sources for standard terms, is given below in the “Physical tree” section. Additional information needed to fully describe the file format, data structure, use, or other aspects of the data object can also be provided in the element’s &lt;**entityDescription**> as needed.
 
-*Context note: When archiving HTML documents at EDI, the format name must be "text/html" in order for the document to be accepted.*
+::: {.callout-tip}
+## EDI context note
+If archiving HTML files at EDI, you must use a &lt;**formatName**> with the value "text/html" for the entity to be accepted.
+:::
 
 Example 10.2: An example of an &lt;**otherEntity**> element. The recommended elements in the **EntityGroup** are shown, as is a standardized value in the required &lt;**entityType**> element. Note the corresponding IANA standard text in the &lt;**formatName**> element.
 
@@ -107,7 +113,10 @@ In the **EntityGroup**, the &lt;**entityName**> element is required, and &lt;**e
 
  The entity name (&lt;**entityName**>) is a human readable name of the data object, whether that is a file, database table, document, or something else. The content should not exceed 100 characters. 
 
-*Context note: The EDI repository requires that &lt;**entityName**> elements be unique within the dataset. This element will be displayed on the dataset landing page as the name for the entity.*
+::: {.callout-tip}
+## EDI context note
+The EDI repository requires that &lt;**entityName**> elements be unique within the dataset. This element will be displayed on the dataset landing page as the name for the entity.
+:::
 
 
 ### Entity description (recommended)
@@ -156,14 +165,20 @@ Table 10.2. Recommended entity types and format names for some files that can be
 | Zip file | Zip file format | application/zip |
 
 
-*Context note: If archiving HTML files at EDI, you must use a formatName of "text/html" for the entity to be accepted.*
+::: {.callout-tip}
+## EDI context note
+If archiving HTML files at EDI, you must use a &lt;**formatName**> with the value "text/html" for the entity to be accepted.
+:::
 
 
 #### &lt;distribution>
 
 The &lt;**distribution**> tree provides information on how the resource is distributed, and the contents of this tree is generally covered at the &lt;**dataset**> level (refer to Chapter 6). However, there are a few points which will be reiterated. For submission of the dataset to a repository, the content of a &lt;**url**> element at the entity level should deliver data, and not point to another application or use page. The &lt;**url**>’s \@**function** attribute should have the value “download” (i.e. &lt;**url function=”download”**> This is implied if the \@**function** attribute is omitted.
 
-*Context note: EDI provides a ‘manual’ upload option for smaller data entities directly from the user’s desktop. For this option, the distribution URL does not need to be provided. Upon submission, EDI will replace the distribution URL with the repository download URL for the data object.*
+::: {.callout-tip}
+## EDI context note
+EDI provides a ‘manual’ upload option for smaller data entities directly from the user’s desktop. For this option, the distribution URL does not need to be provided. Upon submission, EDI will replace the distribution URL with the repository download URL for the data object.
+:::
 
 An optional &lt;**access**> element in a data entity’s &lt;**distribution**> tree is intended specifically to control access to the data entity separately from the metadata. For more information on using the &lt;**access**> tree, refer to the discussion in Chapter 6.
 

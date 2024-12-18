@@ -1,17 +1,17 @@
 # Introducing the Ecological Metadata Language {#sec-chapter-1}
 
-The Ecological Metadata Language (EML) is a standard for exchanging structured metadata that describes environmental or ecological research and data products. The research products, or data, being described may be tabular data files, such as a table of numerical values, spatial data files, prose documents, images, computer code, or any number of other digital outputs from scientific research or data collection activities. The purpose of EML is to contain the metadata, defined as “data that provides information about other data,” necessary to understand and reuse data that is shared, published, or otherwise distributed. Metadata are most useful when they are detailed, and can be easily understood by data users, and EML is meeting these requirements.
+The Ecological Metadata Language (EML) is a standard for exchanging structured metadata that describes environmental or ecological research and data products. The research products, or data, being described may be tabular data files, such as a table of numerical values, spatial data files, prose documents, images, computer code, or any number of other digital outputs from scientific research or data collection activities. The purpose of EML is to contain the metadata, defined as “data that provides information about other data,” necessary to understand and reuse data that is shared, published, or otherwise distributed. Metadata are most useful when they are detailed and can be easily understood by data users, and with appropriate preparation, EML metadata can easily meet this expectation.
 
 The EML standard is a dialect of the eXtensible Markup Language (XML, see [Appendix B](appendix-b-xml-schemas-and-eml.qmd)) and, as such, is a very flexible, modular, and extendable container for standardized information. All XML documents, including EML, are designed to be both human and machine readable. Metadata documents written in EML can therefore describe many types of research data, with as much detail as necessary or desired, while remaining accessible to data users. This makes EML highly effective in a wide range of applications for publishing, discovering, accessing, and reusing research data. 
 
-Preparing clear, descriptive metadata to describe a research data product is not an easy task, and there are many possible ways to create EML documents and arrange metadata within them. In this document we strive to give the best possible advice on 1) how to create rich, descriptive metadata that follow research community standards, and 2) how and where to include these metadata elements in EML documents.
+Preparing clear, useful metadata to describe a research data product is not an easy task. Data managers and researchers face many choices about which metadata content is appropriate to describe their data products, and users of EML will find that it is a very flexible and extensible standard. Creating descriptive metadata content, and the nuts-and-bolts of formatting it to a standard like EML, are both important for successfully sharing research data. In this guide we strive to give the best possible advice on 1) how to create rich, descriptive metadata that follow the standards of the environmental science research community, and 2) how and where to include these metadata elements in EML documents.
 
 
 ## History
 
 The first version of the EML standard was written by Matthew Jones at the National Center for Ecological Analysis and Synthesis (NCEAS) and released in 1997. The standard was internally developed at NCEAS until EML version 2.0 was released as a community-maintained, open specification with substantial contributions from the LTER network. This standard was adopted by the LTER Network as the network’s metadata exchange format soon after.
 
-Because the EML standard is highly flexible and scalable, it soon became clear that establishing best practices for using EML to describe environmental data would be beneficial. The first version of this best practices document was written as a collaborative effort between LTER Information Managers and the LTER Network Office, and released in 2004. The document was revised in 2011 and 2017, each time with contributions from a growing community of data managers and researchers collaborating in working groups and workshops. EML has been widely used for several years with multiple applications written against it, and the community has had the opportunity to observe the consequences of many EML design patterns. As much as possible, recommendations in this document have been aligned with those experiences, as well as with the capability of data contributors.
+Because the EML standard is highly flexible and scalable, it soon became clear that establishing best practices for using EML to describe environmental data would be beneficial. The first version of this best practices guide was written as a collaborative effort between LTER Information Managers and the LTER Network Office, and released in 2004. The document was revised in 2011 and 2017, each time with contributions from a growing community of data managers and researchers collaborating in working groups and workshops. EML has been widely used for several years with multiple applications written against it, and the community has had the opportunity to observe the consequences of many EML design patterns. As much as possible, recommendations in this document have been aligned with those experiences, as well as with the capability of data contributors.
 
 Figure 1: Ecological Metadata Language timeline and previous revisions of the EML Best Practices document.
 
@@ -52,7 +52,7 @@ When constructing EML documents or evaluating them, it is a frequent necessity t
 
 ## What’s new?
 
-Recommendations and best practices for preparing datasets in EML evolve with each new edition of this document. In this update to the *EML Best Practices* document, one of the main things the authors focused on was to provide guidance for the new features of the EML schema introduced in version 2.2. This was a significant change to the EML schema, and more details on changes is provided in the schema documentation ([https://eml.ecoinformatics.org/whats-new-in-eml-2-2-0](https://eml.ecoinformatics.org/whats-new-in-eml-2-2-0)). Some specific changes to guidance in this document are below.
+Recommendations and best practices for preparing datasets in EML evolve with each new edition of this document. In this update to the *EML Best Practices* guide, one of the main things the authors focused on was to provide guidance for the new features of the EML schema introduced in version 2.2. This was a significant change to the EML schema, and more details on changes is provided in the schema documentation ([https://eml.ecoinformatics.org/whats-new-in-eml-2-2-0](https://eml.ecoinformatics.org/whats-new-in-eml-2-2-0)). Some specific changes to guidance in this document are below.
 
 
 
@@ -64,7 +64,7 @@ Recommendations and best practices for preparing datasets in EML evolve with eac
 6. Significant new features and recommendations were also provided for access and usage rights (&lt;**licensing**>, &lt;**intellectualRights**>), &lt;**methods**>, and &lt;**geographicCoverage**> elements (Chapters 5, 7, and 9, respectively). 
 
 
-## Conventions and Definitions
+## Conventions and definitions
 
 
 ### Audience
@@ -80,17 +80,19 @@ This document is intended for people in a research data management role. This ca
 
 ### Text styles and fonts
 
-Font and typeface conventions are used throughout this guide when referring to the XML used in actual EML documents. References to XML tags, attributes, declarations, comments and other XML markup will be presented in boldface, with their surrounding angle brackets, as they would appear in valid XML. For example, the start tag of a “data table” EML element would appear as **&lt;dataTable>**. This document also uses `XPath` expressions to indicate the location of elements or attributes within a hierarchical EML document. These will also be in boldface type with document nodes separated by forward slashes (/) and attributes prefixed with the \@ symbol. For example, the `XPath` expression for the “packageId” attribute of an EML document would appear as **/eml:eml/\@packageId**. More extensive details and definitions for XML markup language (tags, elements, etc.) and `XPath` expressions are given in [Appendix B](appendix-b-xml-schemas-and-eml.qmd). 
+Font and typeface conventions are used throughout this guide when referring to the XML used in actual EML documents. References to XML tags, attributes, declarations, comments and other XML markup will be presented in boldface, with their surrounding angle brackets, as they would appear in valid XML. For example, the start tag of a “data table” EML element would appear as **&lt;dataTable>**. This document also uses `XPath` expressions to indicate the location of elements or attributes within a hierarchical EML document. These will also be in boldface type with document nodes separated by forward slashes (/) and attributes prefixed with the \@ symbol. For example, the `XPath` expression for the “packageId” attribute of an EML document would appear as **/eml:eml/\@packageId**. When referring to the attribute alone, this document uses boldface type with the \@ symbol, like \@**this**.
 
-Numbered examples of XML elements and schema-valid EML are used throughout this guide and have captions numbering them sequentially within chapters. All example XML snippets are presented in a fixed-width font with syntax highlighting and a colored background box, as in Example 1.1. Any chapters describing EML elements and their use will have a highlighted section at the bottom of the chapter listing the “XPaths referenced in this chapter”.
+Numbered examples of XML elements and schema-valid EML are used throughout this guide and have captions numbering them sequentially within chapters. All example XML snippets are presented in a fixed-width font with syntax highlighting and a colored background box, as in Example 1.1. Any chapters describing EML elements and their use will have a highlighted section at the bottom of the chapter listing the “XPaths referenced in this chapter”.  More extensive details and definitions for XML markup language (tags, elements, etc.) and `XPath` expressions are given in [Appendix B](appendix-b-xml-schemas-and-eml.qmd).
 
 
 ### Context notes
 
-Some recommendations have special context, e.g., an XML element or attribute may be requested by a community (e.g., LTER), or required by specific data repositories (e.g., EDI).  Recommendations for EML usage in a specific context are called “context notes,” and are placed in separate paragraphs, in italic, as below.
+Some recommendations have special context, e.g., an XML element or attribute may be requested by a community (e.g., LTER), or required by specific data repositories (e.g., EDI).  Recommendations for EML usage in a specific context are called “context notes,” and are placed in green callout boxes, as below.
 
-*Context note: This is an example of a context note about EDI*
-
+::: {.callout-tip}
+## EDI context note
+This is an example of a context note about EDI
+:::
 
 ### Definitions
 
@@ -116,7 +118,6 @@ The practice of scientific metadata creation has a long history. Some of the fou
 The EML standard is developed and maintained by NCEAS, with contributions from the LTER network, ecoinformatics, and environmental research communities. Important EML resources are:
 
 
-
 1. [The current EML standard](https://eml.ecoinformatics.org). The best practices document you are reading was written for EML version 2.2.0. The developers of the EML standard also maintain a [schema browser,](https://eml.ecoinformatics.org/schema/) a [GitHub repository](https://github.com/NCEAS/eml/), and other resources for community users and contributors.
 2. [Earlier versions](https://eml.ecoinformatics.org/eml-ecological-metadata-language.html#older-versions-deprecated) of the EML standard
 3. [The committee](https://web.archive.org/web/20040213204322/http://esa.sdsc.edu/FLED/FLED.html) and [the paper](https://doi.org/10.1890/1051-0761(1997)007[0330:NMFTES]2.0.CO;2) that inspired the EML standard
@@ -125,7 +126,6 @@ The EML standard is developed and maintained by NCEAS, with contributions from t
 ### Software tools for creating EML
 
 The EML standard is under periodic development and is widely used for publishing environmental data, and consequently, a number of projects have developed software to create EML documents. Some that may be useful for EML creation in certain contexts, and for related tasks like schema validation, are listed below.
-
 
 
 * [ezEML](https://ezeml.edirepository.org/eml/about) - A web-based EML creation tool created and maintained by the EDI repository. The ezEML prompts and documentation are also an excellent resource for current best practices in preparing EML documents.

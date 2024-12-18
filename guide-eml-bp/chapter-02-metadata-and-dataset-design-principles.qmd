@@ -12,7 +12,7 @@ There is no perfect dataset. When designing a dataset, it is important to consid
 
 
 * [General considerations](https://edirepository.org/resources/designing-a-data-package)
-* [Special cases (e.g., spatial data, model outputs, images, etc.)](https://ediorg.github.io/data-package-best-practices/data-package-design-for-special-cases.html)
+* [Special cases (e.g., spatial data, model outputs, images, etc.)](../guide-special-cases/book.qmd)
 
 
 ## High-priority Metadata
@@ -38,7 +38,10 @@ In the chapters ahead, each of these categories of metadata is described in deta
 
 EML requires a package identifier attribute (**/eml:eml/\@packageId**) in order to be valid. However, the format and management thereof and implementation of versioning are governed by the community and the repository. A versioning system allows for updates to datasets while at the same time guaranteeing data immutability, i.e., all older versions of data are unchanged and publicly available. It is the responsibility of the submitters to understand the practices of their intended repository when assigning identifiers. A repository should be able to mint and manage a Digital Object Identifier (DOI or equivalent) in addition to the EML package ID.
 
-*Context note: In the [EDI repository packageIds](https://edirepository.org/resources/the-data-package#data-package-identifier) are constructed with three parts, the scope, a scope-specific identification number or accession number, and the version number. For example, the packageId “edi.20.3” has a scope of “edi,” an accession number of 20 and a version number of 3. *
+::: {.callout-tip}
+## EDI context note
+In the EDI repository, a [packageId](https://edirepository.org/resources/the-data-package#data-package-identifier) is constructed with three parts, the scope, a scope-specific identification number or accession number, and the version number. For example, the packageId “edi.20.3” has a scope of “edi,” an accession number of 20 and a version number of 3.
+:::
 
 
 ## Semantic annotations
@@ -53,7 +56,7 @@ EML 2.2 and above supports &lt;**markdown**> child elements within &lt;**abstrac
 
 ## Repeatable Elements
 
-Several EML elements, for example methods, coverage, citations and responsible parties  are flexible in that they can be used within several different levels of an EML document. For example, **&lt;methods>** could be optionally be used to describe a dataset,, a data entity, and a data attribute in an EML document (e.g., as a child element of &lt;**dataset**>, &lt;**dataTable**>, or &lt;**attribute**>), representing the overall methods for the dataset, methods specific to a given entity, or methods describing how data was collected for a given variable (attribute). Similarly, **&lt;coverage>** elements can be used at the dataset, methods, data entity, and attribute levels to document locations, dates/times and taxonomic composition at each of those levels. 
+Several EML elements, for example methods, coverage, citations and responsible parties  are flexible in that they can be used within several different levels of an EML document. For example, **&lt;methods>** could be optionally be used to describe a dataset, a data entity, and a data attribute in an EML document (e.g., as a child element of &lt;**dataset**>, &lt;**dataTable**>, or &lt;**attribute**>), representing the overall methods for the dataset, methods specific to a given entity, or methods describing how data was collected for a given variable (attribute). Similarly, **&lt;coverage>** elements can be used at the dataset, methods, data entity, and attribute levels to document locations, dates/times and taxonomic composition at each of those levels. 
 
 The general best practice for using these repeatable, or multi-level, elements is to use them only at the “highest” level of an EML document (typically as part of a **&lt;dataset>** element) and not  at more deeply nested levels (e.g., as part of data entities or attributes). The rationale for this recommendation is that these elements will be most visible to data users, and most available to support data searches, at the dataset level. If there are application- or repository-specific use-cases for placing these elements in more deeply-nested positions then this recommendation may be relaxed, but currently such use-cases are rare. See Chapters 7 and 9 for more discussion of this subject with respect to the &lt;**coverage**> and &lt;**methods**> elements. 
 

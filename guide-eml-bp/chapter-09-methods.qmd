@@ -14,7 +14,10 @@ At least one &lt;**methodStep**> element is required under &lt;**methods**>, and
 
 The optional &lt;**dataSource**> element is for creating references to published data that was used as source data for the dataset being described (i.e. a dataset’s provenance). For instance, if the data being described by EML is mean annual temperature values calculated from hourly temperature measurements published in a separate dataset, the &lt;**dataSource**> element could be used to identify and provide a reference to these source data. This element may contain a fairly complete set of child elements describing the source data, including a &lt;**title**>, &lt;**creator**>, and &lt;**contact**>, but the most important child element is a &lt;**distribution**> element containing the source dataset’s DOI or other URL (**distribution/online/url**). It is strongly recommended to include &lt;**dataSource**> elements when publishing any dataset derived from other sources.
 
-*Context note: The* &lt;**dataSource**> *element is used by the EDI repository’s provenance tracking system for linking between derived and source data packages. For more information, see additional data [repository resources from EDI.](https://edirepository.org/resources/provenance-metadata)*
+::: {.callout-tip}
+## EDI context note
+The* &lt;**dataSource**> *element is used by the EDI repository’s provenance tracking system for linking between derived and source data packages. For more information, see additional data [repository resources from EDI](https://edirepository.org/resources/provenance-metadata).
+:::
 
 Example 9.1: An example of a &lt;**methods**> element with one &lt;**methodStep**> element that includes a &lt;**dataSource**> child element to indicate data provenance. The &lt;**description**> element uses **TextType** &lt;**section**>, &lt;**title**>, and &lt;**para**> formatting elements, but note that it is not sufficiently detailed for a derived dataset.
 

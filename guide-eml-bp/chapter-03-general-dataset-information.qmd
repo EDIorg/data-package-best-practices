@@ -21,7 +21,10 @@ The abstract for a dataset is not the same as for a journal article, report, or 
 
 The date of public release of the dataset online should be placed in the &lt;**pubDate**> element. This element is commonly used for constructing citations, so the &lt;**pubDate**> value should be updated when the dataset receives significant metadata or data revisions or additions (e.g., corrected data, or additions to an ongoing time series). New, published versions of a dataset, especially when issued a new DOI, should always have &lt;**pubDate**> updated to the current date, but note that dataset versioning practices vary by repository system.
 
-*Context note: When submitting to the EDI repository, the &lt;**pubDate**> element for the dataset is automatically populated with the date the dataset is published and receives a DOI.*
+::: {.callout-tip}
+## EDI context note
+When submitting to the EDI repository, the &lt;**pubDate**> element for the dataset is automatically populated with the date the dataset is published and receives a DOI.
+:::
 
 Example 3.1: An example of useful child elements to &lt;**dataset**> describing a dataset from the Fictional Research Site (FRS). Note the &lt;**para**> tags for formatting text in the &lt;**abstract**> element (a TextType).
 
@@ -33,13 +36,13 @@ Example 3.1: An example of useful child elements to &lt;**dataset**> describing 
   <title>Long-term Ground Arthropod Monitoring Dataset at Fictitious Research Site, USA from 1998 to 2003</title>
   <abstract>
     <para>
-This dataset contains ground arthropod weights and other measures
-collected at the Fictitious Research Site between 1998 to 2003.
-Arthropods, mainly spiders, lobsters, and trilobites, were captured at
-27 sampling locations using pitfall traps. Captured individuals were
-measured and then released unharmed. Variables for each capture record
-in the data table include weight (g), body length (mm), and number of
-leg pairs (n). This study is complete.
+      This dataset contains ground arthropod weights and other measures
+      collected at the Fictitious Research Site between 1998 to 2003.
+      Arthropods, mainly spiders, lobsters, and trilobites, were captured at
+      27 sampling locations using pitfall traps. Captured individuals were
+      measured and then released unharmed. Variables for each capture record
+      in the data table include weight (g), body length (mm), and number of
+      leg pairs (n). This study is complete.
     </para>
   </abstract>
   <pubDate>2004-12-25</pubDate>
@@ -79,8 +82,10 @@ This information can be provided using a series of &lt;**changeHistory**> elemen
 
 The contributing organization’s local data set identifier should be listed as the EML &lt;**alternateIdentifier**> whenever this value differs from the “**packageId**” attribute in the &lt;**eml:eml**> element. The &lt;**alternateIdentifier**> element can also be used to denote that a package belongs to more than one contributing organization by including each individual organization’s ID as a separate &lt;**alternateIdentifier**> element. At the entity level, the &lt;**alternateIdentifier**> should contain an alternate name for the data table or other entity itself (see Chapter 10).
 
-*Context note: When submitting to the EDI repository, an &lt;**alternateIdentifier**> element will be added to EML containing the DOI that the dataset is published under.*
-
+::: {.callout-tip}
+## EDI context note
+When submitting to the EDI repository, an &lt;**alternateIdentifier**> element will be added to EML containing the DOI that the dataset is published under.
+:::
 
 ## Short name (&lt;shortName>)
 

@@ -191,14 +191,20 @@ The \@**xsi:schemaLocation** attribute is required and tells a processor (or per
 
 All metadata documents following the EML schema must be given a globally unique identifier that allows identification and citation of the dataset. This identifier should be placed in the required \@**packageId** attribute, and if the dataset will be published, it is recommended that the \@**packageId** attribute contain the same identifier as will be used by the repository. The content and structure of these identifiers may follow practices in place at a data manager’s local level, the data repository’s specifications, or a combination of the two.
 
-*Context note: At the EDI repository, the packageID is entered into the repository software in a format that is standardized to three parts: scope, package-number, revision. The scope should be “edi” unless another scope is justified by prior arrangement, such as in Example 1.*
+::: {.callout-tip}
+## EDI context note
+At the EDI repository, the \@**packageId** is entered into the repository software in a format that is standardized to three parts: *scope*, *accession number*, and *revision*. The scope should be “edi” unless another scope is justified by prior arrangement, such as in Example 1.
+:::
 
 
 #### System attribute
 
 The \@**system** attribute is required to identify the data management or repository system that an EML document belongs to. This attribute provides the context needed to interpret other attributes of the EML, particularly \@**packageId**. The value of this attribute should be recognizable to the EML preparer’s local data management system, or to the repository the EML will be published in (see example B.5).
 
-*Context note: When publishing to the EDI repository, the system attribute will be replaced with "https://pasta.edirepository.org"*
+::: {.callout-tip}
+## EDI context note
+When publishing to the EDI repository, the \@**system** attribute will be replaced with "https://pasta.edirepository.org"
+:::
 
 Example B.5: A root EML element’s starting tag, including required attributes \@**schemaLocation**, \@**packageId**, and \@**system**. The \@**system** attribute is set to “https://pasta.edirepository.org”, indicating that this dataset is, or will be, published in the EDI repository and the \@**packageId** attribute uses the EDI identifier format. Note that the three other namespace attributes (`xmlns:eml`, `xmlns:xsi`, `xmlns:stmml`) are not strictly required.
 
@@ -225,7 +231,10 @@ There are a number of potential top-level elements that can be nested directly b
 
 The **&lt;dataset>** element is an EML document’s flexible container for the vast majority of metadata describing the data file(s) being shared or published. Under **&lt;dataset>**, many EML elements are available to describe the dataset. Some of these elements are required and some are optional, and some (such as people and organizations) are “repeatable” elements that may be nested at multiple levels and locations within a **&lt;dataset>**. All must follow the order enforced by the EML schema. Refer to Chapter 2 for a list of the highest-priority metadata elements needed to meet FAIR data principles, in the order they should be included as child elements of **&lt;dataset>**. Chapters 3-12 of this document are devoted to recommended placement, formatting and content of these sub-elements of **&lt;dataset>**. Though not all are required, we highly recommend including them to facilitate re-use of the data resource when it is shared or published.
 
-*Context note: When publishing to the EDI repository, the PASTA+ system will add an &lt;alternate Identifier> element to the EML document that includes the unique Digital Object Identifier (DOI) generated for the published data package.*
+::: {.callout-tip}
+## EDI context note
+When publishing to the EDI repository, the PASTA+ system will add an &lt;**alternateIdentifier**> element to the EML document that includes the unique Digital Object Identifier (DOI) generated for the published data package.
+:::
 
 The descriptive metadata elements within **&lt;dataset>** should be followed by one or more data entity elements that describe the actual data files being shared or published. There are several possible types of data entity elements that may be chosen depending on the file or data. The most commonly used are:
 
@@ -312,19 +321,17 @@ Example B.6: A minimal example of a valid EML document, including a declaration,
 
 About the EML schema
 
-
-
 * The EML Schema XSD documents: [https://github.com/NCEAS/eml/tree/main/xsd](https://github.com/NCEAS/eml/tree/main/xsd)
 * The EML development project’s schema documentation: [https://eml.ecoinformatics.org/](https://eml.ecoinformatics.org/) 
 * Summary of EML validation rules in [EML schema documentation, section 6](https://eml.ecoinformatics.org/validation-and-content-references)
 
+
 Tools for validating XML against the EML schema
-
-
 
 * [EML Parser](https://knb.ecoinformatics.org/emlparser) - An online EML parser/validator maintained by EML developers
 * [emlvp](https://github.com/PASTAplus/emlvp) - EML Validator/Parser is a simple python package written by the EDI repository that can validate EML documents
 * [EML](https://docs.ropensci.org/EML/) - An R package that can help build and then validate EML documents
+* A [VScode editor extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml) maintained by redhat.
 
 
 ## XPaths referenced in this chapter

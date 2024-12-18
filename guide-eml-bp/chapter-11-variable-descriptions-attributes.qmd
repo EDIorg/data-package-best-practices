@@ -10,14 +10,17 @@ The &lt;**attributeList**> tree is required for all data types except for &lt;**
 
 ### Attribute names (required) 
 
-The &lt;**attributeName**> element contains text denoting the identifier or name of a field in a data table, such as the header name for a column in a CSV file. This value must be composed of alphanumeric characters (in the Unicode set, typically) and is often a short name or abbreviation for the full attribute name. It should give some indication of the meaning or content of the data field. Values in &lt;**attributeName**> must match the column headers of a CSV or other data table.
+The &lt;**attributeName**> element contains the identifier or name of an attribute (variable) in a data table, such as the header name for a column in a CSV file. Values in &lt;**attributeName**> must precisely match the name or identifier of an attribute in the data entity object to which they refer, and must be composed of alphanumeric characters, typically in the Unicode set. Attribute names are usually a short name or abbreviation for the full attribute name or description. When preparing a tabular data file for use or publication, we recommend making attribute names (e.g. column headers) clear, concise, and easy to type. They should also give some indication of the meaning or content of the data field. We recommend NOT 1) starting the attribute name with a number, 2) using special characters and spaces and 3) incorporating units into the attribute name (because metadata elements should be used for this). Following these recommendations makes the data file easier to reuse, and easier to describe with metadata in EML using the &lt;**attributeName**> element. 
 
-*Context note: in the EDI repository,* &lt;**attributeName**> *elements must be unique within a data entity.*
+::: {.callout-tip}
+## EDI context note
+In the EDI repository, &lt;**attributeName**> elements must be unique within a data entity.
+:::
 
 
 ### Attribute definitions (required)
 
-The **attributeDefinition**> element is a text field giving a precise and complete text definition of the attribute. It explains the contents of the attribute fully so that a data user can interpret the attribute accurately.
+The &lt;**attributeDefinition**> element is a text field giving a precise and complete text definition of the attribute. It explains the contents of the attribute fully so that a data user can interpret the attribute accurately.
 
 
 ### Measurement scale (required)	
@@ -46,7 +49,10 @@ The numeric &lt;**interval**> and &lt;**ratio**> measurement scales require chil
 
 If an appropriate unit is not available in the EML standard units dictionary, or if a unit from a different source is desired, a unit name should be placed in a &lt;**customUnit**> element (**unit/customUnit**) and then defined in an &lt;**additionalMetadata**> element, generally at the &lt;**dataset**> level (refer to Example 12.2 and the Custom Unit part of Chapter 12 for details). There are many alternative unit dictionaries or ontologies that can be used as custom units in EML, such as UCUM.org (“kg/m2” or “kg.m-2”) and QUDT.org (“kiloGM-PER-M2”). Each has some advantages with respect to interpretability, lack of ambiguity, use of special characters (e.g., “𝜇”), brevity, degree of standardization, and desirability as perceived by researchers. Most of these can also be coupled to &lt;**annotation**> elements that link the unit to online resources from the dictionary/ontology itself. For general purposes, one may also define custom units independently of other standards, such as by naming custom units following the pattern set by EML standard units (“kilogramPerMeterSquared”), When doing so, the following guidelines from ISO recommendations apply to their naming: 1) Units should be written out, not abbreviated. 2) Unit modifiers, such as “squared,” should follow the unit being modified. For example, meterSquared is preferred, while squareMeter is improper. 3) Units should be singular, such as “meter,” and not plural, such as “meters.” Again, all units placed in &lt;**customUnit**> must be defined in the document’s &lt;**additionalMetadata**> elements using the conventions described in Chapter 12.
 
-*Context note: The EDI repository and LTER Network are currently developing a new custom units framework for EML based on the QUDT ontology and annotations. Following the best practices in this document will allow an easy transition to this new system.*
+::: {.callout-tip}
+## Community context note
+The EDI repository and LTER Network are currently developing a new custom units framework for EML based on the QUDT ontology and annotations. Following the best practices in this document will allow an easy transition to this new system.
+:::
 
 The &lt;**numericDomain**> element describes the numeric values of an attribute using a required &lt;**numberType**> element with a controlled vocabulary (*natural*, *whole*, *integer*, *real*, defined in the [EML schema documentation](https://eml.ecoinformatics.org/schema/eml-attribute_xsd#NumericDomainType_numberType)), and, optionally, a &lt;**bounds**> element describing the minimum and maximum allowable values of the numeric attribute. The &lt;**bounds**> are theoretical or allowable minimum and maximum values (prescriptive), rather than the actual observed range in a data set (descriptive). 
 

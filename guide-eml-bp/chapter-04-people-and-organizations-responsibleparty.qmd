@@ -120,7 +120,10 @@ Example 4.4: The required &lt;**contact**> **ResponsibleParty** element. This ex
 
 This element defines the publisher of the EML dataset, and is typically used for the publisher part of the citation. The recommended content of &lt;**publisher**> depends on how and where the dataset will be published. If the dataset is being published on a “local” system (such as a project website), the organization producing the EML metadata (e.g., an LTER site or field station) should be placed in the &lt;**publisher**> element. Spell out the organization’s name in &lt;**organizationName**> and complete the &lt;**address**>, &lt;**phone**>, &lt;**electronicMailAddress**>, and &lt;**onlineURL**> elements. Upon publication of the dataset in a research data repository, that repository usually becomes the publisher, and this element should be populated with appropriate repository information. The repository may populate this information in the EML itself upon publication.
 
-*Context note: When publishing an EML dataset to the EDI repository, EDI will insert a publisher element upon data submission, which will overwrite any other &lt;publisher> element.*
+::: {.callout-tip}
+## EDI context note
+When publishing an EML document to the EDI repository, EDI will insert a &lt;**publisher**> element upon data submission, which will overwrite any other &lt;**publisher**> element.
+:::
 
 Example 4.5: A &lt;**publisher**> element containing information for the EDI repository, as it would appear after publication of the dataset.
 

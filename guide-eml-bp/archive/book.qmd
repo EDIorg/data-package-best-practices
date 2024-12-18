@@ -39,20 +39,22 @@ author:
     affiliation: Various
     roles: [conceptualization, editing]
 abstract: This book presents "best practice" recommendations for creating metadata documents in the Ecological Metadata Language (EML), a widely accepted standard for research metadata exchange in the environmental sciences. The document focuses the most common use-cases for EML and recommends content and formatting for its most important and frequently-used metadata elements. As such, these recommendations can be applied to most research datasets that include EML metadata. There are also recommendations specific to the U.S. LTER Network and Environmental Data Initiative (EDI) repository. This is Version 3 of the book, updated in 2017 by the EML Best Practices working group of the LTER Network Information Management Committee.
-description: These recommendations for creating EML metadata documents can be applied to most research datasets. This is Version 3 (2017), written by the LTER/EDI EML Best Practices Working Group.
+description: These recommendations for creating EML metadata documents can be applied to most research datasets published by the environmental sciences community.
 license: CC BY
 keywords:
-  - data
+  - data management
   - EML
   - dataset
-  - scientific research
+  - research
   - environmental science
   - metadata
   - publishing
   - guide
   - repository
 citation: 
+  type: book
   container-title: Environmental Data Initiative
+  version: 3
   doi: n/a
 categories: archived
 image: ../../img/book.svg

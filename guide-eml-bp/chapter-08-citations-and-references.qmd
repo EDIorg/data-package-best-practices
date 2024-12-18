@@ -158,7 +158,10 @@ Citation elements can appear in several places in EML. For example, a &lt;**meth
 
 As a general rule, &lt;**referencePublication**> and &lt;**usageCitation**> elements are difficult to use in EML documents because the resource to be described is usually published after the EML document is created. If the resource is available with a DOIs at the time of EML creation, then they are fine to include, but alternative methods of linking these types of resources to a published EML dataset are typically preferred.
 
-*Context Note: The EDI repository has a system for tracking citations of EDI datasets external to EML metadata documents. This allows an up-to-date listing of citations without requiring a new version of the EDI dataset be produced. Add dataset usage citations with the “Add Journal Citation” link at the bottom of the landing page for each dataset in EDI.*
+::: {.callout-tip}
+## EDI context note
+The EDI repository has a system for tracking citations of EDI datasets external to EML metadata documents. This allows an up-to-date listing of citations without requiring a new version of the EDI dataset be produced. Add dataset usage citations with the “Add Journal Citation” link at the bottom of the landing page for each dataset in EDI.
+:::
 
 
 ## XPaths referenced in this chapter
