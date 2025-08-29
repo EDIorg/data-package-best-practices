@@ -4,7 +4,7 @@ Contributors: An T. Nguyen, Tim Whiteaker
 
 ## Introduction
 
-This document describes best practices for archiving software, code, or scripts, such as a simulation model, data visualization package, or data manipulation scripts. The intention of these recommendations is to make research based on modeling or software more transparent rather than achieve exact reproducibility, i.e., provide sufficient documentation so that a knowledgeable person can understand algorithms, programming decisions, and their ramifications for the results, rather than run the model and obtain the same results.
+This document describes best practices for archiving software, code, or scripts, such as a simulation model, data visualization package, or data manipulation scripts. The intent of these recommendations is to make research based on modeling or software more transparent rather than achieve exact reproducibility, i.e., provide sufficient documentation so that a knowledgeable person can understand algorithms, programming decisions, and their ramifications for the results, rather than run the model and obtain the same results.
 
 Examples of candidate archives for code include [CoMSES Net](https://www.comses.net/), which focuses on sharing models related to social and ecological sciences, and [Zenodo](https://zenodo.org/), a popular DOI-minting all-purpose repository, that can conveniently archive a specific version of [code in a GitHub repository](https://guides.github.com/activities/citable-code/). Alternatively, code may be archived in the EDI repository, either by itself or as part of a data package. The best practices in this document cover both archiving code in EDI and referencing code archived elsewhere.
 
@@ -19,16 +19,18 @@ While metadata for software may be described in detail using the EML &lt;**softw
 * Should the code be archived as a separate package or with the data?
   * If the code is used to generate several independent datasets it should be archived as a separate package.
   * The software authors wishing to place it under a different license from that of the associated data, or to obtain a DOI for only the code, may be reasons to separate code and data packages.
-  * If deciding to package code separately, it may be archived on EDI or another repository. If archiving code outside of EDI, see section 2.2.4 for instructions on how to reference that code from related data packages in EDI.
+  * If deciding to package code separately, it may be archived on EDI or another repository. If archiving code outside of EDI, see [Linking code and data](#linking-code-and-data) for instructions on how to reference that code from related data packages in EDI.
   * In most other cases, it is recommended to archive code and data together for context.
 * Large community software packages are usually maintained and available elsewhere.  However, they may undergo significant updates and it may make sense to archive the code of a certain version with the data for transparency reasons. Consider whether prior versions of a software package are available wherever that software is distributed.
-* When choosing a repository for the code, consider the ease of the archiving process and how well the code can be described.  For example, Zenodo offers an easy pathway to archive code that is currently in GitHub, though metadata requirements are very light.  Following the best practices described herein, you would create a CodeMeta file if you were going to archive with EDI. This is more rigorous than Zenodo, but then your code is better described, and in a machine-readable way.
+* When choosing a repository for the code, consider the ease of the archiving process and how well the code can be described.  For example, Zenodo offers an easy pathway to archive code that is currently in GitHub, though metadata requirements are very light.  Following the best practices described herein, you would create a CodeMeta file in addition to EML if you were going to archive with EDI. This is more rigorous than Zenodo, but then your code is better described, and in a machine-readable way.
 
 ### Documenting software/code
 
-When describing the code with EML, include the code as an otherEntity in a data package. Although a well documented human readable text format of the code is preferred, in case of multiple scripts, and/or where directory structure is important, a zip archive may be used. For the formatName and entityType elements in EML, we recommend using format names from the [DataONE format list](https://cn.dataone.org/cn/v2/formats) when possible.  Some format names are included in examples below.  Always check the list for the most up-to-date version of these names.
+When describing the code with EML, include the code as an otherEntity in a data package. Although a well documented human readable text format of the code is preferred, in case of multiple scripts, and/or where directory structure is important, a zip archive may be used.
 
-Example 1: EML otherEntity snippet for a script file.
+If archiving individual files, then for the &lt;**formatName**> and &lt;**entityType**> elements in EML, see recommendations in the [Data entities](../guide-eml-bp/chapter-10-data-entities.qmd#dataformat) chapter of the [EML Best Practices](../guide-eml-bp/).  Some format names are included in examples below.  Always check for the most up-to-date version of these names.
+
+Example 1: EML &lt;**otherEntity**> snippet for a script file.
 
 ```xml
 <otherEntity>
@@ -40,27 +42,31 @@ Example 1: EML otherEntity snippet for a script file.
       <authentication method="MD5">8547b7a63fcf6c1f0913a5bd7549d9d1</authentication>
       <dataFormat>
          <externallyDefinedFormat>
-            <formatName>R Markdown file</formatName>
+            <formatName>text/markdown</formatName>
          </externallyDefinedFormat>
       </dataFormat>
    </physical>
-   <entityType>script</entityType>
+   <entityType>R Markdown file</entityType>
 </otherEntity>
 ```
 
 #### Software License
 
-It is important to include a use license to make it clear how others can use your work. We recommend the [Creative Commons "no copyright reserved" (CC0)](https://creativecommons.org/share-your-work/public-domain/cc0/) license, which places the software in the public domain and makes it easiest for end users to adapt and use your work.  If a more restrictive license is required, we recommend the [Apache License, Version 2.0](https://directory.fsf.org/wiki/License:Apache-2.0) license, a permissive license that allows others to reuse, modify, and redistribute your software.
+It is important to include a license to make it clear how others can use your work. We recommend the [Creative Commons "no copyright reserved" (CC0)](https://creativecommons.org/share-your-work/public-domain/cc0/) license, which places the software in the public domain and makes it easiest for end users to adapt and use your work.  If a more restrictive license is required, we recommend the [Apache License, Version 2.0](https://directory.fsf.org/wiki/License:Apache-2.0) license, a permissive license that allows others to reuse, modify, and redistribute your software.
 
-If a mix of data and code needs to be archived, and they each fall under different licenses, then separating them into different packages is advisable to eliminate ambiguity on which license applies to which portion of a data package.  When a license other than a public domain dedication is used, then in addition to specifying the license in the metadata (see the "intellectualRights" element in EML), consider including a copy of the license at the beginning of the code files themselves so that the license is readily apparent to end users who peruse the code.
+If a mix of data and code needs to be archived, and they each fall under different licenses, then separating them into different packages is advisable to eliminate ambiguity on which license applies to which portion of a data package.  When a license other than a public domain dedication is used, then in addition to specifying the license in the metadata (see the &lt;**intellectualRights**> element in EML), consider including a copy of the license at the beginning of the code files themselves so that the license is readily apparent to end users who peruse the code.
 
 #### CodeMeta
 
-Include a CodeMeta JSON file for all code that is archived in EDI. The CodeMeta file should be named "codemeta.json" and listed as an EML otherEntity. The formatName should be "JavaScript Object Notation (JSON) file", the entityType should be "metadata", and the entityDescription should indicate that this is a CodeMeta file for a given software or script in the data package.
+Include a CodeMeta JSON file for code archived in EDI. CodeMeta offers a structured, machine-readable summary of the software’s purpose, authorship, and dependencies, improving discoverability and reuse. It complements EML but does not replace it.
 
-For unnamed projects, e.g., one-off scripts for data processing, analysis, and/or visualisation, a CodeMeta file might appear to be overkill; however, CodeMeta files are simple to generate, and we recommend the below bare minimum. If there are multiple scripts each in their own otherEntity tag, we recommend aggregating information about them into one codemeta.json.
+Name the CodeMeta file "codemeta.json" and list it as an EML &lt;**otherEntity**>. The &lt;**formatName**> should be "application/json", the &lt;**entityType**> should be "CodeMeta, version 2.0", and the &lt;**entityDescription**> should indicate that this is a CodeMeta file for a given software or script in the data package.
 
-Example 2: Minimum recommended codemeta.json example for unnamed projects.
+For unnamed projects, e.g., one-off scripts for data processing, analysis, and/or visualisation, a CodeMeta file might seem excessive; however, CodeMeta files are simple to generate, and we recommend the below bare minimum. If there are multiple scripts each in their own &lt;**otherEntity**> tag, we recommend aggregating information about them into one codemeta.json.
+
+For more information on how to create a CodeMeta file, including a tool to create one, see the [CodeMeta User Guide](https://codemeta.github.io/user-guide/).
+
+Example 2: Minimum recommended codemeta.json example for a single script in an unnamed project. The script filename is used for "name", and license links are from [SPDX](https://spdx.org/licenses/) (often used with CodeMeta).
 
 ```json
 {
@@ -68,6 +74,7 @@ Example 2: Minimum recommended codemeta.json example for unnamed projects.
       "http://schema.org"
    ],
    "@type": "SoftwareSourceCode",
+   "name": "BLE_LTER_CTD_QAQC.Rmd",
    "description": "RMarkdown script to calibrate and flag raw CTD data.",
    "author": {
       "@type": "Person",
@@ -77,7 +84,7 @@ Example 2: Minimum recommended codemeta.json example for unnamed projects.
       "@id": "https://orcid.org/0000-0002-8564-0618"
    },
    "keywords": ["calibration", "CTD", "RMarkdown"],
-   "license": "https://unlicense.org/",
+   "license": "https://spdx.org/licenses/Unlicense",
    "dateCreated": "2013-10-19",
    "programmingLanguage": {
       "@type": "ComputerLanguage",
@@ -88,7 +95,7 @@ Example 2: Minimum recommended codemeta.json example for unnamed projects.
 }
 ```
 
-Example 3: sample otherEntity metadata for example 2's codemeta.json.
+Example 3: sample &lt;**otherEntity**> metadata for example 2's codemeta.json.
 
 ```xml
 <otherEntity>
@@ -96,7 +103,7 @@ Example 3: sample otherEntity metadata for example 2's codemeta.json.
    <entityDescription>CodeMeta file for annotated RMarkdown script to process, calibrate, and flag raw CTD data.</entityDescription>
    <physical>
       <objectName>codemeta.json</objectName>
-      <size unit="byte">702</size>
+      <size unit="byte">729</size>
       <authentication method="MD5">8547b7a63abc6c1f0913a5bd7549d9d1</authentication>
       <dataFormat>
          <externallyDefinedFormat>
@@ -104,13 +111,64 @@ Example 3: sample otherEntity metadata for example 2's codemeta.json.
          </externallyDefinedFormat>
       </dataFormat>
    </physical>
-   <entityType>CodeMeta</entityType>
+   <entityType>CodeMeta, version 2.0</entityType>
 </otherEntity>
 ```
 
-For named projects, also include the software name, and the version if applicable. The example below shows some additional metadata you can include. See also the more complete [codemetar example](https://docs.ropensci.org/codemetar/articles/codemeta-intro.html) and the available [CodeMeta terms](https://codemeta.github.io/terms/).
+Example 4: CodeMeta file for multiple scripts and two authors. The **description** provides a human-readable list of scripts while **hasPart** lists the scripts in a more machine-friendly format. For projects with more scripts, the **description** could be more general and the list of key files could be isolated to **hasPart**.
 
-Example 4: A more complete CodeMeta example for named projects. Example taken from the CodeMeta project Github with edits for brevity.
+```json
+{
+  "@context": [
+    "https://doi.org/10.5063/schema/codemeta-2.0",
+    "http://schema.org"
+  ],
+  "@type": "SoftwareSourceCode",
+  "name": "BLE_LTER_CTD_QAQC Scripts",
+  "description": "A set of RMarkdown scripts to calibrate, flag, and visualize raw CTD data. Includes BLE_LTER_CTD_QAQC.Rmd for data cleaning and quality control, and BLE_LTER_CTD_Plotter.Rmd for generating diagnostic plots.",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Christina",
+      "familyName": "Bonsell",
+      "email": "cbonsell@utexas.edu",
+      "@id": "https://orcid.org/0000-0002-8564-0618"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Tim",
+      "familyName": "Whiteaker",
+      "email": "whiteaker@utexas.edu",
+      "@id": "https://orcid.org/0000-0002-1940-4158"
+    }
+  ],
+  "keywords": ["calibration", "CTD", "RMarkdown", "QAQC"],
+  "license": "https://spdx.org/licenses/Unlicense",
+  "dateCreated": "2013-10-19",
+  "hasPart": [
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "BLE_LTER_CTD_QAQC.Rmd",
+      "description": "Performs calibration, flagging, and quality control on raw CTD data."
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "BLE_LTER_CTD_Plotter.Rmd",
+      "description": "Generates diagnostic plots for visual inspection of CTD data."
+    }
+  ],
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "R",
+    "version": "3.6.2",
+    "url": "https://r-project.org"
+  }
+}
+```
+
+The example below shows some additional metadata you can include. See also the more complete example on the [codemetar R package page](https://docs.ropensci.org/codemetar/) and the available [CodeMeta terms](https://codemeta.github.io/terms/).
+
+Example 5: A more complete CodeMeta example for named projects. Example taken from the [codemetar R package](https://docs.ropensci.org/codemetar/) with edits for brevity.
 
 ```json
 {
@@ -168,38 +226,37 @@ Example 4: A more complete CodeMeta example for named projects. Example taken fr
 
 #### Metadata to enable reproducibility
 
-When archiving software, we strongly recommend including a user guide with installation and usage instructions if such would not already be apparent to the typical user. Take into account that the user might not have access to certain inputs that the software/scripts require. Include when feasible at least some example data, and configure the script so that it is ready to run with the example data.
+When archiving software, include a user guide with installation and usage instructions—especially if the script requires inputs that may not be available to others. When feasible, provide example data and configure the script to run with it by default.
 
-Aside from the software/code itself and its dependencies, other pieces of information may be important should a user wish to reproduce results, such as the operating system and version and the system locale. Include this information in the data package's methods/methodStep/description. For certain tools, there are ways to easily generate this information, e.g., a call to sessionInfo() in the R console. If the system outputs this information in a standardly formatted plain text file, that might be included as an otherEntity.
+In addition to the code, document other details that support reproducibility, such as dependencies, the operating system, and system locale. This information can be included in the EML metadata under **methods/methodStep/description**. Tools like sessionInfo() in R or conda in Python can help capture this automatically. Then you can include files like renv.lock, requirements.txt, or environment.yml alongside the code as an &lt;**otherEntity**>.
+
+For named projects, include the software name and version if applicable. For versioning, we recommend [Semantic Versioning](https://semver.org/), and if using GitHub, reference a specific release tag or commit hash. Including a changelog or release notes can also help future users understand how the code has evolved.
+
 
 ### Linking code and data
 
-There are a few solutions for providing explicit machine-readable linkages between different entities/packages (the distinction between code/data doesn't matter too much here). For most cases we recommend the simplest approach, which is to use the methods/methodStep/description element of EML. More advanced users may wish to utilize the other solutions described herein.
+There are a few solutions for providing explicit machine-readable linkages between different entities/packages (the distinction between code/data doesn't matter too much here). For most cases we recommend the simplest approach, which is to use the **methods/methodStep/description** element of EML. More advanced users may wish to utilize the other solutions described herein.
 
 #### Descriptive approach
 
-In the dataset methods/methodStep/description element, include verbal descriptions such as "results.csv was derived from raw_data.csv using script.R" and repeat for all entities. If code and data reside in different packages, be sure to specify that.
+In the dataset **methods/methodStep/description** element, include verbal descriptions such as "results.csv was derived from raw_data.csv using script.R" and repeat for all entities. If code and data reside in different packages, be sure to specify that.
 
 #### The EML dataSource element
 
-Nested under methods/methodStep, dataSource elements describe other data packages that serve as source for the current package. dataSource looks like a mini-EML tree describing the source data. Example: [ecocomDP packages](http://portal.edirepository.org/nis/simpleSearch?defType=edismax&q=ecocomDP&fq=-scope:ecotrends&fq=-scope:lter-landsat*&fl=id,packageid,title,author,organization,pubdate,coordinates&debug=false) list the original packages under dataSource. dataSource does not describe relationships between entities in the same package, and as far as we know there is no explicit way in EML to do so.
-
-#### ProvONE
-
-[ProvONE](http://jenkins-1.dataone.org/jenkins/view/Documentation%20Projects/job/ProvONE-Documentation-trunk/ws/provenance/ProvONE/v1/provone.html) is a model developed by DataONE affiliates for provenance or denoting relationships between data entities. Each package on DataONE is described by a science metadata document (e.g., EML, ISO, FGDC) and a resource map document following ProvONE. The resource map powers a nice display of data relationships (see [this package on the Arctic Data Center](https://arcticdata.io/catalog/view/doi%3A10.18739%2FA2556Q)). This handles both relationships between entities in the same package and entities residing in different packages. However, note that EDI currently does not utilize this model.
+Nested under **methods/methodStep**, &lt;**dataSource**> elements describe other data packages that serve as source for the current package. &lt;**dataSource**> looks like a mini-EML tree describing the source data. Example: [ecocomDP packages](http://portal.edirepository.org/nis/simpleSearch?defType=edismax&q=ecocomDP&fq=-scope:ecotrends&fq=-scope:lter-landsat*&fl=id,packageid,title,author,organization,pubdate,coordinates&debug=false) list the original packages under &lt;**dataSource**>. &lt;**dataSource**> does not describe relationships between entities in the same package, and as far as we know there is no explicit way in EML to do so.
 
 ### External software
 
 Large community-backed tools or proprietary software such as ArcGIS Pro or Microsoft Excel do not need to be archived. However, if they have had any impact on the final data (e.g., ArcGIS Pro was used to modify spatial rasters), the EML methods section should describe the routines performed. Within the data package, indicate linkage to external software as follows.
 
-* Briefly describe the software/code and its relationship to the data in EML's methods/methodStep/description element.
+* Briefly describe the software/code and its relationship to the data in EML's **methods/methodStep/description element**.
 * Names of all software used. Include both the common acronym and the full spelling.
-* The URL(s) to all models/software used. Stable, persistent URLs pointing to exact version(s) are preferable, rather than generic links such as a project homepage. If the archived model has a DOI, then include a full citation to the model in the methods/methodStep/description text. The exception to this is when referencing tools such as Excel that have achieved global household name status.
+* The URL(s) to all models/software used. Stable, persistent URLs pointing to exact version(s) are preferable, rather than generic links such as a project homepage. If the archived model has a DOI, then include a full citation to the model in the **methods/methodStep/description** text. The exception to this is when referencing tools such as Excel that have achieved global household name status.
 * Broadly, the system setup used, if relevant.
-* Information on exact versions for all code used (including dependencies). This is important, e.g., ArcGIS Pro 2.4.1 is very different from ArcGIS for Desktop 10.7.1. Different systems have methods to easily generate this information, e.g. a call to sessionInfo() in the R console.
+* Information on exact versions for all code used (including dependencies). This is important, e.g., ArcGIS Pro 3.5.2 is very different from ArcGIS for Desktop 10.7.1. Different systems have methods to easily generate this information, e.g., a call to sessionInfo() in the R console.
 * Consider, if applicable, to archive the "runfile" as its own data entity within the data package, i.e., the script(s) that sets parameters and/or calls on functions imported from external software.
 
-Example 5: EML method description referring to external software.
+Example 6: EML method description referring to external software.
 
 ```xml
 <methods>
@@ -238,9 +295,5 @@ Example 5: EML method description referring to external software.
 A description of some [software licenses](https://opensource.org/licenses)
 
 [Best practices document to archiving model-based datasets](model-based-datasets.html)
-
-[ProvONE documentation](http://jenkins-1.dataone.org/jenkins/view/Documentation%20Projects/job/ProvONE-Documentation-trunk/ws/provenance/ProvONE/v1/provone.html)
-
-[W3C PROV-O documentation](https://www.w3.org/TR/prov-o/)
 
 [Licensing software as part of an EDI data package](https://docs.google.com/document/d/1JeznivTDubi0ZX_lsO50eCUl-8zxSiz_xq5SsBRwbuw/edit)
