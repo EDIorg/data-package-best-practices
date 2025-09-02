@@ -24,7 +24,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "The website\nContent on this website is created and published using Quarto. All source files are managed in the EDIorg/data-package-best-practices GitHub repository, and rendered web pages are hosted by GitHub Pages or Netlify. The main branch of the repository renders to the current production website, and the prerelease branch renders to a prerelease website for new content and documents under review or development. See the repository README or Contributing page for more details.",
+    "text": "The website\nThis website and the content it contains are a collaborative project of the Environmental Data Initiative (EDI) and numerous community partners and individuals. The intended audience is researchers, data managers, and repository users working the environmental science and management fields.\nContent on this website is created and published using Quarto. All source files are managed in the EDIorg/data-package-best-practices GitHub repository, and rendered web pages are hosted by GitHub Pages or Netlify. The main branch of the repository renders to the current production website, and the prerelease branch renders to a prerelease website for new content and documents under review or development. See the repository README or Contributing page for more details.",
     "crumbs": [
       "About"
     ]
@@ -64,7 +64,7 @@
     "href": "contributing.html",
     "title": "Contributing",
     "section": "",
-    "text": "Branches",
+    "text": "Branches\nThe maintenance of this repository and development of the included documents is coordinated by EDI, with major updates and new content developed and approved through a community-oriented process. If you would like to help develop these documents please contact the maintainers and working group leads listed on the About page, or reach out to EDI at info@edirepository.org. Some details on how contribution works are below.",
     "crumbs": [
       "Contributing"
     ]
@@ -100,11 +100,31 @@
     ]
   },
   {
+    "objectID": "guide-eml-bp/preface.html",
+    "href": "guide-eml-bp/preface.html",
+    "title": "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)",
+    "section": "",
+    "text": "Preface\nThe recommendations for EML metadata apply to all data packages. This book is a reproduction of V3 of the static PDF document “Best Practices for Dataset Metadata in Ecological Metadata Language (EML),” last updated in 2017. The entire most recent (versioned, citable) release will be made available as a PDF.\nPlease cite as:\nBest Practices for Dataset Metadata in Ecological Metadata Language (EML Best Practices V3). 2017. Environmental Data Initiative.",
+    "crumbs": [
+      "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)"
+    ]
+  },
+  {
+    "objectID": "guide-eml-bp/preface.html#conventions-and-definitions",
+    "href": "guide-eml-bp/preface.html#conventions-and-definitions",
+    "title": "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)",
+    "section": "Conventions and Definitions",
+    "text": "Conventions and Definitions\n\nAudience\nThis document is intended for data managers. It assumes that readers are familiar with\n\nthe basic structure of an XML document, and the ability to edit in an XML editor like OxygenXML or XMLSpy.\nthe process for contributing data to a repository. If you reached this document from a repository’s help-page, contact them for more information.\n\n\n\nFonts and typeface\nNumbered examples of EML nodes are in fixed-width font:\n&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\nXML element and attribute names, XPath and references to element names in text are in bold face. Single element names are surrounded by angle brackets, as they appear in XML.\n&lt;dataTable&gt;\n/eml:eml/@packageId\nSome recommendations have special context, e.g., an XML element or attribute may be requested by a community (e.g., LTER), or required by the EDI repository (but not by other repositories).\nContext notes: Recommendations for EML usage in a specific context are called “context notes”, and are placed in separate paragraphs, in italic.\n\n\nDefinitions\nEML preparer: the person responsible for “building” the EML metadata record. Generally, this is a data manager working with a project or physical site that produces data.\nContributor: the research project contributing the data package, e.g., an LTER or OBFS site, or a Macrosystems project. Generally, the “EML preparer” works with or for the “Contributor.”\nData package: the EML metadata together with its entity or entities. This is generally the unit housed in repositories. We use this term to avoid confusion with the EML element “dataset”.\n\n\nOther EML Resources\nSome sections refer to further information or tools. These can be found on the EDI website, under “Resources”, at https://edirepository.org",
+    "crumbs": [
+      "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)"
+    ]
+  },
+  {
     "objectID": "guide-eml-bp/introduction.html",
     "href": "guide-eml-bp/introduction.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "1.1 History\nEML Best Practice recommendations have evolved over time. The most active contributors have been members of the LTER Information Managers Committee in multiple working groups and workshops. EML has been widely used for several years with multiple applications written against it, and the community has had the opportunity to observe the consequences of many content patterns. As much as possible, recommendations have been aligned with those experiences, as well as with the capability of data contributors.\nTimeline and Previous Revisions\nContributors, including LTER EML Best Practices Working Groups and workshops in 2003, 2004, 2010 (alphabetical order):",
+    "text": "1.1 History\nThis document contains current ‘Best Practice’ recommendations for EML content for metadata related to ecological and environmental data. It is intended to augment the EML schema documentation (Jones et al. 2019) for a less-technical audience. The current version (v3, 2017) is one component of several resources available to EML preparers. These recommendations are directed towards the following goals:\nAt time of this document’s publication (late 2017), the version of EML currently in production was EML.2.1.1. EML 2.2.0 is anticipated within the next year. Contact EDI for more information.\nEML Best Practice recommendations have evolved over time. The most active contributors have been members of the LTER Information Managers Committee in multiple working groups and workshops. EML has been widely used for several years with multiple applications written against it, and the community has had the opportunity to observe the consequences of many content patterns. As much as possible, recommendations have been aligned with those experiences, as well as with the capability of data contributors.\nTimeline and Previous Revisions\nContributors, including LTER EML Best Practices Working Groups and workshops in 2003, 2004, 2010 (alphabetical order):",
     "crumbs": [
       "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
@@ -309,11 +329,21 @@
     ]
   },
   {
+    "objectID": "guide-special-cases/preface.html",
+    "href": "guide-special-cases/preface.html",
+    "title": "Data Package Design for Special Cases",
+    "section": "",
+    "text": "Preface\nConsiderations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories.\nCite this document as:\nGries, Corinna, Stace Beaulieu, Renee F Brown, Sarah Elmendorf, Hap Garritt, Gastil Gastil-Buhl, Hsun-Yi Hsieh, et al. 2021. “Data Package Design for Special Cases.” Environmental Data Initiative. https://doi.org/10.6073/PASTA/9D4C803578C3FBCB45FC23F13124D052.",
+    "crumbs": [
+      "Data Package Design for Special Cases"
+    ]
+  },
+  {
     "objectID": "guide-special-cases/code.html",
     "href": "guide-special-cases/code.html",
     "title": "3  Code",
     "section": "",
-    "text": "3.1 Introduction\nThis document describes best practices for archiving software, code, or scripts, such as a simulation model, data visualization package, or data manipulation scripts. The intention of these recommendations is to make research based on modeling or software more transparent rather than achieve exact reproducibility, i.e., provide sufficient documentation so that a knowledgeable person can understand algorithms, programming decisions, and their ramifications for the results, rather than run the model and obtain the same results.\nExamples of candidate archives for code include CoMSES Net, which focuses on sharing models related to social and ecological sciences, and Zenodo, a popular DOI-minting all-purpose repository, that can conveniently archive a specific version of code in a GitHub repository. Alternatively, code may be archived in the EDI repository, either by itself or as part of a data package. The best practices in this document cover both archiving code in EDI and referencing code archived elsewhere.\nWhile metadata for software may be described in detail using the EML &lt;software&gt; tree, there exists a project called CodeMeta which is specifically designed for software metadata. Therefore, one of the key recommendations in this document is to include a CodeMeta file when archiving software or code in EDI.",
+    "text": "3.1 Introduction\nContributors: An T. Nguyen, Tim Whiteaker\nThis document describes best practices for archiving software, code, or scripts, such as a simulation model, data visualization package, or data manipulation scripts. The intention of these recommendations is to make research based on modeling or software more transparent rather than achieve exact reproducibility, i.e., provide sufficient documentation so that a knowledgeable person can understand algorithms, programming decisions, and their ramifications for the results, rather than run the model and obtain the same results.\nExamples of candidate archives for code include CoMSES Net, which focuses on sharing models related to social and ecological sciences, and Zenodo, a popular DOI-minting all-purpose repository, that can conveniently archive a specific version of code in a GitHub repository. Alternatively, code may be archived in the EDI repository, either by itself or as part of a data package. The best practices in this document cover both archiving code in EDI and referencing code archived elsewhere.\nWhile metadata for software may be described in detail using the EML &lt;software&gt; tree, there exists a project called CodeMeta which is specifically designed for software metadata. Therefore, one of the key recommendations in this document is to include a CodeMeta file when archiving software or code in EDI.",
     "crumbs": [
       "Data Package Design for Special Cases",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Code</span>"
@@ -346,7 +376,7 @@
     "href": "guide-special-cases/model-based.html",
     "title": "4  Model-Based Datasets",
     "section": "",
-    "text": "4.1 Introduction\nThis document includes recommendations for archiving data packages composed of model-based datasets. These datasets may include the model code itself, input data, model parameter settings, and output data.\nThe range of cases for model-based datasets includes small one-off model code specific to one research question, through various code packages which are maintained in community repositories as long as they meet requirements (e.g., CRAN for R packages), to large community models maintained by groups of programmers and users.\nThe intention of these recommendations is to make research based on modeling more transparent rather than achieve exact reproducibility, i.e., provide sufficient documentation so that a knowledgeable person can understand algorithms, programming decisions, and their ramifications for the results, rather than run the model and obtain the same results.\nIt is not always easy to determine who among project personnel (IMs, scientists, programmers) is responsible for the different components of a model-based dataset. This is best decided on a case-by-case basis. A common division is that the code authors annotate the code, and the IM handles the archiving and linkage to data product(s); partially except in cases of large community models.",
+    "text": "4.1 Introduction\nContributors: An T. Nguyen, Tim Whiteaker, Corinna Gries\nThis document includes recommendations for archiving data packages composed of model-based datasets. These datasets may include the model code itself, input data, model parameter settings, and output data.\nThe range of cases for model-based datasets includes small one-off model code specific to one research question, through various code packages which are maintained in community repositories as long as they meet requirements (e.g., CRAN for R packages), to large community models maintained by groups of programmers and users.\nThe intention of these recommendations is to make research based on modeling more transparent rather than achieve exact reproducibility, i.e., provide sufficient documentation so that a knowledgeable person can understand algorithms, programming decisions, and their ramifications for the results, rather than run the model and obtain the same results.\nIt is not always easy to determine who among project personnel (IMs, scientists, programmers) is responsible for the different components of a model-based dataset. This is best decided on a case-by-case basis. A common division is that the code authors annotate the code, and the IM handles the archiving and linkage to data product(s); partially except in cases of large community models.",
     "crumbs": [
       "Data Package Design for Special Cases",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Model-Based Datasets</span>"
@@ -390,7 +420,7 @@
     "href": "guide-special-cases/images-and-docs.html",
     "title": "5  Images and Documents as Data",
     "section": "",
-    "text": "5.1 Introduction\nThis chapter describes best practices for archiving images and other documents as data. The Environment Ontology (ENVO) defines a document as ‘a collection of information content entities intended to be understood together as a whole.’ Common examples include still images, audio and/or video multimedia files, field notebooks, written interview notes or transcribed oral accounts, historical document collections, and ‘paper’ maps (non-digitized maps). For images that are already handled by specialized repositories (e.g., phenocam images, specimen images) refer to Data in Other Repositories, for additional information on how to handle images from uncrewed (underwater or aerial) vehicles refer to Data Gathered with Small Moving Platforms, and for geospatial imagery refer to Spatial Data.",
+    "text": "5.1 Introduction\nContributors: Renee F. Brown (lead), Stace Beaulieu, Sarah Elmendorf, Gastil Gastil-Buhl, Corinna Gries, Li Kui, Mary Martin, Greg Maurer, John Porter, Tim Whiteaker\nThis chapter describes best practices for archiving images and other documents as data. The Environment Ontology (ENVO) defines a document as ‘a collection of information content entities intended to be understood together as a whole.’ Common examples include still images, audio and/or video multimedia files, field notebooks, written interview notes or transcribed oral accounts, historical document collections, and ‘paper’ maps (non-digitized maps). For images that are already handled by specialized repositories (e.g., phenocam images, specimen images) refer to Data in Other Repositories, for additional information on how to handle images from uncrewed (underwater or aerial) vehicles refer to Data Gathered with Small Moving Platforms, and for geospatial imagery refer to Spatial Data.",
     "crumbs": [
       "Data Package Design for Special Cases",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Images and Documents as Data</span>"
@@ -434,7 +464,7 @@
     "href": "guide-special-cases/spatial-data.html",
     "title": "6  Spatial Data",
     "section": "",
-    "text": "6.1 Introduction\nThis document/chapter contains recommendations on data package structure and metadata for spatial datasets. Over the timeline of Long Term Ecological Research (LTER) Network?s use of the Ecological Metadata Language (EML), both spatial data formats and data curation options have evolved. In this document, focus on best practices that can be widely adopted with the goal of enhancing data discoverability and usability, and the understanding that there are multiple solutions to creating these data packages.",
+    "text": "6.1 Introduction\nContributors: Tim Whiteaker, John Porter, Mary Martin\nThis document/chapter contains recommendations on data package structure and metadata for spatial datasets. Over the timeline of Long Term Ecological Research (LTER) Network?s use of the Ecological Metadata Language (EML), both spatial data formats and data curation options have evolved. In this document, focus on best practices that can be widely adopted with the goal of enhancing data discoverability and usability, and the understanding that there are multiple solutions to creating these data packages.",
     "crumbs": [
       "Data Package Design for Special Cases",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Spatial Data</span>"
@@ -456,7 +486,7 @@
     "href": "guide-special-cases/moving-platforms.html",
     "title": "7  Data Gathered with Small Moving Platforms",
     "section": "",
-    "text": "7.1 Introduction\nModern advances in technology have increasingly allowed the collection of ecological data using small, often uncrewed, moving platforms. Systems variously known as small Uncrewed Aircraft Systems (sUAS), Uncrewed Surface Vehicles (USV), Autonomous, Uncrewed Underwater Vehicles (AUV or UUV) or ?drones,? more generally, now frequently serve as sensor carrying platforms. Moving platforms may also include gliders or animals with sensors affixed. Depending on the sensor(s) installed on the moving platform, data collected may include environmental measurements (temperature, concentration of chemicals), imagery (digital photos, multi- or hyperspectral sensors), or other remote-sensing acquisitions (ranging data, ground-penetrating radar). Example research applications include studies of vegetation cover and phenology, snowpack cover and depth, ground surface temperature, terrain elevation, bathymetry, species distribution or abundance, and many others.\nRaw drone data can be voluminous and challenging to archive, but after processing, derived drone datasets typically resemble the more conventional spatial datasets that are regularly used in ecological research. In this document we focus on best practices for archiving raw and derived drone data, with particular attention to metadata and processing code that is specific to drone datasets. Note that this chapter does not specifically address data collected by large moving platforms like airplanes and satellites, or by human and animal platforms.",
+    "text": "7.1 Introduction\nContributors: Sarah Elmendorf (lead), Tim Whiteaker, Lindsay Barbieri, Jane Wyngaard, Greg Maurer, Hap Garritt, Adam Sapp, Corinna Gries, Stace Beaulieu\nModern advances in technology have increasingly allowed the collection of ecological data using small, often uncrewed, moving platforms. Systems variously known as small Uncrewed Aircraft Systems (sUAS), Uncrewed Surface Vehicles (USV), Autonomous, Uncrewed Underwater Vehicles (AUV or UUV) or ?drones,? more generally, now frequently serve as sensor carrying platforms. Moving platforms may also include gliders or animals with sensors affixed. Depending on the sensor(s) installed on the moving platform, data collected may include environmental measurements (temperature, concentration of chemicals), imagery (digital photos, multi- or hyperspectral sensors), or other remote-sensing acquisitions (ranging data, ground-penetrating radar). Example research applications include studies of vegetation cover and phenology, snowpack cover and depth, ground surface temperature, terrain elevation, bathymetry, species distribution or abundance, and many others.\nRaw drone data can be voluminous and challenging to archive, but after processing, derived drone datasets typically resemble the more conventional spatial datasets that are regularly used in ecological research. In this document we focus on best practices for archiving raw and derived drone data, with particular attention to metadata and processing code that is specific to drone datasets. Note that this chapter does not specifically address data collected by large moving platforms like airplanes and satellites, or by human and animal platforms.",
     "crumbs": [
       "Data Package Design for Special Cases",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Gathered with Small Moving Platforms</span>"
@@ -489,7 +519,7 @@
     "href": "guide-special-cases/other-repositories.html",
     "title": "8  Data in Other Repositories",
     "section": "",
-    "text": "8.1 Introduction\nA wide variety of data repositories are available for publishing biological, environmental, and Earth observation data, and the choice of where to publish a particular dataset is determined by many competing factors. For example, a funding agency or journal may require a certain repository (e.g., NSF BCO-DMO, NSF ADC, USDA ADC, DOE ESS-DIVE); the research subject or data type may be best served by a specialized repository (e.g., AmeriFlux, GenBank); or datasets may be submitted to a general purpose repository with minimal metadata requirements to simplify and speed data publishing (e.g., DRYAD, Figshare, Zenodo). For these and other reasons related datasets are sometimes published in disparate data repositories, the same data needs to be discoverable in more than one repository, or multiple datasets from one or more repositories may be used to create a new, derived dataset. In such cases, it can be advantageous to establish links between datasets in different repositories such that provenance, supplementation, duplication or other relationships are explicit. Clearly, this subject goes well beyond the single repository and better standards and approaches for linking resources and documenting data provenance are being developed elsewhere (e.g. DataONE, ProvONE, WholeTale). Here we concentrate on specific cases in the context of large and multidisciplinary projects, such as LTER sites, that wish to enhance data discovery and preserve data relationships across multiple repositories.",
+    "text": "8.1 Introduction\nContributors: Greg Maurer (lead), Stace Beaulieu, RenÃ©e Brown, Sarah Elmendorf, Hap Garritt, Gastil Gastil-Buhl, Corinna Gries, Li Kui, An Nguyen, John Porter, Margaret O’Brien, Tim Whiteaker\nA wide variety of data repositories are available for publishing biological, environmental, and Earth observation data, and the choice of where to publish a particular dataset is determined by many competing factors. For example, a funding agency or journal may require a certain repository (e.g., NSF BCO-DMO, NSF ADC, USDA ADC, DOE ESS-DIVE); the research subject or data type may be best served by a specialized repository (e.g., AmeriFlux, GenBank); or datasets may be submitted to a general purpose repository with minimal metadata requirements to simplify and speed data publishing (e.g., DRYAD, Figshare, Zenodo). For these and other reasons related datasets are sometimes published in disparate data repositories, the same data needs to be discoverable in more than one repository, or multiple datasets from one or more repositories may be used to create a new, derived dataset. In such cases, it can be advantageous to establish links between datasets in different repositories such that provenance, supplementation, duplication or other relationships are explicit. Clearly, this subject goes well beyond the single repository and better standards and approaches for linking resources and documenting data provenance are being developed elsewhere (e.g. DataONE, ProvONE, WholeTale). Here we concentrate on specific cases in the context of large and multidisciplinary projects, such as LTER sites, that wish to enhance data discovery and preserve data relationships across multiple repositories.",
     "crumbs": [
       "Data Package Design for Special Cases",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Data in Other Repositories</span>"
@@ -544,7 +574,7 @@
     "href": "guide-special-cases/large-offline.html",
     "title": "9  Large Data Sets",
     "section": "",
-    "text": "9.1 Introduction\nData entities are kept offline when they are too large to be handled easily by the HTTP protocol, are expected to be rarely requested, and can be mailed on an external drive. If you suspect your data fall into this category, contact EDI for advice (support@edirepository.org). Below are recommendations for the EDI repository’s handling of data packages that have an offline component.",
+    "text": "9.1 Introduction\nContributors: Margaret O’Brien, Corinna Gries, Mark Servilla\nData entities are kept offline when they are too large to be handled easily by the HTTP protocol, are expected to be rarely requested, and can be mailed on an external drive. If you suspect your data fall into this category, contact EDI for advice (support@edirepository.org). Below are recommendations for the EDI repository’s handling of data packages that have an offline component.",
     "crumbs": [
       "Data Package Design for Special Cases",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Large Data Sets</span>"
@@ -595,11 +625,21 @@
     ]
   },
   {
+    "objectID": "guide-domain-specific/preface.html",
+    "href": "guide-domain-specific/preface.html",
+    "title": "Scientific Domain-Specific Metadata Guide",
+    "section": "",
+    "text": "Preface\nVery much a work in progress.\nRecommendations for community-developed data products from specific scientific domains. Not all scientific domains are covered. The data packages are derived from raw data and reformatted to meet certain data harmonization standards. Many of these data products have extensive related code bases, which recommendations can take into account and link to.",
+    "crumbs": [
+      "Scientific Domain-Specific Metadata Guide"
+    ]
+  },
+  {
     "objectID": "guide-domain-specific/ecocom.html",
     "href": "guide-domain-specific/ecocom.html",
     "title": "10  Ecological community surveys",
     "section": "",
-    "text": "10.1 Introduction\nWe know from experience that primary research data sets cannot be easily reused until all data are completely understood. Community survey data in particular, can be highly complex, often with location-specific methods. Some general principles can be summarized from:",
+    "text": "10.1 Introduction\nDRAFT DRAFT DRAFT\nWe know from experience that primary research data sets cannot be easily reused until all data are completely understood. Community survey data in particular, can be highly complex, often with location-specific methods. Some general principles can be summarized from:",
     "crumbs": [
       "Scientific Domain-Specific Metadata Guide",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Ecological community surveys</span>"
@@ -723,46 +763,6 @@
     "text": "Jones, Matthew, Margaret O’Brien, Bryce Mecum, Carl Boettiger, Mark\nSchildhauer, Mitchell Maier, Timothy Whiteaker, Stevan Earl, and Steven\nChong. 2019. “Ecological Metadata\nLanguage Version 2.2.0.” KNB Data Repository. https://doi.org/10.5063/F11834T2.",
     "crumbs": [
       "References"
-    ]
-  },
-  {
-    "objectID": "guide-eml-bp/preface.html",
-    "href": "guide-eml-bp/preface.html",
-    "title": "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)",
-    "section": "",
-    "text": "Preface\nThe recommendations for EML metadata apply to all data packages. This book is a reproduction of V3 of the static PDF document “Best Practices for Dataset Metadata in Ecological Metadata Language (EML),” last updated in 2017. The entire most recent (versioned, citable) release will be made available as a PDF.\nPlease cite as:\nBest Practices for Dataset Metadata in Ecological Metadata Language (EML Best Practices V3). 2017. Environmental Data Initiative.",
-    "crumbs": [
-      "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)"
-    ]
-  },
-  {
-    "objectID": "guide-eml-bp/preface.html#conventions-and-definitions",
-    "href": "guide-eml-bp/preface.html#conventions-and-definitions",
-    "title": "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)",
-    "section": "Conventions and Definitions",
-    "text": "Conventions and Definitions\n\nAudience\nThis document is intended for data managers. It assumes that readers are familiar with\n\nthe basic structure of an XML document, and the ability to edit in an XML editor like OxygenXML or XMLSpy.\nthe process for contributing data to a repository. If you reached this document from a repository’s help-page, contact them for more information.\n\n\n\nFonts and typeface\nNumbered examples of EML nodes are in fixed-width font:\n&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\nXML element and attribute names, XPath and references to element names in text are in bold face. Single element names are surrounded by angle brackets, as they appear in XML.\n&lt;dataTable&gt;\n/eml:eml/@packageId\nSome recommendations have special context, e.g., an XML element or attribute may be requested by a community (e.g., LTER), or required by the EDI repository (but not by other repositories).\nContext notes: Recommendations for EML usage in a specific context are called “context notes”, and are placed in separate paragraphs, in italic.\n\n\nDefinitions\nEML preparer: the person responsible for “building” the EML metadata record. Generally, this is a data manager working with a project or physical site that produces data.\nContributor: the research project contributing the data package, e.g., an LTER or OBFS site, or a Macrosystems project. Generally, the “EML preparer” works with or for the “Contributor.”\nData package: the EML metadata together with its entity or entities. This is generally the unit housed in repositories. We use this term to avoid confusion with the EML element “dataset”.\n\n\nOther EML Resources\nSome sections refer to further information or tools. These can be found on the EDI website, under “Resources”, at https://edirepository.org",
-    "crumbs": [
-      "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)"
-    ]
-  },
-  {
-    "objectID": "guide-special-cases/preface.html",
-    "href": "guide-special-cases/preface.html",
-    "title": "Data Package Design for Special Cases",
-    "section": "",
-    "text": "Preface\nConsiderations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories.\nCite this document as:\nGries, Corinna, Stace Beaulieu, Renee F Brown, Sarah Elmendorf, Hap Garritt, Gastil Gastil-Buhl, Hsun-Yi Hsieh, et al. 2021. “Data Package Design for Special Cases.” Environmental Data Initiative. https://doi.org/10.6073/PASTA/9D4C803578C3FBCB45FC23F13124D052.",
-    "crumbs": [
-      "Data Package Design for Special Cases"
-    ]
-  },
-  {
-    "objectID": "guide-domain-specific/preface.html",
-    "href": "guide-domain-specific/preface.html",
-    "title": "Scientific Domain-Specific Metadata Guide",
-    "section": "",
-    "text": "Preface\nVery much a work in progress.\nRecommendations for community-developed data products from specific scientific domains. Not all scientific domains are covered. The data packages are derived from raw data and reformatted to meet certain data harmonization standards. Many of these data products have extensive related code bases, which recommendations can take into account and link to.",
-    "crumbs": [
-      "Scientific Domain-Specific Metadata Guide"
     ]
   }
 ]
