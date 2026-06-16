@@ -1,16 +1,30 @@
 # Large Data Sets
 
-Contributors: Margaret O’Brien, Corinna Gries, Mark Servilla
+Contributors: Margaret O’Brien, Corinna Gries, Mark Servilla, Colin Smith
 
 ## Introduction
 
-Data entities are kept offline when they are too large to be handled easily by the HTTP protocol, are expected to be rarely requested, and can be mailed on an external drive.  If you suspect your data fall into this category, contact EDI for advice (support@edirepository.org). Below are recommendations for the EDI repository's handling of data packages that have an offline component.
+Recent improvements to the EDI data repository have expanded our capacity to handle large data packages and their individual data entities. While there is no strict theoretical limit on the total size of a data package uploaded to the repository, networking and transfer limitations remain important considerations. We recommend that data authors take these network limitations into account when designing their data packages.
 
-### Background
+Due to these infrastructure upgrades, the requirements for offline data storage have been significantly relaxed, though we continue to provide the offline option as a fallback. 
 
-Standard practice is to handle data entities (both upload and download) via the HTTP protocol, using a URL. However, for very large datasets HTTP can fail due to physical limits. The limit for “too large” is somewhat subjective; EDI's current limit for datasets that are “too large for HTTP” is 100GB (all data and metadata).
+### Size Thresholds & Best Practices
 
-## Recommendations for data packages
+* **Recommended Entity Limit:** We support a recommended maximum size of **500 GB per individual data entity** (e.g., a single large data file). Note that a single data package can contain multiple data entities.
+* **Review Threshold (250 GB):** To ensure optimal transfer speeds and manage system resources, we monitor large-volume uploads. If you plan to upload an individual entity **or** an entire data package that exceeds **250 GB**, please coordinate with us before initiating the process.
+
+### How to Proceed with Large Uploads (250 GB+)
+
+If your data exceeds the 250 GB threshold, please contact **support@edirepository.org** before beginning the upload. Please include:
+
+1. A brief description of the data and the motivating rationale behind the size.
+2. The estimated total package size and number of entities.
+
+Our team will work with you to help ensure the dataset is successfully ingested into the repository.
+
+## Recommendations for Data Packages with an Offline Component
+
+For data entities that are too large to be handled via network transfer and must be processed offline, the guidelines below outline the repository's procedures for physical storage, package metadata, and access.
 
 ### Physical Storage
 
