@@ -11,16 +11,28 @@ Due to these infrastructure upgrades, the requirements for offline data storage 
 ### Size Thresholds & Best Practices
 
 * **Recommended Entity Limit:** We support a recommended maximum size of **500 GB per individual data entity** (e.g., a single large data file). Note that a single data package can contain multiple data entities.
-* **Review Threshold (250 GB):** To ensure optimal transfer speeds and manage system resources, we monitor large-volume uploads. If you plan to upload an individual entity **or** an entire data package that exceeds **250 GB**, please coordinate with us before initiating the process.
+* **Review Threshold (10 GB):** To ensure optimal transfer speeds and manage system resources, we monitor large-volume uploads. If you plan to upload an individual entity **or** an entire data package that exceeds **10 GB**, please coordinate with us before initiating the process.
 
-### How to Proceed with Large Uploads (250 GB+)
+### How to Proceed with Large Uploads
 
-If your data exceeds the 250 GB threshold, please contact **support@edirepository.org** before beginning the upload. Please include:
+If your data exceeds the review threshold, please contact **support@edirepository.org** before beginning the upload. Please include:
 
 1. A brief description of the data and the motivating rationale behind the size.
 2. The estimated total package size and number of entities.
 
-Our team will work with you to help ensure the dataset is successfully ingested into the repository.
+Our team will work with you to help ensure the dataset is successfully ingested into the repository using the following guidelines.
+
+### Guidelines for Staging, Reviewing, and Publishing Large Data Packages
+
+Due to limited space and resources, large data entities are only permitted on the staging server for short durations. We reserve the right to remove large data objects from staging if they begin to restrict or impede server access for other data contributors.
+
+To ensure a smooth workflow for everyone, please follow these best practices when preparing large data publications:
+
+* **Use Truncated Data for Review on Staging:** The preferred practice during the staging process is to upload truncated versions of your large data objects. This allows you to facilitate metadata creation and complete the review process without exhausting server resources.  
+* **Upload Full Objects to Production Only When Final:** We highly recommend uploading the full, complete data objects to the production server only *after* the data package layout and formatting have been fully finalized in staging. Furthermore, we ask that publishers of large datasets double- and triple-check their final data entities before the final production upload. This minimizes the risk of needing to re-upload near-duplicates of very large files due to small formatting issues or errors.  
+* **The Final URL Swap:** Once your metadata and truncated files pass review, you can swap the data object URL references from the short, truncated versions to the full versions, allowing the repository to ingest the complete dataset seamlessly. Note, other metadata elements will also need to be modified in this final step including checksum values, files sizes, number of records, etc.
+
+Please reach out to [support@edirepository.org](mailto:support@edirepository.org) if you have any questions or need assistance.
 
 ## Recommendations for Data Packages with an Offline Component
 
