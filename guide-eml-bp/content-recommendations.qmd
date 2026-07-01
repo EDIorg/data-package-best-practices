@@ -784,7 +784,7 @@ element describes locations of research sites and areas related to the
 data, and is intended for general placement of points on a map. It is
 recommended to use the element at different levels for different types
 of information. The cardinality of the <**geographicCoverage**>
-element is one-to-many. The miminum requirement under
+element is one-to-many. The minimum requirement under
 <**geographicCoverage**> is two elements, a
 <**geographicDescription**> and <**boundingCoordinates**> with a
 bounding box containing N, S, E, W limits.
@@ -929,7 +929,7 @@ the <**endDate**> tag reflects only the data that have already been
 included. It is better to state an end date that guarantees that data
 are present up to that date with more data possibly being available,
 than an end date in the future that includes a period of time for which
-no data are yet available. Use the <**maintanence**> tag (below) to
+no data are yet available. Use the <**maintenance**> tag (below) to
 describe the update frequency. The methods/sampling tree should be used
 to describe the ongoing nature of the data collection.
 
@@ -964,7 +964,7 @@ taxonomy is -- for example to "family" or "genus and species."
 
 Note that it is allowable to combine elements in the hierarchy under
 like <**taxonRankName**> entries to create a taxonomic "tree" (not
-illustrated), but this practice may impede combining and re-using
+illustrated), but this practice may impede combining and reusing
 <**taxonomicClassification**> information from multiple documents so
 should be considered carefully.
 
@@ -1215,7 +1215,7 @@ Example 17: methods
                put traps) 70% ethanol (to preserve specimens) Qorpak glass jars with
                lids from the VWR Corporation, 120ml (4oz), cap size 58-400 (comes
                included), Qorpak no. 7743C, VWR catalog no. 16195-703.</para>
-            <para>Between 10 and 21 traps are placed at each site in siutable
+            <para>Between 10 and 21 traps are placed at each site in suitable
                location.</para>
             <para>All trapped taxa counted and measured (body length), most taxa
                identified to Family, ants to Genus</para>

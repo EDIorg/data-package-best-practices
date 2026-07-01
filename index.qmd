@@ -12,7 +12,7 @@ This website contains a series of documents about preparing and publishing datas
 
 Guides published here are directed towards the following goals:
 
-- Minimize heterogeneity of EML-described data packages to simplify development and re-use of software
+- Minimize heterogeneity of EML-described data packages to simplify development and reuse of software
 - Maximize interoperability to facilitate data synthesis
 - Provide guidance and clarification on
   - the use of Ecological Metadata Language (EML)

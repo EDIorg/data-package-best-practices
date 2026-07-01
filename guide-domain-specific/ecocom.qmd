@@ -28,11 +28,11 @@ Community survey data are of great interest to the broader biodiversity communit
 
 
 ## Definitions and conventions
-The recommendations and examples below are organized according to how easily the data are reused. In all cases **Best** is preferred, and recommended. **Marginal** and **not useable** may overlap in some situations.
+The recommendations and examples below are organized according to how easily the data are reused. In all cases **Best** is preferred, and recommended. **Marginal** and **not usable** may overlap in some situations.
 - **Best**: Data are easily understood (do not require manual handling or further investigation)
 - **OK**: Some manual, custom or specialized handling required
 - **Marginal**: Additional metadata is required, along with custom handling and probably investigation (e.g., questions answered via email)
-- **Not useable**: the dataset has significant metadata missing; or has too many inconsistencies or layout challenges for it to be used even with manual handling. 
+- **Not usable**: the dataset has significant metadata missing; or has too many inconsistencies or layout challenges for it to be used even with manual handling. 
 
 
 
@@ -55,12 +55,12 @@ Temporal sampling regime is consistent
     *  example: [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.6.56](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.6.56) 
 *   **OK**: sampling regime changes over time (yyyy, vs yyyy-mm-dd)
         *   YYYY, vs YYYY-MM-DD
-*   **Not useable**: date and time columns are not typed in EML as dateTimes (i.e, typed as strings, as below) 
+*   **Not usable**: date and time columns are not typed in EML as dateTimes (i.e, typed as strings, as below) 
 
 <!-- ![alt_text](images/DPBP-community-surveys0.png "image_tooltip")
 -->
 
-Synthesis efforts may be able to circumvent the lack of true dates by dropping records (and elevate a "not useable" dataset to "marginal")
+Synthesis efforts may be able to circumvent the lack of true dates by dropping records (and elevate a "not usable" dataset to "marginal")
 
 *the ECC currently checks attributes typed as dateTime in two ways:
 
@@ -79,7 +79,7 @@ Should be complete, with latitude and longitude
         * example: [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33) 
     *   Deg-min-sec (strings)
     *   Locations in second table
-*   **Not useable**: sites codes without lat/lon
+*   **Not usable**: sites codes without lat/lon
 
 
 ### Site nesting
@@ -88,7 +88,7 @@ Sampling site nesting can be understood
 *   **Best**: subsites are labeled
     *  example: [https://portal.edirepository.org/nis/metadataviewer?packageid=edi.5.3](https://portal.edirepository.org/nis/metadataviewer?packageid=edi.5.3) 
 *   **OK**: 
-*   **Not useable**:
+*   **Not usable**:
 * 
 
 
@@ -99,7 +99,7 @@ Taxa can be resolved
     *  example: [https://portal.edirepository.org/nis/metadataviewer?packageid=edi.3.5](https://portal.edirepository.org/nis/metadataviewer?packageid=edi.3.5) 
 *   **OK**: species binomials (ids will have to be added later, by someone less familiar with these taxa)
     *  example: [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33) 
-    *   **Not useable**: local codes only
+    *   **Not usable**: local codes only
         * example (*if all they had included was the column called “sp_code”):  [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.17.33)      
 
 
@@ -113,7 +113,7 @@ Metadata can be matched to entity column
 *   **Marginal**: no header
     *   example
 
-This feature has come up in other discussions. The EML metadata asserts what the content of a column is, however there is no explicit “key” into that column except for the column header in the data entity itself. If these do not match (or there is no table header), then there is nothing to go on but trust. That’s fine if data are shared only within a tightly knit community, but is less reliable when data are reused outside the orginating group. 
+This feature has come up in other discussions. The EML metadata asserts what the content of a column is, however there is no explicit “key” into that column except for the column header in the data entity itself. If these do not match (or there is no table header), then there is nothing to go on but trust. That’s fine if data are shared only within a tightly knit community, but is less reliable when data are reused outside the originating group. 
 
 *the ECC currently checks that number of columns and their typing match (within the limits of an RDB). For attributeNames, It shows you the first line of the table for manual comparison (an info check).*
 
@@ -125,7 +125,7 @@ Foreign Key linkages are clear
     *  example [https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.6.56](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-mcr.6.56) 
 *   **OK**: FK detected manually, has referential integrity
     *   url
-*   **Not useable**: FK detected manually, but no referential integrity
+*   **Not usable**: FK detected manually, but no referential integrity
     *   url 
 
-Table linkages are most important for harmonization; synthesis efforts may be able to circumvent issues (and elevate a "not useable" dataset to "marginal") by dropping records without referents in key fields.
+Table linkages are most important for harmonization; synthesis efforts may be able to circumvent issues (and elevate a "not usable" dataset to "marginal") by dropping records without referents in key fields.

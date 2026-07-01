@@ -1,7 +1,7 @@
 # Soil Carbon
 
 ## Introduction
-Page desribing BPs for data packages about soil carbon. it will probably have links out for details.
+Page describing BPs for data packages about soil carbon. it will probably have links out for details.
 
 
 ### Synthesis use

@@ -3,7 +3,7 @@
 This document contains current 'Best Practice' recommendations for EML content for metadata related to ecological and environmental data. It is intended to augment the EML schema documentation [@jones_ecological_2019] for a less-technical audience. The current version (v3, 2017) is one component of several resources available to EML preparers. These recommendations are directed towards the following goals:
 
 - Provide guidance and clarification in the implementation of EML for datasets
-- Minimize heterogeneity of EML documents to simplify development and re-use of software built to ingest it
+- Minimize heterogeneity of EML documents to simplify development and reuse of software built to ingest it
 - Maximize interoperability of EML documents to facilitate data synthesis
 
 At time of this document's publication (late 2017), the version of EML currently in production was EML.2.1.1. EML 2.2.0 is anticipated within the next year. Contact EDI for more information.
