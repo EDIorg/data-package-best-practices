@@ -38,7 +38,7 @@ Formats that are composed of more than one file, such as shapefiles, should be z
 
 #### Document as spatial[Raster, Vector] vs. otherEntity in EML
 
-There is a noticeable divergence in EDI spatial data packages, specifically, in the use of otherEntity vs spatial[Raster,Vector]. Here we discuss pros and cons of why one might choose to document spatial data with one type of EML entity over another. Either method is acceptable, and we recommend using spatial[Raster,Vector] when feasible.  The documentation that follows provides best practices that will maximize discoverability and useability of spatial data, regardless of the entity type used.
+There is a noticeable divergence in EDI spatial data packages, specifically, in the use of otherEntity vs spatial[Raster,Vector]. Here we discuss pros and cons of why one might choose to document spatial data with one type of EML entity over another. Either method is acceptable, and we recommend using spatial[Raster,Vector] when feasible.  The documentation that follows provides best practices that will maximize discoverability and usability of spatial data, regardless of the entity type used.
 
 #### [otherEntity](https://eml.ecoinformatics.org/schema/eml-dataset_xsd.html#DatasetType_otherEntity)
 
