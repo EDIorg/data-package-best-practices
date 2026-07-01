@@ -1,6 +1,18 @@
 [codespell]
 # Ref: https://github.com/codespell-project/codespell#using-a-config-file
-skip = .git,.gitignore,.gitattributes,.codespellrc
+# references.bib contains quoted abstracts and author names from external
+# publications; do not modify them.
+skip = .git,.gitignore,.gitattributes,.codespellrc,references.bib,_book,.quarto
 check-hidden = true
-# ignore-regex = 
-# ignore-words-list =
+ignore-words-list =
+  # ONL LTER site abbreviation (research site), plus lowercase form used in XML urls
+  onl,
+  # NSF Office of Ocean Sciences (OCE) — division name used in "NSF OCE Data Policy"
+  oce,
+  # Operational Taxonomic Unit (biology / genomics)
+  otu,
+  # Missing value code (used alongside NA, NaN, etc.) in EML data-value examples
+  nd,
+  # Legitimate word choice: requestor/requestors accepted in this project's prose
+  requestor,
+  requestors
