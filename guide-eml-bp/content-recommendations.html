@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,10 +10,16 @@
 
 <title>2&nbsp; Content recommendations for Elements and Attributes – EDI Dataset Preparation Guides</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -66,7 +72,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../guide-special-cases/preface.html" rel="next">
+<link href="../guide-special-cases/index.html" rel="next">
 <link href="../guide-eml-bp/introduction.html" rel="prev">
 <link href="../img/edi-logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -75,10 +81,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-23102fe0f0b5b1a9f09cc09ebcc8fe5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3d497cff885f6278d37568d0ef0763f8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -118,7 +124,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../img/edi-logo.png" alt="" class="navbar-logo">
+    <img src="../img/edi-logo.png" alt="" class="navbar-logo light-content">
+    <img src="../img/edi-logo.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">EDI Dataset Preparation Guides</span>
@@ -190,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../guide-special-cases/preface.html" class="sidebar-item-text sidebar-link">
+            <a href="../guide-special-cases/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Package Design for Special Cases</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -199,44 +206,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../guide-special-cases/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Package Design for Special Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/code.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Code</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Code</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/model-based.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Model-Based Datasets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Model-Based Datasets</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/images-and-docs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Images and Documents as Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Images and Documents as Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/spatial-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Spatial Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spatial Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/moving-platforms.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Gathered with Small Moving Platforms</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Gathered with Small Moving Platforms</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/other-repositories.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data in Other Repositories</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data in Other Repositories</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/large-offline.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Large Data Sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Large Data Sets</span></span></a>
   </div>
 </li>
       </ul>
@@ -253,19 +266,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-domain-specific/ecocom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Ecological community surveys</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ecological community surveys</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-domain-specific/hymet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Hydrology and Meteorology Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Hydrology and Meteorology Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-domain-specific/soil-carbon.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Soil Carbon</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Soil Carbon</span></span></a>
   </div>
 </li>
       </ul>
@@ -390,17 +403,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This attribute group can be used on these EML elements: &lt;<strong>access</strong>&gt; &lt;<strong>dataset</strong>&gt; &lt;<strong>creator</strong>&gt; &lt;<strong>associatedParty</strong>&gt; &lt;<strong>contact</strong>&gt; &lt;<strong>metadataProvider</strong>&gt; &lt;<strong>publisher</strong>&gt; &lt;<strong>coverage</strong>&gt; &lt;<strong>geographicCoverage</strong>&gt; &lt;<strong>temporalCoverage,</strong>&gt; &lt;<strong>taxonomicCoverage</strong>&gt; &lt;<strong>distribution</strong>&gt; &lt;<strong>software</strong>&gt; &lt;<strong>citation</strong>&gt; &lt;<strong>protocol</strong>&gt; &lt;<strong>project</strong>&gt; &lt;<strong>dataTable</strong>&gt; &lt;<strong>otherEntity</strong>&gt; &lt;<strong>spatialRaster</strong>&gt; &lt;<strong>spatialReference</strong>&gt; &lt;<strong>spatialVector</strong>&gt; &lt;<strong>storedProcedure</strong>&gt; &lt;<strong>view</strong>&gt; &lt;<strong>attribute</strong>&gt; &lt;<strong>constraint</strong>&gt;</p>
 <p>These three attributes are found as a group and are usually optional. The primary use of the id attribute is as an internal reference, hence each id must be unique within one EML document. E.g.,. a &lt;<strong>creator</strong>&gt; must have a different id than a &lt;<strong>dataTable</strong>&gt;. And if the same person appears in seberal places (at dataset/creator, protocol/creator or project/creator, the same id cannot be repeated, so either the content of the id must be changed or a reference used for repeated instances. This restriction can cause problems when content is drawn from a system with IDs (e.g.&nbsp;a personnel database), and is under consideration by the EML developers. Ideally the three attributes would work together. The scope attribute can have one of two values, “system” or “document”. It is preferred that when the scope is set to “system”, that the system attribute defines the ID-system, the id attribute content is (presumably) from that system. Currently, a reasonable general practice should be to define a system on the &lt;<strong>eml:eml</strong>&gt; element and set it to the site (but not set the system attribute at any other level), and to set scope=“document” on elements other than &lt;<strong>eml:eml</strong>&gt;.</p>
 <p>Example 1: attributes packageId, id, system, and scope</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span><span class="ot"> version=</span><span class="st">"1.0"</span><span class="ot"> encoding=</span><span class="st">"UTF-8"</span><span class="fu">?&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">eml:eml</span><span class="ot"> xmlns:ds=</span><span class="st">"eml://ecoinformatics.org/dataset-2.1.0"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ot">   xmlns:xs=</span><span class="st">"http://www.w3.org/2001/XMLSchema"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ot">   xmlns:eml=</span><span class="st">"eml://ecoinformatics.org/eml-2.1.0"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ot">   xmlns:xsi=</span><span class="st">"http://www.w3.org/2001/XMLSchema-instance"</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ot">   xmlns:stmml=</span><span class="st">"http://www.xml-cml.org/schema/stmml"</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ot">   xsi:schemaLocation=</span><span class="st">"eml://ecoinformatics.org/eml-2.1.0</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span> <span class="ot">version=</span><span class="st">"1.0"</span> <span class="ot">encoding=</span><span class="st">"UTF-8"</span><span class="fu">?&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">eml:eml</span> <span class="ot">xmlns:ds=</span><span class="st">"eml://ecoinformatics.org/dataset-2.1.0"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   <span class="ot">xmlns:xs=</span><span class="st">"http://www.w3.org/2001/XMLSchema"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   <span class="ot">xmlns:eml=</span><span class="st">"eml://ecoinformatics.org/eml-2.1.0"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>   <span class="ot">xmlns:xsi=</span><span class="st">"http://www.w3.org/2001/XMLSchema-instance"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>   <span class="ot">xmlns:stmml=</span><span class="st">"http://www.xml-cml.org/schema/stmml"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>   <span class="ot">xsi:schemaLocation=</span><span class="st">"eml://ecoinformatics.org/eml-2.1.0</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">      https://nis.lternet.edu/eml-2.1.0/eml.xsd"</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ot">   packageId=</span><span class="st">"knb-lter-fls.21.3"</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ot">   system=</span><span class="st">"FLS"</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ot">   scope=</span><span class="st">"system"</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>   <span class="ot">packageId=</span><span class="st">"knb-lter-fls.21.3"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>   <span class="ot">system=</span><span class="st">"FLS"</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>   <span class="ot">scope=</span><span class="st">"system"</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="access" class="level3" data-number="2.1.2">
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="access"><span class="header-section-number">2.1.2</span> access</h3>
@@ -410,7 +423,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>&lt;<strong>access</strong>&gt; contains a list of rules defining permissions for this metadata record and its data entity. Values must be applicable by the system where data is stored. Many repositories follow the KNB system of using access control format that conforms to the LDAP “distinguishedName (dn)” for an individual, as in “uid=FLS,o=LTER,dc=ecoinformatics,dc=org”.</p>
 <p>As of EML 2.1.0, &lt;<strong>access</strong>&gt; trees are allowed at two places: as the first child of the &lt;<strong>eml:eml</strong>&gt; root element (a sibling to &lt;<strong>dataset</strong>&gt;) for controlling access to the entire document, and in a <strong>physical/distribution</strong> tree for controlling access to the resource URL. With the exception of certain sensitive information, metadata should be publicly accessible. The &lt;<strong>access</strong>&gt; element is optional, and if omitted, the repository may presume that only the dataset submitter will be allowed access.</p>
 <p>Example 2: access</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">access</span><span class="ot"> authSystem=</span><span class="st">"knb"</span><span class="ot"> order=</span><span class="st">"allowFirst"</span><span class="ot"> scope=</span><span class="st">"document"</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">access</span> <span class="ot">authSystem=</span><span class="st">"knb"</span> <span class="ot">order=</span><span class="st">"allowFirst"</span> <span class="ot">scope=</span><span class="st">"document"</span>&gt;</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">allow</span>&gt;</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">principal</span>&gt;uid=FLS,o=lter,dc=ecoinformatics,dc=org&lt;/<span class="kw">principal</span>&gt;</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">permission</span>&gt;all&lt;/<span class="kw">permission</span>&gt;</span>
@@ -419,7 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">principal</span>&gt;public&lt;/<span class="kw">principal</span>&gt;</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">permission</span>&gt;read&lt;/<span class="kw">permission</span>&gt;</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">allow</span>&gt;</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">access</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">access</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="dataset" class="level3" data-number="2.1.3">
 <h3 data-number="2.1.3" class="anchored" data-anchor-id="dataset"><span class="header-section-number">2.1.3</span> dataset</h3>
@@ -464,11 +477,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <strong>/eml:eml/project/title</strong></p>
 <p>The dataset &lt;<strong>title</strong>&gt; should be descriptive and should mention the data collected, geographic context, research site, and time frame (what, where, and when).</p>
 <p>Example 3: dataset, alternateIdentifier, shortName, title</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dataset</span><span class="ot"> id=</span><span class="st">"FLS-1"</span><span class="ot"> system=</span><span class="st">"FLS"</span><span class="ot"> scope</span> <span class="ot">=</span> <span class="st">"system"</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dataset</span> <span class="ot">id=</span><span class="st">"FLS-1"</span> <span class="ot">system=</span><span class="st">"FLS"</span> <span class="ot">scope</span> <span class="ot">=</span> <span class="st">"system"</span>&gt;</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">alternateIdentifier</span>&gt;FLS-1&lt;/<span class="kw">alternateIdentifier</span>&gt;</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">shortName</span>&gt;Arthropods&lt;/<span class="kw">shortName</span>&gt;</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">title</span>&gt;Long-term Ground Arthropod Monitoring Dataset at Ficity, USA</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>      from 1998 to 2003&lt;/<span class="kw">title</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>      from 1998 to 2003&lt;/<span class="kw">title</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="additionalMetadata" class="level3" data-number="2.1.4">
@@ -481,16 +494,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>&lt;<strong>metadata</strong>&gt; contains the additional metadata to be included in the document. The contents can be any valid XML. This element should be used for extending EML to include metadata that is not already available in another part of the EML specification, or to include site- or system-specific extensions that are needed beyond the core metadata. The additional metadata contained in this field describes the element referenced in the &lt;<strong>describes</strong>&gt; element preceding it. If &lt;<strong>describes</strong>&gt; is not used, either &lt;<strong>metadata</strong>&gt; must contain sufficient information to define the association between &lt;<strong>additionalMetadata</strong>&gt; or the &lt;<strong>additionalMetadata</strong>&gt; can be presumed to apply to the entire data package.</p>
 <p>An example of “sufficient information to define the association” is the definition of a &lt;<strong>customUnit</strong>&gt;. The EML Parser expects to find the description of a &lt;<strong>customUnit</strong>&gt; in the id attribute of a &lt;<strong>unit</strong>&gt; element in a &lt;<strong>unitList</strong>&gt;, i.e., at /eml:eml/additionalMetadata/metadata/unitList/unit. For example, <code>"stmml:unit id="siemensPerMeter"</code> points at the &lt;<strong>customUnit</strong>&gt; <code>"siemensPerMeter"</code>. The EML Parser is available from GitHub, with the EML project. For descriptions of custom units see “Other Resources”.</p>
 <p>Example 25: additionalMetadata custom unit</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">additionalMetadata</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">additionalMetadata</span>&gt;</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">metadata</span>&gt;</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">stmml:unitList</span>&gt;</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">stmml:unit</span><span class="ot"> id=</span><span class="st">"siemensPerMeter"</span><span class="ot"> name=</span><span class="st">"siemensPerMeter"</span><span class="ot"> abbreviation=</span><span class="st">"S/m"</span> </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ot">         unitType=</span><span class="st">"conductance"</span><span class="ot"> parentSI=</span><span class="st">"siemen"</span><span class="ot"> multiplierToSI=</span><span class="st">"1"</span><span class="ot"> constantToSI=</span><span class="st">"0"</span>&gt;</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">stmml:unit</span> <span class="ot">id=</span><span class="st">"siemensPerMeter"</span> <span class="ot">name=</span><span class="st">"siemensPerMeter"</span> <span class="ot">abbreviation=</span><span class="st">"S/m"</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>         <span class="ot">unitType=</span><span class="st">"conductance"</span> <span class="ot">parentSI=</span><span class="st">"siemen"</span> <span class="ot">multiplierToSI=</span><span class="st">"1"</span> <span class="ot">constantToSI=</span><span class="st">"0"</span>&gt;</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">stmml:description</span>&gt;conductivity unit&lt;/<span class="kw">stmml:description</span>&gt;</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">stmml:unit</span>&gt;</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">stmml:unitList</span>&gt;</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">metadata</span>&gt;</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">additionalMetadata</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">additionalMetadata</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="people-and-organizations-parties" class="level2" data-number="2.2">
@@ -518,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <strong>/eml:eml/dataset/method/methodStep/protocol/creator/userId</strong></p>
 <p>The optional &lt;<strong>userId</strong>&gt; field holds identifiers for responsible parties from other systems. This element is repeatable so that multiple systems can be referenced. EML prepares should contact the system they plan to use to learn their preferences for inclusion in metadata. The examples here are for ORCID identifiers, and that organization has asked that its full URI be used as both the <strong>system</strong> attribute, and as the head of the identifier itself.</p>
 <p>Example 4: creator</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">creator</span><span class="ot"> id=</span><span class="st">"org-1"</span><span class="ot"> system=</span><span class="st">"FLS"</span><span class="ot"> scope=</span><span class="st">"system"</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">creator</span> <span class="ot">id=</span><span class="st">"org-1"</span> <span class="ot">system=</span><span class="st">"FLS"</span> <span class="ot">scope=</span><span class="st">"system"</span>&gt;</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">organizationName</span>&gt;Fictitious LTER Site&lt;/<span class="kw">organizationName</span>&gt;</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">address</span>&gt;</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;Department for Ecology&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
@@ -528,14 +541,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">administrativeArea</span>&gt;FI&lt;/<span class="kw">administrativeArea</span>&gt;</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">postalCode</span>&gt;11111-1111&lt;/<span class="kw">postalCode</span>&gt;</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">address</span>&gt;</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span><span class="ot"> phonetype=</span><span class="st">"voice"</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span> <span class="ot">phonetype=</span><span class="st">"voice"</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">electronicMailAddress</span>&gt;fsu.contact@fi.univ.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">onlineUrl</span>&gt;http://www.fsu.edu/&lt;/<span class="kw">onlineUrl</span>&gt;</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span><span class="ot"> system=</span><span class="st">"https://orcid.org"</span>&gt;</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span> <span class="ot">system=</span><span class="st">"https://orcid.org"</span>&gt;</span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>      https://orcid.org/0000-0000-0000-0000</span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">userId</span>&gt;</span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">creator</span>&gt;</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">creator</span><span class="ot"> id=</span><span class="st">"pos-1"</span><span class="ot"> system=</span><span class="st">"FLS"</span><span class="ot"> scope=</span><span class="st">"system"</span>&gt;</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">creator</span> <span class="ot">id=</span><span class="st">"pos-1"</span> <span class="ot">system=</span><span class="st">"FLS"</span> <span class="ot">scope=</span><span class="st">"system"</span>&gt;</span>
 <span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">positionName</span>&gt;FLS Lead PI&lt;/<span class="kw">positionName</span>&gt;</span>
 <span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">address</span>&gt;</span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;Department for Ecology&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
@@ -545,14 +558,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">administrativeArea</span>&gt;FI&lt;/<span class="kw">administrativeArea</span>&gt;</span>
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">postalCode</span>&gt;11111-1111&lt;/<span class="kw">postalCode</span>&gt;</span>
 <span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">address</span>&gt;</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span><span class="ot"> phonetype=</span><span class="st">"voice"</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span> <span class="ot">phonetype=</span><span class="st">"voice"</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
 <span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">electronicMailAddress</span>&gt;fsu.leadPI@fi.univ.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
 <span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">onlineUrl</span>&gt;http://www.fsu.edu/&lt;/<span class="kw">onlineUrl</span>&gt;</span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span><span class="ot"> system=</span><span class="st">"https://orcid.org"</span>&gt;</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span> <span class="ot">system=</span><span class="st">"https://orcid.org"</span>&gt;</span>
 <span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>      https://orcid.org/0000-0000-0000-0000</span>
 <span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">userId</span>&gt;</span>
 <span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">creator</span>&gt;</span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">creator</span><span class="ot"> id=</span><span class="st">"pers-1"</span><span class="ot"> system=</span><span class="st">"FLS"</span><span class="ot"> scope=</span><span class="st">"system"</span>&gt;</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">creator</span> <span class="ot">id=</span><span class="st">"pers-1"</span> <span class="ot">system=</span><span class="st">"FLS"</span> <span class="ot">scope=</span><span class="st">"system"</span>&gt;</span>
 <span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">individualName</span>&gt;</span>
 <span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">salutation</span>&gt;Dr.&lt;/<span class="kw">salutation</span>&gt;</span>
 <span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">givenName</span>&gt;Joe&lt;/<span class="kw">givenName</span>&gt;</span>
@@ -568,13 +581,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">administrativeArea</span>&gt;FI&lt;/<span class="kw">administrativeArea</span>&gt;</span>
 <span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">postalCode</span>&gt;11111-1111&lt;/<span class="kw">postalCode</span>&gt;</span>
 <span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">address</span>&gt;</span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span><span class="ot"> phonetype=</span><span class="st">"voice"</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span> <span class="ot">phonetype=</span><span class="st">"voice"</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
 <span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">electronicMailAddress</span>&gt;jecologist@fi.univ.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
 <span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">onlineUrl</span>&gt;http://www.fsu.edu/~jecologist&lt;/<span class="kw">onlineUrl</span>&gt;</span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span><span class="ot"> system=</span><span class="st">"https://orcid.org"</span>&gt;</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span> <span class="ot">system=</span><span class="st">"https://orcid.org"</span>&gt;</span>
 <span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>      https://orcid.org/0000-0000-0000-0000</span>
 <span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">userId</span>&gt;</span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">creator</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">creator</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="creator" class="level3" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="creator"><span class="header-section-number">2.2.2</span> creator</h3>
@@ -588,7 +601,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <strong>/eml:eml/dataset/metadataProvider</strong></p>
 <p>The &lt;<strong>metadataProvider</strong>&gt; element lists the person or organization responsible for producing or providing the metadata content. For primary data sets generated by LTER sites, the LTER site should typically be listed under &lt;<strong>metadataProvider</strong>&gt; using the &lt;<strong>organizationName</strong>&gt; element. For acquired data sets, where the &lt;<strong>creator</strong>&gt; or &lt;<strong>associatedParty</strong>&gt; are not the same people who produced the metadata content, the actual metadata content provider should be listed instead (see Example below).</p>
 <p>Example 5: metadataProvider</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">metadataProvider</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">metadataProvider</span>&gt;</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">organizationName</span>&gt;Fictitious LTER Site&lt;/<span class="kw">organizationName</span>&gt;</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">address</span>&gt;</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;Department of Ecology&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
@@ -598,13 +611,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">administrativeArea</span>&gt;FI&lt;/<span class="kw">administrativeArea</span>&gt;</span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">postalCode</span>&gt;11111-1111&lt;/<span class="kw">postalCode</span>&gt;</span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">address</span>&gt;</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span><span class="ot"> phonetype=</span><span class="st">"voice"</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span> <span class="ot">phonetype=</span><span class="st">"voice"</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">electronicMailAddress</span>&gt;fsu@fi.univ.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">onlineUrl</span>&gt;http://www.fsu.edu/&lt;/<span class="kw">onlineUrl</span>&gt;</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span><span class="ot"> system=</span><span class="st">"https://orcid.org"</span>&gt;</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span> <span class="ot">system=</span><span class="st">"https://orcid.org"</span>&gt;</span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>      https://orcid.org/0000-0000-0000-0000</span>
 <span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">userId</span>&gt;</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">metadataProvider</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">metadataProvider</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="associatedparty" class="level3" data-number="2.2.4">
 <h3 data-number="2.2.4" class="anchored" data-anchor-id="associatedparty"><span class="header-section-number">2.2.4</span> associatedParty</h3>
@@ -612,7 +625,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <strong>/eml:eml/dataset/associatedParty</strong></p>
 <p>List other people who were involved with the data in some way (field technicians, students assistants, etc.) as &lt;<strong>associatedParty</strong>&gt;. All &lt;<strong>associatedParty</strong>&gt; trees require a &lt;<strong>role</strong>&gt; element. The parent university, institution, or agency could also be listed as an &lt;<strong>associatedParty</strong>&gt; using &lt;<strong>role</strong>&gt; of “owner” when appropriate.</p>
 <p>Example 6: associatedParty</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">associatedParty</span><span class="ot"> id=</span><span class="st">"12010"</span><span class="ot"> system=</span><span class="st">"FLS"</span><span class="ot"> scope=</span><span class="st">"system"</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">associatedParty</span> <span class="ot">id=</span><span class="st">"12010"</span> <span class="ot">system=</span><span class="st">"FLS"</span> <span class="ot">scope=</span><span class="st">"system"</span>&gt;</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">individualName</span>&gt;</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">givenName</span>&gt;Ima&lt;/<span class="kw">givenName</span>&gt;</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">surName</span>&gt;Testuser&lt;/<span class="kw">surName</span>&gt;</span>
@@ -626,14 +639,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">administrativeArea</span>&gt;FI&lt;/<span class="kw">administrativeArea</span>&gt;</span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">postalCode</span>&gt;11111-1111&lt;/<span class="kw">postalCode</span>&gt;</span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">address</span>&gt;</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span><span class="ot"> phonetype=</span><span class="st">"voice"</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span> <span class="ot">phonetype=</span><span class="st">"voice"</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
 <span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">electronicMailAddress</span>&gt;itestuser@lternet.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
 <span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">onlineUrl</span>&gt;http://search.lternet.edu/directory_view.php?personid=12010<span class="dv">&amp;amp;</span>query=itestuser&lt;/<span class="kw">onlineUrl</span>&gt;</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span><span class="ot"> system=</span><span class="st">"https://orcid.org"</span>&gt;</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span> <span class="ot">system=</span><span class="st">"https://orcid.org"</span>&gt;</span>
 <span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>      https://orcid.org/0000-0000-0000-0000</span>
 <span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">userId</span>&gt;</span>
 <span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">role</span>&gt;Technician&lt;/<span class="kw">role</span>&gt;</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">associatedParty</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">associatedParty</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="contact" class="level3" data-number="2.2.5">
 <h3 data-number="2.2.5" class="anchored" data-anchor-id="contact"><span class="header-section-number">2.2.5</span> contact</h3>
@@ -641,8 +654,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <strong>/eml:eml/dataset/contact</strong></p>
 <p>A &lt;<strong>contact</strong>&gt; element is required in all EML metadata records. Full contact information should be included for the position of data manager or other designated contact, and should be kept current and independent of personnel changes. If several contacts are listed (e.g.&nbsp;both a data and site manager) all should be kept current. Technicians who performed the work belong under &lt;<strong>associatedParty</strong>&gt; rather than &lt;<strong>contact</strong>&gt;. Complete the &lt;<strong>address</strong>&gt;, &lt;<strong>phone</strong>&gt;, &lt;<strong>electronicMailAddress</strong>&gt;, and &lt;<strong>onlineURL</strong>&gt; elements for the &lt;<strong>contact</strong>&gt; element.</p>
 <p>Example 7: contact</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">contact</span>&gt;</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">positionName</span><span class="ot"> id=</span><span class="st">"pos-4"</span>&gt;Information Manager&lt;/<span class="kw">positionName</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">contact</span>&gt;</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">positionName</span> <span class="ot">id=</span><span class="st">"pos-4"</span>&gt;Information Manager&lt;/<span class="kw">positionName</span>&gt;</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">address</span>&gt;</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;Department for Ecology&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">deliveryPoint</span>&gt;Fictitious State University&lt;/<span class="kw">deliveryPoint</span>&gt;</span>
@@ -651,13 +664,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">administrativeArea</span>&gt;FI&lt;/<span class="kw">administrativeArea</span>&gt;</span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">postalCode</span>&gt;11111-1111&lt;/<span class="kw">postalCode</span>&gt;</span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">address</span>&gt;</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span><span class="ot"> phonetype=</span><span class="st">"voice"</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">phone</span> <span class="ot">phonetype=</span><span class="st">"voice"</span>&gt;(999) 999-9999&lt;/<span class="kw">phone</span>&gt;</span>
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">electronicMailAddress</span>&gt;fsu.data@fi.univ.edu&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">onlineUrl</span>&gt;http://www.fsu.edu/&lt;/<span class="kw">onlineUrl</span>&gt;</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span><span class="ot"> system=</span><span class="st">"https://orcid.org"</span>&gt;</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">userId</span> <span class="ot">system=</span><span class="st">"https://orcid.org"</span>&gt;</span>
 <span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>      https://orcid.org/0000-0000-0000-0000</span>
 <span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">userId</span>&gt;</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">contact</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">contact</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="publisher" class="level3" data-number="2.2.6">
 <h3 data-number="2.2.6" class="anchored" data-anchor-id="publisher"><span class="header-section-number">2.2.6</span> publisher</h3>
@@ -665,9 +678,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <strong>/eml:eml/dataset/publisher</strong></p>
 <p>The organization producing the EML metadata (e.g., an LTER site or field station) should be placed in the &lt;<strong>publisher</strong>&gt; element. Spell out the organization’s name (&lt;<strong>organizationName</strong>&gt;). Complete the &lt;<strong>address</strong>&gt;, &lt;<strong>phone</strong>&gt;, &lt;<strong>electronicMailAddress</strong>&gt;, and &lt;<strong>onlineURL</strong>&gt; elements for each publisher element. Some citation displays may use this element, although typically, the repository becomes the publisher in citations.</p>
 <p>Example 8: publisher</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">publisher</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">publisher</span>&gt;</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">organizationName</span>&gt;Fictitious LTER site&lt;/<span class="kw">organizationName</span>&gt;</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">publisher</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">publisher</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="pubdate" class="level2" data-number="2.3">
@@ -691,7 +704,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>It is recommended that meaningful sets of keywords each be contained within &lt;<strong>keywordSet</strong>&gt; tag. Use one &lt;<strong>keywordSet</strong>&gt; for a group of terms identifying the contributing organization(s), e.g., the LTER or OBFS site, LTREB or Macrosystems project , which is especially if data are co-funded or funding is leveraged. Meaningful geographic place names also are appropriate (e.g.&nbsp;state, city, county). If groups of keywords are from a specific vocabulary, its name belongs the optional tag &lt;<strong>keywordThesaurus</strong>&gt;.</p>
 <p><em>Context: Communities sometimes have specific requests for keywords to assist in searches. E.g, the LTER requests that keywords should include a LTER core research area(s), the network acronym (LTER, ILTER, etc.), three-letter site acronym and site name. In addition to specific keywords, relevant conceptual keywords should also be included, e.g., from the LTER Controlled Vocabulary.</em></p>
 <p>Example 9: pubDate, abstract,keywordSet, keyword</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">pubDate</span>&gt;2014&lt;/<span class="kw">pubDate</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">pubDate</span>&gt;2014&lt;/<span class="kw">pubDate</span>&gt;</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">abstract</span>&gt;</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">para</span>&gt;Ground arthropods communities are monitored in different</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>      habitats in a rapidly changing environment. The arthropods are</span>
@@ -699,32 +712,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>      as far as possible to family, genus or species.&lt;/<span class="kw">para</span>&gt;</span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">abstract</span>&gt;</span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">keywordSet</span>&gt;</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"place"</span>&gt;City&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"place"</span>&gt;State&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"place"</span>&gt;Region&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"place"</span>&gt;County&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"theme"</span>&gt;FLS&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"theme"</span>&gt;Fictitious LTER Site&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"theme"</span>&gt;LTER&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"theme"</span>&gt;Arthropods&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"theme"</span>&gt;Richness&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"place"</span>&gt;City&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"place"</span>&gt;State&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"place"</span>&gt;Region&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"place"</span>&gt;County&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"theme"</span>&gt;FLS&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"theme"</span>&gt;Fictitious LTER Site&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"theme"</span>&gt;LTER&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"theme"</span>&gt;Arthropods&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"theme"</span>&gt;Richness&lt;/<span class="kw">keyword</span>&gt;</span>
 <span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keywordThesaurus</span>&gt;FLS site thesaurus&lt;/<span class="kw">keywordThesaurus</span>&gt;</span>
 <span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">keywordSet</span>&gt;</span>
 <span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">keywordSet</span>&gt;</span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"theme"</span>&gt;ecology&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"theme"</span>&gt;biodiversity&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"theme"</span>&gt;population dynamics&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"theme"</span>&gt;terrestrial&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"theme"</span>&gt;arthropods&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"theme"</span>&gt;pitfall trap&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"theme"</span>&gt;monitoring&lt;/<span class="kw">keyword</span>&gt;</span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"theme"</span>&gt;abundance&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"theme"</span>&gt;ecology&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"theme"</span>&gt;biodiversity&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"theme"</span>&gt;population dynamics&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"theme"</span>&gt;terrestrial&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"theme"</span>&gt;arthropods&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"theme"</span>&gt;pitfall trap&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"theme"</span>&gt;monitoring&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"theme"</span>&gt;abundance&lt;/<span class="kw">keyword</span>&gt;</span>
 <span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keywordThesaurus</span>&gt;LTER controlled vocabulary&lt;/<span class="kw">keywordThesaurus</span>&gt;</span>
 <span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">keywordSet</span>&gt;</span>
 <span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">keywordSet</span>&gt;</span>
-<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span><span class="ot"> keywordType=</span><span class="st">"theme"</span>&gt;populations&lt;/<span class="kw">keyword</span>&gt;</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keyword</span> <span class="ot">keywordType=</span><span class="st">"theme"</span>&gt;populations&lt;/<span class="kw">keyword</span>&gt;</span>
 <span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">keywordThesaurus</span>&gt;LTER core research areas&lt;/<span class="kw">keywordThesaurus</span>&gt;</span>
-<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">keywordSet</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">keywordSet</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="intellectualrights" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="intellectualrights"><span class="header-section-number">2.6</span> intellectualRights</h2>
@@ -733,7 +746,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>&lt;<strong>intellectualRights</strong>&gt; are controlled at the source, however it is recommended that data be released with as few restrictions as possible. Each data package should contain a data access policy, plus a description of any deviation from the general policy specific for this particular package (e.g.&nbsp;restricted-access packages). The timeframe for release should be included as well.</p>
 <p><em>Context: If no</em> &lt;<strong>intellectualRights</strong>&gt; <em>element is included EDI will insert text that releases data under “CC-0” (shown in example). The LTER Network-wide default policy is “CC-BY”. Please consult those organizations for more information and more details.</em></p>
 <p>Example 10: intellectualRights</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">intellectualRights</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">intellectualRights</span>&gt;</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">section</span>&gt;</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">title</span>&gt;Data Policy&lt;/<span class="kw">title</span>&gt;</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">para</span>&gt;This data package is released to the "public domain" under</span>
@@ -752,7 +765,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>         package or its components. Periodic updates of this data package may</span>
 <span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>         be available from the website. Thank you.&lt;/<span class="kw">para</span>&gt;</span>
 <span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">section</span>&gt;</span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">intellectualRights</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">intellectualRights</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="distribution" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="distribution"><span class="header-section-number">2.7</span> distribution</h2>
@@ -766,14 +779,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>At the dataset level, the <code>&lt;distribution&gt;</code> element should be used for information only, because it applies to the entire package, not only to one entity.</p>
 <p><em>Context: The EDI repository will ignore a <code>&lt;distribution&gt;</code> element at the dataset level.</em></p>
 <p>Example 11a: distribution at the dataset level</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">distribution</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">distribution</span>&gt;</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">online</span>&gt;</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">onlineDescription</span>&gt;f1s-1 Data Web Page&lt;/<span class="kw">onlineDescription</span>&gt;</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">"information"</span>&gt;</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">url</span> <span class="ot">function=</span><span class="st">"information"</span>&gt;</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>         http://www.fsu.edu/lter/data/fls-1.htm</span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">url</span>&gt;</span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">online</span>&gt;</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">distribution</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">distribution</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="entity-level" class="level3" data-number="2.7.2">
 <h3 data-number="2.7.2" class="anchored" data-anchor-id="entity-level"><span class="header-section-number">2.7.2</span> Entity level</h3>
@@ -788,19 +801,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>When used at the entity level, an alternative tag is available to &lt;<strong>url</strong>&gt;, called &lt;<strong>connection</strong>&gt;. This element is discussed under data entities, below.</p>
 <p>As of EML 2.1, there is also an optional &lt;<strong>access</strong>&gt; element in a &lt;<strong>distribution</strong>&gt; tree at the data entity level <strong>(/eml:eml/dataset/[entity]/physical/distribution/access</strong>). This element is intended specifically for controlling access to the data entity itself. For more information on the &lt;<strong>access</strong>&gt; tree, see above, under the general access discussion.</p>
 <p>Example 11b: distribution at the data entity level</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dataTable</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dataTable</span>&gt;</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>   ...</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">distribution</span>&gt;</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">online</span>&gt;</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">onlineDescription</span>&gt;f1s-1 Data Web Page&lt;/<span class="kw">onlineDescription</span>&gt;</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">"download"</span>&gt;</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span> <span class="ot">function=</span><span class="st">"download"</span>&gt;</span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>               http://www.fsu.edu/lter/data/fls-1.csv</span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">url</span>&gt;</span>
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">online</span>&gt;</span>
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">distribution</span>&gt;</span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dataTable</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dataTable</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="coverage" class="level2" data-number="2.8">
@@ -823,7 +836,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>At the dataset level (<strong>eml:eml/dataset/coverage</strong>) one &lt;<strong>geographicCoverage</strong>&gt; element should be included, whose &lt;<strong>boundingCoordinates</strong>&gt; describe the extent of the data. As a default, this could be the nominal boundaries of a sampling area. A more accurate extent (recommended) would be the maximum extent of the data, for each of east, west, north and south.</p>
 <p>Additional &lt;<strong>geographicCoverage</strong>&gt; elements should be included if there are significant distances between study sites and grouping them in one bounding box would be misleading or confusing. For example, a cross-site study should have bounding boxes for each site.</p>
 <p>Example 12: geographicCoverage at the dataset level</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">coverage</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">coverage</span>&gt;</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">geographicCoverage</span>&gt;</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">geographicDescription</span>&gt;</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>         Ficity, FI metropolitan area, USA</span>
@@ -840,10 +853,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">boundingAltitudes</span>&gt;</span>
 <span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">boundingCoordinates</span>&gt;</span>
 <span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">geographicCoverage</span>&gt;</span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">coverage</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">coverage</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If sampling took place in discrete point location, those sites should also appear with or without a bounding box. Individual sampling sites may also be be entered under &lt;<strong>spatialSamplingUnits</strong>&gt;, each site in a separate coverage element (see below).</p>
 <p>Example 13: geographicCoverage under spatialSamplingUnits</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">spatialSamplingUnits</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">spatialSamplingUnits</span>&gt;</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">coverage</span>&gt;</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">geographicDescription</span>&gt;sitenumber 1&lt;/<span class="kw">geographicDescription</span>&gt;</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">boundingCoordinates</span>&gt;</span>
@@ -871,7 +884,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">southBoundingCoordinate</span>&gt;33.7&lt;/<span class="kw">southBoundingCoordinate</span>&gt;</span>
 <span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">boundingCoordinates</span>&gt;</span>
 <span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">coverage</span>&gt;</span>
-<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">spatialSamplingUnits</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">spatialSamplingUnits</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Latitudes and longitudes should be in the same datum, commonly used (i.e., all values in WGS84 or NAD83) and expressed to at least six decimal places (the EML2.1 schema enforces decimal content). International convention dictates that longitudes east of the prime meridian and latitudes north of the equator be prefixed with a plus sign (+), or by the absence of a minus sign (-), and that west longitudes and south latitudes be prefixed with minus sign (-). See Example below, and the EML specification for more information and other examples.</p>
 <p>&lt;<strong>geographicDescription</strong>&gt; The description is a string. It should be comprehensive so that searches can be run against it, and include the country, state, county or province, city, general topography, landmarks, rivers and other relevant information. The method for determining &lt;<strong>boundingCoordinates</strong>&gt;, &lt;<strong>boundingAltitudes</strong>&gt;, coordinates, datums, etc., should be included with the &lt;<strong>geographicDescription</strong>&gt;, since those elements do not encode this information.</p>
 <p>The &lt;<strong>datasetGPolygon</strong>&gt; element may be included when the required bounding box does not adequately describe the study location, for example, if an irregular polygon is necessary to describe the study area, or there is an area within the bounding box that is excluded. This element is optional, and has two subelements.</p>
@@ -884,7 +897,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The &lt;<strong>temporalCoverage</strong>&gt; element represents the period of time the data were collected, not the year the study was conducted if it uses retrospective or historical data. Most commonly, &lt;<strong>singleDate</strong>&gt; or &lt;<strong>rangeOfDates</strong>&gt; elements are used. Sometimes an &lt;<strong>alternativeTimeScale</strong>&gt; is more appropriate, such as the use of “years before present”, e.g., for long-term tree ring chronology dating back hundreds of years. Two formats are allowed, either a 4-digit year, or a date in ISO format: YYYY-MM-DD.</p>
 <p>In some cases, a package may be considered “ongoing”, i.e., data are planned to be added at intervals. It is not currently valid to leave an empty &lt;<strong>endDate</strong>&gt; tag in EML. Further, EML is intended to house “snapshots” of data which can be immutable (if the repository supports). So for a package which is planned to be ongoing, the best solution is to populate the &lt;<strong>endDate</strong>&gt; element with the end of the current data range and to update this metadata field along with data updates, so that the &lt;<strong>endDate</strong>&gt; tag reflects only the data that have already been included. It is better to state an end date that guarantees that data are present up to that date with more data possibly being available, than an end date in the future that includes a period of time for which no data are yet available. Use the &lt;<strong>maintanence</strong>&gt; tag (below) to describe the update frequency. The methods/sampling tree should be used to describe the ongoing nature of the data collection.</p>
 <p>Example 14: temporalCoverage</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">temporalCoverage</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">temporalCoverage</span>&gt;</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">rangeOfDates</span>&gt;</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">beginDate</span>&gt;</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">calendarDate</span>&gt;1998-11-12&lt;/<span class="kw">calendarDate</span>&gt;</span>
@@ -893,7 +906,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">calendarDate</span>&gt;2003-12-31&lt;/<span class="kw">calendarDate</span>&gt;</span>
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">endDate</span>&gt;</span>
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">rangeOfDates</span>&gt;</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">temporalCoverage</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">temporalCoverage</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="taxonomiccoverage" class="level3" data-number="2.8.3">
 <h3 data-number="2.8.3" class="anchored" data-anchor-id="taxonomiccoverage"><span class="header-section-number">2.8.3</span> taxonomicCoverage</h3>
@@ -902,7 +915,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The optional <strong>taxonomicCoverage/taxonomicSystem</strong> trees may be used to detail the use of taxonomic identification resources and on the identification process. &lt;<strong>classificationSystem</strong>&gt; should be used to list authoritative taxonomic databases (such as ITIS, IPNI, NCBI, Index Fungorum, or USDA Plants) or classification systems used for taxonomic identification. Documentation and relevant literature regarding, used authoritative sources, including URL’s pointing to these sources, should be listed in &lt;<strong>classificationSystemCitation</strong>&gt;. Exceptions to, or deviation from, used authoritative sources should be explained in &lt;<strong>classificationSystemModification</strong>&gt;.</p>
 <p>Methods and protocols used for taxonomic classification should be detailed using the &lt;<strong>identifierName</strong>&gt; and &lt;<strong>taxonomicProcedures</strong>&gt; tags. Examples of methods that should be listed in &lt;<strong>taxonomicProcedures</strong>&gt; are details of specimen processing, keys, and chemical or genetic analyses. &lt;<strong>taxonomicCompleteness</strong>&gt; may be used to document the status, estimated importance, and reason for incomplete identifications.</p>
 <p>Example 15: taxonomicCoverage</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">taxonomicCoverage</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">taxonomicCoverage</span>&gt;</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">taxonomicSystem</span>&gt;</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">classificationSystem</span>&gt;</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">classificationSystemCitation</span>&gt;</span>
@@ -985,7 +998,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-81"><a href="#cb17-81" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">taxonomicClassification</span>&gt;</span>
 <span id="cb17-82"><a href="#cb17-82" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">taxonomicClassification</span>&gt;</span>
 <span id="cb17-83"><a href="#cb17-83" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">taxonomicClassification</span>&gt;</span>
-<span id="cb17-84"><a href="#cb17-84" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">taxonomicCoverage</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-84"><a href="#cb17-84" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">taxonomicCoverage</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="maintenance" class="level2" data-number="2.9">
@@ -994,13 +1007,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <strong>eml:eml/dataset/maintenance</strong></p>
 <p>The dataset/maintenance/description element should be used to document changes to the data tables or metadata, including update frequency. The change history can also be used to describe alterations in static documents. The description element (TextType) can contain both formatted and unformatted text blocks.</p>
 <p>Example 16: maintenance</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">maintenance</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">maintenance</span>&gt;</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">description</span>&gt;</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">para</span>&gt;</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>         Data are updated annually at the end of the calendar year.</span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">para</span>&gt;</span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">description</span>&gt;</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">maintenance</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">maintenance</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="methods" class="level2" data-number="2.10">
 <h2 data-number="2.10" class="anchored" data-anchor-id="methods"><span class="header-section-number">2.10</span> methods</h2>
@@ -1036,7 +1049,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="2.10.3" class="anchored" data-anchor-id="qualitycontrol"><span class="header-section-number">2.10.3</span> qualityControl</h3>
 <p>Like other trees under &lt;<strong>methods</strong>&gt;, &lt;<strong>qualityControl</strong>&gt; can be used at the dataset, entity or attribute level, whichever is appropriate. At its most basic, use the &lt;<strong>description</strong>&gt; element. Tags are also available for a &lt;<strong>citation</strong>&gt; or &lt;<strong>protocol</strong>&gt;.</p>
 <p>Example 17: methods</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">methods</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">methods</span>&gt;</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">methodStep</span>&gt;</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">description</span>&gt;</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">section</span>&gt;</span>
@@ -1115,9 +1128,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb19-77"><a href="#cb19-77" aria-hidden="true" tabindex="-1"></a>            inspect standard data summary statistics after data entry.&lt;/<span class="kw">para</span>&gt;</span>
 <span id="cb19-78"><a href="#cb19-78" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">description</span>&gt;</span>
 <span id="cb19-79"><a href="#cb19-79" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">qualityControl</span>&gt;</span>
-<span id="cb19-80"><a href="#cb19-80" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">methods</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-80"><a href="#cb19-80" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">methods</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Example 18: methods, with dataSource</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">methods</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">methods</span>&gt;</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">methodStep</span>&gt;</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">description</span>&gt;</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">section</span>&gt;</span>
@@ -1143,7 +1156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">contact</span>&gt;</span>
 <span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">dataSource</span>&gt;</span>
 <span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">methodStep</span>&gt;</span>
-<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">methods</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">methods</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="project" class="level2" data-number="2.11">
@@ -1154,9 +1167,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>&lt;<strong>fundingSource</strong>&gt; should contain the agency and grant number. It is not optional.</p>
 <p>&lt;<strong>studyAreaDiscription</strong>&gt; tree and its accompanying &lt;<strong>citation</strong>&gt; tree are optional, and may be used to describe non-coverage characteristics of the study area such as climate, geology or disturbances or references to citable biological or geophysical classification systems such as the Bailey Ecoregions or the Holdridge Life Zones. The <strong>studyAreaDiscription</strong> tree also supports multiple &lt;<strong>coverage</strong>&gt; elements that can be used to describe the geographic boundaries of individual study sites within the larger area. These can be referenced by the <strong>studyExtent/spatialSamplingUnits/referencedEntityId</strong>. The sibling &lt;<strong>descriptor</strong>&gt; tag can be used for text descriptions of the site.</p>
 <p>Example 19: project</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">project</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">project</span>&gt;</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">title</span>&gt;FSL basic monitoring program&lt;/<span class="kw">title</span>&gt;</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">personnel</span><span class="ot"> id=</span><span class="st">"pers-30"</span><span class="ot"> system=</span><span class="st">"FLS"</span>&gt;</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">personnel</span> <span class="ot">id=</span><span class="st">"pers-30"</span> <span class="ot">system=</span><span class="st">"FLS"</span>&gt;</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">individualName</span>&gt;</span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">salutation</span>&gt;Dr.&lt;/<span class="kw">salutation</span>&gt;</span>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">givenName</span>&gt;Eva&lt;/<span class="kw">givenName</span>&gt;</span>
@@ -1173,7 +1186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">address</span>&gt;</span>
 <span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">role</span>&gt;principalInvestigator&lt;/<span class="kw">role</span>&gt;</span>
 <span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">personnel</span>&gt;</span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">personnel</span><span class="ot"> id=</span><span class="st">"pers-130"</span><span class="ot"> system=</span><span class="st">"FLS"</span>&gt;</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">personnel</span> <span class="ot">id=</span><span class="st">"pers-130"</span> <span class="ot">system=</span><span class="st">"FLS"</span>&gt;</span>
 <span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">individualName</span>&gt;</span>
 <span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">givenName</span>&gt;Monica&lt;/<span class="kw">givenName</span>&gt;</span>
 <span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">givenName</span>&gt;D.&lt;/<span class="kw">givenName</span>&gt;</span>
@@ -1195,7 +1208,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>         populations. Monitoring takes place at 3 locations, 4 times a year.</span>
 <span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>         Climate parameters a continuously measured at all stations.&lt;/<span class="kw">para</span>&gt;</span>
 <span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">abstract</span>&gt;</span>
-<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">project</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">project</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity" class="level2" data-number="2.12">
 <h2 data-number="2.12" class="anchored" data-anchor-id="entity-datatable-spatialraster-spatialvector-storedprocedure-view-otherentity"><span class="header-section-number">2.12</span> [entity] = dataTable, spatialRaster, spatialVector, storedProcedure, view, otherEntity</h2>
@@ -1208,13 +1221,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <strong>/eml:eml/dataset/otherEntity</strong></p>
 <p><strong>General information</strong>: If at all possible, do not publish data in dated, proprietary, binary formats such as MS-Excel, and instead, export to plain text representations such as csv. The entity types &lt;<strong>dataTable</strong>&gt;, &lt;<strong>otherEntity</strong>&gt; and &lt;<strong>view</strong>&gt; cover many commonly encountered data structures and are covered here. &lt;<strong>spatialRaster</strong>&gt;, &lt;<strong>spatialVector</strong>&gt;, &lt;<strong>storedProcedure</strong>&gt;) will be addressed in more depth in a future version of this document. Table 1 gives the general features of EML’s six entity types, to assist in selection.</p>
 <p>Table 1. Summary of the six entities in EML 2, including the type of data entity typically described with that element, how they are created and a brief description of its metadata.</p>
-<table class="caption-top table" data-quarto-postprocess="true">
+<table class="caption-top table">
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">Element name</td>
-<td data-quarto-table-cell-role="th">Used for</td>
-<td data-quarto-table-cell-role="th">Created from</td>
-<td data-quarto-table-cell-role="th">Metadata features</td>
+<th data-quarto-table-cell-role="th">Element name</th>
+<th data-quarto-table-cell-role="th">Used for</th>
+<th data-quarto-table-cell-role="th">Created from</th>
+<th data-quarto-table-cell-role="th">Metadata features</th>
 </tr>
 <tr class="even">
 <td>dataTable</td>
@@ -1277,7 +1290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>&lt;<strong>methods</strong>&gt; provides information on the specific methods used to collect information in this [<strong>entity</strong>]. Please see the discussion at the dataset level for more information.</p>
 <p>&lt;<strong>additionalInfo</strong>&gt; is a text field for any material that cannot be characterized by the other elements for the data type.</p>
 <p>Example 20: The elements in the EntityGroup, showing the <datatable> entity.</datatable></p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dataTable</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">dataTable</span>&gt;</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityName</span>&gt;arthro_hab&lt;/<span class="kw">entityName</span>&gt;</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityDescription</span>&gt;</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>      habitat description for the sampling locations</span>
@@ -1300,14 +1313,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">distribution</span>&gt;</span>
 <span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">online</span>&gt;</span>
 <span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">onlineDescription</span>&gt;f1s-1 Data File&lt;/<span class="kw">onlineDescription</span>&gt;</span>
-<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">"download"</span>&gt;http://www.fsu.edu/lter/data/fls-1.csv&lt;/<span class="kw">url</span>&gt;</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span> <span class="ot">function=</span><span class="st">"download"</span>&gt;http://www.fsu.edu/lter/data/fls-1.csv&lt;/<span class="kw">url</span>&gt;</span>
 <span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">online</span>&gt;</span>
 <span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">distribution</span>&gt;</span>
 <span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
-<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dataTable</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">dataTable</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Each data type has a specific set of elements that follow the common elements. Table 2 shows the specific trees that are applied to each of the data type.</p>
 <p>Table 2. Elements specific to each of the six entity types.</p>
-<table class="caption-top table" data-quarto-postprocess="true">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -1315,9 +1328,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </colgroup>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">Entity Type</td>
-<td data-quarto-table-cell-role="th">Typical Uses</td>
-<td data-quarto-table-cell-role="th">Elements following EntityGroup</td>
+<th data-quarto-table-cell-role="th">Entity Type</th>
+<th data-quarto-table-cell-role="th">Typical Uses</th>
+<th data-quarto-table-cell-role="th">Elements following EntityGroup</th>
 </tr>
 <tr class="even">
 <td>&lt;<strong>dataTable</strong>&gt;</td>
@@ -1421,11 +1434,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The &lt;<strong>missingValueCode</strong>&gt; is optional, but should be included to describe any missing value codes present in the data set (e.g.&nbsp;NA, NaN, ND, 9999). The missing value code is a string, not a value, which means that the content of this field must exactly match what appears in place of data values for it to be correctly interpreted. For example, if data are output with precision .01 and with missing values formatted to “-9999.00”, then the content of the &lt;<strong>missingValueCode</strong>&gt; element must be “-9999.00” not “-9999”.</p>
 <p>The examples show two attribute trees. The first was generated from an SQL system with a defined storage type. The second &lt;<strong>attributeList</strong>&gt; includes tags for &lt;<strong>customUnits</strong>&gt;, with the Unit defined in the &lt;<strong>additionalMetadata</strong>&gt; tree.</p>
 <p>Example 21: attributeList/attribute dataTable</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">attributeList</span>&gt;</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">"soil_chemistry.site_id"</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">attributeList</span>&gt;</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span> <span class="ot">id=</span><span class="st">"soil_chemistry.site_id"</span>&gt;</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeName</span>&gt;site_id&lt;/<span class="kw">attributeName</span>&gt;</span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeDefinition</span>&gt;Site id as used in sites table&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">"http://www.w3.org/2001/XMLSchema-datatypes"</span>&gt;string&lt;/<span class="kw">storageType</span>&gt;</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">storageType</span> <span class="ot">typeSystem=</span><span class="st">"http://www.w3.org/2001/XMLSchema-datatypes"</span>&gt;string&lt;/<span class="kw">storageType</span>&gt;</span>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">nominal</span>&gt;</span>
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nonNumericDomain</span>&gt;</span>
@@ -1436,10 +1449,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">nominal</span>&gt;</span>
 <span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">"soil_chemistry.pH"</span>&gt;</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span> <span class="ot">id=</span><span class="st">"soil_chemistry.pH"</span>&gt;</span>
 <span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeName</span>&gt;pH&lt;/<span class="kw">attributeName</span>&gt;</span>
 <span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeDefinition</span>&gt;ph of soil solution&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">"http://www.w3.org/2001/XMLSchema-datatypes"</span>&gt;float&lt;/<span class="kw">storageType</span>&gt;</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">storageType</span> <span class="ot">typeSystem=</span><span class="st">"http://www.w3.org/2001/XMLSchema-datatypes"</span>&gt;float&lt;/<span class="kw">storageType</span>&gt;</span>
 <span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">ratio</span>&gt;</span>
 <span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">unit</span>&gt;</span>
@@ -1452,10 +1465,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">ratio</span>&gt;</span>
 <span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">"pass2001.q110"</span>&gt;</span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span> <span class="ot">id=</span><span class="st">"pass2001.q110"</span>&gt;</span>
 <span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeName</span>&gt;q110&lt;/<span class="kw">attributeName</span>&gt;</span>
 <span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeDefinition</span>&gt;Q110-Preference for front yard landscape&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">"http://www.w3.org/2001/XMLSchema-datatypes"</span>&gt;float&lt;/<span class="kw">storageType</span>&gt;</span>
+<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">storageType</span> <span class="ot">typeSystem=</span><span class="st">"http://www.w3.org/2001/XMLSchema-datatypes"</span>&gt;float&lt;/<span class="kw">storageType</span>&gt;</span>
 <span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">ordinal</span>&gt;</span>
 <span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nonNumericDomain</span>&gt;</span>
@@ -1477,7 +1490,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-54"><a href="#cb23-54" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">ordinal</span>&gt;</span>
 <span id="cb23-55"><a href="#cb23-55" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb23-56"><a href="#cb23-56" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb23-57"><a href="#cb23-57" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">"att.2"</span>&gt;</span>
+<span id="cb23-57"><a href="#cb23-57" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span> <span class="ot">id=</span><span class="st">"att.2"</span>&gt;</span>
 <span id="cb23-58"><a href="#cb23-58" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeName</span>&gt;Year&lt;/<span class="kw">attributeName</span>&gt;</span>
 <span id="cb23-59"><a href="#cb23-59" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeDefinition</span>&gt;Calendar year of the observation from years 1990 - 2010&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
 <span id="cb23-60"><a href="#cb23-60" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">storageType</span>&gt;integer&lt;/<span class="kw">storageType</span>&gt;</span>
@@ -1487,14 +1500,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-64"><a href="#cb23-64" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">dateTimePrecision</span>&gt;1&lt;/<span class="kw">dateTimePrecision</span>&gt;</span>
 <span id="cb23-65"><a href="#cb23-65" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">dateTimeDomain</span>&gt;</span>
 <span id="cb23-66"><a href="#cb23-66" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">bounds</span>&gt;</span>
-<span id="cb23-67"><a href="#cb23-67" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">minimum</span><span class="ot"> exclusive=</span><span class="st">"false"</span>&gt;1993&lt;/<span class="kw">minimum</span>&gt;</span>
-<span id="cb23-68"><a href="#cb23-68" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">maximum</span><span class="ot"> exclusive=</span><span class="st">"false"</span>&gt;2003&lt;/<span class="kw">maximum</span>&gt;</span>
+<span id="cb23-67"><a href="#cb23-67" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">minimum</span> <span class="ot">exclusive=</span><span class="st">"false"</span>&gt;1993&lt;/<span class="kw">minimum</span>&gt;</span>
+<span id="cb23-68"><a href="#cb23-68" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">maximum</span> <span class="ot">exclusive=</span><span class="st">"false"</span>&gt;2003&lt;/<span class="kw">maximum</span>&gt;</span>
 <span id="cb23-69"><a href="#cb23-69" aria-hidden="true" tabindex="-1"></a>               &lt;/<span class="kw">bounds</span>&gt;</span>
 <span id="cb23-70"><a href="#cb23-70" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">dateTimeDomain</span>&gt;</span>
 <span id="cb23-71"><a href="#cb23-71" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">dateTime</span>&gt;</span>
 <span id="cb23-72"><a href="#cb23-72" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb23-73"><a href="#cb23-73" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb23-74"><a href="#cb23-74" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">"att.7"</span>&gt;</span>
+<span id="cb23-74"><a href="#cb23-74" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span> <span class="ot">id=</span><span class="st">"att.7"</span>&gt;</span>
 <span id="cb23-75"><a href="#cb23-75" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeName</span>&gt;Count&lt;/<span class="kw">attributeName</span>&gt;</span>
 <span id="cb23-76"><a href="#cb23-76" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeDefinition</span>&gt;Number of individuals observed&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
 <span id="cb23-77"><a href="#cb23-77" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">storageType</span>&gt;integer&lt;/<span class="kw">storageType</span>&gt;</span>
@@ -1507,7 +1520,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-84"><a href="#cb23-84" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">numericDomain</span>&gt;</span>
 <span id="cb23-85"><a href="#cb23-85" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">numberType</span>&gt;whole&lt;/<span class="kw">numberType</span>&gt;</span>
 <span id="cb23-86"><a href="#cb23-86" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">bounds</span>&gt;</span>
-<span id="cb23-87"><a href="#cb23-87" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">minimum</span><span class="ot"> exclusive=</span><span class="st">"false"</span>&gt;0&lt;/<span class="kw">minimum</span>&gt;</span>
+<span id="cb23-87"><a href="#cb23-87" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">minimum</span> <span class="ot">exclusive=</span><span class="st">"false"</span>&gt;0&lt;/<span class="kw">minimum</span>&gt;</span>
 <span id="cb23-88"><a href="#cb23-88" aria-hidden="true" tabindex="-1"></a>               &lt;/<span class="kw">bounds</span>&gt;</span>
 <span id="cb23-89"><a href="#cb23-89" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">numericDomain</span>&gt;</span>
 <span id="cb23-90"><a href="#cb23-90" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">interval</span>&gt;</span>
@@ -1517,7 +1530,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-94"><a href="#cb23-94" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">codeExplanation</span>&gt;value not recorded or invalid&lt;/<span class="kw">codeExplanation</span>&gt;</span>
 <span id="cb23-95"><a href="#cb23-95" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">missingValueCode</span>&gt;</span>
 <span id="cb23-96"><a href="#cb23-96" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb23-97"><a href="#cb23-97" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">"att.7"</span>&gt;</span>
+<span id="cb23-97"><a href="#cb23-97" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attribute</span> <span class="ot">id=</span><span class="st">"att.7"</span>&gt;</span>
 <span id="cb23-98"><a href="#cb23-98" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeName</span>&gt;cond&lt;/<span class="kw">attributeName</span>&gt;</span>
 <span id="cb23-99"><a href="#cb23-99" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeLabel</span>&gt;Conductivity&lt;/<span class="kw">attributeLabel</span>&gt;</span>
 <span id="cb23-100"><a href="#cb23-100" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attributeDefinition</span>&gt;measured with SeaBird Elecronics CTD-911&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
@@ -1531,17 +1544,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-108"><a href="#cb23-108" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">numericDomain</span>&gt;</span>
 <span id="cb23-109"><a href="#cb23-109" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">numberType</span>&gt;real&lt;/<span class="kw">numberType</span>&gt;</span>
 <span id="cb23-110"><a href="#cb23-110" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">bounds</span>&gt;</span>
-<span id="cb23-111"><a href="#cb23-111" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">minimum</span><span class="ot"> exclusive=</span><span class="st">"false"</span>&gt;0&lt;/<span class="kw">minimum</span>&gt;</span>
-<span id="cb23-112"><a href="#cb23-112" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">maximum</span><span class="ot"> exclusive=</span><span class="st">"false"</span>&gt;40&lt;/<span class="kw">maximum</span>&gt;</span>
+<span id="cb23-111"><a href="#cb23-111" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">minimum</span> <span class="ot">exclusive=</span><span class="st">"false"</span>&gt;0&lt;/<span class="kw">minimum</span>&gt;</span>
+<span id="cb23-112"><a href="#cb23-112" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">maximum</span> <span class="ot">exclusive=</span><span class="st">"false"</span>&gt;40&lt;/<span class="kw">maximum</span>&gt;</span>
 <span id="cb23-113"><a href="#cb23-113" aria-hidden="true" tabindex="-1"></a>               &lt;/<span class="kw">bounds</span>&gt;</span>
 <span id="cb23-114"><a href="#cb23-114" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">numericDomain</span>&gt;</span>
 <span id="cb23-115"><a href="#cb23-115" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">ratio</span>&gt;</span>
 <span id="cb23-116"><a href="#cb23-116" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb23-117"><a href="#cb23-117" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb23-118"><a href="#cb23-118" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">attributeList</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-118"><a href="#cb23-118" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">attributeList</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The examples below show complete entity trees for &lt;<strong>spatialVector</strong>&gt; and &lt;<strong>spatialRaster</strong>&gt; converted via XSLT (stylesheet) from Esri metadata format. For details see “Other Resources”.</p>
 <p>Example 22: Entity and attribute information for spatialVector</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">spatialVector</span><span class="ot"> id=</span><span class="st">"Landuse for Ficity in 1955"</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">spatialVector</span> <span class="ot">id=</span><span class="st">"Landuse for Ficity in 1955"</span>&gt;</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityName</span>&gt;Landuse for Ficity in 1955&lt;/<span class="kw">entityName</span>&gt;</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityDescription</span>&gt;This GIS layer represents a reconstructed</span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>      generalized landuse map for the area of current Ficity around the time</span>
@@ -1556,15 +1569,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">distribution</span>&gt;</span>
 <span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">online</span>&gt;</span>
 <span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">onlineDescription</span>&gt;f1s-20 Zipped Shapefile File&lt;/<span class="kw">onlineDescription</span>&gt;</span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">"download"</span>&gt;http://www.fsu.edu/lter/data/fls-20.zip&lt;/<span class="kw">url</span>&gt;</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span> <span class="ot">function=</span><span class="st">"download"</span>&gt;http://www.fsu.edu/lter/data/fls-20.zip&lt;/<span class="kw">url</span>&gt;</span>
 <span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">online</span>&gt;</span>
 <span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">distribution</span>&gt;</span>
 <span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
-<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attributeList</span><span class="ot"> id=</span><span class="st">"Landuse for Ficity in 1955.attributeList"</span>&gt;</span>
-<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">"Landuse for Ficity in 1955.FID"</span>&gt;</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attributeList</span> <span class="ot">id=</span><span class="st">"Landuse for Ficity in 1955.attributeList"</span>&gt;</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span> <span class="ot">id=</span><span class="st">"Landuse for Ficity in 1955.FID"</span>&gt;</span>
 <span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeName</span>&gt;FID&lt;/<span class="kw">attributeName</span>&gt;</span>
 <span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeDefinition</span>&gt;Internal feature number.&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">"http://www.esri.com/metadata/esriprof80.html"</span>&gt;OID&lt;/<span class="kw">storageType</span>&gt;</span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span> <span class="ot">typeSystem=</span><span class="st">"http://www.esri.com/metadata/esriprof80.html"</span>&gt;OID&lt;/<span class="kw">storageType</span>&gt;</span>
 <span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nominal</span>&gt;</span>
 <span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">nonNumericDomain</span>&gt;</span>
@@ -1577,10 +1590,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">nominal</span>&gt;</span>
 <span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb24-36"><a href="#cb24-36" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb24-37"><a href="#cb24-37" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">"Landuse for Ficity in 1955.Shape"</span>&gt;</span>
+<span id="cb24-37"><a href="#cb24-37" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span> <span class="ot">id=</span><span class="st">"Landuse for Ficity in 1955.Shape"</span>&gt;</span>
 <span id="cb24-38"><a href="#cb24-38" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeName</span>&gt;Shape&lt;/<span class="kw">attributeName</span>&gt;</span>
 <span id="cb24-39"><a href="#cb24-39" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeDefinition</span>&gt;Feature geometry.&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb24-40"><a href="#cb24-40" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">"http://www.esri.com/metadata/esriprof80.html"</span>&gt;Geometry&lt;/<span class="kw">storageType</span>&gt;</span>
+<span id="cb24-40"><a href="#cb24-40" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span> <span class="ot">typeSystem=</span><span class="st">"http://www.esri.com/metadata/esriprof80.html"</span>&gt;Geometry&lt;/<span class="kw">storageType</span>&gt;</span>
 <span id="cb24-41"><a href="#cb24-41" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb24-42"><a href="#cb24-42" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nominal</span>&gt;</span>
 <span id="cb24-43"><a href="#cb24-43" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">nonNumericDomain</span>&gt;</span>
@@ -1591,12 +1604,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-48"><a href="#cb24-48" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">nominal</span>&gt;</span>
 <span id="cb24-49"><a href="#cb24-49" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb24-50"><a href="#cb24-50" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb24-51"><a href="#cb24-51" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">"Landuse for Ficity in 1955.Z955"</span>&gt;</span>
+<span id="cb24-51"><a href="#cb24-51" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span> <span class="ot">id=</span><span class="st">"Landuse for Ficity in 1955.Z955"</span>&gt;</span>
 <span id="cb24-52"><a href="#cb24-52" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeName</span>&gt;Z955&lt;/<span class="kw">attributeName</span>&gt;</span>
 <span id="cb24-53"><a href="#cb24-53" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeDefinition</span>&gt;</span>
 <span id="cb24-54"><a href="#cb24-54" aria-hidden="true" tabindex="-1"></a>            This field signifies the landuse value for each polygon.</span>
 <span id="cb24-55"><a href="#cb24-55" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb24-56"><a href="#cb24-56" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">"http://www.w3.org/2001/XMLSchema-datatypes"</span>&gt;string&lt;/<span class="kw">storageType</span>&gt;</span>
+<span id="cb24-56"><a href="#cb24-56" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span> <span class="ot">typeSystem=</span><span class="st">"http://www.w3.org/2001/XMLSchema-datatypes"</span>&gt;string&lt;/<span class="kw">storageType</span>&gt;</span>
 <span id="cb24-57"><a href="#cb24-57" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb24-58"><a href="#cb24-58" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nominal</span>&gt;</span>
 <span id="cb24-59"><a href="#cb24-59" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">nonNumericDomain</span>&gt;</span>
@@ -1628,9 +1641,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-85"><a href="#cb24-85" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">spatialReference</span>&gt;</span>
 <span id="cb24-86"><a href="#cb24-86" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">horizCoordSysName</span>&gt;NAD_1927_UTM_Zone_12N&lt;/<span class="kw">horizCoordSysName</span>&gt;</span>
 <span id="cb24-87"><a href="#cb24-87" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">spatialReference</span>&gt;</span>
-<span id="cb24-88"><a href="#cb24-88" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">spatialVector</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-88"><a href="#cb24-88" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">spatialVector</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Example 23: Entity and attribute information for spatialRaster</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">spatialRaster</span><span class="ot"> id=</span><span class="st">"fi_24k"</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">spatialRaster</span> <span class="ot">id=</span><span class="st">"fi_24k"</span>&gt;</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityName</span>&gt;fi_24k&lt;/<span class="kw">entityName</span>&gt;</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityDefinition</span>&gt;Ficiticiou State 7.5 Minute Digital Elevation Model&lt;/<span class="kw">entityDefinition</span>&gt;</span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
@@ -1643,15 +1656,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">distribution</span>&gt;</span>
 <span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">online</span>&gt;</span>
 <span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">onlineDescription</span>&gt;f1s-30 zipped raster data File&lt;/<span class="kw">onlineDescription</span>&gt;</span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span><span class="ot"> function=</span><span class="st">"download"</span>&gt;http://www.fsu.edu/lter/data/fls-30.zip&lt;/<span class="kw">url</span>&gt;</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">url</span> <span class="ot">function=</span><span class="st">"download"</span>&gt;http://www.fsu.edu/lter/data/fls-30.zip&lt;/<span class="kw">url</span>&gt;</span>
 <span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">online</span>&gt;</span>
 <span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">distribution</span>&gt;</span>
 <span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
-<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attributeList</span><span class="ot"> id=</span><span class="st">"fi_24k.attributeList"</span>&gt;</span>
-<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">"fi_24k.ObjectID"</span>&gt;</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">attributeList</span> <span class="ot">id=</span><span class="st">"fi_24k.attributeList"</span>&gt;</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span> <span class="ot">id=</span><span class="st">"fi_24k.ObjectID"</span>&gt;</span>
 <span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeName</span>&gt;ObjectID&lt;/<span class="kw">attributeName</span>&gt;</span>
 <span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeDefinition</span>&gt;Internal feature number.&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">"http://www.esri.com/metadata/esriprof80.html"</span>&gt;OID&lt;/<span class="kw">storageType</span>&gt;</span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span> <span class="ot">typeSystem=</span><span class="st">"http://www.esri.com/metadata/esriprof80.html"</span>&gt;OID&lt;/<span class="kw">storageType</span>&gt;</span>
 <span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nominal</span>&gt;</span>
 <span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">nonNumericDomain</span>&gt;</span>
@@ -1664,10 +1677,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">nominal</span>&gt;</span>
 <span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">"fi_24k.Cell Value"</span>&gt;</span>
+<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span> <span class="ot">id=</span><span class="st">"fi_24k.Cell Value"</span>&gt;</span>
 <span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeName</span>&gt;Cell Value&lt;/<span class="kw">attributeName</span>&gt;</span>
 <span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeDefinition</span>&gt;Elevation Value&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">"http://www.esri.com/metadata/esriprof80.html"</span>&gt;Integer&lt;/<span class="kw">storageType</span>&gt;</span>
+<span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span> <span class="ot">typeSystem=</span><span class="st">"http://www.esri.com/metadata/esriprof80.html"</span>&gt;Integer&lt;/<span class="kw">storageType</span>&gt;</span>
 <span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">ratio</span>&gt;</span>
 <span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">unit</span>&gt;</span>
@@ -1677,17 +1690,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb25-45"><a href="#cb25-45" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">numericDomain</span>&gt;</span>
 <span id="cb25-46"><a href="#cb25-46" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">numberType</span>&gt;integer&lt;/<span class="kw">numberType</span>&gt;</span>
 <span id="cb25-47"><a href="#cb25-47" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">bounds</span>&gt;</span>
-<span id="cb25-48"><a href="#cb25-48" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">minimum</span><span class="ot"> exclusive=</span><span class="st">"true"</span>&gt;-5193.000000&lt;/<span class="kw">minimum</span>&gt;</span>
-<span id="cb25-49"><a href="#cb25-49" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">maximum</span><span class="ot"> exclusive=</span><span class="st">"true"</span>&gt;14785.000000&lt;/<span class="kw">maximum</span>&gt;</span>
+<span id="cb25-48"><a href="#cb25-48" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">minimum</span> <span class="ot">exclusive=</span><span class="st">"true"</span>&gt;-5193.000000&lt;/<span class="kw">minimum</span>&gt;</span>
+<span id="cb25-49"><a href="#cb25-49" aria-hidden="true" tabindex="-1"></a>                     &lt;<span class="kw">maximum</span> <span class="ot">exclusive=</span><span class="st">"true"</span>&gt;14785.000000&lt;/<span class="kw">maximum</span>&gt;</span>
 <span id="cb25-50"><a href="#cb25-50" aria-hidden="true" tabindex="-1"></a>                  &lt;/<span class="kw">bounds</span>&gt;</span>
 <span id="cb25-51"><a href="#cb25-51" aria-hidden="true" tabindex="-1"></a>               &lt;/<span class="kw">numericDomain</span>&gt;</span>
 <span id="cb25-52"><a href="#cb25-52" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">ratio</span>&gt;</span>
 <span id="cb25-53"><a href="#cb25-53" aria-hidden="true" tabindex="-1"></a>         &lt;/<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb25-54"><a href="#cb25-54" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">attribute</span>&gt;</span>
-<span id="cb25-55"><a href="#cb25-55" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span><span class="ot"> id=</span><span class="st">"fi_24k.Count"</span>&gt;</span>
+<span id="cb25-55"><a href="#cb25-55" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">attribute</span> <span class="ot">id=</span><span class="st">"fi_24k.Count"</span>&gt;</span>
 <span id="cb25-56"><a href="#cb25-56" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeName</span>&gt;Count&lt;/<span class="kw">attributeName</span>&gt;</span>
 <span id="cb25-57"><a href="#cb25-57" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">attributeDefinition</span>&gt;Count&lt;/<span class="kw">attributeDefinition</span>&gt;</span>
-<span id="cb25-58"><a href="#cb25-58" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span><span class="ot"> typeSystem=</span><span class="st">"http://www.esri.com/metadata/esriprof80.html"</span>&gt;Integer&lt;/<span class="kw">storageType</span>&gt;</span>
+<span id="cb25-58"><a href="#cb25-58" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">storageType</span> <span class="ot">typeSystem=</span><span class="st">"http://www.esri.com/metadata/esriprof80.html"</span>&gt;Integer&lt;/<span class="kw">storageType</span>&gt;</span>
 <span id="cb25-59"><a href="#cb25-59" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">measurementScale</span>&gt;</span>
 <span id="cb25-60"><a href="#cb25-60" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">ratio</span>&gt;</span>
 <span id="cb25-61"><a href="#cb25-61" aria-hidden="true" tabindex="-1"></a>               &lt;<span class="kw">unit</span>&gt;</span>
@@ -1714,16 +1727,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb25-82"><a href="#cb25-82" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">columns</span>&gt;18136&lt;/<span class="kw">columns</span>&gt;</span>
 <span id="cb25-83"><a href="#cb25-83" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">verticals</span>&gt;1&lt;/<span class="kw">verticals</span>&gt;</span>
 <span id="cb25-84"><a href="#cb25-84" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">cellGeometry</span>&gt;matrix&lt;/<span class="kw">cellGeometry</span>&gt;</span>
-<span id="cb25-85"><a href="#cb25-85" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">spatialRaster</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-85"><a href="#cb25-85" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">spatialRaster</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>[<em>Editor’s note</em>: The following section on otherEntity is has been added to the online version and is not present in early published copies of this document.]</p>
 <p>The &lt;<strong>otherEntity</strong>&gt; data type includes the free text &lt;<strong>entityType</strong>&gt; element for naming the type of the entity. The <strong>otherEntity/physical/dataFormat/externallyDefinedFormat/formatName</strong> element stores the file format. While there is no controlled vocabulary for the content of these elements, format names can be drawn from <a href="https://cn.dataone.org/cn/v2/formats">DataONE’s objectFormatList</a>. Table 3 provides suggestions for some common other entity formats.</p>
 <p>Table 3. Entity types and format names for some &lt;<strong>otherEntity</strong>&gt; types.</p>
-<table class="caption-top table" data-quarto-postprocess="true">
+<table class="caption-top table">
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">Common Name</td>
-<td data-quarto-table-cell-role="th">Entity Type</td>
-<td data-quarto-table-cell-role="th">Format Name</td>
+<th data-quarto-table-cell-role="th">Common Name</th>
+<th data-quarto-table-cell-role="th">Entity Type</th>
+<th data-quarto-table-cell-role="th">Format Name</th>
 </tr>
 <tr class="even">
 <td>R script</td>
@@ -1771,7 +1784,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>&lt;<strong>joinCondition</strong>&gt; defines a foreign key relationship among entities which relates this entity to another’s primary key.</p>
 <p>The &lt;<strong>primaryKey</strong>&gt;, &lt;<strong>uniqueKey</strong>&gt;, &lt;<strong>nonNullConstraint</strong>&gt; require an additional &lt;<strong>key</strong>&gt; tag defining the attribute to which this constraint applies, referenced by its id attribute (described in another area). All &lt;<strong>ConstraintType</strong>&gt; entities require additional &lt;<strong>constraintName</strong>&gt; and &lt;<strong>attributeReference</strong>&gt; tags.</p>
 <p>Example 24: constraint</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">constraint</span><span class="ot"> id=</span><span class="st">"soil_chemistry.PRIMARY"</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">constraint</span> <span class="ot">id=</span><span class="st">"soil_chemistry.PRIMARY"</span>&gt;</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">primaryKey</span>&gt;</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">constraintName</span>&gt;PRIMARY&lt;/<span class="kw">constraintName</span>&gt;</span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">key</span>&gt;</span>
@@ -1779,7 +1792,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">key</span>&gt;</span>
 <span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">primaryKey</span>&gt;</span>
 <span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">constraint</span>&gt;</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">constraint</span><span class="ot"> id=</span><span class="st">"soil_chemistry.FK_soil_chemistry_sites"</span>&gt;</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">constraint</span> <span class="ot">id=</span><span class="st">"soil_chemistry.FK_soil_chemistry_sites"</span>&gt;</span>
 <span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">foreignKey</span>&gt;</span>
 <span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">constraintName</span>&gt;FK_soil_chemistry_sites&lt;/<span class="kw">constraintName</span>&gt;</span>
 <span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">key</span>&gt;</span>
@@ -1787,7 +1800,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">key</span>&gt;</span>
 <span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">entityReference</span>&gt;sites&lt;/<span class="kw">entityReference</span>&gt;</span>
 <span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">foreignKey</span>&gt;</span>
-<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">constraint</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">constraint</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
@@ -1844,13 +1857,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -2199,7 +2213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../guide-special-cases/preface.html" class="pagination-link" aria-label="Data Package Design for Special Cases">
+      <a href="../guide-special-cases/index.html" class="pagination-link" aria-label="Data Package Design for Special Cases">
         <span class="nav-page-text">Data Package Design for Special Cases</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

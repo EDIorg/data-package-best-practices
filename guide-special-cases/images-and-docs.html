@@ -2,18 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="description" content="Community-developed guides for preparing and publishing datasets in the environmental sciences, and similar contexts, using the Ecological Metadata Language (EML).">
 
-<title>5&nbsp; Images and Documents as Data – EDI Dataset Preparation Guides</title>
+<title>6&nbsp; Images and Documents as Data – EDI Dataset Preparation Guides</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -75,10 +81,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-23102fe0f0b5b1a9f09cc09ebcc8fe5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3d497cff885f6278d37568d0ef0763f8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -118,7 +124,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../img/edi-logo.png" alt="" class="navbar-logo">
+    <img src="../img/edi-logo.png" alt="" class="navbar-logo light-content">
+    <img src="../img/edi-logo.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">EDI Dataset Preparation Guides</span>
@@ -135,7 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../guide-special-cases/preface.html">Data Package Design for Special Cases</a></li><li class="breadcrumb-item"><a href="../guide-special-cases/images-and-docs.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Images and Documents as Data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../guide-special-cases/index.html">Data Package Design for Special Cases</a></li><li class="breadcrumb-item"><a href="../guide-special-cases/images-and-docs.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Images and Documents as Data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -190,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../guide-special-cases/preface.html" class="sidebar-item-text sidebar-link">
+            <a href="../guide-special-cases/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Package Design for Special Cases</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -199,44 +206,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../guide-special-cases/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Package Design for Special Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/code.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Code</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Code</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/model-based.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Model-Based Datasets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Model-Based Datasets</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/images-and-docs.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Images and Documents as Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Images and Documents as Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/spatial-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Spatial Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spatial Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/moving-platforms.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Gathered with Small Moving Platforms</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Gathered with Small Moving Platforms</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/other-repositories.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data in Other Repositories</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data in Other Repositories</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/large-offline.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Large Data Sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Large Data Sets</span></span></a>
   </div>
 </li>
       </ul>
@@ -253,19 +266,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-domain-specific/ecocom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Ecological community surveys</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ecological community surveys</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-domain-specific/hymet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Hydrology and Meteorology Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Hydrology and Meteorology Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-domain-specific/soil-carbon.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Soil Carbon</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Soil Carbon</span></span></a>
   </div>
 </li>
       </ul>
@@ -286,17 +299,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">5.1</span> Introduction</a></li>
-  <li><a href="#recommendations-for-data-packages" id="toc-recommendations-for-data-packages" class="nav-link" data-scroll-target="#recommendations-for-data-packages"><span class="header-section-number">5.2</span> Recommendations for data packages</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">6.1</span> Introduction</a></li>
+  <li><a href="#recommendations-for-data-packages" id="toc-recommendations-for-data-packages" class="nav-link" data-scroll-target="#recommendations-for-data-packages"><span class="header-section-number">6.2</span> Recommendations for data packages</a>
   <ul class="collapse">
-  <li><a href="#reasons-to-archive-documents-as-data" id="toc-reasons-to-archive-documents-as-data" class="nav-link" data-scroll-target="#reasons-to-archive-documents-as-data"><span class="header-section-number">5.2.1</span> Reasons to archive documents as data</a></li>
-  <li><a href="#considerations-for-data-package-structure" id="toc-considerations-for-data-package-structure" class="nav-link" data-scroll-target="#considerations-for-data-package-structure"><span class="header-section-number">5.2.2</span> Considerations for data package structure</a></li>
-  <li><a href="#documenting-data-packages" id="toc-documenting-data-packages" class="nav-link" data-scroll-target="#documenting-data-packages"><span class="header-section-number">5.2.3</span> Documenting data packages</a></li>
+  <li><a href="#reasons-to-archive-documents-as-data" id="toc-reasons-to-archive-documents-as-data" class="nav-link" data-scroll-target="#reasons-to-archive-documents-as-data"><span class="header-section-number">6.2.1</span> Reasons to archive documents as data</a></li>
+  <li><a href="#considerations-for-data-package-structure" id="toc-considerations-for-data-package-structure" class="nav-link" data-scroll-target="#considerations-for-data-package-structure"><span class="header-section-number">6.2.2</span> Considerations for data package structure</a></li>
+  <li><a href="#documenting-data-packages" id="toc-documenting-data-packages" class="nav-link" data-scroll-target="#documenting-data-packages"><span class="header-section-number">6.2.3</span> Documenting data packages</a></li>
   </ul></li>
-  <li><a href="#example-data-packages-in-edi" id="toc-example-data-packages-in-edi" class="nav-link" data-scroll-target="#example-data-packages-in-edi"><span class="header-section-number">5.3</span> Example data packages in EDI</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="header-section-number">5.4</span> Resources</a>
+  <li><a href="#example-data-packages-in-edi" id="toc-example-data-packages-in-edi" class="nav-link" data-scroll-target="#example-data-packages-in-edi"><span class="header-section-number">6.3</span> Example data packages in EDI</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="header-section-number">6.4</span> Resources</a>
   <ul class="collapse">
-  <li><a href="#considerations-for-digitizing-documents" id="toc-considerations-for-digitizing-documents" class="nav-link" data-scroll-target="#considerations-for-digitizing-documents"><span class="header-section-number">5.4.1</span> Considerations for digitizing documents</a></li>
+  <li><a href="#considerations-for-digitizing-documents" id="toc-considerations-for-digitizing-documents" class="nav-link" data-scroll-target="#considerations-for-digitizing-documents"><span class="header-section-number">6.4.1</span> Considerations for digitizing documents</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ediorg/data-package-best-practices/edit/main/guide-special-cases/images-and-docs.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ediorg/data-package-best-practices/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -304,9 +317,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../guide-special-cases/preface.html">Data Package Design for Special Cases</a></li><li class="breadcrumb-item"><a href="../guide-special-cases/images-and-docs.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Images and Documents as Data</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../guide-special-cases/index.html">Data Package Design for Special Cases</a></li><li class="breadcrumb-item"><a href="../guide-special-cases/images-and-docs.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Images and Documents as Data</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Images and Documents as Data</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Images and Documents as Data</span></h1>
 </div>
 
 
@@ -324,22 +337,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Contributors: Renee F. Brown (lead), Stace Beaulieu, Sarah Elmendorf, Gastil Gastil-Buhl, Corinna Gries, Li Kui, Mary Martin, Greg Maurer, John Porter, Tim Whiteaker</p>
-<section id="introduction" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.1</span> Introduction</h2>
+<section id="introduction" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">6.1</span> Introduction</h2>
 <p>This chapter describes best practices for archiving images and other documents as data. The <a href="http://purl.obolibrary.org/obo/IAO_0000101">Environment Ontology (ENVO)</a> defines a document as ‘<em>a collection of information content entities intended to be understood together as a whole</em>.’ Common examples include still images, audio and/or video multimedia files, field notebooks, written interview notes or transcribed oral accounts, historical document collections, and ‘paper’ maps (non-digitized maps). For images that are already handled by specialized repositories (e.g., phenocam images, specimen images) refer to <a href="data-in-other-repositories.html">Data in Other Repositories</a>, for additional information on how to handle images from uncrewed (underwater or aerial) vehicles refer to <a href="data-gathered-with-small-moving-platforms.html">Data Gathered with Small Moving Platforms</a>, and for geospatial imagery refer to <a href="spatial-data.html">Spatial Data</a>.</p>
 </section>
-<section id="recommendations-for-data-packages" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="recommendations-for-data-packages"><span class="header-section-number">5.2</span> Recommendations for data packages</h2>
-<section id="reasons-to-archive-documents-as-data" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="reasons-to-archive-documents-as-data"><span class="header-section-number">5.2.1</span> Reasons to archive documents as data</h3>
+<section id="recommendations-for-data-packages" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="recommendations-for-data-packages"><span class="header-section-number">6.2</span> Recommendations for data packages</h2>
+<section id="reasons-to-archive-documents-as-data" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="reasons-to-archive-documents-as-data"><span class="header-section-number">6.2.1</span> Reasons to archive documents as data</h3>
 <ul>
 <li><strong>Enhance the credibility of associated datasets.</strong> Many document types (field notes, still images, etc.) often provide additional metadata that cannot easily be encapsulated in the associated dataset(s) or were not considered important at the time of transcription. As such, these documents may provide opportunities to rectify transcription errors, retrospectively provide explanations of unusual data, and/or include additional observational or measured data, such as opportunistic measurements or calibration parameters.</li>
 <li><strong>Provide opportunities for new analyses.</strong> New analytical methods may be employed on archived documents (especially still images) or documents that were never archived previously because the cost-to-benefit ratio was considered too high (e.g., pilot projects).</li>
 <li><strong>Improve ease of access.</strong> In distributed projects, access to original and/or ‘hard-copy’ documents may be limited to a particular institution or subset of people. By digitally archiving these documents in a data repository, the data become more findable, accessible, interoperable, and reusable (FAIR).</li>
 </ul>
 </section>
-<section id="considerations-for-data-package-structure" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="considerations-for-data-package-structure"><span class="header-section-number">5.2.2</span> Considerations for data package structure</h3>
+<section id="considerations-for-data-package-structure" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="considerations-for-data-package-structure"><span class="header-section-number">6.2.2</span> Considerations for data package structure</h3>
 <ul>
 <li><strong>Balance file size and number of files.</strong> A data package may contain document files individually or bundled as a compressed archive (e.g., zip). The decision of how to bundle documents into compressed archives and then into data packages should be guided by the overall goal of making data usable for the intended purpose of the documents. In most cases, this would involve finding specific documents by, for example, the date or location of the acquisition, or some other aspect of interest. In addition, the effort of documenting documents (each individually vs.&nbsp;in groups) has to be taken into account. Also see <a href="large-data-sets.html">Large Data Sets</a>.</li>
 <li><strong>Document grouping.</strong> Data packages, or compressed archives within data packages, may be grouped spatially (e.g., by location) and/or temporally (e.g., by date, season, or year). For example, data outputs from a stationary camera may be archived in annual data packages, each containing monthly compressed archives if the number of images is large. While moving camera outputs may also be archived annually, these data packages may instead include compressed archives containing all still images for a single location.</li>
@@ -349,19 +362,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Linking to related data packages.</strong> In the case where the documents are useful to understanding another data package and vice versa (e.g., met station visitation logs and met station time series data), it is recommended to link the complementary data package in the methods section of both datasets. Alternatively, include the document(s) or compressed archive(s) in the existing dataset as otherEntity, as described in the next section.</li>
 </ul>
 </section>
-<section id="documenting-data-packages" class="level3" data-number="5.2.3">
-<h3 data-number="5.2.3" class="anchored" data-anchor-id="documenting-data-packages"><span class="header-section-number">5.2.3</span> Documenting data packages</h3>
-<section id="ecological-metadata-language" class="level4" data-number="5.2.3.1">
-<h4 data-number="5.2.3.1" class="anchored" data-anchor-id="ecological-metadata-language"><span class="header-section-number">5.2.3.1</span> Ecological Metadata Language</h4>
+<section id="documenting-data-packages" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="documenting-data-packages"><span class="header-section-number">6.2.3</span> Documenting data packages</h3>
+<section id="ecological-metadata-language" class="level4" data-number="6.2.3.1">
+<h4 data-number="6.2.3.1" class="anchored" data-anchor-id="ecological-metadata-language"><span class="header-section-number">6.2.3.1</span> Ecological Metadata Language</h4>
 <p>All data packages require good discovery-level metadata in Ecological Metadata Language (EML), which should be assembled using standard documented best practices. Documents (including compressed archives) should be included as otherEntity in the data package (e.g., see Example 4.1). Refer to the most recent version of EML Best Practices (<a href="https://environmentaldatainitiative.files.wordpress.com/2017/11/emlbestpractices-v3.pdf">currently v3</a>) for guidance regarding the formatName and entityType EML elements. If a format for your document type is not covered, it is recommended to use the appropriate <a href="https://github.com/DataONEorg/object-formats">MIME type</a>, if available.</p>
 <p>Example 1: EML otherEntity snippet for a pdf file</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">otherEntity</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">otherEntity</span>&gt;</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityName</span>&gt;site date&lt;/<span class="kw">entityName</span>&gt;</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityDescription</span>&gt;Field notes at site and date.&lt;/<span class="kw">entityDescription</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">physical</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">objectName</span>&gt;site_date.pdf&lt;/<span class="kw">objectName</span>&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">size</span><span class="ot"> unit=</span><span class="st">"byte"</span>&gt;9674&lt;/<span class="kw">size</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">authentication</span><span class="ot"> method=</span><span class="st">"MD5"</span>&gt;8547b7a63fcf6c1f0913a5bd7549d9d1&lt;/<span class="kw">authentication</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">size</span> <span class="ot">unit=</span><span class="st">"byte"</span>&gt;9674&lt;/<span class="kw">size</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">authentication</span> <span class="ot">method=</span><span class="st">"MD5"</span>&gt;8547b7a63fcf6c1f0913a5bd7549d9d1&lt;/<span class="kw">authentication</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">dataFormat</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>         &lt;<span class="kw">externallyDefinedFormat</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">formatName</span>&gt;Portable Document Format&lt;/<span class="kw">formatName</span>&gt;</span>
@@ -369,7 +382,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">dataFormat</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>   &lt;/<span class="kw">physical</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityType</span>&gt;application/pdf&lt;/<span class="kw">entityType</span>&gt;</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">otherEntity</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">otherEntity</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The EML metadata should also include appropriate keywords describing the general purpose of the document or compressed archive (e.g., ice phenology, community composition, stream hydrology, etc.). For example, for still images, it is recommended to include keyword: image with the semantic annotation from the Information Artifact Ontology (IAO) :</p>
 <pre><code>**Term IRI:** [http://purl.obolibrary.org/obo/IAO_0000101](http://purl.obolibrary.org/obo/IAO_0000101)
 
@@ -377,8 +390,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 **Definition:** An image is an affine projection to a two dimensional surface, of measurements of some quality of an entity or entities repeated at regular intervals across a spatial range, where the measurements are represented as color and luminosity on the projected surface.</code></pre>
 <p>Note, IAO includes at least one subcategory for image (e.g., <a href="http://www.ontobee.org/ontology/IAO?iri=http://purl.obolibrary.org/obo/IAO_0000185">photograph</a>). It is recommended the most specific applicable concept be used.</p>
 </section>
-<section id="data-inventory-table" class="level4" data-number="5.2.3.2">
-<h4 data-number="5.2.3.2" class="anchored" data-anchor-id="data-inventory-table"><span class="header-section-number">5.2.3.2</span> Data Inventory Table</h4>
+<section id="data-inventory-table" class="level4" data-number="6.2.3.2">
+<h4 data-number="6.2.3.2" class="anchored" data-anchor-id="data-inventory-table"><span class="header-section-number">6.2.3.2</span> Data Inventory Table</h4>
 <p>We recommend that an additional level of metadata be provided through a data inventory table that effectively serves as a document catalog (see Table 4.1). The detail provided in this table should be guided by the same principles as stated above – to enable optimal usability of the documents. For example, still images from a stationary camera require latitude and longitude only in the EML file, not for each individual image. However, images from a moving camera may need that information for every image, or at least for every location (e.g., site, quadrat, transect). Additionally, Exif metadata from photographic images may be programmatically extracted to supplement the inventory table (refer to the <em>Tips and Tricks</em> section of <a href="data-gathered-with-Small-moving-platforms.html">Data Gathered with Small Moving Platforms</a>).</p>
 <p>The data inventory table should be structured such that each column represents a particular attribute, described in EML as a <a href="https://eml.ecoinformatics.org/schema/eml-dataTable_xsd.html#eml-dataTable.xsd">dataTable</a> entity, and each row represents an individual document or a compressed archive of a group of documents. At minimum, the table should include an attribute for the document/archive filename, as well as any other essential attributes that vary per each document/archive. Additional attributes may include information on the date and/or time, but for this information to be useful, be consistent and use a controlled vocabulary for these fields so that a user can effectively search on them.</p>
 <p>Table 1: Data inventory table structure.</p>
@@ -451,8 +464,8 @@ One or more columns as appropriate to the document type, such as weather conditi
 </section>
 </section>
 </section>
-<section id="example-data-packages-in-edi" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="example-data-packages-in-edi"><span class="header-section-number">5.3</span> Example data packages in EDI</h2>
+<section id="example-data-packages-in-edi" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="example-data-packages-in-edi"><span class="header-section-number">6.3</span> Example data packages in EDI</h2>
 <p>Each of the Environmental Data Initiative (EDI) data packages listed below include images or other documents as data. Some of these packages contain data inventory tables (as dataTable entities) described in the EML metadata.</p>
 <p>Table 2: Data packages in EDI providing examples of best practices from this document.</p>
 <table>
@@ -524,10 +537,10 @@ Compressed archive containing 410 audio files in wav format. Includes data inven
 </tr>
 </tbody></table>
 </section>
-<section id="resources" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="resources"><span class="header-section-number">5.4</span> Resources</h2>
-<section id="considerations-for-digitizing-documents" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="considerations-for-digitizing-documents"><span class="header-section-number">5.4.1</span> Considerations for digitizing documents</h3>
+<section id="resources" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="resources"><span class="header-section-number">6.4</span> Resources</h2>
+<section id="considerations-for-digitizing-documents" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="considerations-for-digitizing-documents"><span class="header-section-number">6.4.1</span> Considerations for digitizing documents</h3>
 <p>Following are some general considerations and recommendations for digitizing paper or other ‘hard-copy’ documents for archival. This is not meant to be an exhaustive list. For further and more detailed information, please refer to the U.S. National Archives and Records Administration (NARA)â€™s <em><a href="https://www.archives.gov/files/preservation/technical/guidelines.pdf">Technical Guidelines for Digitizing Archival Materials for Electronic Access</a></em>.</p>
 <ul>
 <li><strong>Effort.</strong> The decision to digitize documents, as well as the digitization method, involves trade-offs in the accessibility and ease of using particular hardware and/or software technologies, the quality of the digitization, and the overall effort spent. Digitization efforts may be significant, for example, when dealing with a large number of documents requiring meaningful file names, text recognition, and/or high resolution for improved accessibility.</li>
@@ -594,13 +607,14 @@ Compressed archive containing 410 audio files in wav format. Includes data inven
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -945,12 +959,12 @@ Compressed archive containing 410 audio files in wav format. Includes data inven
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../guide-special-cases/model-based.html" class="pagination-link" aria-label="Model-Based Datasets">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Model-Based Datasets</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Model-Based Datasets</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../guide-special-cases/spatial-data.html" class="pagination-link" aria-label="Spatial Data">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Spatial Data</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spatial Data</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

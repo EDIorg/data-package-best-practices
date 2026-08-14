@@ -2,18 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="description" content="Community-developed guides for preparing and publishing datasets in the environmental sciences, and similar contexts, using the Ecological Metadata Language (EML).">
 
-<title>9&nbsp; Large Data Sets – EDI Dataset Preparation Guides</title>
+<title>10&nbsp; Large Data Sets – EDI Dataset Preparation Guides</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -75,10 +81,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-23102fe0f0b5b1a9f09cc09ebcc8fe5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3d497cff885f6278d37568d0ef0763f8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -118,7 +124,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../img/edi-logo.png" alt="" class="navbar-logo">
+    <img src="../img/edi-logo.png" alt="" class="navbar-logo light-content">
+    <img src="../img/edi-logo.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">EDI Dataset Preparation Guides</span>
@@ -135,7 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../guide-special-cases/preface.html">Data Package Design for Special Cases</a></li><li class="breadcrumb-item"><a href="../guide-special-cases/large-offline.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Large Data Sets</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../guide-special-cases/index.html">Data Package Design for Special Cases</a></li><li class="breadcrumb-item"><a href="../guide-special-cases/large-offline.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Large Data Sets</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -190,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../guide-special-cases/preface.html" class="sidebar-item-text sidebar-link">
+            <a href="../guide-special-cases/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Package Design for Special Cases</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -199,44 +206,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../guide-special-cases/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Package Design for Special Cases</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/code.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Code</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Code</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/model-based.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Model-Based Datasets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Model-Based Datasets</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/images-and-docs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Images and Documents as Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Images and Documents as Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/spatial-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Spatial Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Spatial Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/moving-platforms.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Gathered with Small Moving Platforms</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Gathered with Small Moving Platforms</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/other-repositories.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data in Other Repositories</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data in Other Repositories</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-special-cases/large-offline.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Large Data Sets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Large Data Sets</span></span></a>
   </div>
 </li>
       </ul>
@@ -253,19 +266,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-domain-specific/ecocom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Ecological community surveys</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Ecological community surveys</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-domain-specific/hymet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Hydrology and Meteorology Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Hydrology and Meteorology Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guide-domain-specific/soil-carbon.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Soil Carbon</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Soil Carbon</span></span></a>
   </div>
 </li>
       </ul>
@@ -286,32 +299,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">9.1</span> Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">10.1</span> Introduction</a>
   <ul class="collapse">
-  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background"><span class="header-section-number">9.1.1</span> Background</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background"><span class="header-section-number">10.1.1</span> Background</a></li>
   </ul></li>
-  <li><a href="#recommendations-for-data-packages" id="toc-recommendations-for-data-packages" class="nav-link" data-scroll-target="#recommendations-for-data-packages"><span class="header-section-number">9.2</span> Recommendations for data packages</a>
+  <li><a href="#recommendations-for-data-packages" id="toc-recommendations-for-data-packages" class="nav-link" data-scroll-target="#recommendations-for-data-packages"><span class="header-section-number">10.2</span> Recommendations for data packages</a>
   <ul class="collapse">
-  <li><a href="#physical-storage" id="toc-physical-storage" class="nav-link" data-scroll-target="#physical-storage"><span class="header-section-number">9.2.1</span> Physical Storage</a></li>
-  <li><a href="#access" id="toc-access" class="nav-link" data-scroll-target="#access"><span class="header-section-number">9.2.2</span> Access</a></li>
-  <li><a href="#data-package" id="toc-data-package" class="nav-link" data-scroll-target="#data-package"><span class="header-section-number">9.2.3</span> Data package</a></li>
-  <li><a href="#package-metadata" id="toc-package-metadata" class="nav-link" data-scroll-target="#package-metadata"><span class="header-section-number">9.2.4</span> Package Metadata</a></li>
-  <li><a href="#eml" id="toc-eml" class="nav-link" data-scroll-target="#eml"><span class="header-section-number">9.2.5</span> EML</a></li>
+  <li><a href="#physical-storage" id="toc-physical-storage" class="nav-link" data-scroll-target="#physical-storage"><span class="header-section-number">10.2.1</span> Physical Storage</a></li>
+  <li><a href="#access" id="toc-access" class="nav-link" data-scroll-target="#access"><span class="header-section-number">10.2.2</span> Access</a></li>
+  <li><a href="#data-package" id="toc-data-package" class="nav-link" data-scroll-target="#data-package"><span class="header-section-number">10.2.3</span> Data package</a></li>
+  <li><a href="#package-metadata" id="toc-package-metadata" class="nav-link" data-scroll-target="#package-metadata"><span class="header-section-number">10.2.4</span> Package Metadata</a></li>
+  <li><a href="#eml" id="toc-eml" class="nav-link" data-scroll-target="#eml"><span class="header-section-number">10.2.5</span> EML</a></li>
   </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">9.3</span> References</a>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">10.3</span> References</a>
   <ul class="collapse">
-  <li><a href="#eml-documentation" id="toc-eml-documentation" class="nav-link" data-scroll-target="#eml-documentation"><span class="header-section-number">9.3.1</span> EML documentation</a></li>
+  <li><a href="#eml-documentation" id="toc-eml-documentation" class="nav-link" data-scroll-target="#eml-documentation"><span class="header-section-number">10.3.1</span> EML documentation</a></li>
   </ul></li>
-  <li><a href="#potential-issues" id="toc-potential-issues" class="nav-link" data-scroll-target="#potential-issues"><span class="header-section-number">9.4</span> Potential Issues</a></li>
+  <li><a href="#potential-issues" id="toc-potential-issues" class="nav-link" data-scroll-target="#potential-issues"><span class="header-section-number">10.4</span> Potential Issues</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ediorg/data-package-best-practices/edit/main/guide-special-cases/large-offline.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ediorg/data-package-best-practices/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../guide-special-cases/preface.html">Data Package Design for Special Cases</a></li><li class="breadcrumb-item"><a href="../guide-special-cases/large-offline.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Large Data Sets</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../guide-special-cases/index.html">Data Package Design for Special Cases</a></li><li class="breadcrumb-item"><a href="../guide-special-cases/large-offline.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Large Data Sets</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Large Data Sets</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Large Data Sets</span></h1>
 </div>
 
 
@@ -329,18 +342,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Contributors: Margaret O’Brien, Corinna Gries, Mark Servilla</p>
-<section id="introduction" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">9.1</span> Introduction</h2>
+<section id="introduction" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">10.1</span> Introduction</h2>
 <p>Data entities are kept offline when they are too large to be handled easily by the HTTP protocol, are expected to be rarely requested, and can be mailed on an external drive. If you suspect your data fall into this category, contact EDI for advice (support@edirepository.org). Below are recommendations for the EDI repository’s handling of data packages that have an offline component.</p>
-<section id="background" class="level3" data-number="9.1.1">
-<h3 data-number="9.1.1" class="anchored" data-anchor-id="background"><span class="header-section-number">9.1.1</span> Background</h3>
+<section id="background" class="level3" data-number="10.1.1">
+<h3 data-number="10.1.1" class="anchored" data-anchor-id="background"><span class="header-section-number">10.1.1</span> Background</h3>
 <p>Standard practice is to handle data entities (both upload and download) via the HTTP protocol, using a URL. However, for very large datasets HTTP can fail due to physical limits. The limit for “too large” is somewhat subjective; EDI’s current limit for datasets that are “too large for HTTP” is 100GB (all data and metadata).</p>
 </section>
 </section>
-<section id="recommendations-for-data-packages" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="recommendations-for-data-packages"><span class="header-section-number">9.2</span> Recommendations for data packages</h2>
-<section id="physical-storage" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="physical-storage"><span class="header-section-number">9.2.1</span> Physical Storage</h3>
+<section id="recommendations-for-data-packages" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="recommendations-for-data-packages"><span class="header-section-number">10.2</span> Recommendations for data packages</h2>
+<section id="physical-storage" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="physical-storage"><span class="header-section-number">10.2.1</span> Physical Storage</h3>
 <ul>
 <li><p>The use of a Solid-state Drive (SSD) is strongly recommended for all offline data storage. The SSD should be formatted using one of the following file systems: 1) exFAT, 2) NTFS, or 3) ext4. Each of these file systems can accommodate individual file sizes greater than 1TB.</p></li>
 <li><p>Add data to external drive in native (non-compressed, non-tarred, non-zipped) format, deliver to EDI (e.g., by physical mail).</p></li>
@@ -350,14 +363,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Attn: Mark Servilla UNM Biology, Castetter Hall 1480 MSC03-2020, 219 Yale Blvd NE Albuquerque, NM 87131-0001</p>
 <p>Attn: Corinna Gries University of Wisconsin Center for Limnology 680 North Park Street Madison WI 53706-1413</p>
 </section>
-<section id="access" class="level3" data-number="9.2.2">
-<h3 data-number="9.2.2" class="anchored" data-anchor-id="access"><span class="header-section-number">9.2.2</span> Access</h3>
+<section id="access" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="access"><span class="header-section-number">10.2.2</span> Access</h3>
 <p>To receive offline data, send a request to support@edirepository.org listing the data package(s) of interest and we’ll determine the best mode of delivery. If technically feasible, we will stage data on an internet accessible host and will send you a URL when the data are ready for download. Otherwise, data will be sent on physical media. To receive data on physical media, you will be required to send a storage device of adequate volume to:</p>
 <p>Attn: Mark Servilla UNM Biology, Castetter Hall 1480 MSC03-2020 219 Yale Blvd NE Albuquerque, NM 87131-0001</p>
 <p>We will utilize a delivery service of your choice, however, you will be responsible for all shipping arrangements and fees, including pre-arranging return delivery.</p>
 </section>
-<section id="data-package" class="level3" data-number="9.2.3">
-<h3 data-number="9.2.3" class="anchored" data-anchor-id="data-package"><span class="header-section-number">9.2.3</span> Data package</h3>
+<section id="data-package" class="level3" data-number="10.2.3">
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="data-package"><span class="header-section-number">10.2.3</span> Data package</h3>
 <ul>
 <li>The external hard drive should contain at least two entities: the data (which will be offline) and an inventory or manifest that describe the contents of the external hard drive.</li>
 <li>Content of the manifest (inventory of holdings) would be dictated by the type of data entity. The <strong>manifest will be available as an online entity</strong> (through the EDI Data Portal) so that potential requestors can evaluate the offline resource before requesting it.</li>
@@ -374,18 +387,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 </section>
-<section id="package-metadata" class="level3" data-number="9.2.4">
-<h3 data-number="9.2.4" class="anchored" data-anchor-id="package-metadata"><span class="header-section-number">9.2.4</span> Package Metadata</h3>
+<section id="package-metadata" class="level3" data-number="10.2.4">
+<h3 data-number="10.2.4" class="anchored" data-anchor-id="package-metadata"><span class="header-section-number">10.2.4</span> Package Metadata</h3>
 <p>(in EDI metadata template and converted to EML - generally, as for any data package)</p>
 <ul>
 <li>Abstract: describe the collection generally. If individual files require specific software to read, provide the name of that software.</li>
 <li>Creators</li>
 <li>Contact - The first listed contact is responsible for sending out copies as requested and is typically the EDI repository manager:</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">contact</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">contact</span>&gt;</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">organizationName</span>&gt;Environmental Data Initiative&lt;/<span class="kw">organizationName</span>&gt;</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">electronicMailAddress</span>&gt;support@edirepository.org&lt;/<span class="kw">electronicMailAddress</span>&gt;</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">contact</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">contact</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Methods - detailed collection/generation methods for the offline data entities. Detailed information for re-using the data. (May instead be included in the manifest table if different for different offline files.)</li>
 <li>Data Entities
@@ -401,8 +414,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 </section>
-<section id="eml" class="level3" data-number="9.2.5">
-<h3 data-number="9.2.5" class="anchored" data-anchor-id="eml"><span class="header-section-number">9.2.5</span> EML</h3>
+<section id="eml" class="level3" data-number="10.2.5">
+<h3 data-number="10.2.5" class="anchored" data-anchor-id="eml"><span class="header-section-number">10.2.5</span> EML</h3>
 <p>In addition to basic resource-level metadata, at least two entities should be described:</p>
 <ul>
 <li>Manifest (inventory) should be a tableEntity: will be the online entity and described as all</li>
@@ -412,8 +425,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Distribution node will be <code>offline</code> (See Table 1, code block)</li>
 </ul></li>
 </ul>
-<section id="table_1" class="level4" data-number="9.2.5.1">
-<h4 data-number="9.2.5.1" class="anchored" data-anchor-id="table_1"><span class="header-section-number">9.2.5.1</span> Table 1. Three required fields for an offline distribution</h4>
+<section id="table_1" class="level4" data-number="10.2.5.1">
+<h4 data-number="10.2.5.1" class="anchored" data-anchor-id="table_1"><span class="header-section-number">10.2.5.1</span> Table 1. Three required fields for an offline distribution</h4>
 <table>
 <tbody><tr>
 <td>
@@ -441,9 +454,9 @@ Instead of a data URL, you will have an offline distribution node. The name of a
 </tr>
 </tbody></table>
 </section>
-<section id="sample_xml_offline" class="level4" data-number="9.2.5.2">
-<h4 data-number="9.2.5.2" class="anchored" data-anchor-id="sample_xml_offline"><span class="header-section-number">9.2.5.2</span> Sample XML, offline entity</h4>
-<div class="sourceCode" id="cb2"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<section id="sample_xml_offline" class="level4" data-number="10.2.5.2">
+<h4 data-number="10.2.5.2" class="anchored" data-anchor-id="sample_xml_offline"><span class="header-section-number">10.2.5.2</span> Sample XML, offline entity</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">physical</span>&gt;</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">objectName</span>&gt;mainl_2005acc.zip&lt;/<span class="kw">objectName</span>&gt;</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">dataFormat</span>&gt;</span>
@@ -456,20 +469,20 @@ Instead of a data URL, you will have an offline distribution node. The name of a
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">mediumName</span>&gt;External drive&lt;/<span class="kw">mediumName</span>&gt;</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">offline</span>&gt;</span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">distribution</span>&gt;</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">physical</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">physical</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 </section>
-<section id="references" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="references"><span class="header-section-number">9.3</span> References</h2>
-<section id="eml-documentation" class="level3" data-number="9.3.1">
-<h3 data-number="9.3.1" class="anchored" data-anchor-id="eml-documentation"><span class="header-section-number">9.3.1</span> EML documentation</h3>
+<section id="references" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="references"><span class="header-section-number">10.3</span> References</h2>
+<section id="eml-documentation" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="eml-documentation"><span class="header-section-number">10.3.1</span> EML documentation</h3>
 <p><a href="https://eml.ecoinformatics.org/schema/index.html">https://eml.ecoinformatics.org/schema/index.html</a></p>
 <p>Look for the PhysicalDistributionType</p>
 </section>
 </section>
-<section id="potential-issues" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="potential-issues"><span class="header-section-number">9.4</span> Potential Issues</h2>
+<section id="potential-issues" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="potential-issues"><span class="header-section-number">10.4</span> Potential Issues</h2>
 <ul>
 <li>SSD formatting (eventually, whatever we use, it will become unusable).</li>
 <li>Even with cloud storage, eventually a binary format will become unusable.</li>
@@ -530,13 +543,14 @@ Instead of a data URL, you will have an offline distribution node. The name of a
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -881,7 +895,7 @@ Instead of a data URL, you will have an offline distribution node. The name of a
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../guide-special-cases/other-repositories.html" class="pagination-link" aria-label="Data in Other Repositories">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data in Other Repositories</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data in Other Repositories</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
