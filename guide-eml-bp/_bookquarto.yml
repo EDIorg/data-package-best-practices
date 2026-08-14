@@ -3,15 +3,6 @@ project:
   output-dir: _book
 
 book:
-  #title: "EDI Dataset Preparation Guides"
-  #author: "Environmental Data Initiative and colleagues"
-  #description: "Community-developed guides for preparing and publishing datasets in the environmental sciences, and similar contexts, using the Ecological Metadata Language (EML)."
-  #date: last-modified
-  #favicon: edi-logo.png
-  #site-url: https://ediorg.github.io/data-package-best-practices
-  #repo-url: https://github.com/ediorg/data-package-best-practices
-  #repo-branch: main
-  #repo-actions: [edit, issue]
   chapters:
     - index.qmd
     - chapter-01-introduction-to-eml.qmd
@@ -30,22 +21,6 @@ book:
     - appendix-b-xml-schemas-and-eml.qmd
     - appendix-c-known-issues-and-gotchas.qmd
     - references.qmd
-    # - part: guide-special-cases/book.qmd
-    #   chapters:
-    #     - guide-special-cases/preface.qmd
-    #     - guide-special-cases/code.qmd
-    #     - guide-special-cases/model-based.qmd
-    #     - guide-special-cases/images-and-docs.qmd
-    #     - guide-special-cases/spatial-data.qmd
-    #     - guide-special-cases/moving-platforms.qmd
-    #     - guide-special-cases/other-repositories.qmd
-    #     - guide-special-cases/large-offline.qmd
-
-    # - part: guide-domain-specific/preface.qmd
-    #   chapters:
-    #     - guide-domain-specific/ecocom.qmd
-    #     - guide-domain-specific/hymet.qmd
-    #     - guide-domain-specific/soil-carbon.qmd
 
 
 execute:
@@ -54,11 +29,6 @@ execute:
 bibliography: ../references.bib
 
 format:
-  #html:
-  #  theme: flatly
-  #  highlight-style: pygments
-  #  code-block-bg: true
-  #  code-block-border-left: "#31BAE9"
   pdf:
     toc: true
     number-sections: true

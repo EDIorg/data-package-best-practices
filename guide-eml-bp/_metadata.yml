@@ -1,0 +1,19 @@
+format: 
+  html:
+    other-links:
+      - text: PDF
+        icon: file-pdf
+        href: guide-eml-bp.pdf
+      - text: MS Word
+        icon: file-word
+        href: guide-eml-bp.docx
+# These should work but do not
+# format-links:
+#   #- format: pdf
+#   - text: PDF
+#     icon: file-pdf
+#     href: guide-eml-bp.pdf
+#   #- format: docx
+#   - text: MS Word
+#     icon: file-word
+#     href: guide-eml-bp.docx

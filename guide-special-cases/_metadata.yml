@@ -1,0 +1,19 @@
+format: 
+  html:
+    other-links:
+      - text: PDF
+        icon: file-pdf
+        href: guide-special-cases.pdf
+      - text: MS Word
+        icon: file-word
+        href: guide-special-cases.docx
+# These should work but do not
+# format-links:
+#   #- format: pdf
+#   - text: PDF
+#     icon: file-pdf
+#     href: guide-special-cases.pdf
+#   #- format: docx
+#   - text: MS Word
+#     icon: file-word
+#     href: guide-special-cases.docx

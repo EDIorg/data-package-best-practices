@@ -60,4 +60,15 @@ citation:
   doi: n/a
 categories: draft
 image: ../img/book.svg
+format: 
+  html:
+    format-links:
+      - format: pdf
+        text: PDF
+        icon: file-pdf
+        href: guide-eml-bp.pdf
+      - format: docx
+        text: MS Word
+        icon: file-word
+        href: guide-eml-bp.docx
 ---
