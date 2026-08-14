@@ -1,0 +1,97 @@
+---
+title:  'Data Package Design for Special Cases'
+subtitle: Version 1
+date: 19 February 2021
+author:
+  - name: Corinna Gries
+    affiliation: University of Wisconsin, Madison
+    orcid: 0000-0002-9091-6543
+    email: cgries@wisc.edu
+    corresponding: true
+    roles: [conceptualization, writing, editing]
+  - name: Stace Beaulieu
+    affiliation: Woods Hole Oceanographic Institute
+    orcid: 0000-0002-2609-5453
+    roles: [conceptualization, writing, editing]
+  - name: Renée F. Brown
+    affiliation: University of New Mexico
+    orcid: 0000-0002-4986-7663
+    roles: [conceptualization, writing, editing]
+  - name: Sarah Elmendorf
+    affiliation: University of Colorado Boulder
+    orcid: 0000-0003-1085-8521
+    roles: [conceptualization, writing, editing]
+  - name: Hap Garritt
+    affiliation: Woods Hole Oceanographic Institute
+    roles: [conceptualization, writing, editing]
+    orcid: 0000-0001-5912-0769
+  - name: Gastil Gastil-Buhl
+    affiliation: University of California Santa Barbara
+    orcid: 0000-0001-9177-5722
+    roles: [conceptualization, writing, editing]
+  - name: Hsun-Yi Hseih
+    affiliation: Michigan State University
+    orcid: 0000-0003-2245-3695
+    roles: [conceptualization, writing, editing]
+  - name: Li Kui
+    affiliation: University of California Santa Barbara
+    orcid: 0000-0002-5894-4907
+    roles: [conceptualization, writing, editing]
+  - name: Mary Martin
+    affiliation: University of New Hampshire
+    orcid: 0000-0003-1791-5584
+    roles: [conceptualization, writing, editing]
+  - name: Gregory E. Maurer
+    affiliation: New Mexico State University
+    orcid: 0000-0002-3007-8058
+    email: gmaurer@nmsu.edu
+    corresponding: true
+    roles: [conceptualization, writing, editing]
+  - name: An T. Nguyen
+    affiliation: University of Texas at Austin
+    roles: [conceptualization, writing, editing]
+  - name: John H. Porter
+    affiliation: University of Virginia
+    orcid: 0000-0003-3118-5784
+    roles: [conceptualization, writing, editing]
+  - name: Adam Sapp
+    affiliation: University of Georgia
+    orcid: 0000-0002-3197-7602
+    roles: [conceptualization, writing, editing]
+  - name: Mark Servilla
+    affiliation: University of New Mexico
+    orcid: 0000-0002-3192-7306
+    roles: [conceptualization, writing, editing]
+  - name: Tim Whiteaker
+    affiliation: University of Texas at Austin
+    orcid: 0000-0002-1940-4158
+    roles: [conceptualization, writing, editing]
+  - name: LTER Network Information Management Committee
+    affiliation: Various
+    roles: [conceptualization, editing]
+abstract: This book covers considerations for creating well-designed datasets for publishing data types outside the most common cases for research data. Specialized needs for preparing and publishing a dataset may arise because the data are not tabular in structure, are stored in non-standard file formats, are collected with unique or new acquisition methods, or are large in size. Some examples of specialized data types described here are imagery, code, document archives, spatial data files, and raw genomic data stored in other repositories. This is Version 1 of the document, written and edited by the Non-tabular Data Working Group of the U.S. LTER Network Information Management Committee.
+description: Community-developed considerations for creating well-designed datasets that include data specialized by type, format, or acquisition method. Examples are images, code, documents, and raw data in other repositories.
+license: CC BY
+keywords:
+  - data management
+  - EML
+  - dataset
+  - imagery
+  - big data
+  - documents
+  - drone
+  - code
+  - research
+  - environmental science
+  - metadata
+  - publishing
+  - guide
+  - repository
+citation: 
+  type: book
+  container-title: Environmental Data Initiative
+  version: 1
+  doi: 10.6073/pasta/9d4c803578c3fbcb45fc23f13124d052
+categories: published
+image: ../img/book.svg
+---
