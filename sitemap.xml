@@ -2,86 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/index.html</loc>
-    <lastmod>2026-08-23T22:53:42.568Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.470Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/about.html</loc>
-    <lastmod>2026-08-23T22:53:42.559Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.455Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/contributing.html</loc>
-    <lastmod>2026-08-23T22:53:42.559Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.461Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/guide-eml-bp/index.html</loc>
-    <lastmod>2026-08-23T22:53:42.560Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.462Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/guide-eml-bp/preface.html</loc>
-    <lastmod>2026-08-23T22:53:42.560Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.462Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/guide-eml-bp/introduction.html</loc>
-    <lastmod>2026-08-23T22:53:42.560Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.462Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/guide-eml-bp/content-recommendations.html</loc>
-    <lastmod>2026-08-23T22:53:42.560Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.461Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/guide-special-cases/index.html</loc>
-    <lastmod>2026-08-23T22:53:42.567Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.469Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/guide-special-cases/preface.html</loc>
-    <lastmod>2026-08-23T22:53:42.568Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.470Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/guide-special-cases/code.html</loc>
-    <lastmod>2026-08-23T22:53:42.560Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.462Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/guide-special-cases/model-based.html</loc>
-    <lastmod>2026-08-23T22:53:42.567Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.469Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/guide-special-cases/images-and-docs.html</loc>
-    <lastmod>2026-08-23T22:53:42.561Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.462Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/guide-special-cases/spatial-data.html</loc>
-    <lastmod>2026-08-23T22:53:42.568Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.470Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/guide-special-cases/moving-platforms.html</loc>
-    <lastmod>2026-08-23T22:53:42.567Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.469Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/guide-special-cases/other-repositories.html</loc>
-    <lastmod>2026-08-23T22:53:42.568Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.469Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/guide-special-cases/large-offline.html</loc>
-    <lastmod>2026-08-23T22:53:42.567Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.469Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/guide-domain-specific/preface.html</loc>
-    <lastmod>2026-08-23T22:53:42.560Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.461Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/guide-domain-specific/ecocom.html</loc>
-    <lastmod>2026-08-23T22:53:42.559Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.461Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/guide-domain-specific/hymet.html</loc>
-    <lastmod>2026-08-23T22:53:42.560Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.461Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/guide-domain-specific/soil-carbon.html</loc>
-    <lastmod>2026-08-23T22:53:42.560Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.461Z</lastmod>
   </url>
   <url>
     <loc>https://ediorg.github.io/data-package-best-practices/references.html</loc>
-    <lastmod>2026-08-23T22:53:42.568Z</lastmod>
+    <lastmod>2026-08-23T22:59:45.470Z</lastmod>
   </url>
 </urlset>
