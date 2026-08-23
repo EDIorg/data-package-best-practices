@@ -1,11 +1,3 @@
----
-title: Best Practices for Dataset Metadata in Ecological Metadata Language (EML)
-subtitle: Version 3
-date: November 2017
-author: EML Best Practices Committee
----
-
-
 # Preface {.unnumbered}
 
 ::: {style='text-align:center;'}

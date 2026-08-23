@@ -20,21 +20,31 @@ book:
     - about.qmd
     - contributing.qmd
 
-    - part: guide-eml-bp/preface.qmd
+    - part: guide-eml-bp/index.qmd
       chapters:
-        - guide-eml-bp/introduction.qmd
-        - guide-eml-bp/content-recommendations.qmd
+        - file: guide-eml-bp/preface.qmd
+        - text: 1 Introduction
+          file: guide-eml-bp/introduction.qmd
+        - text: 2 Content recommendations for Elements and Attributes
+          file: guide-eml-bp/content-recommendations.qmd
 
     - part: guide-special-cases/index.qmd
       chapters: 
         - guide-special-cases/preface.qmd
-        - guide-special-cases/code.qmd
-        - guide-special-cases/model-based.qmd
-        - guide-special-cases/images-and-docs.qmd
-        - guide-special-cases/spatial-data.qmd
-        - guide-special-cases/moving-platforms.qmd
-        - guide-special-cases/other-repositories.qmd
-        - guide-special-cases/large-offline.qmd
+        - text: 1 Code
+          file: guide-special-cases/code.qmd
+        - text: 2 Model-Based Datasets
+          file: guide-special-cases/model-based.qmd
+        - text: 3 Images and Documents as Data
+          file: guide-special-cases/images-and-docs.qmd
+        - text: 4 Spatial Data
+          file: guide-special-cases/spatial-data.qmd
+        - text: 5 Data Gathered with Small Moving Platforms
+          file: guide-special-cases/moving-platforms.qmd
+        - text: 6 Data in Other Repositories
+          file: guide-special-cases/other-repositories.qmd
+        - text: 7 Large Data Sets
+          file: guide-special-cases/large-offline.qmd
 
     - part: guide-domain-specific/preface.qmd
       chapters:
@@ -51,6 +61,7 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
+    number-sections: false   
 #  pdf:
 #    documentclass: scrreprt
 
