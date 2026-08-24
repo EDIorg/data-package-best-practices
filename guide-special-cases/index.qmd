@@ -1,6 +1,6 @@
 ---
 title:  'Data Package Design for Special Cases'
-subtitle: Version 1
+subtitle: Version 1.1
 date: 19 February 2021
 author:
   - name: Corinna Gries
@@ -69,7 +69,7 @@ author:
   - name: LTER Network Information Management Committee
     affiliation: Various
     roles: [conceptualization, editing]
-abstract: This book covers considerations for creating well-designed datasets for publishing data types outside the most common cases for research data. Specialized needs for preparing and publishing a dataset may arise because the data are not tabular in structure, are stored in non-standard file formats, are collected with unique or new acquisition methods, or are large in size. Some examples of specialized data types described here are imagery, code, document archives, spatial data files, and raw genomic data stored in other repositories. This is Version 1 of the document, written and edited by the Non-tabular Data Working Group of the U.S. LTER Network Information Management Committee.
+abstract: This book covers considerations for creating well-designed datasets for publishing data types outside the most common cases for research data. Specialized needs for preparing and publishing a dataset may arise because the data are not tabular in structure, are stored in non-standard file formats, are collected with unique or new acquisition methods, or are large in size. Some examples of specialized data types described here are imagery, code, document archives, spatial data files, and raw genomic data stored in other repositories. This is the first version of the book, written and edited in 2019 through 2021 by the Non-tabular Data Working Group of the U.S. LTER Network Information Management Committee. Minor edits and reformatting took place in 2021, 2022 and 2024 to produce this current online version (Version 1.1).
 description: Community-developed considerations for creating well-designed datasets that include data specialized by type, format, or acquisition method. Examples are images, code, documents, and raw data in other repositories.
 license: CC BY
 keywords:
@@ -90,7 +90,7 @@ keywords:
 citation: 
   type: book
   container-title: Environmental Data Initiative
-  version: 1
+  version: "1.1"
   doi: 10.6073/pasta/9d4c803578c3fbcb45fc23f13124d052
 categories: published
 image: ../img/book.svg

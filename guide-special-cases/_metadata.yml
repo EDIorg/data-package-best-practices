@@ -3,10 +3,10 @@ format:
     other-links:
       - text: PDF
         icon: file-pdf
-        href: guide-special-cases.pdf
+        href: guide-special-cases_v1.1.pdf
       - text: MS Word
         icon: file-word
-        href: guide-special-cases.docx
+        href: guide-special-cases_v1.1.docx
 # These should work but do not
 # format-links:
 #   #- format: pdf

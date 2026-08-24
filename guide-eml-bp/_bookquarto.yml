@@ -33,10 +33,14 @@ format:
     toc: true
     number-sections: true
     colorlinks: true
+    output-file: "guide-eml-bp_v4.0"
+    output-ext:  "pdf"
   docx:
     toc: true
     number-sections: true
     colorlinks: true
+    output-file: "guide-eml-bp_v4.0"
+    output-ext:  "docx"
 
 
 

@@ -3,10 +3,10 @@ format:
     other-links:
       - text: PDF
         icon: file-pdf
-        href: guide-eml-bp.pdf
+        href: guide-eml-bp_v4.0.pdf
       - text: MS Word
         icon: file-word
-        href: guide-eml-bp.docx
+        href: guide-eml-bp_v4.0.docx
 # These should work but do not
 # format-links:
 #   #- format: pdf

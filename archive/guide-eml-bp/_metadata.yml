@@ -1,11 +1,21 @@
 # For archived docs
 sidebar: archivedocs
-# Test rendering a pdf
-#project:
-#  render:
-#    - book.qmd
-#    - preface.qmd
-#    - introduction.qmd
-#    - content-recommendations.qmd
-#format: 
-#  pdf: default
+format: 
+  html:
+    other-links:
+      - text: PDF
+        icon: file-pdf
+        href: guide-eml-bp_v3.1.pdf
+      - text: MS Word
+        icon: file-word
+        href: guide-eml-bp_v3.1.docx
+# These should work but do not
+# format-links:
+#   #- format: pdf
+#   - text: PDF
+#     icon: file-pdf
+#     href: guide-eml-bp.pdf
+#   #- format: docx
+#   - text: MS Word
+#     icon: file-word
+#     href: guide-eml-bp.docx

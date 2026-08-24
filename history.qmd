@@ -14,9 +14,13 @@ Over time, that document was expanded to include specifics about data types and 
 
 In 2017, the newly established [EDI](https://edirepository.org) repository (established in 2016) revised the EML BP to include general material about use of the EML specification.
 
-  - *EML Best Practices, Version 3*, 2017: [HTML pages](archive/guide-eml-bp/index.qmd), [PDF version](archive/emlbestpractices-v3.pdf)
+  - *EML Best Practices, Version 3*, 2017: [PDF version](archive/emlbestpractices-v3.pdf).
 
-This repository was created in 2019 to house *EML Best Practices, Version 3*, and other data package recommendations as markdown files accessible on the web. Some minor modifications were made to the *Version 3*, document after this was initiated. See the repository history for details. In 2023 and 2024, the EML Best Practices working group re-convened to produce *EML Best Practices, Version 4*, which will be published soon. Older versions will also receive DOIs.
+This repository was created in 2019 to house the *EML Best Practices* and other dataset preparation guides as markdown files accessible on the web. At that time, some minor edits and formatting modifications were made to *Version 3*, so we refer to the document here as *Version 3.1*. See the repository history for details.
+
+- *EML Best Practices, Version 3.1*: [HTML pages](archive/guide-eml-bp/index.qmd). Other formats are available from rendered web pages.
+
+In 2023 and 2024, the EML Best Practices working group re-convened to produce *EML Best Practices, Version 4*, which will be published soon. Older versions will also receive DOIs.
 
 
 ## Data Package Design for Special Cases (Non-tabular data guide)
@@ -24,5 +28,9 @@ This repository was created in 2019 to house *EML Best Practices, Version 3*, an
 The first version of the "Data Package Design for Special Cases" guide was created by the Non-tabular data working group, composed of LTER Information Managers and EDI staff. The group initially convened in August of 2019 and completed the first version of the guide in February of 2021.
 
   - *Data Package Design for Special Cases, Version 1*, 2021: [PDF version](archive/data_package_design_special_cases_v1.pdf), [EDI publication](https://doi.org/10.6073/pasta/9d4c803578c3fbcb45fc23f13124d052)
+
+In 2022-2024, some minor edits and formatting modifications were made to *Version 1*, so we refer to the document here as *Version 1.1*. See the repository history for details.
+
+  - *Data Package Design for Special Cases, Version 1.1*: [HTML pages](guide-special-cases/index.qmd). Other formats are available from rendered web pages.
 
   In 2026, a new version of the working group has convened to revise and create version 2 of the guide.

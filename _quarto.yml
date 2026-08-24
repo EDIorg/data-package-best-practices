@@ -6,7 +6,7 @@ project:
 
 
 website:
-  title: "Dataset Preparation Guides"
+  title: "Environmental Dataset Preparation Guides"
   description: "Community-developed guides for preparing and publishing datasets in the environmental sciences, and similar contexts, using the Ecological Metadata Language (EML) and other standards."
   favicon: img/edi-logo.png
   site-url: https://ediorg.github.io/data-package-best-practices

@@ -1,6 +1,6 @@
 ---
 title:  'Best Practices for Dataset Metadata in Ecological Metadata Language'
-subtitle: Version 4
+subtitle: Version 4.0
 date: last-modified
 author:
   - name: Gregory Maurer
@@ -56,7 +56,7 @@ keywords:
 citation: 
   type: book
   container-title: Environmental Data Initiative
-  version: 4
+  version: "4.0"
   doi: n/a
 categories: draft
 image: ../img/book.svg

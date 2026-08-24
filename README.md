@@ -1,13 +1,37 @@
-# Dataset Preparation Guides for the EDI Community (data-package-best-practices)
+# Environmental Dataset Preparation Guides (data-package-best-practices)
 
-This repository contains a series of documents about preparing and publishing datasets in the environmental sciences and similar contexts. Topics include community-developed metadata standards, serialization and markup formatting guidelines, and best practices for the content of published research datasets. This documentation is maintained by the [Environmental Data Initiative](https://edirepository.org) (EDI) and all content has been developed and written in collaboration with EDI's community of scientists, data managers, and repository users. Two versions of this content are published online:
+This repository contains a series of documents about preparing and publishing datasets in the environmental sciences and similar contexts. Topics include community-developed metadata standards, serialization and markup formatting guidelines, and best practices for the content of published research datasets. This documentation is maintained by the [LTER Network](https://lternet.edu) and the [Environmental Data Initiative](https://edirepository.org) (EDI) and all content has been developed and written in collaboration with this community of scientists, data managers, and repository users. Two versions of this content are published online:
 
 * [The current production version](https://ediorg.github.io/data-package-best-practices/), derived from the `main` branch of the repository.
 * [A prerelease version](https://prerelease-edi-docs.netlify.app) containing new and in-development documents, derived from the `prerelease` branch.
 
 The guide documents are published as a collection of [Quarto books](https://quarto.org/docs/books). Revisions and additions to these guides will occur using this repository, with periodic release and distribution of copies in print-ready formats (PDF, MS Word). For more on the history of this effort, and archived earlier editions of the guides, see the [History](history.qmd) page.
 
-# Contributing
+## Site and repository layout
+
+The rendered site has a landing page, several top-level context pages, and guides or thematic collections of guides that are accessible through a top menubar or sidebar navigation. The content of all guides are written as Quarto markdown documents (`.qmd` files) that are organized into a subdirectory for each guide or collection. The Quarto search function makes it easy to find things that are not exposed in the navigation system.
+ 
+This repository is structured as shown below:
+
+```
+data-package-best-practices/
+|-- archive/                    # Older versions of the guides (pdf or markdown)
+|-- guide-domain-specific/      # Domain-specific guides collection
+|-- guide-eml-bp/               # EML Best Practices guide
+│-- guide-special-cases/        # Data Package Design for Special Cases (NonTab)
+|-- img/                        # Images used in the site 
+|-- _publish.yml                # Publishing configs (for prerelease only)
+|-- _quarto.yml                 # Quarto configs (format, navigation, etc.)
+|-- about.qmd                   # About page
+|-- contributing.qmd            # Contributing page
+|-- history.qmd                 # History page
+|-- index.qmd                   # Landing page layout and content
+|-- Makefile                    # Makefile for rendering pdf/docx books
+|-- README.md                   # This file
+`-- references.bib              # A BibTex file with references cited
+```
+
+## Contributing
 
 The maintenance of this repository and development of the included documents is coordinated by EDI, with major updates and new content developed and approved through a community-oriented process. If you would like to contribute to these documents, please contact the maintainers and working group leads listed on the [About](about.qmd) page, or reach out to EDI at [info@edirepository.org](mailto:info@edirepository.org>). Some details on how contribution works are below.
 
