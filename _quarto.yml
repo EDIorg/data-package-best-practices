@@ -108,13 +108,13 @@ website:
       collapse-level: 2
       contents:
         - section: "EML Best Practices v3 (Archived)"
-          href: guide-eml-bp/archive/index.qmd
+          href: archive/guide-eml-bp/index.qmd
           contents:
-            - href: guide-eml-bp/archive/preface.qmd
+            - href: archive/guide-eml-bp/preface.qmd
               text: "Preface"
-            - href: guide-eml-bp/archive/introduction.qmd
+            - href: archive/guide-eml-bp/introduction.qmd
               text: "1. Introduction"
-            - href: guide-eml-bp/archive/content-recommendations.qmd
+            - href: archive/guide-eml-bp/content-recommendations.qmd
               text: "2. Content recommendations"
 
 execute:
