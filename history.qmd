@@ -22,6 +22,7 @@ This repository was created in 2019 to house *EML Best Practices, Version 3*, an
 ## Data Package Design for Special Cases (Non-tabular data guide)
 
 The first version of the "Data Package Design for Special Cases" guide was created by the Non-tabular data working group, composed of LTER Information Managers and EDI staff. The group initially convened in August of 2019 and completed the first version of the guide in February of 2021.
-  - *Data PAckage Design for Special Cases, Version 1*, 2021: [PDF version](archive/data_package_design_special_cases_v1.pdf), [EDI publication](https://doi.org/10.6073/pasta/9d4c803578c3fbcb45fc23f13124d052)
+
+  - *Data Package Design for Special Cases, Version 1*, 2021: [PDF version](archive/data_package_design_special_cases_v1.pdf), [EDI publication](https://doi.org/10.6073/pasta/9d4c803578c3fbcb45fc23f13124d052)
 
   In 2026, a new version of the working group has convened to revise and create version 2 of the guide.
