@@ -17,10 +17,10 @@ website:
   page-navigation: true
   bread-crumbs: true
   announcement: 
-    content: "**Publication version**: This content is under active community development. See [here](https://prerelease-edi-docs.netlify.app/) for prerelease documents." 
+    content: "**Publication version**: See the [prerelease version](https://prerelease-edi-docs.netlify.app/) for documents under active community development." 
     position: above-navbar
     dismissable: false
-    type: primary
+    type: danger
   search:
     location: navbar
   navbar:
@@ -84,6 +84,7 @@ website:
       contents:
         - section: "EML Best Practices v3 (Archived)"
           href: archive/emlbestpractices-v3.pdf
+
 execute:
   freeze: auto
 

@@ -1,6 +1,6 @@
 ---
 title:  'Best Practices for Dataset Metadata in Ecological Metadata Language (EML)'
-subtitle: Version 3
+subtitle: Version 3.1
 date: November 2017
 author:
   - name: Dan Bahauddin
@@ -38,7 +38,7 @@ author:
   - name: LTER Network Information Management Committee
     affiliation: Various
     roles: [conceptualization, editing]
-abstract: This book presents "best practice" recommendations for creating metadata documents in the Ecological Metadata Language (EML), a widely accepted standard for research metadata exchange in the environmental sciences. The document focuses the most common use-cases for EML and recommends content and formatting for its most important and frequently-used metadata elements. As such, these recommendations can be applied to most research datasets that include EML metadata. There are also recommendations specific to the U.S. LTER Network and Environmental Data Initiative (EDI) repository. This is Version 3 of the book, updated in 2017 by the EML Best Practices working group of the LTER Network Information Management Committee.
+abstract: This book presents "best practice" recommendations for creating metadata documents in the Ecological Metadata Language (EML), a widely accepted standard for research metadata exchange in the environmental sciences. The document focuses the most common use-cases for EML and recommends content and formatting for its most important and frequently-used metadata elements. As such, these recommendations can be applied to most research datasets that include EML metadata. There are also recommendations specific to the U.S. LTER Network and Environmental Data Initiative (EDI) repository. This is the third version of the book, with content updated in 2017 by the EML Best Practices working group of the LTER Network Information Management Committee. Minor edits and reformatting took place in 2019 to produce this current online version (Version 3.1).
 description: These recommendations for creating EML metadata documents can be applied to most research datasets published by the environmental sciences community.
 license: CC BY
 keywords:
@@ -54,7 +54,7 @@ keywords:
 citation: 
   type: book
   container-title: Environmental Data Initiative
-  version: 3
+  version: "3.1"
   doi: n/a
 categories: archived
 image: ../../img/book.svg
