@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Environmental Dataset Preparation Guides</title>
+<title>introduction – Environmental Dataset Preparation Guides</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,48 +26,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./img/edi-logo.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-aced932c6eb97d642153b8e218288f9f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-86f8048153e6ae009d1f633707c05d23.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../img/edi-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-aced932c6eb97d642153b8e218288f9f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-86f8048153e6ae009d1f633707c05d23.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -94,69 +73,11 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-guide-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-guide-listing'] = new List('listing-guide-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -166,11 +87,11 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./img/edi-logo.png" alt="" class="navbar-logo light-content">
-    <img src="./img/edi-logo.png" alt="" class="navbar-logo dark-content">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../img/edi-logo.png" alt="" class="navbar-logo light-content">
+    <img src="../img/edi-logo.png" alt="" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Environmental Dataset Preparation Guides</span>
     </a>
   </div>
@@ -181,11 +102,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -194,11 +115,11 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-more">    
         <li>
-    <a class="dropdown-item" href="./contributing.html">
+    <a class="dropdown-item" href="../contributing.html">
  <span class="dropdown-text">Contributing</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./history.html">
+    <a class="dropdown-item" href="../history.html">
  <span class="dropdown-text">History and early versions</span></a>
   </li>  
     </ul>
@@ -210,298 +131,48 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Environmental Dataset Preparation Guides</li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./guide-eml-bp/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">EML Best Practices</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-eml-bp/preface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-eml-bp/introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Introduction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-eml-bp/content-recommendations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Content recommendations for Elements and Attributes</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./guide-special-cases/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset Design for Special Cases</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-special-cases/code.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Code</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-special-cases/model-based.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Model-based datasets</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-special-cases/images-and-docs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. Images and documents as data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-special-cases/spatial-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Spatial data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-special-cases/moving-platforms.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Data gathered with small moving platforms</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-special-cases/other-repositories.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6. Data in other repositories</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-special-cases/large-offline.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7. Large datasets</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./guide-domain-specific/about-domain-specific.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Domain-Specific Guides</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-domain-specific/ecocom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ecological community survey data (ecocomDP)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-domain-specific/hymet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hydrology and meteorology data (hymetDP)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-domain-specific/soil-carbon.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Soil Carbon Data</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
-<!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Environmental Dataset Preparation Guides</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>This website contains a series of documents about preparing and publishing datasets for the environmental sciences and similar contexts. Topics include community-developed metadata standards, serialization and markup formatting guidelines, best practices for content in ecological synthesis datasets, and more. This documentation is maintained by the <a href="https://lternet.edu">LTER Network</a> and the <a href="https://edirepository.org">Environmental Data Initiative</a> (EDI) and all content has been developed and written in collaboration with this community of scientists, data managers, and repository users.</p>
-<p><strong>The purpose of these guides is to:</strong></p>
-<ul>
-<li>Provide guidance for creating published data products that are findable, accessible, interoperable, and reusable <span class="citation" data-cites="wilkinson_fair_2016">(FAIR, <a href="#ref-wilkinson_fair_2016" role="doc-biblioref">Wilkinson et al. 2016</a>)</span></li>
-<li>Augment the schema documentation for the Ecological Metadata Language <span class="citation" data-cites="jones_ecological_2019">(EML, <a href="#ref-jones_ecological_2019" role="doc-biblioref">Jones et al. 2019</a>)</span></li>
-<li>Promote the development and adoption of community-standard data harmonization practices, which will lead to improved data integration and synthesis science outcomes</li>
-</ul>
-<p>To contribute to these documents or participate in the associated working groups, see the <a href="./about.html">About</a> page or the repository <a href="https://github.com/EDIorg/data-package-best-practices">README</a>. For more on the history of this effort, and access to earlier editions of the guides, see the <a href="./history.html">History</a> page.</p>
-<section id="the-guides" class="level2">
-<h2 class="anchored" data-anchor-id="the-guides">The guides</h2>
-<div id="listing-guide-listing" class="quarto-listing quarto-listing-container-table">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-guide-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-guide-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-      <option value="" disabled="" selected="" hidden="">Order By</option>
-      <option value="index" data-direction="asc">Default</option>
-      <option value="listing-date-sort" data-direction="asc">
-        Date - Oldest
-      </option>
-      <option value="listing-date-sort" data-direction="desc">
-        Date - Newest
-      </option>
-      <option value="listing-title-sort" data-direction="asc">
-        Title
-      </option>
-    </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/EDIorg/data-package-best-practices/edit/main/guide-special-cases/introduction.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/EDIorg/data-package-best-practices/issues/new/choose" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="guide-special-cases.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="guide-special-cases.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
     </div>
-</div>
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-
-<th>
- 
-</th>
-
-<th>
-<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
-</th>
-
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
-
-<th>
-Description
-</th>
-
-<th>
-Categories
-</th>
-
-</tr>
-</thead>
-<tbody class="list">
-
-<tr data-index="0" data-categories="cHVibGlzaGVk" data-listing-date-sort="1613692800000" data-listing-file-modified-sort="1787551581246" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Data Package Design for Special Cases" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./img/book.svg" style="height: 40px;"></span>
-</td>
-<td>
-<span class="listing-date">Feb 19, 2021</span>
-</td>
-<td>
-<a href="./guide-special-cases/index.html" class="title listing-title">Data Package Design for Special Cases</a>
-</td>
-<td>
-<span class="listing-description">Community-developed considerations for creating well-designed datasets that include data specialized by type, format, or acquisition method. Examples are images, code, documents, and raw data in other repositories.</span>
-</td>
-<td>
-<span class="listing-categories">published</span>
-</td>
-
-</tr>
-
-<tr data-index="1" data-categories="ZHJhZnQ=" data-listing-date-sort="1787551581000" data-listing-file-modified-sort="1787551581240" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="969" data-listing-title-sort="Ecological community survey data (ecocomDP)" data-listing-filename-sort="ecocom.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./img/journal-text.svg" style="height: 40px;"></span>
-</td>
-<td>
-<span class="listing-date">Aug 24, 2026</span>
-</td>
-<td>
-<a href="./guide-domain-specific/ecocom.html" class="title listing-title">Ecological community survey data (ecocomDP)</a>
-</td>
-<td>
-<span class="listing-description">This guide covers how to format community survey and biodiversity data to the “ecocomDP” harmonized data model. The ecocomDP standard and associated tools are a community-supported project involving the LTER Network, NEON, and others.</span>
-</td>
-<td>
-<span class="listing-categories">draft</span>
-</td>
-
-</tr>
-
-<tr data-index="2" data-categories="YXJjaGl2ZWQ=" data-listing-date-sort="1509494400000" data-listing-file-modified-sort="1787551581240" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-image"><img loading="lazy" src="./img/book.svg" style="height: 40px;"></span>
-</td>
-<td>
-<span class="listing-date">Nov 1, 2017</span>
-</td>
-<td>
-<a href="./guide-eml-bp/index.html" class="title listing-title">Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</a>
-</td>
-<td>
-<span class="listing-description">These recommendations for creating EML metadata documents can be applied to most research datasets published by the environmental sciences community.</span>
-</td>
-<td>
-<span class="listing-categories">archived</span>
-</td>
-
-</tr>
-
-</tbody>
-</table>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Members of the working group developing these documents: S. Beaulieu, R. Brown, J. Downing, S. Elmendorf, H. Garritt, G. Gastil-Buhl, C. Gries, J. Hollingsworth, H.-Y. Hsieh, L. Kui, M. Martin, G. Maurer, A. Nguyen, J. Porter, A. Sapp, M. Servilla, T. Whiteaker</p>
+<p>In these documents we consider special cases for archiving research data based on their data type, format, or acquisition method, and recommend practices that ensure optimal re-usability of the data. Most recommendations here are aimed at improving documentation of data acquisition and processing to avoid misinterpretation. This includes the recommendation to publish raw data and/or processing code along with the data products. Others are aimed at usability in terms of data size/volume, or connecting related data. Some recommendations involve including a metadata document formatted according to a new and emerging standard (e.g., codeMeta) or a data inventory table. Data inventory tables can cross the line between metadata and data and are intended to improve discoverability and navigation of archived data.</p>
+<p>The intended audience for these best practice recommendations is the ecological research information manager (IM) community, and they are applicable to anyone operating in the context of an ecological research program. We assume that the target data repository is designed to handle ecological data, and that a given archive package will include metadata encoded in a community standard. This document references elements of the <a href="https://eml.ecoinformatics.org/">EML metadata standard</a>, but many aspects would similarly apply to other metadata standards and these documents should be considered in the larger context of applicable metadata standard best practices. We refer to the Environmental Data Initiative (<a href="https://portal.edirepository.org">EDI</a>) as an example data repository, though the same practices could be applied to other similar repositories.</p>
+<p>Throughout the chapters we use the term <em>data package</em> to refer to a published unit of data and metadata together, which is the convention at the EDI repository. At other data repositories, equivalent terms for a data package, such as <em>dataset</em>, may be used. A data package may contain one or more <em>entities</em>, such as csv tables, spatial data, processing or modeling code, and other documents (pdf, jpg, zip). A basic discussion of data package design can be found as <a href="https://edirepository.org/resources/designing-a-data-package">EDI’s first phase of data publishing documentation</a> and in the <a href="https://environmentaldatainitiative.files.wordpress.com/2017/11/emlbestpractices-v3.pdf">LTER Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</a>.</p>
+<p>Generally, we recommend archiving entities using standard file formats that are likely to be machine readable in the future. Exceptions to this may exist where the community standard for processing particular data types relies on specialized file formats (binary, closed specification, etc.) or proprietary software. In these cases, it may be appropriate to archive specialized file types and/or a copy that has been parsed into a format (e.g.&nbsp;ascii) that does not require proprietary software.</p>
+<p><strong>Table of contents</strong></p>
+<ul>
+<li><a href="../guide-special-cases/code.html">Processing code</a></li>
+<li><a href="../guide-special-cases/model-based.html">Modeling datasets</a></li>
+<li><a href="../guide-special-cases/images-and-docs.html">Images and documents</a></li>
+<li><a href="../guide-special-cases/spatial-data.html">Spatial data</a></li>
+<li><a href="../guide-special-cases/moving-platforms.html">Data gathered with small, moving platforms</a></li>
+<li><a href="../guide-special-cases/other-repositories.html">Provenance and data in other repositories</a></li>
+<li><a href="../guide-special-cases/large-offline.html">Very large datasets</a></li>
+</ul>
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-jones_ecological_2019" class="csl-entry" role="listitem">
-Jones, Matthew, Margaret O’Brien, Bryce Mecum, et al. 2019. <em>Ecological <span>Metadata</span> <span>Language</span> Version 2.2.0</em>. KNB Data Repository. <a href="https://doi.org/10.5063/F11834T2">https://doi.org/10.5063/F11834T2</a>.
-</div>
-<div id="ref-wilkinson_fair_2016" class="csl-entry" role="listitem">
-Wilkinson, Mark D., Michel Dumontier, IJsbrand Jan Aalbersberg, et al. 2016. <span>“The <span>FAIR</span> <span>Guiding</span> <span>Principles</span> for Scientific Data Management and Stewardship.”</span> <em>Scientific Data</em> 3 (1): 160018. <a href="https://doi.org/10.1038/sdata.2016.18">https://doi.org/10.1038/sdata.2016.18</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -907,4 +578,4 @@ Wilkinson, Mark D., Michel Dumontier, IJsbrand Jan Aalbersberg, et al. 2016. <sp
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/EDIorg/data-package-best-practices/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/EDIorg/data-package-best-practices/issues/new/choose" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/EDIorg/data-package-best-practices/edit/main/guide-special-cases/introduction.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/EDIorg/data-package-best-practices/issues/new/choose" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

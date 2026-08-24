@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Community-developed guides for preparing and publishing datasets in the environmental sciences, and similar contexts, using the Ecological Metadata Language (EML).">
 
-<title>Contributing – EDI Dataset Preparation Guides</title>
+<title>contributing – Environmental Dataset Preparation Guides</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -37,8 +36,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./guide-eml-bp/index.html" rel="next">
-<link href="./about.html" rel="prev">
 <link href="./img/edi-logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -46,10 +43,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-aced932c6eb97d642153b8e218288f9f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3d497cff885f6278d37568d0ef0763f8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-86f8048153e6ae009d1f633707c05d23.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -62,7 +59,6 @@ ul.task-list li input[type="checkbox"] {
     "/",
     "s"
   ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -81,10 +77,13 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <div id="quarto-announcement" data-announcement-id="9574d5bdefd86f026558808445c7f551" class="alert alert-primary hidden"><div class="quarto-announcement-content">
+<p><strong>Publication version</strong>: This content is under active community development. See <a href="https://prerelease-edi-docs.netlify.app/">here</a> for prerelease documents.</p>
+</div></div>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -93,198 +92,72 @@ ul.task-list li input[type="checkbox"] {
     <img src="./img/edi-logo.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">EDI Dataset Preparation Guides</span>
+    <span class="navbar-title">Environmental Dataset Preparation Guides</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools tools-end">
-    <a href="https://github.com/ediorg/data-package-best-practices" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">More</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-more">    
+        <li>
+    <a class="dropdown-item" href="./contributing.html">
+ <span class="dropdown-text">Contributing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./history.html">
+ <span class="dropdown-text">History and early versions</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/ediorg/data-package-best-practices" title="EDIorg GitHub repository" class="quarto-navigation-tool px-1" aria-label="EDIorg GitHub repository"><i class="bi bi-github"></i></a>
 </div>
-          <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./contributing.html"><span class="chapter-title">Contributing</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Overview</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">About</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./contributing.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Contributing</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./guide-eml-bp/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-eml-bp/preface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-eml-bp/introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1 Introduction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-eml-bp/content-recommendations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2 Content recommendations for Elements and Attributes</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./guide-special-cases/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Package Design for Special Cases</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-special-cases/preface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-special-cases/code.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1 Code</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-special-cases/model-based.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2 Model-Based Datasets</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-special-cases/images-and-docs.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3 Images and Documents as Data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-special-cases/spatial-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4 Spatial Data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-special-cases/moving-platforms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5 Data Gathered with Small Moving Platforms</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-special-cases/other-repositories.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6 Data in Other Repositories</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-special-cases/large-offline.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7 Large Data Sets</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./guide-domain-specific/preface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Scientific Domain-Specific Metadata Guide</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-domain-specific/ecocom.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ecological community survey data (ecocomDP)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-domain-specific/hymet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Hydrology and meteorology data (hymetDP)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide-domain-specific/soil-carbon.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Soil Carbon Data</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#branches" id="toc-branches" class="nav-link active" data-scroll-target="#branches">Branches</a></li>
+  <li><a href="#contributing" id="toc-contributing" class="nav-link active" data-scroll-target="#contributing">Contributing</a>
+  <ul class="collapse">
+  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
   <li><a href="#contributing-changes" id="toc-contributing-changes" class="nav-link" data-scroll-target="#contributing-changes">Contributing changes</a></li>
   <li><a href="#publishing-workflow" id="toc-publishing-workflow" class="nav-link" data-scroll-target="#publishing-workflow">Publishing workflow</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ediorg/data-package-best-practices/edit/main/contributing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ediorg/data-package-best-practices/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/EDIorg/data-package-best-practices/edit/main/contributing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/EDIorg/data-package-best-practices/issues/new/choose" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Contributing</span></h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
+<section id="contributing" class="level1">
+<h1>Contributing</h1>
 <p>The maintenance of this repository and development of the included documents is coordinated by EDI, with major updates and new content developed and approved through a community-oriented process. If you would like to help develop these documents please contact the maintainers and working group leads listed on the <a href="./about.html">About</a> page, or reach out to EDI at <a href="mailto:info@edirepository.org%3E">info@edirepository.org</a>. Some details on how contribution works are below.</p>
 <section id="branches" class="level2">
 <h2 class="anchored" data-anchor-id="branches">Branches</h2>
@@ -310,6 +183,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Both <code>main</code> and <code>prerelease</code> branches have GitHub Actions workflows configured to build and deploy their associated website any time new commits are pushed to that branch. The production site, derived from <code>main</code>, is published as a GitHub pages site (<a href="https://quarto.org/docs/publishing/github-pages.html#github-action">Quarto documentation</a>). The prerelease site, derived from the <code>prerelease</code> branch, is published to Netlify (<a href="https://quarto.org/docs/publishing/netlify.html#github-action">Quarto documentation</a>). The GitHub Actions publishing workflow for both branches is specified in the <a href=".github/workflows/publish.yml"><code>.github/workflows/publish.yml</code></a> file, which was modeled in part on the <a href="https://github.com/quarto-dev/quarto-web/blob/main/.github/workflows/publish.yml">Quarto website version</a>. When changes are pushed to either branch, please verify that the GitHub Action completed and the website and all documents were built as expected.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -713,21 +587,9 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./about.html" class="pagination-link" aria-label="About">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./guide-eml-bp/index.html" class="pagination-link" aria-label="Best Practices for Dataset Metadata in Ecological Metadata Language (EML)">
-        <span class="nav-page-text">Best Practices for Dataset Metadata in Ecological Metadata Language (EML)</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ediorg/data-package-best-practices/edit/main/contributing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ediorg/data-package-best-practices/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/EDIorg/data-package-best-practices/edit/main/contributing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/EDIorg/data-package-best-practices/issues/new/choose" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
