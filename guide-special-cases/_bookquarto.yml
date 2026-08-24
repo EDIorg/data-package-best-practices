@@ -1,0 +1,33 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  chapters:
+    - index.qmd
+    - code.qmd
+    - model-based.qmd
+    - images-and-docs.qmd
+    - spatial-data.qmd
+    - moving-platforms.qmd
+    - other-repositories.qmd
+    - large-offline.qmd
+
+
+execute:
+  freeze: auto
+
+bibliography: ../references.bib
+
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+  docx:
+    toc: true
+    number-sections: true
+    colorlinks: true
+
+
+

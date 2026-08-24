@@ -1,0 +1,28 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  chapters:
+    - index.qmd
+    - preface.qmd
+    - introduction.qmd
+    - content-recommendations.qmd
+
+execute:
+  freeze: auto
+
+bibliography: ../references.bib
+
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+  docx:
+    toc: true
+    number-sections: true
+    colorlinks: true
+
+
+

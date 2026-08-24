@@ -1,58 +1,89 @@
 project:
-  type: book
-  output-dir: _book
+  type: website
+  output-dir: _site
+  #pre-render: make allbooks
+  #post-render: make movebooks
 
-book:
-  title: "EDI Dataset Preparation Guides"
-  author: "Environmental Data Initiative and colleagues"
-  description: "Community-developed guides for preparing and publishing datasets in the environmental sciences, and similar contexts, using the Ecological Metadata Language (EML)."
-  date: "2022-05-25"
+
+website:
+  title: "Environmental Dataset Preparation Guides"
+  description: "Community-developed guides for preparing and publishing datasets in the environmental sciences, and similar contexts, using the Ecological Metadata Language (EML) and other standards."
   favicon: img/edi-logo.png
   site-url: https://ediorg.github.io/data-package-best-practices
-  repo-url: https://github.com/ediorg/data-package-best-practices
+  repo-url: https://github.com/EDIorg/data-package-best-practices
+  issue-url: https://github.com/EDIorg/data-package-best-practices/issues/new/choose
   repo-branch: main
   repo-actions: [edit, issue]
+  page-navigation: true
+  bread-crumbs: true
+  announcement: 
+    content: "**Publication version**: This content is under active community development. See [here](https://prerelease-edi-docs.netlify.app/) for prerelease documents." 
+    position: above-navbar
+    dismissable: false
+    type: primary
+  search:
+    location: navbar
   navbar:
-    search: true
     logo: img/edi-logo.png
-  chapters:
-    - index.qmd
-    - about.qmd
-    - contributing.qmd
+    background: light
+    left:
+      - text: Home
+        href: index.qmd
+      - text: About
+        href: about.qmd
+      - text: More
+        menu:
+          - contributing.qmd
+          - history.qmd
+    tools:
+      - icon: github
+        href: https://github.com/ediorg/data-package-best-practices
+        text: EDIorg GitHub repository
 
-    - part: guide-eml-bp/index.qmd
-      chapters:
-        - file: guide-eml-bp/preface.qmd
-        - text: 1 Introduction
-          file: guide-eml-bp/introduction.qmd
-        - text: 2 Content recommendations for Elements and Attributes
-          file: guide-eml-bp/content-recommendations.qmd
-
-    - part: guide-special-cases/index.qmd
-      chapters: 
-        - guide-special-cases/preface.qmd
-        - text: 1 Code
-          file: guide-special-cases/code.qmd
-        - text: 2 Model-Based Datasets
-          file: guide-special-cases/model-based.qmd
-        - text: 3 Images and Documents as Data
-          file: guide-special-cases/images-and-docs.qmd
-        - text: 4 Spatial Data
-          file: guide-special-cases/spatial-data.qmd
-        - text: 5 Data Gathered with Small Moving Platforms
-          file: guide-special-cases/moving-platforms.qmd
-        - text: 6 Data in Other Repositories
-          file: guide-special-cases/other-repositories.qmd
-        - text: 7 Large Data Sets
-          file: guide-special-cases/large-offline.qmd
-
-    - part: guide-domain-specific/preface.qmd
-      chapters:
-        - guide-domain-specific/ecocom.qmd
-        - guide-domain-specific/hymet.qmd
-        - guide-domain-specific/soil-carbon.qmd
-    - references.qmd
-
+  sidebar:
+    - id: alldocs
+      style: floating
+      title: "Guides"
+      collapse-level: 1
+      contents:
+        - section: "EML Best Practices"
+          href: guide-eml-bp/index.qmd
+          contents:
+            - href: guide-eml-bp/preface.qmd
+            - href: guide-eml-bp/introduction.qmd
+              text: "1. Introduction"
+            - href: guide-eml-bp/content-recommendations.qmd
+              text: "2. Content recommendations for Elements and Attributes"
+        - section: "Dataset Design for Special Cases"
+          href: guide-special-cases/index.qmd
+          contents: 
+            - href: guide-special-cases/code.qmd
+              text: "1. Code"
+            - href: guide-special-cases/model-based.qmd
+              text: "2. Model-based datasets"
+            - href: guide-special-cases/images-and-docs.qmd
+              text: "3. Images and documents as data"
+            - href: guide-special-cases/spatial-data.qmd
+              text: "4. Spatial data"
+            - href: guide-special-cases/moving-platforms.qmd
+              text: "5. Data gathered with small moving platforms"
+            - href: guide-special-cases/other-repositories.qmd
+              text: "6. Data in other repositories"
+            - href: guide-special-cases/large-offline.qmd
+              text: "7. Large datasets"
+        - section: "Domain-Specific Guides"
+          href: guide-domain-specific/about-domain-specific.qmd
+          contents:
+            - guide-domain-specific/ecocom.qmd
+            - guide-domain-specific/hymet.qmd
+            - guide-domain-specific/soil-carbon.qmd
+    - id: archivedocs
+      style: floating
+      title: "Archived Guides"
+      collapse-level: 2
+      contents:
+        - section: "EML Best Practices v3 (Archived)"
+          href: archive/emlbestpractices-v3.pdf
 execute:
   freeze: auto
 
@@ -61,9 +92,9 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
-    number-sections: false   
-#  pdf:
-#    documentclass: scrreprt
-
-
+    highlight-style: pygments
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+    fontsize: 1.0em
+    toc: true
 

@@ -29,6 +29,8 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
 
       - name: Render and Publish
         #if: ${{ format('{0}', inputs.prerelease) == 'false' }}

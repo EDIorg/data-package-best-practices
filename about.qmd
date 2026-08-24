@@ -1,6 +1,6 @@
 # About {.unnumbered}
 
-This website and the content it contains are a collaborative project of the Environmental Data Initiative (EDI) and numerous community partners and individuals. The intended audience is researchers, data managers, and repository users working in the environmental science and management fields.
+This website and the content it contains are a collaborative project of the Long-term Ecological Research Network, the Environmental Data Initiative (EDI), and numerous community partners and individuals. The intended audience is researchers, data managers, and repository users working in the environmental science and management fields.
 
 ## The website
 
