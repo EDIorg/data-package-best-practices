@@ -1,4 +1,15 @@
-# Soil Carbon
+---
+title: Soil Carbon Data
+date: last-modified
+author:
+  - name: Stevan Earl?
+    affiliation: Arizona State University
+    orcid: 0000-0002-4465-452X
+    roles: [conceptualization, writing, editing]
+description: Work in progress. This will describe a community-supported standard for creating harmonized soil carbon datasets. 
+categories: placeholder 
+image: ../img/journal-text.svg
+---
 
 ## Introduction
 Page desribing BPs for data packages about soil carbon. it will probably have links out for details.

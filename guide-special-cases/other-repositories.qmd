@@ -1,6 +1,6 @@
 # Data in Other Repositories
 
-Contributors: Greg Maurer (lead), Stace Beaulieu, RenÃ©e Brown, Sarah Elmendorf,  Hap Garritt, Gastil Gastil-Buhl, Corinna Gries, Li Kui, An Nguyen, John Porter, Margaret O'Brien, Tim Whiteaker
+Contributors: Greg Maurer (lead), Stace Beaulieu, Renée Brown, Sarah Elmendorf,  Hap Garritt, Gastil Gastil-Buhl, Corinna Gries, Li Kui, An Nguyen, John Porter, Margaret O'Brien, Tim Whiteaker
 
 ## Introduction
 

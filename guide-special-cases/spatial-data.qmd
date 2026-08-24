@@ -4,7 +4,7 @@ Contributors: Tim Whiteaker, John Porter, Mary Martin
 
 ## Introduction
 
-This document/chapter contains recommendations on data package structure and metadata for spatial datasets. Over the timeline of Long Term Ecological Research (LTER) Network?s use of the Ecological Metadata Language (EML), both spatial data formats and data curation options have evolved. In this document, focus on best practices that can be widely adopted with the goal of enhancing data discoverability and usability, and the understanding that there are multiple solutions to creating these data packages.
+This document/chapter contains recommendations on data package structure and metadata for spatial datasets. Over the timeline of Long Term Ecological Research (LTER) Network's use of the Ecological Metadata Language (EML), both spatial data formats and data curation options have evolved. In this document, focus on best practices that can be widely adopted with the goal of enhancing data discoverability and usability, and the understanding that there are multiple solutions to creating these data packages.
 
 ## Recommendations for data packages
 
@@ -60,7 +60,7 @@ There is a noticeable divergence in EDI spatial data packages, specifically, in 
   * LTER has built applications based on spatial[Raster,Vector] entities
 * Cons
   * Data may not originate in ArcGIS, requiring a custom workflow to generate spatial entity EML
-  * Spatial[Raster,Vector] can?t describe multi-layer aggregates of GIS data (e.g.,  geodatabases containing multiple feature classes)
+  * Spatial[Raster,Vector] can't describe multi-layer aggregates of GIS data (e.g.,  geodatabases containing multiple feature classes)
 
 #### Keywords
 
