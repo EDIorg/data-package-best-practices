@@ -1,8 +1,8 @@
 project:
   type: website
   output-dir: _site
-  #pre-render: make allbooks
-  #post-render: make movebooks
+  pre-render: make allbooks
+  post-render: make movebooks
 
 
 website:
