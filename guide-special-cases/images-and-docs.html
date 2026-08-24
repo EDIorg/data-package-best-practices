@@ -168,8 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contributing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contributing</span></a>
+  <a href="../contributing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Contributing</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -262,17 +261,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../guide-domain-specific/ecocom.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ecological community surveys</span></a>
+  <a href="../guide-domain-specific/ecocom.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ecological community survey data (ecocomDP)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../guide-domain-specific/hymet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Hydrology and Meteorology Data</span></a>
+  <a href="../guide-domain-specific/hymet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Hydrology and meteorology data (hymetDP)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../guide-domain-specific/soil-carbon.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Soil Carbon</span></a>
+  <a href="../guide-domain-specific/soil-carbon.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Soil Carbon Data</span></a>
   </div>
 </li>
       </ul>
@@ -330,7 +329,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Contributors: Renee F. Brown (lead), Stace Beaulieu, Sarah Elmendorf, Gastil Gastil-Buhl, Corinna Gries, Li Kui, Mary Martin, Greg Maurer, John Porter, Tim Whiteaker</p>
+<p>Contributors: Renée F. Brown (lead), Stace Beaulieu, Sarah Elmendorf, Gastil Gastil-Buhl, Corinna Gries, Li Kui, Mary Martin, Greg Maurer, John Porter, Tim Whiteaker</p>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>This chapter describes best practices for archiving images and other documents as data. The <a href="http://purl.obolibrary.org/obo/IAO_0000101">Environment Ontology (ENVO)</a> defines a document as ‘<em>a collection of information content entities intended to be understood together as a whole</em>.’ Common examples include still images, audio and/or video multimedia files, field notebooks, written interview notes or transcribed oral accounts, historical document collections, and ‘paper’ maps (non-digitized maps). For images that are already handled by specialized repositories (e.g., phenocam images, specimen images) refer to <a href="data-in-other-repositories.html">Data in Other Repositories</a>, for additional information on how to handle images from uncrewed (underwater or aerial) vehicles refer to <a href="data-gathered-with-small-moving-platforms.html">Data Gathered with Small Moving Platforms</a>, and for geospatial imagery refer to <a href="spatial-data.html">Spatial Data</a>.</p>
@@ -378,10 +377,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">entityType</span>&gt;application/pdf&lt;/<span class="kw">entityType</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">otherEntity</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The EML metadata should also include appropriate keywords describing the general purpose of the document or compressed archive (e.g., ice phenology, community composition, stream hydrology, etc.). For example, for still images, it is recommended to include keyword: image with the semantic annotation from the Information Artifact Ontology (IAO) :</p>
-<pre><code>**Term IRI:** [http://purl.obolibrary.org/obo/IAO_0000101](http://purl.obolibrary.org/obo/IAO_0000101)
-
-
-**Definition:** An image is an affine projection to a two dimensional surface, of measurements of some quality of an entity or entities repeated at regular intervals across a spatial range, where the measurements are represented as color and luminosity on the projected surface.</code></pre>
+<blockquote class="blockquote">
+<p><strong>Term IRI:</strong> <a href="http://purl.obolibrary.org/obo/IAO_0000101">http://purl.obolibrary.org/obo/IAO_0000101</a></p>
+<p><strong>Definition:</strong> An image is an affine projection to a two dimensional surface, of measurements of some quality of an entity or entities repeated at regular intervals across a spatial range, where the measurements are represented as color and luminosity on the projected surface.</p>
+</blockquote>
 <p>Note, IAO includes at least one subcategory for image (e.g., <a href="http://www.ontobee.org/ontology/IAO?iri=http://purl.obolibrary.org/obo/IAO_0000185">photograph</a>). It is recommended the most specific applicable concept be used.</p>
 </section>
 <section id="data-inventory-table" class="level4">
@@ -535,13 +534,13 @@ Compressed archive containing 410 audio files in wav format. Includes data inven
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
 <section id="considerations-for-digitizing-documents" class="level3">
 <h3 class="anchored" data-anchor-id="considerations-for-digitizing-documents">Considerations for digitizing documents</h3>
-<p>Following are some general considerations and recommendations for digitizing paper or other ‘hard-copy’ documents for archival. This is not meant to be an exhaustive list. For further and more detailed information, please refer to the U.S. National Archives and Records Administration (NARA)â€™s <em><a href="https://www.archives.gov/files/preservation/technical/guidelines.pdf">Technical Guidelines for Digitizing Archival Materials for Electronic Access</a></em>.</p>
+<p>Following are some general considerations and recommendations for digitizing paper or other ‘hard-copy’ documents for archival. This is not meant to be an exhaustive list. For further and more detailed information, please refer to the U.S. National Archives and Records Administration (NARA) <em><a href="https://www.archives.gov/files/preservation/technical/guidelines.pdf">Technical Guidelines for Digitizing Archival Materials for Electronic Access</a></em>.</p>
 <ul>
 <li><strong>Effort.</strong> The decision to digitize documents, as well as the digitization method, involves trade-offs in the accessibility and ease of using particular hardware and/or software technologies, the quality of the digitization, and the overall effort spent. Digitization efforts may be significant, for example, when dealing with a large number of documents requiring meaningful file names, text recognition, and/or high resolution for improved accessibility.</li>
 <li><strong>Equipment.</strong> Instruments for digitizing hard-copy documents range from high resolution scanners (less accessible, less user-friendly, more expensive, better quality) to smartphone cameras (ubiquitous, easy-to-use, lower quality). For example, taking a smartphone image in the field may be utilized for quick and easy digitization of field notes.</li>
 <li><strong>Document resolution and file size.</strong> This is an important consideration that should be guided by the content and purpose of the document. Detailed paper maps should probably be scanned at high resolution and large file size, while field sheets may not need as much detail.</li>
 <li><strong>Optical Character Recognition (OCR):</strong> When digitizing documents that include text, we recommend using scanning or other software with OCR capabilities (e.g., Adobe, ABBYY, Tesseract) to convert the text into machine readable characters so that the documents are searchable and thus, more usable. OCR does not work well for handwritten text, older fonts, or documents with busy backgrounds (speckled, dirty, faded, etc.).</li>
-<li><strong>Sensitive Information and Human Subjects:</strong> Regardless of the digitization method, one should be mindful of sensitive information that shouldnâ€™t be archived or otherwise redacted (e.g., photographs of human subjects, field notebooks containing personal messages, gate combinations, and/or telephone numbers). In all cases in which human subjects are involved, Institutional Review Board (IRB) restrictions must be heeded. A signed IRB consent form for the associated research project represents a contract between researcher and human subject. It is important to note that IRB restrictions can differ among research studies within the same project. For further information, see the <a href="https://edirepository.org/about/edi-policy#sensitive-data">EDI Data Initiative Data Policy</a>.</li>
+<li><strong>Sensitive Information and Human Subjects:</strong> Regardless of the digitization method, one should be mindful of sensitive information that shouldn’t be archived or otherwise redacted (e.g., photographs of human subjects, field notebooks containing personal messages, gate combinations, and/or telephone numbers). In all cases in which human subjects are involved, Institutional Review Board (IRB) restrictions must be heeded. A signed IRB consent form for the associated research project represents a contract between researcher and human subject. It is important to note that IRB restrictions can differ among research studies within the same project. For further information, see the <a href="https://edirepository.org/about/edi-policy#sensitive-data">EDI Data Initiative Data Policy</a>.</li>
 </ul>
 <p>While transcription is a digitization method that can be performed on certain types of documents (e.g., audio/video recordings, field notebooks) and can enhance search capabilities, transcript generation requires substantially more effort than other digitization methods, and is prone to error. Moreover, in the case where the original documents contain drawings, transcripts may be incomplete or otherwise inaccurate. <em>Thus, we recommend digitizing documents by other means, using the considerations described above.</em></p>
 

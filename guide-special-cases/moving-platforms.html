@@ -27,7 +27,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -133,8 +152,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contributing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contributing</span></a>
+  <a href="../contributing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Contributing</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -227,17 +245,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../guide-domain-specific/ecocom.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ecological community surveys</span></a>
+  <a href="../guide-domain-specific/ecocom.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ecological community survey data (ecocomDP)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../guide-domain-specific/hymet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Hydrology and Meteorology Data</span></a>
+  <a href="../guide-domain-specific/hymet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Hydrology and meteorology data (hymetDP)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../guide-domain-specific/soil-carbon.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Soil Carbon</span></a>
+  <a href="../guide-domain-specific/soil-carbon.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Soil Carbon Data</span></a>
   </div>
 </li>
       </ul>
@@ -268,7 +286,6 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#tips-and-tricks" id="toc-tips-and-tricks" class="nav-link" data-scroll-target="#tips-and-tricks">Tips and Tricks</a></li>
   <li><a href="#semantic-annotation" id="toc-semantic-annotation" class="nav-link" data-scroll-target="#semantic-annotation">Semantic Annotation</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ediorg/data-package-best-practices/edit/main/guide-special-cases/moving-platforms.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ediorg/data-package-best-practices/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -326,7 +343,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="examples-and-additional-metadata-guidance" class="level3">
 <h3 class="anchored" data-anchor-id="examples-and-additional-metadata-guidance">Examples and additional metadata guidance</h3>
-<p>Several EDI data packages for data from moving platforms are presented as examples in Table 1. Many more detailed, ?drone-specific? metadata terms and values can be included in data packages for drones and other moving platforms. For completeness we have developed a comprehensive list of recommended and optional metadata terms based on the work of Wyngaard et al.&nbsp;(2019), Thorner et al.&nbsp;(2020), with mappings to select relevant ontologies, viewable <a href="https://docs.google.com/spreadsheets/d/1PQ0SUEQLgQXdz2PUNDy2jGry3o9veAedcz8l-5ubpwU">here</a>. For each metadata element, we assessed its utility in terms of data discovery, evaluating fitness for use, and actual data reuse. The minimum recommended subsets of metadata that are included in the section above were derived from this table.</p>
+<p>Several EDI data packages for data from moving platforms are presented as examples in Table 1. Many more detailed, ?drone-specific? metadata terms and values can be included in data packages for drones and other moving platforms. For completeness we have developed a comprehensive list of recommended and optional metadata terms based on the work of Wyngaard et al. <span class="citation" data-cites="wyngaard_emergent_2019">(<a href="../references.html#ref-wyngaard_emergent_2019" role="doc-biblioref">2019</a>)</span>, Thomer et al. <span class="citation" data-cites="thomer_minimum_2020">(<a href="../references.html#ref-thomer_minimum_2020" role="doc-biblioref">2020</a>)</span>, with mappings to select relevant ontologies, viewable <a href="https://docs.google.com/spreadsheets/d/1PQ0SUEQLgQXdz2PUNDy2jGry3o9veAedcz8l-5ubpwU">here</a>. For each metadata element, we assessed its utility in terms of data discovery, evaluating fitness for use, and actual data reuse. The minimum recommended subsets of metadata that are included in the section above were derived from this table.</p>
 <p>Table 1. Example packages at EDI and other repositories</p>
 <table>
 <tbody><tr>
@@ -396,13 +413,16 @@ infrared, multispectral, visual image data, and derivative products (orthomosaic
 <section id="semantic-annotation" class="level3">
 <h3 class="anchored" data-anchor-id="semantic-annotation">Semantic Annotation</h3>
 <p>Semantic annotation of drone imagery is a rapidly developing field. Ontologies that provide relevant terms include: <a href="http://www.dronetology.net/">dronetology</a>; <a href="http://www.sensorml.com/ontologies.html">sensorML</a>; <a href="https://www.fgdc.gov/metadata/csdgm/">FGDC content standard for digital geospatial metadata</a> (not officially an ontology but a structured metadata format with defined terms); <a href="https://www.w3.org/TR/vocab-ssn/">Semantic Sensor Network ontology</a> (SSN, including the SOSA core); <a href="https://bioportal.bioontology.org/ontologies/SWEET">Semantic Web for Earth and Environment Technology ontology</a> (SWEET); and <a href="http://www.obofoundry.org/ontology/envo.html">Environment Ontology</a>.</p>
-</section>
-<section id="references" class="level3">
-<h3 class="anchored" data-anchor-id="references">References</h3>
-<p>Thomer, Andrea K., Swanz, Sarah, Barbieri, Lindsay, Wyngaard, Jane. (2020). A minimum information framework the FAIR collection of earth and environmental science data with drones. DOI: 10.5281/zenodo.4017647</p>
-<p>Wyngaard, J.; Barbieri, L.; Thomer, A.; Adams, J.; Sullivan, D.; Crosby, C.; Parr, C.; Klump, J.; Raj Shrestha, S.; Bell, T. Emergent Challenges for Science sUAS Data Management: Fairness through Community Engagement and Best Practices Development. <em>Remote Sens.</em> <strong>2019</strong>, <em>11</em>, 1797.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-thomer_minimum_2020" class="csl-entry" role="listitem">
+Thomer, Andrea, Sarah Swanz, Lindsay Barbieri, and Jane Wyngaard. 2020. <em>A Minimum Information Framework the <span>FAIR</span> Collection of Earth and Environmental Science Data with Drones</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.4124167">https://doi.org/10.5281/zenodo.4124167</a>.
+</div>
+<div id="ref-wyngaard_emergent_2019" class="csl-entry" role="listitem">
+Wyngaard, Jane, Lindsay Barbieri, Andrea Thomer, et al. 2019. <span>“Emergent <span>Challenges</span> for <span>Science</span> <span class="nocase">sUAS</span> <span>Data</span> <span>Management</span>: <span>Fairness</span> Through <span>Community</span> <span>Engagement</span> and <span>Best</span> <span>Practices</span> <span>Development</span>.”</span> <em>Remote Sensing</em> 11 (15): 1797. <a href="https://doi.org/10.3390/rs11151797">https://doi.org/10.3390/rs11151797</a>.
+</div>
+</div>
 </section>
 </section>
 

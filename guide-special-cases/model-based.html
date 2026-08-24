@@ -62,7 +62,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -168,8 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contributing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contributing</span></a>
+  <a href="../contributing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Contributing</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -262,17 +280,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../guide-domain-specific/ecocom.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ecological community surveys</span></a>
+  <a href="../guide-domain-specific/ecocom.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ecological community survey data (ecocomDP)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../guide-domain-specific/hymet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Hydrology and Meteorology Data</span></a>
+  <a href="../guide-domain-specific/hymet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Hydrology and meteorology data (hymetDP)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../guide-domain-specific/soil-carbon.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Soil Carbon</span></a>
+  <a href="../guide-domain-specific/soil-carbon.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Soil Carbon Data</span></a>
   </div>
 </li>
       </ul>
@@ -399,7 +417,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Very large model inputs/outputs may need to be archived offline. Refer to <a href="large-data-sets.html">best practices for offline data</a>.</p>
 <p>If the model requires a specific folder structure, you can zip model input files within the package to preserve that folder structure. A disadvantage of this approach is that you cannot elegantly describe each file with EML.</p>
 <p>The <a href="https://modeldatarcn.github.io/#project-description">EarthCube Research Coordination Network, “What About Model Data?” group</a> is working on a rubric to help you determine how much model output data to save, based on assorted criteria on reproducibility/value of the data. Learn more about that group and their rubric on their <a href="https://modeldatarcn.github.io/">Model Data RCN website</a>.</p>
-<p>Researchers at the Department of Energyâ€™s Environmental Systems Science are also working on assessing model archiving needs. In <a href="https://eartharxiv.org/repository/view/260/">this preprint</a>, Simmonds et al.&nbsp;2020 discuss feedback from communications with modellers and propose preliminary solutions. With regards to input/output data, their feedback indicates two opposite opinions: some feel the whole gamut of raw to aggregated outputs needs to be archived, while others advocate for only high-level outputs corresponding to publication figures. They also found that spin-up simulations were not considered a high priority for archiving. See section 2.3 What is worth archiving and for how long does it remain useful?</p>
+<p>Researchers at the Department of Energy’s Environmental Systems Science are also working on assessing model archiving needs. In their preprint, Simmonds et al. <span class="citation" data-cites="simmonds_addressing_2020">(<a href="../references.html#ref-simmonds_addressing_2020" role="doc-biblioref">2020</a>)</span> discuss feedback from communications with modellers and propose preliminary solutions. With regards to input/output data, their feedback indicates two opposite opinions: some feel the whole gamut of raw to aggregated outputs needs to be archived, while others advocate for only high-level outputs corresponding to publication figures. They also found that spin-up simulations were not considered a high priority for archiving. See section 2.3 What is worth archiving and for how long does it remain useful?</p>
 </section>
 <section id="model-parameters" class="level3">
 <h3 class="anchored" data-anchor-id="model-parameters">Model parameters</h3>
@@ -458,11 +476,17 @@ Dataset to run a 37-year simulation (1979-2015) of the Lake Mendota lake ecosyst
 </section>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
-<p>Janssen, Marco A., Lilian Na’ia Alessa, Michael Barton, Sean Bergin and Allen Lee (2008). â€˜Towards a Community Framework for Agent-Based Modellingâ€™. Journal of Artificial Societies and Social Simulation 11(2)6 <a href="http://jasss.soc.surrey.ac.uk/11/2/6.html">http://jasss.soc.surrey.ac.uk/11/2/6.html</a>.</p>
-<p>Simmonds, Maegen, William J. Riley, Shreyas Cholia, and Charuleka Varadharajan (2020). ‘Addressing Model Data Archiving Needs for the Department of Energyâ€™s Environmental Systems Science Community’. EarthArXiv (preprint). <a href="https://doi.org/10.31223/osf.io/acdk4">https://doi.org/10.31223/osf.io/acdk4</a>.</p>
-<p>See sections 2.3 What is worth archiving and for how long does it remain useful?, discussed above, plus 2.4 Model data archiving protocol, where the authors argue for better standardized reporting format for model data, e.g., top-level metadata and directory structure at a minimum. Section 4.1 Developing Model Data Archiving Guidelines proposes an organization scheme for model data.</p>
+<p>See Janssen et al <span class="citation" data-cites="marco_a_janssen_towards_2008">(<a href="../references.html#ref-marco_a_janssen_towards_2008" role="doc-biblioref">2008</a>)</span> for general discussion of modeling data archiving frameworks. In the Simmonds paper <span class="citation" data-cites="simmonds_addressing_2020">(<a href="../references.html#ref-simmonds_addressing_2020" role="doc-biblioref">2020</a>)</span> mentioned above, see sections 2.3 What is worth archiving and for how long does it remain useful?, discussed above, plus 2.4 Model data archiving protocol, where the authors argue for better standardized reporting format for model data, e.g., top-level metadata and directory structure at a minimum. Section 4.1 Developing Model Data Archiving Guidelines proposes an organization scheme for model data.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-marco_a_janssen_towards_2008" class="csl-entry" role="listitem">
+Marco A. Janssen, Lilian Na’ia Alessa. 2008. <em>Towards a <span>Community</span> <span>Framework</span> for <span>Agent</span>-<span>Based</span> <span>Modelling</span></em>. Text.{Article}. <a href="https://www.jasss.org/11/2/6.html">https://www.jasss.org/11/2/6.html</a>.
+</div>
+<div id="ref-simmonds_addressing_2020" class="csl-entry" role="listitem">
+Simmonds, Maegen, William J. Riley, Shreyas Cholia, and Charuleka Varadharajan. 2020. <em>Addressing <span>Model</span> <span>Data</span> <span>Archiving</span> <span>Needs</span> for the <span>Department</span> of <span>Energy</span>’s <span>Environmental</span> <span>Systems</span> <span>Science</span> <span>Community</span></em>. May. <a href="https://eartharxiv.org/repository/view/260/">https://eartharxiv.org/repository/view/260/</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

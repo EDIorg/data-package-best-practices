@@ -168,8 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contributing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contributing</span></a>
+  <a href="../contributing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Contributing</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -262,17 +261,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../guide-domain-specific/ecocom.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ecological community surveys</span></a>
+  <a href="../guide-domain-specific/ecocom.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ecological community survey data (ecocomDP)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../guide-domain-specific/hymet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Hydrology and Meteorology Data</span></a>
+  <a href="../guide-domain-specific/hymet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Hydrology and meteorology data (hymetDP)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../guide-domain-specific/soil-carbon.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Soil Carbon</span></a>
+  <a href="../guide-domain-specific/soil-carbon.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Soil Carbon Data</span></a>
   </div>
 </li>
       </ul>
@@ -338,7 +337,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Contributors: Margaret O’Brien, Corinna Gries, Mark Servilla</p>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Data entities are kept offline when they are too large to be handled easily by the HTTP protocol, are expected to be rarely requested, and can be mailed on an external drive. If you suspect your data fall into this category, contact EDI for advice (support@edirepository.org). Below are recommendations for the EDI repository’s handling of data packages that have an offline component.</p>
+<p>Data entities are kept offline when they are too large to be handled easily by the HTTP protocol, are expected to be rarely requested, and can be mailed on an external drive. If you suspect your data fall into this category, contact EDI for advice (<a href="mailto:support@edirepository.org" class="email">support@edirepository.org</a>). Below are recommendations for the EDI repository’s handling of data packages that have an offline component.</p>
 <section id="background" class="level3">
 <h3 class="anchored" data-anchor-id="background">Background</h3>
 <p>Standard practice is to handle data entities (both upload and download) via the HTTP protocol, using a URL. However, for very large datasets HTTP can fail due to physical limits. The limit for “too large” is somewhat subjective; EDI’s current limit for datasets that are “too large for HTTP” is 100GB (all data and metadata).</p>
@@ -399,7 +398,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Offline Entity:
 <ul>
-<li>Describe as you would for an online resource. Restate the software needed to read the individual files if this is important to a user. See <a href="#table_1">Table 1</a> and <a href="#sample_xml_offline">Sample XML</a>.</li>
+<li>Describe as you would for an online resource. Restate the software needed to read the individual files if this is important to a user. See <a href="#tbl-1" class="quarto-xref">Table&nbsp;<span>10.1</span></a> and <a href="#lst-xml-offline">Sample XML</a>.</li>
 </ul></li>
 <li>Manifest (inventory of the offline holdings)
 <ul>
@@ -419,52 +418,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Distribution node will be <code>offline</code> (See Table 1, code block)</li>
 </ul></li>
 </ul>
-<section id="table_1" class="level4">
-<h4 class="anchored" data-anchor-id="table_1">Table 1. Three required fields for an offline distribution</h4>
-<table>
-<tbody><tr>
-<td>
-physical/objectName
-</td>
-<td>
-As for any entity, this is the name of the file or data object
-</td>
+<div id="tbl-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;10.1: Three required fields for an offline distribution
+</figcaption>
+<div aria-describedby="tbl-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>EML element</th>
+<th>Offline data purpose</th>
 </tr>
-<tr>
-<td>
-dataFormat/ExternallyDefinedFormat/formatName
-</td>
-<td>
-The name of the format the data object is in. If there is a special compression applied, list it here.
-</td>
+</thead>
+<tbody>
+<tr class="odd">
+<td>physical/objectName</td>
+<td>As for any entity, this is the name of the file or data object</td>
 </tr>
-<tr>
-<td>
-distribution/offline/mediumName
-</td>
-<td>
-Instead of a data URL, you will have an offline distribution node. The name of almost all offline media is “external drive”, because that is how you will deliver the data to a requestor.
-</td>
+<tr class="even">
+<td>dataFormat/ExternallyDefinedFormat/formatName</td>
+<td>The name of the format the data object is in. If there is a special compression applied, list it here.</td>
 </tr>
-</tbody></table>
-</section>
-<section id="sample_xml_offline" class="level4">
-<h4 class="anchored" data-anchor-id="sample_xml_offline">Sample XML, offline entity</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">physical</span>&gt;</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">objectName</span>&gt;mainl_2005acc.zip&lt;/<span class="kw">objectName</span>&gt;</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">externallyDefinedFormat</span>&gt;</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">formatName</span>&gt;netCDF file&lt;/<span class="kw">formatName</span>&gt;</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">externallyDefinedFormat</span>&gt;</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">dataFormat</span>&gt;</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">distribution</span>&gt;</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">offline</span>&gt;</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">mediumName</span>&gt;External drive&lt;/<span class="kw">mediumName</span>&gt;</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">offline</span>&gt;</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">distribution</span>&gt;</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">physical</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
+<tr class="odd">
+<td>distribution/offline/mediumName</td>
+<td>Instead of a data URL, you will have an offline distribution node. The name of almost all offline media is “external drive”, because that is how you will deliver the data to a requestor.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>Example 1.</strong> Sample XML, offline entity</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="lst-xml-offline"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="lst-xml-offline-1"><a href="#lst-xml-offline-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">physical</span>&gt;</span>
+<span id="lst-xml-offline-2"><a href="#lst-xml-offline-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">objectName</span>&gt;mainl_2005acc.zip&lt;/<span class="kw">objectName</span>&gt;</span>
+<span id="lst-xml-offline-3"><a href="#lst-xml-offline-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">dataFormat</span>&gt;</span>
+<span id="lst-xml-offline-4"><a href="#lst-xml-offline-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">externallyDefinedFormat</span>&gt;</span>
+<span id="lst-xml-offline-5"><a href="#lst-xml-offline-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">formatName</span>&gt;netCDF file&lt;/<span class="kw">formatName</span>&gt;</span>
+<span id="lst-xml-offline-6"><a href="#lst-xml-offline-6" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">externallyDefinedFormat</span>&gt;</span>
+<span id="lst-xml-offline-7"><a href="#lst-xml-offline-7" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">dataFormat</span>&gt;</span>
+<span id="lst-xml-offline-8"><a href="#lst-xml-offline-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">distribution</span>&gt;</span>
+<span id="lst-xml-offline-9"><a href="#lst-xml-offline-9" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">offline</span>&gt;</span>
+<span id="lst-xml-offline-10"><a href="#lst-xml-offline-10" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">mediumName</span>&gt;External drive&lt;/<span class="kw">mediumName</span>&gt;</span>
+<span id="lst-xml-offline-11"><a href="#lst-xml-offline-11" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">offline</span>&gt;</span>
+<span id="lst-xml-offline-12"><a href="#lst-xml-offline-12" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">distribution</span>&gt;</span>
+<span id="lst-xml-offline-13"><a href="#lst-xml-offline-13" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">physical</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="references" class="level2">

@@ -107,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./contributing.html">Contributing</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./contributing.html"><span class="chapter-title">Contributing</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -133,8 +133,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./contributing.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Contributing</span></a>
+  <a href="./contributing.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Contributing</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -227,17 +226,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./guide-domain-specific/ecocom.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ecological community surveys</span></a>
+  <a href="./guide-domain-specific/ecocom.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ecological community survey data (ecocomDP)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./guide-domain-specific/hymet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Hydrology and Meteorology Data</span></a>
+  <a href="./guide-domain-specific/hymet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Hydrology and meteorology data (hymetDP)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./guide-domain-specific/soil-carbon.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Soil Carbon</span></a>
+  <a href="./guide-domain-specific/soil-carbon.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Soil Carbon Data</span></a>
   </div>
 </li>
       </ul>
@@ -269,7 +268,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Contributing</h1>
+<h1 class="title"><span class="chapter-title">Contributing</span></h1>
 </div>
 
 
@@ -308,7 +307,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="publishing-workflow" class="level2">
 <h2 class="anchored" data-anchor-id="publishing-workflow">Publishing workflow</h2>
-<p>Both <code>main</code> and <code>prerelease</code> branches have GitHub Actions workflows configured to build and deploy their associated website any time new commits are pushed to that branch. The production site, derived from <code>main</code>, is published as a GitHub pages site (<a href="https://quarto.org/docs/publishing/github-pages.html#github-action">Quarto documentation</a>). The prerelease site, derived from the <code>prerelease</code> branch, is published to Netlify (<a href="https://quarto.org/docs/publishing/netlify.html#github-action">Quarto documentation</a>). The GitHub Actions publishing workflow for both branches is specified in the <a href=".github/workflows/publish.yml"><code>.github/workflows/publish.yml</code></a> file, which was modeled in part on the <a href="https://github.com/quarto-dev/quarto-web/blob/main/.github/workflows/publish.yml">Quarto website version</a>. When changes are pushed to either branch, please verify that the GitHub action completed and the website and all documents were built as expected.</p>
+<p>Both <code>main</code> and <code>prerelease</code> branches have GitHub Actions workflows configured to build and deploy their associated website any time new commits are pushed to that branch. The production site, derived from <code>main</code>, is published as a GitHub pages site (<a href="https://quarto.org/docs/publishing/github-pages.html#github-action">Quarto documentation</a>). The prerelease site, derived from the <code>prerelease</code> branch, is published to Netlify (<a href="https://quarto.org/docs/publishing/netlify.html#github-action">Quarto documentation</a>). The GitHub Actions publishing workflow for both branches is specified in the <a href=".github/workflows/publish.yml"><code>.github/workflows/publish.yml</code></a> file, which was modeled in part on the <a href="https://github.com/quarto-dev/quarto-web/blob/main/.github/workflows/publish.yml">Quarto website version</a>. When changes are pushed to either branch, please verify that the GitHub Action completed and the website and all documents were built as expected.</p>
 
 
 </section>
