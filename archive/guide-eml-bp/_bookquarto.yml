@@ -19,11 +19,11 @@ format:
     toc: true
     number-sections: true
     colorlinks: true
-    output-file: "guide-eml-bp_v3.1"
-    output-ext:  "pdf"
+    # Currently has no effect (?) so renaming in Makefile
+    output-file: "guide-eml-bp_v3.1.pdf"
   docx:
     toc: true
     number-sections: true
     colorlinks: true
-    output-file: "guide-eml-bp_v3.1"
-    output-ext:  "docx"
+    # Currently has no effect (?) so renaming in Makefile
+    output-file: "guide-eml-bp_v3.1.docx"
