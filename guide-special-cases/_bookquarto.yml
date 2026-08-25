@@ -24,12 +24,14 @@ format:
     toc: true
     number-sections: true
     colorlinks: true
+    # Currently has no effect (?) so renaming in Makefile
     output-file: "guide-special-cases_v1.1"
     output-ext: "pdf"
   docx:
     toc: true
     number-sections: true
     colorlinks: true
+    # Currently has no effect (?) so renaming in Makefile
     output-file: "guide-special-cases_v1.1"
     output-ext:  "docx"
 
