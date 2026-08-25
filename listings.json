@@ -3,8 +3,8 @@
     "listing": "/index.html",
     "items": [
       "/guide-special-cases/index.html",
-      "/guide-domain-specific/ecocom.html",
-      "/guide-eml-bp/index.html"
+      "/guide-eml-bp/index.html",
+      "/guide-domain-specific/ecocom.html"
     ]
   }
 ]
