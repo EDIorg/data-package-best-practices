@@ -143,9 +143,14 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#contributing" id="toc-contributing" class="nav-link active" data-scroll-target="#contributing">Contributing</a>
   <ul class="collapse">
-  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
-  <li><a href="#contributing-changes" id="toc-contributing-changes" class="nav-link" data-scroll-target="#contributing-changes">Contributing changes</a></li>
-  <li><a href="#publishing-workflow" id="toc-publishing-workflow" class="nav-link" data-scroll-target="#publishing-workflow">Publishing workflow</a></li>
+  <li><a href="#the-repository" id="toc-the-repository" class="nav-link" data-scroll-target="#the-repository">The repository</a></li>
+  <li><a href="#contributing-changes" id="toc-contributing-changes" class="nav-link" data-scroll-target="#contributing-changes">Contributing changes</a>
+  <ul class="collapse">
+  <li><a href="#file-a-github-issue" id="toc-file-a-github-issue" class="nav-link" data-scroll-target="#file-a-github-issue">1. File a GitHub issue</a></li>
+  <li><a href="#submit-a-pull-request" id="toc-submit-a-pull-request" class="nav-link" data-scroll-target="#submit-a-pull-request">2. Submit a pull request</a></li>
+  <li><a href="#use-a-ms-word-or-google-document" id="toc-use-a-ms-word-or-google-document" class="nav-link" data-scroll-target="#use-a-ms-word-or-google-document">3. Use a MS Word or Google document</a></li>
+  </ul></li>
+  <li><a href="#review-and-publication" id="toc-review-and-publication" class="nav-link" data-scroll-target="#review-and-publication">Review and publication</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/EDIorg/data-package-best-practices/edit/main/contributing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/EDIorg/data-package-best-practices/issues/new/choose" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -158,28 +163,54 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="contributing" class="level1">
 <h1>Contributing</h1>
-<p>The maintenance of this repository and development of the included documents is coordinated by EDI, with major updates and new content developed and approved through a community-oriented process. If you would like to help develop these documents please contact the maintainers and working group leads listed on the <a href="./about.html">About</a> page, or reach out to EDI at <a href="mailto:info@edirepository.org%3E">info@edirepository.org</a>. Some details on how contribution works are below.</p>
-<section id="branches" class="level2">
-<h2 class="anchored" data-anchor-id="branches">Branches</h2>
+<p>The maintenance of this website and documentation it contains is coordinated by EDI, with major revisions and new contributions developed and approved through a community-oriented process. We welcome community contributions of any size, but for significant new content or revisions to existing guides we recommend first contacting the maintainers and working group leads listed on the <a href="./about.html">About</a> page, or reaching out to EDI at <a href="mailto:info@edirepository.org%3E">info@edirepository.org</a>. Community working groups periodically convene to develop and draft changes to the guides, and getting involved in one of these efforts, or proposing your own, may be the best way to make big contributions.</p>
+<p>Depending on the scale and who is involved, the path to contributing can vary. Below we describe our repository and several methods you or your group can use to contribute.</p>
+<section id="the-repository" class="level2">
+<h2 class="anchored" data-anchor-id="the-repository">The repository</h2>
+<p>All website content and guides are stored in a <a href="https://github.com/ediorg/data-package-best-practices">GitHub repository</a> and the revision process for the content is generally handled there through the publication stage. The repository has several branches, described below.</p>
 <ul>
-<li><strong>main</strong>: The <code>main</code> branch holds the current production version of the documents. Documents in this branch have generally been edited and approved by the community. They are published in website format with GitHub Pages, under the “EDIorg” organization.</li>
-<li><strong>prerelease</strong>: The <code>prerelease</code> branch contains the in-development, “next version” of the documents. These documents contain new content or changes submitted by, or under review by the community. Documents in this branch are published in website format to Netlify. After a review and approval process changes may be merged into <code>main</code>.</li>
-<li><strong>feature</strong> or <strong>content</strong> branches: These may exist during the early development of new features or drafting of content. They will first be merged into the <code>prerelease</code> branch and they are not currently published in website form.</li>
+<li><strong>main</strong>: The <code>main</code> branch holds the current production version of the documents, which are published in website format, using GitHub Pages, under the “EDIorg” organization. All content in this branch has generally been edited and approved by the community, but the branch is not open to direct contributions from anyone but the project maintainers (no push access).</li>
+<li><strong>prerelease</strong>: The <code>prerelease</code> branch contains the in-development, “next version” of the documents that have been submitted by, or are under review by the community. Documents in this branch are published in website format to Netlify. After a community-based review and approval process, the maintainers merge new or edited content into the <code>main</code> branch. Some contributors, particularly those involved in community working groups, can request permission to push changes directly to the <code>prerelease</code> branch.</li>
+<li><strong>feature</strong> or <strong>content</strong> branches: These may exist during the early development of new features or drafting of content. They will first be merged into the <code>prerelease</code> branch and are not currently published in website form.</li>
 </ul>
 </section>
 <section id="contributing-changes" class="level2">
 <h2 class="anchored" data-anchor-id="contributing-changes">Contributing changes</h2>
-<p>The guide documents and most website content are written in Quarto markdown, a variant of <code>pandoc</code> markdown, and saved as <code>.qmd</code> files. See the <a href="https://quarto.org/docs/guide/">Quarto guide</a> for information on how to author <code>.qmd</code> files. New content, or edits to existing documents, can be contributed in several possible ways:</p>
-<ol type="1">
-<li>To suggest a change you may <a href="https://github.com/EDIorg/data-package-best-practices/issues/new/choose">file an issue</a> in the GitHub repository outlining your proposed changes. This will begin a conversation with the maintainers and others in the community about whether and how to implement changes to the documents or website. You may be invited to draft the content changes (see the next item).</li>
-<li>If you are ready to create a draft of the changes yourself, new <code>.qmd</code> files or edits to existing pages may be submitted as a pull request to the <code>prerelease</code> branch. See this <a href="https://github.blog/developer-skills/github/beginners-guide-to-github-creating-a-pull-request/">GitHub tutorial</a> for some simple instructions and links to more resources. Maintainers will review the changes before merging them into the <code>prerelease</code> branch for further community input.</li>
-<li>In some cases, particularly if you are involved in a community working group, you may request permission to push changes directly to the <code>prerelease</code> branch. If you think this would be the best way to contribute your changes please contact the maintainers listed in the <a href="./about.html">About</a> page or <a href="mailto:info@edirepository.org" class="email">info@edirepository.org</a>.</li>
-<li>Periodically, community working groups convene to develop and draft changes to these guides, and much of the writing, revising, and editing process takes place in formats outside this repository (Word or Google Docs). To get involved in one of these efforts and contribute changes that way, see the <a href="./about.html">About</a> page and contact working group leads, or propose your own working group to the community.</li>
-</ol>
-<p>Once changes are moved into the <code>prerelease</code> branch, they will be reviewed by the the larger community (EDI, LTER Network, EML users, repository communities, etc.) and approved (or not) for inclusion in the production documents (<code>main</code> branch).</p>
+<p>The guides and other website content you find here are written in a variant of Markdown, and saved as <code>.qmd</code> files. These <code>.qmd</code> files are rendered by the <a href="https://quarto.org">Quarto documentation system</a> to create the guides in HTML (this website) and other useful formats including PDF and MS Word. To contribute new content, or edits to existing documents, we recommend using one of the three pathways described below.</p>
+<section id="file-a-github-issue" class="level3">
+<h3 class="anchored" data-anchor-id="file-a-github-issue">1. File a GitHub issue</h3>
+<p>To suggest changes to the content or the website you may <a href="https://github.com/EDIorg/data-package-best-practices/issues/new/choose">file an issue</a> in the GitHub repository outlining your proposed changes. <strong>Please be descriptive about your issue and, for content revisions, reference the specific guide, chapter, and section you are referring to.</strong> Filing an issue begins a conversation with the maintainers and others in the community about whether and how to implement changes to the documents or website. For some types of issues (new content, extensive revisions) you may be invited to draft the contribution using one of the two other methods below.</p>
+<p><strong>This method is best for:</strong></p>
+<ul>
+<li>Smaller content contributions (typos, broken links, minor revisions)</li>
+<li>New or external contributors not involved in working groups or site maintenance</li>
+<li>Technical issues (not content-related) like document rendering or website navigation problems</li>
+</ul>
 </section>
-<section id="publishing-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="publishing-workflow">Publishing workflow</h2>
+<section id="submit-a-pull-request" class="level3">
+<h3 class="anchored" data-anchor-id="submit-a-pull-request">2. Submit a pull request</h3>
+<p>You can contribute new content, or draft revisions to existing content, by submitting a pull request to the <code>prerelease</code> branch of the GitHub repository. In this case, a pull request will generally contain new <code>.qmd</code> files or edits to the ones already in the repository, so the process begins with you “cloning” or “forking” the repository (see the <a href="https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request">GitHub docs</a> first) so you can draft the new or revised content. Follow the <a href="https://quarto.org/docs/guide/">Quarto authoring guide</a> for information on how use the Quarto variant of markdown, and when you are ready to submit the pull request, follow this <a href="https://github.blog/developer-skills/github/beginners-guide-to-github-creating-a-pull-request/">GitHub tutorial</a> for some simple instructions and links to more resources. Maintainers will review the changes before merging them into the <code>prerelease</code> branch for further community input.</p>
+<p><strong>This method is best for:</strong></p>
+<ul>
+<li>Large content, layout, or technical changes (chapter revisions, website restructuring)</li>
+<li>Technically-savvy groups or contributors (or the technical lead of a working group)</li>
+</ul>
+</section>
+<section id="use-a-ms-word-or-google-document" class="level3">
+<h3 class="anchored" data-anchor-id="use-a-ms-word-or-google-document">3. Use a MS Word or Google document</h3>
+<p>For extensive editing of the guides, or editing in collaborative teams, it may be useful to export documents into a word-processor format (MS Word or Google Docs) and manage group contributions and feedback there. This is often the approach taken by community working groups who have significant revisions to make, or are developing all-new chapters or guides. Most guides on this website, including the <a href="./guide-eml-bp/index.html">EML Best Practices</a> and <a href="./guide-special-cases/index.html">Design for Special Cases</a> guides, have an MS Word (<code>.docx</code>) formatted version already available, just <strong>look for the link in the upper right corner of the guide’s web pages</strong> to download it.</p>
+<p>Once a Word-formatted guide is downloaded, we recommend enabling the track changes feature as edits are made by collaborators. Google Docs has fairly advanced features for collaborative writing, most of which can be used with MS Word documents that are uploaded into a Google Drive. Converting to a native Google Docs format enables more collaboration features. After edits are finished and the document is ready for community review, it must be converted to <code>.qmd</code> format. There are some tools available to convert Google or MS Word documents to Markdown, and if you reach out to one of the site maintainers they can provide assistance with conversion and getting the new content into the <code>prerelease</code> branch of the repository and website.</p>
+<p><strong>This method is best for:</strong></p>
+<ul>
+<li>Larger content contributions (chapter or full-document revisions)</li>
+<li>Groups with mixed technical (GitHub) abilities</li>
+<li>Collaborative revisions where input from a broad community is required</li>
+</ul>
+</section>
+</section>
+<section id="review-and-publication" class="level2">
+<h2 class="anchored" data-anchor-id="review-and-publication">Review and publication</h2>
+<p>Once changes are contributed to the <code>prerelease</code> branch of the repository using any of the methods above, they can be reviewed by maintainers and the larger community (EDI, LTER Network, EML users, repository communities, etc.). Upon community approval, the maintainers will merge the new changes into the production version of the guides and website (<code>main</code> branch) and then published.</p>
 <p>Both <code>main</code> and <code>prerelease</code> branches have GitHub Actions workflows configured to build and deploy their associated website any time new commits are pushed to that branch. The production site, derived from <code>main</code>, is published as a GitHub pages site (<a href="https://quarto.org/docs/publishing/github-pages.html#github-action">Quarto documentation</a>). The prerelease site, derived from the <code>prerelease</code> branch, is published to Netlify (<a href="https://quarto.org/docs/publishing/netlify.html#github-action">Quarto documentation</a>). The GitHub Actions publishing workflow for both branches is specified in the <a href=".github/workflows/publish.yml"><code>.github/workflows/publish.yml</code></a> file, which was modeled in part on the <a href="https://github.com/quarto-dev/quarto-web/blob/main/.github/workflows/publish.yml">Quarto website version</a>. When changes are pushed to either branch, please verify that the GitHub Action completed and the website and all documents were built as expected.</p>
 
 
