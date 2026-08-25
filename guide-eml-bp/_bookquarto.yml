@@ -32,6 +32,10 @@ format:
     toc: true
     number-sections: true
     colorlinks: true
+    include-in-header: 
+      text: |
+        \usepackage{fvextra}
+        \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
     # Currently has no effect (?) so renaming in Makefile
     output-file: "guide-eml-bp_v4.0"
     output-ext:  "pdf"
