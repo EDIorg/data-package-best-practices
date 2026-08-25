@@ -24,13 +24,13 @@ format:
     toc: true
     number-sections: true
     colorlinks: true
-    output-file: "guide-special_cases_v1.1"
+    output-file: "guide-special-cases_v1.1"
     output-ext: "pdf"
   docx:
     toc: true
     number-sections: true
     colorlinks: true
-    output-file: "guide-special_cases_v1.1"
+    output-file: "guide-special-cases_v1.1"
     output-ext:  "docx"
 
 

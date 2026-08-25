@@ -20,7 +20,7 @@ website:
     content: "**Publication version**: See the [prerelease version](https://prerelease-edi-docs.netlify.app/) for documents under active community development." 
     position: above-navbar
     dismissable: false
-    type: danger
+    type: primary
   search:
     location: navbar
   navbar:
