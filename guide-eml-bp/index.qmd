@@ -56,6 +56,6 @@ citation:
   container-title: Environmental Data Initiative
   version: "3.1"
   doi: n/a
-categories: archived
-image: ../../img/book.svg
+categories: published
+image: ../img/book.svg
 ---
