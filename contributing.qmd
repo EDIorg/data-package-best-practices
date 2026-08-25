@@ -21,17 +21,17 @@ The guides and other website content you find here are written in a variant of M
 To suggest changes to the content or the website you may [file an issue](https://github.com/EDIorg/data-package-best-practices/issues/new/choose) in the GitHub repository outlining your proposed changes. **Please be descriptive about your issue and, for content revisions, reference the specific guide, chapter, and section you are referring to.** Filing an issue begins a conversation with the maintainers and others in the community about whether and how to implement changes to the documents or website. For some types of issues (new content, extensive revisions) you may be invited to draft the contribution using one of the two other methods below.
 
 **This method is best for:** 
- 
+
 - Smaller content contributions (typos, broken links, minor revisions)
 - New or external contributors not involved in working groups or site maintenance
 - Technical issues (not content-related) like document rendering or website navigation problems
 
 ### 2. Submit a pull request
- 
+
 You can contribute new content, or draft revisions to existing content, by submitting a pull request to the `prerelease` branch of the GitHub repository. In this case, a pull request will generally contain new `.qmd` files or edits to the ones already in the repository, so the process begins with you "cloning" or "forking" the repository (see the [GitHub docs](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request) first) so you can draft the new or revised content. Follow the [Quarto authoring guide](https://quarto.org/docs/guide/) for information on how use the Quarto variant of markdown, and when you are ready to submit the pull request, follow this [GitHub tutorial](https://github.blog/developer-skills/github/beginners-guide-to-github-creating-a-pull-request/) for some simple instructions and links to more resources. Maintainers will review the changes before merging them into the `prerelease` branch for further community input.
 
 **This method is best for:** 
- 
+
 - Large content, layout, or technical changes (chapter revisions, website restructuring)
 - Technically-savvy groups or contributors (or the technical lead of a working group)
 
@@ -42,7 +42,7 @@ For extensive editing of the guides, or editing in collaborative teams, it may b
 Once a Word-formatted guide is downloaded, we recommend enabling the track changes feature as edits are made by collaborators. Google Docs has fairly advanced features for collaborative writing, most of which can be used with MS Word documents that are uploaded into a Google Drive. Converting to a native Google Docs format enables more collaboration features. After edits are finished and the document is ready for community review, it must be converted to `.qmd` format. There are some tools available to convert Google or MS Word documents to Markdown, and if you reach out to one of the site maintainers they can provide assistance with conversion and getting the new content into the `prerelease` branch of the repository and website.
 
 **This method is best for:** 
- 
+
 - Larger content contributions (chapter or full-document revisions)
 - Groups with mixed technical (GitHub) abilities
 - Collaborative revisions where input from a broad community is required
