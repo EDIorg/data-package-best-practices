@@ -24,4 +24,4 @@ movebooks:
 	cp -r guide-special-cases/_book/guide-special-cases.pdf _site/guide-special-cases/guide-special-cases_v1.1.pdf
 	cp -r guide-special-cases/_book/guide-special-cases.docx _site/guide-special-cases/guide-special-cases_v1.1.docx
 	cp -r archive/guide-eml-bp/_book/guide-eml-bp.pdf _site/archive/guide-eml-bp/guide-eml-bp_v3.1.pdf
-		cp -r archive/guide-eml-bp/_book/guide-eml-bp.docx _site/archive/guide-eml-bp/guide-eml-bp_v3.1.docx
+	cp -r archive/guide-eml-bp/_book/guide-eml-bp.docx _site/archive/guide-eml-bp/guide-eml-bp_v3.1.docx
