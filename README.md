@@ -47,7 +47,7 @@ All website content and guides are stored in a [GitHub repository](https://githu
 
 ### Contributing changes
 
-The guides and other website content you find here are written in a variant of Markdown, and saved as `.qmd` files. These `.qmd` files are rendered by the [Quarto documentation system](https://quarto.org) to create the guides in HTML (this website) and other useful formats including PDF and MS Word. To contribute new content, or edits to existing documents, we recommend using one of the three pathways described below.
+The guides and other website content found here are written in a variant of Markdown, and saved as `.qmd` files. These `.qmd` files are rendered by the [Quarto documentation system](https://quarto.org) to create the guides in HTML (this website) and other useful formats including PDF and MS Word. To contribute new content, or edits to existing documents, we recommend using one of the three pathways described below.
 
 #### 1. File a GitHub issue
 
@@ -61,7 +61,13 @@ To suggest changes to the content or the website you may [file an issue](https:/
 
 #### 2. Submit a pull request
 
-You can contribute new content, or draft revisions to existing content, by submitting a pull request to the `prerelease` branch of the GitHub repository. In this case, a pull request will generally contain new `.qmd` files or edits to the ones already in the repository, so the process begins with you "cloning" or "forking" the repository (see the [GitHub docs](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request) first) so you can draft the new or revised content. Follow the [Quarto authoring guide](https://quarto.org/docs/guide/) for information on how use the Quarto variant of markdown, and when you are ready to submit the pull request, follow this [GitHub tutorial](https://github.blog/developer-skills/github/beginners-guide-to-github-creating-a-pull-request/) for some simple instructions and links to more resources. Maintainers will review the changes before merging them into the `prerelease` branch for further community input.
+You can contribute new content, or draft revisions to existing content, by submitting a pull request to the `prerelease` branch of the GitHub repository. These kinds of pull requests usually contain new `.qmd` files, or edits to the ones already in the repository (other pull requests might change metadata, website configurations, or things like that). The process for creating and submitting pull requests usually follows these steps:
+
+1. Contributors make a copy of this repository that they can edit locally (these copies are also called “clones” or “forks”). See the [GitHub docs](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request) for details on how to do this.
+2. In the copied repository, edit the relevant Quarto markdown files until they are ready to contribute back to this repository. Follow the [Quarto authoring guide](https://quarto.org/docs/guide/) for information on using the Quarto variant of markdown.
+3. When changes have been reviewed and are ready to submit, create a pull request from the copied repository to this GitHub repository. Again, follow the [GitHub docs](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request), or this [GitHub tutorial](https://github.blog/developer-skills/github/beginners-guide-to-github-creating-a-pull-request/) for simple instructions and links to more resources.
+
+Once the pull request is received, maintainers will review the changes before merging them into the `prerelease` branch for further community input. If multiple contributors are working together on pull requests, please coordinate to avoid multiple pull requests that edit the same content and overwrite one another. 
 
 **This method is best for:** 
 
@@ -70,9 +76,16 @@ You can contribute new content, or draft revisions to existing content, by submi
 
 #### 3. Use a MS Word or Google document
 
-For extensive editing of the guides, or editing in collaborative teams, it may be useful to export documents into a word-processor format (MS Word or Google Docs) and manage group contributions and feedback there. This is often the approach taken by community working groups who have significant revisions to make, or are developing all-new chapters or guides. Most guides on this website, including the [EML Best Practices](guide-eml-bp/index.qmd) and [Design for Special Cases](guide-special-cases/index.qmd) guides, have an MS Word (`.docx`) formatted version already available, just **look for the link in the upper right corner of the guide's web pages** to download it.
+For extensive editing of the guides, or editing in collaborative teams, it may be useful to export documents into a word-processor format (MS Word or Google Docs) and manage group contributions and feedback there. This is often the approach taken by community working groups who have significant revisions to make, or are developing all-new chapters or guides. Please be aware that this method requires coordination with the maintainers of this project, so please reach out to contacts listed on the [About](about.qmd) page.
 
-Once a Word-formatted guide is downloaded, we recommend enabling the track changes feature as edits are made by collaborators. Google Docs has fairly advanced features for collaborative writing, most of which can be used with MS Word documents that are uploaded into a Google Drive. Converting to a native Google Docs format enables more collaboration features. After edits are finished and the document is ready for community review, it must be converted to `.qmd` format. There are some tools available to convert Google or MS Word documents to Markdown, and if you reach out to one of the site maintainers they can provide assistance with conversion and getting the new content into the `prerelease` branch of the repository and website.
+Most guides on this website, including the [EML Best Practices](guide-eml-bp/index.qmd) and [Design for Special Cases](guide-special-cases/index.qmd) guides, have an MS Word (`.docx`) formatted version already available, just **look for the link in the upper right corner of the guide's web pages** to download it. Once a Word-formatted guide is downloaded, the likely next steps are to:
+
+1. Save the file with a timestamped filename like `guide-eml-bp.2026-08-25.docx`, or similar. 
+2. If collaboratively editing in a group, upload to a cloud platform (e.g. Google Drive) so everyone in the group can access it.
+    - Optionally, the group can convert the Word file to a native Google Docs format, which enables more collaboration features. If keeping as a Word file make sure to enable track changes anytime edits are happening outside the Google Drive. 
+3. Make edits to the content until satisfied with the new or revised document.
+4. Once finished and ready for review the revised document must be converted to `.qmd` format. There are some tools available to convert MS Word and Google Docs to Markdown, or reach out to a maintainer or working group lead that can provide assistance with conversion.
+5. The revised document must now be merged into the content of the `prerelease` branch of the repository and website. Notify a maintainer or working group lead for assistance with this step.
 
 **This method is best for:** 
 
