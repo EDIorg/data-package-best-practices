@@ -76,7 +76,7 @@ Once the pull request is received, maintainers will review the changes before me
 
 #### 3. Use a MS Word or Google document
 
-For extensive editing of the guides, or editing in collaborative teams, it may be useful to export documents into a word-processor format (MS Word or Google Docs) and manage group contributions and feedback there. This is often the approach taken by community working groups who have significant revisions to make, or are developing all-new chapters or guides. Please be aware that this method requires coordination with the maintainers of this project, so please reach out to contacts listed on the [About](about.qmd) page.
+For extensive editing of the guides, or editing in collaborative teams, it may be useful to export documents into a word-processor format (MS Word or Google Docs) and manage group contributions and feedback there. This is often the approach taken by community working groups who have significant revisions to make, or are developing all-new chapters or guides. Be aware that **this method requires coordination with maintainers or working group leads**, so please reach out to contacts listed on the [About](about.qmd) page.
 
 Most guides on this website, including the [EML Best Practices](guide-eml-bp/index.qmd) and [Design for Special Cases](guide-special-cases/index.qmd) guides, have an MS Word (`.docx`) formatted version already available, just **look for the link in the upper right corner of the guide's web pages** to download it. Once a Word-formatted guide is downloaded, the likely next steps are to:
 
