@@ -9,7 +9,7 @@ This website and the content it contains are a collaborative project of the Envi
 This website is managed and maintained by the Environmental Data Initiative (EDI)  
 **<https://edirepository.org>**
 
-For general inquiries, contact us at:  
+For general or revision inquiries, please contact us at:  
 <info@edirepository.org>
 
 **Current maintainers**  
@@ -45,5 +45,10 @@ The ideas, words, and recommendations in these guides came to fruition as a resu
   - Active from 2019-2021
   - **Contact**: Corinna Gries (<cgries@wisc.edu>)
   - **Members**: Stace Beaulieu (Woods Hole Oceanographic Institute), Renée F. Brown (University of New Mexico), Jason Downing (University of Alaska, Fairbanks), Sarah Elmendorf (University of Colorado Boulder), Hap Garritt (Woods Hole Oceanographic Institute), Gastil Gastil-Buhl (University of California Santa Barbara), Corinna Gries (University of Wisconsin, Madison), Hsun-Yi Hseih (Michigan State University), Li Kui (University of California Santa Barbara), Mary Martin (University of New Hampshire), Gregory E. Maurer (New Mexico State University), An T. Nguyen (University of Texas at Austin), John H. Porter  (University of Virginia), Adam Sapp (University of Georgia), Mark Servilla (University of New Mexico), Tim Whiteaker (University of Texas at Austin)
-  - **Online materials** in [Google Drive](https://drive.google.com/drive/folders/1ELq-xK28DcRKuk45JkW06_r_UkuaueT1?usp=drive_link)
+  - **Online materials** [in Google Drive](https://drive.google.com/drive/folders/1ELq-xK28DcRKuk45JkW06_r_UkuaueT1?usp=drive_link)
 
+
+* **Non-tabular Data Working Group VERSION 2**
+  - Active from 2026-present
+  - **Contacts**: Mary Marek-Spartz (<patt0335@umn.edu>) and Greg Maurer(<gmaurer@nmsu.edu>)
+  - **Online materials** [in Google Drive](https://drive.google.com/drive/folders/1DRc8vqfLud4B5KzCdJx_cRWUQLVi_s-v?usp=drive_link)
