@@ -72,34 +72,34 @@ Completed, community-approved versions of some guides here are published to EDI 
 
 1. Render the documents in the `main` branch. Doing this runs a Makefile that renders the PDF and Word format guides and moves them to the `guide-eml-bp/` folder (or `guide-special-cases/` if rendering that document).
 
-    quarto render
+        quarto render
 
 2. If there is no release branch for the guide yet, create one:
 
-    git checkout -b releases-guide-eml-bp
+        git checkout -b releases-guide-eml-bp
     
 
 3. If there is already a release branch, check it out and merge in changes from `main`.
 
-    git checkout releases-guide-eml-bp
-    git merge main
+        git checkout releases-guide-eml-bp
+        git merge main
 
 4. Add and commit the rendered PDF and Word files for the guide you will be publishing.
 
-    git add guide-eml-bp/guide-eml-bp_v4.0.pdf guide-eml-bp/guide-eml-bp_v4.0.docx
+        git add guide-eml-bp/guide-eml-bp_v4.0.pdf guide-eml-bp/guide-eml-bp_v4.0.docx
 
 5. Remove all the files that are not going to be published.
 
-    git rm -rf .                           # Remove everything
-    git checkout HEAD -- guide-eml-bp/*    # Add files for publication back in
+        git rm -rf .                           # Remove everything
+        git checkout HEAD -- guide-eml-bp/*    # Add files for publication back in
 
-If you need to replace anything you can use `git checkout main -- path/to/file`
+    If you need to replace anything you can use `git checkout main -- path/to/file`
 
 6. Commit, tag and push changes
 
-    git commit -m 'publish: add rendered guides and remove extras'
-    git tag -a guide-eml-bp_v4.0 -m "Publish version 4.0 of the EML Best Practices guide"
-    git push
+        git commit -m 'publish: add rendered guides and remove extras'
+        git tag -a guide-eml-bp_v4.0 -m "Publish version 4.0 of the EML Best Practices guide"
+        git push
 
 7. On GitHub, prepare and publish a release, using the tag above, for the new document in the `releases-guide-eml-bp` branch. Once this 
 
