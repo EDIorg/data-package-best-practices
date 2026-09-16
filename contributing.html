@@ -46,7 +46,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-aced932c6eb97d642153b8e218288f9f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-86f8048153e6ae009d1f633707c05d23.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-89f40ec9654b702ee165fcdbf7ae89a6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -150,7 +150,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#submit-a-pull-request" id="toc-submit-a-pull-request" class="nav-link" data-scroll-target="#submit-a-pull-request">2. Submit a pull request</a></li>
   <li><a href="#use-a-ms-word-or-google-document" id="toc-use-a-ms-word-or-google-document" class="nav-link" data-scroll-target="#use-a-ms-word-or-google-document">3. Use a MS Word or Google document</a></li>
   </ul></li>
-  <li><a href="#review-and-publication" id="toc-review-and-publication" class="nav-link" data-scroll-target="#review-and-publication">Review and publication</a></li>
+  <li><a href="#reviewing-and-building-the-website" id="toc-reviewing-and-building-the-website" class="nav-link" data-scroll-target="#reviewing-and-building-the-website">Reviewing and building the website</a></li>
+  <li><a href="#publishing-documents" id="toc-publishing-documents" class="nav-link" data-scroll-target="#publishing-documents">Publishing documents</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/EDIorg/data-package-best-practices/edit/main/contributing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/EDIorg/data-package-best-practices/issues/new/choose" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -189,13 +190,13 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="submit-a-pull-request" class="level3">
 <h3 class="anchored" data-anchor-id="submit-a-pull-request">2. Submit a pull request</h3>
-<p>You can contribute new content, or draft revisions to existing content, by submitting a pull request to the <code>prerelease</code> branch of the GitHub repository. These kinds of pull requests usually contain new <code>.qmd</code> files, or edits to the ones already in the repository (other pull requests might change metadata, website configurations, or things like that). The process for creating and submitting pull requests usually follows these steps:</p>
+<p>You can contribute new content, or draft revisions to existing content, by submitting a pull request to the <code>prerelease</code> branch of the <a href="https://github.com/ediorg/data-package-best-practices">ediorg/data-package-best-practices</a> repository (referred to as “source repository” below). These kinds of pull requests usually contain new <code>.qmd</code> files, or edits to the ones already in the repository (other pull requests might change metadata, website configurations, or things like that). The process for creating and submitting pull requests usually follows these steps:</p>
 <ol type="1">
-<li>Contributors make a copy of this repository that they can edit locally (these copies are also called “clones” or “forks”). See the <a href="https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request">GitHub docs</a> for details on how to do this.</li>
-<li>In the copied repository, edit the relevant Quarto markdown files until they are ready to contribute back to this repository. Follow the <a href="https://quarto.org/docs/guide/">Quarto authoring guide</a> for information on using the Quarto variant of markdown.</li>
-<li>When changes have been reviewed and are ready to submit, create a pull request from the copied repository to this GitHub repository. Again, follow the <a href="https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request">GitHub docs</a>, or this <a href="https://github.blog/developer-skills/github/beginners-guide-to-github-creating-a-pull-request/">GitHub tutorial</a> for simple instructions and links to more resources.</li>
+<li>Contributors make a copy of the source repository that they can edit locally (these copies are also called “clones” or “forks”). See the <a href="https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request">GitHub docs</a> for details on how to do this.</li>
+<li>In the copied repository, edit the relevant Quarto markdown files until they are ready to contribute back to the source repository. Follow the <a href="https://quarto.org/docs/guide/">Quarto authoring guide</a> for information on using the Quarto variant of markdown.</li>
+<li>When changes have been reviewed and are ready to submit, create a pull request from the copied repository to the <code>prerelease</code> branch of the source repository. Again, follow the <a href="https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request">GitHub docs</a>, or this <a href="https://github.blog/developer-skills/github/beginners-guide-to-github-creating-a-pull-request/">GitHub tutorial</a> for simple instructions and links to more resources.</li>
 </ol>
-<p>Once the pull request is received, maintainers will review the changes before merging them into the <code>prerelease</code> branch for further community input. If multiple contributors are working together on pull requests, please coordinate to avoid multiple pull requests that edit the same content and overwrite one another.</p>
+<p>Once the pull request is received, the maintainers of the source repository will review the changes before merging them into the <code>prerelease</code> branch for further community input. If multiple contributors are working together on pull requests, please coordinate to avoid multiple pull requests that edit the same content and overwrite one another.</p>
 <p><strong>This method is best for:</strong></p>
 <ul>
 <li>Large content, layout, or technical changes (chapter revisions, website restructuring)</li>
@@ -224,10 +225,34 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="review-and-publication" class="level2">
-<h2 class="anchored" data-anchor-id="review-and-publication">Review and publication</h2>
-<p>Once changes are contributed to the <code>prerelease</code> branch of the repository using any of the methods above, they can be reviewed by maintainers and the larger community (EDI, LTER Network, EML users, repository communities, etc.). Upon community approval, the maintainers will merge the new changes into the production version of the guides and website (<code>main</code> branch) and then published.</p>
-<p>Both <code>main</code> and <code>prerelease</code> branches have GitHub Actions workflows configured to build and deploy their associated website any time new commits are pushed to that branch. The production site, derived from <code>main</code>, is published as a GitHub pages site (<a href="https://quarto.org/docs/publishing/github-pages.html#github-action">Quarto documentation</a>). The prerelease site, derived from the <code>prerelease</code> branch, is published to Netlify (<a href="https://quarto.org/docs/publishing/netlify.html#github-action">Quarto documentation</a>). The GitHub Actions publishing workflow for both branches is specified in the <a href=".github/workflows/publish.yml"><code>.github/workflows/publish.yml</code></a> file, which was modeled in part on the <a href="https://github.com/quarto-dev/quarto-web/blob/main/.github/workflows/publish.yml">Quarto website version</a>. When changes are pushed to either branch, please verify that the GitHub Action completed and the website and all documents were built as expected.</p>
+<section id="reviewing-and-building-the-website" class="level2">
+<h2 class="anchored" data-anchor-id="reviewing-and-building-the-website">Reviewing and building the website</h2>
+<p>Once changes are contributed to the <code>prerelease</code> branch of the repository using any of the methods above, they can be reviewed by maintainers and the larger community (EDI, LTER Network, EML users, repository communities, etc.). Upon community approval, the maintainers will merge the new changes into the production version of the guides and website (<code>main</code> branch) where they will be rendered to HTML for display on the main website (<a href="https://ediorg.github.io/data-package-best-practices" class="uri">https://ediorg.github.io/data-package-best-practices</a>).</p>
+<p>Both <code>main</code> and <code>prerelease</code> branches have GitHub Actions workflows configured to build and deploy a new version of the associated website any time new commits are pushed to that branch. The production site, derived from <code>main</code>, is published as a GitHub pages site (<a href="https://quarto.org/docs/publishing/github-pages.html#github-action">Quarto documentation</a>). The prerelease site, derived from the <code>prerelease</code> branch, is published to Netlify (<a href="https://quarto.org/docs/publishing/netlify.html#github-action">Quarto documentation</a>). The GitHub Actions publishing workflow for both branches is specified in the <a href=".github/workflows/publish.yml"><code>.github/workflows/publish.yml</code></a> file, which was modeled in part on the <a href="https://github.com/quarto-dev/quarto-web/blob/main/.github/workflows/publish.yml">Quarto website version</a>. When changes are pushed to either branch, please verify that the GitHub Action completed and the website and all documents were built as expected.</p>
+</section>
+<section id="publishing-documents" class="level2">
+<h2 class="anchored" data-anchor-id="publishing-documents">Publishing documents</h2>
+<p>Completed, community-approved versions of some guides here are published to EDI or Zenodo. Publication for these guides happens from repository branches that are created from the community-approved content in <code>main</code> and named for the guide (currently <code>releases-guide-special-cases</code> and <code>releases-guide-eml-bp</code>). The <code>ediorg/data-package-best-practices</code> repository is linked to a Zenodo dataset series (under Greg’s account), so releases from the repository, in any branch, will be automatically published with new DOIs there. Below we use the EML Best Practices document, with a branch name of <code>releases-guide-eml-bp</code> as an example. The workflow is:</p>
+<ol type="1">
+<li><p>Render the documents in the <code>main</code> branch. Doing this runs a Makefile that renders the PDF and Word format guides and moves them to the <code>guide-eml-bp/</code> folder (or <code>guide-special-cases/</code> if rendering that document).</p>
+<pre><code> quarto render</code></pre></li>
+<li><p>If there is no release branch for the guide yet, create one:</p>
+<pre><code> git checkout -b releases-guide-eml-bp</code></pre></li>
+<li><p>If there is already a release branch, check it out and merge in changes from <code>main</code>.</p>
+<pre><code> git checkout releases-guide-eml-bp
+ git merge main</code></pre></li>
+<li><p>Add and commit the rendered PDF and Word files for the guide you will be publishing.</p>
+<pre><code> git add guide-eml-bp/guide-eml-bp_v4.0.pdf guide-eml-bp/guide-eml-bp_v4.0.docx</code></pre></li>
+<li><p>Remove all the files that are not going to be published.</p>
+<pre><code> git rm -rf .                           # Remove everything
+ git checkout HEAD -- guide-eml-bp/*    # Add files for publication back in</code></pre>
+<p>If you need to replace anything you can use <code>git checkout main -- path/to/file</code></p></li>
+<li><p>Commit, tag and push changes</p>
+<pre><code> git commit -m 'publish: add rendered guides and remove extras'
+ git tag -a guide-eml-bp_v4.0 -m "Publish version 4.0 of the EML Best Practices guide"
+ git push</code></pre></li>
+<li><p>On GitHub, prepare and publish a release, using the tag above, for the new document in the <code>releases-guide-eml-bp</code> branch. Once this</p></li>
+</ol>
 
 
 </section>
