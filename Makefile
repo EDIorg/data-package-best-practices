@@ -26,10 +26,9 @@ movebooks:
 #	cp -r archive/guide-eml-bp/_book/guide-eml-bp.pdf _site/archive/guide-eml-bp/guide-eml-bp_v3.1.pdf
 #	cp -r archive/guide-eml-bp/_book/guide-eml-bp.docx _site/archive/guide-eml-bp/guide-eml-bp_v3.1.docx
 	# To main folder
-#	cp -r guide-eml-bp/_book/guide-eml-bp.pdf guide-eml-bp/guide-eml-bp_v4.0.pdf
-#	cp -r guide-eml-bp/_book/guide-eml-bp.docx guide-eml-bp/guide-eml-bp_v4.0.docx
-#	cp -r guide-special-cases/_book/guide-special-cases.pdf guide-special-cases/guide-special-cases_v1.1.pdf
-#	cp -r guide-special-cases/_book/guide-special-cases.docx guide-special-cases/guide-special-cases_v1.1.docx
+	cp -r guide-eml-bp/_book/guide-eml-bp.pdf guide-eml-bp/guide-eml-bp_v3.1.pdf
+	cp -r guide-eml-bp/_book/guide-eml-bp.docx guide-eml-bp/guide-eml-bp_v3.1.docx
+	cp -r guide-special-cases/_book/guide-special-cases.pdf guide-special-cases/guide-special-cases_v1.1.pdf
+	cp -r guide-special-cases/_book/guide-special-cases.docx guide-special-cases/guide-special-cases_v1.1.docx
 #	cp -r archive/guide-eml-bp/_book/guide-eml-bp.pdf archive/guide-eml-bp/guide-eml-bp_v3.1.pdf
 #	cp -r archive/guide-eml-bp/_book/guide-eml-bp.docx archive/guide-eml-bp/guide-eml-bp_v3.1.docx
-
