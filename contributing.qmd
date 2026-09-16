@@ -95,10 +95,11 @@ Completed, community-approved versions of some guides here are published to EDI 
 
 If you need to replace anything you can use `git checkout main -- path/to/file`
 
-6. Commit and push changes
+6. Commit, tag and push changes
 
-    git commit -m 'publish: Version 4.0 of EML-BP published'
+    git commit -m 'publish: add rendered guides and remove extras'
+    git tag -a guide-eml-bp_v4.0 -m "Publish version 4.0 of the EML Best Practices guide"
     git push
 
-7. On GitHub, prepare and publish a release for the new document in the `releases-guide-eml-bp` branch. Once this 
+7. On GitHub, prepare and publish a release, using the tag above, for the new document in the `releases-guide-eml-bp` branch. Once this 
 
