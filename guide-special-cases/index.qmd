@@ -1,4 +1,6 @@
 ---
+metadata-files:
+  - _bookmetadata.yml
 keywords:
   - data management
   - EML
