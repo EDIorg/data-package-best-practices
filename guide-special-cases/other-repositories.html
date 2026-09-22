@@ -83,7 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-aced932c6eb97d642153b8e218288f9f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9468524b946203c8e9cfab9f3248ba77.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-89f40ec9654b702ee165fcdbf7ae89a6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -397,116 +397,96 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>The inventory table must have a row for each outside repository record (or some meaningful grouping of records, e.g., project in NCBI) being linked to, with columns that include persistent unique identifiers of the data in the other repository, and relevant descriptors of the data. The complete content of the inventory will be dictated by the structure of the other repository and the data entities and metadata held there. Suggested columns are presented in Table 5.1.</li>
 <li>The inventory table may also provide additional contextual information for each individual data resource in another repository. Table 5.2 presents examples of these contextual columns. They are, however, subject dependent and may vary for different projects. For more examples, see the discussion on sequencing and genomic data later in this document.</li>
 </ul>
-<p>Table 1: Suggested columns for identifying the external data in the data inventory table.</p>
-<table>
-<tbody><tr>
-<td>
-<strong>Column</strong>
-</td>
-<td>
-<strong>Description</strong>
-</td>
+<div id="tbl-external-columns" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-external-columns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Suggested columns for identifying the external data in the data inventory table.
+</figcaption>
+<div aria-describedby="tbl-external-columns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Description</th>
 </tr>
-<tr>
-<td>
-External unique ID
-</td>
-<td>
-Unique identifier for the data resource in the other repository. E.g. Accession number
-</td>
+</thead>
+<tbody>
+<tr class="odd">
+<td>External unique ID</td>
+<td>Unique identifier for the data resource in the other repository. E.g. Accession number</td>
 </tr>
-<tr>
-<td>
-External access URL
-</td>
-<td>
-A unique, persistent link to the data resource in the other repository.
-</td>
+<tr class="even">
+<td>External access URL</td>
+<td>A unique, persistent link to the data resource in the other repository.</td>
 </tr>
-<tr>
-<td>
-Title/description
-</td>
-<td>
-Title and/or brief description of the data resource
-</td>
+<tr class="odd">
+<td>Title/description</td>
+<td>Title and/or brief description of the data resource</td>
 </tr>
-<tr>
-<td>
-Filename(s)
-</td>
-<td>
-Dataset or file name at the other repository
-</td>
+<tr class="even">
+<td>Filename(s)</td>
+<td>Dataset or file name at the other repository</td>
 </tr>
-<tr>
-<td>
-Format
-</td>
-<td>
-File format of above
-</td>
+<tr class="odd">
+<td>Format</td>
+<td>File format of above</td>
 </tr>
-<tr>
-<td>
-Repository URL
-</td>
-<td>
-URL of the repository being linked to
-</td>
+<tr class="even">
+<td>Repository URL</td>
+<td>URL of the repository being linked to</td>
 </tr>
-</tbody></table>
-<p>Table 2: Examples of additional contextual columns in the data inventory table.</p>
-<table>
-<tbody><tr>
-<td>
-<strong>Column</strong>
-</td>
-<td>
-<strong>Description</strong>
-</td>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div id="tbl-contextual-columns" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-contextual-columns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Examples of additional contextual columns in the data inventory table.
+</figcaption>
+<div aria-describedby="tbl-contextual-columns-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Description</th>
 </tr>
-<tr>
-<td>
-Latitude/Longitude
-</td>
-<td>
-Latitude and longitude in standard format for each data resource in the other repository.
-</td>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Latitude/Longitude</td>
+<td>Latitude and longitude in standard format for each data resource in the other repository.</td>
 </tr>
-<tr>
-<td>
-Location name
-</td>
-<td>
-Locally used name of collection site
-</td>
+<tr class="even">
+<td>Location name</td>
+<td>Locally used name of collection site</td>
 </tr>
-<tr>
-<td>
-Treatment level
-</td>
-<td>
-Experimental treatment applied to the outside dataset
-</td>
+<tr class="odd">
+<td>Treatment level</td>
+<td>Experimental treatment applied to the outside dataset</td>
 </tr>
-<tr>
-<td>
-Start/End datetime
-</td>
-<td>
-Starting/ending datetime of the data resource (NA for End if data collection is ongoing)
-</td>
+<tr class="even">
+<td>Start/End datetime</td>
+<td>Starting/ending datetime of the data resource (NA for End if data collection is ongoing)</td>
 </tr>
-<tr>
-<td>
-Reference publication
-</td>
-<td>
-DOI of publication providing in-depth context for data
-</td>
+<tr class="odd">
+<td>Reference publication</td>
+<td>DOI of publication providing in-depth context for data</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
 <p><strong>Case 3:</strong> One or more datasets in other repositories are used to create derived data products that need to be archived in EDI.</p>
 <ul>
 <li>In this case the new dataset is directly or indirectly derived from the ‘source’ dataset(s) in other repositories. Such derived data may serve a wide range of research purposes, including use in cross-site synthesis, re-analysis, or meta-analysis studies.</li>
@@ -574,75 +554,51 @@ DOI of publication providing in-depth context for data
 <section id="example-data-packages-in-edi" class="level2">
 <h2 class="anchored" data-anchor-id="example-data-packages-in-edi">Example data packages in EDI</h2>
 <p>Each of the EDI data packages below are linked to data in outside repositories. Some contain data inventory tables (as dataTable entities) that link to the datasets held in outside repositories and are described in the EML metadata. The EML abstract and methods elements in each give detailed access and citation instructions.</p>
-<p>Table 3: Linked data packages at EDI that provide examples of the best practices in this document.</p>
-<table>
-<tbody><tr>
-<td>
-<strong>Title</strong>
-</td>
-<td>
-<strong>Description</strong>
-</td>
-<td>
-<strong>EDI packageID</strong>
-</td>
+<div id="tbl-linked-examples" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-linked-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Linked data packages at EDI that provide examples of the best practices in this document.
+</figcaption>
+<div aria-describedby="tbl-linked-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Title</th>
+<th>Description</th>
+<th>EDI packageID</th>
 </tr>
-<tr>
-<td>
-<em>Mass and energy fluxes from the US-Jo2 AmeriFlux eddy covariance tower in Tromble Weir experimental watershed at the Jornada Basin LTER site, 2010-ongoing</em>
-</td>
-<td>
-This data package links to eddy covariance data from a Jornada Basin LTER tower. The data are held at the AmeriFlux data repository (<a href="https://ameriflux.lbl.gov/">https://ameriflux.lbl.gov</a>)
-</td>
-<td>
-<a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&amp;identifier=210338005">knb-lter-jrn.210338005</a>
-</td>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Mass and energy fluxes from the US-Jo2 AmeriFlux eddy covariance tower in Tromble Weir experimental watershed at the Jornada Basin LTER site, 2010-ongoing</em></td>
+<td>This data package links to eddy covariance data from a Jornada Basin LTER tower. The data are held at the AmeriFlux data repository (<a href="https://ameriflux.lbl.gov" class="uri">https://ameriflux.lbl.gov</a>)</td>
+<td><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&amp;identifier=210338005">knb-lter-jrn.210338005</a></td>
 </tr>
-<tr>
-<td>
-<em>Catalog of GenBank sequence read archive (SRA) entries of 16S and 18S rRNA genes from bacterial and protistan planktonic communities along the Eastern Beaufort Sea coast, North Slope, Alaska, 2011-2013</em>
-</td>
-<td>
-Data inventory of runs, samples, and experiments held at GenBank.
-</td>
-<td>
-<a href="https://doi.org/10.6073/pasta/0e4d75453560ab5c085c9b547be68731">knb-lter-ble.10</a>
-</td>
+<tr class="even">
+<td><em>Catalog of GenBank sequence read archive (SRA) entries of 16S and 18S rRNA genes from bacterial and protistan planktonic communities along the Eastern Beaufort Sea coast, North Slope, Alaska, 2011-2013</em></td>
+<td>Data inventory of runs, samples, and experiments held at GenBank.</td>
+<td><a href="https://doi.org/10.6073/pasta/0e4d75453560ab5c085c9b547be68731">knb-lter-ble.10</a></td>
 </tr>
-<tr>
-<td>
-<em>Correlation of native and exotic species richness: a global meta-analysis finds no invasion paradox across scales</em>
-</td>
-<td>
-This data package re-publishes data held in a package in Dryad. The metadata has been substantially enriched relative to the original dataset.
-</td>
-<td>
-<a href="https://portal.edirepository.org/nis/mapbrowse?packageid=edi.548.1">edi.548.1</a>
-</td>
+<tr class="odd">
+<td><em>Correlation of native and exotic species richness: a global meta-analysis finds no invasion paradox across scales</em></td>
+<td>This data package re-publishes data held in a package in Dryad. The metadata has been substantially enriched relative to the original dataset.</td>
+<td><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=edi.548.1">edi.548.1</a></td>
 </tr>
-<tr>
-<td>
-<em>Vascular Flora of the Harvard Farm at Harvard Forest since 2014</em>
-</td>
-<td>
-This data package includes an inventory table with information on voucher specimens held in the Harvard Herbarium.
-</td>
-<td>
-<a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-hfr.236.3">knb-lter-hfr.236.3</a>
-</td>
+<tr class="even">
+<td><em>Vascular Flora of the Harvard Farm at Harvard Forest since 2014</em></td>
+<td>This data package includes an inventory table with information on voucher specimens held in the Harvard Herbarium.</td>
+<td><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-hfr.236.3">knb-lter-hfr.236.3</a></td>
 </tr>
-<tr>
-<td>
-<em>Biological responses to landscape change in the McMurdo Dry Valleys, Antarctica</em>
-</td>
-<td>
-This data package links to genomic data in NCBI, and includes additional data from biogeochemical analyses performed on each sample.
-</td>
-<td>
-<a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcm.262.1">knb-lter-mcm.262.1</a>
-</td>
+<tr class="odd">
+<td><em>Biological responses to landscape change in the McMurdo Dry Valleys, Antarctica</em></td>
+<td>This data package links to genomic data in NCBI, and includes additional data from biogeochemical analyses performed on each sample.</td>
+<td><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcm.262.1">knb-lter-mcm.262.1</a></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
 </section>
 <section id="appendix-tips-and-repository-information" class="level2">
 <h2 class="anchored" data-anchor-id="appendix-tips-and-repository-information">Appendix: Tips and repository information</h2>
