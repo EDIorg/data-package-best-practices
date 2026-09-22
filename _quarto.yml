@@ -82,6 +82,10 @@ website:
         - section: "Dataset Design for Special Cases"
           href: guide-special-cases/index.qmd
           contents: 
+            - href: guide-special-cases/preface.qmd
+              text: "Preface"
+            - href: guide-special-cases/introduction.qmd
+              text: "Introduction"
             - href: guide-special-cases/code.qmd
               text: "1. Code"
             - href: guide-special-cases/model-based.qmd

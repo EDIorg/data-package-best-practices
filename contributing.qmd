@@ -70,7 +70,7 @@ Both `main` and `prerelease` branches have GitHub Actions workflows configured t
 
 Completed, community-approved versions of some guides here are published to EDI or Zenodo. Publication for these guides happens from repository branches that are created from the community-approved content in `main` and named for the guide (currently `releases-guide-special-cases` and `releases-guide-eml-bp`). The `ediorg/data-package-best-practices` repository is linked to a Zenodo dataset series (under Greg's account), so releases from the repository, in any branch, will be automatically published with new DOIs there. Below we use the EML Best Practices document, with a branch name of `releases-guide-eml-bp` as an example. The workflow is:
 
-1. Render the documents in the `main` branch. Doing this runs a Makefile that renders the PDF and Word format guides and moves them to the `guide-eml-bp/` folder (or `guide-special-cases/` if rendering that document).
+1. Locally render the documents in the `main` branch. Doing this runs a Makefile that renders the PDF and Word format guides and moves them to the `guide-eml-bp/` folder.
 
         quarto render
 
@@ -88,18 +88,28 @@ Completed, community-approved versions of some guides here are published to EDI 
 
         git add guide-eml-bp/guide-eml-bp_v4.0.pdf guide-eml-bp/guide-eml-bp_v4.0.docx
 
-5. Remove all the files that are not going to be published.
+5. Remove all the files that are not going to be published, and rename the `_bookquarto.yml` file.
 
-        git rm -rf .                           # Remove everything
-        git checkout HEAD -- guide-eml-bp/*    # Add files for publication back in
+        git rm -rf guide-domain-specific guide-special-cases / # Directories first
+                   archive .github img
+        git rm *.qmd *.yml Makefile .gitignore                 # Other items
 
-    If you need to replace anything you can use `git checkout main -- path/to/file`
+        # This file would be used to render the PDF and Word versions
+        git mv guide-eml-bp/_bookquarto.yml guide-eml-bp/_quarto.yml
+
+    If you need to replace anything you can use `git checkout main -- path/to/file`, or go back to square one with `git reset HEAD`. 
 
 6. Commit, tag and push changes
 
         git commit -m 'publish: add rendered guides and remove extras'
         git tag -a guide-eml-bp_v4.0 -m "Publish version 4.0 of the EML Best Practices guide"
         git push
+        # If the branch does not yet exist on GitHub, push with
+        git push --set-upstream origin releases-guide-eml-bp
+        # Don't forget to push the tag to GitHub (doesn't happen automatically)
+        git push origin guide-eml-bp-v4.0
 
-7. On GitHub, prepare and publish a release, using the tag above, for the new document in the `releases-guide-eml-bp` branch. Once this 
+7. On GitHub, prepare and publish a release, using the tag above, for the new document in the `releases-guide-eml-bp` branch.
+
+8. Check Zenodo to make sure the release has been published and issued a DOI. Be sure to check and edit authors for the publication. They are generally rendered from the GitHub repository contributors, not the documents themselves. You can contribute to any Zenodo communities (like EDI) from the Zenodo landing page as well.
 
