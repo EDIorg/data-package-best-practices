@@ -1,7 +1,7 @@
 # Preface  {.unnumbered}
 
-Considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories.
+This document presents considerations for a well designed data package including special cases based on data type, format, or acquisition method. Examples are images, documents, raw data stored in other repositories. The original version produced by the NonTabular Data working group was published in 2021, and should be cited using the reference below. This is version 1.1 of the guide, which was reformatted as a "bookdown" document and placed online in 2021. It has been lightly reformatted and edited since, but the content and recommendations have not materially changed. 
 
-**Cite this document as:**
+**Version 1.0 of this document is published at the Environmental Data Initiative:**
 
-Gries, Corinna, Stace Beaulieu, Renee F Brown, Sarah Elmendorf, Hap Garritt, Gastil Gastil-Buhl, Hsun-Yi Hsieh, et al. 2021. “Data Package Design for Special Cases.” Environmental Data Initiative. https://doi.org/10.6073/PASTA/9D4C803578C3FBCB45FC23F13124D052.
+Gries, C., S. Beaulieu, R.F. Brown, S. Elmendorf, H. Garritt, G. Gastil-Buhl, H. Hsieh, L. Kui, M. Martin, G. Maurer, A.T. Nguyen, J.H. Porter, A. Sapp, M. Servilla, and T.L. Whiteaker. 2021. Data Package Design for Special Cases ver 1. Environmental Data Initiative. <https://doi.org/10.6073/pasta/9d4c803578c3fbcb45fc23f13124d052>
