@@ -92,40 +92,13 @@ Consider archiving model parameter files as their own data object(s) in both the
 
 ## Example data packages in EDI
 
-<table>
-  <tr>
-   <td><strong>Dataset Title</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>EDI Package ID</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><em>North Temperate Lakes LTER General Lake Model Parameter Set for Lake Mendota, Summer 2016 Calibration</em>
-   </td>
-   <td>Parameters for specific GLM runs. GLM is a large community model, not managed and archived in EDI
-   </td>
-   <td><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-ntl.348.2">knb-lter-ntl.348.2</a>
-   </td>
-  </tr>
-  <tr>
-   <td><em>SBC LTER: Regional Oceanic Modeling System (ROMS) Setup Files, Code, and Lagrangian Model Setup Files</em>
-   </td>
-   <td>All the necessary code, grid, forcing, initial, and boundary condition files for running the UCLA version of the Regional Oceanic Modeling System (ROMS) for the Santa Barbara Channel
-   </td>
-   <td><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=126">knb-lter-sbc.126.1</a>
-   </td>
-  </tr>
-  <tr>
-   <td><em>Lake thermal structure drives inter-annual variability in summer anoxia dynamics in a eutrophic lake over 37 years</em>
-   </td>
-   <td>Dataset to run a 37-year simulation (1979-2015) of the Lake Mendota lake ecosystem using the vertical 1D GLM-AED2 model.
-   </td>
-   <td><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-ntl&identifier=396">knb-lter-ntl.396.1</a>
-   </td>
-  </tr>
-</table>
+| Dataset Title | Description | EDI Package ID |
+|---|---|---|
+| *North Temperate Lakes LTER General Lake Model Parameter Set for Lake Mendota, Summer 2016 Calibration* | Parameters for specific GLM runs. GLM is a large community model, not managed and archived in EDI | [knb-lter-ntl.348.2](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-ntl.348.2) |
+| *SBC LTER: Regional Oceanic Modeling System (ROMS) Setup Files, Code, and Lagrangian Model Setup Files* | All the necessary code, grid, forcing, initial, and boundary condition files for running the UCLA version of the Regional Oceanic Modeling System (ROMS) for the Santa Barbara Channel | [knb-lter-sbc.126.1](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=126) |
+| *Lake thermal structure drives inter-annual variability in summer anoxia dynamics in a eutrophic lake over 37 years* | Dataset to run a 37-year simulation (1979-2015) of the Lake Mendota lake ecosystem using the vertical 1D GLM-AED2 model. | [knb-lter-ntl.396.1](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-ntl&identifier=396) |
+
+: Example model-based data packages in EDI. {#tbl-model-examples}
 
 ## Resources
 
