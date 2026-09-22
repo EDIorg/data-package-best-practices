@@ -234,7 +234,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="publishing-documents">Publishing documents</h2>
 <p>Completed, community-approved versions of some guides here are published to EDI or Zenodo. Publication for these guides happens from repository branches that are created from the community-approved content in <code>main</code> and named for the guide (currently <code>releases-guide-special-cases</code> and <code>releases-guide-eml-bp</code>). The <code>ediorg/data-package-best-practices</code> repository is linked to a Zenodo dataset series (under Greg’s account), so releases from the repository, in any branch, will be automatically published with new DOIs there. Below we use the EML Best Practices document, with a branch name of <code>releases-guide-eml-bp</code> as an example. The workflow is:</p>
 <ol type="1">
-<li><p>Render the documents in the <code>main</code> branch. Doing this runs a Makefile that renders the PDF and Word format guides and moves them to the <code>guide-eml-bp/</code> folder (or <code>guide-special-cases/</code> if rendering that document).</p>
+<li><p>Render the documents in the <code>main</code> branch. Doing this runs a Makefile that renders the PDF and Word format guides and moves them to the <code>guide-eml-bp/</code> folder.</p>
 <pre><code> quarto render</code></pre></li>
 <li><p>If there is no release branch for the guide yet, create one:</p>
 <pre><code> git checkout -b releases-guide-eml-bp</code></pre></li>
@@ -243,15 +243,19 @@ ul.task-list li input[type="checkbox"] {
  git merge main</code></pre></li>
 <li><p>Add and commit the rendered PDF and Word files for the guide you will be publishing.</p>
 <pre><code> git add guide-eml-bp/guide-eml-bp_v4.0.pdf guide-eml-bp/guide-eml-bp_v4.0.docx</code></pre></li>
-<li><p>Remove all the files that are not going to be published.</p>
-<pre><code> git rm -rf .                           # Remove everything
- git checkout HEAD -- guide-eml-bp/*    # Add files for publication back in</code></pre>
-<p>If you need to replace anything you can use <code>git checkout main -- path/to/file</code></p></li>
+<li><p>Remove all the files that are not going to be published, and rename the <code>_bookquarto.yml</code> file.</p>
+<pre><code> git rm -rf guide-domain-specific guide-special-cases / # Directories first
+            archive .github img
+ git rm *.qmd *.yml Makefile .gitignore                 # Other items
+
+ # This file would be used to render the PDF and Word versions
+ git mv guide-eml-bp/_bookquarto.yml guide-eml-bp/_quarto.yml</code></pre>
+<p>If you need to replace anything you can use <code>git checkout main -- path/to/file</code>, or go back to square one with <code>git reset HEAD</code>.</p></li>
 <li><p>Commit, tag and push changes</p>
 <pre><code> git commit -m 'publish: add rendered guides and remove extras'
  git tag -a guide-eml-bp_v4.0 -m "Publish version 4.0 of the EML Best Practices guide"
  git push</code></pre></li>
-<li><p>On GitHub, prepare and publish a release, using the tag above, for the new document in the <code>releases-guide-eml-bp</code> branch. Once this</p></li>
+<li><p>On GitHub, prepare and publish a release, using the tag above, for the new document in the <code>releases-guide-eml-bp</code> branch.</p></li>
 </ol>
 
 
