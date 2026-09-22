@@ -4,6 +4,7 @@ project:
 
 metadata-files:
   - _bookmetadata.yml
+  
 book:
   chapters:
     - index.qmd

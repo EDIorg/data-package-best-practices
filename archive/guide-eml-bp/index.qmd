@@ -15,7 +15,7 @@ citation:
   type: book
   container-title: Environmental Data Initiative
   version: "3.1"
-  doi: n/a
+  doi: tbd
 categories: archived
 image: ../../img/book.svg
 ---
