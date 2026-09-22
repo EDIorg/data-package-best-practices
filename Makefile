@@ -1,4 +1,4 @@
-allbooks: book1 book2 book3
+allbooks: book1 book2
 
 book1:
 	echo "Make current EML Best Practices book"
