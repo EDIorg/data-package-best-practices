@@ -36,50 +36,14 @@ Clearly, there are many possible ways to combine raw data, derived data, and met
 
 Several EDI data packages for data from moving platforms are presented as examples in Table 1. Many more detailed, ?drone-specific? metadata terms and values can be included in data packages for drones and other moving platforms. For completeness we have developed a comprehensive list of recommended and optional metadata terms based on the work of Wyngaard et al. [-@wyngaard_emergent_2019], Thomer et al. [-@thomer_minimum_2020], with mappings to select relevant ontologies, viewable [here](https://docs.google.com/spreadsheets/d/1PQ0SUEQLgQXdz2PUNDy2jGry3o9veAedcz8l-5ubpwU). For each metadata element, we assessed its utility in terms of data discovery, evaluating fitness for use, and actual data reuse. The minimum recommended subsets of metadata that are included in the section above were derived from this table.  
 
-Table 1. Example packages at EDI and other repositories
+| Title | Description | EDI packageID |
+|---|---|---|
+| *Orthophoto and elevation models from UAV overflights at the G-IBPE study site at Jornada Basin LTER in 2019* | Approximately 599 RGB images and data derived from uncrewed aerial vehicle (UAV) overflights of the G-IBPE study site at the Jornada Basin LTER in southern New Mexico, USA. | [knb-lter-jrn.210543001](https://portal-s.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&identifier=210543001) |
+| *Aerial imagery from unmanned aerial systems (UAS) flights and ground control points: Plum Island Estuary and Parker River NWR (PRNWR), February 27th, 2018.* | USGS Aerial imagery UAS flights at the Parker River National Wildlife Refuge, Massachusetts, USA, includes ground control, multispectral and true color child items which each have data entities that include ground control or a file catalog of images | [ScienceBase](https://www.sciencebase.gov/catalog/item/5c0fe16de4b0c53ecb2d1bc3) |
+| *Spatial variability in water chemistry of four Wisconsin aquatic ecosystems - High speed limnology Environmental Science and Technology datasets* | water chemistry sensors embedded in a high-speed water intake system to document spatial variability. | [knb-lter-ntl.337.4](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-ntl.337.4) |
+| *Thermal infrared, multispectral, and photogrammetric data collected by drone for hydrogeologic analysis of the East River beaver-impacted corridor near Crested Butte, Colorado* | infrared, multispectral, visual image data, and derivative products (orthomosaic and digital surface model) collected along a beaver-impacted section of the East River from August 12-17, 2017 and July 28-August 2, 2018. | [ScienceBase](https://www.sciencebase.gov/catalog/item/5ccc4cc9e4b09b8c0b78c97a) |
 
-<table>
-  <tr>
-   <td><strong>Title</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>EDI packageID</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><em>Orthophoto and elevation models from UAV overflights at the G-IBPE study site at Jornada Basin LTER in 2019</em>
-   </td>
-   <td>Approximately 599 RGB images and data derived from uncrewed aerial vehicle (UAV) overflights of the G-IBPE study site at the Jornada Basin LTER in southern New Mexico, USA.
-   </td>
-   <td><a href="https://portal-s.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&identifier=210543001">knb-lter-jrn.210543001</a>
-   </td>
-  </tr>
-  <tr>
-   <td><em>Aerial imagery from unmanned aerial systems (UAS) flights and ground control points: Plum Island Estuary and Parker River NWR (PRNWR), February 27th, 2018.</em>
-   </td>
-   <td>USGS Aerial imagery UAS flights at the Parker River National Wildlife Refuge, Massachusetts, USA, includes ground control, multispectral and true color child items which each have data entities that include ground control or a file catalog of images
-   </td>
-   <td><a href="https://www.sciencebase.gov/catalog/item/5c0fe16de4b0c53ecb2d1bc3">ScienceBase</a>
-   </td>
-  </tr>
-  <tr>
-   <td><em>Spatial variability in water chemistry of four Wisconsin aquatic ecosystems - High speed limnology Environmental Science and Technology datasets</em>
-   </td>
-   <td>water chemistry sensors embedded in a high-speed water intake system to document spatial variability.
-   </td>
-   <td><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-ntl.337.4">knb-lter-ntl.337.4</a>
-   </td>
-  </tr>
-  <tr>
-   <td><em>Thermal infrared, multispectral, and photogrammetric data collected by drone for hydrogeologic analysis of the East River beaver-impacted corridor near Crested Butte, Colorado</em>
-   </td>
-   <td>infrared, multispectral, visual image data, and derivative products (orthomosaic and digital surface model) collected along a beaver-impacted section of the East River from August 12-17, 2017 and July 28-August 2, 2018.
-   </td>
-   <td><a href="https://www.sciencebase.gov/catalog/item/5ccc4cc9e4b09b8c0b78c97a">ScienceBase</a>
-   </td>
-  </tr>
-</table>
+: Example packages at EDI and other repositories. {#tbl-moving-platform-examples}
 
 ## Resources
 

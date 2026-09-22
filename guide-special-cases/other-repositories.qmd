@@ -47,93 +47,27 @@ There are several common use cases for creating a new linked data package in EDI
 * The inventory table must have a row for each outside repository record (or some meaningful grouping of records, e.g., project in NCBI) being linked to, with columns that include persistent unique identifiers of the data in the other repository, and relevant descriptors of the data. The complete content of the inventory will be dictated by the structure of the other repository and the data entities and metadata held there. Suggested columns are presented in Table 5.1.
 * The inventory table may also provide additional contextual information for each individual data resource in another repository. Table 5.2 presents examples of these contextual columns. They are, however, subject dependent and may vary for different projects. For more examples, see the discussion on sequencing and genomic data later in this document.
 
-Table 1: Suggested columns for identifying the external data in the data inventory table.
+| Column | Description |
+|---|---|
+| External unique ID | Unique identifier for the data resource in the other repository. E.g. Accession number |
+| External access URL | A unique, persistent link to the data resource in the other repository. |
+| Title/description | Title and/or brief description of the data resource |
+| Filename(s) | Dataset or file name at the other repository |
+| Format | File format of above |
+| Repository URL | URL of the repository being linked to |
 
-<table>
-  <tr>
-   <td><strong>Column</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>External unique ID
-   </td>
-   <td>Unique identifier for the data resource in the other repository. E.g. Accession number
-   </td>
-  </tr>
-  <tr>
-   <td>External access URL
-   </td>
-   <td>A unique, persistent link to the data resource in the other repository.
-   </td>
-  </tr>
-  <tr>
-   <td>Title/description
-   </td>
-   <td>Title and/or brief description of the data resource
-   </td>
-  </tr>
-  <tr>
-   <td>Filename(s)
-   </td>
-   <td>Dataset or file name at the other repository
-   </td>
-  </tr>
-  <tr>
-   <td>Format
-   </td>
-   <td>File format of above
-   </td>
-  </tr>
-  <tr>
-   <td>Repository URL
-   </td>
-   <td>URL of the repository being linked to
-   </td>
-  </tr>
-</table>
+: Suggested columns for identifying the external data in the data inventory table. {#tbl-external-columns}
 
-Table 2: Examples of additional contextual columns in the data inventory table.
 
-<table>
-  <tr>
-   <td><strong>Column</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Latitude/Longitude
-   </td>
-   <td>Latitude and longitude in standard format for each data resource in the other repository.
-   </td>
-  </tr>
-  <tr>
-   <td>Location name
-   </td>
-   <td>Locally used name of collection site
-   </td>
-  </tr>
-  <tr>
-   <td>Treatment level
-   </td>
-   <td>Experimental treatment applied to the outside dataset
-   </td>
-  </tr>
-  <tr>
-   <td>Start/End datetime
-   </td>
-   <td>Starting/ending datetime of the data resource (NA for End if data collection is ongoing)
-   </td>
-  </tr>
-  <tr>
-   <td>Reference publication
-   </td>
-   <td>DOI of publication providing in-depth context for data
-   </td>
-  </tr>
-</table>
+| Column | Description |
+|---|---|
+| Latitude/Longitude | Latitude and longitude in standard format for each data resource in the other repository. |
+| Location name | Locally used name of collection site |
+| Treatment level | Experimental treatment applied to the outside dataset |
+| Start/End datetime | Starting/ending datetime of the data resource (NA for End if data collection is ongoing) |
+| Reference publication | DOI of publication providing in-depth context for data |
+
+: Examples of additional contextual columns in the data inventory table. {#tbl-contextual-columns}
 
 **Case 3:** One or more datasets in other repositories are used to create derived data products that need to be archived in EDI.
 
@@ -210,58 +144,15 @@ Data packages of metadata and inventory tables will aid in discovering genomic d
 
 Each of the EDI data packages below are linked to data in outside repositories. Some contain data inventory tables (as dataTable entities) that link to the datasets held in outside repositories and are described in the EML metadata. The EML abstract and methods elements in each give detailed access and citation instructions.
 
-Table 3: Linked data packages at EDI that provide examples of the best practices in this document.
+| Title | Description | EDI packageID |
+|---|---|---|
+| *Mass and energy fluxes from the US-Jo2 AmeriFlux eddy covariance tower in Tromble Weir experimental watershed at the Jornada Basin LTER site, 2010-ongoing* | This data package links to eddy covariance data from a Jornada Basin LTER tower. The data are held at the AmeriFlux data repository (<https://ameriflux.lbl.gov>) | [knb-lter-jrn.210338005](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&identifier=210338005) |
+| *Catalog of GenBank sequence read archive (SRA) entries of 16S and 18S rRNA genes from bacterial and protistan planktonic communities along the Eastern Beaufort Sea coast, North Slope, Alaska, 2011-2013* | Data inventory of runs, samples, and experiments held at GenBank. | [knb-lter-ble.10](https://doi.org/10.6073/pasta/0e4d75453560ab5c085c9b547be68731) |
+| *Correlation of native and exotic species richness: a global meta-analysis finds no invasion paradox across scales* | This data package re-publishes data held in a package in Dryad. The metadata has been substantially enriched relative to the original dataset. | [edi.548.1](https://portal.edirepository.org/nis/mapbrowse?packageid=edi.548.1) |
+| *Vascular Flora of the Harvard Farm at Harvard Forest since 2014* | This data package includes an inventory table with information on voucher specimens held in the Harvard Herbarium. | [knb-lter-hfr.236.3](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-hfr.236.3) |
+| *Biological responses to landscape change in the McMurdo Dry Valleys, Antarctica* | This data package links to genomic data in NCBI, and includes additional data from biogeochemical analyses performed on each sample. | [knb-lter-mcm.262.1](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcm.262.1) |
 
-<table>
-  <tr>
-   <td><strong>Title</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>EDI packageID</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><em>Mass and energy fluxes from the US-Jo2 AmeriFlux eddy covariance tower in Tromble Weir experimental watershed at the Jornada Basin LTER site, 2010-ongoing</em>
-   </td>
-   <td>This data package links to eddy covariance data from a Jornada Basin LTER tower. The data are held at the AmeriFlux data repository (<a href="https://ameriflux.lbl.gov/">https://ameriflux.lbl.gov</a>)
-   </td>
-   <td><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&identifier=210338005">knb-lter-jrn.210338005</a>
-   </td>
-  </tr>
-  <tr>
-   <td><em>Catalog of GenBank sequence read archive (SRA) entries of 16S and 18S rRNA genes from bacterial and protistan planktonic communities along the Eastern Beaufort Sea coast, North Slope, Alaska, 2011-2013</em>
-   </td>
-   <td>Data inventory of runs, samples, and experiments held at GenBank.
-   </td>
-   <td><a href="https://doi.org/10.6073/pasta/0e4d75453560ab5c085c9b547be68731">knb-lter-ble.10</a>
-   </td>
-  </tr>
-  <tr>
-   <td><em>Correlation of native and exotic species richness: a global meta-analysis finds no invasion paradox across scales</em>
-   </td>
-   <td>This data package re-publishes data held in a package in Dryad. The metadata has been substantially enriched relative to the original dataset.
-   </td>
-   <td><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=edi.548.1">edi.548.1</a>
-   </td>
-  </tr>
-  <tr>
-   <td><em>Vascular Flora of the Harvard Farm at Harvard Forest since 2014</em>
-   </td>
-   <td>This data package includes an inventory table with information on voucher specimens held in the Harvard Herbarium.
-   </td>
-   <td><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-hfr.236.3">knb-lter-hfr.236.3</a>
-   </td>
-  </tr>
-  <tr>
-   <td><em>Biological responses to landscape change in the McMurdo Dry Valleys, Antarctica</em>
-   </td>
-   <td>This data package links to genomic data in NCBI, and includes additional data from biogeochemical analyses performed on each sample.
-   </td>
-   <td><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcm.262.1">knb-lter-mcm.262.1</a>
-   </td>
-  </tr>
-</table>
+: Linked data packages at EDI that provide examples of the best practices in this document. {#tbl-linked-examples}
 
 ## Appendix: Tips and repository information
 

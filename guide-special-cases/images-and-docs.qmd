@@ -63,115 +63,31 @@ We recommend that an additional level of metadata be provided through a data inv
 
 The data inventory table should be structured such that each column represents a particular attribute, described in EML as a [dataTable](https://eml.ecoinformatics.org/schema/eml-dataTable_xsd.html#eml-dataTable.xsd) entity, and each row represents an individual document or a compressed archive of a group of documents. At minimum, the table should include an attribute for the document/archive filename, as well as any other essential attributes that vary per each document/archive. Additional attributes may include information on the date and/or time, but for this information to be useful, be consistent and use a controlled vocabulary for these fields so that a user can effectively search on them.
 
-Table 1: Data inventory table structure.
+| Column | Attribute Description |
+|---|---|
+| Filename | Filename of each document or compressed archive, including file extension (e.g., 'site_date.jpg'). For compressed archives, include the relative path of the document, with respect to the uncompressed directory structure (e.g., '2018/SITE3/quadrat4.jpg'). |
+| Link/URL/URI | Link to download a document if it is available on a different system (also see [Data in Other Repositories](data-in-other-repositories.html)). Persistent identifiers are recommended, if available. |
+| Creator(s) | Name(s) of the creator(s) of the original document (e.g., photographer, field technician, interviewer). Multiple creators should be entered into a single cell using the pipe delimiter. |
+| Datetime | Date (and time) associated with the document, in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) (e.g., 2007-04-05T12:30-02:00). |
+| Project specific datetime attributes | One or more appropriately labeled columns containing project specific date and time information for easier search and retrieval of documents (e.g., year, season, campaign). |
+| Location | One or more location columns as appropriate, such as latitude and longitude in decimal degrees, site name, transect name, altitude, depth, habitat, etc. |
+| Document specific attributes | One or more columns as appropriate to the document type, such as weather conditions, organism name, instrument type, etc. |
 
-<table>
-  <tr>
-   <td><strong>Column</strong>
-   </td>
-   <td><strong>Attribute Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Filename
-   </td>
-   <td>Filename of each document or compressed archive, including file extension (e.g., 'site_date.jpg'). For compressed archives, include the relative path of the document, with respect to the uncompressed directory structure (e.g., '2018/SITE3/quadrat4.jpg').
-   </td>
-  </tr>
-  <tr>
-   <td>Link/URL/URI
-   </td>
-   <td>Link to download a document if it is available on a different system (also see <a href="data-in-other-repositories.html">Data in Other Repositories</a>). Persistent identifiers are recommended, if available.
-   </td>
-  </tr>
-  <tr>
-   <td>Creator(s)
-   </td>
-   <td>Name(s) of the creator(s) of the original document (e.g., photographer, field technician, interviewer). Multiple creators should be entered into a single cell using the pipe delimiter.
-   </td>
-  </tr>
-  <tr>
-   <td>Datetime
-   </td>
-   <td>Date (and time) associated with the document, in <a href="https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations">ISO 8601 format</a> (e.g., 2007-04-05T12:30-02:00).
-   </td>
-  </tr>
-  <tr>
-   <td>Project specific datetime attributes
-   </td>
-   <td>One or more appropriately labeled columns containing project specific date and time information for easier search and retrieval of documents (e.g., year, season, campaign).
-   </td>
-  </tr>
-  <tr>
-   <td>Location
-   </td>
-   <td>One or more location columns as appropriate, such as latitude and longitude in decimal degrees, site name, transect name, altitude, depth, habitat, etc.
-   </td>
-  </tr>
-  <tr>
-   <td>Document specific attributes
-   </td>
-   <td>One or more columns as appropriate to the document type, such as weather conditions, organism name, instrument type, etc.
-   </td>
-  </tr>
-</table>
+: Data inventory table structure. {tbl-colwidths="[25,75]"}
 
 ## Example data packages in EDI
 
 Each of the Environmental Data Initiative (EDI) data packages listed below include images or other documents as data. Some of these packages contain data inventory tables (as dataTable entities) described in the EML metadata.
 
-Table 2: Data packages in EDI providing examples of best practices from this document.
+| Dataset Title | Description | EDI Package ID |
+|---|---|---|
+| *Annual ground-based photographs taken at 15 net primary production (NPP) study sites at Jornada Basin LTER, 1996-ongoing* | Compressed archives of images grouped by year. Includes data inventory file. | [knb-lter-jrn.210011005.105](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&identifier=210011005) |
+| *McMurdo Dry Valleys LTER: Landscape Albedo in Taylor Valley, Antarctica from 2015 to 2019* | Compressed archives of aerial images, grouped by flight date, and associated reflectance data. | [knb-lter-mcm.2016.2](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcm.2016.2) |
+| *MCR LTER: Coral Reef: Computer Vision: Multi-annotator Comparison of Coral Photo Quadrat Analysis* | 5090 coral reef survey images, and 251,988 random-point annotations by coral ecology experts. | [knb-lter-mcr.5013.3](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-mcr&identifier=5013) |
+| *Abundance and biovolume of taxonomically-resolved phytoplankton and microzooplankton imaged continuously underway with an Imaging FlowCytobot along the NES-LTER Transect in winter 2018* | 144,281 images from a plankton imaging system with annotations and extracted size data. | [knb-lter-nes.9.1](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-nes.9.1) |
+| *Calling activity of Birds in the White Mountain National Forest: Audio Recordings (2016 and 2018)* | Compressed archive containing 410 audio files in wav format. Includes data inventory table. | [knb-lter-hbr.268.1](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-hbr&identifier=268&revision=1) |
 
-<table>
-  <tr>
-   <td><strong>Dataset Title</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>EDI Package ID</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><em>Annual ground-based photographs taken at 15 net primary production (NPP) study sites at Jornada Basin LTER, 1996-ongoing</em>
-   </td>
-   <td>Compressed archives of images grouped by year. Includes data inventory file.
-   </td>
-   <td><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-jrn&identifier=210011005">knb-lter-jrn.210011005.105</a>
-   </td>
-  </tr>
-  <tr>
-   <td><em>McMurdo Dry Valleys LTER: Landscape Albedo in Taylor Valley, Antarctica from 2015 to 2019</em>
-   </td>
-   <td>Compressed archives of aerial images, grouped by flight date, and associated reflectance data.
-   </td>
-   <td><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-mcm.2016.2">knb-lter-mcm.2016.2</a>
-   </td>
-  </tr>
-  <tr>
-   <td><em>MCR LTER: Coral Reef: Computer Vision: Multi-annotator Comparison of Coral Photo Quadrat Analysis</em>
-   </td>
-   <td>5090 coral reef survey images, and 251,988 random-point annotations by coral ecology experts.
-   </td>
-   <td><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-mcr&identifier=5013">knb-lter-mcr.5013.3</a>
-   </td>
-  </tr>
-  <tr>
-   <td><em>Abundance and biovolume of taxonomically-resolved phytoplankton and microzooplankton imaged continuously underway with an Imaging FlowCytobot along the NES-LTER Transect in winter 2018</em>
-   </td>
-   <td>144,281 images from a plankton imaging system with annotations and extracted size data.
-   </td>
-   <td><a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-nes.9.1">knb-lter-nes.9.1</a>
-   </td>
-  </tr>
-  <tr>
-   <td><em>Calling activity of Birds in the White Mountain National Forest: Audio Recordings (2016 and 2018)</em>
-   </td>
-   <td>Compressed archive containing 410 audio files in wav format. Includes data inventory table.
-   </td>
-   <td><a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-hbr&identifier=268&revision=1">knb-lter-hbr.268.1</a>
-   </td>
-  </tr>
-</table>
+: Data packages in EDI providing examples of best practices from this document.
 
 ## Resources
 
