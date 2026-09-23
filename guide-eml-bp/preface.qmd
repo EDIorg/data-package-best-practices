@@ -8,11 +8,11 @@ https://edirepository.org | info@edirepository.org
 
 :::
 
-The recommendations for EML metadata apply to all data packages. This book is a reproduction of V3 of the static PDF document "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)," last updated in 2017. The entire most recent (versioned, citable) release will be made available as a PDF. 
+The recommendations for EML metadata apply to all data packages. This book is a reproduction of version 3.0 of the static PDF document "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)," last updated in 2017. The guide was subsequently placed online in this repository in 2019 and lightly edited and reformatted in the progress. The online version is now version 3.1, and is available from this cite in PDF, MS Word, and Quarto markdown formats. The original souce document, version 3.0, is available as a PDF in the `archive/guide-eml-bp/` directory.
 
-Please cite as:
+**Please cite this document as:**
 
-Best Practices for Dataset Metadata in Ecological Metadata Language (EML Best Practices V3). 2017. Environmental Data Initiative.
+Best Practices for Dataset Metadata in Ecological Metadata Language (EML Best Practices version 3.1). 2019. Environmental Data Initiative.
 
 ## Conventions and Definitions
 
