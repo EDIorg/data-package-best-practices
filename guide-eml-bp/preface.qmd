@@ -12,7 +12,7 @@ The recommendations for EML metadata apply to all data packages. This book is a 
 
 **Please cite this document as:**
 
-Best Practices for Dataset Metadata in Ecological Metadata Language (EML Best Practices version 3.1). 2019. Environmental Data Initiative.
+Bahauddin, D., Benson, B., Boose, E., Brunt, J., Costa, D., Gries, C., Henshaw, D., O'Brien, M., Ramsey, K., Gil, I. S., Servilla, M., Sheldon, W., Tarrant, P., Valentine, T., Castle, J. V., Vanderbilt, K., Walsh, J., Xia, Y., & Committee, L. N. I. M. (2019). EDIorg/data-package-best-practices: "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)" version 3.1 (Version guide-eml-bp_v3.1). Zenodo. <https://doi.org/10.5281/zenodo.22910975>
 
 ## Conventions and Definitions
 
