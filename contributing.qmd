@@ -99,8 +99,10 @@ Completed, community-approved versions of some guides here are published to EDI 
         git mv guide-eml-bp/guide-eml-bp_v4.0.docx ./
 
     Double check that the correctly rendered docs are there.
+    
+5. **Optionally, run `scripts/make-citation-metadata.R` (with R) to generate the citation metadata files.** This isn't required, but the files this creates (`.zenodo.json`, `CITATION.cff`) will be read by Zenodo during publication and this saves time entering authors, abstracts, etc into the Zenodo metadata form. After creating these files, put them in the top level directory, add and commit them.
 
-5. ***If this is a new branch,*** **remove any files that will not be published**, and rename the `_bookquarto.yml` file. 
+6. ***If this is a new branch,*** **remove any files that will not be published**, and rename the `_bookquarto.yml` file. 
 
         git rm -rf guide-domain-specific guide-special-cases / # Directories first
                    archive .github img
@@ -111,7 +113,7 @@ Completed, community-approved versions of some guides here are published to EDI 
 
     If you need to replace anything you can use `git checkout main -- path/to/file`, or go back to square one with `git reset HEAD`. 
 
-6. **Commit, tag and push changes to GitHub**
+7. **Commit, tag and push changes to GitHub**
 
         git commit -m 'publish: add rendered guides and remove extras'
         git tag -a guide-eml-bp_v4.0 -m "Publish version 4.0 of the EML Best Practices guide"
@@ -121,7 +123,7 @@ Completed, community-approved versions of some guides here are published to EDI 
         # Don't forget to push the tag to GitHub (doesn't happen automatically)
         git push origin guide-eml-bp-v4.0
 
-7. **On GitHub, prepare and publish a release using the tag above**, which will include all new and updated documents in the `releases-guide-eml-bp` branch.
+8. **On GitHub, prepare and publish a release using the tag above**, which will include all new and updated documents in the `releases-guide-eml-bp` branch.
 
-8. **Check Zenodo to make sure the release has been published and issued a DOI.** Be sure to check and edit authors for the publication. They are generally rendered from the GitHub repository contributors, not the documents themselves. You can contribute to any Zenodo communities (like EDI) from the Zenodo landing page as well.
+9. **Check Zenodo to make sure the release has been published and issued a DOI.** Be sure to check and edit authors for the publication. They are generally rendered from the GitHub repository contributors, not the documents themselves. You can contribute to any Zenodo communities (like EDI) from the Zenodo landing page as well.
 
