@@ -1,6 +1,7 @@
 project:
   type: book
   output-dir: _book
+  pre-render: ../scripts/make-citation-metadata.R
 
 metadata-files:
   - _bookmetadata.yml
