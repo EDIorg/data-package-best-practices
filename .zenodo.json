@@ -1,0 +1,93 @@
+{
+  "title": "Best Practices for Dataset Metadata in Ecological Metadata Language (EML)",
+  "description": "This book presents \"best practice\" recommendations for creating metadata documents in the Ecological Metadata Language (EML), a widely accepted standard for research metadata exchange in the environmental sciences. The document focuses the most common use-cases for EML and recommends content and formatting for its most important and frequently-used metadata elements. As such, these recommendations can be applied to most research datasets that include EML metadata. There are also recommendations specific to the U.S. LTER Network and Environmental Data Initiative (EDI) repository. This is the third version of the book, with content updated in 2017 by the EML Best Practices working group of the LTER Network Information Management Committee. Minor edits and reformatting took place in 2019 to produce this current online version (Version 3.1).",
+  "upload_type": "publication",
+  "publication_type": "book",
+  "creators": [
+    {
+      "name": "Bahauddin, Dan",
+      "affiliation": "University of Minnesota"
+    },
+    {
+      "name": "Benson, Barbara"
+    },
+    {
+      "name": "Boose, Emery",
+      "affiliation": "Harvard University"
+    },
+    {
+      "name": "Brunt, James",
+      "affiliation": "University of New Mexico"
+    },
+    {
+      "name": "Costa, Duane",
+      "affiliation": "University of New Mexico"
+    },
+    {
+      "name": "Gries, Corinna",
+      "affiliation": "University of Wisconsin, Madison",
+      "orcid": "0000-0002-9091-6543"
+    },
+    {
+      "name": "Henshaw, Don",
+      "affiliation": "Oregon State University"
+    },
+    {
+      "name": "O'Brien, Margaret",
+      "affiliation": "University of California, Santa Barbara",
+      "orcid": "0000-0002-1693-8322"
+    },
+    {
+      "name": "Ramsey, Ken",
+      "affiliation": "New Mexico State University"
+    },
+    {
+      "name": "Gil, Inigo San",
+      "affiliation": "University of New Mexico"
+    },
+    {
+      "name": "Servilla, Mark",
+      "affiliation": "University of New Mexico"
+    },
+    {
+      "name": "Sheldon, Wade"
+    },
+    {
+      "name": "Tarrant, Phillip"
+    },
+    {
+      "name": "Valentine, Theresa"
+    },
+    {
+      "name": "Castle, John Vande"
+    },
+    {
+      "name": "Vanderbilt, Kristin",
+      "affiliation": "University of New Mexico"
+    },
+    {
+      "name": "Walsh, Jonathan"
+    },
+    {
+      "name": "Xia, Yang",
+      "affiliation": "University of Kansas"
+    },
+    {
+      "name": "Committee, LTER Network Information Management",
+      "affiliation": "Various"
+    }
+  ],
+  "keywords": [
+    "data management",
+    "EML",
+    "dataset",
+    "research",
+    "environmental science",
+    "metadata",
+    "publishing",
+    "guide",
+    "repository"
+  ],
+  "license": "cc-by-4.0",
+  "version": "3.1"
+}

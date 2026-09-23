@@ -1,0 +1,82 @@
+cff-version: 1.2.0
+message: If you use this guide, please cite it as below.
+title: Best Practices for Dataset Metadata in Ecological Metadata Language (EML)
+abstract: This book presents "best practice" recommendations for creating metadata
+  documents in the Ecological Metadata Language (EML), a widely accepted standard
+  for research metadata exchange in the environmental sciences. The document focuses
+  the most common use-cases for EML and recommends content and formatting for its
+  most important and frequently-used metadata elements. As such, these recommendations
+  can be applied to most research datasets that include EML metadata. There are also
+  recommendations specific to the U.S. LTER Network and Environmental Data Initiative
+  (EDI) repository. This is the third version of the book, with content updated in
+  2017 by the EML Best Practices working group of the LTER Network Information Management
+  Committee. Minor edits and reformatting took place in 2019 to produce this current
+  online version (Version 3.1).
+type: book
+authors:
+- given-names: Dan
+  family-names: Bahauddin
+  affiliation: University of Minnesota
+- given-names: Barbara
+  family-names: Benson
+- given-names: Emery
+  family-names: Boose
+  affiliation: Harvard University
+- given-names: James
+  family-names: Brunt
+  affiliation: University of New Mexico
+- given-names: Duane
+  family-names: Costa
+  affiliation: University of New Mexico
+- given-names: Corinna
+  family-names: Gries
+  affiliation: University of Wisconsin, Madison
+  orcid: https://orcid.org/0000-0002-9091-6543
+- given-names: Don
+  family-names: Henshaw
+  affiliation: Oregon State University
+- given-names: Margaret
+  family-names: O'Brien
+  affiliation: University of California, Santa Barbara
+  orcid: https://orcid.org/0000-0002-1693-8322
+- given-names: Ken
+  family-names: Ramsey
+  affiliation: New Mexico State University
+- given-names: Inigo San
+  family-names: Gil
+  affiliation: University of New Mexico
+- given-names: Mark
+  family-names: Servilla
+  affiliation: University of New Mexico
+- given-names: Wade
+  family-names: Sheldon
+- given-names: Phillip
+  family-names: Tarrant
+- given-names: Theresa
+  family-names: Valentine
+- given-names: John Vande
+  family-names: Castle
+- given-names: Kristin
+  family-names: Vanderbilt
+  affiliation: University of New Mexico
+- given-names: Jonathan
+  family-names: Walsh
+- given-names: Yang
+  family-names: Xia
+  affiliation: University of Kansas
+- given-names: LTER Network Information Management
+  family-names: Committee
+  affiliation: Various
+keywords:
+- data management
+- EML
+- dataset
+- research
+- environmental science
+- metadata
+- publishing
+- guide
+- repository
+license: CC-BY-4.0
+version: '3.1'
+date-released: '2019-12-31'
