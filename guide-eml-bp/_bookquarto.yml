@@ -1,29 +1,16 @@
 project:
   type: book
   output-dir: _book
-
+  pre-render: ../scripts/make-citation-metadata.R
+  
 metadata-files:
   - _bookmetadata.yml
-  
 book:
   chapters:
     - index.qmd
-    - chapter-01-introduction-to-eml.qmd
-    - chapter-02-metadata-and-dataset-design-principles.qmd
-    - chapter-03-general-dataset-information.qmd
-    - chapter-04-people-and-organizations-responsibleparty.qmd
-    - chapter-05-the-project-tree.qmd
-    - chapter-06-data-access-and-usage-rights.qmd
-    - chapter-07-keywords-coverage-and-annotations.qmd
-    - chapter-08-citations-and-references.qmd
-    - chapter-09-methods.qmd
-    - chapter-10-data-entities.qmd
-    - chapter-11-variable-descriptions-attributes.qmd
-    - chapter-12-additional-metadata.qmd
-    - appendix-a-specialized-elements.qmd
-    - appendix-b-xml-schemas-and-eml.qmd
-    - appendix-c-known-issues-and-gotchas.qmd
-    - references.qmd
+    - preface.qmd
+    - introduction.qmd
+    - content-recommendations.qmd
 
 execute:
   freeze: auto
@@ -40,14 +27,14 @@ format:
         \usepackage{fvextra}
         \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
     # Currently has no effect (?) so renaming in Makefile
-    output-file: "guide-eml-bp_v4.0"
+    output-file: "guide-eml-bp_v3.1"
     output-ext:  "pdf"
   docx:
     toc: true
     number-sections: true
     colorlinks: true
     # Currently has no effect (?) so renaming in Makefile
-    output-file: "guide-eml-bp_v4.0"
+    output-file: "guide-eml-bp_v3.1"
     output-ext:  "docx"
 
 

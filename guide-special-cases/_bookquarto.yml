@@ -1,13 +1,15 @@
 project:
   type: book
   output-dir: _book
+  pre-render: ../scripts/make-citation-metadata.R
 
 metadata-files:
   - _bookmetadata.yml
-  
 book:
   chapters:
     - index.qmd
+    - preface.qmd
+    - introduction.qmd
     - code.qmd
     - model-based.qmd
     - images-and-docs.qmd
