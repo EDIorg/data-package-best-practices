@@ -20,7 +20,7 @@ citation:
   type: book
   container-title: Zenodo
   version: "1.1"
-  doi: 10.5281/zenodo.22903013
+  doi: 10.5281/zenodo.22906692
 categories: published
 image: ../img/book.svg
 ---

@@ -31,6 +31,6 @@ The first version of the "Data Package Design for Special Cases" guide was creat
 
 In 2022-2024, some minor edits and formatting modifications were made to *Version 1*, so we refer to the document here as *Version 1.1*. See the repository history for details.
 
-  - *Data Package Design for Special Cases, Version 1.1*: [HTML pages](guide-special-cases/index.qmd). Other formats are available from rendered web pages.
+  - *Data Package Design for Special Cases, Version 1.1*: [HTML pages](guide-special-cases/index.qmd). [Zenodo publication](https://doi.org/10.5281/zenodo.22906692). Other formats are available from rendered web pages.
 
   In 2026, a new version of the working group has convened to revise and create version 2 of the guide.
