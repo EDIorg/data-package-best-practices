@@ -68,7 +68,7 @@ Both `main` and `prerelease` branches have GitHub Actions workflows configured t
 
 ## Publishing documents
 
-Completed, community-approved versions of some guides here are published to EDI or Zenodo. Publication for these guides happens from repository branches that are created from the community-approved content in `main` and named using the repository's shorthand name for the guide (currently `guide-special-cases` and `guide-eml-bp`). The `ediorg/data-package-best-practices` repository is linked to a Zenodo dataset series (under Greg's account), so releases from the repository, in any branch, will be automatically published with new DOIs there. Below we use the EML Best Practices document, with a branch name of `releases-guide-eml-bp` as an example. The workflow is:
+Completed, community-approved versions of some guides here are published to EDI or Zenodo. The documents are published from repository branches that are created from the community-approved content in `main` and named using the repository shorthand name for the guide (currently `guide-special-cases` and `guide-eml-bp`). The `ediorg/data-package-best-practices` repository is linked to a Zenodo dataset series under a maintainer's account (currently Greg's), so releases from the repository, in any branch, will be automatically published with new DOIs there. Below we use the EML Best Practices document, with a branch name of `releases-guide-eml-bp` as an example. The workflow is:
 
 1. **Locally render the documents in the `main` branch.** Doing this runs a Makefile that renders the PDF and Word format guides and moves them to the `archive/guide-eml-bp/` folder.
 
@@ -95,7 +95,10 @@ Completed, community-approved versions of some guides here are published to EDI 
 
         git add archive/guide-eml-bp/guide-eml-bp_v4.0.pdf archive/guide-eml-bp/guide-eml-bp_v4.0.docx
 
-        git mv guide-eml-bp/guide-eml-bp_v4.0.pdf
+        git mv guide-eml-bp/guide-eml-bp_v4.0.pdf ./
+        git mv guide-eml-bp/guide-eml-bp_v4.0.docx ./
+
+    Double check that the correctly rendered docs are there.
 
 5. ***If this is a new branch,*** **remove any files that will not be published**, and rename the `_bookquarto.yml` file. 
 
@@ -118,7 +121,7 @@ Completed, community-approved versions of some guides here are published to EDI 
         # Don't forget to push the tag to GitHub (doesn't happen automatically)
         git push origin guide-eml-bp-v4.0
 
-7. On GitHub, prepare and publish a release, using the tag above, for the new document in the `releases-guide-eml-bp` branch.
+7. **On GitHub, prepare and publish a release using the tag above**, which will include all new and updated documents in the `releases-guide-eml-bp` branch.
 
-8. Check Zenodo to make sure the release has been published and issued a DOI. Be sure to check and edit authors for the publication. They are generally rendered from the GitHub repository contributors, not the documents themselves. You can contribute to any Zenodo communities (like EDI) from the Zenodo landing page as well.
+8. **Check Zenodo to make sure the release has been published and issued a DOI.** Be sure to check and edit authors for the publication. They are generally rendered from the GitHub repository contributors, not the documents themselves. You can contribute to any Zenodo communities (like EDI) from the Zenodo landing page as well.
 
