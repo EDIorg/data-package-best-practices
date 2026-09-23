@@ -46,7 +46,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-aced932c6eb97d642153b8e218288f9f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-89f40ec9654b702ee165fcdbf7ae89a6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9468524b946203c8e9cfab9f3248ba77.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -251,6 +251,7 @@ ul.task-list li input[type="checkbox"] {
  git mv guide-eml-bp/guide-eml-bp_v4.0.pdf ./
  git mv guide-eml-bp/guide-eml-bp_v4.0.docx ./</code></pre>
 <p>Double check that the correctly rendered docs are there.</p></li>
+<li><p><strong>Optionally, run <code>scripts/make-citation-metadata.R</code> (with R) to generate the citation metadata files.</strong> This isn’t required, but the files this creates (<code>.zenodo.json</code>, <code>CITATION.cff</code>) will be read by Zenodo during publication and this saves time entering authors, abstracts, etc into the Zenodo metadata form. After creating these files, put them in the top level directory, add and commit them.</p></li>
 <li><p><strong><em>If this is a new branch,</em></strong> <strong>remove any files that will not be published</strong>, and rename the <code>_bookquarto.yml</code> file.</p>
 <pre><code> git rm -rf guide-domain-specific guide-special-cases / # Directories first
             archive .github img
