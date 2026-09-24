@@ -244,12 +244,12 @@ ul.task-list li input[type="checkbox"] {
  git merge main</code></pre>
 <p>There may be conflicts when merging into an existing branch since some files have been removed for publication. Resolve these conflicts with git’s merge tool:</p>
 <pre><code> git mergetool</code></pre>
-<p>It should be ok to approve removing files that were already removed in <code>HEAD</code>.</p></li>
+<p>It should be ok to exclude merging the files that were already removed in <code>HEAD</code>.</p></li>
 <li><p><strong>Add the rendered PDF and Word files</strong> for the guide you will be publishing. Then move them to the root directory.</p>
 <pre><code> git add archive/guide-eml-bp/guide-eml-bp_v4.0.pdf archive/guide-eml-bp/guide-eml-bp_v4.0.docx
 
- git mv guide-eml-bp/guide-eml-bp_v4.0.pdf ./
- git mv guide-eml-bp/guide-eml-bp_v4.0.docx ./</code></pre>
+ git mv archive/guide-eml-bp/guide-eml-bp_v4.0.pdf ./
+ git mv archive/guide-eml-bp/guide-eml-bp_v4.0.docx ./</code></pre>
 <p>Double check that the correctly rendered docs are there.</p></li>
 <li><p><strong>Optionally, run <code>scripts/make-citation-metadata.R</code> (with R) to generate the citation metadata files.</strong> This isn’t required, but the files this creates (<code>.zenodo.json</code>, <code>CITATION.cff</code>) will be read by Zenodo during publication and this saves time entering authors, abstracts, etc into the Zenodo metadata form. After creating these files, put them in the top level directory, add and commit them.</p></li>
 <li><p><strong><em>If this is a new branch,</em></strong> <strong>remove any files that will not be published</strong>, and rename the <code>_bookquarto.yml</code> file.</p>
