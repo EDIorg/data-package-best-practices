@@ -21,7 +21,7 @@ citation:
   container-title: Environmental Data Initiative
   version: "2.0"
   doi: tbd
-categories: published
+categories: draft
 image: ../img/book.svg
 ---
 
