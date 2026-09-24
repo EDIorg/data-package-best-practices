@@ -89,14 +89,14 @@ Completed, community-approved versions of some guides here are published to EDI 
 
         git mergetool
 
-    It should be ok to approve removing files that were already removed in `HEAD`.
+    It should be ok to exclude merging the files that were already removed in `HEAD`.
 
 4. **Add the rendered PDF and Word files** for the guide you will be publishing. Then move them to the root directory.
 
         git add archive/guide-eml-bp/guide-eml-bp_v4.0.pdf archive/guide-eml-bp/guide-eml-bp_v4.0.docx
 
-        git mv guide-eml-bp/guide-eml-bp_v4.0.pdf ./
-        git mv guide-eml-bp/guide-eml-bp_v4.0.docx ./
+        git mv archive/guide-eml-bp/guide-eml-bp_v4.0.pdf ./
+        git mv archive/guide-eml-bp/guide-eml-bp_v4.0.docx ./
 
     Double check that the correctly rendered docs are there.
     

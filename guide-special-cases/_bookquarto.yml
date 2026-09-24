@@ -4,6 +4,7 @@ project:
 
 metadata-files:
   - _bookmetadata.yml
+  
 book:
   chapters:
     - index.qmd
@@ -33,14 +34,14 @@ format:
         \usepackage{fvextra}
         \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
     # Currently has no effect (?) so renaming in Makefile
-    output-file: "guide-special-cases_v1.1"
+    output-file: "guide-special-cases_v2.0"
     output-ext: "pdf"
   docx:
     toc: true
     number-sections: true
     colorlinks: true
     # Currently has no effect (?) so renaming in Makefile
-    output-file: "guide-special-cases_v1.1"
+    output-file: "guide-special-cases_v2.0"
     output-ext:  "docx"
 
 
